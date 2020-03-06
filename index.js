@@ -8,7 +8,7 @@ require('./bootstrap');
 
 import VueRouter from 'vue-router';
 import {router} from "./routes";
-import layout from './Components/Layout';
+import layout from './Layouts/Layout';
 
 window.Vue = require('vue');
 
