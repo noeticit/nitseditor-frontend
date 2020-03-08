@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-require('laravel-mix-alias');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,34 +11,29 @@ require('laravel-mix-alias');
  |
  */
 
-mix.options({
-    postCss: [
-        require('autoprefixer'),
-    ],
-});
-
-mix.alias({
-    'NitsModels': 'node_modules/nitseditor-frontend/Models',
-});
-
-mix.webpackConfig({
-    node: {
-        fs: "empty"
-    },
-    output: {
-        publicPath: '/',
-        chunkFilename: 'nits-assets/chunks/[name].[chunkhash].js',
-    }
-});
-
-mix.copy('node_modules/nitseditor-frontend/Assets', 'public/nits-assets/images');
-
 const tailwindcss = require('tailwindcss');
 
-mix.sass('node_modules/nitseditor-frontend/Assets/sass/app.scss', 'nits-assets/css')
+mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/images')
+    .sass('node_modules/nitseditor-frontend/Assets/sass/app.scss', 'nits-assets/css')
     .options({
         processCssUrls: false,
-        postCss: [ tailwindcss('./tailwind.config.js') ],
+        postCss: [ require('autoprefixer'), tailwindcss('./tailwind.config.js') ],
     })
     .js('node_modules/nitseditor-frontend/Assets/js/app.js', 'nits-assets/js')
-    .sourceMaps().version();
+    .webpackConfig({
+        node: {
+            fs: "empty"
+        },
+        output: {
+            publicPath: '/',
+            chunkFilename: 'nits-assets/chunks/[name].[chunkhash].js',
+        },
+        resolve: {
+            extensions: ['.js', '.json', '.vue'],
+            alias: {
+                'NitsModels': path.resolve(__dirname, 'node_modules/nitseditor-frontend/Models'),
+                'ProjectComponents': path.resolve(__dirname, 'resources')
+            }
+        }
+    })
+    .sourceMaps().version().browserSync('nitsapp.local');

@@ -9,8 +9,8 @@ export const router = new VueRouter({
         [
             {
                 path: '/',
-                component: Vue.component('login', () => import('./../../Pages/Home.vue')),
-                name: 'login',
+                component: Vue.component('home', () => import('./../../Pages/Home.vue')),
+                name: 'home',
                 meta: {
                     requiresAuth: false
                 }
@@ -19,6 +19,14 @@ export const router = new VueRouter({
                 path: '/login',
                 component: Vue.component('login', () => import('./../../Layouts/LoginPage/LayoutOne.vue')),
                 name: 'login',
+                meta: {
+                    requiresAuth: false
+                }
+            },
+            {
+                path: '/register',
+                component: Vue.component('register', () => import('./../../Layouts/LoginPage/LayoutOne.vue')),
+                name: 'register',
                 meta: {
                     requiresAuth: false
                 }

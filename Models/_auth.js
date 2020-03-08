@@ -1,7 +1,7 @@
 import {encrypt} from "./_encrypt";
 import {getHeader} from "./_config";
-import store from "../store/_store";
-import VueSession from 'NitsModels/_session';
+import store from "./../Store/_store";
+import VueSession from './_session';
 
 let session = new VueSession(process.env.MIX_STORAGE_PERSIST, process.env.MIX_INACTIVITY_SESSION);
 

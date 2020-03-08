@@ -1,23 +1,23 @@
-import {eventBus} from 'NitsModels/_events.js';
+import {eventBus} from './_events.js';
 
 export default class session {
 
     constructor(STORAGE, INACTIVITY_SESSION) {
-        this.STORAGE = STORAGE;
-        this.INACTIVITY_SESSION = INACTIVITY_SESSION;
+        this.STORAGE = typeof STORAGE !== 'undefined' && STORAGE !== null ? STORAGE : 'localStorage';
+        this.INACTIVITY_SESSION = typeof INACTIVITY_SESSION !== 'undefined' && INACTIVITY_SESSION !== null ? INACTIVITY_SESSION : 60;
         this.key = 'nits-session-key';
     }
 
     start() {
         let t;
         // DOM Events
-        jQuery(document).click(() => {
+        document.onclick = () => {
             this.resetTimer();
-        });
+        };
 
-        jQuery(document).keypress(() => {
+        document.onkeypress = () => {
             this.resetTimer();
-        });
+        };
 
         var all = this.getAll() ? this.getAll() : {};
         all['session-id'] = 'sess:'+Date.now();
@@ -32,7 +32,7 @@ export default class session {
     }
 
     setAll(all) {
-        //Stroe session...
+        //Store session...
         var timelife = new Date().getTime() + this.INACTIVITY_SESSION * 60 * 1000;
         if(Object.keys(all).length > 0) all['timelife'] = timelife
         window[this.STORAGE].setItem(this.key,JSON.stringify(all));

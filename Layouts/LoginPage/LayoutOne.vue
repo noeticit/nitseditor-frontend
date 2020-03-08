@@ -6,13 +6,13 @@
         <div class="p-6 flex-grow">
             <div class="md:flex item-center justify-center">
                 <div class="hidden md:block md:w-1/2 bg-gray-100">
-                    <img class="h-auto w-auto object-fill object-center" src="/nits-assets/images/login_2.png" alt="">
+                    <img class="h-auto w-auto object-fill object-center" src="/nits-assets/images/login_screen.png" alt="Login Screen Image">
                 </div>
-                <div class="p-4 md:w-1/2 md:max-w-lg justify-center">
+                <div class="p-4 md:w-1/2 md:max-w-md justify-center">
                     <div class="bg-white rounded-lg shadow-lg p-6 min-w-full h-auto justify-center">
                         <h4 class="mb-10 font-semibold text-center text-lg text-gray-800">Login to your account</h4>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Your email">
-                        <input class="mt-5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="Your password">
+                        <input v-model="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Your email">
+                        <input v-model="password" class="mt-5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="Your password">
                         <div class="mt-4 text-center text-gray-500 text-xs">
                             Or sign in with:
                         </div>
@@ -28,10 +28,10 @@
                             </svg>
                         </div>
                         <div class="mt-4 text-center">
-                            <router-link to="/dashboard" class="inline-block px-4 py-2 rounded-lg shadow-md bg-teal-500 hover:bg-teal-400 focus:outline-none focus:shadow-outline text-white text-sm tracking-wider font-semibold">Sign in</router-link>
+                            <button @click.prevent="login" class="inline-block px-4 py-2 rounded-lg shadow-md bg-teal-500 hover:bg-teal-400 focus:outline-none focus:shadow-outline text-white text-sm tracking-wider font-semibold">Sign in</button>
                         </div>
                         <div class="mt-1 text-center text-gray-500 text-xs">
-                            Don't have account? <a href="">Sign up</a>
+                            Don't have account? <router-link to="/register">Sign up</router-link>
                         </div>
                     </div>
                 </div>
@@ -51,11 +51,39 @@
 </template>
 
 <script>
+    import {login} from 'NitsModels/admin/_model'
+
+
     export default {
         name: "LoginLayoutOne",
         data() {
             return {
+                email: '',
+                password: '',
+                error: '',
+            }
+        },
+        beforeCreate() {
+            console.log('check');
+            this.$auth.logout();
+        },
+        methods: {
+            login() {
+                this.loading = true;
+                this.error = "";
+                const user = {
+                    email: this.email,
+                    password: this.password
+                };
 
+                login(user).then(resolve => {
+                    this.loading = false;
+                    // console.log(resolve.redirect);
+                    this.$router.push(resolve.redirect)
+                }).catch(error => {
+                    this.loading = false;
+                    this.error = error
+                });
             }
         }
     }
