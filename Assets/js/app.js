@@ -8,7 +8,7 @@ require('./bootstrap');
 
 import VueRouter from 'vue-router';
 import {router} from "./routes";
-import layout from './Layouts/Layout';
+import Layout from './../../Layouts/Layout';
 
 window.Vue = require('vue');
 
@@ -18,16 +18,16 @@ Vue.use(VueRouter);
  * Middleware to check authentication
  */
 
-// router.beforeEach((to, from, next) => {
-//     if(to.meta.requiresAuth && auth.isLoggedIn())
-//         next()
-//     if(!to.meta.requiresAuth && auth.isLoggedIn())
-//         next()
-//     if(to.meta.requiresAuth && !auth.isLoggedIn())
-//         next({path: '/'})
-//     if(!to.meta.requiresAuth && !auth.isLoggedIn())
-//         next()
-// })
+router.beforeEach((to, from, next) => {
+    if(to.meta.requiresAuth && auth.isLoggedIn())
+        next()
+    if(!to.meta.requiresAuth && auth.isLoggedIn())
+        next()
+    if(to.meta.requiresAuth && !auth.isLoggedIn())
+        next({path: '/'})
+    if(!to.meta.requiresAuth && !auth.isLoggedIn())
+        next()
+})
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -38,5 +38,5 @@ Vue.use(VueRouter);
 const app = new Vue({
     el: '#app',
     router: router,
-    render:h=>h(layout)
+    render:h=>h(Layout)
 });

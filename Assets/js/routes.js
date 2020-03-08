@@ -9,7 +9,7 @@ export const router = new VueRouter({
         [
             {
                 path: '/',
-                component: Vue.component('login', () => import('./Pages/Home.vue')),
+                component: Vue.component('login', () => import('./../../Pages/Home.vue')),
                 name: 'login',
                 meta: {
                     requiresAuth: false
@@ -17,7 +17,7 @@ export const router = new VueRouter({
             },
             {
                 path: '/login',
-                component: Vue.component('login', () => import('./Pages/Login.vue')),
+                component: Vue.component('login', () => import('./../../Layouts/LoginPage/LayoutOne.vue')),
                 name: 'login',
                 meta: {
                     requiresAuth: false
