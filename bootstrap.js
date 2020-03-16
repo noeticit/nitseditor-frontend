@@ -41,6 +41,17 @@ if (token) {
 }
 
 /**
+ * For auto routes generation in Vue-Router
+ */
+const { generateRoutes } = require('vue-route-generator');
+
+const code = generateRoutes({
+    pages: './Pages' // Vue page component directory
+});
+
+console.log(code);
+
+/**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.

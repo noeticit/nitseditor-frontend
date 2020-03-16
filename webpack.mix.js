@@ -19,7 +19,7 @@ mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/i
         processCssUrls: false,
         postCss: [ require('autoprefixer'), tailwindcss('./tailwind.config.js') ],
     })
-    .js('node_modules/nitseditor-frontend/Assets/js/app.js', 'nits-assets/js')
+    .js('node_modules/nitseditor-frontend/app.js', 'nits-assets/js')
     .webpackConfig({
         node: {
             fs: "empty"
@@ -29,11 +29,17 @@ mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/i
             chunkFilename: 'nits-assets/chunks/[name].[chunkhash].js',
         },
         resolve: {
+            symlinks: false,
             extensions: ['.js', '.json', '.vue'],
             alias: {
-                'NitsModels': path.resolve(__dirname, 'node_modules/nitseditor-frontend/Models'),
-                'ProjectComponents': path.resolve(__dirname, 'resources')
+                // '@': path.resolve(__dirname)
+                NitsModels: path.resolve(__dirname, 'node_modules/nitseditor-frontend/Models'),
+                // ProjectComponents: path.resolve(__dirname, 'resources')
             }
         }
     })
-    .sourceMaps().version().browserSync('nitsapp.local');
+    // .extract([
+    //     'vue', 'axios', 'lodash', 'vue-router', 'vue-template-compiler', 'vuex'
+    // ])
+    .sourceMaps().version();
+    // .browserSync('nitsapp.local');

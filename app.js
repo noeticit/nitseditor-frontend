@@ -8,9 +8,9 @@ require('./bootstrap');
 
 import VueRouter from 'vue-router';
 import {router} from "./routes";
-import Layout from './../../Layouts/Layout';
-import authorization from "../../Models/_auth";
-import session from '../../Models/_session';
+import Layout from './Layouts/Layout';
+import authorization from "./Models/_auth";
+import session from './Models/_session';
 
 window.Vue = require('vue');
 
@@ -18,8 +18,10 @@ Vue.use(VueRouter);
 
 const sessions = new session(process.env.MIX_STORAGE_PERSIST, process.env.MIX_INACTIVITY_SESSION);
 sessions.start();
+Vue.prototype.$session = sessions;
 
 const auth = new authorization();
+Vue.prototype.$auth = auth;
 /**
  * Middleware to check authentication
  */

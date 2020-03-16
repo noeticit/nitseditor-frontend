@@ -51,7 +51,7 @@
 </template>
 
 <script>
-    import {login} from 'NitsModels/admin/_model'
+
 
 
     export default {
@@ -76,7 +76,7 @@
                     password: this.password
                 };
 
-                login(user).then(resolve => {
+                this.$auth.login(user).then(resolve => {
                     this.loading = false;
                     // console.log(resolve.redirect);
                     this.$router.push(resolve.redirect)

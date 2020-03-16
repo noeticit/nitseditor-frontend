@@ -17,3 +17,5 @@ export const clientId = process.env.MIX_CLIENT_ID;
 export const clientSecret = process.env.MIX_CLIENT_SECRET;
 
 export const appUrl = process.env.MIX_APP_URL;
+
+export const appResource = 'check';
