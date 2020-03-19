@@ -52,7 +52,7 @@
 
 <script>
 
-
+    import {auth} from 'ProjectModels/_auth';
 
     export default {
         name: "LoginLayoutOne",
@@ -76,7 +76,7 @@
                     password: this.password
                 };
 
-                this.$auth.login(user).then(resolve => {
+                login(user).then(resolve => {
                     this.loading = false;
                     // console.log(resolve.redirect);
                     this.$router.push(resolve.redirect)
