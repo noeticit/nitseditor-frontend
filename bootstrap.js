@@ -1,6 +1,8 @@
 
 window._ = require('lodash');
 
+require('./Models/_components');
+
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -24,7 +26,7 @@ window.axios.interceptors.response.use(
         }
         return Promise.reject(error)
     }
-)
+);
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
