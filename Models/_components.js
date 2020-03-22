@@ -1,18 +1,48 @@
 import Vue from 'vue';
 
-const requireComponent = require.context('./../Components/Base', true, /Base[\w-]+\.vue$/);
+/*
+ |--------------------------------------------------------------------------
+ | Base components dynamic and async import.
+ |--------------------------------------------------------------------------
+ |
+ | Import all the base vue components starting with letter 'Base' into it.
+ | Dynamic import of all those files are generated with respective component name
+ |
+ */
 
-requireComponent.keys().forEach(filename => {
+const requireBaseComponent = require.context('./../Components/Base', true, /Base[\w-]+\.vue$/);
 
-    //Get component filename
+requireBaseComponent.keys().forEach(filename => {
+
+    //Get file location to import
     const importFilename = filename.replace('./', '');
 
+    //Split the file path to get the component/filename
     const component = filename.split(/[\s/]+/);
 
-    //Get component name
+    //Get file/component name
     const componentName = component[component.length-1].replace('.vue', '');
 
     //Register async and dynamic component
-    Vue.component(componentName, () => import(`./../Components/Base/${importFilename}`));
+    Vue.component(componentName, () => import(/* webpackChunkName: "base-component" */ `./../Components/Base/${importFilename}`));
+
+});
+
+
+const requireAppComponent = require.context('./../Components/App', true, /App[\w-]+\.vue$/);
+
+requireAppComponent.keys().forEach(filename => {
+
+    //Get file location to import
+    const importFilename = filename.replace('./', '');
+
+    //Split the file path to get the component/filename
+    const component = filename.split(/[\s/]+/);
+
+    //Get file/component name
+    const componentName = component[component.length-1].replace('.vue', '');
+
+    //Register async and dynamic component
+    Vue.component(componentName, () => import(/* webpackChunkName: "base-component" */ `./../Components/App/${importFilename}`));
 
 });
