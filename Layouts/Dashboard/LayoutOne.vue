@@ -6,9 +6,14 @@
         <div class="flex h-full">
             <menu-one class="w-48 pb-6 h-full mb-8 mt-8 overflow-y-scroll"></menu-one>
             <div class="w-full p-2 bg-gray-200">
-                <div class="flex">
-                    <portlet-one></portlet-one>
+                <base-bread-crumb-one></base-bread-crumb-one>
+                <div class="flex justify-around">
+                    <base-portlet-one></base-portlet-one>
                 </div>
+                <base-table-one></base-table-one>
+                <app-description></app-description>
+<!--                <base-modal-one></base-modal-one>-->
+                <base-dropdown-button></base-dropdown-button>
             </div>
         </div>
     </div>
@@ -19,8 +24,7 @@
     export default {
         name: "DashboardLayoutOne",
         components: {
-            'MenuOne': () => import('../../Components/Menus/MenuOne'),
-            'PortletOne': () => import('../../Components/Portlets/PortletOne')
+            'MenuOne': () => import('../../Components/Menus/MenuOne')
         }
     }
 </script>

@@ -1,12 +1,10 @@
 <template>
-    <div>
-        Portlet Component
-    </div>
+    <input type="text">
 </template>
 
 <script>
     export default {
-        name: "PortletOne"
+        name: "BaseInput"
     }
 </script>
 
