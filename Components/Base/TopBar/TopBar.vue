@@ -1,9 +1,9 @@
 <template>
-    <div class="top_bar">
-        <div class="logo">
-            <img class="h-12" src="/nits-assets/images/logo.png" alt="NitsEditor Logo">
-        </div>
-    </div>
+   <header class="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0  py-2" id="header">
+      <div class="flex-1 flex justify-between items-center">
+               <img class="h-12" src="/nits-assets/images/logo.png" alt="NitsEditor Logo">
+      </div>
+   </header>
 </template>
 
 <script>
@@ -13,6 +13,10 @@
 </script>
 
 <style scoped>
+    /*#header{*/
+    /*    margin-top: 2px;*/
+    /*    position: fixed;*/
+    /*}*/
 .top_bar{
     background-color: #ffffff;
     width: 100%;
@@ -26,7 +30,7 @@
     z-index: 9995;
 }
 .logo {
-    display: flex;
+    /*display: flex;*/
     }
 
 </style>
