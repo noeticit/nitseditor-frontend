@@ -1,5 +1,5 @@
 <template>
-    <div class="h-screen w-screen flex-col bg-gray-100">
+    <div class="h-screen flex-col bg-gray-100">
         <div class="pl-3 pt-3">
             <img class="h-16" src="/nits-assets/images/logo.png" alt="NitsEditor Logo">
         </div>
@@ -8,7 +8,7 @@
                 <div class="hidden md:block md:w-1/2 bg-gray-100">
                     <img class="h-auto w-auto object-fill object-center" src="/nits-assets/images/login_screen.png" alt="">
                 </div>
-                <div class="p-4 md:w-1/2 md:max-w-lg justify-center">
+                <div class="p-4 md:w-1/2 md:max-w-lg justify-center" v-if="loginIn">
                     <div class="bg-white rounded-lg shadow-lg p-6 min-w-full h-auto justify-center">
                         <h4 class="mb-10 font-semibold text-center text-lg text-gray-800">Login to your account</h4>
                         <input v-model="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Your email">
@@ -31,10 +31,30 @@
                             <button @click.prevent="login" class="inline-block px-4 py-2 rounded-lg shadow-md bg-teal-500 hover:bg-teal-400 focus:outline-none focus:shadow-outline text-white text-sm tracking-wider font-semibold">Sign in</button>
                         </div>
                         <div class="mt-1 text-center text-gray-500 text-xs">
-                            Don't have account? <a href="">Sign up</a>
+                            Don't have account? <a href="" @click.prevent="Register()">Sign up</a>
                         </div>
                     </div>
                 </div>
+                <div class="p-4 md:w-1/2 md:max-w-lg justify-center" v-if="SignUpIn">
+                    <div class="bg-white rounded-lg shadow-lg p-6 min-w-full h-auto justify-center">
+                        <h4 class="mb-10 font-semibold text-center text-lg text-gray-800">Register to your account</h4>
+                        <input v-model="full_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Your Full Name">
+                        <input v-model="user_name" class="mt-5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Your User Name">
+                        <input v-model="email" class="mt-5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Your email">
+                        <input v-model="password" class="mt-5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="Your password">
+                        <input v-model="password" class="mt-5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="Your Confirm password">
+
+                        <div class="mt-4 text-center">
+                            <button @click.prevent="BacktoLogin()" class="inline-block px-4 py-2 rounded-lg shadow-md bg-teal-500 hover:bg-teal-400 focus:outline-none focus:shadow-outline text-white text-sm tracking-wider font-semibold">Back</button>
+                            <button @click.prevent="Submit()" class="inline-block px-4 py-2 rounded-lg shadow-md bg-teal-500 hover:bg-teal-400 focus:outline-none focus:shadow-outline text-white text-sm tracking-wider font-semibold">Sign up</button>
+                        </div>
+                        <div class="mt-1 text-center text-gray-500 text-xs">
+                            Already have account? <a href="">Sign In</a>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
         <div class="bg-gray-100 fixed bottom-0 w-full">
@@ -53,6 +73,7 @@
 <script>
 
     import {authentication} from 'ProjectModels/_auth';
+    import {login} from "../Models/admin/_model";
 
     // const path = require('path');
 
@@ -60,6 +81,8 @@
         name: "Login",
         data() {
             return {
+                full_name: '',
+                user_name: '',
                 email: '',
                 password: '',
                 error: '',
@@ -81,14 +104,27 @@
                     password: this.password
                 };
 
-                this.$auth.login(user).then(resolve => {
+                login(user).then(resolve => {
                     this.loading = false;
                     this.$router.push(resolve.redirect);
                 }).catch(error => {
                     this.loading = false;
                     this.error = error;
                 })
+            },
+            Register(){
+                this.loginIn = false
+                this.SignUpIn = true
+            },
+
+            BacktoLogin(){
+                this.loginIn = true
+                this.SignUpIn = false
+            },
+            Submit(){
+
             }
+
         }
     }
 </script>

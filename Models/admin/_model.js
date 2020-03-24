@@ -64,7 +64,7 @@ export const menu = function (currentNav) {
 import {encrypt, decrypt} from "NitsModels/_encrypt";
 import {getHeader} from "NitsModels/_config";
 import store from "NitsModels/../store/_store";
-import ability from "NitsModels/_ability";
+// import ability from "NitsModels/_ability";
 import VueSession from 'NitsModels/_session';
 
 const session = new VueSession(process.env.MIX_STORAGE_PERSIST, process.env.MIX_INACTIVITY_SESSION);
@@ -105,7 +105,7 @@ export const login = function(user) {
                         if(response.data.data.role === 'Super admin')
                         {
                             //Storing permissions into localstorage
-                            ability.update(response.data.data.permissions);
+                            // ability.update(response.data.data.permissions);
 
                             //Storing into local storage.
                             session.set('auth_user', auth_user);
@@ -123,7 +123,7 @@ export const login = function(user) {
                             }
                             else{
                                 const redirect = {
-                                    redirect: '/dashboard'
+                                    redirect: '/nits-admin/dashboard'
                                 };
                                 resolve(redirect);
                              }
@@ -155,7 +155,7 @@ export const login = function(user) {
                                         }
                                         else{
                                             const redirect = {
-                                                redirect: '/dashboard'
+                                                redirect: '/nits-admin/dashboard'
                                             };
                                             resolve(redirect);
                                         }

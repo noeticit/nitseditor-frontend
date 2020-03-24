@@ -17,14 +17,14 @@ export const router = new VueRouter({
                     requiresAuth: false
                 }
             },
-            {
-                path: '/nits-admin/register',
-                component: Vue.component('register', () => import('./Pages/Login.vue')),
-                name: 'register',
-                meta: {
-                    requiresAuth: false
-                }
-            },
+            // {
+            //     path: '/nits-admin/register',
+            //     component: Vue.component('register', () => import('./Pages/Lo.vue')),
+            //     name: 'register',
+            //     meta: {
+            //         requiresAuth: false
+            //     }
+            // },
             {
                 path: '/nits-admin/dashboard',
                 component: Vue.component('nits-admin-dashboard', () => import('./Pages/Dashboard.vue')),
