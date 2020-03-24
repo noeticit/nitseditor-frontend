@@ -32,7 +32,15 @@ router.beforeEach((to, from, next) => {
     if(!to.meta.requiresAuth && auth.isLoggedIn())
         next()
     if(to.meta.requiresAuth && !auth.isLoggedIn())
-        next({path: '/'})
+        // var pathname=(window.location.pathname)  //      /admin/plugins/Biltrax/project-search
+
+        // console.log(window.location.pathname)
+        // var path = (window.location.pathname).replace('/nits-admin/', '/')     //      /plugins/Biltrax/project-search
+        // console.log(path)
+        // if(path.length>2) {
+        //     sessions.set('last_url', path);   // plugins/Biltrax/project-search
+        // }
+    next ({path: '/'})
     if(!to.meta.requiresAuth && !auth.isLoggedIn())
         next()
 })

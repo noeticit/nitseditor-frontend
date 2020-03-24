@@ -47,7 +47,7 @@ mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/i
                 pages: path.resolve('./resources/pages/'),
 
                 // A string that will be added to importing component path (default @/pages/).
-                importPrefix: path.resolve('./resources/pages')+'/'
+                importPrefix: path.resolve('./resources\\pages/')+'/'
             })
         ]
     })

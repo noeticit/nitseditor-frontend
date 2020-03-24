@@ -1,8 +1,8 @@
 <template>
     <div class="h-screen w-screen flex-col justify-between bg-gray-100">
-        <div class="pl-3 pt-3">
-            <img class="h-16" src="/nits-assets/images/logo.png" alt="NitsEditor Logo">
-        </div>
+<!--        <div class="pl-3 pt-3">-->
+<!--            <img class="h-16" src="/nits-assets/images/logo.png" alt="NitsEditor Logo">-->
+<!--        </div>-->
         <div class="p-6 flex-grow">
             <div class="md:flex item-center justify-center">
                 <div class="hidden md:block md:w-1/2 bg-gray-100">
