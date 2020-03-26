@@ -37,8 +37,6 @@ mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/i
                 NitsModels: path.resolve(__dirname, 'Models'),
                 ProjectModels: path.resolve('./resources/models'),
                 ProjectPages: path.resolve('./resources/pages'),
-                // NitsModels: path.resolve(__dirname, 'node_modules/nitseditor-frontend/Models'),
-                // ProjectModels: path.resolve(__dirname, '/resources')
             }
         },
         plugins: [
@@ -47,7 +45,7 @@ mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/i
                 pages: path.resolve('./resources/pages/'),
 
                 // A string that will be added to importing component path (default @/pages/).
-                importPrefix: path.resolve('./resources\\pages/')+'/'
+                importPrefix: path.resolve('./resources/pages/')+'/'
             })
         ]
     })

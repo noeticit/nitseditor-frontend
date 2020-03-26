@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-// import routes from 'vue-auto-routing';
+import routes from 'vue-auto-routing';
 
 Vue.use(VueRouter);
 
@@ -8,7 +8,7 @@ export const router = new VueRouter({
     mode: 'history',
     routes:
         [
-            // ...routes,
+            ...routes,
             {
                 path: '/nits-admin/login',
                 component: Vue.component('login', () => import('./Pages/Login.vue')),

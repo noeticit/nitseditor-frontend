@@ -28,10 +28,11 @@ Vue.prototype.$auth = auth;
 
 router.beforeEach((to, from, next) => {
     if(to.meta.requiresAuth && auth.isLoggedIn())
-        next()
+        next();
     if(!to.meta.requiresAuth && auth.isLoggedIn())
-        next()
+        next();
     if(to.meta.requiresAuth && !auth.isLoggedIn())
+        next ({path: '/'});
         // var pathname=(window.location.pathname)  //      /admin/plugins/Biltrax/project-search
 
         // console.log(window.location.pathname)
@@ -40,10 +41,10 @@ router.beforeEach((to, from, next) => {
         // if(path.length>2) {
         //     sessions.set('last_url', path);   // plugins/Biltrax/project-search
         // }
-    next ({path: '/'})
+
     if(!to.meta.requiresAuth && !auth.isLoggedIn())
         next()
-})
+});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
