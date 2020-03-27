@@ -1,6 +1,6 @@
 import {encrypt} from "./_encrypt";
 import {getHeader} from "./_config";
-import store from "./../Store/_store";
+// import store from "./../Store/_store";
 import VueSession from './_session';
 
 let session = new VueSession(process.env.MIX_STORAGE_PERSIST, process.env.MIX_INACTIVITY_SESSION);
@@ -49,7 +49,7 @@ export default class auth {
                             session.set('auth_user', authUser);
                             // window.localStorage.setItem('authUser', JSON.stringify(authUser));
                             //Storing to state.
-                            store.commit("STORE_USER_DATA", authUser);
+                            // store.commit("STORE_USER_DATA", authUser);
 
                             return resolve(res);
                         }

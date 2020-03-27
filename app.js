@@ -1,3 +1,22 @@
+// const fs = require('fs');
+//
+// const readme = fs.readFileSync('./sample.vue', 'utf8');
+// fs.writeFileSync('writesample.vue', readme);
+//
+// fs.readFile('./sample.vue', function (err, data) {
+//     if (err) throw err;
+//     if(data.indexOf('template') >= 0){
+//         console.log(data)
+//     }
+// });
+
+// fs.readFile('./sample.vue', 'utf8', function(err, contents) {
+//     console.log(contents);
+// });
+// const contents = fs.readFileSync("./sample.vue", "utf8");
+
+// console.log(contents);
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when

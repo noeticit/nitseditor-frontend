@@ -13,7 +13,7 @@ const mix = require('laravel-mix');
 
 const tailwindcss = require('tailwindcss');
 
-const VueAutoRoutingPlugin = require('vue-auto-routing/lib/webpack-plugin');
+const NitsRoutePlugins = require('./Webpack/NitsRoutePlugin');
 
 mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/images')
     .sass('node_modules/nitseditor-frontend/Assets/sass/app.scss', 'public/nits-assets/css')
@@ -37,16 +37,12 @@ mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/i
                 NitsModels: path.resolve(__dirname, 'Models'),
                 ProjectModels: path.resolve('./resources/models'),
                 ProjectPages: path.resolve('./resources/pages'),
+                NitsAdminPages: path.resolve(__dirname, 'Pages'),
+                Plugins: path.resolve('./plugins'),
             }
         },
         plugins: [
-            new VueAutoRoutingPlugin({
-                // Path to the directory that contains your page components.
-                pages: path.resolve('./resources/pages/'),
-
-                // A string that will be added to importing component path (default @/pages/).
-                importPrefix: path.resolve('./resources/pages/')+'/'
-            })
+            new NitsRoutePlugins()
         ]
     })
     // .extract([
