@@ -37,7 +37,7 @@ function exportProjectPages() {
         dynamicImport: true
     });
 
-    fs.writeFileSync(path.resolve(__dirname, '../Routes/project-routes.js'), projectRouteCode);
+    fs.writeFileSync(path.resolve(__dirname, '../Routes/nits-project-routes.js'), projectRouteCode);
 
 }
 
@@ -93,7 +93,7 @@ function exportPluginsPages() {
 
                     const pluginComponentName = replaceAll(pluginRoute, 'name: \'', 'name: \'nits-plugin-'+pluginAuthor+'-'+pluginName+'-');
 
-                    const adminRoutes = replaceAll(pluginComponentName, 'path: \'/', 'path: \'/nits-plugin-'+pluginAuthor+'-'+pluginName+'/');
+                    const adminRoutes = replaceAll(pluginComponentName, 'path: \'/', 'path: \'/nits-admin/plugin/'+pluginAuthor+'/'+pluginName+'/');
 
                     fs.writeFileSync(path.resolve(__dirname, '../Routes/nits-plugin-'+pluginAuthor+'-'+pluginName+'.js'), adminRoutes);
 

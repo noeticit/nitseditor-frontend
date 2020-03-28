@@ -1,22 +1,3 @@
-// const fs = require('fs');
-//
-// const readme = fs.readFileSync('./sample.vue', 'utf8');
-// fs.writeFileSync('writesample.vue', readme);
-//
-// fs.readFile('./sample.vue', function (err, data) {
-//     if (err) throw err;
-//     if(data.indexOf('template') >= 0){
-//         console.log(data)
-//     }
-// });
-
-// fs.readFile('./sample.vue', 'utf8', function(err, contents) {
-//     console.log(contents);
-// });
-// const contents = fs.readFileSync("./sample.vue", "utf8");
-
-// console.log(contents);
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -26,7 +7,7 @@
 require('./bootstrap');
 
 import VueRouter from 'vue-router';
-import {router} from "./routes";
+import routes from './Models/_route';
 import Layout from './Layouts/Layout';
 import {authentication} from "ProjectModels/_auth";
 import session from './Models/_session';
@@ -34,6 +15,12 @@ import session from './Models/_session';
 window.Vue = require('vue');
 
 Vue.use(VueRouter);
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: [...routes],
+    base: '/',
+});
 
 const sessions = new session(process.env.MIX_STORAGE_PERSIST, process.env.MIX_INACTIVITY_SESSION);
 sessions.start();

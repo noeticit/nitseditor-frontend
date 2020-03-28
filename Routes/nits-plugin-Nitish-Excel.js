@@ -7,7 +7,7 @@ function Home() {
 export default [
   {
     name: 'nits-plugin-Nitish-Excel-Home',
-    path: '/nits-plugin-Nitish-Excel/Home',
+    path: '/plugin/Nitish/Excel/Home',
     component: Home
   }
 ]

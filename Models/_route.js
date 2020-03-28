@@ -1,11 +1,16 @@
-const requirepluginsRoute = require.context('./../routes', true, /nits-plugin-[\w-]+\.js$/);
+import flattenDeep from 'lodash/flattenDeep';
 
-const pluginRoutes = [];
+const requireRouteFiles = require.context('./../Routes', true, /nits-[\w-]+\.js$/);
 
-requirepluginsRoute.keys().forEach(filename => {
+const routes = [];
 
-    pluginRoutes.push = require(`./../Routes/${filename}`);
+requireRouteFiles.keys().forEach(filename => {
+
+    //Get file location to import
+    const importFilename = filename.replace('./', '');
+
+    routes.push(require(`./../Routes/${importFilename}`).default);
 
 });
 
-export default [...pluginRoutes];
+export default [...flattenDeep(routes)];
