@@ -7,7 +7,7 @@ function Settings() {
 export default [
   {
     name: 'nits-plugin-noetic-form-builder-Settings',
-    path: '/plugin/noetic/form-builder/Settings',
+    path: '/nits-admin/plugin/noetic/form-builder/Settings',
     component: Settings
   }
 ]

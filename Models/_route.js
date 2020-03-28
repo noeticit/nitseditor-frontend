@@ -1,4 +1,4 @@
-import flattenDeep from 'lodash/flattenDeep';
+import flatten from 'lodash/flatten';
 
 const requireRouteFiles = require.context('./../Routes', true, /nits-[\w-]+\.js$/);
 
@@ -13,4 +13,4 @@ requireRouteFiles.keys().forEach(filename => {
 
 });
 
-export default [...flattenDeep(routes)];
+export default [...flatten(routes)];
