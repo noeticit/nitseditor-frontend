@@ -1,66 +1,91 @@
 <template>
     <div>
-        <div class="px-4 mb-2 text-sm text-gray-700 uppercase font-bold">Content</div>
-        <div class="px-4 mb-1 flex justify-start items-center">
-            <div class="py-1 h-4 -m-1 mr-1 border-l-2 border-teal-600"></div>
-            <svg class="ml-2 text-teal-500 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM9.56 8.93l6.37-2.12a1 1 0 0 1 1.26 1.26l-2.12 6.37a1 1 0 0 1-.63.63l-6.37 2.12a1 1 0 0 1-1.26-1.26l2.12-6.37a1 1 0 0 1 .63-.63zm-.22 5.73l4-1.33 1.32-4-4 1.34-1.32 4z"/>
+        <div class="px-2 mb-2 text-sm text-gray-700 antialiased leading-relaxed tracking-normal uppercase font-semibold">Content</div>
+        <router-link to="/nits-admin/dashboard" class="px-4 mb-1 flex justify-start items-center curser-pointer" @mouseover="hover = 'dashboard'" @mouseleave="hover = ''">
+            <div v-if="activeClass('dashboard') || hoverClass('dashboard')" class="py-1 h-4 -m-1 mr-1 border-l-2 border-teal-600 curser-pointer"></div>
+            <svg :class="activeClass('dashboard') || hoverClass('dashboard') ?  'ml-2 h-4 w-4 curser-pointer text-teal-500' : 'ml-2 h-4 w-4 curser-pointer text-gray-700'" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 0a10 10 0 100 20 10 10 0 000-20zm8 10c0 2 0 4-2 5v-2-2l-1-2-2-2c-1-2 2-2 1-3 0-1-2 1-2-1l1-1c3 1 5 4 5 8zM9 2L8 3 7 4 5 6l1 1h1c1 0 4 0 3 3l-2 2v4l-2-2-1-2-1-2 1-2-3-1c1-3 4-5 7-5zM7 18l1-1h2l2-1 3 1a8 8 0 01-8 1z"/>
             </svg>
-            <div class="ml-3 text-center text-teal-600 text-md font-medium">Dashboard</div>
-        </div>
-        <div class="px-4 mb-1 text-black flex justify-start items-center">
-            <svg class="ml-2 text-gray-600 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path class="heroicon-ui" d="M7 5H5v14h14V5h-2v10a1 1 0 0 1-1.45.9L12 14.11l-3.55 1.77A1 1 0 0 1 7 15V5zM5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2zm4 2v8.38l2.55-1.27a1 1 0 0 1 .9 0L15 13.38V5H9z"/>
+            <div :class="activeClass('dashboard') || hoverClass('dashboard') ?  'active-menu-text' : 'not-active-menu-text'">Dashboard</div>
+        </router-link>
+        <router-link to="/nits-admin/pages" class="px-4 mb-1 flex justify-start items-center curser-pointer" @mouseover="hover = 'pages'" @mouseleave="hover = ''">
+            <div v-if="activeClass('pages') || hoverClass('pages')" class="py-1 h-4 -m-1 mr-1 border-l-2 border-teal-600"></div>
+            <svg :class="activeClass('pages') || hoverClass('pages') ?  'ml-2 h-4 w-4 text-teal-500' : 'ml-2 h-4 w-4 text-gray-700'" fill="currentColor"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M14 5h-4v2h4V5zm0 3h-4v1h4V8zM9 5H6v4h3V5zm0 6h5v-1H9v1zm3 2h2v-1h-2v1zm2 1H6v1h8v-1zm-3-2H6v1h5v-1zm-3-2H6v1h2v-1zm9-9H3L2 2v16l1 1h14l1-1V2l-1-1zm-1 16H4V3h12v14z"/>
             </svg>
-            <div class="ml-2 text-center text-gray-900 text-sm font-medium">Pages</div>
-        </div>
-        <div class="px-4 mb-2 mt-6 text-sm text-gray-700 uppercase font-bold">Tools</div>
-        <div class="px-4 mb-1 flex justify-start items-center">
-            <svg class="ml-2 text-gray-600 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path class="heroicon-ui" d="M6 2h9a1 1 0 0 1 .7.3l4 4a1 1 0 0 1 .3.7v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.1.9-2 2-2zm9 2.41V7h2.59L15 4.41zM18 9h-3a2 2 0 0 1-2-2V4H6v16h12V9zm-2 7a1 1 0 0 1-1 1H9a1 1 0 0 1 0-2h6a1 1 0 0 1 1 1zm0-4a1 1 0 0 1-1 1H9a1 1 0 0 1 0-2h6a1 1 0 0 1 1 1zm-5-4a1 1 0 0 1-1 1H9a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1z"/>
+            <div :class="activeClass('pages') || hoverClass('pages') ?  'active-menu-text' : 'not-active-menu-text'">Pages</div>
+        </router-link>
+        <div class="px-2 mb-1 mt-4 text-sm text-gray-700 antialiased leading-relaxed tracking-normal uppercase font-semibold">Addons</div>
+        <router-link to="/nits-admin/themes" class="px-4 mb-1 flex justify-start items-center curser-pointer" @mouseover="hover = 'themes'" @mouseleave="hover = ''">
+            <div v-if="activeClass('themes') || hoverClass('themes')" class="py-1 h-4 -m-1 mr-1 border-l-2 border-teal-600"></div>
+            <svg :class="activeClass('themes') || hoverClass('themes') ?  'ml-2 h-4 w-4 text-teal-500' : 'ml-2 h-4 w-4 text-gray-700'" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M11 1C6 1 3 3 3 4l1 3c-3 1-4 3-3 4 0 1 1 3 4 3l5-2v-1a1 1 0 111 2c-1 2-4 3-6 3v1s2 2 6 2 6-2 6-2l2-13c0-1-3-3-8-3zM2 11c0-1 0-2 2-2a6085 6085 0 00-2 2zm9-5C7 6 5 5 5 4c0 0 2-2 6-2s6 2 6 2c0 1-2 2-6 2z"/>
             </svg>
-            <div class="ml-3 text-center text-gray-900 text-sm font-medium">Forms</div>
-        </div>
-        <div class="px-4 mb-1 text-black flex justify-start items-center">
-            <svg class="ml-2 text-gray-600 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path class="heroicon-ui" d="M15.6 15.47A4.99 4.99 0 0 1 7 12a5 5 0 0 1 10 0v1.5a1.5 1.5 0 1 0 3 0V12a8 8 0 1 0-4.94 7.4 1 1 0 1 1 .77 1.84A10 10 0 1 1 22 12v1.5a3.5 3.5 0 0 1-6.4 1.97zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            <div :class="activeClass('themes') || hoverClass('themes') ?  'active-menu-text' : 'not-active-menu-text'">Themes</div>
+        </router-link>
+        <router-link to="/nits-admin/plugins" class="px-4 mb-1 flex justify-start items-center curser-pointer" @mouseover="hover = 'plugins'" @mouseleave="hover = ''">
+            <div v-if="activeClass('plugins') || hoverClass('plugins')" class="py-1 h-4 -m-1 mr-1 border-l-2 border-teal-600"></div>
+            <svg :class="activeClass('plugins') || hoverClass('plugins') ?  'ml-2 h-4 w-4 text-teal-500' : 'ml-2 h-4 w-4 text-gray-700'" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M6 7l1-5H3L1 7c0 1 1 2 3 2l2-2zm4 2l3-2-1-5H8L7 7l3 2zm5 1v4H5v-4a4 4 0 01-2 0v7l1 1h12l1-1v-7h-1-1zm4-3l-2-5h-4l1 5 2 2c2 0 3-1 3-2z"/>
             </svg>
-            <div class="ml-2 text-center text-gray-900 text-sm font-medium">Updater</div>
-        </div>
-        <div class="px-4 mb-1 text-black flex justify-start items-center">
-            <svg class="ml-2 text-gray-600 h-4 w-4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Text_document" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                            <path d="M16,1H4C3.447,1,3,1.447,3,2v16c0,0.552,0.447,1,1,1h12c0.553,0,1-0.448,1-1V2C17,1.448,16.553,1,16,1z   M15,17H5V3h10V17z M13,5H7v2h6V5z M13,13H7v2h6V13z M13,9H7v2h6V9z"/>
-                        </svg>
-            <div class="ml-2 text-center text-gray-900 text-sm font-medium">Import</div>
-        </div>
-        <div class="px-4 mb-2 mt-6 text-sm text-gray-700 uppercase font-bold">Configure</div>
-        <div class="px-4 mb-1 text-black flex justify-start items-center">
-            <svg class="ml-2 text-gray-600 h-4 w-4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Compass" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                            <path d="M5.454,14.548c0,0,4.568-0.627,6.518-2.576s2.576-6.518,2.576-6.518S9.979,6.081,8.03,8.03  S5.454,14.548,5.454,14.548z M9.017,9.015c0.818-0.818,2.385-1.4,3.729-1.762c-0.361,1.342-0.945,2.92-1.76,3.732  c-0.543,0.545-1.426,0.545-1.969,0C8.472,10.442,8.472,9.56,9.017,9.015z M10.001,0.4C4.698,0.4,0.4,4.698,0.4,10  c0,5.303,4.298,9.601,9.601,9.601c5.301,0,9.6-4.298,9.6-9.601C19.601,4.698,15.302,0.4,10.001,0.4z M10,17.6  c-4.197,0-7.6-3.402-7.6-7.6c0-4.197,3.402-7.6,7.6-7.6c4.197,0,7.601,3.402,7.601,7.6C17.601,14.197,14.197,17.6,10,17.6z"/>
-                        </svg>
-            <div class="ml-3 text-center text-gray-900 text-sm font-medium">Addons</div>
-        </div>
-        <div class="px-4 mb-1 text-black flex justify-start items-center">
-            <svg class="ml-2 text-gray-600 h-4 w-4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Text_document" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                            <path d="M16,1H4C3.447,1,3,1.447,3,2v16c0,0.552,0.447,1,1,1h12c0.553,0,1-0.448,1-1V2C17,1.448,16.553,1,16,1z   M15,17H5V3h10V17z M13,5H7v2h6V5z M13,13H7v2h6V13z M13,9H7v2h6V9z"/>
-                        </svg>
-            <div class="ml-2 text-center text-gray-900 text-sm font-medium">Settings</div>
-        </div>
-        <div class="px-4 mb-1 text-black flex justify-start items-center">
-            <svg class="ml-2 text-gray-600 h-4 w-4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Text_document" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                            <path d="M16,1H4C3.447,1,3,1.447,3,2v16c0,0.552,0.447,1,1,1h12c0.553,0,1-0.448,1-1V2C17,1.448,16.553,1,16,1z   M15,17H5V3h10V17z M13,5H7v2h6V5z M13,13H7v2h6V13z M13,9H7v2h6V9z"/>
-                        </svg>
-            <div class="ml-2 text-center text-gray-900 text-sm font-medium">Users</div>
-        </div>
+            <div :class="activeClass('plugins') || hoverClass('plugins') ?  'active-menu-text' : 'not-active-menu-text'">Plugins</div>
+        </router-link>
+        <div class="px-2 mb-1 mt-4 text-sm text-gray-700 antialiased leading-relaxed tracking-normal uppercase font-semibold">Configure</div>
+        <router-link to="/nits-admin/menus" class="px-4 mb-1 flex justify-start items-center curser-pointer" @mouseover="hover = 'menus'" @mouseleave="hover = ''">
+            <div v-if="activeClass('menus') || hoverClass('menus')" class="py-1 h-4 -m-1 mr-1 border-l-2 border-teal-600"></div>
+            <svg :class="activeClass('menus') || hoverClass('menus') ?  'ml-2 h-4 w-4 text-teal-500' : 'ml-2 h-4 w-4 text-gray-700'" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M18 2H2L0 4v12l2 2h16l2-2V4l-2-2zM5 4a1 1 0 11-1 1 1 1 0 011-1zM2 5a1 1 0 111 0 1 1 0 01-1 0zm16 11H2V7h16v9zm0-11H6V4h12v1z"/>
+            </svg>
+            <div :class="activeClass('menus') || hoverClass('menus') ?  'active-menu-text' : 'not-active-menu-text'">Menus</div>
+        </router-link>
+        <router-link to="/nits-admin/users" class="px-4 mb-1 flex justify-start items-center curser-pointer" @mouseover="hover = 'users'" @mouseleave="hover = ''">
+            <div v-if="activeClass('users') || hoverClass('users')" class="py-1 h-4 -m-1 mr-1 border-l-2 border-teal-600"></div>
+            <svg :class="activeClass('users') || hoverClass('users') ?  'ml-2 h-4 w-4 text-teal-500' : 'ml-2 h-4 w-4 text-gray-700'" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16 19c0-2-2-3-4-4s-3-2-3-4l1-2 1-2-1-1 1-1c0-1-1-3-3-3l1-2C6 0 6 1 5 2L3 5l1 1-1 1 1 2 1 2c0 2 0 3-2 4s-3 2-3 4v1h16v-1zm3-6c-2 0-2-1-2-2l1-1V9 8 7c0-1 0-2-2-2s-3 1-3 2l1 1-1 1 1 1 1 1-2 2v1c1 0 4 1 4 4h3v-2l-1-3z"/>
+            </svg>
+            <div :class="activeClass('users') || hoverClass('users') ?  'active-menu-text' : 'not-active-menu-text'">Users</div>
+        </router-link>
+        <router-link to="/nits-admin/settings" class="px-4 mb-1 flex justify-start items-center curser-pointer" @mouseover="hover = 'settings'" @mouseleave="hover = ''">
+            <div v-if="activeClass('settings') || hoverClass('settings')" class="py-1 h-4 -m-1 mr-1 border-l-2 border-teal-600"></div>
+            <svg :class="activeClass('settings') || hoverClass('settings') ?  'ml-2 h-4 w-4 text-teal-500' : 'ml-2 h-4 w-4 text-gray-700'" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M17 10l1-2V6l-3-1-1-3h-1l-3 1-3-1H6L5 5 2 6v2l1 2-1 3v1l3 1 1 3h1l3-1 3 1h1l1-3 3-1v-2l-1-2zm-7 4a4 4 0 110-8 4 4 0 010 8z"/>
+            </svg>
+            <div :class="activeClass('settings') || hoverClass('settings') ?  'active-menu-text' : 'not-active-menu-text'">Settings</div>
+        </router-link>
     </div>
 </template>
 
 <script>
     export default {
-        name: "MenuOne"
+        name: "MenuOne",
+        props: {
+            active: {
+                type: String,
+                default: ''
+            },
+        },
+        data() {
+            return {
+                hover: '',
+            }
+        },
+        methods: {
+            activeClass(menu) {
+                return this.active === menu;
+            },
+            hoverClass(menu) {
+                return this.hover === menu;
+            }
+        }
     }
 </script>
 
 <style scoped>
+    .active-menu-text {
+        @apply ml-3 text-center text-sm antialiased leading-snug tracking-wide font-medium text-teal-600;
+    }
 
+    .not-active-menu-text {
+        @apply ml-3 text-center text-sm antialiased leading-snug tracking-wide font-medium text-gray-700;
+    }
 </style>

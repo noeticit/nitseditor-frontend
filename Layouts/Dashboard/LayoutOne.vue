@@ -1,11 +1,11 @@
 <template>
     <div class="h-screen w-screen flex-col justify-between bg-gray-200">
         <div class="flex h-full">
-            <div v-if="menuIsOpen" class="px-4">
+            <div v-if="menuIsOpen" class="px-1">
                 <img class="h-16" src="/nits-assets/images/logo.png" alt="NitsEditor Logo">
-                <menu-one class="w-48 pb-6 h-full mb-8 mt-8 overflow-y-scroll"></menu-one>
+                <menu-one class="w-48 pb-6 h-full mb-8 mt-8 overflow-y-scroll" :active="active"></menu-one>
             </div>
-            <div v-if="!menuIsOpen" class="px-4">
+            <div v-if="!menuIsOpen" class="px-2">
                 <div class="w-4">
                     <img class="h-16" src="/nits-assets/images/logo.png" alt="NitsEditor Logo">
                     <svg class="mt-8 text-teal-500 h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -22,10 +22,10 @@
                     </svg>
                 </div>
             </div>
-            <div class="w-full p-2 bg-gray-200">
+            <div class="w-full bg-gray-200">
                 <top-bar v-on:toggle-menu="menuIsOpen = !menuIsOpen"></top-bar>
                 <main>
-                    <div class="h-screen max-w-7xl mx-auto py-3 sm:px-3 lg:px-3 overflow-auto">
+                    <div class="h-screen max-w-7xl mx-auto pt-2 overflow-auto">
                         <slot></slot>
                     </div>
                 </main>
@@ -38,9 +38,15 @@
 <script>
     export default {
         name: "DashboardLayoutOne",
+        props: {
+            active: {
+                type: String,
+                default: ''
+            },
+        },
         data() {
             return {
-                menuIsOpen: false
+                menuIsOpen: true
             }
         },
         components: {
