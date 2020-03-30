@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white rounded-lg shadow-lg mt-5 min-h-full jsutify-center">
+    <div class="bg-white rounded-lg shadow-lg mt-1 min-h-full jsutify-center">
         <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center">
             <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans">Basic Table</div>
             <div class="text-right flex">
