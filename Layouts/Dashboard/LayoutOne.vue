@@ -25,7 +25,7 @@
             <div class="w-full bg-gray-200">
                 <top-bar v-on:toggle-menu="menuIsOpen = !menuIsOpen"></top-bar>
                 <main>
-                    <div class="h-screen max-w-7xl mx-auto pt-2 overflow-auto">
+                    <div class="h-screen max-w-7xl mx-auto overflow-auto">
                         <slot></slot>
                     </div>
                 </main>
