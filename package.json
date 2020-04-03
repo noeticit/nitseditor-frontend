@@ -35,10 +35,11 @@
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
     "tailwindcss": "^1.2.0",
+    "tailwindcss-spinner": "^1.0.0",
     "vue": "^2.6.11",
+    "vue-route-generator": "^0.4.3",
     "vue-router": "^3.1.6",
-    "vue-template-compiler": "^2.6.11",
-    "vue-route-generator": "^0.4.3"
+    "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
     "@popperjs/core": "^2.0.0-rc.1",
