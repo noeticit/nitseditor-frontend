@@ -158,13 +158,17 @@
                         Drag each item into the order you prefer. Click the arrow on the right of the item to reveal additional configuration options.
 
                         <div id="app" class=" bg-gray-200 flex items-center mt-5 p-5">
-                            <ul class="w-full max-w-md">
-                                <li v-for="user in users"
-                                    :key="user.id"
-                                    class="p-4 mb-3 flex justify-between items-center bg-white shadow rounded-lg cursor-move">
-                                    {{user.name}}
-                                </li>
-                            </ul>
+                            <draggable tag="ul"
+                                       class="w-full max-w-md"
+                                       ghost-class="moving-card"
+                                       :list="users"
+                                       :animation="200">
+                                    <li v-for="user in users"
+                                        :key="user.id"
+                                        class="p-4 mb-3 flex justify-between items-center bg-white shadow rounded-lg cursor-move">
+                                        {{user.name}}
+                                    </li>
+                            </draggable>
                         </div>
                     </div>
                 </div>
@@ -174,6 +178,8 @@
 </template>
 
 <script>
+    import Draggable from 'vuedraggable'
+
     export default {
         name: "menus",
         data() {
@@ -210,18 +216,20 @@
         },
         components: {
             'DashboardLayoutOne': () => import('./../Layouts/Dashboard/LayoutOne'),
+             Draggable
         },
         methods: {
-            onEdit(user) {
-                alert(`Editing ${user.name}`);
-            },
-            onDelete(user) {
-                alert(`Deleting ${user.name}`);
-            }
+
         }
     }
 </script>
 
 <style scoped>
 
+</style>
+
+<style lang="scss">
+    .moving-card {
+        @apply opacity-50 bg-gray-100 border border-blue-500;
+    }
 </style>
