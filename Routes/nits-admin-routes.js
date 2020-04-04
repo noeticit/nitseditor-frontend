@@ -23,6 +23,16 @@ function Pages() {
 function Plugins() {
   return import(/* webpackChunkName: "plugins" */ 'NitsAdminPages/plugins.vue')
 }
+function PluginsAddPlugins() {
+  return import(
+    /* webpackChunkName: "plugins-add-plugins" */ 'NitsAdminPages/plugins/add-plugins.vue'
+  )
+}
+function PluginsMarketplace() {
+  return import(
+    /* webpackChunkName: "plugins-marketplace" */ 'NitsAdminPages/plugins/marketplace.vue'
+  )
+}
 function Settings() {
   return import(
     /* webpackChunkName: "settings" */ 'NitsAdminPages/settings.vue'
@@ -33,6 +43,11 @@ function Themes() {
 }
 function Users() {
   return import(/* webpackChunkName: "users" */ 'NitsAdminPages/users.vue')
+}
+function UserAdd() {
+  return import(
+    /* webpackChunkName: "user-add" */ 'NitsAdminPages/user/add.vue'
+  )
 }
 
 export default [
@@ -69,7 +84,19 @@ export default [
   {
     name: 'nits-admin-plugins',
     path: '/nits-admin/plugins',
-    component: Plugins
+    component: Plugins,
+    children: [
+      {
+        name: 'nits-admin-plugins-add-plugins',
+        path: 'add-plugins',
+        component: PluginsAddPlugins
+      },
+      {
+        name: 'nits-admin-plugins-marketplace',
+        path: 'marketplace',
+        component: PluginsMarketplace
+      }
+    ]
   },
   {
     name: 'nits-admin-settings',
@@ -85,5 +112,10 @@ export default [
     name: 'nits-admin-users',
     path: '/nits-admin/users',
     component: Users
+  },
+  {
+    name: 'nits-admin-user-add',
+    path: '/nits-admin/user/add',
+    component: UserAdd
   }
 ]
