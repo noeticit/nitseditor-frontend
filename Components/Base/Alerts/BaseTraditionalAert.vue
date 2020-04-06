@@ -1,6 +1,6 @@
 <template>
 
-    <div class="w-1/3 bg-red-100 border border-red-400 text-red-700 px-4 text-center py-3 rounded inset-y-0 right-0 relative" role="alert">
+    <div class="w-1/3 bg-red-100 border border-red-400 text-red-700 px-4 text-center py-3 rounded inset-y-0 right-0 absolute" role="alert">
         <strong class="font-bold">Holy smokes!</strong>
         <span class="block sm:inline">Something seriously bad happened.</span>
         <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
