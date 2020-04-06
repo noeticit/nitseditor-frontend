@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="flex">
         <ul class="flex">
             <li class="mr-3 mt-4 pl-2">
                 <a class="rounded py-3 px-3 border border-blue-600  bg-blue-600 text-white bg-transparent" href="#">

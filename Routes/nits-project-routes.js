@@ -1,8 +1,18 @@
 function Index() {
   return import(/* webpackChunkName: "index" */ 'ProjectPages/index.vue')
 }
+function Dropdowndemo() {
+  return import(
+    /* webpackChunkName: "dropdowndemo" */ 'ProjectPages/dropdowndemo.vue'
+  )
+}
 function Image() {
   return import(/* webpackChunkName: "Image" */ 'ProjectPages/Image.vue')
+}
+function PopupForm() {
+  return import(
+    /* webpackChunkName: "PopupForm" */ 'ProjectPages/PopupForm.vue'
+  )
 }
 function RegistrationForm() {
   return import(
@@ -31,9 +41,19 @@ export default [
     component: Index
   },
   {
+    name: 'dropdowndemo',
+    path: '/dropdowndemo',
+    component: Dropdowndemo
+  },
+  {
     name: 'Image',
     path: '/Image',
     component: Image
+  },
+  {
+    name: 'PopupForm',
+    path: '/PopupForm',
+    component: PopupForm
   },
   {
     name: 'RegistrationForm',
