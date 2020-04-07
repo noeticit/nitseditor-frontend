@@ -1,6 +1,6 @@
 <template>
     <div class="w-94% max-h-full m-8 bg-white shadow-lg border rounded">
-<div class="mt-5 ml-10 mr-10 mb-10">
+        <div class="mt-5 ml-10 mr-10 mb-10">
         <div class="w-full bg-gray-light text-center px-10 mb-5">
             <h4 class="font-serif text-xl">Sizing</h4>
         </div><hr>
@@ -16,7 +16,7 @@
         <div class="shadow w-full bg-gray-100 rounded mt-3">
             <div class="bg-teal-300 text-xs leading-none rounded py-1 text-center text-white" style="width: 100%"></div>
         </div>
-</div>
+        </div>
     </div>
 </template>
 
