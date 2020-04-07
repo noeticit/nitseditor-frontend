@@ -26,7 +26,7 @@
     "url": "git+https://github.com/noeticit/nitseditor.git"
   },
   "homepage": "https://nitseditor.com",
-  "devDependencies": {
+  "dependencies": {
     "axios": "^0.19",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
@@ -41,9 +41,7 @@
     "vue": "^2.6.11",
     "vue-route-generator": "^0.4.3",
     "vue-router": "^3.1.6",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "dependencies": {
+    "vue-template-compiler": "^2.6.11",
     "@popperjs/core": "^2.0.0-rc.1",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "laravel-mix-alias": "^1.0.2",
