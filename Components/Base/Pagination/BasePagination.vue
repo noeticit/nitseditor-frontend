@@ -37,7 +37,7 @@
               </a>
             </li>
             <li class="mr-1">
-            <a class="rounded py-2 px-3 h-8 mt-1 pt-1 inline-block text-gray-700 bg-transparent hover:bg-blue-600 hover:text-white focus:border-blue-300 ">
+            <a class="rounded py-2 px-3 h-8 mt-1 pt-1 inline-block bg-blue-600 text-white bg-transparent hover:bg-blue-600 hover:text-white focus:border-blue-300 ">
                 2
               </a>
             </li>
@@ -88,11 +88,14 @@
       </span>
             </div>
 
-            <div class="flex ml-32">
-                <input class="rounded w-20 h-8 pl-3 border border-blue-200 text-xs" type="text" placeholder="Page No." >
-                <button class=" py-1 h-8 w-20 text-xs rounded shadow bg-blue-400 hover:bg-blue-600 text-white ">Go To Page</button>
-            </div>
-
+    <select class="flex ml-40 w-16 h-8 rounded ml-4 bg-blue-100 text-blue-600">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="20">30</option>
+                <option value="20">40</option>
+                <option value="20">50</option>
+                <option value="20">60</option>
+            </select>
         </div>
 
     </div>
@@ -101,7 +104,7 @@
 
 <script>
     export default {
-        name: "BaseBgHoverPagination"
+        name: "BasePagination"
     }
 </script>
 
