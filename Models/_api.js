@@ -9,7 +9,33 @@ export default class {
      * @return {Promise}
      */
     get(url) {
-        return axios.get(url, {headers: getHeader()});
+        return new Promise((resolve, reject) => {
+            axios.get(url, {headers: getHeader()}).then(response => {
+                if (response.status === 200) {
+                    return resolve(response);
+                }
+            }).catch((error) => {
+                return reject(error);
+            })
+        });
+    }
+
+    /**
+     * Send POST Request
+     * @param  {string} url
+     * @param  {object} payload Data object to send
+     * @return {Promise}
+     */
+    post(url, payload) {
+        return new Promise((resolve, reject) => {
+            axios.post(url, payload, {headers: getHeader()}).then(response => {
+                if (response.status === 200) {
+                    return resolve(response);
+                }
+            }).catch((error) => {
+                return reject(error);
+            })
+        });
     }
 
     /**
@@ -18,7 +44,15 @@ export default class {
      * @return {Promise}
      */
     find(url) {
-        return axios.get(url, {headers: getHeader()});
+        return new Promise((resolve, reject) => {
+            axios.get(url, {headers: getHeader()}).then(response => {
+                if (response.status === 200) {
+                    return resolve(response);
+                }
+            }).catch((error) => {
+                return reject(error);
+            })
+        });
     }
 
     /**
@@ -28,7 +62,15 @@ export default class {
      * @return {Promise}
      */
     create(url, payload) {
-        return axios.post(url, payload, {headers: getHeader()})
+        return new Promise((resolve, reject) => {
+            axios.post(url, payload, {headers: getHeader()}).then(response => {
+                if (response.status === 200) {
+                    return resolve(response);
+                }
+            }).catch((error) => {
+                return reject(error);
+            })
+        });
     }
 
     /**
@@ -38,7 +80,15 @@ export default class {
      * @return {Promise}
      */
     update(url, payload) {
-        return axios.patch(url, payload, {headers: getHeader()})
+        return new Promise((resolve, reject) => {
+            axios.patch(url, payload, {headers: getHeader()}).then(response => {
+                if (response.status === 200) {
+                    return resolve(response);
+                }
+            }).catch((error) => {
+                return reject(error);
+            })
+        });
     }
 
     /**
@@ -47,7 +97,15 @@ export default class {
      * @return {Promise}
      */
     delete(url) {
-        return axios.delete(url, {headers: getHeader()});
+        return new Promise((resolve, reject) => {
+            axios.delete(url, {headers: getHeader()}).then(response => {
+                if (response.status === 200) {
+                    return resolve(response);
+                }
+            }).catch((error) => {
+                return reject(error);
+            })
+        });
     }
 
 }
