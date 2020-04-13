@@ -1,7 +1,4 @@
 
-
-
-
 <template>
     <button class="flex border-transparent rounded-full text-gray-800 px-4 py-2 focus:outline-none focus:shadow-xl focus:bg-gray-200 hover:bg-gray-200 hover:shadow-lg justify-around">
         <svg class="inline-block h-4 w-4 mr-1 mt-1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">

@@ -60,5 +60,7 @@ module.exports = {
     },
     plugins: [
         require('tailwindcss-spinner')(), // no options to configure
+        // require('tailwindcss-pagination')({ /* Customizations here */ }),
+
     ],
 };
