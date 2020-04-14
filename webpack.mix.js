@@ -39,6 +39,7 @@ mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/i
                 ProjectModels: path.resolve('./resources/models'),
                 ProjectPages: path.resolve('./resources/pages'),
                 NitsAdminPages: path.resolve(__dirname, 'Pages'),
+                NitsComponents: path.resolve(__dirname, './Components'),
                 Plugins: path.resolve('./plugins'),
             }
         },
