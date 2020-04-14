@@ -22,7 +22,6 @@
         },
         components: {
             'DashboardLayoutOne': () => import('./../Layouts/Dashboard/LayoutOne'),
-            'SearchFilters': () => import('./../Components/App/SearchFilters'),
         }
     }
 </script>
