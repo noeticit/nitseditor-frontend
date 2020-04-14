@@ -48,7 +48,6 @@ function generateComponents(directory, prefix, componentPrefix = '') {
 }
 
 function generatePluginsComponents() {
-
     fs.readdirSync(path.resolve('./plugins'), {withFileTypes: true}).forEach((entry) => {
         let pluginAuthorPath = path.join('./plugins', entry.name);
         let authorName = entry.name;

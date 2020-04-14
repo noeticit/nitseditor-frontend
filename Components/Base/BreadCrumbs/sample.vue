@@ -1,13 +1,13 @@
 <template>
-    <router-view></router-view>
+    
 </template>
 
 <script>
     export default {
-        name: 'Layout'
+        name: "sample"
     }
 </script>
 
-<style>
+<style scoped>
 
 </style>
