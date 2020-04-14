@@ -2,7 +2,7 @@
     <dashboard-layout-one active="plugins">
         <base-bread-crumb-one name="Plugins" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
         <div class="float-right mr-4 mb-4">
-            <router-link to="/nits-admin/plugins/add-plugins" class="inline-block max-w-xs w-26 px-4 py-2 border border-solid border-teal-600 rounded-md shadow-md
+            <router-link to="/nits-admin/plugin/add-plugins" class="inline-block max-w-xs w-26 px-4 py-2 border border-solid border-teal-600 rounded-md shadow-md
             hover:bg-gray-400 hover:text-teal-800 focus:outline-none focus:shadow-outline text-teal-600 text-sm tracking-wider font-semibold">Add Plugins</router-link>
         </div>
         <div class="flex w-full justify-center">
