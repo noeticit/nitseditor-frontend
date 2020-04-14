@@ -18,7 +18,7 @@ function exportNitsEditorComponents() {
     //Plugins components...
     generatePluginsComponents();
 
-    fs.writeFileSync(path.resolve(__dirname, './../Components/components.js'), filecontents);
+    fs.writeFileSync(path.resolve(__dirname, './../Models/_components.js'), filecontents);
     
 }
 
