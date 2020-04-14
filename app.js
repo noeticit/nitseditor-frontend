@@ -9,7 +9,7 @@ require('./bootstrap');
 import VueRouter from 'vue-router';
 import routes from './Models/_route';
 import Layout from './Layouts/Layout';
-import auth from "./Models/_auth";
+import authentication from "ProjectModels/_auth";
 import api from './Models/_api';
 import session from './Models/_session';
 
@@ -27,8 +27,8 @@ const sessions = new session(process.env.MIX_STORAGE_PERSIST, process.env.MIX_IN
 sessions.start();
 Vue.prototype.$session = sessions;
 
-const authentication = new auth();
-Vue.prototype.$auth = authentication;
+const auth = new authentication();
+Vue.prototype.$auth = auth;
 
 const apis = new api();
 Vue.prototype.$api = apis;
@@ -37,11 +37,11 @@ Vue.prototype.$api = apis;
  */
 
 router.beforeEach((to, from, next) => {
-    if(to.meta.requiresAuth && authentication.isLoggedIn())
+    if(to.meta.requiresAuth && auth.isLoggedIn())
         next();
-    if(!to.meta.requiresAuth && authentication.isLoggedIn())
+    if(!to.meta.requiresAuth && auth.isLoggedIn())
         next();
-    if(to.meta.requiresAuth && !authentication.isLoggedIn())
+    if(to.meta.requiresAuth && !auth.isLoggedIn())
         next ({path: '/'});
         // var pathname=(window.location.pathname)  //      /admin/plugins/Biltrax/project-search
 
@@ -52,7 +52,7 @@ router.beforeEach((to, from, next) => {
         //     sessions.set('last_url', path);   // plugins/Biltrax/project-search
         // }
 
-    if(!to.meta.requiresAuth && !authentication.isLoggedIn())
+    if(!to.meta.requiresAuth && !auth.isLoggedIn())
         next()
 });
 

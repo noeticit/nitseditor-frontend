@@ -193,7 +193,6 @@
         },
         components: {
             'DashboardLayoutOne': () => import('./../Layouts/Dashboard/LayoutOne'),
-            'MenuBuilder': () => import('../Components/App/MenuBuilder')
         }
     }
 </script>

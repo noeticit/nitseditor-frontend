@@ -1,5 +1,7 @@
 const fs = require('fs');
 
+let filecontents = 'import Vue from \'vue\';\n\n';
+
 function NitsComponentsPlugin () {}
 
 NitsComponentsPlugin.prototype.apply = function (compiler) {
@@ -10,62 +12,59 @@ NitsComponentsPlugin.prototype.apply = function (compiler) {
 
 function exportNitsEditorComponents() {
 
-    let filecontents = 'import Vue from \'vue\';\n\n';
+    //NitsEditor components...
+    generateComponents(path.resolve(__dirname, './../Components'), 'NitsComponents');
 
-    fs.readdir(path.resolve(__dirname, './../Components'), function (err, files) {
+    //Plugins components...
+    generatePluginsComponents();
 
-        //handling error
-        if (err) {
-            return console.log('Unable to scan directory: ' + err);
-        }
-
-        //listing all files using forEach
-        files.forEach(function (file) {
-            
-            // Extract the plugins name.
-            let folderName = file;
-
-            console.log(file);
-            
-            fs.readdir(path.resolve(__dirname, './../Components/'+folderName), function (err, files) {
-
-                // console.log(files);
-                files.forEach(function (file) {
-
-                    //Need to check the file is directory or file.
-                    fs.statSync('./../Components/'+folderName, function(err, stats) {
-                        if (stats.isFile()) {
-                            console.log('    file');
-                        }
-                        if (stats.isDirectory()) {
-                            console.log('    directory');
-                        }
-                    });
-                    // let stats = fs.statSync('./../Components/'+file);
-                    // console.log('is file ? ' + stats.isFile());
-
-                    // var stats = fs.statSync("c:\\demo");
-                    // console.log('is directory ? ' + stats.isDirectory());
-                    //Need to check the file is having .vue as extension.
-                    
-                    let filename = file.replace('.vue', '');
-
-                    filecontents =  filecontents + `Vue.component(\'${filename}\', () => import(\'NitsComponents/${folderName}/${file}.vue\'));\n`;
-
-                    console.log(filecontents);
-
-                    fs.writeFileSync(path.resolve(__dirname, './nits-components.js'), filecontents);
-                });
-            });
-        });
-
-    });
+    fs.writeFileSync(path.resolve(__dirname, './../Models/_components.js'), filecontents);
     
 }
 
-function exportNitsEditorPluginsComponents () {
-    //We need to fomrat a architecture. ie. we have to concatenate the component name
-    //Author name and plugin name Vue.component('author-plugin-component-name)
+function generateComponents(directory, prefix, componentPrefix = '') {
+
+    fs.readdirSync(directory, {withFileTypes: true}).forEach((entry) => {
+        let fullPath = path.join(directory, entry.name);
+        if(entry.isDirectory()) {
+            generateComponents(fullPath, prefix+'/'+entry.name, componentPrefix);
+        }
+        else if(entry.isFile()){
+            if(entry.name.includes('.vue')) {
+                let comp = entry.name.replace('.vue', '');
+
+                let componentName = comp.charAt(0).toUpperCase() + comp.slice(1);
+
+                filecontents = filecontents + `Vue.component(\'${componentPrefix + componentName}\', () => import(\'${prefix}/${entry.name}\'));\n`;
+            }
+        } else {
+            // apparently there are some other things that could be here
+            // like a symlink, so this is defensive coding
+            console.log(`unexpected type: ${fullPath}`);
+        }
+    });
+
+    return filecontents;
+}
+
+function generatePluginsComponents() {
+    fs.readdirSync(path.resolve('./plugins'), {withFileTypes: true}).forEach((entry) => {
+        let pluginAuthorPath = path.join('./plugins', entry.name);
+        let authorName = entry.name;
+        if(entry.isDirectory()) {
+            fs.readdirSync(pluginAuthorPath, {withFileTypes: true}).forEach((entry) => {
+                let pluginpath = path.join(pluginAuthorPath, entry.name+'/components');
+                let pluginName = entry.name;
+                if(entry.isDirectory()) {
+
+                    let authorPrefix = authorName.charAt(0).toUpperCase() + authorName.toLowerCase().slice(1);
+                    let pluginPrefix = pluginName.charAt(0).toUpperCase() + pluginName.toLowerCase().slice(1);
+
+                    generateComponents(pluginpath, 'Plugins/'+authorName+'/'+pluginName+'/components', authorPrefix+pluginPrefix)
+                }
+            })
+        }
+    })
 }
 
 module.exports = NitsComponentsPlugin;

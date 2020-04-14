@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4">
-                    <router-link to="/nits-admin/plugins/marketplace" class=" transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-100 bg-white block text-grey-dark h-full shadow rounded shadow-sm hover:shadow-md hover-lift cursor-pointer">
+                    <router-link to="/nits-admin/plugin/marketplace" class=" transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-100 bg-white block text-grey-dark h-full shadow rounded shadow-sm hover:shadow-md hover-lift cursor-pointer">
                         <div class="bg-center bg-cover block h-48  cursor-pointer rounded-t" >
                             <img src="/nits-assets/images/workshop.jpeg" class="rounded-t absolute ">
                             <span class="relative pin-t pin-r m-1 text-sm font-bold px-sm pb-px rounded-sm z-index-10 bg-darken text-white uppercase">$39</span>
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4">
-                    <router-link to="/nits-admin/plugins/marketplace" class=" transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-100 bg-white block text-grey-dark h-full shadow rounded shadow-sm hover:shadow-md hover-lift cursor-pointer">
+                    <router-link to="/nits-admin/plugin/marketplace" class=" transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-100 bg-white block text-grey-dark h-full shadow rounded shadow-sm hover:shadow-md hover-lift cursor-pointer">
                         <div class="bg-center bg-cover block h-48  cursor-pointer rounded-t" >
                             <img src="/nits-assets/images/workshop.jpeg" class="rounded-t absolute ">
                             <span class="relative pin-t pin-r m-1 text-sm font-bold px-sm pb-px rounded-sm z-index-10 bg-darken text-white uppercase">$39</span>
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4">
-                    <router-link to="/nits-admin/plugins/marketplace" class=" transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-100 bg-white block text-grey-dark h-full shadow rounded shadow-sm hover:shadow-md hover-lift cursor-pointer">
+                    <router-link to="/nits-admin/plugin/marketplace" class=" transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-100 bg-white block text-grey-dark h-full shadow rounded shadow-sm hover:shadow-md hover-lift cursor-pointer">
                         <div class="bg-center bg-cover block h-48  cursor-pointer rounded-t" >
                             <img src="/nits-assets/images/workshop.jpeg" class="rounded-t absolute ">
                             <span class="relative pin-t pin-r m-1 text-sm font-bold px-sm pb-px rounded-sm z-index-10 bg-darken text-white uppercase">$39</span>
@@ -64,7 +64,7 @@
                 </div>
 
                 <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4">
-                    <router-link to="/nits-admin/plugins/marketplace" class=" transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-100 bg-white block text-grey-dark h-full shadow rounded shadow-sm hover:shadow-md hover-lift cursor-pointer">
+                    <router-link to="/nits-admin/plugin/marketplace" class=" transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-100 bg-white block text-grey-dark h-full shadow rounded shadow-sm hover:shadow-md hover-lift cursor-pointer">
                         <div class="bg-center bg-cover block h-48  cursor-pointer rounded-t" >
                             <img src="/nits-assets/images/workshop.jpeg" class="rounded-t absolute ">
                             <span class="relative pin-t pin-r m-1 text-sm font-bold px-sm pb-px rounded-sm z-index-10 bg-darken text-white uppercase">$39</span>
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4">
-                    <router-link to="/nits-admin/plugins/marketplace" class=" transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-100 bg-white block text-grey-dark h-full shadow rounded shadow-sm hover:shadow-md hover-lift cursor-pointer">
+                    <router-link to="/nits-admin/plugin/marketplace" class=" transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-100 bg-white block text-grey-dark h-full shadow rounded shadow-sm hover:shadow-md hover-lift cursor-pointer">
                         <div class="bg-center bg-cover block h-48  cursor-pointer rounded-t" >
                             <img src="/nits-assets/images/workshop.jpeg" class="rounded-t absolute ">
                             <span class="relative pin-t pin-r m-1 text-sm font-bold px-sm pb-px rounded-sm z-index-10 bg-darken text-white uppercase">$39</span>
@@ -94,7 +94,7 @@
                 </div>
 
                 <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4">
-                    <router-link to="/nits-admin/plugins/marketplace" class=" transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-100 bg-white block text-grey-dark h-full shadow rounded shadow-sm hover:shadow-md hover-lift cursor-pointer">
+                    <router-link to="/nits-admin/plugin/marketplace" class=" transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-100 bg-white block text-grey-dark h-full shadow rounded shadow-sm hover:shadow-md hover-lift cursor-pointer">
                         <div class="bg-center bg-cover block h-48  cursor-pointer rounded-t" >
                             <img src="/nits-assets/images/workshop.jpeg" class="rounded-t absolute ">
                             <span class="relative pin-t pin-r m-1 text-sm font-bold px-sm pb-px rounded-sm z-index-10 bg-darken text-white uppercase">$39</span>
@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4">
-                    <router-link to="/nits-admin/plugins/marketplace" class=" transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-100 bg-white block text-grey-dark h-full shadow rounded shadow-sm hover:shadow-md hover-lift cursor-pointer">
+                    <router-link to="/nits-admin/plugin/marketplace" class=" transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-100 bg-white block text-grey-dark h-full shadow rounded shadow-sm hover:shadow-md hover-lift cursor-pointer">
                         <div class="bg-center bg-cover block h-48  cursor-pointer rounded-t" >
                             <img src="/nits-assets/images/workshop.jpeg" class="rounded-t absolute ">
                             <span class="relative pin-t pin-r m-1 text-sm font-bold px-sm pb-px rounded-sm z-index-10 bg-darken text-white uppercase">$39</span>
