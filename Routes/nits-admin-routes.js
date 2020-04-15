@@ -3,11 +3,11 @@ function Index() {
 }
 function Dashboard() {
   return import(
-    /* webpackChunkName: "dashboard" */ 'NitsAdminPages/dashboard.vue'
+    /* webpackChunkName: "Dashboard" */ 'NitsAdminPages/Dashboard.vue'
   )
 }
 function Login() {
-  return import(/* webpackChunkName: "login" */ 'NitsAdminPages/login.vue')
+  return import(/* webpackChunkName: "Login" */ 'NitsAdminPages/Login.vue')
 }
 function Menus() {
   return import(/* webpackChunkName: "menus" */ 'NitsAdminPages/menus.vue')
@@ -42,13 +42,13 @@ export default [
     component: Index
   },
   {
-    name: 'nits-admin-dashboard',
-    path: '/nits-admin/dashboard',
+    name: 'nits-admin-Dashboard',
+    path: '/nits-admin/Dashboard',
     component: Dashboard
   },
   {
-    name: 'nits-admin-login',
-    path: '/nits-admin/login',
+    name: 'nits-admin-Login',
+    path: '/nits-admin/Login',
     component: Login
   },
   {
