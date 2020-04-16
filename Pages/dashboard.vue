@@ -23,11 +23,7 @@
             }
         },
         components: {
-            'DashboardLayoutOne': () => import('./../Layouts/Dashboard/LayoutOne'),
-            'SiteInfoWidget': () => import('./../Components/App/SiteInfoWidget'),
-            'AnalyticsOverview': () => import('./../Components/App/AnalyticsOverview'),
-            'EmailAd': () => import('./../Components/App/EmailAd'),
-            'DashboardTaskInfo': () => import('./../Components/App/DashboardTaskInfo'),
+            'DashboardLayoutOne': () => import('./../Layouts/Dashboard/LayoutOne')
         }
     }
 </script>

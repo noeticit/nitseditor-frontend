@@ -9,7 +9,8 @@ require('./bootstrap');
 import VueRouter from 'vue-router';
 import routes from './Models/_route';
 import Layout from './Layouts/Layout';
-import {authentication} from "ProjectModels/_auth";
+import authentication from "ProjectModels/_auth";
+import api from './Models/_api';
 import session from './Models/_session';
 
 window.Vue = require('vue');
@@ -28,6 +29,9 @@ Vue.prototype.$session = sessions;
 
 const auth = new authentication();
 Vue.prototype.$auth = auth;
+
+const apis = new api();
+Vue.prototype.$api = apis;
 /**
  * Middleware to check authentication
  */

@@ -6,9 +6,12 @@
                 <div class="inline-flex items-center rounded p-2 bg-indigo-400">
                     <span class="text-center text-sm antialiased tracking-wide leading-snug font-semibold font-sans text-white">Export</span>
                 </div>
-                <div class="inline-flex ml-1 items-center rounded p-2 bg-teal-500">
+                <div class="inline-flex ml-1 items-center rounded p-2 bg-yellow-400">
                     <span class="text-center text-sm antialiased tracking-wide leading-snug font-semibold font-sans text-white">Columns</span>
                 </div>
+                <router-link to="/nits-admin/user/add" class="inline-flex ml-1 items-center rounded p-2 bg-teal-500">
+                    <span class="text-center text-sm antialiased tracking-wide leading-snug font-semibold font-sans text-white">Add</span>
+                </router-link>
             </div>
         </div>
         <div class="p-4">

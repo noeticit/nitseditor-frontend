@@ -23,9 +23,9 @@
                 </div>
             </div>
             <div class="w-full bg-gray-200">
-                <top-bar v-on:toggle-menu="menuIsOpen = !menuIsOpen"></top-bar>
+                <base-top-bar v-on:toggle-menu="menuIsOpen = !menuIsOpen"></base-top-bar>
                 <main>
-                    <div class="h-screen max-w-7xl mx-auto pt-2 overflow-auto">
+                    <div class="h-screen max-w-7xl mx-auto ">
                         <slot></slot>
                     </div>
                 </main>
@@ -48,10 +48,6 @@
             return {
                 menuIsOpen: true
             }
-        },
-        components: {
-            'TopBar': () => import('../../Components/Base/TopBar/TopBar'),
-            'MenuOne': () => import('../../Components/Menus/MenuOne')
         }
     }
 </script>

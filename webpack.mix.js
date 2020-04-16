@@ -14,6 +14,7 @@ const mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss');
 
 const NitsRoutePlugins = require('./Webpack/NitsRoutePlugin');
+const NitsComponentsPlugin = require('./Webpack/NitsComponentsPlugin');
 
 mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/images')
     .sass('node_modules/nitseditor-frontend/Assets/sass/app.scss', 'public/nits-assets/css')
@@ -38,11 +39,13 @@ mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/i
                 ProjectModels: path.resolve('./resources/models'),
                 ProjectPages: path.resolve('./resources/pages'),
                 NitsAdminPages: path.resolve(__dirname, 'Pages'),
+                NitsComponents: path.resolve(__dirname, './Components'),
                 Plugins: path.resolve('./plugins'),
             }
         },
         plugins: [
-            new NitsRoutePlugins()
+            new NitsRoutePlugins(),
+            new NitsComponentsPlugin()
         ]
     })
     // .extract([

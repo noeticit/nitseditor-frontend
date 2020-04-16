@@ -3,11 +3,11 @@ function Index() {
 }
 function Dashboard() {
   return import(
-    /* webpackChunkName: "Dashboard" */ 'NitsAdminPages/Dashboard.vue'
+    /* webpackChunkName: "dashboard" */ 'NitsAdminPages/dashboard.vue'
   )
 }
 function Login() {
-  return import(/* webpackChunkName: "Login" */ 'NitsAdminPages/Login.vue')
+  return import(/* webpackChunkName: "login" */ 'NitsAdminPages/login.vue')
 }
 function Menus() {
   return import(/* webpackChunkName: "menus" */ 'NitsAdminPages/menus.vue')
@@ -34,6 +34,21 @@ function Themes() {
 function Users() {
   return import(/* webpackChunkName: "users" */ 'NitsAdminPages/users.vue')
 }
+function PluginAddPlugins() {
+  return import(
+    /* webpackChunkName: "plugin-add-plugins" */ 'NitsAdminPages/plugin/add-plugins.vue'
+  )
+}
+function PluginMarketplace() {
+  return import(
+    /* webpackChunkName: "plugin-marketplace" */ 'NitsAdminPages/plugin/marketplace.vue'
+  )
+}
+function UserAdd() {
+  return import(
+    /* webpackChunkName: "user-add" */ 'NitsAdminPages/user/add.vue'
+  )
+}
 
 export default [
   {
@@ -42,13 +57,13 @@ export default [
     component: Index
   },
   {
-    name: 'nits-admin-Dashboard',
-    path: '/nits-admin/Dashboard',
+    name: 'nits-admin-dashboard',
+    path: '/nits-admin/dashboard',
     component: Dashboard
   },
   {
-    name: 'nits-admin-Login',
-    path: '/nits-admin/Login',
+    name: 'nits-admin-login',
+    path: '/nits-admin/login',
     component: Login
   },
   {
@@ -85,5 +100,20 @@ export default [
     name: 'nits-admin-users',
     path: '/nits-admin/users',
     component: Users
+  },
+  {
+    name: 'nits-admin-plugin-add-plugins',
+    path: '/nits-admin/plugin/add-plugins',
+    component: PluginAddPlugins
+  },
+  {
+    name: 'nits-admin-plugin-marketplace',
+    path: '/nits-admin/plugin/marketplace',
+    component: PluginMarketplace
+  },
+  {
+    name: 'nits-admin-user-add',
+    path: '/nits-admin/user/add',
+    component: UserAdd
   }
 ]
