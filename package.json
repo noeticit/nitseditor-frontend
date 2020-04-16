@@ -45,6 +45,7 @@
     "tailwindcss-plugins": "^0.3.0",
     "tailwindcss-spinner": "^1.0.0",
     "vue": "^2.6.11",
+    "vue-meta": "^2.3.3",
     "vue-router": "^3.1.6",
     "vue-template-compiler": "^2.6.11",
     "vuedraggable": "^2.23.2",
