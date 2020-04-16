@@ -7,7 +7,7 @@
 require('./bootstrap');
 
 import VueRouter from 'vue-router';
-import routes from './Models/_route';
+import {router} from "./routes";
 import Layout from './Layouts/Layout';
 import authentication from "ProjectModels/_auth";
 import api from './Models/_api';
@@ -16,12 +16,6 @@ import session from './Models/_session';
 window.Vue = require('vue');
 
 Vue.use(VueRouter);
-
-const router = new VueRouter({
-    mode: 'history',
-    routes: [...routes],
-    base: '/',
-});
 
 const sessions = new session(process.env.MIX_STORAGE_PERSIST, process.env.MIX_INACTIVITY_SESSION);
 sessions.start();
