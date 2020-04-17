@@ -77,10 +77,10 @@ function generateRoutes(directory, componentPathPrefix, pathPrefix = '', namePre
                             else
                                 return `\t    ${line}`;
                         }).join('\n');
-                        filecontents = filecontents + `\n\t{\n\t\tname: \'${name}\',\n\t\tpath: \'${path}\',\n\t\tcomponent: Vue.component(\'${name}\', () => import(/* webpackChunkName: "${componentPathPrefix}-component" */ \'${fullPath}\')),\n\t\tmeta:${metadata}\n\t},`;
+                        filecontents = filecontents + `\n\t{\n\t\tname: \'${name}\',\n\t\tpath: \'${path}\',\n\t\tcomponent: Vue.component(\'${name}\', () => import(/* webpackChunkName: "${componentPathPrefix}-component" */ \'${componentPathPrefix}/${entry.name}\')),\n\t\tmeta:${metadata}\n\t},`;
                     }
                     else
-                        filecontents = filecontents + `\n\t{\n\t\tname: \'${name}\',\n\t\tpath: \'${path}\',\n\t\tcomponent: Vue.component(\'${name}\', () => import(/* webpackChunkName: "${componentPathPrefix}-component" */ \'${fullPath}\')),\n\t},`;
+                        filecontents = filecontents + `\n\t{\n\t\tname: \'${name}\',\n\t\tpath: \'${path}\',\n\t\tcomponent: Vue.component(\'${name}\', () => import(/* webpackChunkName: "${componentPathPrefix}-component" */ \'${componentPathPrefix}/${entry.name}\')),\n\t},`;
                 }
             }
         } else {
