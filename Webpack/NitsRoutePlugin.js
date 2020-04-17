@@ -77,10 +77,10 @@ function generateRoutes(directory, componentPathPrefix, pathPrefix = '', namePre
                             else
                                 return `\t    ${line}`;
                         }).join('\n');
-                        filecontents = filecontents + `\n\t{\n\t\tname: \'${name}\',\n\t\tpath: \'${path}\',\n\t\tcomponent: Vue.component(\'${name}\', () => import(/* webpackChunkName: "${componentPathPrefix}-component" */ \'${componentPathPrefix}/${entry.name}\')),\n\t\tmeta:${metadata}\n\t},`;
+                        filecontents = filecontents + `\n\t{\n\t\tname: \'${name}\',\n\t\tpath: \'${path}\',\n\t\tcomponent: Vue.component(\'${name}\', () => import(/* webpackChunkName: "${componentPathPrefix}-component" */ \'${fullPath}\')),\n\t\tmeta:${metadata}\n\t},`;
                     }
                     else
-                        filecontents = filecontents + `\n\t{\n\t\tname: \'${name}\',\n\t\tpath: \'${path}\',\n\t\tcomponent: Vue.component(\'${name}\', () => import(/* webpackChunkName: "${componentPathPrefix}-component" */ \'${componentPathPrefix}/${entry.name}\')),\n\t},`;
+                        filecontents = filecontents + `\n\t{\n\t\tname: \'${name}\',\n\t\tpath: \'${path}\',\n\t\tcomponent: Vue.component(\'${name}\', () => import(/* webpackChunkName: "${componentPathPrefix}-component" */ \'${fullPath}\')),\n\t},`;
                 }
             }
         } else {
@@ -106,8 +106,8 @@ function generatePluginsRoutes() {
                     let componentPathPrefix = 'Plugins/'+authorName.toLowerCase()+'/'+pluginName.toLowerCase()+'/pages';
                     let pathPrefix = 'nits-plugin'+'/'+authorName.toLowerCase()+'/'+pluginName.toLowerCase();
                     let namePrefix = 'plugin-'+authorName.toLowerCase()+'-'+pluginName.toLowerCase();
-
-                    generateRoutes(pluginpath, componentPathPrefix, pathPrefix, namePrefix);
+                    let path_ch = path.resolve(pluginpath);
+                    generateRoutes(path_ch, componentPathPrefix, pathPrefix, namePrefix);
                 }
             })
         }
