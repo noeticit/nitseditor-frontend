@@ -63,7 +63,7 @@ export const menu = function (currentNav) {
 
 import {encrypt, decrypt} from "NitsModels/_encrypt";
 import {getHeader} from "NitsModels/_config";
-import store from "NitsModels/../store/_store";
+import store from "./../../Store/_store";
 // import ability from "NitsModels/_ability";
 import VueSession from 'NitsModels/_session';
 

@@ -7,20 +7,20 @@
 require('./bootstrap');
 
 import VueRouter from 'vue-router';
-import routes from './Models/_route';
+import {router} from "./routes";
 import Layout from './Layouts/Layout';
 import authentication from "ProjectModels/_auth";
 import api from './Models/_api';
 import session from './Models/_session';
+import VueMeta from 'vue-meta'
 
 window.Vue = require('vue');
 
 Vue.use(VueRouter);
 
-const router = new VueRouter({
-    mode: 'history',
-    routes: [...routes],
-    base: '/',
+Vue.use(VueMeta, {
+    // optional pluginOptions
+    refreshOnceOnNavigation: true
 });
 
 const sessions = new session(process.env.MIX_STORAGE_PERSIST, process.env.MIX_INACTIVITY_SESSION);
