@@ -13,9 +13,11 @@ NitsComponentsPlugin.prototype.apply = function (compiler) {
 function exportNitsEditorComponents() {
 
     //NitsEditor components...
+    console.log('\nDrafting all components to be imported\n');
     generateComponents(path.resolve(__dirname, './../Components'), 'NitsComponents');
 
     //Plugins components...
+    console.log('\nDrafting all plugins components/widgets to be imported\n');
     generatePluginsComponents();
 
     fs.writeFileSync(path.resolve(__dirname, './../Models/_components.js'), filecontents);

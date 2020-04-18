@@ -24,6 +24,11 @@ mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/i
     })
     .js('node_modules/nitseditor-frontend/app.js', 'public/nits-assets/js')
     .webpackConfig({
+        module: {
+            rules: [
+
+            ]
+        },
         node: {
             fs: "empty"
         },
