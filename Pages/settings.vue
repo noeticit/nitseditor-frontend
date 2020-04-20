@@ -1,6 +1,8 @@
 <template>
     <dashboard-layout-one active="settings">
         <base-bread-crumb-one name="Settings" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
+
+
     </dashboard-layout-one>
 </template>
 
@@ -14,7 +16,8 @@
         },
         components: {
             'DashboardLayoutOne': () => import('./../Layouts/Dashboard/LayoutOne'),
-        }
+        },
+
     }
 </script>
 
