@@ -11,67 +11,83 @@
 <!--                <dashboard-task-info></dashboard-task-info>-->
 <!--            </div>-->
 <!--        </div>-->
-        <div class="bg-white rounded-lg m-4 w-full shadow-lg min-h-full mt-1 justify-center">
-            <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center">
-                <div class="text-left ml-2 text-xl antialiased leading-snug text-teal-600 tracking-normal font-sans">User Access</div>
+
+<!--                <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center">-->
+<!--                    <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans">Performance by Ad Size</div>-->
+<!--                </div>-->
+                <div class="flex justify-start">
+                    <div class="bg-white rounded-lg m-4 w-full shadow-lg min-h-full mt-1 justify-center">
+                        <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center">
+                            <div class="text-left ml-2 text-xl antialiased leading-snug text-teal-600 tracking-normal font-sans">User Access</div>
+                            <div>
+                                <button class="flex bg-yellow-400 text-black rounded px-4 py-2 focus:outline-none text-blue hover:bg-yellow-500 justify-around">
+                                    <svg class="inline-block mt-1 mr-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16 2H7.979C6.88 2 6 2.88 6 3.98V12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 10H8V4h8v8zM4 10H2v6c0 1.1.9 2 2 2h6v-2H4v-6z"/>
+                                    </svg>
+                                    <span class="font-medium">Add Role</span>
+                                </button>
+                            </div>
 
 
-            </div>
-            <div>
-                <div >
-                    <input class="ml-3 mt-2 mb-2 text-xs py-1 px-4 border rounded w-2/4" placeholder="Add Users . . . ." type="text">
+                        </div>
+                        <div>
+                            <div >
+                                <input class="ml-3 mt-2 mb-2 text-xs py-1 px-4 border rounded w-2/4" placeholder="Add Users . . . ." type="text">
+                            </div>
+                            <table class="min-w-full">
+                                <tr class="bg-teal-500 h-12">
+                                    <th>
+                                        <div class="flex justify-center  items-center">
+                                            <span class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Name</span>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="flex justify-center items-center">
+                                            <span class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Super Admin</span>
+                                        </div>
+
+                                    </th>
+                                    <th>
+                                        <div class="flex justify-center items-center">
+                                            <span class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Admin</span>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="flex justify-center items-center">
+                                            <span class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Subscriber</span>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="flex justify-center items-center">
+                                            <span class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Analytics</span>
+                                        </div>
+                                    </th>
+<!--                                    <th>-->
+<!--                                        <div class="flex justify-center items-center">-->
+<!--                                            <span class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Remove</span>-->
+<!--                                        </div>-->
+<!--                                    </th>-->
+                                </tr>
+                                <tr v-for="(item,index) in tableData">
+                                    <td class="h-8 text-center border-b border-gray-200 text-sm text-teal-700 antialiased leading-tight tracking-normal  font-sans font-normal">{{item.name}}</td>
+                                    <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox"></td>
+                                    <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox"></td>
+                                    <td class="h-8 text-center border-b border-gray-200  antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox"></td>
+                                    <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox"></td>
+                                    <!--                        <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal">-->
+                                    <!--                            <a @click.prevent="removeElement()" href="#">-->
+                                    <!--                                <svg class="inline-block text-teal-600 hover:text-red-600 fill-current w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">-->
+                                    <!--                                    <path fill-rule="evenodd" d="M10 1.6a8.4 8.4 0 100 16.8 8.4 8.4 0 000-16.8zm4.79 11.46l-1.73 1.73L10 11.73l-3.06 3.06-1.73-1.73L8.27 10 5.21 6.94 6.94 5.2 10 8.27l3.06-3.06 1.73 1.73L11.73 10l3.06 3.06z"/>-->
+                                    <!--                                </svg>-->
+                                    <!--                            </a>-->
+                                    <!--                        </td>-->
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <table class="min-w-full">
-                    <tr class="bg-teal-500 h-12">
-                        <th>
-                            <div class="flex justify-center  items-center">
-                                <span class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Name</span>
-                            </div>
-                        </th>
-                        <th>
-                            <div class="flex justify-center items-center">
-                                <span class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Super Admin</span>
-                            </div>
 
-                        </th>
-                        <th>
-                            <div class="flex justify-center items-center">
-                                <span class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Admin</span>
-                            </div>
-                        </th>
-                        <th>
-                            <div class="flex justify-center items-center">
-                                <span class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Subscriber</span>
-                            </div>
-                        </th>
-                        <th>
-                            <div class="flex justify-center items-center">
-                                <span class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Analytics</span>
-                            </div>
-                        </th>
-                        <th>
-                            <div class="flex justify-center items-center">
-                                <span class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Remove</span>
-                            </div>
-                        </th>
-                    </tr>
-                    <tr v-for="(item,index) in tableData">
-                        <td class="h-8 text-center border-b border-gray-200 text-sm text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal">{{item.name}}</td>
-                        <td class="h-8 text-center border-b border-gray-200 text-sm text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox"></td>
-                        <td class="h-8 text-center border-b border-gray-200 text-sm text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox"></td>
-                        <td class="h-8 text-center border-b border-gray-200 text-sm text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox"></td>
-                        <td class="h-8 text-center border-b border-gray-200 text-sm text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox"></td>
-                        <td class="h-8 text-center border-b border-gray-200 text-sm text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal">
-                            <a @click.prevent="removeElement()" href="#">
-                                <svg class="inline-block text-teal-600 fill-current w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 1.6a8.4 8.4 0 100 16.8 8.4 8.4 0 000-16.8zm4.79 11.46l-1.73 1.73L10 11.73l-3.06 3.06-1.73-1.73L8.27 10 5.21 6.94 6.94 5.2 10 8.27l3.06-3.06 1.73 1.73L11.73 10l3.06 3.06z"/>
-                                </svg>
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+
     </dashboard-layout-one>
 </template>
 
@@ -99,7 +115,7 @@
                     // route: d.path
                 }
             })
-            console.log(this.tableData);
+            // console.log(this.tableData);
         }
     }
 </script>
