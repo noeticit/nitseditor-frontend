@@ -1,6 +1,6 @@
 <template>
-    <dashboard-layout-one active="dashboard">
-        <base-bread-crumb-one name="Dashboard" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
+    <dashboard-layout-one active="permissions">
+        <base-bread-crumb-one name="Permissions" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
         <div class="flex w-full justify-center">
             <div class="m-2 mt-3 w-3/4">
                 <site-info-widget></site-info-widget>
@@ -16,10 +16,10 @@
 
 <script>
     export default {
-        name: "Dashboard",
+        name: "permissions",
         data() {
             return {
-                breadcrumbs: ['Dashboard', 'Second Link', 'Third Link', 'Fourth Link'],
+                breadcrumbs: ['Permissions'],
             }
         },
         components: {
