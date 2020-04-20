@@ -1,7 +1,434 @@
 <template>
     <dashboard-layout-one active="settings">
         <base-bread-crumb-one name="Settings" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
+        <div class=" w-full h-auto bg-white mt-4">
+            <div class="flex p-4 ">
+                <ul class="list-reset flex border-b">
+                    <li class="-mb-px mr-1 cursor-pointer"  @click="changeTab('General')">
+                        <span class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold">General</span>
+                    </li>
+                    <li class="mr-1 cursor-pointer" @click="changeTab('Contact')">
+                        <span class="bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold" >Contact Info</span>
+                    </li>
+                    <li class="mr-1 cursor-pointer" @click="changeTab('Domain')">
+                        <span class="bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold" >Domain Config</span>
+                    </li>
+                    <li class="mr-1 cursor-pointer" @click="changeTab('Social')">
+                        <span class="bg-white inline-block py-2 px-4 text-grey-light font-semibold" >Social Connects</span>
+                    </li>
+                    <li class="mr-1 cursor-pointer" @click="changeTab('Regional')">
+                        <span class="bg-white inline-block py-2 px-4 text-grey-light font-semibold" >Regional Settings</span>
+                    </li>
+                </ul>
+            </div>
+            <div >
+                <div class="p-4 " v-if="showTab">
 
+                </div>
+
+                <div class="p-4 " v-if="showTab2">
+                    <div class="justify-between border-solid border-b-2 p-2 text-center items-center">
+                        <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">Location</div>
+                        <div class="text-left ml-2 text-md antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">Tell us where your business is based</div>
+                    </div>
+                    <div class=" pt-4 w-full h-auto border-black mx-2  mt-2">
+                        <div class="">
+                            <div class="mt-4 flex justify-center bg-white">
+                                <div class="m-2 w-1/2">
+                                    <div class="px-6">
+                                        <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif" >
+                                            Email
+                                        </label>
+                                        <input v-model="email" type="email" class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"  placeholder="tailwind@example.com">
+                                    </div>
+                                    <div class="flex ">
+                                        <div class="px-6 w-full mt-2">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif w-full" >
+                                                Phone
+                                            </label>
+                                            <input v-model="phone" class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"  placeholder="">
+                                        </div>
+                                        <div class="px-6 w-full mt-2">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif w-full" >
+                                                Fax
+                                            </label>
+                                            <input v-model="fax" class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"  placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="px-6 mt-2">
+                                        <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif" >
+                                            Address
+                                        </label>
+                                        <input v-model="address" class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"  placeholder="Add your business address">
+                                    </div>
+                                    <div class="flex ">
+                                        <div class="px-6 w-full mt-2">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif w-full" >
+                                                City
+                                            </label>
+                                            <select v-model="city"   class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal">
+                                                <option value="" selected  >Select City</option>
+                                                <option>Mumbai</option>
+                                            </select>
+                                        </div>
+                                        <div class="px-6 w-full mt-2">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif w-full" >
+                                                State
+                                            </label>
+                                            <select v-model="state"   class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal">
+                                                <option value="" selected  >Select State</option>
+                                                <option>Maharashra</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="flex ">
+                                        <div class="px-6 w-full mt-2">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif w-full" >
+                                                Country
+                                            </label>
+                                            <select v-model="country"   class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal">
+                                                <option value="" selected  >Select Country</option>
+                                                <option>India</option>
+                                            </select>
+                                        </div>
+                                        <div class="px-6 w-full mt-2">
+                                            <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif w-fulle">
+                                                Pincode
+                                            </label>
+                                            <input v-model="pincode" class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Enter Pincode">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-2 w-1/2 mr-8 mt-6 ">
+                                    <div class="w-full h-11/12 bg-gray-200">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 " v-if="showTab3">
+                    <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center">
+                        <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">DNS Records</div>
+                        <div class="text-right flex">
+                            <div class="inline-flex ml-1 items-center rounded p-2 bg-blue-500">
+                                <span class="text-center text-sm antialiased tracking-wide leading-snug font-semibold font-sans text-white cursor-pointer"><a>Edit DNS</a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" pt-4 w-full h-auto border-black mx-2  mt-2">
+                        <div class="flex rounded shadow justify-between items-center text-left bg-gray-100 h-8 p-1 h-12">
+                            <div class="ml-2">
+                                <svg @click="isOpen = false" :class="isOpen ? 'block' : 'hidden'" class="h-5 cursor-pointer w-5" version="1.1" id="Chevron_up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                                    <path fill="#000000" d="M15.484,12.452c-0.436,0.446-1.043,0.481-1.576,0L10,8.705l-3.908,3.747c-0.533,0.481-1.141,0.446-1.574,0
+                                        c-0.436-0.445-0.408-1.197,0-1.615c0.406-0.418,4.695-4.502,4.695-4.502C9.43,6.112,9.715,6,10,6s0.57,0.112,0.789,0.335
+                                        c0,0,4.287,4.084,4.695,4.502C15.893,11.255,15.92,12.007,15.484,12.452z"/>
+                                </svg>
+                                <svg @click="isOpen = true"  :class="isOpen ? 'hidden' : 'block'" class="h-4 w-4 cursor-pointer" version="1.1" id="Chevron_down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                                    <path fill="#000000" d="M4.516,7.548c0.436-0.446,1.043-0.481,1.576,0L10,11.295l3.908-3.747c0.533-0.481,1.141-0.446,1.574,0
+                                        c0.436,0.445,0.408,1.197,0,1.615c-0.406,0.418-4.695,4.502-4.695,4.502C10.57,13.888,10.285,14,10,14s-0.57-0.112-0.789-0.335
+                                        c0,0-4.287-4.084-4.695-4.502C4.107,8.745,4.08,7.993,4.516,7.548z"/>
+                                </svg>
+
+                            </div>
+                            <div class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-11/12 pr-2">A (Host)</div>
+
+
+                        </div>
+                        <div v-if="isOpen" class="block shadow h-auto p-2 items-center">
+                            <div class="flex justify-start h-auto">
+
+                                <table class="min-w-full h-auto mt-3 m-1">
+                                    <tr class="bg-teal-500 h-10">
+                                        <th class="text-white text-left px-16 text-base antialiased leading-snug tracking-normal font-sans font-semibold">
+                                            Host Name
+                                        </th>
+
+                                        <th class="text-white text-left px-10 text-base antialiased leading-snug tracking-normal font-sans font-semibold">
+                                            Points
+                                        </th>
+                                        <th class="text-white text-left px-10 text-base antialiased leading-snug tracking-normal font-sans font-semibold">TTL
+                                        </th>
+
+                                    </tr>
+                                    <tr v-for="index in 5" :key="index" class="h-auto" >
+                                        <td class="h-8 text-left px-10 border-b border-gray-200 text-base text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal" >
+                                            nits-media-tailwind.com
+                                        </td>
+                                        <td class="h-8 text-left px-10 border-b border-gray-200 text-base text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal">
+                                            23.236.62.147
+                                        </td>
+                                        <td class="h-8 text-left px-10 border-b  border-gray-200 text-sm text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal">
+                                            1 Hour
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="  w-full h-auto border-black mx-2 ">
+                        <div class="flex rounded shadow justify-between items-center text-left bg-gray-100 h-8 p-1 h-12">
+                            <div class="ml-2">
+                                <svg @click="isOpen1 = false" :class="isOpen1 ? 'block' : 'hidden'" class="h-5 cursor-pointer w-5" version="1.1" id="Chevron_up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                                    <path fill="#000000" d="M15.484,12.452c-0.436,0.446-1.043,0.481-1.576,0L10,8.705l-3.908,3.747c-0.533,0.481-1.141,0.446-1.574,0
+                                        c-0.436-0.445-0.408-1.197,0-1.615c0.406-0.418,4.695-4.502,4.695-4.502C9.43,6.112,9.715,6,10,6s0.57,0.112,0.789,0.335
+                                        c0,0,4.287,4.084,4.695,4.502C15.893,11.255,15.92,12.007,15.484,12.452z"/>
+                                </svg>
+                                <svg @click="isOpen1 = true"  :class="isOpen1 ? 'hidden' : 'block'" class="h-4 w-4 cursor-pointer" version="1.1" id="Chevron_down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                                    <path fill="#000000" d="M4.516,7.548c0.436-0.446,1.043-0.481,1.576,0L10,11.295l3.908-3.747c0.533-0.481,1.141-0.446,1.574,0
+                                        c0.436,0.445,0.408,1.197,0,1.615c-0.406,0.418-4.695,4.502-4.695,4.502C10.57,13.888,10.285,14,10,14s-0.57-0.112-0.789-0.335
+                                        c0,0-4.287-4.084-4.695-4.502C4.107,8.745,4.08,7.993,4.516,7.548z"/>
+                                </svg>
+
+                            </div>
+                            <div class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-10/12 pr-16 ">CNAME (Aliases)</div>
+
+
+                        </div>
+                        <div v-if="isOpen1" class="block shadow h-auto p-2 items-center">
+                            <div class="flex justify-start h-auto">
+
+                                <table class="min-w-full h-auto mt-3 m-1">
+                                    <tr class="bg-teal-500 h-10">
+                                        <th class="text-white text-left px-16 text-base antialiased leading-snug tracking-normal font-sans font-semibold">
+                                            Host Name
+                                        </th>
+
+                                        <th class="text-white text-left px-10 text-base antialiased leading-snug tracking-normal font-sans font-semibold">
+                                            Points
+                                        </th>
+                                        <th class="text-white text-left px-10 text-base antialiased leading-snug tracking-normal font-sans font-semibold">TTL
+                                        </th>
+
+                                    </tr>
+                                    <tr v-for="index in 5" :key="index" class="h-auto" >
+                                        <td class="h-8 text-left px-10 border-b border-gray-200 text-base text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal" >
+                                            nits-media-tailwind.com
+                                        </td>
+                                        <td class="h-8 text-left px-10 border-b border-gray-200 text-base text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal">
+                                            23.236.62.147
+                                        </td>
+                                        <td class="h-8 text-left px-10 border-b  border-gray-200 text-sm text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal">
+                                            1 Hour
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="  w-full h-auto border-black mx-2 ">
+                        <div class="flex rounded shadow justify-between items-center text-left bg-gray-100 h-8 p-1 h-12">
+                            <div class="ml-2">
+                                <svg @click="isOpen2 = false" :class="isOpen2 ? 'block' : 'hidden'" class="h-5 cursor-pointer w-5" version="1.1" id="Chevron_up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                                    <path fill="#000000" d="M15.484,12.452c-0.436,0.446-1.043,0.481-1.576,0L10,8.705l-3.908,3.747c-0.533,0.481-1.141,0.446-1.574,0
+                                        c-0.436-0.445-0.408-1.197,0-1.615c0.406-0.418,4.695-4.502,4.695-4.502C9.43,6.112,9.715,6,10,6s0.57,0.112,0.789,0.335
+                                        c0,0,4.287,4.084,4.695,4.502C15.893,11.255,15.92,12.007,15.484,12.452z"/>
+                                </svg>
+                                <svg @click="isOpen2 = true"  :class="isOpen2 ? 'hidden' : 'block'" class="h-4 w-4 cursor-pointer" version="1.1" id="Chevron_down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                                    <path fill="#000000" d="M4.516,7.548c0.436-0.446,1.043-0.481,1.576,0L10,11.295l3.908-3.747c0.533-0.481,1.141-0.446,1.574,0
+                                        c0.436,0.445,0.408,1.197,0,1.615c-0.406,0.418-4.695,4.502-4.695,4.502C10.57,13.888,10.285,14,10,14s-0.57-0.112-0.789-0.335
+                                        c0,0-4.287-4.084-4.695-4.502C4.107,8.745,4.08,7.993,4.516,7.548z"/>
+                                </svg>
+
+                            </div>
+                            <div class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-10/12 pr-10">MX (Mail Exchange)</div>
+
+
+                        </div>
+                        <div v-if="isOpen2" class="block shadow h-auto p-2 items-center">
+                            <div class="flex justify-start h-auto">
+
+                                <table class="min-w-full h-auto mt-3 m-1">
+                                    <tr class="bg-teal-500 h-10">
+                                        <th class="text-white text-left px-16 text-base antialiased leading-snug tracking-normal font-sans font-semibold">
+                                            Host Name
+                                        </th>
+
+                                        <th class="text-white text-left px-10 text-base antialiased leading-snug tracking-normal font-sans font-semibold">
+                                            Points
+                                        </th>
+                                        <th class="text-white text-left px-10 text-base antialiased leading-snug tracking-normal font-sans font-semibold">TTL
+                                        </th>
+
+                                    </tr>
+                                    <tr v-for="index in 5" :key="index" class="h-auto" >
+                                        <td class="h-8 text-left px-10 border-b border-gray-200 text-base text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal" >
+                                            nits-media-tailwind.com
+                                        </td>
+                                        <td class="h-8 text-left px-10 border-b border-gray-200 text-base text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal">
+                                            23.236.62.147
+                                        </td>
+                                        <td class="h-8 text-left px-10 border-b  border-gray-200 text-sm text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal">
+                                            1 Hour
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="  w-full h-auto border-black mx-2 ">
+                        <div class="flex rounded shadow justify-between items-center text-left bg-gray-100 h-8 p-1 h-12">
+                            <div class="ml-2">
+                                <svg @click="isOpen3 = false" :class="isOpen3 ? 'block' : 'hidden'" class="h-5 cursor-pointer w-5" version="1.1" id="Chevron_up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                                    <path fill="#000000" d="M15.484,12.452c-0.436,0.446-1.043,0.481-1.576,0L10,8.705l-3.908,3.747c-0.533,0.481-1.141,0.446-1.574,0
+                                        c-0.436-0.445-0.408-1.197,0-1.615c0.406-0.418,4.695-4.502,4.695-4.502C9.43,6.112,9.715,6,10,6s0.57,0.112,0.789,0.335
+                                        c0,0,4.287,4.084,4.695,4.502C15.893,11.255,15.92,12.007,15.484,12.452z"/>
+                                </svg>
+                                <svg @click="isOpen3 = true"  :class="isOpen3 ? 'hidden' : 'block'" class="h-4 w-4 cursor-pointer" version="1.1" id="Chevron_down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                                    <path fill="#000000" d="M4.516,7.548c0.436-0.446,1.043-0.481,1.576,0L10,11.295l3.908-3.747c0.533-0.481,1.141-0.446,1.574,0
+                                        c0.436,0.445,0.408,1.197,0,1.615c-0.406,0.418-4.695,4.502-4.695,4.502C10.57,13.888,10.285,14,10,14s-0.57-0.112-0.789-0.335
+                                        c0,0-4.287-4.084-4.695-4.502C4.107,8.745,4.08,7.993,4.516,7.548z"/>
+                                </svg>
+
+                            </div>
+                            <div class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-10/12 pr-12">NS (Name Servers)</div>
+
+
+                        </div>
+                        <div v-if="isOpen3" class="block shadow h-auto p-2 items-center">
+                            <div class="flex justify-start h-auto">
+
+                                <table class="min-w-full h-auto mt-3 m-1">
+                                    <tr class="bg-teal-500 h-10">
+                                        <th class="text-white text-left px-16 text-base antialiased leading-snug tracking-normal font-sans font-semibold">
+                                            Host Name
+                                        </th>
+
+                                        <th class="text-white text-left px-10 text-base antialiased leading-snug tracking-normal font-sans font-semibold">
+                                            Points
+                                        </th>
+                                        <th class="text-white text-left px-10 text-base antialiased leading-snug tracking-normal font-sans font-semibold">TTL
+                                        </th>
+
+                                    </tr>
+                                    <tr v-for="index in 5" :key="index" class="h-auto" >
+                                        <td class="h-8 text-left px-10 border-b border-gray-200 text-base text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal" >
+                                            nits-media-tailwind.com
+                                        </td>
+                                        <td class="h-8 text-left px-10 border-b border-gray-200 text-base text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal">
+                                            23.236.62.147
+                                        </td>
+                                        <td class="h-8 text-left px-10 border-b  border-gray-200 text-sm text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal">
+                                            1 Hour
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="p-4 " v-if="showTab4">
+                    <div class="justify-between border-solid border-b-2 p-2 text-center items-center">
+                        <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">Social Share Image</div>
+                        <div class="text-left ml-2 text-md antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">This image appers on social networks like Facebook, Twitter and others when your website is shared. It's a great way to help visitors recognize your brand</div>
+                    </div>
+                    <div class=" pt-4 w-full h-auto border-black mx-2  mt-2">
+
+                    </div>
+                </div>
+
+                <div class="p-4 " v-if="showTab5">
+                    <div class="justify-between border-solid border-b-2 p-2 text-center items-center">
+                        <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">Regional Settings</div>
+                        <div class="text-left ml-2 text-md antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">Edit the regional settings for your website, apps and more</div>
+                    </div>
+
+                    <div class=" pt-4 w-full h-auto border-black mx-2  mt-2">
+                            <div class="">
+                                <div class="mt-4 flex justify-center bg-white">
+                                    <div class="m-2 w-1/2">
+<!--                                        <div class="mb-4 text-lg">Enter the details</div>-->
+                                        <div class="px-6">
+                                            <label class="text-left text-gray-700 text-sm font-bold antialiased tracking-normal font-serif" >
+                                                Regional Settings
+                                            </label><br>
+                                            <select v-model="settings" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10">
+                                                <option value="" selected  >English-India</option>
+                                            </select>
+                                        </div>
+                                        <div class="px-6 mt-4">
+                                            <label class="text-left text-gray-700 text-sm font-bold antialiased tracking-normal font-serif" >
+                                                Language
+                                            </label><br>
+                                            <select v-model="language" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10">
+                                                <option value="" selected  >English</option>
+                                            </select>
+                                        </div>
+                                        <div class="px-6 mt-4">
+                                            <label class="text-left text-gray-700 text-sm font-bold antialiased tracking-normal font-serif" >
+                                                Currency
+                                            </label><br>
+                                            <select v-model="currency" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10">
+                                                <option value="" selected  >Indian Rupee-INR(&#8377;)</option>
+                                            </select>
+                                        </div>
+                                        <div class="px-6 mt-4">
+                                            <label class="text-left text-gray-700 text-sm font-bold antialiased tracking-normal font-serif" >
+                                                Time Zone
+                                            </label><br>
+                                            <select v-model="time_zone" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10">
+                                                <option value="" selected  >(GMT+5:30)Asia/Kolkata</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="m-2 w-1/2 mr-8 ">
+                                        <div >
+                                            <div class="text-gray-700 text-sm font-bold antialiased tracking-normal font-serif" >Region Format Preview</div>
+                                            <div class="w-full h-auto bg-gray-200 px-6 py-4 rounded-md ">
+                                                <div class="flex">
+                                                    <span>Date:</span>
+                                                    <span>20 April 2020,</span>
+                                                    <span>12:06:51 pm</span>
+                                                </div>
+                                                <div class="flex">
+                                                    <span>Short Date:</span>
+                                                    <span>1,234.56</span>
+                                                    <span>12:06 pm</span>
+                                                </div>
+                                                <div class="flex">
+                                                    <span>Numbers:</span>
+                                                    <span>1,234.56</span>
+                                                </div>
+                                                <div class="flex">
+                                                    <span>Currency:</span>
+                                                    <span>&#8377; 1,234.56</span>
+                                                </div>
+                                                <div class="flex">
+                                                    <span>Measurements:</span>
+                                                    <span>Metric (e.g. kg, cm)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-6 ">
+                                            <div class="w-full h-auto bg-gray-200 px-6 py-4 rounded-md ">
+                                                    <span class="text-lg font-medium">Add Languages to Your Site</span><br>
+                                                    <span class="mt-2">Grow your global audiance with a multilingual website.</span><br>
+                                                    <a href="#" class="mt-2 text-sm text-blue-400">Add Languages</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     </dashboard-layout-one>
 </template>
@@ -12,12 +439,57 @@
         data() {
             return {
                 breadcrumbs: ['Settings', 'Second Link', 'Third Link', 'Fourth Link'],
+                showTab: true,
+                showTab2: false,
+                showTab3: false,
+                showTab4: false,
+                showTab5: false,
+                isOpen:false,
+                isOpen1:false,
+                isOpen2:false,
+                isOpen3:false,
+                search:'',
+                settings:'',
+                language:'',
+                currency:'',
+                time_zone:'',
+                address:'',
+                email:'',
+                phone:'',
+                fax:'',
+                country:'',
+                city:'',
+                state:'',
+                pincode:'',
             }
         },
         components: {
             'DashboardLayoutOne': () => import('./../Layouts/Dashboard/LayoutOne'),
         },
+        methods:{
+            changeTab(tab) {
+                this.showTab = false;
+                this.showTab2 = false;
+                this.showTab3 = false;
+                this.showTab4 = false;
+                this.showTab5 = false;
 
+                switch(tab) {
+                    case 'General': this.showTab = true;
+                        break;
+                    case 'Contact': this.showTab2 = true;
+                        break;
+                    case 'Domain': this.showTab3 = true;
+                        break;
+                    case 'Social': this.showTab4 = true;
+                        break;
+                    case 'Regional': this.showTab5 = true;
+                        break;
+                    default: this.showTab = true;
+                        break;
+                }
+            },
+        },
     }
 </script>
 
