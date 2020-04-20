@@ -13,7 +13,7 @@ NitsRoutePlugin.prototype.apply = function (compiler) {
 
     console.log('\n Generating Admin Pages routes\n');
 
-    generateRoutes(path.resolve(__dirname, './../Pages'), 'NitsAdminPages', 'nits-admin', 'nits-admin');
+    generateRoutes(path.resolve(__dirname, './../Pages'), 'NitsAdminPages', '/nits-admin', 'nits-admin');
 
     console.log('\n Generating Plugins Pages routes\n');
 
@@ -104,7 +104,7 @@ function generatePluginsRoutes() {
                 if(entry.isDirectory()) {
 
                     let componentPathPrefix = 'Plugins/'+authorName.toLowerCase()+'/'+pluginName.toLowerCase()+'/pages';
-                    let pathPrefix = 'nits-plugin'+'/'+authorName.toLowerCase()+'/'+pluginName.toLowerCase();
+                    let pathPrefix = '/nits-plugin'+'/'+authorName.toLowerCase()+'/'+pluginName.toLowerCase();
                     let namePrefix = 'plugin-'+authorName.toLowerCase()+'-'+pluginName.toLowerCase();
                     let path_ch = path.resolve(pluginpath);
                     generateRoutes(path_ch, componentPathPrefix, pathPrefix, namePrefix);
