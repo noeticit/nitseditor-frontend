@@ -12,7 +12,7 @@ import Layout from './Layouts/Layout';
 import authentication from "ProjectModels/_auth";
 import api from './Models/_api';
 import session from './Models/_session';
-import VueMeta from 'vue-meta'
+import VueMeta from 'vue-meta';
 
 window.Vue = require('vue');
 
