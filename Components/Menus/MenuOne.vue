@@ -81,11 +81,5 @@
 </script>
 
 <style scoped>
-    .active-menu-text {
-        @apply ml-3 text-center text-sm antialiased leading-snug tracking-wide font-medium text-teal-600;
-    }
 
-    .not-active-menu-text {
-        @apply ml-3 text-center text-sm antialiased leading-snug tracking-wide font-medium text-gray-700;
-    }
 </style>

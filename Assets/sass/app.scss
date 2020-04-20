@@ -12,6 +12,13 @@
   @apply ml-3 text-center text-sm antialiased leading-snug tracking-wide font-serif font-medium text-gray-700;
 }
 
+.active-menu-two-text {
+  @apply px-3 py-2 rounded-md text-sm antialiased font-serif tracking-normal font-semibold text-white bg-gray-900;
+}
+
+.not-active-menu-two-text {
+  @apply px-3 py-2 rounded-md text-sm antialiased font-serif tracking-normal font-semibold text-gray-700;
+}
 
 
 .spinner {
