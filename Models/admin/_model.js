@@ -122,7 +122,7 @@ export const login = function(user) {
                                 resolve(redirect);
                             }
                             else{
-                                console.log('check')
+                                // console.log('check')
                                 const redirect = {
                                     redirect: '/nits-admin/dashboard'
                                 };
