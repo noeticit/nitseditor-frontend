@@ -24,6 +24,14 @@
         },
         components: {
             'DashboardLayoutOne': () => import('./../Layouts/Dashboard/LayoutOne')
+        },
+        created() {
+            console.log(this.$router.options.routes.map((d) => {
+                return {
+                    name: d.name,
+                    route: d.path
+                }
+            }))
         }
     }
 </script>

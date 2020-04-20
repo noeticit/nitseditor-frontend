@@ -15,6 +15,7 @@ const tailwindcss = require('tailwindcss');
 
 const NitsRoutePlugins = require('./Webpack/NitsRoutePlugin');
 const NitsComponentsPlugin = require('./Webpack/NitsComponentsPlugin');
+const NitsLayoutsPlugin = require('./Webpack/NitsLayoutsPlugin');
 
 mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/images')
     .sass('node_modules/nitseditor-frontend/Assets/sass/app.scss', 'public/nits-assets/css')
@@ -50,7 +51,8 @@ mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/i
         },
         plugins: [
             new NitsRoutePlugins(),
-            new NitsComponentsPlugin()
+            new NitsComponentsPlugin(),
+            new NitsLayoutsPlugin()
         ]
     })
     // .extract([

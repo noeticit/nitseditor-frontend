@@ -8,11 +8,10 @@ require('./bootstrap');
 
 import VueRouter from 'vue-router';
 import {router} from "./routes";
-import Layout from './Layouts/Layout';
 import authentication from "ProjectModels/_auth";
 import api from './Models/_api';
 import session from './Models/_session';
-import VueMeta from 'vue-meta'
+import VueMeta from 'vue-meta';
 
 window.Vue = require('vue');
 
@@ -65,5 +64,5 @@ router.beforeEach((to, from, next) => {
 const app = new Vue({
     el: '#app',
     router: router,
-    render:h=>h(Layout)
+    template:'<router-view></router-view>'
 });
