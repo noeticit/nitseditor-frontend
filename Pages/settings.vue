@@ -23,7 +23,70 @@
             </div>
             <div >
                 <div class="p-4 " v-if="showTab">
+                    <div class="justify-between border-solid border-b-2 p-2 text-center items-center">
+                        <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">General</div>
+                    </div>
+                    <div class=" pt-4 w-full h-auto border-black mx-2  mt-2">
+                        <div class="">
+                            <div class="mt-4 flex justify-center bg-white">
+                                <div class="m-2 w-4/5 mr-56">
+                                    <div class="m-2">
+                                        <div class="flex m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56 ">Site Title</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Site Title" v-model="site_title">
+                                        </div>
+                                        <div class="flex m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">Tagline</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Tagline" type="tagline" v-model="tagline">
 
+                                        </div>
+
+                                        <div class="flex m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56 ">Administration Email Address</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Email Address" type="text" v-model="email">
+
+                                        </div>
+                                        <div class="flex inline-block m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">New User Default Role</label>
+                                            <select v-model="role" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-12 leading-normal">
+                                                <option value="" selected  >Role</option>
+                                            </select>
+                                        </div>
+                                        <div class="flex m-2 w-full">
+                                            <label class=" text-gray-700 text-base font-semibold antialised w-56">Site Language</label>
+                                            <select v-model="language"  class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-12 leading-normal">
+                                                <option value="" selected  >Language</option>
+                                            </select>
+                                        </div>
+                                        <div class="flex m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">Time Zone</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Time Zone" type="time" v-model="time_zone">
+                                        </div>
+                                        <div class="flex m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">Date Format</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Date Format" type="date" v-model="date_format">
+                                        </div>
+                                        <div class="flex m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56"> Time Format</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Time Format" type="time" v-model="time_format">
+
+                                        </div>
+                                        <div class="flex m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">Week Starts On</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Week Start On" type="date" v-model="week_start">
+
+                                        </div>
+
+                                    </div>
+                                </div>
+<!--                                <div class="m-2 w-1/2 mr-8 mt-6 ">-->
+<!--                                    <div class="w-full h-11/12 bg-gray-200">-->
+
+<!--                                    </div>-->
+<!--                                </div>-->
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="p-4 " v-if="showTab2">
