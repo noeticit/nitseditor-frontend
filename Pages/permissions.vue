@@ -12,10 +12,6 @@
 <!--                <dashboard-task-info></dashboard-task-info>-->
 <!--            </div>-->
 <!--        </div>-->
-
-<!--                <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center">-->
-<!--                    <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans">Performance by Ad Size</div>-->
-<!--                </div>-->
                 <div class="flex justify-start">
                     <div class="bg-white rounded-lg m-4 w-full shadow-lg min-h-full mt-1 justify-center">
                         <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center">
