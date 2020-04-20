@@ -394,6 +394,7 @@
                 </div>
 
                 <div class="p-4 " v-if="showTab4">
+<!--                    upload image-->
                   <div class="w-11/12  justify-center rounded-lg">
                     <div class="justify-between border-solid border-b-2 p-2 text-center items-center">
                         <div class="text-left ml-2 text-2xl antialiased leading-snug tracking-normal font-sans text-teal-700">Social Share Image</div>
@@ -436,6 +437,36 @@
                       </div>
 
                   </div>
+                         <!--facebook-->
+                    <div class=" mt-8 justify-between border-solid border-b-2 p-2 text-center items-center">
+                        <div class="text-left ml-2 text-2xl antialiased leading-snug tracking-normal font-sans text-teal-700">Facebook Username</div>
+                        <div class="text-left ml-2 mb-4 text-lg antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">Facebook needs yours personal username to verify any Likes you get on your Wix website. If you<br>have the Facebook Comments app, this will also allowmyou to moderate comments.</div>
+                    </div>
+
+                    <div class=" pt-4 w-full h-auto border-black mx-2 ">
+                        <div class=" flex justify-center bg-white">
+
+                            <div class=" pt-4 w-1/5 h-auto border-black mr-8 ml-8 mt-2">
+                                <div>
+                                     <!--    facebook icon-->
+                                </div>
+
+                            </div>
+                            <div class=" flex m-2 w-4/5 mr-8 ">
+                                        <div class="w-full h-auto  px-6 py-4 rounded-md ">
+                                            <span class="text-xl text-gray-700">Enter your Personal Facebook Username:</span><br>
+                                            <div class="flex w-full mt-2" >
+                                                <span class="block mt-2 text-lg text-gray-700">www.facebook.com/</span>
+                                                <input class="bg-white focus:outline-none border border-gray-500 rounded-lg py-2 px-4 block ml-4 mb-6 w-full appearance-none " placeholder="Enter your username">
+
+                                            </div>
+                                            <span class="mt-4 text-base text-gray-700">To make these change live, Publish your website.</span>
+
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="p-4 " v-if="showTab5">
