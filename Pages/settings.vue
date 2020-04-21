@@ -605,7 +605,7 @@
                                             <span class="text-lg text-gray-700">Enter your Personal Facebook Username:</span><br>
                                             <div class="flex w-full mt-2" >
                                                 <span class="block mt-2 text-md text-gray-700">www.facebook.com/</span>
-                                                <input class="bg-white focus:outline-none border border-gray-500 rounded-lg py-2 px-4 block ml-4 mb-6 w-1/2 appearance-none " placeholder="Enter your username">
+                                                <input class="bg-white focus:outline-none border border-gray-500 rounded-lg py-2 px-4 block ml-4 mb-6 w-2/5 appearance-none " placeholder="Enter your username">
 
                                             </div>
                                             <span class="mt-4 text-base text-gray-700">To make these change live, Publish your website.</span>
@@ -615,6 +615,35 @@
                         </div>
                     </div>
 
+                   <!--   twitter-->
+                    <div class=" mt-8 justify-between border-solid border-b-2 p-2 text-center items-center">
+                        <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">Twitter Username</div>
+                        <div class="text-left ml-2 text-md antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">Twitter needs yours personal username to verify any Likes you get on your website.</div>
+                    </div>
+
+                    <div class=" pt-4 w-full h-auto border-black mx-2 ">
+                        <div class=" flex justify-start bg-white">
+
+                            <div class="pt-4 w-24 h-auto border-black mt-4 ml-4">
+                                <div class="w-24 h-10">
+                                    <img class=" w-24 h-24" src='/project-assets/images/twitter-png-file-twitter-icon-png-256.png' alt="">
+                                </div>
+
+                            </div>
+                            <div class=" flex m-2 w-4/5 mr-8 ">
+                                <div class="w-full h-auto  px-6 py-4 rounded-md ">
+                                    <span class="text-lg text-gray-700">Enter your Personal Twitter Username:</span><br>
+                                    <div class="flex w-full mt-2" >
+                                        <span class="block mt-2 text-md text-gray-700">www.twitter.com/</span>
+                                        <input class="bg-white focus:outline-none border border-gray-500 rounded-lg py-2 px-4 block ml-4 mb-6 w-2/5 appearance-none " placeholder="Enter your username">
+
+                                    </div>
+                                    <span class="mt-4 text-base text-gray-700">To make these change live, Publish your website.</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="p-4 " v-if="showTab5">
