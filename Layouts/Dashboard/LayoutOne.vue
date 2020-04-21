@@ -1,9 +1,9 @@
 <template>
-    <div class="h-screen w-screen flex-col justify-between bg-gray-200">
+    <div class="h-full w-full flex-col justify-between bg-gray-200">
         <div class="flex h-full">
             <div v-if="menuIsOpen" class="px-1">
                 <img class="h-16" src="/nits-assets/images/logo.png" alt="NitsEditor Logo">
-                <menu-one class="w-48 pb-6 h-full mb-8 mt-8 overflow-y-scroll" :active="active"></menu-one>
+                <menu-one class="w-48 pb-6 h-full mb-8 mt-8" :active="active"></menu-one>
             </div>
             <div v-if="!menuIsOpen" class="px-2">
                 <div class="w-4">
