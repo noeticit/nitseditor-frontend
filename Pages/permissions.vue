@@ -67,10 +67,10 @@
                                 </tr>
                                 <tr v-for="(item,index) in tableData">
                                     <td class="h-8 text-center border-b border-gray-200 text-sm text-teal-700 antialiased leading-tight tracking-normal  font-sans font-normal">{{item.name}}</td>
-                                    <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox"></td>
-                                    <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox"></td>
-                                    <td class="h-8 text-center border-b border-gray-200  antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox"></td>
-                                    <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox"></td>
+                                    <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.status_1"></td>
+                                    <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.status_2"></td>
+                                    <td class="h-8 text-center border-b border-gray-200  antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.status_3"></td>
+                                    <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.status_4"></td>
                                 </tr>
                             </table>
                         </div>
@@ -86,7 +86,8 @@
         data() {
             return {
                 breadcrumbs: ['Permissions'],
-                tableData:[{name:''}]
+                tableData:[{name:'', status_1:'', status_2:'', status_3:'', status_4:''}],
+                roles:[]
             }
         },
         components: {
@@ -101,10 +102,25 @@
            this.tableData=this.$router.options.routes.map((d) => {
                 return {
                     name: d.name,
+                    status_1: false,
+                    status_2: false,
+                    status_3: false,
+                    status_4: false,
                     // route: d.path
                 }
             })
-            // console.log(this.tableData);
+            console.log(this.tableData);
+
+            this.$api.get('/api/roles').then(response => {
+                if(response.status === 200)
+                {
+                    this.roles = response.data.data.map(a => ({
+                        name: a.name,
+                        id: a.id
+                    }));
+                }
+            })
+
         }
     }
 </script>
