@@ -109,22 +109,22 @@
                             <div class="mt-4 flex justify-center bg-white">
                                 <div class="m-2 w-4/5 mr-56">
                                     <div class="m-2">
-                                        <div class="flex m-2 w-full">
+                                        <div class="flex m-2 w-full mt-2">
                                             <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2">Site Title</label>
-                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/2 appearance-none leading-normal" placeholder="Site Title" v-model="site_title">
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/2 appearance-none leading-normal" placeholder="Site Title" v-model="title">
                                         </div>
-                                        <div class="flex m-2 w-full">
+                                        <div class="flex m-2 w-full mt-2">
                                             <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2">Tagline</label>
                                             <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/2 appearance-none leading-normal" placeholder="Tagline"  v-model="tagline">
 
                                         </div>
 
-                                        <div class="flex m-2 w-full">
+                                        <div class="flex m-2 w-full mt-2">
                                             <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2 ">Administration Email Address</label>
                                             <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/2 appearance-none leading-normal" placeholder="Email Address" type="text" v-model="administrator_email">
 
                                         </div>
-                                        <div class="flex inline-block m-2 w-full">
+                                        <div class="flex inline-block m-2 w-full mt-2">
                                             <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2">New User Default Role</label>
                                             <select v-model="role" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-1/4 mr-10 h-10 leading-normal">
                                                 <option  >Role</option>
@@ -142,20 +142,53 @@
 <!--                                                <option value="" selected  >Language</option>-->
 <!--                                            </select>-->
 <!--                                        </div>-->
-                                        <div class="flex m-2 w-full">
+                                        <div class="flex m-2 w-full mt-2">
                                             <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2"> Date Format</label>
-                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/4 appearance-none leading-normal" placeholder="Date Format"  v-model="date_format">
+                                            <label class="inline-flex items-center">
+                                                <input v-model="date_format" type="radio" class="form-radio mt-2  w-4 h-6" name="website" value="website">
+                                                <span class="ml-2 mt-2">April 21,2020</span>
+                                            </label><br>
+                                            <label class="inline-flex items-center ml-6">
+                                                <input v-model="date_format" type="radio" class="form-radio mt-2 w-6 h-4" name="mobile" value="mobile">
+                                                <span class="ml-2 mt-2">2020-04-21</span>
+                                            </label><br>
+                                            <label class="inline-flex items-center ml-6">
+                                                <input v-model="date_format" type="radio" class="form-radio mt-2 w-6 h-4" name="mobile" value="mobiles">
+                                                <span class="ml-2 mt-2">04/21/2020</span>
+                                            </label><br>
+                                            <label class="inline-flex items-center ml-6">
+                                                <input v-model="date_format" type="radio" class="form-radio mt-2 w-6 h-4" name="mobile" value="mobiless">
+                                                <span class="ml-2 mt-2">21/04/2020</span>
+                                            </label>
+<!--                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/4 appearance-none leading-normal" placeholder="Date Format"  v-model="date_format">-->
                                         </div>
-                                        <div class="flex m-2 w-full">
+                                        <div class="flex m-2 w-full mt-2">
                                             <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2"> Time Format</label>
-                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/4 appearance-none leading-normal" placeholder="Time Format"  v-model="time_format">
+                                            <label class="inline-flex items-center">
+                                                <input v-model="date_format" type="radio" class="form-radio mt-2  w-4 h-6" name="website" value="website">
+                                                <span class="ml-2 mt-2">8:21 am</span>
+                                            </label>
+                                            <label class="inline-flex items-center ml-6">
+                                                <input v-model="date_format" type="radio" class="form-radio mt-2 w-6 h-4" name="mobile" value="mobile">
+                                                <span class="ml-2 mt-2">8:21 AM</span>
+                                            </label><br>
+                                            <label class="inline-flex items-center ml-6">
+                                                <input v-model="date_format" type="radio" class="form-radio mt-2 w-6 h-4" name="mobile" value="mobiles">
+                                                <span class="ml-2 mt-2">08:21</span>
+                                            </label><br>
+<!--                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/4 appearance-none leading-normal" placeholder="Time Format"  v-model="time_format">-->
 
                                         </div>
-                                        <div class="flex m-2 w-full">
+                                        <div class="flex m-2 w-full mt-2">
                                             <label class=" text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2">Week Starts On</label>
                                             <select v-model="week_start"  class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-1/4 h-10 leading-normal">
-                                                <option value="" selected  >Monday</option>
+                                                <option>Monday</option>
                                             </select>
+                                        </div>
+                                        <div class="flex m-2 w-full mt-2">
+                                            <label class=" text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-4">Favicon</label>
+                                            <span class="text-teal-500 text-sm font-semibold cursor-pointer rounded-lg border border-teal-500 align-center antialiased w-32 h-10 p-2" >Upload Image</span>
+
                                         </div>
 
                                     </div>
@@ -266,7 +299,7 @@
 
                     <div class=" pt-4 w-full h-auto border-black mx-2  mt-2">
                         <div class="flex rounded shadow justify-between items-center text-left bg-gray-100 h-8 p-1 h-12">
-                            <span class="ml-2">
+                            <div class="ml-2 w-4 mr-2 ">
                                 <svg @click="isOpen = false" :class="isOpen ? 'block' : 'hidden'" class="h-5 cursor-pointer w-5" version="1.1" id="Chevron_up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                     <path fill="#000000" d="M15.484,12.452c-0.436,0.446-1.043,0.481-1.576,0L10,8.705l-3.908,3.747c-0.533,0.481-1.141,0.446-1.574,0
@@ -280,8 +313,8 @@
                                         c0,0-4.287-4.084-4.695-4.502C4.107,8.745,4.08,7.993,4.516,7.548z"/>
                                 </svg>
 
-                            </span>
-                            <span class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-11/12 ">A (Host)</span>
+                            </div>
+                            <div class=" text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 items-start  text-left w-40 mr-10/12">A (Host)</div>
 
 
                         </div>
@@ -318,7 +351,7 @@
                     </div>
                     <div class="  w-full h-auto border-black mx-2 ">
                         <div class="flex rounded shadow justify-between items-center text-left bg-gray-100 h-8 p-1 h-12">
-                            <div class="ml-2">
+                            <div class="ml-2  w-4 mr-2 ">
                                 <svg @click="isOpen1 = false" :class="isOpen1 ? 'block' : 'hidden'" class="h-5 cursor-pointer w-5" version="1.1" id="Chevron_up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                     <path fill="#000000" d="M15.484,12.452c-0.436,0.446-1.043,0.481-1.576,0L10,8.705l-3.908,3.747c-0.533,0.481-1.141,0.446-1.574,0
@@ -333,7 +366,7 @@
                                 </svg>
 
                             </div>
-                            <div class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-10/12 pr-8 ">CNAME (Aliases)</div>
+                            <div class=" text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 text-left w-40 mr-10/12 ">CNAME (Aliases)</div>
 
 
                         </div>
@@ -370,7 +403,7 @@
                     </div>
                     <div class="  w-full h-auto border-black mx-2 ">
                         <div class="flex rounded shadow justify-between items-center text-left bg-gray-100 h-8 p-1 h-12">
-                            <div class="ml-2">
+                            <div class="ml-2  w-4 mr-2 ">
                                 <svg @click="isOpen2 = false" :class="isOpen2 ? 'block' : 'hidden'" class="h-5 cursor-pointer w-5" version="1.1" id="Chevron_up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                     <path fill="#000000" d="M15.484,12.452c-0.436,0.446-1.043,0.481-1.576,0L10,8.705l-3.908,3.747c-0.533,0.481-1.141,0.446-1.574,0
@@ -385,7 +418,7 @@
                                 </svg>
 
                             </div>
-                            <div class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-10/12 pr-2">MX (Mail Exchange)</div>
+                            <div class=" text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 text-left w-40 mr-10/12 ">MX (Mail Exchange)</div>
 
 
                         </div>
@@ -422,7 +455,7 @@
                     </div>
                     <div class="  w-full h-auto border-black mx-2 ">
                         <div class="flex rounded shadow justify-between items-center text-left bg-gray-100 h-8 p-1 h-12">
-                            <div class="ml-2">
+                            <div class="ml-2 w-4 mr-2 ">
                                 <svg @click="isOpen3 = false" :class="isOpen3 ? 'block' : 'hidden'" class="h-5 cursor-pointer w-5" version="1.1" id="Chevron_up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                     <path fill="#000000" d="M15.484,12.452c-0.436,0.446-1.043,0.481-1.576,0L10,8.705l-3.908,3.747c-0.533,0.481-1.141,0.446-1.574,0
@@ -437,7 +470,7 @@
                                 </svg>
 
                             </div>
-                            <div class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-10/12 pr-4">NS (Name Servers)</div>
+                            <div class="text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 text-left  w-40 mr-10/12 ">NS (Name Servers)</div>
 
 
                         </div>
@@ -498,7 +531,7 @@
                         </div>
                           <div class=" flex m-2 w-3/4 mr-8 ">
                           <div class="mt-8 p-1" >
-                              <span class="text-blue-500 text-md p-2 ml-6 font-semibold rounded-full border border-blue-500 antialiased w-10" >Upload Image</span>
+                              <span class="text-blue-500 text-md p-2 ml-6 font-semibold cursor-pointer rounded-full border border-blue-500 antialiased w-10" >Upload Image</span>
 
                           <div class="mt-6 ">
                               <div class="w-full h-auto  px-6 py-4 rounded-md ">
@@ -522,15 +555,15 @@
                          <!--facebook-->
                     <div class=" mt-8 justify-between border-solid border-b-2 p-2 text-center items-center">
                         <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">Facebook Username</div>
-                        <div class="text-left ml-2 text-md antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">Facebook needs yours personal username to verify any Likes you get on your Wix website. If you<br>have the Facebook Comments app, this will also allowmyou to moderate comments.</div>
+                        <div class="text-left ml-2 text-md antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">Facebook needs yours personal username to verify any Likes you get on your website.</div>
                     </div>
 
                     <div class=" pt-4 w-full h-auto border-black mx-2 ">
                         <div class=" flex justify-center bg-white">
 
                             <div class=" pt-4 w-1/5 h-auto border-black mr-8 ml-8 mt-2">
-                                <div>
-                                     <!--    facebook icon-->
+                                <div class="w-40 h-10">
+                                    <img class=" w-40 h-10" src="/Assets/images/facebook.png" alt="">
                                 </div>
 
                             </div>
@@ -539,7 +572,7 @@
                                             <span class="text-lg text-gray-700">Enter your Personal Facebook Username:</span><br>
                                             <div class="flex w-full mt-2" >
                                                 <span class="block mt-2 text-md text-gray-700">www.facebook.com/</span>
-                                                <input class="bg-white focus:outline-none border border-gray-500 rounded-lg py-2 px-4 block ml-4 mb-6 w-full appearance-none " placeholder="Enter your username">
+                                                <input class="bg-white focus:outline-none border border-gray-500 rounded-lg py-2 px-4 block ml-4 mb-6 w-1/2 appearance-none " placeholder="Enter your username">
 
                                             </div>
                                             <span class="mt-4 text-base text-gray-700">To make these change live, Publish your website.</span>
@@ -679,7 +712,7 @@
                 role:'',
                 administrator_email:'',
                 tagline:'',
-                site_title:'',
+                title:'',
             }
         },
         components: {
@@ -708,7 +741,58 @@
                         break;
                 }
             },
+
+            fetchData() {
+                this.$api.get('/api/settings-show',
+                ).then(response => {
+                    if (response.status === 200) {
+
+                        // this.user_id = response.data.data.id;
+                        // this.first_name= response.data.data.first_name;
+                        // this.last_name= response.data.data.last_name;
+                        // this.email= response.data.data.email;
+                        // this.contact_number= response.data.data.contact_number;
+                        // this.company_name= response.data.data.sign_up.company_name;
+                        // this.city= response.data.data.sign_up.city_id;
+                        // this.state= response.data.data.sign_up.state_id;
+                        // this.country= response.data.data.sign_up.country_id;
+                        // this.pincode= response.data.data.sign_up.pincode;
+                    }
+                })
+
+                this.$api.get('/api/countries').then(response => {
+                    if(response.status === 200)
+                    {
+                        this.optioncountry = response.data.data.map(a => ({
+                            name: a.name,
+                            id: a.id
+                        }));
+                    }
+                })
+
+                this.$api.get('/api/states').then(response => {
+                    if(response.status === 200)
+                    {
+                        this.optionstates = response.data.data.map(a => ({
+                            name: a.name,
+                            id: a.id
+                        }));
+                    }
+                })
+
+                this.$api.get('/api/cities').then(response => {
+                    if(response.status === 200)
+                    {
+                        this.optioncity = response.data.data.map(a => ({
+                            name: a.name,
+                            id: a.id
+                        }));
+                    }
+                })
+            },
         },
+
+
     }
 </script>
 
