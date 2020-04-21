@@ -28,55 +28,83 @@
                     </div>
                     <div class=" pt-4 w-full h-auto border-black mx-2  mt-2">
                         <div class="">
-                            <div class="mt-4 flex justify-center bg-white">
-                                <div class="m-2 w-4/5 mr-56">
+                            <div class="mt-4 flex justify-start bg-white">
+                                <div class="m-2 w-3/5 mr-56">
                                     <div class="m-2">
                                         <div class="flex m-2 w-full">
-                                            <label class="block text-gray-700 text-base font-semibold antialised w-56 ">Site Title</label>
+                                            <label class="block text-gray-600 text-base font-semibold antialised w-64 ">Site Title</label>
                                             <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Site Title" v-model="site_title">
                                         </div>
                                         <div class="flex m-2 w-full">
-                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">Tagline</label>
+                                            <label class="block text-gray-600 text-base font-semibold antialised w-64">Tagline</label>
                                             <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Tagline" type="tagline" v-model="tagline">
 
                                         </div>
 
                                         <div class="flex m-2 w-full">
-                                            <label class="block text-gray-700 text-base font-semibold antialised w-56 ">Administration Email Address</label>
-                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Email Address" type="text" v-model="email">
+                                            <label class="block text-gray-600 text-base font-semibold antialised w-64 ">Administration Email Address</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Email Address" type="text" v-model="email_add">
 
                                         </div>
                                         <div class="flex inline-block m-2 w-full">
-                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">New User Default Role</label>
-                                            <select v-model="role" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-12 leading-normal">
-                                                <option value="" selected  >Role</option>
+                                            <label class="block text-gray-600 text-base font-semibold antialised w-64">New User Default Role</label>
+                                            <select v-model="role" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full h-12 leading-normal">
+                                                <option value="" selected  >Subscriber</option>
+                                                <option value="" selected  >Administrator</option>
                                             </select>
+
                                         </div>
                                         <div class="flex m-2 w-full">
-                                            <label class=" text-gray-700 text-base font-semibold antialised w-56">Site Language</label>
-                                            <select v-model="language"  class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-12 leading-normal">
+                                            <label class=" text-gray-600 text-base font-semibold antialised w-64">Site Language</label>
+                                            <select v-model="site_language"  class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full  h-12 leading-normal">
                                                 <option value="" selected  >Language</option>
                                             </select>
                                         </div>
                                         <div class="flex m-2 w-full">
-                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">Time Zone</label>
-                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Time Zone" type="time" v-model="time_zone">
+                                            <label class="block text-gray-600 text-base font-semibold antialised w-64">Time Zone</label>
+                                            <select v-model="time_zone"  class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full h-12 leading-normal">
+                                                <option value="" selected  >select option</option>
+                                                <option value="" selected  >UTC+3:30</option>
+                                                <option value="" selected  >UTC+4</option>
+                                                <option value="" selected  >UTC+4:30</option>
+                                                <option value="" selected  >UTC+5</option>
+                                                <option value="" selected  >UTC+5:30</option>
+                                                <option value="" selected  >UTC+5:45</option>
+                                            </select>
                                         </div>
                                         <div class="flex m-2 w-full">
-                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">Date Format</label>
-                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Date Format" type="date" v-model="date_format">
+                                            <label class="block text-gray-600 text-base font-semibold antialised w-64">Date Format</label>
+                                            <select v-model="date_format" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full h-12 leading-normal">
+                                                <option value="" selected  >select option</option>
+                                                <option value="" selected  >April 21, 2020    F j, Y</option>
+                                                <option value="" selected  >04/21/2020        m/d/Y</option>
+                                            </select>
                                         </div>
                                         <div class="flex m-2 w-full">
-                                            <label class="block text-gray-700 text-base font-semibold antialised w-56"> Time Format</label>
-                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Time Format" type="time" v-model="time_format">
+                                            <label class="block text-gray-600 text-base font-semibold antialised w-64"> Time Format</label>
+                                            <select v-model="time_format" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full h-12 leading-normal">
+                                                <option value="" selected  >select option</option>
+                                                <option value="" selected  >g:i a</option>
+                                                <option value="" selected  >g:i A</option>
+                                            </select>
 
                                         </div>
                                         <div class="flex m-2 w-full">
-                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">Week Starts On</label>
-                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Week Start On" type="date" v-model="week_start">
-
+                                            <label class="block text-gray-600 text-base font-semibold antialised w-64">Week Starts On</label>
+                                            <select v-model="week_start" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full h-12 leading-normal">
+                                                <option value="" selected >Monday</option>
+                                                <option value="" selected >Tuesday</option>
+                                                <option value="" selected >Wednesday</option>
+                                                <option value="" selected >Thurday</option>
+                                                <option value="" selected >Friday</option>
+                                                <option value="" selected >Saturday</option>
+                                                <option value="" selected >Sunday</option>
+                                            </select>
                                         </div>
 
+                                        <div class="flex m-2 w-full">
+                                            <button class="bg-blue-400 mt-4 rounded-lg w-32 h-10 text-white">Save</button>
+                                        </div>
                                     </div>
                                 </div>
 <!--                                <div class="m-2 w-1/2 mr-8 mt-6 ">-->
@@ -590,7 +618,15 @@
                 city:'',
                 state:'',
                 pincode:'',
-            }
+                site_name:'',
+                tagline:'',
+                email_add:'',
+                role:'',
+                site_language:'',
+                date_format:'',
+                time_format:'',
+                week_start:'',
+                }
         },
         components: {
             'DashboardLayoutOne': () => import('./../Layouts/Dashboard/LayoutOne'),
