@@ -2,25 +2,103 @@
     <dashboard-layout-one active="settings">
         <base-bread-crumb-one name="Settings" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
         <div class=" w-full h-auto bg-white mt-4">
+<!--            <div class="flex">-->
+<!--                <ul class=" flex ml-4 border-b hover:lg-border-300 mt-4">-->
+<!--                    <li class="mr-1 px-5 cursor-pointer" @click="changeTab('general')">-->
+<!--                        <a class="flex bg-white border-b hover:border-teal-600 inline-block py-2 px-4 text-teal-600 hover:text-blue-darker active" data-toggle="tab" role="tab">-->
+<!--                            <svg class="inline-block w-4 h-4 mt-1 mr-1" version="1.1" id="Cog" xmlns="http://www.w3.org/2000/svg" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                                 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
+<!--                                    <path fill-rule="evenodd" d="M16.783,10c0-1.049,0.646-1.875,1.617-2.443c-0.176-0.584-0.407-1.145-0.692-1.672-->
+<!--	                                c-1.089,0.285-1.97-0.141-2.711-0.883c-0.741-0.74-0.968-1.621-0.683-2.711c-0.527-0.285-1.088-0.518-1.672-0.691-->
+<!--	                                C12.074,2.57,11.047,3.215,10,3.215c-1.048,0-2.074-0.645-2.643-1.615C6.772,1.773,6.213,2.006,5.686,2.291-->
+<!--	                                c0.285,1.09,0.059,1.971-0.684,2.711C4.262,5.744,3.381,6.17,2.291,5.885C2.006,6.412,1.774,6.973,1.6,7.557-->
+<!--	                                C2.57,8.125,3.215,8.951,3.215,10c0,1.047-0.645,2.074-1.615,2.643c0.175,0.584,0.406,1.144,0.691,1.672-->
+<!--	                                c1.09-0.285,1.971-0.059,2.711,0.682c0.741,0.742,0.969,1.623,0.684,2.711c0.527,0.285,1.087,0.518,1.672,0.693-->
+<!--	                                c0.568-0.973,1.595-1.617,2.643-1.617c1.047,0,2.074,0.645,2.643,1.617c0.584-0.176,1.144-0.408,1.672-0.693-->
+<!--	                                c-0.285-1.088-0.059-1.969,0.683-2.711c0.741-0.74,1.622-1.166,2.711-0.883c0.285-0.527,0.517-1.086,0.692-1.672-->
+<!--	                                C17.429,11.873,16.783,11.047,16.783,10z M10,13.652c-2.018,0-3.653-1.635-3.653-3.652c0-2.018,1.636-3.654,3.653-3.654-->
+<!--	                                c2.018,0,3.652,1.637,3.652,3.654C13.652,12.018,12.018,13.652,10,13.652z"/>-->
+<!--                            </svg>-->
+<!--                            <span class="text-lg antialiased text-teal-600">General</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="px-5 mr-1 cursor-pointer" @click="changeTab('contact')">-->
+<!--                        <a class="bg-white border-b hover:border-teal-600 inline-block text-teal-600 py-2 px-4 hover:text-blue-darker" data-toggle="tab"  role="tab">-->
+<!--                            <svg class="inline-block w-4 h-4  mr-1"  version="1.1" id="Phone" xmlns="http://www.w3.org/2000/svg" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                                 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
+<!--                                <path fill-rule="evenodd" d="M11.229,11.229c-1.583,1.582-3.417,3.096-4.142,2.371c-1.037-1.037-1.677-1.941-3.965-0.102-->
+<!--                                    c-2.287,1.838-0.53,3.064,0.475,4.068c1.16,1.16,5.484,0.062,9.758-4.211c4.273-4.274,5.368-8.598,4.207-9.758-->
+<!--                                    c-1.005-1.006-2.225-2.762-4.063-0.475c-1.839,2.287-0.936,2.927,0.103,3.965C14.324,7.812,12.811,9.646,11.229,11.229z"/>-->
+<!--                                </svg>-->
+<!--                            <span  class="text-lg antialiased text-teal-600">Contact</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="px-5 mr-1 cursor-pointer"  @click="changeTab('domain')">-->
+<!--                        <a  class="bg-white inline-block border-b hover:border-teal-600 py-2 px-4 text-teal-600 hover:text-blue-darker"  data-toggle="tab"  role="tab">-->
+<!--                            <svg  class="inline-block w-4 h-4  mr-1" version="1.1" id="RSS" xmlns="http://www.w3.org/2000/svg"  fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                                 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
+<!--                                <path fill-rule="evenodd" d="M2.4,2.4v2.367c7.086,0,12.83,5.746,12.83,12.832h2.369C17.599,9.205,10.794,2.4,2.4,2.4z M2.4,7.137v2.369-->
+<!--                                    c4.469,0,8.093,3.623,8.093,8.094h2.368C12.861,11.822,8.177,7.137,2.4,7.137z M4.669,13.059c-1.254,0-2.27,1.018-2.27,2.271-->
+<!--                                    s1.016,2.27,2.27,2.27s2.269-1.016,2.269-2.27S5.923,13.059,4.669,13.059z"/>-->
+<!--                                </svg>-->
+
+<!--                            <span class="text-lg antialiased text-teal-600">Domain</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class=" px-5 mr-1 cursor-pointer"  @click="changeTab('social')">-->
+<!--                        <a  class="bg-white inline-block border-b hover:border-teal-600 py-2 px-4 text-teal-600 hover:text-blue-darker"  data-toggle="tab"  role="tab">-->
+<!--                            <svg class="inline-block w-4 h-6 mr-1" version="1.1" id="User" xmlns="http://www.w3.org/2000/svg" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                                 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
+<!--                                <path fill-rule="evenodd" d="M7.725,2.146c-1.016,0.756-1.289,1.953-1.239,2.59C6.55,5.515,6.708,6.529,6.708,6.529-->
+<!--                                    s-0.313,0.17-0.313,0.854C6.504,9.1,7.078,8.359,7.196,9.112c0.284,1.814,0.933,1.491,0.933,2.481c0,1.649-0.68,2.42-2.803,3.334-->
+<!--                                    C3.196,15.845,1,17,1,19v1h18v-1c0-2-2.197-3.155-4.328-4.072c-2.123-0.914-2.801-1.684-2.801-3.334c0-0.99,0.647-0.667,0.932-2.481-->
+<!--                                    c0.119-0.753,0.692-0.012,0.803-1.729c0-0.684-0.314-0.854-0.314-0.854s0.158-1.014,0.221-1.793c0.065-0.817-0.398-2.561-2.3-3.096-->
+<!--                                    c-0.333-0.34-0.558-0.881,0.466-1.424C9.439,0.112,8.918,1.284,7.725,2.146z"/>-->
+<!--                                </svg>-->
+<!--                            <span class="text-lg antialiased text-teal-600">Social</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="mr-1 px-5 cursor-pointer"  @click="changeTab('regional')">-->
+<!--                        <a  class="bg-white inline-block border-b hover:border-teal-600 py-2 px-4 text-teal-600 hover:text-blue-darker"   data-toggle="tab"  role="tab">-->
+<!--                            <svg  class="inline-block w-4 h-5 mr-1"  version="1.1" id="Globe" xmlns="http://www.w3.org/2000/svg" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                                  viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
+<!--                                <path fill-rule="evenodd" d="M10,0.4c-5.295,0-9.601,4.307-9.601,9.6S4.705,19.6,10,19.6c5.293,0,9.6-4.307,9.6-9.6S15.293,0.4,10,0.4z-->
+<!--                                     M18.188,10c0,1.873-0.636,3.6-1.696,4.98c-0.3-0.234-0.619-0.867-0.319-1.523c0.303-0.66,0.382-2.188,0.312-2.783-->
+<!--                                    c-0.066-0.594-0.375-2.025-1.214-2.039c-0.838-0.012-1.413-0.289-1.911-1.283c-1.033-2.068,1.939-2.465,0.906-3.609-->
+<!--                                    c-0.289-0.322-1.783,1.322-2.002-0.869C12.25,2.717,12.399,2.482,12.6,2.238C15.844,3.328,18.188,6.395,18.188,10z M8.875,1.893-->
+<!--                                    C8.679,2.275,8.162,2.43,7.848,2.717C7.164,3.336,6.87,3.25,6.502,3.844C6.131,4.438,4.935,5.293,4.935,5.723-->
+<!--                                    s0.604,0.936,0.906,0.838c0.302-0.1,1.099-0.094,1.567,0.07c0.469,0.166,3.914,0.332,2.816,3.244-->
+<!--                                    c-0.348,0.926-1.873,0.77-2.279,2.303c-0.061,0.225-0.272,1.186-0.285,1.5c-0.025,0.486,0.344,2.318-0.125,2.318-->
+<!--                                    c-0.471,0-1.738-1.639-1.738-1.936s-0.328-1.338-0.328-2.23c0-0.891-1.518-0.877-1.518-2.062c0-1.068,0.823-1.6,0.638-2.113-->
+<!--                                    c-0.181-0.51-1.627-0.527-2.23-0.59C3.412,4.334,5.889,2.307,8.875,1.893z M7.424,17.77c0.492-0.26,0.542-0.596,0.988-0.613-->
+<!--                                    c0.51-0.023,0.925-0.199,1.5-0.326c0.51-0.111,1.423-0.629,2.226-0.695c0.678-0.055,2.015,0.035,2.375,0.689-->
+<!--                                    c-1.295,0.861-2.848,1.363-4.514,1.363C9.1,18.188,8.234,18.039,7.424,17.77z"/>-->
+<!--                                </svg>-->
+
+<!--                            <span class="text-lg antialiased text-teal-600">Regional</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
             <div class="flex p-4 ">
-                <ul class="list-reset flex border-b">
-                    <li class="-mb-px mr-1 cursor-pointer"  @click="changeTab('General')">
-                        <span class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold">General</span>
-                    </li>
-                    <li class="mr-1 cursor-pointer" @click="changeTab('Contact')">
-                        <span class="bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold" >Contact Info</span>
-                    </li>
-                    <li class="mr-1 cursor-pointer" @click="changeTab('Domain')">
-                        <span class="bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold" >Domain Config</span>
-                    </li>
-                    <li class="mr-1 cursor-pointer" @click="changeTab('Social')">
-                        <span class="bg-white inline-block py-2 px-4 text-grey-light font-semibold" >Social Connects</span>
-                    </li>
-                    <li class="mr-1 cursor-pointer" @click="changeTab('Regional')">
-                        <span class="bg-white inline-block py-2 px-4 text-grey-light font-semibold" >Regional Settings</span>
-                    </li>
-                </ul>
-            </div>
+            <ul class="list-reset flex border-b">
+                <li class="-mb-px px-2  cursor-pointer"  @click="changeTab('general')">
+                    <span class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-teal-500 font-semibold">General</span>
+                </li>
+                <li class=" px-2 cursor-pointer" @click="changeTab('contact')">
+                    <span class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-teal-500  font-semibold" >Contact Info</span>
+                </li>
+                <li class="px-2 cursor-pointer" @click="changeTab('domain')">
+                    <span class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-teal-500 font-semibold" >Domain Config</span>
+                </li>
+                <li class="px-2 cursor-pointer" @click="changeTab('social')">
+                    <span class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-teal-500 font-semibold" >Social Connects</span>
+                </li>
+                <li class="px-2 cursor-pointer" @click="changeTab('regional')">
+                    <span class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-teal-500 font-semibold" >Regional Settings</span>
+                </li>
+            </ul>
+        </div>
             <div >
                 <div class="p-4 " v-if="showTab">
                     <div class="justify-between border-solid border-b-2 p-2 text-center items-center">
@@ -32,66 +110,62 @@
                                 <div class="m-2 w-3/5 mr-56">
                                     <div class="m-2">
                                         <div class="flex m-2 w-full">
-                                            <label class="block text-gray-600 text-base font-semibold antialised w-64 ">Site Title</label>
-                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Site Title" v-model="site_title">
+
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2">Site Title</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/2 appearance-none leading-normal" placeholder="Site Title" v-model="site_title">
                                         </div>
                                         <div class="flex m-2 w-full">
-                                            <label class="block text-gray-600 text-base font-semibold antialised w-64">Tagline</label>
-                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Tagline" type="tagline" v-model="tagline">
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2">Tagline</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/2 appearance-none leading-normal" placeholder="Tagline"  v-model="tagline">
 
                                         </div>
 
                                         <div class="flex m-2 w-full">
-                                            <label class="block text-gray-600 text-base font-semibold antialised w-64 ">Administration Email Address</label>
-                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Email Address" type="text" v-model="email_add">
+
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2 ">Administration Email Address</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/2 appearance-none leading-normal" placeholder="Email Address" type="text" v-model="administrator_email">
 
                                         </div>
                                         <div class="flex inline-block m-2 w-full">
-                                            <label class="block text-gray-600 text-base font-semibold antialised w-64">New User Default Role</label>
-                                            <select v-model="role" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full h-12 leading-normal">
-                                                <option value="" selected  >Subscriber</option>
-                                                <option value="" selected  >Administrator</option>
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2">New User Default Role</label>
+                                            <select v-model="role" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-1/4 mr-10 h-10 leading-normal">
+                                                <option  >Role</option>
                                             </select>
+                                        </div>
+<!--                                        <div class="flex m-2 w-full">-->
+<!--                                            <label class=" text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2">Site Language</label>-->
+<!--                                            <select v-model="language"  class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-1/4 h-10 leading-normal">-->
+<!--                                                <option  >Language</option>-->
+<!--                                            </select>-->
+<!--                                        </div>-->
+<!--                                        <div class="flex m-2 w-full">-->
+<!--                                            <label class=" text-gray-700 text-base font-medium  font-sans font-semibold antialised w-64">Time Zone</label>-->
+<!--                                            <select v-model="time_zone"  class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-1/4 h-10 leading-normal">-->
+<!--                                                <option value="" selected  >Language</option>-->
+<!--                                            </select>-->
+<!--                                        </div>-->
+                                        <div class="flex m-2 w-full">
 
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2"> Date Format</label>
+<!--                                                <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/4 appearance-none leading-normal" placeholder="Date Format"  v-model="date_format">-->
+                                                <select v-model="date_format" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full h-12 leading-normal">
+                                                    <option value="" selected  >select option</option>
+                                                    <option value="" selected  >April 21, 2020    F j, Y</option>
+                                                    <option value="" selected  >04/21/2020        m/d/Y</option>
+                                                </select>
                                         </div>
                                         <div class="flex m-2 w-full">
-                                            <label class=" text-gray-600 text-base font-semibold antialised w-64">Site Language</label>
-                                            <select v-model="site_language"  class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full  h-12 leading-normal">
-                                                <option value="" selected  >Language</option>
-                                            </select>
-                                        </div>
-                                        <div class="flex m-2 w-full">
-                                            <label class="block text-gray-600 text-base font-semibold antialised w-64">Time Zone</label>
-                                            <select v-model="time_zone"  class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full h-12 leading-normal">
-                                                <option value="" selected  >select option</option>
-                                                <option value="" selected  >UTC+3:30</option>
-                                                <option value="" selected  >UTC+4</option>
-                                                <option value="" selected  >UTC+4:30</option>
-                                                <option value="" selected  >UTC+5</option>
-                                                <option value="" selected  >UTC+5:30</option>
-                                                <option value="" selected  >UTC+5:45</option>
-                                            </select>
-                                        </div>
-                                        <div class="flex m-2 w-full">
-                                            <label class="block text-gray-600 text-base font-semibold antialised w-64">Date Format</label>
-                                            <select v-model="date_format" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full h-12 leading-normal">
-                                                <option value="" selected  >select option</option>
-                                                <option value="" selected  >April 21, 2020    F j, Y</option>
-                                                <option value="" selected  >04/21/2020        m/d/Y</option>
-                                            </select>
-                                        </div>
-                                        <div class="flex m-2 w-full">
-                                            <label class="block text-gray-600 text-base font-semibold antialised w-64"> Time Format</label>
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2"> Time Format</label>
+<!--                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/4 appearance-none leading-normal" placeholder="Time Format"  v-model="time_format">-->
                                             <select v-model="time_format" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full h-12 leading-normal">
                                                 <option value="" selected  >select option</option>
                                                 <option value="" selected  >g:i a</option>
                                                 <option value="" selected  >g:i A</option>
                                             </select>
-
                                         </div>
                                         <div class="flex m-2 w-full">
-                                            <label class="block text-gray-600 text-base font-semibold antialised w-64">Week Starts On</label>
-                                            <select v-model="week_start" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full h-12 leading-normal">
+                                            <label class=" text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2">Week Starts On</label>
+                                            <select v-model="week_start"  class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-1/4 h-10 leading-normal">
                                                 <option value="" selected >Monday</option>
                                                 <option value="" selected >Tuesday</option>
                                                 <option value="" selected >Wednesday</option>
@@ -119,7 +193,7 @@
 
                 <div class="p-4 " v-if="showTab2">
                     <div class="justify-between border-solid border-b-2 p-2 text-center items-center">
-                        <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">Location</div>
+                        <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">Contact Information</div>
                         <div class="text-left ml-2 text-md antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">Tell us where your business is based</div>
                     </div>
                     <div class=" pt-4 w-full h-auto border-black mx-2  mt-2">
@@ -127,68 +201,69 @@
                             <div class="mt-4 flex justify-center bg-white">
                                 <div class="m-2 w-1/2">
                                     <div class="px-6">
-                                        <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif" >
+                                        <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal" >
                                             Email
                                         </label>
                                         <input v-model="email" type="email" class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"  placeholder="tailwind@example.com">
                                     </div>
                                     <div class="flex ">
                                         <div class="px-6 w-full mt-2">
-                                            <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif w-full" >
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal" >
                                                 Phone
                                             </label>
                                             <input v-model="phone" class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"  placeholder="">
                                         </div>
                                         <div class="px-6 w-full mt-2">
-                                            <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif w-full" >
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal" >
                                                 Fax
                                             </label>
                                             <input v-model="fax" class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"  placeholder="">
                                         </div>
                                     </div>
                                     <div class="px-6 mt-2">
-                                        <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif" >
+                                        <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal" >
                                             Address
                                         </label>
                                         <input v-model="address" class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"  placeholder="Add your business address">
                                     </div>
                                     <div class="flex ">
                                         <div class="px-6 w-full mt-2">
-                                            <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif w-full" >
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal" >
                                                 City
                                             </label>
-                                            <select v-model="city"   class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal">
-                                                <option value="" selected  >Select City</option>
+                                            <select v-model="city"   class="p-2 rounded-lg text-gray-800 border-gray-400 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10">
+<!--                                                <option value="" selected  >Select City</option>-->
                                                 <option>Mumbai</option>
                                             </select>
                                         </div>
                                         <div class="px-6 w-full mt-2">
-                                            <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif w-full" >
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal" >
                                                 State
                                             </label>
-                                            <select v-model="state"   class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal">
-                                                <option value="" selected  >Select State</option>
+                                            <select v-model="state"   class="p-2 rounded-lg text-gray-800 border-gray-400 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10">
+<!--                                                <option value="" selected  >Select State</option>-->
                                                 <option>Maharashra</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="flex ">
                                         <div class="px-6 w-full mt-2">
-                                            <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif w-full" >
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal" >
                                                 Country
                                             </label>
-                                            <select v-model="country"   class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal">
-                                                <option value="" selected  >Select Country</option>
+                                            <select v-model="country"   class=" p-2 rounded-lg text-gray-800 border-gray-400 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10  ">
                                                 <option>India</option>
                                             </select>
                                         </div>
                                         <div class="px-6 w-full mt-2">
-                                            <label class="block text-gray-700 text-sm font-bold mb-2 antialiased tracking-normal font-serif w-fulle">
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal">
                                                 Pincode
                                             </label>
                                             <input v-model="pincode" class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Enter Pincode">
                                         </div>
                                     </div>
+                                    <button class="h-8 w-32 rounded-lg  bg-black overflow-hidden  text-white bg-teal-600 mt-6 ml-5">Save Changes</button>
+
                                 </div>
                                 <div class="m-2 w-1/2 mr-8 mt-6 ">
                                     <div class="w-full h-11/12 bg-gray-200">
@@ -212,7 +287,7 @@
 
                     <div class=" pt-4 w-full h-auto border-black mx-2  mt-2">
                         <div class="flex rounded shadow justify-between items-center text-left bg-gray-100 h-8 p-1 h-12">
-                            <div class="ml-2">
+                            <span class="ml-2">
                                 <svg @click="isOpen = false" :class="isOpen ? 'block' : 'hidden'" class="h-5 cursor-pointer w-5" version="1.1" id="Chevron_up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                     <path fill="#000000" d="M15.484,12.452c-0.436,0.446-1.043,0.481-1.576,0L10,8.705l-3.908,3.747c-0.533,0.481-1.141,0.446-1.574,0
@@ -226,8 +301,8 @@
                                         c0,0-4.287-4.084-4.695-4.502C4.107,8.745,4.08,7.993,4.516,7.548z"/>
                                 </svg>
 
-                            </div>
-                            <div class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-11/12 pr-2">A (Host)</div>
+                            </span>
+                            <span class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-11/12 ">A (Host)</span>
 
 
                         </div>
@@ -279,7 +354,7 @@
                                 </svg>
 
                             </div>
-                            <div class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-10/12 pr-16 ">CNAME (Aliases)</div>
+                            <div class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-10/12 pr-8 ">CNAME (Aliases)</div>
 
 
                         </div>
@@ -331,7 +406,7 @@
                                 </svg>
 
                             </div>
-                            <div class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-10/12 pr-10">MX (Mail Exchange)</div>
+                            <div class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-10/12 pr-2">MX (Mail Exchange)</div>
 
 
                         </div>
@@ -383,7 +458,7 @@
                                 </svg>
 
                             </div>
-                            <div class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-10/12 pr-12">NS (Name Servers)</div>
+                            <div class=" text-left text-sm antialiased leading-none tracking-wider font-sans font-semibold text-teal-400 mr-10/12 pr-4">NS (Name Servers)</div>
 
 
                         </div>
@@ -425,8 +500,8 @@
 <!--                    upload image-->
                   <div class="w-11/12  justify-center rounded-lg">
                     <div class="justify-between border-solid border-b-2 p-2 text-center items-center">
-                        <div class="text-left ml-2 text-2xl antialiased leading-snug tracking-normal font-sans text-teal-700">Social Share Image</div>
-                        <div class="text-left ml-2 mb-4 text-lg antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">This image appers on social networks like Facebook, Twitter and others when your website is shared. <br>It's a great way to help visitors recognize your brand</div>
+                        <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">Social Share Image</div>
+                        <div class="text-left ml-2 text-md antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">This image appers on social networks like Facebook, Twitter and others when your website is shared. <br>It's a great way to help visitors recognize your brand</div>
                     </div>
                       <div class=" pt-4 w-full h-auto border-black mx-2 ">
                           <div class=" flex justify-center bg-white">
@@ -444,7 +519,7 @@
                         </div>
                           <div class=" flex m-2 w-3/4 mr-8 ">
                           <div class="mt-8 p-1" >
-                              <span class="text-blue-500 text-lg p-3 ml-6 font-semibold rounded-full border border-blue-500 antialiased" >Upload Image</span>
+                              <span class="text-blue-500 text-md p-2 ml-6 font-semibold rounded-full border border-blue-500 antialiased w-10" >Upload Image</span>
 
                           <div class="mt-6 ">
                               <div class="w-full h-auto  px-6 py-4 rounded-md ">
@@ -467,8 +542,8 @@
                   </div>
                          <!--facebook-->
                     <div class=" mt-8 justify-between border-solid border-b-2 p-2 text-center items-center">
-                        <div class="text-left ml-2 text-2xl antialiased leading-snug tracking-normal font-sans text-teal-700">Facebook Username</div>
-                        <div class="text-left ml-2 mb-4 text-lg antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">Facebook needs yours personal username to verify any Likes you get on your Wix website. If you<br>have the Facebook Comments app, this will also allowmyou to moderate comments.</div>
+                        <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">Facebook Username</div>
+                        <div class="text-left ml-2 text-md antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">Facebook needs yours personal username to verify any Likes you get on your Wix website. If you<br>have the Facebook Comments app, this will also allowmyou to moderate comments.</div>
                     </div>
 
                     <div class=" pt-4 w-full h-auto border-black mx-2 ">
@@ -482,9 +557,9 @@
                             </div>
                             <div class=" flex m-2 w-4/5 mr-8 ">
                                         <div class="w-full h-auto  px-6 py-4 rounded-md ">
-                                            <span class="text-xl text-gray-700">Enter your Personal Facebook Username:</span><br>
+                                            <span class="text-lg text-gray-700">Enter your Personal Facebook Username:</span><br>
                                             <div class="flex w-full mt-2" >
-                                                <span class="block mt-2 text-lg text-gray-700">www.facebook.com/</span>
+                                                <span class="block mt-2 text-md text-gray-700">www.facebook.com/</span>
                                                 <input class="bg-white focus:outline-none border border-gray-500 rounded-lg py-2 px-4 block ml-4 mb-6 w-full appearance-none " placeholder="Enter your username">
 
                                             </div>
@@ -509,72 +584,73 @@
                                     <div class="m-2 w-1/2">
 <!--                                        <div class="mb-4 text-lg">Enter the details</div>-->
                                         <div class="px-6">
-                                            <label class="text-left text-gray-700 text-sm font-bold antialiased tracking-normal font-serif" >
+                                            <label class="text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal" >
                                                 Regional Settings
                                             </label><br>
-                                            <select v-model="settings" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10">
-                                                <option value="" selected  >English-India</option>
+                                            <select v-model="settings" class="p-2 rounded-lg text-gray-700 border-gray-400 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10">
+                                                <option >English-India</option>
                                             </select>
                                         </div>
                                         <div class="px-6 mt-4">
-                                            <label class="text-left text-gray-700 text-sm font-bold antialiased tracking-normal font-serif" >
+                                            <label class="text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal" >
                                                 Language
                                             </label><br>
-                                            <select v-model="language" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10">
-                                                <option value="" selected  >English</option>
+                                            <select v-model="language" class="p-2 rounded-lg text-gray-700 border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10">
+                                                <option>English</option>
                                             </select>
                                         </div>
                                         <div class="px-6 mt-4">
-                                            <label class="text-left text-gray-700 text-sm font-bold antialiased tracking-normal font-serif" >
+                                            <label class="text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal" >
                                                 Currency
                                             </label><br>
-                                            <select v-model="currency" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10">
-                                                <option value="" selected  >Indian Rupee-INR(&#8377;)</option>
+                                            <select v-model="currency" class="p-2 rounded-lg border-gray-300 text-gray-700 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10">
+                                                <option>Indian Rupee-INR(&#8377;)</option>
                                             </select>
                                         </div>
                                         <div class="px-6 mt-4">
-                                            <label class="text-left text-gray-700 text-sm font-bold antialiased tracking-normal font-serif" >
+                                            <label class="text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal" >
                                                 Time Zone
                                             </label><br>
-                                            <select v-model="time_zone" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10">
-                                                <option value="" selected  >(GMT+5:30)Asia/Kolkata</option>
+                                            <select v-model="time_zone" class="p-2 rounded-lg text-gray-700 border-gray-300 border  bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-10">
+                                                <option >(GMT+5:30)Asia/Kolkata</option>
                                             </select>
                                         </div>
+                                        <button class="h-8 w-32 rounded-lg  bg-black overflow-hidden  text-white bg-teal-600 mt-6 ml-5">Save Changes</button>
 
                                     </div>
                                     <div class="m-2 w-1/2 mr-8 ">
                                         <div >
-                                            <div class="text-gray-700 text-sm font-bold antialiased tracking-normal font-serif" >Region Format Preview</div>
+                                            <div class="text-gray-700 leading-tight tracking-normal  font-sans font-normal" >Region Format Preview</div>
                                             <div class="w-full h-auto bg-gray-200 px-6 py-4 rounded-md ">
                                                 <div class="flex">
-                                                    <span>Date:</span>
-                                                    <span>20 April 2020,</span>
-                                                    <span>12:06:51 pm</span>
+                                                    <span class="text-gray-700">Date:&nbsp;</span>
+                                                    <span class="text-gray-700">20 April 2020,&nbsp;</span>
+                                                    <span class="text-gray-700">12:06:51 pm</span>
                                                 </div>
                                                 <div class="flex">
-                                                    <span>Short Date:</span>
-                                                    <span>1,234.56</span>
-                                                    <span>12:06 pm</span>
+                                                    <span class="text-gray-700">Short Date:&nbsp;</span>
+                                                    <span class="text-gray-700">1,234.56,&nbsp;</span>
+                                                    <span class="text-gray-700">12:06 pm</span>
                                                 </div>
                                                 <div class="flex">
-                                                    <span>Numbers:</span>
-                                                    <span>1,234.56</span>
+                                                    <span class="text-gray-700">Numbers:&nbsp;</span>
+                                                    <span class="text-gray-700">1,234.56</span>
                                                 </div>
                                                 <div class="flex">
-                                                    <span>Currency:</span>
-                                                    <span>&#8377; 1,234.56</span>
+                                                    <span class="text-gray-700">Currency:&nbsp;</span>
+                                                    <span class="text-gray-700">&#8377; 1,234.56</span>
                                                 </div>
                                                 <div class="flex">
-                                                    <span>Measurements:</span>
-                                                    <span>Metric (e.g. kg, cm)</span>
+                                                    <span class="text-gray-700">Measurements:&nbsp;</span>
+                                                    <span class="text-gray-700">Metric (e.g. kg, cm)</span>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="mt-6 ">
                                             <div class="w-full h-auto bg-gray-200 px-6 py-4 rounded-md ">
-                                                    <span class="text-lg font-medium">Add Languages to Your Site</span><br>
-                                                    <span class="mt-2">Grow your global audiance with a multilingual website.</span><br>
+                                                    <span class="text-md font-small">Add Languages to Your Site</span><br>
+                                                    <span class="mt-2 text-sm">Grow your global audiance with a multilingual website.</span><br>
                                                     <a href="#" class="mt-2 text-sm text-blue-400">Add Languages</a>
                                             </div>
                                         </div>
@@ -618,15 +694,14 @@
                 city:'',
                 state:'',
                 pincode:'',
-                site_name:'',
-                tagline:'',
-                email_add:'',
-                role:'',
-                site_language:'',
-                date_format:'',
-                time_format:'',
                 week_start:'',
-                }
+                time_format:'',
+                date_format:'',
+                role:'',
+                administrator_email:'',
+                tagline:'',
+                site_title:'',
+            }
         },
         components: {
             'DashboardLayoutOne': () => import('./../Layouts/Dashboard/LayoutOne'),
@@ -640,15 +715,15 @@
                 this.showTab5 = false;
 
                 switch(tab) {
-                    case 'General': this.showTab = true;
+                    case 'general': this.showTab = true;
                         break;
-                    case 'Contact': this.showTab2 = true;
+                    case 'contact': this.showTab2 = true;
                         break;
-                    case 'Domain': this.showTab3 = true;
+                    case 'domain': this.showTab3 = true;
                         break;
-                    case 'Social': this.showTab4 = true;
+                    case 'social': this.showTab4 = true;
                         break;
-                    case 'Regional': this.showTab5 = true;
+                    case 'regional': this.showTab5 = true;
                         break;
                     default: this.showTab = true;
                         break;
