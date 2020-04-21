@@ -73,7 +73,8 @@
                                     <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox"></td>
                                 </tr>
                             </table>
-                            <div class="flex items-center mt-5 ml-40">
+
+                            <div class="flex items-center mt-5 ml-32">
                                  <span class="relative inline-flex ">
                                         <ul class="flex">
                                             <li class=" mr-1">
@@ -90,37 +91,23 @@
                                               </svg>
                                             </a>
                                           </li>
-                                           <li class="mr-1">
-                                            <a class="rounded mt-1 py-1 px-2 inline-block text-gray-700 hover:bg-blue-500 hover:text-white bg-transparent" href="#">
-                                               <svg class="inline-block pb-1 w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                                   <path fill-rule="evenodd" d="M10.001 7.8a2.2 2.2 0 100 4.402A2.2 2.2 0 0010 7.8zm-7 0a2.2 2.2 0 100 4.402A2.2 2.2 0 003 7.8zm14 0a2.2 2.2 0 100 4.402A2.2 2.2 0 0017 7.8z"/>
-                                               </svg>
+                                             <li class="mr-1">
+                                            <a class="rounded py-2 px-3 h-8 mt-1 pt-1 inline-block bg-blue-500 text-white bg-transparent hover:bg-blue-500 hover:text-white focus:border-blue-300 transition ease-in-out duration-150" href="#">
+                                                1
                                               </a>
                                             </li>
 
                                             <li class="mr-1">
                                             <a class="rounded py-2 px-3 h-8 mt-1 pt-1 inline-block text-gray-700 bg-transparent hover:bg-blue-500 hover:text-white focus:border-blue-300 transition ease-in-out duration-150" href="#">
-                                                3
+                                                2
                                               </a>
                                             </li>
+
                                             <li class="mr-1">
-                                            <a class="rounded py-2 px-3 h-8 mt-1 pt-1 inline-block text-gray-700 bg-transparent hover:bg-blue-500 hover:text-white focus:border-blue-300 transition ease-in-out duration-150" href="#">
-                                                4
-                                              </a>
-                                            </li>
-                                            <li class="mr-1">
-                                            <a class="rounded py-2 px-3 h-8 mt-1 pt-1 inline-block bg-blue-500 text-white bg-transparent hover:bg-blue-500 hover:text-white focus:border-blue-300 transition ease-in-out duration-150" href="#">
-                                                5
-                                              </a>
-                                            </li>
-                                            <li class="mr-1">
-                                            <a class="rounded py-2 px-3 h-8 mt-1 pt-1 inline-block text-gray-700 bg-transparent hover:bg-blue-500 hover:text-white focus:border-blue-300 transition ease-in-out duration-150" href="#">
-                                                6
-                                              </a>
-                                            </li>
-                                            <li class="mr-1">
-                                            <a class="rounded py-2 px-3 h-8 mt-1 pt-1 inline-block text-gray-700 bg-transparent hover:bg-blue-500 hover:text-white focus:border-blue-300 transition ease-in-out duration-150" href="#">
-                                                7
+                                            <a class="rounded mt-1 py-1 px-2 inline-block text-gray-700 hover:bg-blue-500 hover:text-white bg-transparent" href="#">
+                                               <svg class="inline-block pb-1 w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                   <path fill-rule="evenodd" d="M10.001 7.8a2.2 2.2 0 100 4.402A2.2 2.2 0 0010 7.8zm-7 0a2.2 2.2 0 100 4.402A2.2 2.2 0 003 7.8zm14 0a2.2 2.2 0 100 4.402A2.2 2.2 0 0017 7.8z"/>
+                                               </svg>
                                               </a>
                                             </li>
                                             <li class="mr-1">
@@ -129,12 +116,11 @@
                                               </a>
                                             </li>
                                             <li class="mr-1">
-                                            <a class="rounded mt-1 py-1 px-2 inline-block text-gray-700 hover:bg-blue-500 hover:text-white bg-transparent" href="#">
-                                               <svg class="inline-block pb-1 w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                                   <path fill-rule="evenodd" d="M10.001 7.8a2.2 2.2 0 100 4.402A2.2 2.2 0 0010 7.8zm-7 0a2.2 2.2 0 100 4.402A2.2 2.2 0 003 7.8zm14 0a2.2 2.2 0 100 4.402A2.2 2.2 0 0017 7.8z"/>
-                                               </svg>
+                                            <a class="rounded py-2 px-3 h-8 mt-1 pt-1 inline-block text-gray-700 bg-transparent hover:bg-blue-500 hover:text-white focus:border-blue-300 transition ease-in-out duration-150" href="#">
+                                                9
                                               </a>
                                             </li>
+
                                             <li class="mr-1">
                                             <a class="rounded mt-1 py-1 px-2 inline-block bg-blue-100 text-blue-600 bg-transparent hover:bg-blue-500 hover:text-white focus:border-blue-300 transition ease-in-out duration-150" href="#">
                                                 <svg class="inline-block pb-1 w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -153,7 +139,7 @@
                                         </ul>
 
                                       </span>
-                                <div class="flex ml-64">
+                                <div class="flex ml-1/2">
                                     <input class="rounded w-20 h-8 pl-3 border border-blue-200 text-xs" type="text" placeholder="Page No." >
                                     <button class=" py-1 h-8 w-20 text-xs rounded shadow bg-blue-500 hover:bg-blue-600 text-white ">Go To Page</button>
                                 </div>
@@ -191,7 +177,8 @@
                 }
             })
             // console.log(this.tableData);
-        }
+        },
+
     }
 </script>
 

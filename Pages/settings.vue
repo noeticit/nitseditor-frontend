@@ -146,18 +146,31 @@
 <!--                                        </div>-->
                                         <div class="flex m-2 w-full">
 
-                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2"> Date Format</label>
-<!--                                                <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/4 appearance-none leading-normal" placeholder="Date Format"  v-model="date_format">-->
-                                                <select v-model="date_format" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full h-12 leading-normal">
-                                                    <option value="" selected  >select option</option>
-                                                    <option value="" selected  >April 21, 2020    F j, Y</option>
-                                                    <option value="" selected  >04/21/2020        m/d/Y</option>
-                                                </select>
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal cursor: pointer font-sans font-normal w-64 "> Date Format</label>
+                                            <div class="block">
+                                            <input type="radio" value="F j, Y" class="  mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
+                                                 <span class=" ml-2 w-32">April 21, 2020</span>
+                                                    <code class="">F j, Y</code><br>
+                                                <input type="radio" value="Y-m-d" class="  mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
+                                                  <span class=" ml-2 w-32">2020-04-21</span>
+                                                   <code class="">Y-m-d</code><br>
+<!--                                                <input type="radio" value="m/d/Y" class="  mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">-->
+<!--                                                  <span class="block ml-2 w-32">04/21/2020</span>-->
+<!--                                                   <code class="">m/d/Y</code><br>-->
+<!--                                                <input type="radio" value="d/m/Y" class="  mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">-->
+<!--                                                  <span class="block ml-2 w-32">21/04/2020</span>-->
+<!--                                                   <code class="">d/m/Y</code>-->
+                                            </div>
+
+<!--                                                <select v-model="date_format" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full h-12 leading-normal">-->
+<!--                                                    <option value="" selected  >select option</option>-->
+<!--                                                    <option value="" selected  >April 21, 2020    F j, Y</option>-->
+<!--                                                    <option value="" selected  >04/21/2020        m/d/Y</option>-->
+<!--                                                </select>-->
                                         </div>
                                         <div class="flex m-2 w-full">
                                             <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2"> Time Format</label>
-<!--                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/4 appearance-none leading-normal" placeholder="Time Format"  v-model="time_format">-->
-                                            <select v-model="time_format" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full h-12 leading-normal">
+                                            <select v-model="time_format" class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/4 leading-normal">
                                                 <option value="" selected  >select option</option>
                                                 <option value="" selected  >g:i a</option>
                                                 <option value="" selected  >g:i A</option>
@@ -177,7 +190,7 @@
                                         </div>
 
                                         <div class="flex m-2 w-full">
-                                            <button class="bg-blue-400 mt-4 rounded-lg w-32 h-10 text-white">Save</button>
+                                            <button class="bg-teal-500 mt-4 rounded-lg w-32 h-10 text-white">Save</button>
                                         </div>
                                     </div>
                                 </div>
@@ -730,6 +743,7 @@
                 }
             },
         },
+
     }
 </script>
 
