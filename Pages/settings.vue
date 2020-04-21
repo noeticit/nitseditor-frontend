@@ -23,7 +23,70 @@
             </div>
             <div >
                 <div class="p-4 " v-if="showTab">
+                    <div class="justify-between border-solid border-b-2 p-2 text-center items-center">
+                        <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">General</div>
+                    </div>
+                    <div class=" pt-4 w-full h-auto border-black mx-2  mt-2">
+                        <div class="">
+                            <div class="mt-4 flex justify-center bg-white">
+                                <div class="m-2 w-4/5 mr-56">
+                                    <div class="m-2">
+                                        <div class="flex m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56 ">Site Title</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Site Title" v-model="site_title">
+                                        </div>
+                                        <div class="flex m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">Tagline</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Tagline" type="tagline" v-model="tagline">
 
+                                        </div>
+
+                                        <div class="flex m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56 ">Administration Email Address</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Email Address" type="text" v-model="email">
+
+                                        </div>
+                                        <div class="flex inline-block m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">New User Default Role</label>
+                                            <select v-model="role" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-12 leading-normal">
+                                                <option value="" selected  >Role</option>
+                                            </select>
+                                        </div>
+                                        <div class="flex m-2 w-full">
+                                            <label class=" text-gray-700 text-base font-semibold antialised w-56">Site Language</label>
+                                            <select v-model="language"  class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-full mt-1 h-12 leading-normal">
+                                                <option value="" selected  >Language</option>
+                                            </select>
+                                        </div>
+                                        <div class="flex m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">Time Zone</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Time Zone" type="time" v-model="time_zone">
+                                        </div>
+                                        <div class="flex m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">Date Format</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Date Format" type="date" v-model="date_format">
+                                        </div>
+                                        <div class="flex m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56"> Time Format</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Time Format" type="time" v-model="time_format">
+
+                                        </div>
+                                        <div class="flex m-2 w-full">
+                                            <label class="block text-gray-700 text-base font-semibold antialised w-56">Week Starts On</label>
+                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Week Start On" type="date" v-model="week_start">
+
+                                        </div>
+
+                                    </div>
+                                </div>
+<!--                                <div class="m-2 w-1/2 mr-8 mt-6 ">-->
+<!--                                    <div class="w-full h-11/12 bg-gray-200">-->
+
+<!--                                    </div>-->
+<!--                                </div>-->
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="p-4 " v-if="showTab2">
@@ -331,13 +394,79 @@
                 </div>
 
                 <div class="p-4 " v-if="showTab4">
+<!--                    upload image-->
+                  <div class="w-11/12  justify-center rounded-lg">
                     <div class="justify-between border-solid border-b-2 p-2 text-center items-center">
-                        <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">Social Share Image</div>
-                        <div class="text-left ml-2 text-md antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">This image appers on social networks like Facebook, Twitter and others when your website is shared. It's a great way to help visitors recognize your brand</div>
+                        <div class="text-left ml-2 text-2xl antialiased leading-snug tracking-normal font-sans text-teal-700">Social Share Image</div>
+                        <div class="text-left ml-2 mb-4 text-lg antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">This image appers on social networks like Facebook, Twitter and others when your website is shared. <br>It's a great way to help visitors recognize your brand</div>
                     </div>
-                    <div class=" pt-4 w-full h-auto border-black mx-2  mt-2">
+                      <div class=" pt-4 w-full h-auto border-black mx-2 ">
+                          <div class=" flex justify-center bg-white">
 
+                          <div class=" pt-4 w-1/3 h-auto border-black mr-8 ml-8 mt-2">
+                           <div class=" border h-40 border-dashed border-blue-500 relative">
+                            <input type="file" class="cursor-pointer relative block opacity-0 w-40 h-full p-20 z-50">
+                            <div class="text-center p-8 absolute top-0 right-0 left-0 m-auto">
+                                <svg class="inline-block mt-8  w-10 h-10 text-blue-400" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 8a3 3 0 100 6 3 3 0 000-6zm8-3h-2.4a.89.89 0 01-.79-.57l-.62-1.86A.9.9 0 0013.4 2H6.6a.89.89 0 00-.79.57L5.2 4.43A.89.89 0 014.4 5H2a2 2 0 00-2 2v9c0 1.1.9 2 2 2h16a2 2 0 002-2V7a2 2 0 00-2-2zm-8 11a5 5 0 110-10 5 5 0 010 10zm7.5-7.8a.7.7 0 110-1.4.7.7 0 010 1.4z"/>
+                                </svg>
+                            </div>
+                          </div>
+
+                        </div>
+                          <div class=" flex m-2 w-3/4 mr-8 ">
+                          <div class="mt-8 p-1" >
+                              <span class="text-blue-500 text-lg p-3 ml-6 font-semibold rounded-full border border-blue-500 antialiased" >Upload Image</span>
+
+                          <div class="mt-6 ">
+                              <div class="w-full h-auto  px-6 py-4 rounded-md ">
+                                  <span class="text-base text-gray-700">To make these change live, Publish your website</span><br>
+                                  <div >
+                                  <span class="mt-2 font-semibold text-base text-gray-800">Note:</span>
+                                      <span class="text-base text-gray-700">It can take time before you see these changes on social neworks</span>
+                                      <a href="#" class="mt-2 text-base text-blue-400">Learn More</a>
+
+                                  </div>
+
+                              </div>
+                          </div>
+                          </div>
+
+                          </div>
+                         </div>
+                      </div>
+
+                  </div>
+                         <!--facebook-->
+                    <div class=" mt-8 justify-between border-solid border-b-2 p-2 text-center items-center">
+                        <div class="text-left ml-2 text-2xl antialiased leading-snug tracking-normal font-sans text-teal-700">Facebook Username</div>
+                        <div class="text-left ml-2 mb-4 text-lg antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">Facebook needs yours personal username to verify any Likes you get on your Wix website. If you<br>have the Facebook Comments app, this will also allowmyou to moderate comments.</div>
                     </div>
+
+                    <div class=" pt-4 w-full h-auto border-black mx-2 ">
+                        <div class=" flex justify-center bg-white">
+
+                            <div class=" pt-4 w-1/5 h-auto border-black mr-8 ml-8 mt-2">
+                                <div>
+                                     <!--    facebook icon-->
+                                </div>
+
+                            </div>
+                            <div class=" flex m-2 w-4/5 mr-8 ">
+                                        <div class="w-full h-auto  px-6 py-4 rounded-md ">
+                                            <span class="text-xl text-gray-700">Enter your Personal Facebook Username:</span><br>
+                                            <div class="flex w-full mt-2" >
+                                                <span class="block mt-2 text-lg text-gray-700">www.facebook.com/</span>
+                                                <input class="bg-white focus:outline-none border border-gray-500 rounded-lg py-2 px-4 block ml-4 mb-6 w-full appearance-none " placeholder="Enter your username">
+
+                                            </div>
+                                            <span class="mt-4 text-base text-gray-700">To make these change live, Publish your website.</span>
+
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="p-4 " v-if="showTab5">
