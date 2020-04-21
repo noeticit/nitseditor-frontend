@@ -38,7 +38,7 @@
                                     </svg>
                                     <div>
                                         <div v-if="DropDownAction" class="block absolute right-0 w-48 bg-teal-400 rounded-lg mt-10">
-                                            <a class="block px-2 py-4 text-white hover:bg-blue-600 hover:text-teal-200 " href="#">Edit</a>
+                                            <a class="block px-2 py-4 text-white hover:bg-blue-600 hover:text-teal-200 " href="user/edit">Edit</a>
                                             <a class="block px-2 py-4 text-white hover:bg-blue-600 hover:text-teal-200 " href="#" >Delete</a>
                                         </div>
                                     </div>
