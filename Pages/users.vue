@@ -1,13 +1,8 @@
 <template>
     <dashboard-layout-one active="users">
         <base-bread-crumb-one name="Users" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
-        <div class="flex w-full justify-center">
-            <div class="m-2 w-1/4">
-                <search-filters></search-filters>
-            </div>
-            <div class="m-2 w-3/4">
-                <base-table-two></base-table-two>
-            </div>
+        <div class="w-full justify-center pr-4">
+            <base-table-two></base-table-two>
         </div>
     </dashboard-layout-one>
 </template>

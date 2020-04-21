@@ -119,8 +119,8 @@
             }
         },
         created() {
-            const button = this.$refs.input_select.$el;
-            const tooltip =this.$refs.dropdown.$el;
+            const button = this.$refs.input_select;
+            const tooltip =this.$refs.dropdown;
 
             createPopper(button, tooltip, {
                 placement: 'right',
