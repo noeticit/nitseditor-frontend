@@ -747,16 +747,6 @@
                 ).then(response => {
                     if (response.status === 200) {
 
-                        // this.user_id = response.data.data.id;
-                        // this.first_name= response.data.data.first_name;
-                        // this.last_name= response.data.data.last_name;
-                        // this.email= response.data.data.email;
-                        // this.contact_number= response.data.data.contact_number;
-                        // this.company_name= response.data.data.sign_up.company_name;
-                        // this.city= response.data.data.sign_up.city_id;
-                        // this.state= response.data.data.sign_up.state_id;
-                        // this.country= response.data.data.sign_up.country_id;
-                        // this.pincode= response.data.data.sign_up.pincode;
                     }
                 })
 
@@ -790,7 +780,15 @@
                     }
                 })
             },
+
+
+
         },
+
+        created() {
+
+            this.fetchData();
+        }
 
 
     }
