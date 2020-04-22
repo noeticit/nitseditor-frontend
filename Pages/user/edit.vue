@@ -1,6 +1,6 @@
 <template>
-    <dashboard-layout-one active="user-add">
-        <base-bread-crumb-one name="Add User" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
+    <dashboard-layout-one active="user_edit">
+        <base-bread-crumb-one name="Edit User" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
         <div class="mt-4 flex justify-center bg-white">
             <div class="m-2 w-1/2">
                 <div>Enter the details</div>
@@ -93,10 +93,10 @@
     import Swal from 'sweetalert2';
 
     export default {
-        name: "user-add",
+        name: "user-edit",
         data() {
             return {
-                breadcrumbs: ['Users', 'Add'],
+                breadcrumbs: ['Users', 'Edit'],
                 roles:[],
                 loading: false,
                 first_name:'',
@@ -106,6 +106,7 @@
                 mobile:'',
                 password:'',
                 confirm_password:'',
+                editDetails:'',
                 errors:[],
             }
         },
@@ -125,12 +126,12 @@
                     password_confirmation : this.confirm_password,
                     role_id : this.role_id,
                 }
-                this.$api.post('/api/users',postData).then(response => {
-                    if(response.status === 200)
+                this.$api.post('/api/users/'+this.$route.params.id,postData).then(response => {
+                    if(response.status === 202)
                     {
                         Swal.fire(
-                            'Created!',
-                            'User has been created.',
+                            'Updated!',
+                            'User has been Updated.',
                             'success'
                         ).then(() => {
                             this.$router.push('/nits-admin/users')
@@ -157,6 +158,17 @@
                     }));
                 }
             })
+
+            this.$api.get('api/users/'+2).then(response => {
+                if(response.status === 200)
+                {
+                    this.editDetails = response.data.data
+                    this.first_name = this.editDetails.first_name
+                    this.last_name = this.editDetails.last_name
+                    this.email = this.editDetails.email
+                    this.mobile = this.editDetails.mobile
+                }
+            });
         }
     }
 </script>
