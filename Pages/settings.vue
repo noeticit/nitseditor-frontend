@@ -1,6 +1,7 @@
 <template>
     <dashboard-layout-one active="settings">
-        <base-bread-crumb-one name="Settings" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
+
+    <base-bread-crumb-one name="Settings" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
         <div class=" w-full h-auto bg-white mt-4">
 <!--            <div class="flex">-->
 <!--                <ul class=" flex ml-4 border-b hover:lg-border-300 mt-4">-->
@@ -106,10 +107,12 @@
                     </div>
                     <div class=" pt-4 w-full h-auto border-black mx-2  mt-2">
                         <div class="">
-                            <div class="mt-4 flex justify-center bg-white">
-                                <div class="m-2 w-4/5 mr-56">
+                            <div class="mt-4 flex justify-start bg-white">
+                                <div class="m-2 w-3/5 mr-56">
                                     <div class="m-2">
+
                                         <div class="flex m-2 w-full mt-2">
+
                                             <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2">Site Title</label>
                                             <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/2 appearance-none leading-normal" placeholder="Site Title" v-model="title">
                                         </div>
@@ -119,14 +122,16 @@
 
                                         </div>
 
+
                                         <div class="flex m-2 w-full mt-2">
+
                                             <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2 ">Administration Email Address</label>
                                             <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/2 appearance-none leading-normal" placeholder="Email Address" type="text" v-model="administrator_email">
 
                                         </div>
                                         <div class="flex inline-block m-2 w-full mt-2">
-                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2">New User Default Role</label>
-                                            <select v-model="role" class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-1/4 mr-10 h-10 leading-normal">
+                                            <label class="block text-left mt-1 text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2">New User Default Role</label>
+                                            <select v-model="role" class="p-2 mt-1 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-1/4 mr-10 h-10 leading-normal">
                                                 <option  >Role</option>
                                             </select>
                                         </div>
@@ -142,55 +147,83 @@
 <!--                                                <option value="" selected  >Language</option>-->
 <!--                                            </select>-->
 <!--                                        </div>-->
-                                        <div class="flex m-2 w-full mt-2">
-                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2"> Date Format</label>
-                                            <label class="inline-flex items-center">
-                                                <input v-model="date_format" type="radio" class="form-radio mt-2  w-4 h-6" name="website" value="website">
-                                                <span class="ml-2 mt-2">April 21,2020</span>
-                                            </label><br>
-                                            <label class="inline-flex items-center ml-6">
-                                                <input v-model="date_format" type="radio" class="form-radio mt-2 w-6 h-4" name="mobile" value="mobile">
-                                                <span class="ml-2 mt-2">2020-04-21</span>
-                                            </label><br>
-                                            <label class="inline-flex items-center ml-6">
-                                                <input v-model="date_format" type="radio" class="form-radio mt-2 w-6 h-4" name="mobile" value="mobiles">
-                                                <span class="ml-2 mt-2">04/21/2020</span>
-                                            </label><br>
-                                            <label class="inline-flex items-center ml-6">
-                                                <input v-model="date_format" type="radio" class="form-radio mt-2 w-6 h-4" name="mobile" value="mobiless">
-                                                <span class="ml-2 mt-2">21/04/2020</span>
-                                            </label>
-<!--                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/4 appearance-none leading-normal" placeholder="Date Format"  v-model="date_format">-->
-                                        </div>
-                                        <div class="flex m-2 w-full mt-2">
-                                            <label class="block text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2"> Time Format</label>
-                                            <label class="inline-flex items-center">
-                                                <input v-model="date_format" type="radio" class="form-radio mt-2  w-4 h-6" name="website" value="website">
-                                                <span class="ml-2 mt-2">8:21 am</span>
-                                            </label>
-                                            <label class="inline-flex items-center ml-6">
-                                                <input v-model="date_format" type="radio" class="form-radio mt-2 w-6 h-4" name="mobile" value="mobile">
-                                                <span class="ml-2 mt-2">8:21 AM</span>
-                                            </label><br>
-                                            <label class="inline-flex items-center ml-6">
-                                                <input v-model="date_format" type="radio" class="form-radio mt-2 w-6 h-4" name="mobile" value="mobiles">
-                                                <span class="ml-2 mt-2">08:21</span>
-                                            </label><br>
-<!--                                            <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/4 appearance-none leading-normal" placeholder="Time Format"  v-model="time_format">-->
 
+                                        <div class="flex m-2 mt-3 w-full">
+
+                                     <label class="block text-left text-gray-700 leading-tight tracking-normal cursor: pointer font-sans font-normal w-64 "> Date Format</label>
+                                       <div class="block">
+                                           <label class="inline-flex items-center">
+                                           <input type="radio" value="F j, Y" class="  mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
+                                        <span class=" ml-2 w-32">April 21, 2020</span>
+                                           <code class="">F j, Y</code>
+                                           </label><br>
+                                           <label class="inline-flex items-center">
+                                           <input type="radio" value="Y-m-d" class=" mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
+                                         <span class=" ml-2 w-32">2020-04-21</span>
+                                          <code class="">Y-m-d</code>
+                                           </label><br>
+                                           <label class="inline-flex items-center">
+                                           <input type="radio" value="m/d/Y" class="  mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
+                                            <span class="block ml-2 w-32">04/21/2020</span>
+                                             <code class="">m/d/Y</code>
+                                           </label><br>
+                                           <label class="inline-flex items-center">
+                                           <input type="radio" value="d/m/Y" class=" mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
+                                           <span class="block ml-2 w-32">21/04/2020</span>
+                                            <code class="">d/m/Y</code>
+                                           </label>
+                                            </div>
                                         </div>
+
+<!--                                           <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/4 appearance-none leading-normal" placeholder="Time Format"  v-model="time_format">&ndash;&gt;&ndash;&gt;-->
+                                        <div class="flex m-2 mt-1 w-full">
+
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal cursor: pointer font-sans font-normal w-64 "> Date Format</label>
+                                            <div class="block">
+                                                <label class="inline-flex items-center">
+                                                    <input type="radio" value="g:i a" class="  mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
+                                                    <span class=" ml-2 w-32">10:21 am</span>
+                                                    <code class="">g:i a</code>
+                                                </label><br>
+                                                <label class="inline-flex items-center">
+                                                    <input type="radio" value="g:i A" class=" mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
+                                                    <span class=" ml-2 w-32">10:21 AM</span>
+                                                    <code class="">g:i A</code>
+                                                </label><br>
+                                                <label class="inline-flex items-center">
+                                                    <input type="radio" value="H:i" class="  mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
+                                                    <span class="block ml-2 w-32">10:21</span>
+                                                    <code class="">H:i</code>
+                                                </label>
+                                            </div>
+                                        </div>
+
                                         <div class="flex m-2 w-full mt-2">
                                             <label class=" text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-2">Week Starts On</label>
-                                            <select v-model="week_start"  class="p-2 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-1/4 h-10 leading-normal">
-                                                <option>Monday</option>
+                                            <select v-model="week_start"  class="p-2 mt-1 rounded-lg border-gray-300 border bg-white focus:outline-none focus:shadow-outline w-1/4 h-10 leading-normal">
+                                                <option >Monday</option>
+                                                <option >Tuesday</option>
+                                                <option >Wednesday</option>
+                                                <option >Thursday</option>
+                                                <option  >Friday</option>
+                                                <option >Saturday</option>
+                                                <option  >Sunday</option>
                                             </select>
                                         </div>
-                                        <div class="flex m-2 w-full mt-2">
-                                            <label class=" text-left text-gray-700 leading-tight tracking-normal  font-sans font-normal w-64 mt-4">Favicon</label>
-                                            <span class="text-teal-500 text-sm font-semibold cursor-pointer rounded-lg border border-teal-500 align-center antialiased w-32 h-10 p-2" >Upload Image</span>
+                                        <div class="flex m-2 w-full mt-4">
+                                            <label class=" text-left text-gray-700 text-lg leading-tight tracking-normal  font-sans font-normal w-64 mt-4">Favicon</label>
+                                            <div class=" mt-4 relative">
+                                                <input type="file" class="cursor-pointer -mb-4 w-24 relative block opacity-0 ">
+                                                <span class="text-teal-500 text-base mt-2 font-semibold rounded-full border border-teal-500 text-center antialiased w-40 h-12 p-3" >Upload Image                                              </span>
+
+                                            </div>
+                                            <a href="#" class="text-teal-600 text-base mt-6 ml-5 p-1 antialiased " >Remove Image</a>
 
                                         </div>
 
+                                        <div class="flex m-4 w-full">
+                                            <button class="bg-teal-500 mt-4 rounded-lg w-32 h-10 text-white">Save</button>
+                                        </div>
                                     </div>
                                 </div>
 <!--                                <div class="m-2 w-1/2 mr-8 mt-6 ">-->
@@ -559,11 +592,11 @@
                     </div>
 
                     <div class=" pt-4 w-full h-auto border-black mx-2 ">
-                        <div class=" flex justify-center bg-white">
+                        <div class=" flex justify-start bg-white">
 
-                            <div class=" pt-4 w-1/5 h-auto border-black mr-8 ml-8 mt-2">
-                                <div class="w-40 h-10">
-                                    <img class=" w-40 h-10" src="/Assets/images/facebook.png" alt="">
+                            <div class="pt-4 w-24 h-auto border-black mt-4 ml-4">
+                                <div class="w-24 h-10">
+                                    <img class=" w-24 h-24" src='/project-assets/images/facebook.png' alt="">
                                 </div>
 
                             </div>
@@ -572,7 +605,7 @@
                                             <span class="text-lg text-gray-700">Enter your Personal Facebook Username:</span><br>
                                             <div class="flex w-full mt-2" >
                                                 <span class="block mt-2 text-md text-gray-700">www.facebook.com/</span>
-                                                <input class="bg-white focus:outline-none border border-gray-500 rounded-lg py-2 px-4 block ml-4 mb-6 w-1/2 appearance-none " placeholder="Enter your username">
+                                                <input class="bg-white focus:outline-none border border-gray-500 rounded-lg py-2 px-4 block ml-4 mb-6 w-2/5 appearance-none " placeholder="Enter your username">
 
                                             </div>
                                             <span class="mt-4 text-base text-gray-700">To make these change live, Publish your website.</span>
@@ -582,6 +615,35 @@
                         </div>
                     </div>
 
+                   <!--   twitter-->
+                    <div class=" mt-8 justify-between border-solid border-b-2 p-2 text-center items-center">
+                        <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">Twitter Username</div>
+                        <div class="text-left ml-2 text-md antialiased leading-snug tracking-normal font-sans text-teal-700 mt-2 ">Twitter needs yours personal username to verify any Likes you get on your website.</div>
+                    </div>
+
+                    <div class=" pt-4 w-full h-auto border-black mx-2 ">
+                        <div class=" flex justify-start bg-white">
+
+                            <div class="pt-4 w-24 h-auto border-black mt-4 ml-4">
+                                <div class="w-24 h-10">
+                                    <img class=" w-24 h-24" src='/project-assets/images/twitter-png-file-twitter-icon-png-256.png' alt="">
+                                </div>
+
+                            </div>
+                            <div class=" flex m-2 w-4/5 mr-8 ">
+                                <div class="w-full h-auto  px-6 py-4 rounded-md ">
+                                    <span class="text-lg text-gray-700">Enter your Personal Twitter Username:</span><br>
+                                    <div class="flex w-full mt-2" >
+                                        <span class="block mt-2 text-md text-gray-700">www.twitter.com/</span>
+                                        <input class="bg-white focus:outline-none border border-gray-500 rounded-lg py-2 px-4 block ml-4 mb-6 w-2/5 appearance-none " placeholder="Enter your username">
+
+                                    </div>
+                                    <span class="mt-4 text-base text-gray-700">To make these change live, Publish your website.</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="p-4 " v-if="showTab5">
