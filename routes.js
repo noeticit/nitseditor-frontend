@@ -7,6 +7,7 @@ export const router = new VueRouter({
     mode: 'history',
     routes: [
 	{
+<<<<<<< HEAD
 		name: 'campaign-accounts',
 		path: '/Campaign/accounts',
 		component: Vue.component('campaign-accounts', () => import(/* webpackChunkName: "ProjectPages/Campaign-component" */ 'ProjectPages/Campaign/Accounts.vue')),
@@ -57,11 +58,14 @@ export const router = new VueRouter({
 		component: Vue.component('facilities-topic', () => import(/* webpackChunkName: "ProjectPages/Facilities-component" */ 'ProjectPages/Facilities/Topic.vue')),
 	},
 	{
+=======
+>>>>>>> 84b3231d437e7d0acc66bb027b08d01d78de488c
 		name: 'index',
 		path: '/',
 		component: Vue.component('index', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/index.vue')),
 	},
 	{
+<<<<<<< HEAD
 		name: 'institute',
 		path: '/institute',
 		component: Vue.component('institute', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/institute.vue')),
@@ -90,6 +94,11 @@ export const router = new VueRouter({
 		name: 'studymaterial-videolecturesadd',
 		path: '/StudyMaterial/videolecturesadd',
 		component: Vue.component('studymaterial-videolecturesadd', () => import(/* webpackChunkName: "ProjectPages/StudyMaterial-component" */ 'ProjectPages/StudyMaterial/VideoLecturesAdd.vue')),
+=======
+		name: 'schoolhome',
+		path: '/schoolhome',
+		component: Vue.component('schoolhome', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/SchoolHome.vue')),
+>>>>>>> 84b3231d437e7d0acc66bb027b08d01d78de488c
 	},
 	{
 		name: 'users-student-add',
@@ -172,11 +181,14 @@ export const router = new VueRouter({
 		component: Vue.component('nits-admin-user-add', () => import(/* webpackChunkName: "NitsAdminPages/user-component" */ 'NitsAdminPages/user/add.vue')),
 	},
 	{
+<<<<<<< HEAD
 		name: 'nits-admin-user-edit',
 		path: '/nits-admin/user/edit',
 		component: Vue.component('nits-admin-user-edit', () => import(/* webpackChunkName: "NitsAdminPages/user-component" */ 'NitsAdminPages/user/edit.vue')),
 	},
 	{
+=======
+>>>>>>> 84b3231d437e7d0acc66bb027b08d01d78de488c
 		name: 'nits-admin-users',
 		path: '/nits-admin/users',
 		component: Vue.component('nits-admin-users', () => import(/* webpackChunkName: "NitsAdminPages-component" */ 'NitsAdminPages/users.vue')),
