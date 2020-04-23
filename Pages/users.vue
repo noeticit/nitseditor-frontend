@@ -53,10 +53,9 @@
                 </h5>
 
             </div>
-=======
-        <div class="w-full justify-center pr-4">
-            <base-table-two></base-table-two>
->>>>>>> 10b2a50b2324ba4287509330d4122ae54977b12c
+
+<!--        <div class="w-full justify-center pr-4">-->
+<!--            <base-table-two></base-table-two>-->
         </div>
     </dashboard-layout-one>
 </template>
