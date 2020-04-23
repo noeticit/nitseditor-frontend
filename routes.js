@@ -7,9 +7,54 @@ export const router = new VueRouter({
     mode: 'history',
     routes: [
 	{
+		name: 'campaign-accounts',
+		path: '/Campaign/accounts',
+		component: Vue.component('campaign-accounts', () => import(/* webpackChunkName: "ProjectPages/Campaign-component" */ 'ProjectPages/Campaign/Accounts.vue')),
+	},
+	{
+		name: 'campaign-coupon',
+		path: '/Campaign/coupon',
+		component: Vue.component('campaign-coupon', () => import(/* webpackChunkName: "ProjectPages/Campaign-component" */ 'ProjectPages/Campaign/Coupon.vue')),
+	},
+	{
+		name: 'campaign-couponadd',
+		path: '/Campaign/couponadd',
+		component: Vue.component('campaign-couponadd', () => import(/* webpackChunkName: "ProjectPages/Campaign-component" */ 'ProjectPages/Campaign/CouponAdd.vue')),
+	},
+	{
 		name: 'dashboard',
 		path: '/dashboard',
 		component: Vue.component('dashboard', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/dashboard.vue')),
+	},
+	{
+		name: 'facilities-chapter',
+		path: '/Facilities/chapter',
+		component: Vue.component('facilities-chapter', () => import(/* webpackChunkName: "ProjectPages/Facilities-component" */ 'ProjectPages/Facilities/Chapter.vue')),
+	},
+	{
+		name: 'facilities-facilitiesall',
+		path: '/Facilities/facilitiesall',
+		component: Vue.component('facilities-facilitiesall', () => import(/* webpackChunkName: "ProjectPages/Facilities-component" */ 'ProjectPages/Facilities/FacilitiesAll.vue')),
+	},
+	{
+		name: 'facilities-standard',
+		path: '/Facilities/standard',
+		component: Vue.component('facilities-standard', () => import(/* webpackChunkName: "ProjectPages/Facilities-component" */ 'ProjectPages/Facilities/Standard.vue')),
+	},
+	{
+		name: 'facilities-stream',
+		path: '/Facilities/stream',
+		component: Vue.component('facilities-stream', () => import(/* webpackChunkName: "ProjectPages/Facilities-component" */ 'ProjectPages/Facilities/Stream.vue')),
+	},
+	{
+		name: 'facilities-subject',
+		path: '/Facilities/subject',
+		component: Vue.component('facilities-subject', () => import(/* webpackChunkName: "ProjectPages/Facilities-component" */ 'ProjectPages/Facilities/Subject.vue')),
+	},
+	{
+		name: 'facilities-topic',
+		path: '/Facilities/topic',
+		component: Vue.component('facilities-topic', () => import(/* webpackChunkName: "ProjectPages/Facilities-component" */ 'ProjectPages/Facilities/Topic.vue')),
 	},
 	{
 		name: 'index',
@@ -27,9 +72,24 @@ export const router = new VueRouter({
 		component: Vue.component('login', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/login.vue')),
 	},
 	{
-		name: 'schoolhome',
-		path: '/schoolhome',
-		component: Vue.component('schoolhome', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/SchoolHome.vue')),
+		name: 'studymaterial-studymaterial',
+		path: '/StudyMaterial/studymaterial',
+		component: Vue.component('studymaterial-studymaterial', () => import(/* webpackChunkName: "ProjectPages/StudyMaterial-component" */ 'ProjectPages/StudyMaterial/StudyMaterial.vue')),
+	},
+	{
+		name: 'studymaterial-studymaterialadd',
+		path: '/StudyMaterial/studymaterialadd',
+		component: Vue.component('studymaterial-studymaterialadd', () => import(/* webpackChunkName: "ProjectPages/StudyMaterial-component" */ 'ProjectPages/StudyMaterial/StudyMaterialAdd.vue')),
+	},
+	{
+		name: 'studymaterial-videolectures',
+		path: '/StudyMaterial/videolectures',
+		component: Vue.component('studymaterial-videolectures', () => import(/* webpackChunkName: "ProjectPages/StudyMaterial-component" */ 'ProjectPages/StudyMaterial/VideoLectures.vue')),
+	},
+	{
+		name: 'studymaterial-videolecturesadd',
+		path: '/StudyMaterial/videolecturesadd',
+		component: Vue.component('studymaterial-videolecturesadd', () => import(/* webpackChunkName: "ProjectPages/StudyMaterial-component" */ 'ProjectPages/StudyMaterial/VideoLecturesAdd.vue')),
 	},
 	{
 		name: 'studymaterial-studymaterial',
