@@ -7,7 +7,6 @@ export const router = new VueRouter({
     mode: 'history',
     routes: [
 	{
-<<<<<<< HEAD
 		name: 'campaign-accounts',
 		path: '/Campaign/accounts',
 		component: Vue.component('campaign-accounts', () => import(/* webpackChunkName: "ProjectPages/Campaign-component" */ 'ProjectPages/Campaign/Accounts.vue')),
@@ -33,11 +32,6 @@ export const router = new VueRouter({
 		component: Vue.component('facilities-chapter', () => import(/* webpackChunkName: "ProjectPages/Facilities-component" */ 'ProjectPages/Facilities/Chapter.vue')),
 	},
 	{
-		name: 'facilities-facilitiesall',
-		path: '/Facilities/facilitiesall',
-		component: Vue.component('facilities-facilitiesall', () => import(/* webpackChunkName: "ProjectPages/Facilities-component" */ 'ProjectPages/Facilities/FacilitiesAll.vue')),
-	},
-	{
 		name: 'facilities-standard',
 		path: '/Facilities/standard',
 		component: Vue.component('facilities-standard', () => import(/* webpackChunkName: "ProjectPages/Facilities-component" */ 'ProjectPages/Facilities/Standard.vue')),
@@ -58,22 +52,24 @@ export const router = new VueRouter({
 		component: Vue.component('facilities-topic', () => import(/* webpackChunkName: "ProjectPages/Facilities-component" */ 'ProjectPages/Facilities/Topic.vue')),
 	},
 	{
-=======
->>>>>>> 84b3231d437e7d0acc66bb027b08d01d78de488c
 		name: 'index',
 		path: '/',
 		component: Vue.component('index', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/index.vue')),
 	},
 	{
-<<<<<<< HEAD
-		name: 'institute',
-		path: '/institute',
-		component: Vue.component('institute', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/institute.vue')),
-	},
-	{
 		name: 'login',
 		path: '/login',
 		component: Vue.component('login', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/login.vue')),
+	},
+	{
+		name: 'scratchcard-create',
+		path: '/ScratchCard/create',
+		component: Vue.component('scratchcard-create', () => import(/* webpackChunkName: "ProjectPages/ScratchCard-component" */ 'ProjectPages/ScratchCard/Create.vue')),
+	},
+	{
+		name: 'scratchcard-view',
+		path: '/ScratchCard/view',
+		component: Vue.component('scratchcard-view', () => import(/* webpackChunkName: "ProjectPages/ScratchCard-component" */ 'ProjectPages/ScratchCard/View.vue')),
 	},
 	{
 		name: 'studymaterial-studymaterial',
@@ -94,11 +90,16 @@ export const router = new VueRouter({
 		name: 'studymaterial-videolecturesadd',
 		path: '/StudyMaterial/videolecturesadd',
 		component: Vue.component('studymaterial-videolecturesadd', () => import(/* webpackChunkName: "ProjectPages/StudyMaterial-component" */ 'ProjectPages/StudyMaterial/VideoLecturesAdd.vue')),
-=======
-		name: 'schoolhome',
-		path: '/schoolhome',
-		component: Vue.component('schoolhome', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/SchoolHome.vue')),
->>>>>>> 84b3231d437e7d0acc66bb027b08d01d78de488c
+	},
+	{
+		name: 'users-institute',
+		path: '/Users/institute',
+		component: Vue.component('users-institute', () => import(/* webpackChunkName: "ProjectPages/Users-component" */ 'ProjectPages/Users/institute.vue')),
+	},
+	{
+		name: 'users-lecturer',
+		path: '/Users/lecturer',
+		component: Vue.component('users-lecturer', () => import(/* webpackChunkName: "ProjectPages/Users-component" */ 'ProjectPages/Users/lecturer.vue')),
 	},
 	{
 		name: 'users-student-add',
@@ -181,14 +182,11 @@ export const router = new VueRouter({
 		component: Vue.component('nits-admin-user-add', () => import(/* webpackChunkName: "NitsAdminPages/user-component" */ 'NitsAdminPages/user/add.vue')),
 	},
 	{
-<<<<<<< HEAD
 		name: 'nits-admin-user-edit',
 		path: '/nits-admin/user/edit',
 		component: Vue.component('nits-admin-user-edit', () => import(/* webpackChunkName: "NitsAdminPages/user-component" */ 'NitsAdminPages/user/edit.vue')),
 	},
 	{
-=======
->>>>>>> 84b3231d437e7d0acc66bb027b08d01d78de488c
 		name: 'nits-admin-users',
 		path: '/nits-admin/users',
 		component: Vue.component('nits-admin-users', () => import(/* webpackChunkName: "NitsAdminPages-component" */ 'NitsAdminPages/users.vue')),
