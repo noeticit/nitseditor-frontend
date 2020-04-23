@@ -171,20 +171,16 @@
             }
         },
         created() {
-           this.tableData=this.$router.options.routes.map((d) => {
-                return {
-                    name: d.name,
-                    status_1: false,
-                    status_2: false,
-                    status_3: false,
-                    status_4: false,
-                    // route: d.path
-                }
-            })
+           const routes = {
+               routes: this.$router.options.routes.map((d) => {
+                   return {
+                       name: d.name,
+                       path: d.path
+                   }
+               })
+           }
 
-            console.log(this.tableData);
-
-            this.$api.get('/api/roles').then(response => {
+            this.$api.post('/api/permissions',routes).then(response => {
                 if(response.status === 200)
                 {
                     this.roles = response.data.data.map(a => ({
