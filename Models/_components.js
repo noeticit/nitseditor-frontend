@@ -52,4 +52,3 @@ Vue.component('BaseTableTwo', () => import('NitsComponents/Base/Tables/BaseTable
 Vue.component('MenuOne', () => import('NitsComponents/Menus/MenuOne.vue'));
 Vue.component('MenuTwo', () => import('NitsComponents/Menus/MenuTwo.vue'));
 Vue.component('NoeticExcelSample', () => import('Plugins/noetic/excel/components/sample.vue'));
-
