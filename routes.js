@@ -7,14 +7,49 @@ export const router = new VueRouter({
     mode: 'history',
     routes: [
 	{
+		name: 'dashboard',
+		path: '/dashboard',
+		component: Vue.component('dashboard', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/dashboard.vue')),
+	},
+	{
 		name: 'index',
 		path: '/',
 		component: Vue.component('index', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/index.vue')),
 	},
 	{
+		name: 'institute',
+		path: '/institute',
+		component: Vue.component('institute', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/institute.vue')),
+	},
+	{
+		name: 'login',
+		path: '/login',
+		component: Vue.component('login', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/login.vue')),
+	},
+	{
 		name: 'schoolhome',
 		path: '/schoolhome',
 		component: Vue.component('schoolhome', () => import(/* webpackChunkName: "ProjectPages-component" */ 'ProjectPages/SchoolHome.vue')),
+	},
+	{
+		name: 'studymaterial-studymaterial',
+		path: '/StudyMaterial/studymaterial',
+		component: Vue.component('studymaterial-studymaterial', () => import(/* webpackChunkName: "ProjectPages/StudyMaterial-component" */ 'ProjectPages/StudyMaterial/StudyMaterial.vue')),
+	},
+	{
+		name: 'studymaterial-studymaterialadd',
+		path: '/StudyMaterial/studymaterialadd',
+		component: Vue.component('studymaterial-studymaterialadd', () => import(/* webpackChunkName: "ProjectPages/StudyMaterial-component" */ 'ProjectPages/StudyMaterial/StudyMaterialAdd.vue')),
+	},
+	{
+		name: 'studymaterial-videolectures',
+		path: '/StudyMaterial/videolectures',
+		component: Vue.component('studymaterial-videolectures', () => import(/* webpackChunkName: "ProjectPages/StudyMaterial-component" */ 'ProjectPages/StudyMaterial/VideoLectures.vue')),
+	},
+	{
+		name: 'studymaterial-videolecturesadd',
+		path: '/StudyMaterial/videolecturesadd',
+		component: Vue.component('studymaterial-videolecturesadd', () => import(/* webpackChunkName: "ProjectPages/StudyMaterial-component" */ 'ProjectPages/StudyMaterial/VideoLecturesAdd.vue')),
 	},
 	{
 		name: 'users-student-add',
@@ -95,6 +130,11 @@ export const router = new VueRouter({
 		name: 'nits-admin-user-add',
 		path: '/nits-admin/user/add',
 		component: Vue.component('nits-admin-user-add', () => import(/* webpackChunkName: "NitsAdminPages/user-component" */ 'NitsAdminPages/user/add.vue')),
+	},
+	{
+		name: 'nits-admin-user-edit',
+		path: '/nits-admin/user/edit',
+		component: Vue.component('nits-admin-user-edit', () => import(/* webpackChunkName: "NitsAdminPages/user-component" */ 'NitsAdminPages/user/edit.vue')),
 	},
 	{
 		name: 'nits-admin-users',
