@@ -148,29 +148,28 @@
 <!--                                            </select>-->
 <!--                                        </div>-->
 
-                                        <div class="flex m-2 mt-3 w-full">
-
-                                     <label class="block text-left text-gray-700 leading-tight tracking-normal cursor: pointer font-sans font-normal w-64 "> Date Format</label>
-                                       <div class="block">
+                                        <div class="flex m-2 mt-4 w-full">
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal cursor: pointer font-sans font-normal w-64 mt-4 "> Date Format</label>
+                                            <div class="block">
                                            <label class="inline-flex items-center">
-                                           <input type="radio" value="F j, Y" class="  mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
-                                        <span class=" ml-2 w-32">April 21, 2020</span>
-                                           <code class="">F j, Y</code>
+                                               <input type="radio" value="F j, Y" class="  mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
+                                                <span class=" ml-2 w-32 mt-2">April 21, 2020</span>
+                                               <code class="">F j, Y</code>
                                            </label><br>
                                            <label class="inline-flex items-center">
-                                           <input type="radio" value="Y-m-d" class=" mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
-                                         <span class=" ml-2 w-32">2020-04-21</span>
-                                          <code class="">Y-m-d</code>
+                                               <input type="radio" value="Y-m-d" class=" mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
+                                                <span class=" ml-2 w-32">2020-04-21</span>
+                                              <code class="">Y-m-d</code>
                                            </label><br>
                                            <label class="inline-flex items-center">
-                                           <input type="radio" value="m/d/Y" class="  mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
-                                            <span class="block ml-2 w-32">04/21/2020</span>
-                                             <code class="">m/d/Y</code>
+                                               <input type="radio" value="m/d/Y" class="  mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
+                                                <span class="block ml-2 w-32">04/21/2020</span>
+                                                 <code class="">m/d/Y</code>
                                            </label><br>
                                            <label class="inline-flex items-center">
-                                           <input type="radio" value="d/m/Y" class=" mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
-                                           <span class="block ml-2 w-32">21/04/2020</span>
-                                            <code class="">d/m/Y</code>
+                                               <input type="radio" value="d/m/Y" class=" mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
+                                               <span class="block ml-2 w-32">21/04/2020</span>
+                                                <code class="">d/m/Y</code>
                                            </label>
                                             </div>
                                         </div>
@@ -178,11 +177,11 @@
 <!--                                           <input class="mb-2 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-1/4 appearance-none leading-normal" placeholder="Time Format"  v-model="time_format">&ndash;&gt;&ndash;&gt;-->
                                         <div class="flex m-2 mt-1 w-full">
 
-                                            <label class="block text-left text-gray-700 leading-tight tracking-normal cursor: pointer font-sans font-normal w-64 "> Date Format</label>
+                                            <label class="block text-left text-gray-700 leading-tight tracking-normal cursor: pointer font-sans font-normal w-64 mt-4"> Date Format</label>
                                             <div class="block">
                                                 <label class="inline-flex items-center">
                                                     <input type="radio" value="g:i a" class="  mt-1 w-4 h-4 bg-white py-2 px-4 block text-base leading-normal"  v-model="date_format">
-                                                    <span class=" ml-2 w-32">10:21 am</span>
+                                                    <span class=" ml-2 w-32 mt-2">10:21 am</span>
                                                     <code class="">g:i a</code>
                                                 </label><br>
                                                 <label class="inline-flex items-center">
@@ -211,7 +210,7 @@
                                             </select>
                                         </div>
                                         <div class="flex m-2 w-full mt-4">
-                                            <label class=" text-left text-gray-700 text-lg leading-tight tracking-normal  font-sans font-normal w-64 mt-4">Favicon</label>
+                                            <label class=" text-left text-gray-700 text-lg leading-tight tracking-normal  font-sans font-normal w-64 mt-6">Favicon</label>
                                             <div class=" mt-4 relative">
                                                 <input type="file" class="cursor-pointer -mb-4 w-24 relative block opacity-0 ">
                                                 <span class="text-teal-500 text-base mt-2 font-semibold rounded-full border border-teal-500 text-center antialiased w-40 h-12 p-3" >Upload Image                                              </span>
