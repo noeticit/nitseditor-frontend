@@ -10,14 +10,14 @@
             >
                 <span v-if="checkValue" v-for="item in value" class="multi-select-input-tag z-10">
                     <span>{{ item[optionLabel] }}</span>
-                    <button type="button" class="multi-select-input-remove" @click="removeElement(item)">&times;</button>
+                    <button type="button" class="multi-select-input-remove bg-red-500" @click.prevent="removeElement(item)">&times;</button>
                 </span>
                 <span v-else class="multi-select-input-tag z-10">
                     <span>{{ item[optionLabel] }}</span>
-                    <button type="button" class="multi-select-input-remove" @click="removeElement(value)">&times;</button>
+                    <button type="button" class="multi-select-input-remove bg-red-500" @click.prevent="removeElement(value)">&times;</button>
                 </span>
                 <input class="flex outline-none pt-1 pb-1 ml-2 mb-1 bg-gray-200 text-gray-700" :placeholder="placeholder"
-                       @focus="dropdown = true"
+                       @click.prevent="dropdown = true"
                        v-model="search"
                        ref="input_select"
                 >
@@ -27,7 +27,7 @@
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
                 </svg>
             </div>
-            <button v-if="dropdown"  tabindex="-1" class="fixed inset-0 h-full w-full bg-black opacity-0 cursor-default"></button>
+            <button v-if="dropdown" @click.prevent="dropdown = false" class="fixed top-0 left-0 bottom-0 right-0 h-full w-full"></button>
             <div v-if="dropdown" ref="dropdown" class="absolute right-0 mt-2 py-2 w-full bg-white rounded-lg shadow-xl">
                 <ul>
                     <li v-if="computedOptions.length" v-for="item in computedOptions"
@@ -63,7 +63,7 @@
                     if(index > -1) this.value.splice(index, 1);
                     else this.value.push(item);
                 }
-                else this.value = item
+                else this.value = item;
 
                 this.$emit('input', this.value)
             },
@@ -74,6 +74,7 @@
                 return index <= -1;
             },
             removeElement(item) {
+                console.log("Event fired");
                 if(this.multiple) {
                     let index = _.findIndex(this.value, (o) => {
                         return o[this.trackBy] === item[this.trackBy];
@@ -115,7 +116,7 @@
             },
             multiple: {
                 type: Boolean,
-                default: true
+                default: false
             }
         },
         // created() {
