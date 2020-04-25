@@ -58,7 +58,6 @@
 </template>
 
 <script>
-    import ListView from "./ListView";
     export default {
         name: "users",
         data() {
@@ -90,7 +89,6 @@
             }
         },
         components: {
-            ListView,
             'DashboardLayoutOne': () => import('./../Layouts/Dashboard/LayoutOne'),
         },
         methods:{
