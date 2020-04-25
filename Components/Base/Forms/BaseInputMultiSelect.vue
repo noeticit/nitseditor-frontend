@@ -27,7 +27,7 @@
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
                 </svg>
             </div>
-            <button v-if="dropdown" @click="dropdown = false" tabindex="-1" class="fixed inset-0 h-full w-full bg-black opacity-0 cursor-default"></button>
+            <button v-if="dropdown"  tabindex="-1" class="fixed inset-0 h-full w-full bg-black opacity-0 cursor-default"></button>
             <div v-if="dropdown" ref="dropdown" class="absolute right-0 mt-2 py-2 w-full bg-white rounded-lg shadow-xl">
                 <ul>
                     <li v-if="computedOptions.length" v-for="item in computedOptions"
@@ -115,17 +115,17 @@
             },
             multiple: {
                 type: Boolean,
-                default: false
+                default: true
             }
         },
-        created() {
-            const button = this.$refs.input_select;
-            const tooltip =this.$refs.dropdown;
-
-            createPopper(button, tooltip, {
-                placement: 'right',
-            });
-        },
+        // created() {
+            // const button = this.$refs.input_select;
+            // const tooltip =this.$refs.dropdown;
+            //
+            // createPopper(button, tooltip, {
+            //     placement: 'right',
+            // });
+        // },
         computed: {
             errorDisplay() {
                 if(this.error.length)
