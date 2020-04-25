@@ -1,16 +1,16 @@
 <template>
-    <div class="bg-white px-4 py-3 flex items-center justify-center border-t border-gray-200 sm:px-6">
+    <div class="bg-white px-4 py-3 flex items-center justify-center border-gray-200 sm:px-6">
         <div class="hidden sm:flex-1 sm:flex sm:items-center ">
             <div class="ml-2 flex">
-                <p class="text-sm leading-5 font-semibold text-gray-700">
-                    Showing
-                    <span >1</span>
-                    to
-                    <span >10</span>
-                    of
-                    <span >57</span>
-                    results
-                </p>
+<!--                <p class="text-sm leading-5 font-semibold text-gray-700">-->
+<!--                    Showing-->
+<!--                    <span >1</span>-->
+<!--                    to-->
+<!--                    <span >10</span>-->
+<!--                    of-->
+<!--                    <span >57</span>-->
+<!--                    results-->
+<!--                </p>-->
                 <select class="flex w-16 h-8 rounded ml-4 bg-blue-100 text-blue-600">
                     <option value="10">10</option>
                     <option value="20">20</option>
