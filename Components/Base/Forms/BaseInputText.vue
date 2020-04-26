@@ -1,6 +1,6 @@
 <template>
     <div class="flex-col justify-start w-full">
-        <div class="mt-2 block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ label }}</div>
+        <div class="mt-2 ml-2 block uppercase tracking-wide text-left text-gray-700 text-sm font-bold mb-2">{{ label }}</div>
         <input
             class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             :class="errorDisplay ? 'border-red-500 focus:bg-white focus:border-red-500': ''"
@@ -26,7 +26,7 @@
                 default: () => []
             },
             type: {
-                type: String,
+                // type: String,
                 default: 'text'
             },
             placeholder: String,
