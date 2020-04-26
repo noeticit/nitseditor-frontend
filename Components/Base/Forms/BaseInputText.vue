@@ -26,7 +26,7 @@
                 default: () => []
             },
             type: {
-                type: String,
+                // type: String,
                 default: 'text'
             },
             placeholder: String,
