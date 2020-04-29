@@ -1,5 +1,5 @@
 <template>
-    <div class="w-1/2 h-full bg-white rounded-lg  rounded shadow-lg">
+    <div class="w-1/2 bg-white rounded-lg  rounded shadow-lg min-h-full justify-center antialiased leading-snug tracking-normal">
         <div class="text-center p-24 font-serif">
             ONE BY TWO
         </div>
@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        name: "BaseGridOneByTwo"
+        name: "NitsHalf"
     }
 </script>
 

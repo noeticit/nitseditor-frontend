@@ -1,5 +1,5 @@
 <template>
-    <div class="w-10/12 h-full bg-white rounded-lg  rounded shadow-lg">
+    <div class="w-10/12 bg-white rounded-lg  rounded shadow-lg min-h-full justify-center antialiased leading-snug tracking-normal">
         <div class="text-center p-24 font-serif">
             TEN BY TWELVE
         </div>
@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        name: "BaseGridTenByTwelve"
+        name: "NitsTenTwelfth"
     }
 </script>
 
