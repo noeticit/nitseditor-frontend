@@ -14,7 +14,7 @@
 
 <script>
     export default {
-        name: "BaseInputText",
+        name: "NitsInputText",
         props: {
             label: String,
             hint: {

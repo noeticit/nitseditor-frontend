@@ -24,7 +24,7 @@
 
 <script>
     export default {
-        name: "BaseInputSelect",
+        name: "NitsInputSelect",
         props: {
             label: String,
             placeholder: String,

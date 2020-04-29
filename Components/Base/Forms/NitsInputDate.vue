@@ -86,7 +86,7 @@
     let date = new Date();
     let moment = require('moment');
     export default {
-        name: "BaseInputDate",
+        name: "NitsInputDate",
         props: {
             label: String,
             hint: {
