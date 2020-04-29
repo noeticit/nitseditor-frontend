@@ -86,7 +86,7 @@
                 this.$emit('input', this.value)
             },
         },
-        name: "BaseInputMultiSelect",
+        name: "NitsInputMultiSelect",
         props: {
             label: String,
             placeholder: String,

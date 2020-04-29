@@ -15,7 +15,7 @@
 
 <script>
     export default {
-        name: "BaseInputFile",
+        name: "NitsInputFile",
         props: {
             label: String,
             hint: {
