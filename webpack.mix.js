@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-
+let path = require('path');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -23,7 +23,7 @@ mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/i
         processCssUrls: false,
         postCss: [ require('autoprefixer'), tailwindcss('./tailwind.config.js') ],
     })
-    .js('node_modules/nitseditor-frontend/app.js', 'public/nits-assets/js')
+    .js(path.resolve('./resources/js/app.js'), 'public/nits-assets/js')
     .webpackConfig({
         module: {
             rules: [
@@ -58,4 +58,5 @@ mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/i
     // .extract([
     //     'vue', 'axios', 'lodash', 'vue-router', 'vue-template-compiler', 'vuex'
     // ])
+    // .nitsEditor()
     .sourceMaps().version();
