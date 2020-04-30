@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="px-2" v-if="!loading">
-            <div v-if="tableData && tableData.data.length" class="text-left text-lg antialiased font-medium text-gray-600 leading-snug tracking-normal mt-5 mb-5 text-sm font-sans">Showing Results {{tableData.meta.from}} to {{tableData.meta.to}} of {{tableData.meta.total}}</div>
+            <div v-if="tableData && tableData.data.length && location !=='batch'" class="text-left text-lg antialiased font-medium text-gray-600 leading-snug tracking-normal mt-5 mb-5 text-sm font-sans">Showing Results {{tableData.meta.from}} to {{tableData.meta.to}} of {{tableData.meta.total}}</div>
             <table class="mt-4 w-full" v-if="tableData && tableData.data.length">
                 <tr class="bg-teal-500 h-10">
                     <template v-for="header in selectedColumns">
@@ -38,13 +38,13 @@
                 </tbody>
             </table>
             <div v-else class="text-center mt-20 mb-20 text-lg font-medium">
-                No Records Found !!
+                No Data Found !!
             </div>
         </div>
         <h5 v-else class="text-center">
             <vue-simple-spinner  message="Fetching results. Please wait ...." size="55"></vue-simple-spinner>
         </h5>
-        <div v-if="!loading && tableData && tableData.data.length">
+        <div v-if="!loading && tableData && tableData.data.length && location !=='batch_selected'">
             <pagination v-if="tableData.meta" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
         </div>
     </div>
