@@ -82,7 +82,7 @@ export default class {
     update(url, payload) {
         return new Promise((resolve, reject) => {
             axios.patch(url, payload, {headers: getHeader()}).then(response => {
-                if (response.status === 200) {
+                if (response.status === 202) {
                     return resolve(response);
                 }
             }).catch((error) => {
