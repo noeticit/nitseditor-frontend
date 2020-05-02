@@ -13,6 +13,7 @@
     import ItalicPlugin from '@ckeditor/ckeditor5-basic-styles/src/italic';
     import LinkPlugin from '@ckeditor/ckeditor5-link/src/link';
     import ParagraphPlugin from '@ckeditor/ckeditor5-paragraph/src/paragraph';
+    import MathType from '@wiris/mathtype-ckeditor5/src/plugin';
 
 
     export default {
@@ -30,7 +31,8 @@
                         BoldPlugin,
                         ItalicPlugin,
                         LinkPlugin,
-                        ParagraphPlugin
+                        ParagraphPlugin,
+                        MathType
                     ],
 
                     toolbar: {
@@ -39,7 +41,9 @@
                             'italic',
                             'link',
                             'undo',
-                            'redo'
+                            'redo',
+                            'MathType',
+                            'ChemType',
                         ]
                     }
                 }
