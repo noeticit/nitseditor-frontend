@@ -8,15 +8,13 @@
                 <!--                <a class="w-20 h-18" src="/nits-assets/images/logo.png"></a>-->
             </div>
             <div class="block lg:hidden py-5 flex" >
-                <div class="flex items-center px-3 py-2" >
-                    <button @click="search =! search">
+                <div class="flex items-center px-3 py-2 ">
                     <svg class="w-8 h-8" version="1.1" id="Menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                         <path fill="#000000" d="M16.4,9H3.6C3.048,9,3,9.447,3,10c0,0.553,0.048,1,0.6,1h12.8c0.552,0,0.6-0.447,0.6-1S16.952,9,16.4,9z
                              M16.4,13H3.6C3.048,13,3,13.447,3,14c0,0.553,0.048,1,0.6,1h12.8c0.552,0,0.6-0.447,0.6-1S16.952,13,16.4,13z M3.6,7h12.8
                             C16.952,7,17,6.553,17,6s-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6S3.048,7,3.6,7z"/>
                     </svg>
-                    </button>
                 </div>
                 <div class=" flex flex-row">
                     <div class="block mt-4 lg:inline-block lg:mt-0 ml-5 lg:h-25 lg:py-10 ">
@@ -41,14 +39,14 @@
                 </div>
 
             </div>
-            <div class="block lg:hidden w-full h-full block lg:flex lg:items-center lg:w-auto"  v-if="search">
+            <div class="block lg:hidden w-full h-full block lg:flex lg:items-center lg:w-auto">
                 <ul class="lg:flex-grow uppercase text-brand-blue-900 flex flex-col lg:flex-row pb-4 lg:pb-0 ">
                     <li class="flex flex-row ">
                         <div class="w-11/12 pb-4 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                           HOME
+                            HOME
                         </div>
-                            <div class="pb-4 border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                        <div class="pb-4 border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
+                            <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                  y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                 <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
                                 c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
@@ -130,7 +128,7 @@
                 </ul>
             </div>
             <div class="flex items-center flex-shrink-0 ">
-                <a class="w-20 h-18" href="/nits-assets/images/logo.png"></a>
+                <a class="w-20 h-18" href=""></a>
             </div>
 
             <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
@@ -167,7 +165,7 @@
                     </li>
                     <li class="hover:text-teal-400">
                         <a href="" class="border-l-4 lg:border-l-0  block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-<!--                            lg:border-b-4-->
+                            <!--                            lg:border-b-4-->
                             SHOTCODES
                         </a>
                     </li>
@@ -202,12 +200,7 @@
 
 <script>
     export default {
-        name: "NitsHResponsiveSticky",
-        data(){
-            return{
-                search :false,
-            }
-        }
+        name: "NitsHStaticSticky"
     }
 </script>
 
