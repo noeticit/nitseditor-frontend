@@ -1,40 +1,61 @@
 <template>
     <div class="">
         <div class="flex relative w-screen h-10 ml-16 mt-4 border-b">
-           <div>
-               <p class=" text-gray-700"><strong>Call:</strong>
-                   1800-547-2145 |
-                   <strong>Email:</strong>
-                   info@nitseditor.com
-               </p>
-           </div>
-            <div class="flex absolute right-0 h-10 mr-40">
-               <div class="flex ">
+            <div class="flex absolute left-0 h-10 mr-40">
+                <div class="flex ">
+                    <div class="inline-block border-r px-3">
+                        <a class="" href="#">
+                            <div class="flex font-semibold text-gray-700" >
+                                HOME
+                            </div>
+                        </a>
+                    </div>
+                    <div class="inline-block border-r px-3">
+                        <a class="" href="#">
+                            <div class="flex font-semibold text-gray-700" >
+                                FAQS
+                            </div>
+                        </a>
+                    </div>
+                    <div class="inline-block border-r px-3">
+                        <a class="" href="#">
+                            <div class="flex font-semibold text-gray-700" >
+                                CONTACT
+                            </div>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a class="pl-2 mx-1 font-semibold text-gray-700" href="#">LOGIN</a>
+                    </div>
+                </div>
+            </div>
 
-                   <div class="inline-block border-r px-3">
-                       <a class="" href="#">
-                           <div class="flex font-semibold text-gray-700" >
-                               USD
+            <div class="flex absolute right-0 h-10 mr-40">
+                <div class="flex ">
+                    <div class="inline-block border-r px-3">
+                        <a class="" href="#">
+                            <div class="flex font-semibold text-gray-700" >
+                                USD
                                 <svg class="w-4 h-4  ml-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">-->
-                               <path fill-rule="evenodd" d="M13.42 7.86a.7.7 0 01.98 0c.27.27.27.7 0 .97l-3.91 3.83a.7.7 0 01-.98 0L5.6 8.83a.68.68 0 010-.97.7.7 0 01.97 0L10 11l3.42-3.14z"/>-->
-                           </svg>
-                           </div>
-                       </a>
-                   </div>
-                   <div class="inline-block border-r px-3">
-                       <a class="" href="#">
-                           <div class="flex font-semibold text-gray-700" >
-                               EN
-                               <svg class="w-4 h-4 ml-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">-->
-                                   <path fill-rule="evenodd" d="M13.42 7.86a.7.7 0 01.98 0c.27.27.27.7 0 .97l-3.91 3.83a.7.7 0 01-.98 0L5.6 8.83a.68.68 0 010-.97.7.7 0 01.97 0L10 11l3.42-3.14z"/>-->
-                               </svg>
-                           </div>
-                       </a>
-                   </div>
-                   <div class="">
-                       <a class="pl-2 mx-1 font-semibold text-gray-700" href="#">LOGIN</a>
-                   </div>
-               </div>
+                                    <path fill-rule="evenodd" d="M13.42 7.86a.7.7 0 01.98 0c.27.27.27.7 0 .97l-3.91 3.83a.7.7 0 01-.98 0L5.6 8.83a.68.68 0 010-.97.7.7 0 01.97 0L10 11l3.42-3.14z"/>-->
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="inline-block border-r px-3">
+                        <a class="" href="#">
+                            <div class="flex font-semibold text-gray-700" >
+                                EN
+                                <svg class="w-4 h-4 ml-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">-->
+                                    <path fill-rule="evenodd" d="M13.42 7.86a.7.7 0 01.98 0c.27.27.27.7 0 .97l-3.91 3.83a.7.7 0 01-.98 0L5.6 8.83a.68.68 0 010-.97.7.7 0 01.97 0L10 11l3.42-3.14z"/>-->
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a class="pl-2 mx-1 font-semibold text-gray-700" href="#">LOGIN</a>
+                    </div>
+                </div>
             </div>
         </div>
         <nav class=" flex w-screen h-32 ">
@@ -91,7 +112,7 @@
 
 <script>
     export default {
-        name: "NitsHeaderSubheaderTop"
+        name: "NitsHeaderSubheaderLeftBottom"
     }
 </script>
 

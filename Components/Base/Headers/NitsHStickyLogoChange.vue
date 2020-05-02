@@ -1,45 +1,35 @@
 <template>
    <div>
-    <nav class=" flex w-screen h-20 bg-gray-300 ">
+    <nav class=" flex w-screen h-20 mt-4 ">
         <div class="flex justify-between">
-          <div class="float-left ">
+          <div class="float-left ml-12 ">
             <img src="/nits-assets/images/logo.png" alt="logo" class="h-20">
           </div>
         <div class="flex items-center " >
             <div class="float-right ml-64">
-                <div class="inline-block pl-4 mx-3 cursor-default text-white ">
-                <a class=" text-gray-700  font-semibold" href="">HOME</a>
+                <div class="inline-block pl-4 mx-3 ">
+                <a class="  text-teal-600 font-semibold" href="">HOME</a>
                 </div>
-                <div class="inline-block pl-2 mx-3 cursor-pointer text-teal-500 ">
-                    <a class=" text-gray-700  font-semibold" href="">FEATURE</a>
+                <div class="inline-block pl-2 mx-3 ">
+                    <a class=" text-gray-700 hover:text-teal-600 font-semibold" href="">FEATURE</a>
                 </div>
-                <div class="inline-block pl-2 mx-3 cursor-pointer text-teal-500 ">
-                    <a class=" text-gray-700 font-semibold" href="">PAGES</a>
+                <div class="inline-block pl-2 mx-3 ">
+                    <a class=" text-gray-700 hover:text-teal-600 font-semibold" href="">PAGES</a>
                 </div>
-                <div class="inline-block pl-2 mx-3 cursor-pointer text-teal-500 ">
-                    <a class=" text-gray-700 font-semibold" href="">PORTFOLIO</a>
+                <div class="inline-block pl-2 mx-3 ">
+                    <a class=" text-gray-700 hover:text-teal-600 font-semibold" href="">PORTFOLIO</a>
                 </div>
-                <div class="inline-block mx-3 cursor-pointer text-teal-500 ">
-                    <a class=" text-gray-700 font-semibold" href="">BLOG</a>
+                <div class="inline-block mx-3 ">
+                    <a class=" text-gray-700 hover:text-teal-600 font-semibold" href="">BLOG</a>
                 </div>
-                <div class="inline-block mx-3 cursor-pointer text-teal-500 ">
-                    <a class=" text-gray-700 font-semibold" href="">SHOP</a>
+                <div class="inline-block mx-3 ">
+                    <a class=" text-gray-700 hover:text-teal-600 font-semibold" href="">SHOP</a>
                 </div>
-                <div class="inline-block mx-3 cursor-pointer text-teal-500 ">
-                    <a class=" text-gray-700 font-semibold" href="">SHORTCODES</a>
+                <div class="inline-block mx-3">
+                    <a class=" text-gray-700 hover:text-teal-600 font-semibold" href="">SHORTCODES</a>
                 </div>
 
             </div>
-
-<!--            <div class="p-8">-->
-<!--                <div class="group inline-block relative">-->
-<!--                    <button class="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">-->
-<!--                        <span class="mr-1">Dropdown</span>-->
-<!--                    </button>-->
-
-<!--                </div>-->
-<!--            </div>-->
-
 
         </div>
 
