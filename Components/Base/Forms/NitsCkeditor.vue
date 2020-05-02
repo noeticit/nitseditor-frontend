@@ -1,5 +1,5 @@
 <template>
-    <ckeditor :editor="editor" :config="editorConfig"></ckeditor>
+    <ckeditor :editor="editor" :value="value" :config="editorConfig" @input="emitEvent()"></ckeditor>
 </template>
 
 <script>
@@ -39,6 +39,7 @@
             // Use the <ckeditor> component in this view.
             ckeditor: CKEditor.component
         },
+        props: ['value'],
         data() {
             return {
                 editor: ClassicEditor,
@@ -111,7 +112,17 @@
                     },
                 }
             }
-        }
+        },
+        methods: {
+            emitEvent(data, event, editor) {
+                console.log(this.editor)
+                console.log( 'Editor data input.', { data, event, editor } );
+                // console.log(data);
+                // console.log(event);
+                // console.log(editor);
+                this.$emit('input', this.value)
+            }
+        },
     }
 </script>
 
