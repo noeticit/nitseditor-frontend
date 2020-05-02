@@ -9,7 +9,7 @@
                 </div>
                 <div class="mr-24 text-lg font-semibold">
                     <div class="float-right">
-                        <div v-if="!opacity" class="inline-block cursor-default text-white p-1  mx-3">
+                        <div class="inline-block cursor-default text-white p-1  mx-3">
                             <a class="text-sm text-white " href="#">HOME</a>
                         </div>
                         <div class="inline-block cursor-pointer text-white p-1 mx-3">
