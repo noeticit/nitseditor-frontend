@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "NitsHResponsiveSticky"
+        name: "NitsHResponsiveSticky",
     }
 </script>
 

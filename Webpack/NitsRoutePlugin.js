@@ -3,6 +3,8 @@ const fs = require('fs');
 let filecontents = 'import Vue from \'vue\';\nimport VueRouter from \'vue-router\';\n\nVue.use(VueRouter);\n\nexport const router = new VueRouter({\n' +
     '    mode: \'history\',\n    routes: [';
 
+let dynamicRouteContent = '';
+
 function NitsRoutePlugin() {}
 
 NitsRoutePlugin.prototype.apply = function (compiler) {
@@ -18,6 +20,8 @@ NitsRoutePlugin.prototype.apply = function (compiler) {
     console.log('\n Generating Plugins Pages routes\n');
 
     generatePluginsRoutes();
+
+    filecontents = filecontents + dynamicRouteContent;
 
     filecontents = filecontents + `\n\t{\n\t\tname: \'page-not-found\',\n\t\tpath: \'*\',\n\t\tcomponent: Vue.component(\'page-not-found\', () => import(\'NitsAdminPages/page-not-found.vue\')),\n\t},`;
 
@@ -77,10 +81,19 @@ function generateRoutes(directory, componentPathPrefix, pathPrefix = '', namePre
                             else
                                 return `\t    ${line}`;
                         }).join('\n');
-                        filecontents = filecontents + `\n\t{\n\t\tname: \'${name}\',\n\t\tpath: \'${path}\',\n\t\tcomponent: Vue.component(\'${name}\', () => import(/* webpackChunkName: "${componentPathPrefix}-component" */ \'${componentPathPrefix}/${entry.name}\')),\n\t\tmeta:${metadata}\n\t},`;
+
+                        if(comp.slice(0, 2) === '__')
+                            dynamicRouteContent = dynamicRouteContent + `\n\t{\n\t\tname: \'${name}\',\n\t\tpath: \'${path}\',\n\t\tcomponent: Vue.component(\'${name}\', () => import(/* webpackChunkName: "${componentPathPrefix}-component" */ \'${componentPathPrefix}/${entry.name}\')),\n\t\tmeta:${metadata}\n\t},`;
+                        else
+                            filecontents = filecontents + `\n\t{\n\t\tname: \'${name}\',\n\t\tpath: \'${path}\',\n\t\tcomponent: Vue.component(\'${name}\', () => import(/* webpackChunkName: "${componentPathPrefix}-component" */ \'${componentPathPrefix}/${entry.name}\')),\n\t\tmeta:${metadata}\n\t},`;
                     }
-                    else
-                        filecontents = filecontents + `\n\t{\n\t\tname: \'${name}\',\n\t\tpath: \'${path}\',\n\t\tcomponent: Vue.component(\'${name}\', () => import(/* webpackChunkName: "${componentPathPrefix}-component" */ \'${componentPathPrefix}/${entry.name}\')),\n\t},`;
+                    else {
+                        if(comp.slice(0, 2) === '__')
+                            dynamicRouteContent = dynamicRouteContent + `\n\t{\n\t\tname: \'${name}\',\n\t\tpath: \'${path}\',\n\t\tcomponent: Vue.component(\'${name}\', () => import(/* webpackChunkName: "${componentPathPrefix}-component" */ \'${componentPathPrefix}/${entry.name}\')),\n\t},`;
+                        else
+                            filecontents = filecontents + `\n\t{\n\t\tname: \'${name}\',\n\t\tpath: \'${path}\',\n\t\tcomponent: Vue.component(\'${name}\', () => import(/* webpackChunkName: "${componentPathPrefix}-component" */ \'${componentPathPrefix}/${entry.name}\')),\n\t},`;
+                    }
+
                 }
             }
         } else {
