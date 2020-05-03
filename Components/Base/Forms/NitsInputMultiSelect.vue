@@ -8,7 +8,7 @@
                     class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-4 -ml-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 flex flex-wrap"
                     :class="errorDisplay ? 'border-red-500 focus:bg-white focus:border-red-500': ''"
             >
-                <input class="flex outline-none pt-1 pb-1 ml-2 mb-1 bg-gray-200 text-gray-700" :placeholder="placeholder"
+                <input class="flex w-full px-2 outline-none pt-1 pb-1 ml-2 mb-1 bg-gray-200 text-gray-700 z-10" :placeholder="placeholder"
                        @click.prevent="dropdown = true"
                        v-model="search"
                        ref="input_select"
