@@ -8,19 +8,19 @@
                     class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-4 -ml-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 flex flex-wrap"
                     :class="errorDisplay ? 'border-red-500 focus:bg-white focus:border-red-500': ''"
             >
-                <span v-if="checkValue" v-for="item in value" class="multi-select-input-tag z-10">
-                    <span>{{ item[optionLabel] }}</span>
-                    <button type="button" class="multi-select-input-remove bg-red-500" @click.prevent="removeElement(item)">&times;</button>
-                </span>
-                <span v-else class="multi-select-input-tag z-10">
-                    <span>{{ item[optionLabel] }}</span>
-                    <button type="button" class="multi-select-input-remove bg-red-500" @click.prevent="removeElement(value)">&times;</button>
-                </span>
-                <input class="flex outline-none pt-1 pb-1 ml-2 mb-1 bg-gray-200 text-gray-700" :placeholder="placeholder"
+                <input class="flex w-full px-2 outline-none pt-1 pb-1 ml-2 mb-1 bg-gray-200 text-gray-700 z-10" :placeholder="placeholder"
                        @click.prevent="dropdown = true"
                        v-model="search"
                        ref="input_select"
                 >
+                <span v-if="checkValue" v-for="item in value" class="multi-select-input-tag z-10">
+                    <span>{{ item[optionLabel] }}</span>
+                    <button type="button" class="multi-select-input-remove" @click.prevent="removeElement(item)">&times;</button>
+                </span>
+                <span v-else class="multi-select-input-tag z-10">
+                    <span @click.prevent="removeElement(value)">{{ item[optionLabel] }}</span>
+<!--                    <button type="button" class="multi-select-input-remove" @click.prevent="removeElement(value)">&times;</button>-->
+                </span>
             </div>
             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-gray-700">
                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -51,7 +51,6 @@
             return {
                 search: '',
                 dropdown: false,
-                value: []
             }
         },
         methods: {
@@ -117,7 +116,8 @@
             multiple: {
                 type: Boolean,
                 default: false
-            }
+            },
+            value: ''
         },
         // created() {
             // const button = this.$refs.input_select;
@@ -147,7 +147,7 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
     .multi-select-input-tag {
         display: inline-flex;

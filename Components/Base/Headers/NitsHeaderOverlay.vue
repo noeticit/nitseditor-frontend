@@ -1,7 +1,7 @@
 <template>
     <div class="bg-white shadow-lg">
         <div class="vue-portal-target " v-if="tab">
-            <div class="bg-white w-screen fixed h-screen overflow-x-scroll pin-y  z-50 burger-menu opacity-100">
+            <div class="bg-white w-screen fixed h-screen overflow-x-scroll pin-y  z-50 burger-menu opacity-75">
                 <button  class=" h-20 flex items-right px-4 pin-t pin-r fixed ml-11/12 -mb-20"  @click="tab =! tab">
                     <svg class="w-8 h-20" version="1.1" id="Cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">

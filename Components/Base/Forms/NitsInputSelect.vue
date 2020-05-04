@@ -40,7 +40,7 @@
                 type: Array,
                 default: () => []
             },
-            value: String,
+            value: '',
         },
         methods: {
             emitEvent() {
