@@ -1,6 +1,7 @@
 <template>
    <div>
-    <nav class=" flex w-screen h-20 mt-4 ">
+      <img src="/project-assets/images/HiRes1-150x150.jpg" class="h-full w-3/4" alt=" image">
+       <nav class=" flex w-screen h-20 mt-4 ">
         <div class="flex justify-between">
           <div class="float-left ml-12 ">
             <img src="/nits-assets/images/logo.png" alt="logo" class="h-20">

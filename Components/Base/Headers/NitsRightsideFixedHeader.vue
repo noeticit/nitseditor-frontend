@@ -1,6 +1,8 @@
 <template>
-    <div class="fixed">
-        <nav class=" px-10 mx-auto mt-10">
+    <div class="sticky">
+<!--        <img src="/project-assets/images/Header-for-landing-pag_-h.jpg" class="h-full w-3/4" alt=" image">-->
+
+        <nav class="absolute right-0 px-10 mt-10 mx-auto">
             <div class=" flex flex-col ">
                 <div class="float-left  h-18 ">
                     <img class="h-12 w-48 pr-5 mt-6" src="/nits-assets/images/nits-editor-logo.png">
@@ -35,7 +37,7 @@
                                 </svg>
                                 </div>
                             </a>
-                                </div>
+                        </div>
                         <div class="inline-block p-1 mt-3">
                             <a class="text-lg text-gray-800" href="#">
                                 <div class="flex " >
@@ -84,7 +86,7 @@
 
 <script>
     export default {
-        name: "NitsLeftsideFixedHeader"
+        name: "NitsRightsideFixedHeader"
     }
 </script>
 
