@@ -201,10 +201,10 @@
             <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
                 <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-gray-700 text-sm">
                     <li class="hover:text-teal-400">
-                        <a href="" class="border-l-4 lg:border-l-0 block mt-5 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-5 px-2">
-                            <svg class="w-8 h-8 mb-1 ml-1" version="1.1" id="Home" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        <a href="" class="border-l-4 lg:border-l-0 block mt-5 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-5 px-2 hover:text-teal-500 cursor-pointer text-gray-700">
+                            <svg class="w-8 h-8 mb-1 ml-1" fill="currentColor" version="1.1" id="Home" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                <path fill="#000000" d="M18.672,11H17v6c0,0.445-0.194,1-1,1h-4v-6H8v6H4c-0.806,0-1-0.555-1-1v-6H1.328
+                                <path fill-rule="evenodd" fill="#000000" d="M18.672,11H17v6c0,0.445-0.194,1-1,1h-4v-6H8v6H4c-0.806,0-1-0.555-1-1v-6H1.328
                                     c-0.598,0-0.47-0.324-0.06-0.748L9.292,2.22C9.487,2.018,9.743,1.918,10,1.908c0.257,0.01,0.513,0.109,0.708,0.312l8.023,8.031
                                     C19.142,10.676,19.27,11,18.672,11z"/>
                             </svg>

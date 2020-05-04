@@ -1,23 +1,38 @@
 <template>
-<!--   <nits-h-responsive-sticky>-->
-<!--       -->
-<!--   </nits-h-responsive-sticky>-->
-<!--    <nits-h-static-sticky>-->
+   <div>
+<!--      <div>-->
+<!--         <nits-h-responsive-sticky></nits-h-responsive-sticky>-->
+<!--      </div><br>-->
+<!--      <div>-->
+<!--         <nits-h-icon-and-text></nits-h-icon-and-text>-->
+<!--      </div><br>-->
+<!--      <div>-->
+<!--         <nits-h-alternate-logo></nits-h-alternate-logo>-->
+<!--      </div><br>-->
+<!--      <div>-->
+<!--         <nits-h-static-sticky></nits-h-static-sticky>-->
+<!--      </div><br>-->
+<!--      <div>-->
+<!--         <nits-h-icon-with-text></nits-h-icon-with-text>-->
+<!--      </div><br>-->
+<!--      <div>-->
+<!--         <nits-header-overlay></nits-header-overlay>-->
+<!--      </div><br>-->
+<!--      <div>-->
+<!--         <nits-header-and-subheader-bordered></nits-header-and-subheader-bordered>-->
+<!--      </div>-->
+      <div>
+         <nits-header-floating></nits-header-floating>
+      </div>
+   </div>
 
-<!--    </nits-h-static-sticky>-->
-<!--    <nits-h-alternate-logo>-->
-
-<!--    </nits-h-alternate-logo>-->
-    <nits-h-icon-and-text></nits-h-icon-and-text>
 </template>
 
 <script>
-    import NitsHStaticSticky from "../Components/Base/Headers/NitsHStaticSticky";
-    import NitsHAlternateLogo from "../Components/Base/Headers/NitsHAlternateLogo";
-    import NitsHIconAndText from "../Components/Base/Headers/NitsHIconAndText";
+
     export default {
         name: "demo",
-        components: {NitsHIconAndText, NitsHAlternateLogo, NitsHStaticSticky}
+
     }
 </script>
 
