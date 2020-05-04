@@ -43,7 +43,7 @@
             </div>
         </nav>
         <div class="absolute bottom-0 px-32 mb-16 ">
-            <h2 class="mb-16 ml-64 text-center font-black text-5xl text-blue-600 ">WELCOME TO NITS <span class="text-white ml-1">EDITORS</span></h2>
+            <h2 class="mb-16 ml-64 text-center font-black text-5xl text-purple-500 ">WELCOME TO NITS <span class="text-white ml-1">EDITORS</span></h2>
         </div>
     </div>
 </template>
@@ -55,7 +55,16 @@
             return{
                 box:false
             }
+
+        },
+
+            scrollFunction() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            document.getElementById("header").style.fontSize = "30px";
+        } else {
+            document.getElementById("header").style.fontSize = "90px";
         }
+    }
     }
 </script>
 
