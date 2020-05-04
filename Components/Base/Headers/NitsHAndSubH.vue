@@ -111,7 +111,7 @@
             </div>
         </div>
 
-        <div class="relative mx-auto bg-transparent w-screen">
+        <div class="sticky top-0 mx-auto bg-transparent w-screen">
             <div class="flex justify-between">
                 <div class="flex text-lg ml-64 font-semibold">
                     <div class="float-right py-3 ml-32">
