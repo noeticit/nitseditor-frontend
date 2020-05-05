@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="px-2" v-if="!loading">
-            <div v-if="tableData && tableData.data.length && location !=='batch'" class="text-left text-lg antialiased font-medium text-gray-600 leading-snug tracking-normal mt-5 mb-5 text-sm font-sans">Showing Results {{tableData.meta.from}} to {{tableData.meta.to}} of {{tableData.meta.total}}</div>
+            <div v-if="tableData && tableData.data.length && location !=='batch_selected'" class="text-left text-lg antialiased font-medium text-gray-600 leading-snug tracking-normal mt-5 mb-5 text-sm font-sans">Showing Results {{tableData.meta.from}} to {{tableData.meta.to}} of {{tableData.meta.total}}</div>
             <table class="mt-4 w-full" v-if="tableData && tableData.data.length">
                 <tr class="bg-teal-500 h-10">
                     <template v-for="header in selectedColumns">
