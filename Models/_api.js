@@ -99,7 +99,7 @@ export default class {
     delete(url) {
         return new Promise((resolve, reject) => {
             axios.delete(url, {headers: getHeader()}).then(response => {
-                if (response.status === 200) {
+                if (response.status === 204) {
                     return resolve(response);
                 }
             }).catch((error) => {

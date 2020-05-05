@@ -64,7 +64,7 @@
                                 </div>
 
                                 <div class="flex flex-wrap mb-3 -mx-1">
-                                    <template x-for="(day, index) in DAYS" :key="index">
+                                    <template x-for="(day, index) in DAYS">
                                         <div style="width: 14.26%" class="px-1">
                                             <div
                                                     x-text="day"
@@ -80,7 +80,7 @@
                                                 class="text-center border p-1 border-transparent text-sm"
                                         ></div>
                                     </template>
-                                    <template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">
+                                    <template x-for="(date, dateIndex) in no_of_days">
                                         <div style="width: 14.28%" class="px-1 mb-1">
                                             <div
                                                     @click="getDateValue(date)"
