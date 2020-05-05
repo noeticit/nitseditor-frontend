@@ -43,7 +43,7 @@
 
 <script>
 
-    import NitsDemo from "../Components/Base/Headers/NitsDemo";
+    // import NitsDemo from "../Components/Base/Headers/NitsDemo";
     import NitsHeaderWithIcon from "../Components/Base/Headers/NitsHeaderWithIcon";
     import NitsHeaderMenuWithTitleAndSubtitle from "../Components/Base/Headers/NitsHeaderMenuWithTitleAndSubtitle";
     export default {
