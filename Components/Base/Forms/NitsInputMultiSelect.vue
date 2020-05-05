@@ -13,11 +13,11 @@
                        v-model="search"
                        ref="input_select"
                 >
-                <span v-if="checkValue" v-for="item in value" class="multi-select-input-tag z-10">
+                <span v-if="checkValue" v-for="item in value" class="multi-select-input-tag z-10" style="display: inline-flex;line-height: 1;align-items: center;font-size: .875rem; background-color: #bcdefa; color: #1c3d5a;border-radius: .25rem;user-select: none; padding: .25rem; margin-right: .5rem;   margin-bottom: .25rem;">
                     <span>{{ item[optionLabel] }}</span>
-                    <button type="button" class="multi-select-input-remove" @click.prevent="removeElement(item)">&times;</button>
+                    <button type="button" class="multi-select-input-remove" style="color: #2779bd;font-size: 1.125rem;line-height: 1;" @click.prevent="removeElement(item)">&times;</button>
                 </span>
-                <span v-else class="multi-select-input-tag z-10">
+                <span v-else class="multi-select-input-tag z-10" style="display: inline-flex;line-height: 1;align-items: center;font-size: .875rem; background-color: #bcdefa; color: #1c3d5a;border-radius: .25rem;user-select: none; padding: .25rem; margin-right: .5rem;   margin-bottom: .25rem;">
                     <span @click.prevent="removeElement(value)">{{ item[optionLabel] }}</span>
 <!--                    <button type="button" class="multi-select-input-remove" @click.prevent="removeElement(value)">&times;</button>-->
                 </span>
@@ -148,41 +148,5 @@
 </script>
 
 <style scoped lang="scss">
-
-    .multi-select-input-tag {
-        display: inline-flex;
-        line-height: 1;
-        align-items: center;
-        font-size: .875rem;
-        background-color: #bcdefa;
-        color: #1c3d5a;
-        border-radius: .25rem;
-        user-select: none;
-        padding: .25rem;
-        margin-right: .5rem;
-        margin-bottom: .25rem;
-    }
-
-    .multi-select-input-tag:last-of-type {
-        margin-right: 0;
-    }
-
-    .multi-select-input-remove {
-        color: #2779bd;
-        font-size: 1.125rem;
-        line-height: 1;
-    }
-
-    .multi-select-input-remove:first-child {
-        margin-right: .25rem;
-    }
-
-    .multi-select-input-remove:last-child {
-        margin-left: .25rem;
-    }
-
-    .multi-select-input-remove:focus {
-        outline: 0;
-    }
 
 </style>
