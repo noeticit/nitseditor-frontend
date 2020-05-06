@@ -1,7 +1,7 @@
 <template>
     <div class="hero">
         <div class="relative">
-            <img src="/nits-assets/images/demo.jpg">
+            <img src="/nits-assets/images/school_image.jpg">
             <div v-if="Open" class="flex">
                 <div  class="flex-col h-full w-64 bg-white absolute right-0 top-0">
                     <div class="mt-16 ml-8">
