@@ -77,7 +77,6 @@ Vue.component('NitsHStickyLogoChange', () => import('NitsComponents/Base/Headers
 Vue.component('NitsHTransparent', () => import('NitsComponents/Base/Headers/NitsHTransparent.vue'));
 Vue.component('NitsLeftsideFixedHeader', () => import('NitsComponents/Base/Headers/NitsLeftsideFixedHeader.vue'));
 Vue.component('NitsMenuCenteredLogo', () => import('NitsComponents/Base/Headers/NitsMenuCenteredLogo.vue'));
-
 Vue.component('NitsRightsideFixedHeader', () => import('NitsComponents/Base/Headers/NitsRightsideFixedHeader.vue'));
 Vue.component('NitsStaticStickyHeader', () => import('NitsComponents/Base/Headers/NitsStaticStickyHeader.vue'));
 Vue.component('BaseModalOne', () => import('NitsComponents/Base/Modals/BaseModalOne.vue'));
