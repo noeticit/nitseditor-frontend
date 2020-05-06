@@ -6,7 +6,7 @@
 <!--            <div class="frame-bottom"></div>-->
 <!--            <div class="frame-left"></div>-->
 <!--        </div>-->
-        <div class="absolute bottom-0 px-48 mt-8 ml-64 ">
+        <div class="absolute bottom-0 px-48 mt-8 ml-64  ">
             <h3 class="font-black text-5xl mb-24 ml-56 text-white ">NITSEDITOR.</h3>
         </div>
         <div class=" h-full w-full">
@@ -55,7 +55,7 @@
             </button>
         </div>
         <div v-if="Open" class="flex">
-            <div class="flex-col h-screen w-1/5 bg-gray-900 absolute right-0 top-0">
+            <div class="flex-col h-screen w-1/5 bg-gray-900 mt-6 absolute right-0 top-0">
                 <div class="mt-16 ml-2  text-white">
                    <h4 class=" text-center text-lg mr-12 font-semibold"> ABOUT NITSEDITOR</h4>
                         <address class="text-lg mt-8 ml-12">
@@ -163,7 +163,7 @@
 
             </div>
             <button @click="Open = ! Open" class="absolute focus:outline-none  mr-64 right-0 top-0">
-                <svg class="h-6 w-6  my-4 mx-20 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="h-6 w-6  my-6 mx-20 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2.939 12.789L10 11.729l-3.061 3.06-1.729-1.728L8.271 10l-3.06-3.061L6.94 5.21 10 8.271l3.059-3.061 1.729 1.729L11.729 10l3.06 3.061-1.728 1.728z"/>
                 </svg>
             </button>
