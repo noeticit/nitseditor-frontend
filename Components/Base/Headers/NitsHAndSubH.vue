@@ -1,5 +1,5 @@
 <template>
-    <nav class="relative mx-auto bg-transparent w-screen ">
+    <nav class="relative mx-auto bg-transparent w-screen">
         <div class="flex justify-between w-full">
             <div class=" text-lg  font-bold">
                 <div class="flex pl-48 float-right">

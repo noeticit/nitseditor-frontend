@@ -149,9 +149,9 @@
 
         },
         watch:{
-            // page_no: function () {
-            //     this.goToPage(this.page_no)
-            // }
+            page_no: function () {
+                this.goToPage(this.page_no)
+            }
         }
     }
 </script>
