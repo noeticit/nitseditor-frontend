@@ -1,6 +1,5 @@
 <template>
     <div class="flex">
-
         <div v-if="box4" class="block flex">
             <div  class="flex-col h-full w-64 bg-white ">
                 <div class="mt-16 ml-8">
@@ -8,7 +7,7 @@
                 </div>
                 <div class="mt-10 px-8 font-bold">
                     <div class="flex pb-3 relative">
-                        <div class="mt-4 text-xs text-gray-700">HOME</div>
+                        <div class="mt-4 tracking-widest text-xs text-gray-700">HOME</div>
                         <div class="inline-block hover:text-blue-800  cursor-pointer text-blue-700 ">
                             <svg class="absolute right-0 h-5 w-5  my-4  " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
@@ -16,7 +15,7 @@
                         </div>
                     </div>
                     <div class="flex relative pb-3">
-                        <div class="mt-4 text-xs text-teal-500">FEATURES</div>
+                        <div class="mt-4 text-xs tracking-widest text-teal-500">FEATURES</div>
                         <div class="inline-block hover:text-blue-800  cursor-pointer text-blue-700 ">
                             <svg class="h-5 w-5 absolute right-0 my-4  " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
@@ -24,7 +23,7 @@
                         </div>
                     </div>
                     <div class="flex relative pb-3">
-                        <div class="mt-4 text-xs text-gray-800">PAGES</div>
+                        <div class="mt-4 text-xs tracking-widest text-gray-800">PAGES</div>
                         <div class="inline-block hover:text-blue-800 text-left cursor-pointer text-blue-700 ">
                             <svg class="h-5 w-5 absolute right-0 my-4  " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
@@ -32,7 +31,7 @@
                         </div>
                     </div>
                     <div class="flex relative pb-3">
-                        <div class="mt-4 text-xs text-gray-800">PORTFOLIO</div>
+                        <div class="mt-4 text-xs tracking-widest text-gray-800">PORTFOLIO</div>
                         <div class="inline-block hover:text-blue-800  cursor-pointer text-blue-700 ">
                             <svg class="h-5 w-5 absolute right-0 my-4 " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
@@ -40,7 +39,7 @@
                         </div>
                     </div>
                     <div class="flex relative pb-3">
-                        <div class="mt-4 text-xs text-gray-800">BLOG</div>
+                        <div class="mt-4 text-xs tracking-widest text-gray-800">BLOG</div>
                         <div class="inline-block hover:text-blue-800  cursor-pointer text-blue-700 ">
                             <svg class="h-5 w-5 absolute right-0 my-4  " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
@@ -48,7 +47,7 @@
                         </div>
                     </div>
                     <div class="flex relative pb-3">
-                        <div class="mt-4 text-xs text-gray-800">SHOP</div>
+                        <div class="mt-4 text-xs tracking-widest text-gray-800">SHOP</div>
                         <div class="inline-block hover:text-blue-800  cursor-pointer text-blue-700 ">
                             <svg class="h-5 w-5 absolute right-0 my-4  " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
@@ -56,7 +55,7 @@
                         </div>
                     </div>
                     <div class="flex relative pb-3">
-                        <div class=" mt-4 text-xs text-gray-800">SHORTCODES</div>
+                        <div class=" mt-4 text-xs tracking-widest text-gray-800">SHORTCODES</div>
                         <div class="inline-block hover:text-blue-800  cursor-pointer text-blue-700 ">
                             <svg class="h-5 w-5 absolute right-0 my-4  " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
