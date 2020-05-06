@@ -143,40 +143,37 @@
                 <div class=" fixed w-full">
                     <nav class=" md:container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full">
                         <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
-                        <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row text-gray-700 text-sm">
-                            <li class="hover:text-teal-400">
-                                <div  class="border bg-white block lg:inline-block lg:mt-4 mx-4 lg:h-25 rounded-sm" @click="menu =! menu">
-                                    <svg class=" h-8 w-8" version="1.1" id="Menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                         viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                            <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row text-gray-700 text-sm">
+                                <li class="hover:text-teal-400">
+                                    <div  class="border bg-white block lg:inline-block lg:mt-4 mx-4 lg:h-25 rounded-sm" @click="menu =! menu">
+                                        <svg class=" h-8 w-8" version="1.1" id="Menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                             viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                         <path fill="#696969" d="M16.4,9H3.6C3.048,9,3,9.447,3,10c0,0.553,0.048,1,0.6,1h12.8c0.552,0,0.6-0.447,0.6-1S16.952,9,16.4,9z
                                              M16.4,13H3.6C3.048,13,3,13.447,3,14c0,0.553,0.048,1,0.6,1h12.8c0.552,0,0.6-0.447,0.6-1S16.952,13,16.4,13z M3.6,7h12.8
                                             C16.952,7,17,6.553,17,6s-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6S3.048,7,3.6,7z"/>
                                     </svg>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </nav>
                 </div>
-<!--                <div class="">-->
-<!--                    <div class="pr-5 mr-4 cursor-pointer ml-6  z-40" @click="menu =! menu">-->
-<!--                        &lt;!&ndash;                            <button class="h-10 w-10 rounded-full m-2 bg-white overflow-hidden" >&ndash;&gt;-->
+                <!--                <div class="">-->
+                <!--                    <div class="pr-5 mr-4 cursor-pointer ml-6  z-40" @click="menu =! menu">-->
+                <!--                        &lt;!&ndash;                            <button class="h-10 w-10 rounded-full m-2 bg-white overflow-hidden" >&ndash;&gt;-->
 
-                        <!--                            </button>-->
-<!--                    </div>-->
-                    <img class=" h-auto" src="/nits-assets/images/demo.jpg">
+                <!--                            </button>-->
+                <!--                    </div>-->
+                <img class=" h-auto" src="/nits-assets/images/demo.jpg">
 
-                </div>
             </div>
         </div>
-
-
-
+    </div>
 </template>
 
 <script>
     export default {
-        name: "HeaderLeftsidePushContent",
+        name: "NitsHeaderLeftsidePushContent",
         data(){
             return{
                 responsive_tab :false,
