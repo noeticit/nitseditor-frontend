@@ -3,7 +3,6 @@
 <!--      <div>-->
 <!--         <nits-h-responsive-sticky></nits-h-responsive-sticky>-->
 <!--      </div>-->
-<!--      <nits-demo></nits-demo>-->
 <!--      <div>-->
 <!--         <nits-h-icon-and-text></nits-h-icon-and-text>-->
 <!--      </div><br>-->
@@ -34,21 +33,24 @@
 <!--       <div>-->
 <!--           <nits-h-and-sub-h></nits-h-and-sub-h>-->
 <!--       </div><br>-->
+<!--       <div>-->
+<!--           <nits-header-menu-with-title-and-subtitle></nits-header-menu-with-title-and-subtitle>-->
+<!--       </div>-->
+<!--       <div>-->
+<!--           <nits-header-and-subheader-transparent-top></nits-header-and-subheader-transparent-top>-->
+<!--       </div>-->
        <div>
-           <nits-header-menu-with-title-and-subtitle></nits-header-menu-with-title-and-subtitle>
-       </div><br>
+           <header-leftside-push-content></header-leftside-push-content>
+       </div>
    </div>
 
 </template>
 
 <script>
 
-    import NitsDemo from "../Components/Base/Headers/NitsDemo";
-    import NitsHeaderWithIcon from "../Components/Base/Headers/NitsHeaderWithIcon";
-    import NitsHeaderMenuWithTitleAndSubtitle from "../Components/Base/Headers/NitsHeaderMenuWithTitleAndSubtitle";
     export default {
         name: "demo",
-       components: {NitsHeaderMenuWithTitleAndSubtitle, NitsHeaderWithIcon, NitsDemo},
+
     }
 </script>
 
