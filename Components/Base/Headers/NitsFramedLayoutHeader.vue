@@ -1,12 +1,12 @@
 <template>
     <div class=" h-full w-full mt-6 mb-0 mr-12 ml-6">
-        <div class="frame-outer">
-            <div class="frame-top"></div>
-            <div class="frame-right"></div>
-            <div class="frame-bottom"></div>
-            <div class="frame-left"></div>
-        </div>
-        <div class="absolute bottom-0 px-48 mt-8 ml-64  ">
+<!--        <div class="frame-outer">-->
+<!--            <div class="frame-top"></div>-->
+<!--            <div class="frame-right"></div>-->
+<!--            <div class="frame-bottom"></div>-->
+<!--            <div class="frame-left"></div>-->
+<!--        </div>-->
+        <div class="absolute bottom-0 px-48 mt-8 ml-64 ">
             <h3 class="font-black text-5xl mb-24 ml-56 text-white ">NITSEDITOR.</h3>
         </div>
         <div class=" h-full w-full">
@@ -181,7 +181,8 @@
 
         data(){
             return{
-                Open:false
+                Open:false,
+                responsive_tab :false,
             }
         }
     }

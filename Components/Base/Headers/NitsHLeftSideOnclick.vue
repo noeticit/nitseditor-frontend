@@ -17,7 +17,7 @@
                 <div class="flex pb-3 relative">
                     <div class="mt-4 text-xs text-gray-700">HOME</div>
                     <div class="inline-block hover:text-blue-800  cursor-pointer text-blue-700 ">
-                        <svg class="absolute right-0 h-5 w-5  my-4  " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="absolute right-0 h-5 w-5  my-4  " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
                         </svg>
                     </div>
