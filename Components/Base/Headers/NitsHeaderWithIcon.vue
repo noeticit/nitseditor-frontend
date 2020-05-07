@@ -138,8 +138,8 @@
                 <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
                     <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-gray-700 text-sm">
                         <li class=" mt-2">
-                            <a href="" >
-                                <div class="border block lg:inline-block  rounded-full p-4 m-1 bg-white hover:bg-teal-500">
+                            <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                <div class="border block lg:inline-block  rounded-full p-4 m-1 bg-white hover:bg-teal-500" @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1">
                                     <svg class="w-6 h-6 " version="1.1" id="Home" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                          viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                         <path fill="#000000" d="M18.672,11H17v6c0,0.445-0.194,1-1,1h-4v-6H8v6H4c-0.806,0-1-0.555-1-1v-6H1.328
@@ -147,10 +147,10 @@
                                         C19.142,10.676,19.27,11,18.672,11z"/>
                                     </svg>
                                 </div>
-                                <div class="ml-4 text-white">
-                                    {{label1}}
+                                <div class="ml-4 text-white" v-show="isVisibleHeader1">
+                                    hello
                                 </div>
-                            </a>
+                            </transition>
                         </li>
                         <li class="  mt-2">
                             <a href="" >
@@ -286,6 +286,7 @@
         data(){
             return{
                 responsive_tab :false,
+                isVisibleHeader1: false,
             }
         }
     }

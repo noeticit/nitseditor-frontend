@@ -1,9 +1,9 @@
 <template>
-    <div class="">
-        <div class=" bg-black  w-full">
+    <div class="relative">
+        <div class=" absolute top-0  w-full">
             <nav class=" container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-10 w-full">
                 <div class=" flex items-center flex-shrink-0 mt-2">
-                    <div class="text-white ml-6 ">All Cities</div>
+                    <div class="text-white ml-8 ">All Cities</div>
                     <div class="">
                         <svg class="h-4 w-4 ml-1" version="1.1" id="Chevron_down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                              y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -56,7 +56,7 @@
 
             </nav>
         </div>
-        <div class="  fixed w-full">
+        <div class=" mt-10 fixed w-full">
             <nav class=" container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full">
 
                 <div class="block lg:hidden py-5 flex" >
@@ -239,7 +239,7 @@
 
         <div class=" w-full h-11/12 ">
             <a class="">
-                <img class=" h-auto" src="/nits-assets/images/demo.jpg">
+                <img class=" h-auto" src="/nits-assets/images/demo1.jpg">
             </a>
         </div>
     </div>

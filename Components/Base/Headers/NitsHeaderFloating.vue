@@ -1,11 +1,9 @@
 <template>
-    <div class="">
-        <div class=" w-screen h-11/12 absolute">
-            <a class="">
-                <img class=" h-auto" src="/nits-assets/images/demo.jpg">
-            </a>
+    <div class="relative">
+        <div class=" w-screen h-11/12">
+            <img class=" h-auto" src="/nits-assets/images/demo.jpg">
         </div>
-        <div class="bg-white shadow-lg  lg:w-4/5 lg:ml-40 lg:mt-10 relative">
+        <div class="bg-white shadow-lg absolute top-0 lg:w-4/5 lg:ml-40 lg:mt-10 ">
             <nav class=" md:container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full">
 
                 <div class="block lg:hidden py-5 flex" >
