@@ -9,25 +9,25 @@
                 <div class=" text-lg ml-64 font-semibold">
                     <div class="float-right ml-32">
                         <div class="inline-block cursor-default text-white p-1  mx-3">
-                            <a class="text-sm " href="#">HOME</a>
+                            <a class="text-sm " href="#">{{label1}}</a>
                         </div>
                         <div class="inline-block cursor-pointer text-white p-1 mx-3">
-                            <a class="text-sm" href="#">FEATURES</a>
+                            <a class="text-sm" href="#">{{label2}}</a>
                         </div>
                         <div class="inline-block cursor-pointer text-white p-1 mx-3">
-                            <a class="text-sm" href="#">PAGES</a>
+                            <a class="text-sm" href="#">{{label3}}</a>
                         </div>
                         <div class="inline-block cursor-pointer text-white p-1 mx-3">
-                            <a class="text-sm" href="#">PORTFOLIO</a>
+                            <a class="text-sm" href="#">{{label4}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-1 text-white mx-3">
-                            <a class="text-sm" href="#">BLOG</a>
+                            <a class="text-sm" href="#">{{label5}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-2 text-white mx-3">
-                            <a class="text-sm" href="#">SHOP</a>
+                            <a class="text-sm" href="#">{{label6}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-2 text-white mx-3">
-                            <a class="text-sm" href="#">SHORTCODES</a>
+                            <a class="text-sm" href="#">{{label7}}</a>
                         </div>
                     </div>
                 </div>
@@ -47,6 +47,37 @@
 <script>
     export default {
         name: "NitsHDark",
+        props:{
+            label1:{
+                type: String,
+                required: true
+            },
+            label2:{
+                type: String,
+                required: true
+            },
+            label3:{
+                type: String,
+                required: true
+            },
+            label4:{
+                type: String,
+                required: true
+            },
+            label5:{
+                type: String,
+                required: true
+            },
+            label6:{
+                type: String,
+                required: true
+            },
+            label7:{
+                type: String,
+                required: true
+            },
+
+        },
         data(){
             return{
                 box: false

@@ -9,25 +9,25 @@
                 <div class="mr-24 text-lg font-semibold">
                     <div class="float-right">
                         <div class="inline-block cursor-default text-white p-1  mx-3">
-                            <a class="text-sm " href="#">HOME</a>
+                            <a class="text-sm " href="#">{{label1}}</a>
                         </div>
                         <div class="inline-block cursor-pointer text-white p-1 mx-3">
-                            <a class="text-sm" href="#">FEATURES</a>
+                            <a class="text-sm" href="#">{{label2}}</a>
                         </div>
                         <div class="inline-block cursor-pointer text-white p-1 mx-3">
-                            <a class="text-sm" href="#">PAGES</a>
+                            <a class="text-sm" href="#">{{label3}}</a>
                         </div>
                         <div class="inline-block cursor-pointer text-white p-1 mx-3">
-                            <a class="text-sm" href="#">PORTFOLIO</a>
+                            <a class="text-sm" href="#">{{label4}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-1 text-white mx-3">
-                            <a class="text-sm" href="#">BLOG</a>
+                            <a class="text-sm" href="#">{{label5}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-2 text-white mx-3">
-                            <a class="text-sm" href="#">SHOP</a>
+                            <a class="text-sm" href="#">{{label6}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-2 text-white mx-3">
-                            <a class="text-sm" href="#">SHORTCODES</a>
+                            <a class="text-sm" href="#">{{label7}}</a>
                         </div>
                         <div class="inline-block cursor-pointer pt-2 text-white mx-3">
                             <svg @click="box = ! box" class="w-5 h-5 cursor-pointer text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -43,7 +43,7 @@
             </div>
         </nav>
         <div class="absolute bottom-0 px-32 mb-16 ">
-            <h2 class="mb-16 ml-64 text-center font-black text-5xl text-purple-500 ">WELCOME TO NITS <span class="text-white ml-1">EDITORS</span></h2>
+            <h2 class="mb-16 ml-64 text-center font-black text-5xl text-purple-500 ">{{header1}}<span class="text-white ml-1">{{header2}}</span></h2>
         </div>
     </div>
 </template>
@@ -51,6 +51,44 @@
 <script>
     export default {
         name: "NitsHTransparent",
+        props: {
+            label1: {
+                type: String,
+                required: true
+            },
+            label2: {
+                type: String,
+                required: true
+            },
+            label3: {
+                type: String,
+                required: true
+            },
+            label4: {
+                type: String,
+                required: true
+            },
+            label5: {
+                type: String,
+                required: true
+            },
+            label6: {
+                type: String,
+                required: true
+            },
+            label7: {
+                type: String,
+                required: true
+            },
+            header1: {
+                type: String,
+                required: true
+            },
+            header2: {
+                type: String,
+                required: true
+            },
+        },
         data(){
             return{
                 box:false
