@@ -1,13 +1,10 @@
 <template>
-    <div class=" h-screen w-screen">
+
     <div class="relative">
-        <div class=" w-screen h-full absolute">
-            <a class="">
-                <img src="/project-assets/images/HiRes1-150x150.jpg.jpg" class="" alt=" image">
-            </a>
-        </div>
-    </div>
-        <div class="sticky top-0">
+<!--        <div class="  absolute">-->
+                <img src="/project-assets/images/HiRes1-150x150.jpg.jpg" class="w-full h-auto" alt=" image">
+<!--        </div>-->
+        <div class="absolute top-0">
         <div class="bg-white shadow-lg w-11/12 ml-16 ">
             <nav class=" px-8 mx-auto w-screen ">
                 <div class="flex justify-between h-32 ">
@@ -18,25 +15,25 @@
                     <div class="  ml-4 mt-12 font-semibold">
                         <div class="float-right">
                             <div class="inline-block  text-gray-800 p-1  mx-4">
-                                <a class="text-base hover:text-teal-500" href="#">HOME</a>
+                                <a class="text-base hover:text-teal-500" href="#">{{label1}}</a>
                             </div>
                             <div class="inline-block  p-1 mx-4">
-                                <a class="text-base text-teal-500" href="#">FEATURES</a>
+                                <a class="text-base text-teal-500" href="#">{{label2}}</a>
                             </div>
                             <div class="inline-block text-gray-800 p-1 mx-4">
-                                <a class="text-base hover:text-teal-500" href="#">PAGES</a>
+                                <a class="text-base hover:text-teal-500" href="#">{{label3}}</a>
                             </div>
                             <div class="inline-block text-gray-800  p-1 mx-4">
-                                <a class="text-base hover:text-teal-500" href="#">PORTFOLIO</a>
+                                <a class="text-base hover:text-teal-500" href="#">{{label4}}</a>
                             </div>
                             <div class="inline-block text-gray-800 p-1 mx-4">
-                                <a class="text-base hover:text-teal-500" href="#">BLOG</a>
+                                <a class="text-base hover:text-teal-500" href="#">{{label5}}</a>
                             </div>
                             <div class="inline-block text-gray-800  p-1 mx-4">
-                                <a class="text-base hover:text-teal-500" href="#">SHOP</a>
+                                <a class="text-base hover:text-teal-500" href="#">{{label6}}</a>
                             </div>
                             <div class="inline-block text-gray-800 p-1 mx-4">
-                                <a class="text-base hover:text-teal-500" href="#">SHORTCODES</a>
+                                <a class="text-base hover:text-teal-500" href="#">{{label7}}</a>
                             </div>
                         </div>
                     </div>
@@ -56,7 +53,38 @@
 
 <script>
     export default {
-        name: "NitsFloatingMenuHeader"
+        name: "NitsFloatingMenuHeader",
+        props: {
+            label1: {
+                type: String,
+                required: true
+            },
+            label2: {
+                type: String,
+                required: true
+            },
+            label3: {
+                type: String,
+                required: true
+            },
+            label4: {
+                type: String,
+                required: true
+            },
+            label5: {
+                type: String,
+                required: true
+            },
+            label6: {
+                type: String,
+                required: true
+            },
+            label7: {
+                type: String,
+                required: true
+            },
+        },
+
     }
 </script>
 
