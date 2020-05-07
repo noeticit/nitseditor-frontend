@@ -5,8 +5,9 @@
                 <img class=" h-auto" src="/nits-assets/images/demo.jpg">
             </a>
         </div>
-        <div class="bg-white shadow-lg w-4/5 ml-40 mt-10 relative">
-            <nav class="  flex  h-18 w-4/5">
+        <div class="bg-white shadow-lg  lg:w-4/5 lg:ml-40 lg:mt-10 relative">
+            <nav class=" md:container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full">
+
                 <div class="block lg:hidden py-5 flex" >
                     <div class="flex items-center px-3 py-2" >
                         <button @click="responsive_tab =! responsive_tab">
@@ -19,7 +20,7 @@
                         </button>
                     </div>
                 </div>
-                <div class=" flex items-center flex-shrink-0 px-6  py-5 ">
+                <div class=" flex items-center flex-shrink-0 px-6  py-5">
                     <a class="">
                         <img class="w-48 h-auto" src="/nits-assets/images/logo.png">
                     </a>
@@ -53,7 +54,7 @@
                     <ul class="lg:flex-grow uppercase  flex flex-col lg:flex-row pb-4 lg:pb-0 ">
                         <li class="flex flex-row ">
                             <div class="w-11/12 pb-4 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                HOME
+                                {{label1}}
                             </div>
                             <div class="pb-4 border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -65,7 +66,7 @@
                         </li>
                         <li class="flex flex-row ">
                             <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                FEATURES
+                                {{label2}}
                             </div>
                             <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -77,7 +78,7 @@
                         </li>
                         <li class="flex flex-row ">
                             <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                PAGES
+                                {{label3}}
                             </div>
                             <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -89,7 +90,7 @@
                         </li>
                         <li class="flex flex-row ">
                             <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                PORTFOLIO
+                                {{label4}}
                             </div>
                             <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -101,7 +102,7 @@
                         </li>
                         <li class="flex flex-row ">
                             <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                BLOG
+                                {{label5}}
                             </div>
                             <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -113,7 +114,7 @@
                         </li>
                         <li class="flex flex-row ">
                             <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                SHOP
+                                {{label6}}
                             </div>
                             <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -125,7 +126,7 @@
                         </li>
                         <li class="flex flex-row ">
                             <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                SHOTCODES
+                                {{label7}}
                             </div>
                             <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -139,42 +140,42 @@
                 </div>
 
 
-                <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden ml-56">
+                <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
                     <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-gray-700 text-sm">
                         <li class="hover:text-teal-400">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                HOME
+                                {{label1}}
                             </a>
                         </li>
                         <li class="text-teal-400 hover:text-teal-400">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0  mx-4 lg:h-25 lg:py-10 px-2">
-                                FEATURES
+                                {{label2}}
                             </a>
                         </li>
                         <li class="hover:text-teal-400">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                PAGES
+                                {{label3}}
                             </a>
                         </li>
                         <li class="hover:text-teal-400">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                PORTFOLIO
+                                {{label4}}
                             </a>
                         </li>
                         <li class="hover:text-teal-400">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                BLOG
+                                {{label5}}
                             </a>
                         </li>
                         <li class="hover:text-teal-400">
                             <a href="" class="border-l-4 lg:border-l-0  block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                SHOP
+                                {{label6}}
                             </a>
                         </li>
                         <li class="hover:text-teal-400">
                             <a href="" class="border-l-4 lg:border-l-0  block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
                                 <!--                            lg:border-b-4-->
-                                SHOTCODES
+                                {{label7}}
                             </a>
                         </li>
                     </ul>
@@ -206,13 +207,52 @@
 
             </nav>
         </div>
-
+<!--        <div class=" w-full h-11/12 ">-->
+<!--            <a class="">-->
+<!--                <img class=" h-auto" src="/nits-assets/images/demo.jpg">-->
+<!--            </a>-->
+<!--        </div>-->
     </div>
 </template>
 
 <script>
     export default {
-        name: "NitsHeaderFloating"
+        name: "NitsHeaderFloating",
+        props: {
+            label1: {
+                type: String,
+                required: true
+            },
+            label2: {
+                type: String,
+                required: true
+            },
+            label3: {
+                type: String,
+                required: true
+            },
+            label4: {
+                type: String,
+                required: true
+            },
+            label5: {
+                type: String,
+                required: true
+            },
+            label6: {
+                type: String,
+                required: true
+            },
+            label7: {
+                type: String,
+                required: true
+            },
+        },
+        data(){
+            return{
+                responsive_tab :false,
+            }
+        }
     }
 </script>
 

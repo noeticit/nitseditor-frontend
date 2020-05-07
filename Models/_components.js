@@ -106,4 +106,5 @@ Vue.component('BasePillsIconTab', () => import('NitsComponents/Base/Tabs/BasePil
 Vue.component('BasePillsTab', () => import('NitsComponents/Base/Tabs/BasePillsTab.vue'));
 Vue.component('MenuOne', () => import('NitsComponents/Menus/MenuOne.vue'));
 Vue.component('MenuTwo', () => import('NitsComponents/Menus/MenuTwo.vue'));
+Vue.component('NoeticChatSample', () => import('Plugins/noetic/chat/components/sample.vue'));
 Vue.component('NoeticExcelSample', () => import('Plugins/noetic/excel/components/sample.vue'));
