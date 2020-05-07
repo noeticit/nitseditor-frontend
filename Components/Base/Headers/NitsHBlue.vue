@@ -7,22 +7,22 @@
         <i class="fas fa-bars fa-2x visible md:invisible mr-10 md:mr-0 text-blue-200 cursor-pointer"></i>
         <ul class="hidden md:flex overflow-x-hidden mr-10 font-semibold">
             <li class="mr-6 p-1 border-b-2 border-orange-500">
-                <a class="text-blue-200 cursor-default" href="#">Home</a>
+                <a class="text-blue-200 cursor-default" href="#">{{label1}}</a>
             </li>
             <li class="mr-6 p-1">
-                <a class="text-white hover:text-blue-300" href="#">Services</a>
+                <a class="text-white hover:text-blue-300" href="#">{{label2}}}</a>
             </li>
             <li class="mr-6 p-1">
-                <a class="text-white hover:text-blue-300" href="#">Projects</a>
+                <a class="text-white hover:text-blue-300" href="#">{{label3}}</a>
             </li>
             <li class="mr-6 p-1">
-                <a class="text-white hover:text-blue-300" href="#">Team</a>
+                <a class="text-white hover:text-blue-300" href="#">{{label4}}</a>
             </li>
             <li class="mr-6 p-1">
-                <a class="text-white hover:text-blue-300" href="#">About</a>
+                <a class="text-white hover:text-blue-300" href="#">{{label5}}</a>
             </li>
             <li class="mr-6 p-1">
-                <a class="text-white hover:text-blue-300" href="#">Contacts</a>
+                <a class="text-white hover:text-blue-300" href="#">{{label6}}</a>
             </li>
             <li class="mr-6 p-1">
                 <svg class="w-5 h-5  cursor-pointer text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -35,7 +35,34 @@
 
 <script>
     export default {
-        name: "NitsHBlue"
+        name: "NitsHBlue",
+        props: {
+            label1: {
+                type: String,
+                required: true
+            },
+            label2: {
+                type: String,
+                required: true
+            },
+            label3: {
+                type: String,
+                required: true
+            },
+            label4: {
+                type: String,
+                required: true
+            },
+            label5: {
+                type: String,
+                required: true
+            },
+            label6: {
+                type: String,
+                required: true
+            },
+
+        },
     }
 </script>
 

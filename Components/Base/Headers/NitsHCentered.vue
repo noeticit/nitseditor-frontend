@@ -3,7 +3,7 @@
         <img class="h-screen w-screen" src="/nits-assets/images/Desktop-Dark.jpg" >
         <nav class="absolute top-0 bg-transparent w-screen">
             <div class="flex justify-between">
-                <div class="float-left text-white ">
+                <div class="float-left text-white">
                     <div class="flex  px-5 py-5">
                         <div class="inline-block hover:bg-blue-800  rounded cursor-pointer hover:text-white text-gray-500 ">
                             <svg class="h-4 w-4 my-3 mx-3 " xmlns="http://www.w3.org/2000/svg" fill="currentColor"  viewBox="0 0 20 20">
@@ -40,29 +40,29 @@
         </nav>
         <div class="absolute bottom-0">
             <div class="text-white mb-56">
-                <div class="w-50% ml-64 mr-64">
+                <div class="w-50% ml-56 mr-64">
                     <div class="ml-64 ">
                         <ul class="hidden md:flex overflow-x-hidden sticky top-0 uppercase mr-10 font-semibold">
                             <li class="mr-6 p-1 border-b-2 border-orange-500">
-                                <a class="text-blue-200 cursor-default" href="#">Home</a>
+                                <a class="text-blue-200 cursor-default" href="#">{{label1}}</a>
                             </li>
                             <li class="mr-6 p-1">
-                                <a class="text-white hover:text-blue-300" href="#">Services</a>
+                                <a class="text-white hover:text-blue-300" href="#">{{label2}}</a>
                             </li>
                             <li class="mr-6 p-1">
-                                <a class="text-white hover:text-blue-300" href="#">Projects</a>
+                                <a class="text-white hover:text-blue-300" href="#">{{label3}}</a>
                             </li>
                             <li class="mr-6 p-1">
-                                <a class="text-white hover:text-blue-300" href="#">Team</a>
+                                <a class="text-white hover:text-blue-300" href="#">{{label4}}</a>
                             </li>
                             <li class="mr-6 p-1">
-                                <a class="text-white hover:text-blue-300" href="#">About</a>
+                                <a class="text-white hover:text-blue-300" href="#">{{label5}}</a>
                             </li>
                             <li class="mr-6 p-1">
-                                <a class="text-white hover:text-blue-300" href="#">Contacts</a>
+                                <a class="text-white hover:text-blue-300" href="#">{{label6}}</a>
                             </li>
                             <li class="mr-6 p-1">
-                                <a class="text-white hover:text-blue-300" href="#">Shop</a>
+                                <a class="text-white hover:text-blue-300" href="#">{{label7}}</a>
                             </li>
                             <li class="mr-6 p-1">
                                 <svg class="w-5 h-5  cursor-pointer text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -79,17 +79,49 @@
                 <img class="mb-16 h-16 w-64 ml-64 text-center font-black text-5xl text-white" src="/nits-assets/images/nits-editor-logo.png">
             </div>
         </div>
-        <div class="absolute mt-5 right-0 bg-orange-500 top-0 rounded h-16 w-64 mr-3">
-            <div class="text-white text-center px-5 py-5 hover:bg-orange-600 cursor-pointer text-sm">
-                MAKE AN APPOINTMENT
-            </div>
-        </div>
+        <button class="absolute mt-5 right-0 bg-orange-500 focus:outline-none focus:bg-orange-600 top-0 text-white text-sm hover:bg-orange-600 rounded h-16 w-64 mr-3">
+           {{button_name}}
+        </button>
     </div>
 </template>
 
 <script>
     export default {
-        name: "NitsHCentered"
+        name: "NitsHCentered",
+        props:{
+            label1:{
+                type: String,
+                required: true
+            },
+            label2:{
+                type: String,
+                required: true
+            },
+            label3:{
+                type: String,
+                required: true
+            },
+            label4:{
+                type: String,
+                required: true
+            },
+            label5:{
+                type: String,
+                required: true
+            },
+            label6:{
+                type: String,
+                required: true
+            },
+            label7:{
+                type: String,
+                required: true
+            },
+            button_name:{
+                type: String,
+                required: true
+            }
+        }
     }
 </script>
 

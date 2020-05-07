@@ -50,17 +50,17 @@
             <div class="flex pr-40">
                 <div class="hover:bg-gray-200">
                     <div class="my-4 mx-3 inline-block hover:text-teal-500 text-xs cursor-pointer text-gray-700">
-                        LOCATIONS
+                        {{location}}
                     </div>
                 </div>
                 <div class="border-l hover:bg-gray-200">
                     <div class="my-4 mx-4 inline-block hover:text-teal-500 text-xs cursor-pointer text-gray-700">
-                        FAQS
+                        {{faqs}}
                     </div>
                 </div>
                 <div class="border-l hover:bg-gray-200">
                     <div class="my-4 mx-3 inline-block hover:text-teal-500 text-xs cursor-pointer text-gray-700">
-                        CONTACT
+                        {{contact}}
                     </div>
                 </div>
             </div>
@@ -80,8 +80,8 @@
                                 </svg>
                             </div>
                             <div class="flex-col">
-                                <div class="text-gray-600 text-sm font-light ">CALL US</div>
-                                <div class="text-orange-500 ">(+91) 12345689</div>
+                                <div class="text-gray-600 text-sm font-light ">{{call}}</div>
+                                <div class="text-orange-500 ">{{number}}</div>
                             </div>
                         </div>
                         <div class="flex border-r px-5">
@@ -91,8 +91,8 @@
                                 </svg>
                             </div>
                             <div class="flex-col">
-                                <div class="text-gray-600 text-sm font-light ">EMAIL US</div>
-                                <div class="text-orange-500 ">info@noeticitservice.com</div>
+                                <div class="text-gray-600 text-sm font-light ">{{email}}</div>
+                                <div class="text-orange-500 ">{{email_id}}</div>
                             </div>
                         </div>
                         <div class="flex mr-16">
@@ -102,8 +102,8 @@
                                 </svg>
                             </div>
                             <div class="flex-col">
-                                <div class="text-gray-600 text-sm font-light">WE'ARE OPEN</div>
-                                <div class="text-orange-500 ">Mon - Sat, 10AM to 6PM</div>
+                                <div class="text-gray-600 text-sm font-light">{{open}}</div>
+                                <div class="text-orange-500 ">{{day_time}}</div>
                             </div>
                         </div>
                     </div>
@@ -116,25 +116,25 @@
                 <div class="flex text-lg ml-64 font-semibold">
                     <div class="float-right py-3 ml-32">
                         <div class="inline-block cursor-default text-gray-700 p-1 px-2 mx-3">
-                            <a class="text-sm " href="#">HOME</a>
+                            <a class="text-sm " href="#">{{label1}}</a>
                         </div>
                         <div class="inline-block cursor-pointer text-teal-500 p-1 px-2 mx-3">
-                            <a class="text-sm" href="#">FEATURES</a>
+                            <a class="text-sm" href="#">{{label2}}</a>
                         </div>
                         <div class="inline-block cursor-pointer text-gray-700 p-1 px-2 mx-3">
-                            <a class="text-sm" href="#">PAGES</a>
+                            <a class="text-sm" href="#">{{label3}}</a>
                         </div>
                         <div class="inline-block cursor-pointer text-gray-700 p-1 px-2 mx-3">
-                            <a class="text-sm" href="#">PORTFOLIO</a>
+                            <a class="text-sm" href="#">{{label4}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-1 text-gray-700 px-2 mx-3">
-                            <a class="text-sm" href="#">BLOG</a>
+                            <a class="text-sm" href="#">{{label5}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-2 text-gray-700 px-2 mx-3">
-                            <a class="text-sm" href="#">SHOP</a>
+                            <a class="text-sm" href="#">{{label6}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-2 text-gray-700 px-2 mx-3">
-                            <a class="text-sm" href="#">SHORTCODES</a>
+                            <a class="text-sm" href="#">{{label7}}</a>
                         </div>
                     </div>
                     <div class="inline-block cursor-pointer mt-6 text-gray-700">
@@ -155,6 +155,73 @@
 <script>
     export default {
         name: "NitsHAndSubH",
+
+        props: {
+            location: {
+                type: String,
+                required: true
+            },
+            faqs: {
+                type: String,
+                required: true
+            },
+            contact: {
+                type: String,
+                required: true
+            },
+            call: {
+                type: String,
+                required: true
+            },
+            number: {
+                type: String,
+                required: true
+            },
+            email: {
+                type: String,
+                required: true
+            },
+            email_id: {
+                type: String,
+                required: true
+            },
+            open: {
+                type: String,
+                required: true
+            },
+            day_time: {
+                type: String,
+                required: true
+            },
+            label1: {
+                type: String,
+                required: true
+            },
+            label2: {
+                type: String,
+                required: true
+            },
+            label3: {
+                type: String,
+                required: true
+            },
+            label4: {
+                type: String,
+                required: true
+            },
+            label5: {
+                type: String,
+                required: true
+            },
+            label6: {
+                type: String,
+                required: true
+            },
+            label7: {
+                type: String,
+                required: true
+            },
+        },
         data(){
             return{
                 box:false

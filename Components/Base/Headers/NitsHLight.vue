@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <nav class="relative py-4 px-8 mx-auto bg-transparent w-screen mt-5">
+    <nav class="relative py-4 px-8 mx-auto bg-transparent w-screen mt-5">
             <div class="flex justify-between">
                 <div class="float-left border-r text-black">
                     <img class="h-12 w-48 pr-5" src="/nits-assets/images/nits-editor-logo.png">
@@ -9,25 +8,25 @@
                 <div class=" text-lg ml-64 font-semibold">
                     <div class="float-right ml-32">
                         <div class="inline-block cursor-default text-gray-700 p-1  mx-3">
-                            <a class="text-sm " href="#">HOME</a>
+                            <a class="text-sm " href="#">{{label1}}</a>
                         </div>
                         <div class="inline-block cursor-pointer text-teal-500 p-1 mx-3">
-                            <a class="text-sm" href="#">FEATURES</a>
+                            <a class="text-sm" href="#">{{label2}}</a>
                         </div>
                         <div class="inline-block cursor-pointer text-gray-700 p-1 mx-3">
-                            <a class="text-sm" href="#">PAGES</a>
+                            <a class="text-sm" href="#">{{label3}}</a>
                         </div>
                         <div class="inline-block cursor-pointer text-gray-700 p-1 mx-3">
-                            <a class="text-sm" href="#">PORTFOLIO</a>
+                            <a class="text-sm" href="#">{{label4}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-1 text-gray-700 mx-3">
-                            <a class="text-sm" href="#">BLOG</a>
+                            <a class="text-sm" href="#">{{label5}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-2 text-gray-700 mx-3">
-                            <a class="text-sm" href="#">SHOP</a>
+                            <a class="text-sm" href="#">{{label6}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-2 text-gray-700 mx-3">
-                            <a class="text-sm" href="#">SHORTCODES</a>
+                            <a class="text-sm" href="#">{{label7}}</a>
                         </div>
                     </div>
                 </div>
@@ -41,12 +40,42 @@
                 <input class="w-full h-8 ml-2 border border-teal-300 mt-4 py-1 px-10 bg-gray-100 rounded placeholder-teal-600 text-sm focus:outline-none antialiased tracking-wide font-medium text-teal-600 leading-norma" type="text" placeholder="Search">
             </div>
         </nav>
-    </div>
 </template>
 
 <script>
     export default {
         name: "NitsHLight",
+        props:{
+            label1:{
+                type: String,
+                required: true
+            },
+            label2:{
+                type: String,
+                required: true
+            },
+            label3:{
+                type: String,
+                required: true
+            },
+            label4:{
+                type: String,
+                required: true
+            },
+            label5:{
+                type: String,
+                required: true
+            },
+            label6:{
+                type: String,
+                required: true
+            },
+            label7:{
+                type: String,
+                required: true
+            },
+
+        },
         data(){
            return{
                box: false
