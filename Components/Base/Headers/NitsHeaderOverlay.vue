@@ -12,13 +12,13 @@
                         </svg>
                 </button>
                 <div class="flex flex-col items-center justify-center w-full min-h-full pb-16 pt-24 relative z-50">
-                    <a class="hover:text-teal-400 text-gray-700 font-semibold mx-2 mb-4 no-underline text-2xl uppercase ">home</a>
-                    <a class="hover:text-teal-400 text-teal-400 font-semibold mx-2 mb-4 no-underline text-2xl uppercase ">Feature</a>
-                    <a class="hover:text-teal-400 text-gray-700 font-semibold mx-2 mb-4 no-underline text-2xl uppercase ">pages</a>
-                    <a class="hover:text-teal-400 text-gray-700 font-semibold mx-2 mb-4 no-underline text-2xl uppercase ">portfolio</a>
-                    <a class="hover:text-teal-400 text-gray-700 font-semibold mx-2 mb-4 no-underline text-2xl uppercase ">blog</a>
-                    <a class="hover:text-teal-400 text-gray-700 font-semibold mx-2 mb-4 no-underline text-2xl uppercase ">shop</a>
-                    <a class="hover:text-teal-400 text-gray-700 font-semibold mx-2 mb-4 no-underline text-2xl uppercase ">shortcodes</a>
+                    <a class="hover:text-teal-400 text-gray-700 font-semibold mx-2 mb-4 no-underline text-2xl uppercase ">{{label1}}</a>
+                    <a class="hover:text-teal-400 text-teal-400 font-semibold mx-2 mb-4 no-underline text-2xl uppercase ">{{label2}}</a>
+                    <a class="hover:text-teal-400 text-gray-700 font-semibold mx-2 mb-4 no-underline text-2xl uppercase ">{{label3}}</a>
+                    <a class="hover:text-teal-400 text-gray-700 font-semibold mx-2 mb-4 no-underline text-2xl uppercase ">{{label4}}</a>
+                    <a class="hover:text-teal-400 text-gray-700 font-semibold mx-2 mb-4 no-underline text-2xl uppercase ">{{label5}}</a>
+                    <a class="hover:text-teal-400 text-gray-700 font-semibold mx-2 mb-4 no-underline text-2xl uppercase ">{{label6}}</a>
+                    <a class="hover:text-teal-400 text-gray-700 font-semibold mx-2 mb-4 no-underline text-2xl uppercase ">{{label7}}</a>
                 </div>
 
             </div>
@@ -66,7 +66,7 @@
                 <ul class="lg:flex-grow uppercase text-brand-blue-900 flex flex-col lg:flex-row pb-4 lg:pb-0 ">
                     <li class="flex flex-row ">
                         <div class="w-11/12 pb-4 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                            HOME
+                            {{label1}}
                         </div>
                         <div class="pb-4 border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                             <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -78,7 +78,7 @@
                     </li>
                     <li class="flex flex-row ">
                         <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                            FEATURES
+                            {{label2}}
                         </div>
                         <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                             <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -90,7 +90,7 @@
                     </li>
                     <li class="flex flex-row ">
                         <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                            PAGES
+                            {{label3}}
                         </div>
                         <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                             <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -102,7 +102,7 @@
                     </li>
                     <li class="flex flex-row ">
                         <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                            PORTFOLIO
+                            {{label4}}
                         </div>
                         <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                             <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -114,7 +114,7 @@
                     </li>
                     <li class="flex flex-row ">
                         <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                            BLOG
+                            {{label5}}
                         </div>
                         <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                             <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -126,7 +126,7 @@
                     </li>
                     <li class="flex flex-row ">
                         <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                            SHOP
+                            {{label6}}
                         </div>
                         <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                             <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -138,7 +138,7 @@
                     </li>
                     <li class="flex flex-row ">
                         <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                            SHOTCODES
+                            {{label7}}
                         </div>
                         <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                             <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -195,6 +195,36 @@
 <script>
     export default {
         name: "NitsHeaderOverlay",
+        props: {
+            label1: {
+                type: String,
+                required: true
+            },
+            label2: {
+                type: String,
+                required: true
+            },
+            label3: {
+                type: String,
+                required: true
+            },
+            label4: {
+                type: String,
+                required: true
+            },
+            label5: {
+                type: String,
+                required: true
+            },
+            label6: {
+                type: String,
+                required: true
+            },
+            label7: {
+                type: String,
+                required: true
+            },
+        },
         data(){
             return{
                 tab :false,
