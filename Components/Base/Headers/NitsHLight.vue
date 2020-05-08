@@ -1,31 +1,31 @@
 <template>
-    <nav class="relative py-4 px-8 mx-auto bg-transparent w-screen mt-5">
+    <div   class="" >
+        <nav class=" app relative py-4 px-8 mx-auto bg-transparent w-screen mt-5" @change="toggle" :class="mode">
             <div class="flex justify-between">
                 <div class="float-left border-r text-black">
                     <img class="h-12 w-48 pr-5" src="/nits-assets/images/nits-editor-logo.png">
                 </div>
-
-                <div class=" text-lg ml-64 font-semibold">
+                <div class=" text-lg ml-64 font-semibold" >
                     <div class="float-right ml-32">
-                        <div class="inline-block cursor-default text-gray-700 p-1  mx-3">
+                        <div class="inline-block cursor-default  p-1  mx-3">
                             <a class="text-sm " href="#">{{label1}}</a>
                         </div>
-                        <div class="inline-block cursor-pointer text-teal-500 p-1 mx-3">
+                        <div class="inline-block cursor-pointer  p-1 mx-3">
                             <a class="text-sm" href="#">{{label2}}</a>
                         </div>
-                        <div class="inline-block cursor-pointer text-gray-700 p-1 mx-3">
+                        <div class="inline-block cursor-pointer  p-1 mx-3">
                             <a class="text-sm" href="#">{{label3}}</a>
                         </div>
-                        <div class="inline-block cursor-pointer text-gray-700 p-1 mx-3">
+                        <div class="inline-block cursor-pointer  p-1 mx-3">
                             <a class="text-sm" href="#">{{label4}}</a>
                         </div>
-                        <div class="inline-block cursor-pointer p-1 text-gray-700 mx-3">
+                        <div class="inline-block cursor-pointer p-1  mx-3">
                             <a class="text-sm" href="#">{{label5}}</a>
                         </div>
-                        <div class="inline-block cursor-pointer p-2 text-gray-700 mx-3">
+                        <div class="inline-block cursor-pointer p-2  mx-3">
                             <a class="text-sm" href="#">{{label6}}</a>
                         </div>
-                        <div class="inline-block cursor-pointer p-2 text-gray-700 mx-3">
+                        <div class="inline-block cursor-pointer p-2  mx-3">
                             <a class="text-sm" href="#">{{label7}}</a>
                         </div>
                     </div>
@@ -35,11 +35,20 @@
                         <path fill-rule="evenodd" d="M17.545 15.467l-3.779-3.779a6.15 6.15 0 00.898-3.21c0-3.417-2.961-6.377-6.378-6.377A6.185 6.185 0 002.1 8.287c0 3.416 2.961 6.377 6.377 6.377a6.15 6.15 0 003.115-.844l3.799 3.801a.953.953 0 001.346 0l.943-.943c.371-.371.236-.84-.135-1.211zM4.004 8.287a4.282 4.282 0 014.282-4.283c2.366 0 4.474 2.107 4.474 4.474a4.284 4.284 0 01-4.283 4.283c-2.366-.001-4.473-2.109-4.473-4.474z"/>
                     </svg>
                 </div>
+                <div>
+                    <nits-toggle-button
+                            :mode="mode"
+                            @toggle="$emit('toggle')"
+
+                    />
+                </div>
             </div>
             <div class="pl-32 pr-10 ml-48" v-if="box">
                 <input class="w-full h-8 ml-2 border border-teal-300 mt-4 py-1 px-10 bg-gray-100 rounded placeholder-teal-600 text-sm focus:outline-none antialiased tracking-wide font-medium text-teal-600 leading-norma" type="text" placeholder="Search">
             </div>
         </nav>
+
+    </div>
 </template>
 
 <script>
@@ -78,12 +87,43 @@
         },
         data(){
            return{
-               box: false
+               box: false,
+               mode: 'light',
+
            }
+        },
+        methods:{
+            toggle(){
+                if (this.mode === "dark"){
+                    this.mode = "light"
+                } else {
+                    this.mode = "dark"
+                }
+            }
         }
     }
 </script>
 
 <style scoped>
+    @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+    .app{
+
+        /*font-size: 1rem;*/
+        /*width: calc(100% - 20px);*/
+        /*min-height: 100vh;*/
+        /*padding: 10px;*/
+        /*display: flex;*/
+        /*justify-content: center;*/
+        /*align-items: flex-start;*/
+        /*transition: all .5s ease-in-out;*/
+
+        /*color: #333;*/
+        /*background-color: #efefef;*/
+    }
+    .dark{
+        background-color: #192734;
+        color: #f3f3f3;
+    }
+
 
 </style>
