@@ -1,5 +1,6 @@
 <template>
-    <div class="bg-white shadow-lg">
+    <div class="">
+        <div class="bg-white shadow-lg">
         <div class="vue-portal-target " v-if="tab">
             <div class="bg-white w-screen fixed h-screen overflow-x-scroll pin-y  z-50 burger-menu opacity-75">
                 <button  class=" h-20 flex items-right px-4 pin-t pin-r fixed ml-11/12 -mb-20"  @click="tab =! tab">
@@ -189,6 +190,7 @@
 
 
         </nav>
+    </div>
     </div>
 </template>
 

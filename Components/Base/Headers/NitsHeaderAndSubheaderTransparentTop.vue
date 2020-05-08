@@ -193,7 +193,7 @@
 
                 <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
                     <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-white text-sm">
-                        <li class="hover:text-gray-400">
+                        <li class="hover:text-gray-400" >
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
                                 HOME
                             </a>
@@ -203,10 +203,35 @@
                                 FEATURES
                             </a>
                         </li>
-                        <li class="hover:text-gray-400">
+                        <li class="hover:text-gray-400"  @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
                                 PROPERTIES
                             </a>
+                            <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader1">
+                                <li class=" hover:text-teal-400"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
+                                    <spam class="flex " >HOME-Coperate, Portfolio, blog</spam>
+                                    <span>
+<!--                                        <svg class="h-3  w-3 mt-1 items-end" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"-->
+                                        <!--                                             y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
+                                        <!--                                            <path fill="#606060" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908-->
+                                        <!--                                            c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>-->
+                                        <!--                                        </svg>-->
+                                    </span>
+                                </a></li>
+                                <!--                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white " v-show="isVisible1">-->
+                                <!--                                    <li class="hover:text-teal-400"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">-->
+                                <!--                                        <spam class="flex  ">HOME-Coperate</spam>-->
+                                <!--                                        <span>-->
+                                <!--                                    </span>-->
+                                <!--                                    </a></li>-->
+                                <!--                                </ul>-->
+                                <li class=""  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
+                                    <spam class="flex  hover:text-teal-400" >HOME-Coperate, Portfolio, blog</spam>
+                                    <span>
+
+                                    </span>
+                                </a></li>
+                            </ul>
                         </li>
                         <li class="hover:text-gray-400">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
@@ -239,7 +264,7 @@
 
         <div class=" w-full h-11/12 ">
             <a class="">
-                <img class=" h-auto" src="/nits-assets/images/demo1.jpg">
+                <img class=" h-auto" src="/nits-assets/images/demo.jpg">
             </a>
         </div>
     </div>
@@ -248,12 +273,46 @@
 <script>
     export default {
         name: "NitsHeaderAndSubheaderTransparentTop",
+        props: {
+            label1: {
+                type: String,
+                required: true
+            },
+            label2: {
+                type: String,
+                required: true
+            },
+            label3: {
+                type: String,
+                required: true
+            },
+            label4: {
+                type: String,
+                required: true
+            },
+            label5: {
+                type: String,
+                required: true
+            },
+            label6: {
+                type: String,
+                required: true
+            },
+            label7: {
+                type: String,
+                required: true
+            },
+        },
         data(){
             return{
                 responsive_tab :false,
-            }
-        },
+                isVisibleHeader1: false,
+                isVisibleHeader2: false,
+                isVisibleResponsiveHeader1: false,
+                isVisibleResponsiveSubHeader1: false,
 
+            }
+        }
 
     }
 </script>
