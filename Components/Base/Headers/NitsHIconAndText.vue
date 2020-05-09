@@ -47,9 +47,9 @@
 
                 </div>
 
-            <div class="block lg:hidden w-full h-full block lg:flex lg:items-center lg:w-auto">
+            <div class="block lg:hidden w-full h-full block lg:flex lg:items-center lg:w-auto"  v-if="responsive_tab">
                 <ul class="lg:flex-grow uppercase text-brand-blue-900 flex flex-col lg:flex-row pb-4 lg:pb-0 ">
-                    <li class="flex flex-row md:ml-20">
+                    <li class="flex flex-row md:ml-20 cursor-pointer">
                         <div class=" pb-4 mt-2 pt-3  border-b-2 text-gray-700 text-sm font-medium">
                             <svg class="w-4 h-4 mb-1 ml-2" version="1.1" id="Home" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -69,7 +69,7 @@
                             </svg>
                         </div>
                     </li>
-                    <li class="flex flex-row md:ml-20">
+                    <li class="flex flex-row md:ml-20 cursor-pointer">
                         <div class=" pb-4 mt-2 pt-3  border-b-2 text-gray-700 text-sm font-medium">
                             <svg class="w-4 h-4 mb-1 ml-2" version="1.1" id="Lab_flask" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -91,7 +91,7 @@
                             </svg>
                         </div>
                     </li>
-                    <li class="flex flex-row md:ml-20">
+                    <li class="flex flex-row md:ml-20 cursor-pointer">
                         <div class=" pb-4 mt-2 pt-3  border-b-2 text-gray-700 text-sm font-medium">
                             <svg class="w-4 h-4 mb-1 ml-2" version="1.1" id="Text_document" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                  y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -110,7 +110,7 @@
                             </svg>
                         </div>
                     </li>
-                    <li class="flex flex-row md:ml-20">
+                    <li class="flex flex-row md:ml-20 cursor-pointer">
                         <div class=" pb-4 mt-2 pt-3  border-b-2 text-gray-700 text-sm font-medium">
                             <svg class="w-4 h-4 mb-1 ml-2" version="1.1" id="Briefcase" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -133,7 +133,7 @@
                             </svg>
                         </div>
                     </li>
-                    <li class="flex flex-row md:ml-20">
+                    <li class="flex flex-row md:ml-20 cursor-pointer">
                         <div class=" pb-4 mt-2 pt-3  border-b-2 text-gray-700 text-sm font-medium">
                             <svg class="w-4 h-4 mb-1 ml-2" version="1.1" id="Pencil" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -156,7 +156,7 @@
                             </svg>
                         </div>
                     </li>
-                    <li class="flex flex-row md:ml-20">
+                    <li class="flex flex-row md:ml-20 cursor-pointer">
                         <div class=" pb-4 mt-2 pt-3  border-b-2 text-gray-700 text-sm font-medium">
                             <svg class="w-4 h-4 mb-1 ml-2" version="1.1" id="Shopping_bag" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                  y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -179,7 +179,7 @@
                             </svg>
                         </div>
                     </li>
-                    <li class="flex flex-row md:ml-20">
+                    <li class="flex flex-row md:ml-20  cursor-pointer">
                         <div class=" pb-4 mt-2 pt-3  text-gray-700 text-sm font-medium">
                             <svg class="w-4 h-4 mb-1 ml-2" version="1.1" id="Code" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -208,9 +208,9 @@
 
             <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
                 <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-gray-700 text-sm">
-                    <li class="hover:text-teal-400">
+                    <li class="hover:text-teal-400"  @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1">
                         <a href="" class="border-l-4 lg:border-l-0 block mt-5 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-5 px-2 hover:text-teal-500 cursor-pointer text-gray-700">
-                            <svg class="w-8 h-8 mb-1 ml-1" fill="currentColor" version="1.1" id="Home" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            <svg class="w-8 h-6 mb-1 ml-1" fill="currentColor" version="1.1" id="Home" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                 <path fill-rule="evenodd" fill="#696969" d="M18.672,11H17v6c0,0.445-0.194,1-1,1h-4v-6H8v6H4c-0.806,0-1-0.555-1-1v-6H1.328
                                     c-0.598,0-0.47-0.324-0.06-0.748L9.292,2.22C9.487,2.018,9.743,1.918,10,1.908c0.257,0.01,0.513,0.109,0.708,0.312l8.023,8.031
@@ -218,10 +218,37 @@
                             </svg>
                             {{label1}}
                         </a>
+                        <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                            <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader1">
+                                <li class=" hover:text-teal-400"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
+                                    <spam class="flex " >HOME-Coperate, Portfolio, blog</spam>
+                                    <span>
+<!--                                        <svg class="h-3  w-3 mt-1 items-end" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"-->
+                                        <!--                                             y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
+                                        <!--                                            <path fill="#606060" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908-->
+                                        <!--                                            c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>-->
+                                        <!--                                        </svg>-->
+                                    </span>
+                                </a></li>
+                                <!--                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white " v-show="isVisible1">-->
+                                <!--                                    <li class="hover:text-teal-400"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">-->
+                                <!--                                        <spam class="flex  ">HOME-Coperate</spam>-->
+                                <!--                                        <span>-->
+                                <!--                                    </span>-->
+                                <!--                                    </a></li>-->
+                                <!--                                </ul>-->
+                                <li class=""  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
+                                    <spam class="flex  hover:text-teal-400" >HOME-Coperate, Portfolio, blog</spam>
+                                    <span>
+
+                                    </span>
+                                </a></li>
+                            </ul>
+                        </transition>
                     </li>
-                    <li class="text-teal-400 hover:text-teal-400">
+                    <li class="text-teal-400 hover:text-teal-400"  @mouseover="isVisibleHeader2 = true" @mouseleave="isVisibleHeader2 = false" @keydown.enter="isVisibleHeader2 = !isVisibleHeader2">
                         <a href="" class="border-l-4 lg:border-l-0 block mt-5 lg:inline-block lg:mt-0  mx-4 lg:h-25 lg:py-5 px-2">
-                            <svg class="w-8 h-8 ml-3 mb-1" version="1.1" id="Lab_flask" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            <svg class="w-8 h-6 ml-3 mb-1" version="1.1" id="Lab_flask" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                 <path fill="#696969" d="M16.432,15C14.387,9.893,12,8.547,12,6V3h0.5C12.776,3,13,2.776,13,2.5v-1C13,1.224,12.776,1,12.5,1h-5
                                     C7.224,1,7,1.224,7,1.5v1C7,2.776,7.224,3,7.5,3H8v3c0,2.547-2.387,3.893-4.432,9C2.917,16.625,1.245,19,10,19
@@ -231,10 +258,30 @@
                             </svg>
                             {{label2}}
                         </a>
+                        <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                            <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader2">
+                                <li class=" hover:text-teal-400"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
+                                    <spam class="flex " >HOME-Coperate, Portfolio, blog</spam>
+                                    <span>
+<!--                                        <svg class="h-3  w-3 mt-1 items-end" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"-->
+                                        <!--                                             y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
+                                        <!--                                            <path fill="#606060" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908-->
+                                        <!--                                            c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>-->
+                                        <!--                                        </svg>-->
+                                    </span>
+                                </a></li>
+                                <li class=""><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
+                                    <spam class="flex  hover:text-teal-400" >HOME-Coperate, Portfolio, blog</spam>
+                                    <span>
+
+                                    </span>
+                                </a></li>
+                            </ul>
+                        </transition>
                     </li>
                     <li class=" ">
                         <a href="" class="border-l-4 lg:border-l-0 block mt-5 lg:inline-block lg:mt-0  mx-4 lg:h-25 lg:py-5 px-2">
-                            <svg class="w-8 h-8 ml-1 mb-1" version="1.1" id="Text_document" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            <svg class="w-8 h-6 ml-1 mb-1" version="1.1" id="Text_document" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                  y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                 <path fill="#696969" d="M16,1H4C3.447,1,3,1.447,3,2v16c0,0.552,0.447,1,1,1h12c0.553,0,1-0.448,1-1V2C17,1.448,16.553,1,16,1z
                                      M15,17H5V3h10V17z M13,5H7v2h6V5z M13,13H7v2h6V13z M13,9H7v2h6V9z"/>
@@ -244,7 +291,7 @@
                     </li>
                     <li class=" ">
                         <a href="" class="border-l-4 lg:border-l-0 block mt-5 lg:inline-block lg:mt-0  mx-4 lg:h-25 lg:py-5 px-2">
-                            <svg class="w-8 h-8 ml-5 mb-1" version="1.1" id="Briefcase" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            <svg class="w-8 h-6 ml-5 mb-1" version="1.1" id="Briefcase" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                 <path fill="#696969" d="M9,10h2v2h9c0,0-0.149-4.459-0.2-5.854C19.75,4.82,19.275,4,17.8,4h-3.208
                                     c-0.497-0.938-1.032-1.945-1.197-2.256C13.064,1.121,12.951,1,12.216,1H7.783C7.048,1,6.936,1.121,6.604,1.744
@@ -258,7 +305,7 @@
                     </li>
                     <li class=" ">
                         <a href="" class="border-l-4 lg:border-l-0 block mt-5 lg:inline-block lg:mt-0  mx-4 lg:h-25 lg:py-5 px-2">
-                            <svg class="w-8 h-8 ml-2 mb-1" version="1.1" id="Pencil" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            <svg class="w-8 h-6 ml-2 mb-1" version="1.1" id="Pencil" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                 <path fill="#696969" d="M14.69,2.661c-1.894-1.379-3.242-1.349-3.754-1.266c-0.144,0.023-0.265,0.106-0.35,0.223l-4.62,6.374
                                     l-2.263,3.123c-0.277,0.382-0.437,0.836-0.462,1.307l-0.296,5.624c-0.021,0.405,0.382,0.698,0.76,0.553l5.256-2.01
@@ -272,7 +319,7 @@
                     </li>
                     <li class=" ">
                         <a href="" class="border-l-4 lg:border-l-0 block mt-5 lg:inline-block lg:mt-0  mx-4 lg:h-25 lg:py-5 px-2">
-                            <svg class="w-8 h-8 ml-1 mb-1" version="1.1" id="Shopping_bag" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            <svg class="w-8 h-6 ml-1 mb-1" version="1.1" id="Shopping_bag" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                  y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                 <path fill="#696969" d="M18.121,3.271c-0.295-0.256-1.906-1.731-2.207-1.991C15.615,1.021,15.158,1,14.812,1H5.188
                                     C4.843,1,4.386,1.021,4.086,1.28C3.785,1.54,2.174,3.016,1.879,3.271C1.582,3.527,1.336,3.914,1.415,4.463
@@ -287,8 +334,8 @@
                     <li class=" ">
                         <a href="" class="border-l-4 lg:border-l-0 block mt-5 lg:inline-block lg:mt-0  mx-4 lg:h-25 lg:py-5 px-2">
                             <!--                            lg:border-b-4-->
-                            <svg class="w-8 h-8 ml-1 mb-1" version="1.1" id="Code" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                            <svg class="w-8 h-6 ml-1 mb-1" version="1.1" id="Code" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="0 0 20 20  cursor-pointer" enable-background="new 0 0 20 20" xml:space="preserve">
                                 <path fill="#696969" d="M5.719,14.75c-0.236,0-0.474-0.083-0.664-0.252L-0.005,10l5.341-4.748c0.412-0.365,1.044-0.33,1.411,0.083
                                     s0.33,1.045-0.083,1.412L3.005,10l3.378,3.002c0.413,0.367,0.45,0.999,0.083,1.412C6.269,14.637,5.994,14.75,5.719,14.75z
                                      M14.664,14.748L20.005,10l-5.06-4.498c-0.413-0.367-1.045-0.33-1.411,0.083c-0.367,0.413-0.33,1.045,0.083,1.412L16.995,10
@@ -302,7 +349,7 @@
                 </ul>
                 <div class="hover:text-teal-400 border-l-4 lg:border-l-2 lg:w-24 flex flex-row ml-2">
                     <div class="block mt-4 lg:inline-block lg:mt-0 ml-6 lg:h-25 lg:py-10 ">
-                        <svg class="w-4 h-4" version="1.1" id="Magnifying_glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                        <svg class="w-4 h-4  cursor-pointer" version="1.1" id="Magnifying_glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                              y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                             <path fill="#696969" d="M17.545,15.467l-3.779-3.779c0.57-0.935,0.898-2.035,0.898-3.21c0-3.417-2.961-6.377-6.378-6.377
                                 C4.869,2.1,2.1,4.87,2.1,8.287c0,3.416,2.961,6.377,6.377,6.377c1.137,0,2.2-0.309,3.115-0.844l3.799,3.801
@@ -312,7 +359,7 @@
                         </svg>
                     </div>
                     <div class=" block mt-4 lg:inline-block lg:mt-0 ml-4 mr-4 lg:h-25 lg:py-10 ">
-                        <svg class="w-4 h-4" version="1.1" id="Shopping_cart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                        <svg class="w-4 h-4 cursor-pointer" version="1.1" id="Shopping_cart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                              y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                             <path fill="#696969" d="M13,17c0,1.104,0.894,2,2,2c1.104,0,2-0.896,2-2c0-1.106-0.896-2-2-2C13.894,15,13,15.894,13,17z M3,17
                                 c0,1.104,0.895,2,2,2c1.103,0,2-0.896,2-2c0-1.106-0.897-2-2-2C3.895,15,3,15.894,3,17z M6.547,12.172L17.615,9.01
@@ -362,6 +409,16 @@
                 required: true
             },
         },
+        data(){
+            return{
+                responsive_tab :false,
+                isVisibleHeader1: false,
+                isVisibleHeader2: false,
+                isVisibleResponsiveHeader1: false,
+                isVisibleResponsiveSubHeader1: false,
+
+            }
+        }
     }
 </script>
 
