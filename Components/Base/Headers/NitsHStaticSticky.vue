@@ -143,7 +143,6 @@
                     </ul>
                 </div>
 
-
                 <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
                         <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-gray-700 text-sm">
                         <li class="hover:text-teal-400"  @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1">
@@ -262,6 +261,7 @@
 
             <!--            </div>-->
         </div>
+
 <!--        <div class=" w-full h-11/12 ">-->
 <!--            <a class="" >-->
 <!--                <img class=" h-auto" src="/nits-assets/images/demo.jpg">-->
@@ -341,6 +341,7 @@
                 </div>
             </div>
         </section>
+
 
     </div>
 </template>

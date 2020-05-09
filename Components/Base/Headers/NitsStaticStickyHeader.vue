@@ -9,25 +9,39 @@
                 <div class="  ml-64 mt-12 font-semibold">
                     <div class="float-right ml-8">
                         <div class="inline-block  text-gray-800 p-1  mx-4">
-                            <a class="text-lg hover:text-teal-500" href="#">HOME</a>
+                            <a class="text-lg hover:text-teal-500" href="#">{{label1}}
+<!--                                HOME-->
+                            </a>
                         </div>
                         <div class="inline-block  p-1 mx-4">
-                            <a class="text-lg text-teal-500" href="#">FEATURES</a>
+                            <a class="text-lg text-teal-500" href="#">{{label2}}
+<!--                                FEATURES-->
+                            </a>
                         </div>
                         <div class="inline-block text-gray-800 p-1 mx-4">
-                            <a class="text-lg hover:text-teal-500" href="#">PAGES</a>
+                            <a class="text-lg hover:text-teal-500" href="#">{{label3}}
+<!--                                PAGES-->
+                            </a>
                         </div>
                         <div class="inline-block text-gray-800  p-1 mx-4">
-                            <a class="text-lg hover:text-teal-500" href="#">PORTFOLIO</a>
+                            <a class="text-lg hover:text-teal-500" href="#">{{label4}}
+<!--                                PORTFOLIO-->
+                            </a>
                         </div>
                         <div class="inline-block text-gray-800 p-1 mx-4">
-                            <a class="text-lg hover:text-teal-500" href="#">BLOG</a>
+                            <a class="text-lg hover:text-teal-500" href="#">{{label5}}
+<!--                                BLOG-->
+                            </a>
                         </div>
                         <div class="inline-block text-gray-800  p-1 mx-4">
-                            <a class="text-lg hover:text-teal-500" href="#">SHOP</a>
+                            <a class="text-lg hover:text-teal-500" href="#">{{label6}}
+<!--                                SHOP-->
+                            </a>
                         </div>
                         <div class="inline-block text-gray-800 p-1 mx-4">
-                            <a class="text-lg hover:text-teal-500" href="#">SHORTCODES</a>
+                            <a class="text-lg hover:text-teal-500" href="#">{{label7}}
+<!--                                SHORTCODES-->
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -40,7 +54,7 @@
 
         </nav>
         <div class="absolute bottom-0 px-56 mb-16 ml-64 ">
-            <h3 class=" font-black text-5xl text-white ">WELCOME TO NITSEDITOR</h3>
+            <h3 class=" font-black text-5xl text-white ">{{heading}}</h3>
         </div>
         <div class="h-11/12 w-full">
             <img src="/project-assets/images/HiRes1-150x150.jpg.jpg" class="" alt=" image">
@@ -50,7 +64,42 @@
 
 <script>
     export default {
-        name: "NitsStaticStickyHeader"
+        name: "NitsStaticStickyHeader",
+        props: {
+            label1: {
+                type: String,
+                required: true
+            },
+            label2: {
+                type: String,
+                required: true
+            },
+            label3: {
+                type: String,
+                required: true
+            },
+            label4: {
+                type: String,
+                required: true
+            },
+            label5: {
+                type: String,
+                required: true
+            },
+            label6: {
+                type: String,
+                required: true
+            },
+            label7: {
+                type: String,
+                required: true
+            },
+            heading:{
+                type: String,
+                required: true
+            }
+        },
+
     }
 </script>
 

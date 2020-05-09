@@ -1,13 +1,13 @@
 <template>
     <div>
         <div class="px-2" v-if="!loading">
-            <div v-if="tableData && tableData.data.length && location !=='batch_selected'" class="text-left text-lg antialiased font-medium text-gray-600 leading-snug tracking-normal mt-5 mb-5 text-sm font-sans">Showing Results {{tableData.meta.from}} to {{tableData.meta.to}} of {{tableData.meta.total}}</div>
+            <div v-if="tableData && tableData.data.length && !['batch_selected','batch'].includes(location)" class="text-left text-lg antialiased font-medium text-gray-600 leading-snug tracking-normal mt-5 mb-5 text-sm font-sans">Showing Results {{tableData.meta.from}} to {{tableData.meta.to}} of {{tableData.meta.total}}</div>
             <table class="mt-4 w-full" v-if="tableData && tableData.data.length">
                 <tr class="bg-teal-500 h-10">
                     <template v-for="header in selectedColumns">
                         <th class="text-center" v-if="typeof headerStyle[header.key] !== 'undefined'" :style="headerStyle[header.key]">
                             <div v-if="header.key === 'index'" class="ml-2 flex justify-center items-center">
-                                <input v-if="!['stream'] && ['standard'] && ['live-lectures'].includes(location)" class="mr-2 leading-tight" type="checkbox" v-model="selectAll">
+                                <input v-if="!['stream','standard','subject','chapter','topic','live-lectures'].includes(location)" class="mr-2 leading-tight" type="checkbox" v-model="selectAll">
 <!--                                <input v-if="!['stream','standard'].includes(location)" class="mr-2 leading-tight" type="checkbox" v-model="selectAll">-->
 
                                 <span v-else class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Sr. No</span>
@@ -31,7 +31,7 @@
                             <slot :name="header.key" :field="header.key" :item="item" :index="index"></slot>
                         </td>
                         <td class="h-8 text-center border-b border-gray-200 text-md text-gray-700 antialiased leading-tight tracking-normal  font-sans font-normal" v-else>
-                            {{ item[header.key] ? item[header.key] : ' - ' }}
+                            <div v-html="item[header.key] ? item[header.key] : ' - '"></div>
                         </td>
                     </template>
                 </tr>

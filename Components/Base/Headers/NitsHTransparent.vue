@@ -1,6 +1,6 @@
 <template>
     <div class="relative">
-        <img src="/nits-assets/images/banner-bg.png" alt="education image">
+        <img src="/project-assets/images/video-conferencing-meeting.jpg" class=" h-auto w-screen" alt="education image">
         <nav class="absolute top-0 py-4 px-8 mx-auto bg-transparent w-screen mt-5">
             <div class="flex justify-between">
                 <div class="float-left text-white ml-24">

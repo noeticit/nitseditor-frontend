@@ -1,7 +1,7 @@
 <template>
     <div class="relative">
         <div class=" w-screen h-11/12">
-            <img class=" h-auto" src="/nits-assets/images/demo.jpg">
+            <img class=" h-auto" src="/project-assets/images/HiRes1-150x150.jpg.jpg">
         </div>
         <div class="bg-white shadow-lg absolute top-0 lg:w-4/5 lg:ml-40 lg:mt-10 sm:w-full md:w-full ">
             <nav class=" md:container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full">
