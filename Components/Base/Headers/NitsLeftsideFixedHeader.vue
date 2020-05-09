@@ -13,7 +13,8 @@
                         <div class="inline-block mt-3 text-gray-800 p-1 ">
                             <a class="text-lg " href="#">
                                 <div class="flex " >
-                                    HOME<svg class="absolute right-0 w-5 h-5 mt-1 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    {{label1}}
+                                    <svg class="absolute right-0 w-5 h-5 mt-1 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>
@@ -22,7 +23,8 @@
                         <div class="inline-block p-1 mt-3">
                             <a class="text-lg text-gray-800" href="#">
                                 <div class="flex " >
-                                    FEATURES<svg class="absolute right-0 w-5 h-5 mt-1 ml-24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    {{label2}}
+                                    <svg class="absolute right-0 w-5 h-5 mt-1 ml-24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>
@@ -31,7 +33,8 @@
                         <div class="inline-block mt-3 p-1 ">
                             <a class="text-lg text-gray-800" href="#">
                                 <div class="flex " >
-                                    PAGES<svg class="absolute right-0 w-5 h-5 mt-1 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    {{label3}}
+                                    <svg class="absolute right-0 w-5 h-5 mt-1 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>
@@ -40,7 +43,8 @@
                         <div class="inline-block p-1 mt-3">
                             <a class="text-lg text-gray-800" href="#">
                                 <div class="flex " >
-                                    PORTFOLIO<svg class="absolute right-0 w-5 h-5 mt-1 ml-24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    {{label4}}
+                                    <svg class="absolute right-0 w-5 h-5 mt-1 ml-24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>
@@ -49,7 +53,8 @@
                         <div class="inline-block mt-3 p-1">
                             <a class="text-lg text-gray-800" href="#">
                                 <div class="flex " >
-                                    BLOG<svg class="absolute right-0 w-5 h-5 mt-1 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    {{label5}}
+                                    <svg class="absolute right-0 w-5 h-5 mt-1 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>
@@ -58,7 +63,8 @@
                         <div class="inline-block mt-3 p-1">
                             <a class="text-lg text-gray-800" href="#">
                                 <div class="flex " >
-                                    SHOP<svg class="absolute right-0 w-5 h-5 mt-1 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    {{label6}}
+                                    <svg class="absolute right-0 w-5 h-5 mt-1 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>
@@ -67,7 +73,7 @@
                         <div class="inline-block mt-3 p-1">
                             <a class="text-lg text-gray-800" href="#">
                                 <div class="flex " >
-                                    SHORTCODES<svg class="absolute right-0 w-5 h-5 mt-1 ml-16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    {{label7}}<svg class="absolute right-0 w-5 h-5 mt-1 ml-16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>
@@ -134,7 +140,7 @@
           </nav>
 
             <div class="absolute bottom-0 px-56  ml-64 mb-64 ">
-                <h3 class=" font-black text-5xl text-white ml-40 mb-64">WELCOME TO NITSEDITOR</h3>
+                <h3 class=" font-black text-5xl text-white ml-40 mb-64">{{heading}}</h3>
             </div>
         </div>
           <div class="h-full w-4/5">
@@ -147,7 +153,42 @@
 
 <script>
     export default {
-        name: "NitsLeftsideFixedHeader"
+        name: "NitsLeftsideFixedHeader",
+        props: {
+            label1: {
+                type: String,
+                required: true
+            },
+            label2: {
+                type: String,
+                required: true
+            },
+            label3: {
+                type: String,
+                required: true
+            },
+            label4: {
+                type: String,
+                required: true
+            },
+            label5: {
+                type: String,
+                required: true
+            },
+            label6: {
+                type: String,
+                required: true
+            },
+            label7: {
+                type: String,
+                required: true
+            },
+            heading:{
+                type: String,
+                required: true
+            }
+        },
+
     }
 </script>
 

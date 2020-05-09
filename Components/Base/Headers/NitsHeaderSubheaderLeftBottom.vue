@@ -7,21 +7,21 @@
                     <div class="inline-block border-r px-3">
                         <a class="" href="#">
                             <div class="flex font-semibold py-3 text-gray-700" >
-                                HOME
+                                {{top1}}
                             </div>
                         </a>
                     </div>
                     <div class="inline-block border-r px-3">
                         <a class="" href="#">
                             <div class="flex font-semibold py-3 text-gray-700" >
-                                FAQS
+                                {{top2}}
                             </div>
                         </a>
                     </div>
                     <div class="inline-block border-r px-3">
                         <a class="" href="#">
                             <div class="flex font-semibold py-3 text-gray-700" >
-                                CONTACT
+                                {{top3}}
                             </div>
                         </a>
                     </div>
@@ -130,25 +130,25 @@
                 <div class="flex items-center " >
                     <div class="float-right ml-16">
                         <div class="inline-block pl-6 mx-3 ">
-                            <a class=" text-gray-700 text-lg text-teal-500 font-semibold" href="">HOME</a>
+                            <a class=" text-gray-700 text-lg text-teal-500 font-semibold" href="">{{label1}}</a>
                         </div>
                         <div class="inline-block pl-4 mx-3 ">
-                            <a class=" text-gray-700 text-lg hover:text-teal-500 font-semibold" href="">FEATURES</a>
+                            <a class=" text-gray-700 text-lg hover:text-teal-500 font-semibold" href="">{{label2}}</a>
                         </div>
                         <div class="inline-block pl-4 mx-3 ">
-                            <a class=" text-gray-700 text-lg hover:text-teal-500 font-semibold" href="">PAGES</a>
+                            <a class=" text-gray-700 text-lg hover:text-teal-500 font-semibold" href="">{{label3}}</a>
                         </div>
                         <div class="inline-block pl-4 mx-3 ">
-                            <a class=" text-gray-700 text-lg hover:text-teal-500 font-semibold" href="">PORTFOLIO</a>
+                            <a class=" text-gray-700 text-lg hover:text-teal-500 font-semibold" href="">{{label4}}</a>
                         </div>
                         <div class="inline-block pl-4 mx-3 ">
-                            <a class=" text-gray-700 text-lg hover:text-teal-500 font-semibold" href="">BLOG</a>
+                            <a class=" text-gray-700 text-lg hover:text-teal-500 font-semibold" href="">{{label5}}</a>
                         </div>
                         <div class="inline-block pl-4 mx-3 ">
-                            <a class=" text-gray-700 text-lg hover:text-teal-500 font-semibold" href="">SHOP</a>
+                            <a class=" text-gray-700 text-lg hover:text-teal-500 font-semibold" href="">{{label6}}</a>
                         </div>
                         <div class="inline-block pl-4 mx-3 ">
-                            <a class=" text-gray-700 text-lg hover:text-teal-500 font-semibold" href="">SHORTCODES</a>
+                            <a class=" text-gray-700 text-lg hover:text-teal-500 font-semibold" href="">{{label7}}</a>
                         </div>
                     </div>
 
@@ -174,7 +174,50 @@
 
 <script>
     export default {
-        name: "NitsHeaderSubheaderLeftBottom"
+        name: "NitsHeaderSubheaderLeftBottom",
+        props: {
+            label1: {
+                type: String,
+                required: true
+            },
+            label2: {
+                type: String,
+                required: true
+            },
+            label3: {
+                type: String,
+                required: true
+            },
+            label4: {
+                type: String,
+                required: true
+            },
+            label5: {
+                type: String,
+                required: true
+            },
+            label6: {
+                type: String,
+                required: true
+            },
+            label7: {
+                type: String,
+                required: true
+            },
+            top1:{
+                type: String,
+                required: true
+            },
+            top2:{
+                type: String,
+                required: true
+            },
+            top3:{
+                type: String,
+                required: true
+            },
+        },
+
     }
 </script>
 

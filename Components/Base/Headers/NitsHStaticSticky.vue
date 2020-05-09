@@ -143,7 +143,6 @@
                     </ul>
                 </div>
 
-
                 <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
                     <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-gray-700 text-sm">
                         <li class="hover:text-teal-400"  @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1">
@@ -181,7 +180,7 @@
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0  mx-4 lg:h-25 lg:py-10 px-2">
                                 {{label2}}
                             </a>
-                            <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader2">
+                            <ul  class="dropdown-menu absolute text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader2">
                                 <li class=" hover:text-teal-400"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
                                     <spam class="flex " >HOME-Coperate, Portfolio, blog</spam>
                                     <span>
@@ -258,6 +257,7 @@
 
             <!--            </div>-->
         </div>
+
         <div class=" w-full h-11/12 ">
             <a class="" >
                 <img class=" h-auto" src="/nits-assets/images/demo.jpg">
