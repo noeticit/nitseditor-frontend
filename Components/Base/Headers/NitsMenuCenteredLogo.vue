@@ -35,8 +35,8 @@
                             </a>
                         </div>
                         <div class="inline-block bg-smoke-200 text-white  p-1 mx-3">
-                            <a class="text-xl font-sans rounded-full bg-blue-100 py-3 px-6" href="#">{{label6}}
-<!--                                Login-->
+                            <a class="text-xl font-sans rounded-full bg-blue-100 py-3 px-6" href="#">
+                                Login
                             </a>
                         </div>
                         </div>
@@ -80,10 +80,6 @@
                 required: true
             },
             label5: {
-                type: String,
-                required: true
-            },
-            label6: {
                 type: String,
                 required: true
             },

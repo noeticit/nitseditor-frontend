@@ -16,12 +16,12 @@
                           {{label1}}
  <!--                        HOME-->
                            </a>
-                          <ul v-show="isVisibleHeader1" class="dropdown-menu absolute mt-2 w-48 text-gray-600 bg-white border-t-2 border-teal-400" >
+                          <ul v-show="isVisibleHeader1" class="dropdown-menu absolute mt-2 w-56 text-gray-600 bg-white border-t-2 border-teal-400" >
                           <li class=" hover:text-teal-500"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1">
                              <a class="rounded-t  hover:bg-gray-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
                              <span class="block" >HOME-CORPORATE</span>
                              <span class="mr-auto">
-                                  <svg class="absolute right-0 w-5 h-5  ml-32 " fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                  <svg class="absolute right-0 w-5 h-5  ml-40 " fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                              </span>
@@ -32,7 +32,7 @@
                                     <a class="rounded-t  hover:bg-gray-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
                                         <span class="flex  hover:text-teal-500" >HOME-PORFOLIO</span>
                                         <span class="mr-auto">
-                                            <svg class="absolute right-0 w-5 h-5  ml-32 " fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <svg class="absolute right-0 w-5 h-5  ml-40 " fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                               <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                             </svg>
                                         </span>
@@ -61,7 +61,11 @@
                                 <li class="">
                                     <a class="rounded-t  hover:bg-gray-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
                                     <span class="flex  hover:text-teal-500" >WIDGETS</span>
-
+                                        <span class="mr-auto">
+                                            <svg class="absolute right-0 w-5 h-5 ml-32 " fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                              <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
+                                            </svg>
+                                        </span>
                                     </a>
                                 </li>
                             </ul>
