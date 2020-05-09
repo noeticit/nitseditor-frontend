@@ -49,7 +49,7 @@
                     <ul class="lg:flex-grow uppercase  flex flex-col lg:flex-row pb-4 lg:pb-0 ">
                         <li class="flex flex-row ">
                             <div class="w-11/12 pb-4 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                HOME
+                                {{label1}}
                             </div>
                             <div class="pb-4 border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -61,7 +61,7 @@
                         </li>
                         <li class="flex flex-row ">
                             <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                FEATURES
+                                {{label2}}
                             </div>
                             <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -73,7 +73,7 @@
                         </li>
                         <li class="flex flex-row ">
                             <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                PAGES
+                                {{label3}}
                             </div>
                             <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -85,7 +85,7 @@
                         </li>
                         <li class="flex flex-row ">
                             <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                PORTFOLIO
+                                {{label4}}
                             </div>
                             <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -97,7 +97,7 @@
                         </li>
                         <li class="flex flex-row ">
                             <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                BLOG
+                                {{label5}}
                             </div>
                             <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -109,7 +109,7 @@
                         </li>
                         <li class="flex flex-row ">
                             <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                SHOP
+                                {{label6}}
                             </div>
                             <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -121,7 +121,7 @@
                         </li>
                         <li class="flex flex-row ">
                             <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                SHOTCODES
+                                {{label7}}
                             </div>
                             <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -137,9 +137,9 @@
 
                 <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
                     <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-gray-700 text-sm">
-                        <li class="hover:text-teal-400 mt-2">
-                            <a href="" >
-                                <div class="border block lg:inline-block  rounded-full p-4 m-1 bg-white hover:bg-teal-500">
+                        <li class=" mt-2">
+                            <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                <div class="border block lg:inline-block  rounded-full p-4 m-1 bg-white hover:bg-teal-500" @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1">
                                     <svg class="w-6 h-6 " version="1.1" id="Home" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                          viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                         <path fill="#000000" d="M18.672,11H17v6c0,0.445-0.194,1-1,1h-4v-6H8v6H4c-0.806,0-1-0.555-1-1v-6H1.328
@@ -147,12 +147,12 @@
                                         C19.142,10.676,19.27,11,18.672,11z"/>
                                     </svg>
                                 </div>
-                                <div class="ml-4">
-                                    INTRO
+                                <div class="ml-4 text-white" v-show="isVisibleHeader1">
+                                    hello
                                 </div>
-                            </a>
+                            </transition>
                         </li>
-                        <li class="text-teal-400 hover:text-teal-400 mt-2">
+                        <li class="  mt-2">
                             <a href="" >
                                 <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500">
                                     <svg class="w-6 h-6" version="1.1" id="Star" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -161,12 +161,12 @@
                                             L10,1.3z"/>
                                     </svg>
                                 </div>
-                                <div class="ml-4">
-                                    SKILLS
+                                <div class="ml-4 text-white">
+                                    {{label2}}
                                 </div>
                             </a>
                         </li>
-                        <li class="hover:text-teal-400 mt-2">
+                        <li class=" mt-2">
                             <a href="" >
                                 <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500">
                                     <svg class="w-6 h-6" version="1.1" id="User" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -178,12 +178,12 @@
                                             c-0.333-0.34-0.558-0.881,0.466-1.424C9.439,0.112,8.918,1.284,7.725,2.146z"/>
                                     </svg>
                                 </div>
-                                <div class="ml-4">
-                                    ABOUT
+                                <div class="ml-4 text-white">
+                                    {{label3}}
                                 </div>
                             </a>
                         </li>
-                        <li class="hover:text-teal-400 mt-2">
+                        <li class=" mt-2">
                             <a href="" >
                             <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500">
                                 <svg class="w-6 h-6" version="1.1" id="Sweden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -195,12 +195,12 @@
                                 </svg>
 
                             </div>
-                                <div class="ml-4">
-                                    BLOGS
+                                <div class="ml-4 text-white">
+                                    {{label4}}
                                 </div>
                         </a>
                         </li>
-                        <li class="hover:text-teal-400 mt-2">
+                        <li class=" mt-2">
                             <a href="" >
                                 <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500">
                                     <svg class="w-6 h-6" version="1.1" id="Pencil" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -213,12 +213,12 @@
                                             l0.549-0.755c0,0,1.229-0.169,2.833,0.998c1.602,1.166,1.821,2.388,1.821,2.388L8.977,15.465z"/>
                                     </svg>
                                 </div>
-                                <div class="ml-3">
-                                    ARTICLES
+                                <div class="ml-3 text-white">
+                                    {{label5}}
                                 </div>
                             </a>
                         </li>
-                        <li class="hover:text-teal-400 mt-2">
+                        <li class=" mt-2">
                             <a href="" >
                                 <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500">
                                     <svg class="w-6 h-6" version="1.1" id="Mail" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -230,8 +230,8 @@
                                         />
                                     </svg>
                                 </div>
-                                <div class="ml-4">
-                                    CONTACT
+                                <div class="ml-4 text-white">
+                                    {{label6}}
                                 </div>
                             </a>
                         </li>
@@ -244,7 +244,7 @@
         </div>
         <div class=" w-full h-11/12 ">
             <a class="">
-<!--                <img class=" h-auto" src="/nits-assets/images/demo.jpg">-->
+                <img class=" h-auto" src="/nits-assets/images/demo.jpg">
             </a>
         </div>
     </div>
@@ -253,9 +253,40 @@
 <script>
     export default {
         name: "NitsHeaderWithIcon",
+        props: {
+            label1: {
+                type: String,
+                required: true
+            },
+            label2: {
+                type: String,
+                required: true
+            },
+            label3: {
+                type: String,
+                required: true
+            },
+            label4: {
+                type: String,
+                required: true
+            },
+            label5: {
+                type: String,
+                required: true
+            },
+            label6: {
+                type: String,
+                required: true
+            },
+            label7: {
+                type: String,
+                required: true
+            },
+        },
         data(){
             return{
                 responsive_tab :false,
+                isVisibleHeader1: false,
             }
         }
     }

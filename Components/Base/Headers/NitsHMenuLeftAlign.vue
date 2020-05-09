@@ -10,22 +10,22 @@
             <div class="ml-16 pl-5">
                 <ul class="hidden md:flex overflow-x-hidden uppercase">
                     <li class="mr-8 p-1 border-b-2 border-orange-500">
-                        <a class="text-blue-800 tracking-widest antialiased text-xs cursor-default font-medium" href="#">Home</a>
+                        <a class="text-blue-800 tracking-widest antialiased text-xs cursor-default font-medium" href="#">{{label1}}</a>
                     </li>
                     <li class="mr-8 p-1">
-                        <a class="text-gray-700  tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Services</a>
+                        <a class="text-gray-700  tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">{{label2}}</a>
                     </li>
                     <li class="mr-8 p-1">
-                        <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Projects</a>
+                        <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">{{label3}}</a>
                     </li>
                     <li class="mr-8 p-1">
-                        <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Team</a>
+                        <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">{{label4}}</a>
                     </li>
                     <li class="mr-8 p-1">
-                        <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">About</a>
+                        <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">{{label5}}</a>
                     </li>
                     <li class="mr-8 p-1">
-                        <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Contacts</a>
+                        <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">{{label6}}</a>
                     </li>
                     <li @click="box = ! box" class="mr-8 p-1">
                         <svg class="w-4 h-4 mt-1 cursor-pointer text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -52,6 +52,34 @@
 <script>
     export default {
         name: "NitsHMenuLeftAlign",
+        props:{
+            label1:{
+                type: String,
+                required: true
+            },
+            label2:{
+                type: String,
+                required: true
+            },
+            label3:{
+                type: String,
+                required: true
+            },
+            label4:{
+                type: String,
+                required: true
+            },
+            label5:{
+                type: String,
+                required: true
+            },
+            label6:{
+                type: String,
+                required: true
+            },
+
+
+        },
         data(){
             return{
                 box: false

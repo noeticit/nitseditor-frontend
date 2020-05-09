@@ -50,17 +50,17 @@
             <div class="flex pr-40">
                 <div class="hover:bg-gray-200">
                     <div class="my-4 mx-3 inline-block hover:text-teal-500 text-xs cursor-pointer text-gray-700">
-                        LOCATIONS
+                        {{location}}
                     </div>
                 </div>
                 <div class="border-l hover:bg-gray-200">
                     <div class="my-4 mx-4 inline-block hover:text-teal-500 text-xs cursor-pointer text-gray-700">
-                        FAQS
+                        {{faqs}}
                     </div>
                 </div>
                 <div class="border-l hover:bg-gray-200">
                     <div class="my-4 mx-3 inline-block hover:text-teal-500 text-xs cursor-pointer text-gray-700">
-                        CONTACT
+                        {{contact}}
                     </div>
                 </div>
             </div>
@@ -80,8 +80,8 @@
                                 </svg>
                             </div>
                             <div class="flex-col">
-                                <div class="text-gray-600 text-sm font-light ">CALL US</div>
-                                <div class="text-orange-500 ">(+91) 12345689</div>
+                                <div class="text-gray-600 text-sm font-light ">{{call}}</div>
+                                <div class="text-orange-500 ">{{number}}</div>
                             </div>
                         </div>
                         <div class="flex border-r px-5">
@@ -91,8 +91,8 @@
                                 </svg>
                             </div>
                             <div class="flex-col">
-                                <div class="text-gray-600 text-sm font-light ">EMAIL US</div>
-                                <div class="text-orange-500 ">info@noeticitservice.com</div>
+                                <div class="text-gray-600 text-sm font-light ">{{email}}</div>
+                                <div class="text-orange-500 ">{{email_id}}</div>
                             </div>
                         </div>
                         <div class="flex mr-16">
@@ -102,8 +102,8 @@
                                 </svg>
                             </div>
                             <div class="flex-col">
-                                <div class="text-gray-600 text-sm font-light">WE'ARE OPEN</div>
-                                <div class="text-orange-500 ">Mon - Sat, 10AM to 6PM</div>
+                                <div class="text-gray-600 text-sm font-light">{{open}}</div>
+                                <div class="text-orange-500 ">{{day_time}}</div>
                             </div>
                         </div>
                     </div>
@@ -114,27 +114,59 @@
         <div class="sticky top-0 mx-auto bg-transparent w-screen">
             <div class="flex justify-between">
                 <div class="flex text-lg ml-64 font-semibold">
-                    <div class="float-right py-3 ml-32">
-                        <div class="inline-block cursor-default text-gray-700 p-1 px-2 mx-3">
-                            <a class="text-sm " href="#">HOME</a>
+                    <div class="float-right flex py-3 ml-32">
+                        <div class="p-1 px-2 mx-3 " @mouseover="isVisible = true" @mouseleave="isVisible = false" @keydown.enter="isVisible = !isVisible">
+                            <div class="inline-flex items-center justify-between px-2 py-1 font-medium  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
+                                <span class="flex-shrink-0 tracking-widest text-gray-700 text-sm">{{label1}}</span>
+                            </div>
+                            <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                <div v-show="isVisible" class="absolute pt-2">
+                                    <div class="relative py-1 bg-white border border-gray-200 rounded-md shadow-xl">
+                                        <div class="absolute top-0 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-white border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
+                                        <div class="relative">
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </transition>
                         </div>
-                        <div class="inline-block cursor-pointer text-teal-500 p-1 px-2 mx-3">
-                            <a class="text-sm" href="#">FEATURES</a>
+                        <div class=" p-1 px-2 mx-3" @mouseover="Visible = true" @mouseleave="Visible = false" @keydown.enter="Visible = !Visible">
+                            <div class="inline-flex items-center justify-between px-2 py-1 font-medium  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
+                                <span class="flex-shrink-0 tracking-widest text-teal-500 text-sm">{{label2}}</span>
+                            </div>
+                            <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                <div v-show="Visible" class="absolute pt-2">
+                                    <div class="relative py-1 bg-white border border-gray-200 rounded-md shadow-xl">
+                                        <div class="absolute top-0 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-white border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
+                                        <div class="relative">
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </transition>
                         </div>
                         <div class="inline-block cursor-pointer text-gray-700 p-1 px-2 mx-3">
-                            <a class="text-sm" href="#">PAGES</a>
+                            <a class="text-sm" href="#">{{label3}}</a>
                         </div>
                         <div class="inline-block cursor-pointer text-gray-700 p-1 px-2 mx-3">
-                            <a class="text-sm" href="#">PORTFOLIO</a>
+                            <a class="text-sm" href="#">{{label4}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-1 text-gray-700 px-2 mx-3">
-                            <a class="text-sm" href="#">BLOG</a>
+                            <a class="text-sm" href="#">{{label5}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-2 text-gray-700 px-2 mx-3">
-                            <a class="text-sm" href="#">SHOP</a>
+                            <a class="text-sm" href="#">{{label6}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-2 text-gray-700 px-2 mx-3">
-                            <a class="text-sm" href="#">SHORTCODES</a>
+                            <a class="text-sm" href="#">{{label7}}</a>
                         </div>
                     </div>
                     <div class="inline-block cursor-pointer mt-6 text-gray-700">
@@ -155,9 +187,83 @@
 <script>
     export default {
         name: "NitsHAndSubH",
+
+        props: {
+            location: {
+                type: String,
+                required: true
+            },
+            faqs: {
+                type: String,
+                required: true
+            },
+            contact: {
+                type: String,
+                required: true
+            },
+            call: {
+                type: String,
+                required: true
+            },
+            number: {
+                type: String,
+                required: true
+            },
+            email: {
+                type: String,
+                required: true
+            },
+            email_id: {
+                type: String,
+                required: true
+            },
+            open: {
+                type: String,
+                required: true
+            },
+            day_time: {
+                type: String,
+                required: true
+            },
+            label1: {
+                type: String,
+                required: true
+            },
+            label2: {
+                type: String,
+                required: true
+            },
+            label3: {
+                type: String,
+                required: true
+            },
+            label4: {
+                type: String,
+                required: true
+            },
+            label5: {
+                type: String,
+                required: true
+            },
+            label6: {
+                type: String,
+                required: true
+            },
+            label7: {
+                type: String,
+                required: true
+            },
+        },
         data(){
             return{
-                box:false
+                box:false,
+                isVisible: false,
+                Visible: false,
+                onVisible: false,
+                isDropdown: false,
+                isDrop: false,
+                onDropdown: false,
+                onDrop: false,
             }
         }
     }

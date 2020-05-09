@@ -5,7 +5,7 @@
                 <div class="flex pl-48 float-right">
                     <div class="hover:bg-black">
                         <div class="my-4 mx-3 inline-block hover:text-white text-xs cursor-pointer text-white">
-                            All Cities
+                           {{all_cities}}
                         </div>
                     </div>
                 </div>
@@ -13,12 +13,12 @@
             <div class="flex pr-40 ">
                 <div class="hover:bg-black">
                     <div class="my-4 mx-3 inline-block hover:text-white text-xs cursor-pointer text-white">
-                        Free Courses
+                        {{free_courses}}
                     </div>
                 </div>
                 <div class="border-l hover:bg-black">
                     <div class="my-4 mx-4 inline-block hover:text-white text-xs cursor-pointer text-white">
-                        Download App
+                        {{download_app}}
                     </div>
                 </div>
                 <div class="inline-block hover:bg-blue-800 border-l rounded cursor-pointer hover:text-white text-white ">
@@ -59,22 +59,22 @@
             </div>
             <ul class="hidden md:flex overflow-x-hidden pr-10 mr-32 font-semibold">
                 <li class="mr-6 p-1 border-b-2 border-orange-500">
-                    <a class="text-blue-600 cursor-default" href="#">Home</a>
+                    <a class="text-blue-600 cursor-default" href="#">{{label1}}</a>
                 </li>
                 <li class="mr-6 p-1">
-                    <a class="text-gray-700 hover:text-blue-300" href="#">Services</a>
+                    <a class="text-gray-700 hover:text-blue-300" href="#">{{label2}}</a>
                 </li>
                 <li class="mr-6 p-1">
-                    <a class="text-gray-700 hover:text-blue-300" href="#">Projects</a>
+                    <a class="text-gray-700 hover:text-blue-300" href="#">{{label3}}</a>
                 </li>
                 <li class="mr-6 p-1">
-                    <a class="text-gray-700 hover:text-blue-300" href="#">Team</a>
+                    <a class="text-gray-700 hover:text-blue-300" href="#">{{label4}}</a>
                 </li>
                 <li class="mr-6 p-1">
-                    <a class="text-gray-700 hover:text-blue-300" href="#">About</a>
+                    <a class="text-gray-700 hover:text-blue-300" href="#">{{label5}}</a>
                 </li>
                 <li class="mr-6 p-1">
-                    <a class="text-gray-700 hover:text-blue-300" href="#">Contacts</a>
+                    <a class="text-gray-700 hover:text-blue-300" href="#">{{label6}}</a>
                 </li>
 <!--                <li class="mr-6 p-1">-->
 <!--                    <svg class="w-5 h-5  cursor-pointer text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">-->
@@ -105,13 +105,13 @@
                     </div>
                     <button v-if="OpenShow" class=" fixed top-0 bottom-0 right-0 left-0 w-full cursor-default h-full" @click="OpenShow = false"></button>
                     <div v-if="OpenShow " class="block absolute mt-16 flex-col w-48 bg-gray-600 shadow-xl rounded-lg  mt-2">
-                        <a class="block mt-5 p-2 text-center text-gray-400 font-hairline hover:bg-gray-700 text-sm hover:text-blue-300 " href="#">Home 1</a>
-                        <a class="block p-2 text-center text-gray-400 font-hairline hover:bg-gray-700 text-sm hover:text-blue-300 " href="#">Home 2</a>
-                        <a class="block p-2 text-center text-gray-400 font-hairline hover:bg-gray-700 text-sm hover:text-blue-300 " href="#">Home 2</a>
-                        <a class="block p-2 text-center text-gray-400 font-hairline hover:bg-gray-700 text-sm hover:text-blue-300 " href="#">Home 2</a>
-                        <a class="block p-2 text-center text-gray-400 font-hairline hover:bg-gray-700 text-sm hover:text-blue-300 " href="#">Home 2</a>
-                        <a class="block p-2 text-center text-gray-400 font-hairline hover:bg-gray-700 text-sm hover:text-blue-300 " href="#">Home 2</a>
-                        <a class="block mb-5 text-center p-2 text-gray-400 font-hairline hover:bg-gray-700 text-sm hover:text-blue-300 " href="#">Home 3</a>
+                        <a class="block mt-5 p-2 text-center text-gray-400 font-hairline hover:bg-gray-700 text-sm hover:text-blue-300 " href="#">{{select7}}</a>
+                        <a class="block p-2 text-center text-gray-400 font-hairline hover:bg-gray-700 text-sm hover:text-blue-300 " href="#">{{select1}}</a>
+                        <a class="block p-2 text-center text-gray-400 font-hairline hover:bg-gray-700 text-sm hover:text-blue-300 " href="#">{{select2}}</a>
+                        <a class="block p-2 text-center text-gray-400 font-hairline hover:bg-gray-700 text-sm hover:text-blue-300 " href="#">{{select3}}</a>
+                        <a class="block p-2 text-center text-gray-400 font-hairline hover:bg-gray-700 text-sm hover:text-blue-300 " href="#">{{select4}}</a>
+                        <a class="block p-2 text-center text-gray-400 font-hairline hover:bg-gray-700 text-sm hover:text-blue-300 " href="#">{{select5}}</a>
+                        <a class="block mb-5 text-center p-2 text-gray-400 font-hairline hover:bg-gray-700 text-sm hover:text-blue-300 " href="#">{{select6}}</a>
 
                     </div>
                 </div>
@@ -143,6 +143,63 @@
 <script>
     export default {
         name: "NitsHAndSubHFlex",
+        props: {
+            label1: {
+                type: String,
+                required: true
+            },
+            label2: {
+                type: String,
+                required: true
+            },
+            label3: {
+                type: String,
+                required: true
+            },
+            label4: {
+                type: String,
+                required: true
+            },
+            label5: {
+                type: String,
+                required: true
+            },
+            label6: {
+                type: String,
+                required: true
+            },
+            select1:{
+                type: String,
+            },
+            select2:{
+                type: String,
+            },
+            select3:{
+                type: String,
+            },
+            select4:{
+                type: String,
+            },
+            select5:{
+                type: String,
+            },
+            select6:{
+                type: String,
+            },
+            select7:{
+                type: String,
+            },
+            all_cities:{
+                type: String,
+            },
+            download_app:{
+                type: String,
+            },
+            free_courses:{
+                type: String,
+            },
+
+        },
         data(){
             return{
                 box: false,
