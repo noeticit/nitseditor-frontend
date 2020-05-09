@@ -12,7 +12,7 @@
                             </a>
                         </div>
                         <div class="inline-block pl-2 mx-3 ">
-                            <a class=" text-gray-800 text-sm hover:text-red-800 font-semibold" @mouseover="isVisibleHeader1 = true"  @keydown.enter="isVisibleHeader1 = !isVisibleHeader1"href="">
+                            <a class=" text-gray-800 text-sm hover:text-red-800 font-semibold" @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1" href="">
                               <div class="flex"  >
 <!--                               MODELS-->
                                   {{label2}}
@@ -22,12 +22,12 @@
                                   <ul  class=" absolute top-0 text-gray-600 mt-20 w-11/12 h-full " v-show="isVisibleHeader1">
                                       <li class="w-11/12 bg-white border-t-2 border-red-600"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1">
                                           <a class="rounded-t  hover:bg-white py-4 px-4 block whitespace-no-wrap flex " href="#">
-                                          <div class="flex flex-col ml-40">
-                                              <div class="ml-64">
-                                            <span class=" text-2xl text-gray-700 ml-48 text-center" >Featured Models</span>
+                                          <div class="flex flex-col ml-32">
+                                              <div class="ml-56">
+                                            <span class=" text-2xl text-gray-700 ml-40 px-4 text-center" >Featured Models</span>
                                               </div>
-                                              <div class="ml-64 mt-4">
-                                              <span class="rounded  hover:bg-black ml-48 py-2 px-4 mt-4 hover:text-white text-center text-base">SHOW ALL CARS </span>
+                                              <div class="ml-56 mt-4">
+                                              <span class="rounded text-gray-700 hover:bg-black ml-48 py-2 px-4 mt-4 hover:text-white text-center text-base">SHOW ALL CARS </span>
                                               </div>
                                               <div class="flex mt-6 ">
                                               <img src="/project-assets/images/car1.png">
