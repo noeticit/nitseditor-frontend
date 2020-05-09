@@ -10,7 +10,7 @@
                 <a class="text-blue-200 cursor-default" href="#">{{label1}}</a>
             </li>
             <li class="mr-6 p-1">
-                <a class="text-white hover:text-blue-300" href="#">{{label2}}}</a>
+                <a class="text-white hover:text-blue-300" href="#">{{label2}}</a>
             </li>
             <li class="mr-6 p-1">
                 <a class="text-white hover:text-blue-300" href="#">{{label3}}</a>
