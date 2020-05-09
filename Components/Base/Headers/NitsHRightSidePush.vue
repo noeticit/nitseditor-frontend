@@ -1,7 +1,7 @@
 <template>
     <div class="flex">
         <div class="relative">
-            <img class=" h-auto w-screen" src="/project-assets/images/video-conferencing-meeting.jpg">
+            <img class=" h-auto w-screen" src="/nits-assets/images/school_image.jpg">
             <div @click="box4 = true " :class="box4 ? 'hidden' : 'block'" class=" bg-white cursor-pointer  rounded mr-6 mt-5 absolute right-0 top-0">
                 <svg class=" h-8 w-8 px-1 py-1" version="1.1" id="Menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                      viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -24,7 +24,7 @@
                 <div class="mt-10 px-8 font-bold">
                     <div class=" inline-block" @mouseover="isVisible = true" @mouseleave="isVisible = false" @keydown.enter="isVisible = !isVisible">
                         <div class="inline-flex items-center justify-between px-2 py-1 font-medium  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
-                            <span class="flex-shrink-0 text-gray-700 text-sm">{{label1}}</span>
+                            <span class="flex-shrink-0 tracking-widest text-gray-700 text-sm">{{label1}}</span>
                             <svg fill="currentColor" viewBox="0 0 20 20" class="absolute right-0 text-gray-700 flex-shrink-0 w-5 h-5 mr-8 ">
                                 <path :class="{ 'rotate-180': isVisible }" class="transition duration-300 ease-in-out origin-center transform" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                             </svg>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="mt-5 " @mouseover="Visible = true" @mouseleave="Visible = false" @keydown.enter="Visible = !Visible">
                         <div class="inline-flex items-center justify-between px-2 py-1 font-medium  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
-                            <span class="flex-shrink-0 text-teal-500 text-sm">{{label2}}</span>
+                            <span class="flex-shrink-0 tracking-widest text-teal-500 text-sm">{{label2}}</span>
                             <svg fill="currentColor" viewBox="0 0 20 20" class="flex-shrink-0 w-5 h-5 text-teal-500 absolute right-0 mr-8">
                                 <path :class="{ 'rotate-180': Visible }" class="transition duration-300 ease-in-out origin-center transform" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                             </svg>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="mt-5 inline-block" @mouseover="onVisible = true" @mouseleave="onVisible = false" @keydown.enter="onVisible = !onVisible">
                         <div class="inline-flex items-center justify-between px-2 py-1 font-medium  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
-                            <span class="flex-shrink-0 text-gray-700 text-sm">{{label3}}</span>
+                            <span class="flex-shrink-0 tracking-widest text-gray-700 text-sm">{{label3}}</span>
                             <svg fill="currentColor" viewBox="0 0 20 20" class="flex-shrink-0 w-5 h-5 text-gray-700 absolute right-0 mr-8">
                                 <path :class="{ 'rotate-180': onVisible }" class="transition duration-300 ease-in-out origin-center transform" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                             </svg>
@@ -90,7 +90,7 @@
                     </div>
                     <div class="mt-5 " @mouseover="isDropdown = true" @mouseleave="isDropdown = false" @keydown.enter="isDropdown = !isDropdown">
                         <div class="inline-flex items-center justify-between px-2 py-1 font-medium  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
-                            <span class="flex-shrink-0 text-gray-700 text-sm">{{label4}}</span>
+                            <span class="flex-shrink-0 tracking-widest text-gray-700 text-sm">{{label4}}</span>
                             <svg fill="currentColor" viewBox="0 0 20 20" class="flex-shrink-0 w-5 h-5 absolute text-gray-700 right-0 mr-8">
                                 <path :class="{ 'rotate-180': isDropdown }" class="transition duration-300 ease-in-out origin-center transform" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                             </svg>
@@ -112,7 +112,7 @@
                     </div>
                     <div class="mt-5 " @mouseover="isDrop = true" @mouseleave="isDrop = false" @keydown.enter="isDrop = !isDrop">
                         <div class="inline-flex items-center justify-between px-2 py-1 font-medium  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
-                            <span class="flex-shrink-0 text-gray-700 text-sm">{{label5}}</span>
+                            <span class="flex-shrink-0 tracking-widest text-gray-700 text-sm">{{label5}}</span>
                             <svg fill="currentColor" viewBox="0 0 20 20" class="flex-shrink-0 w-5 h-5 text-gray-700 absolute right-0 mr-8">
                                 <path :class="{ 'rotate-180': isDrop }" class="transition duration-300 ease-in-out origin-center transform" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                             </svg>
@@ -132,10 +132,9 @@
                             </div>
                         </transition>
                     </div>
-
                     <div class="mt-5 " @mouseover="onDropdown = true" @mouseleave="onDropdown = false" @keydown.enter="onDropdown = !onDropdown">
                         <div class="inline-flex items-center justify-between px-2 py-1 font-medium  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
-                            <span class="flex-shrink-0 text-gray-700 text-sm">{{label7}}</span>
+                            <span class="flex-shrink-0 tracking-widest text-gray-700 text-sm">{{label7}}</span>
                             <svg fill="currentColor" viewBox="0 0 20 20" class="flex-shrink-0 w-5 text-gray-700 h-5 absolute right-0 mr-8">
                                 <path :class="{ 'rotate-180': onDropdown }" class="transition duration-300 ease-in-out origin-center transform" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                             </svg>
@@ -157,7 +156,7 @@
                     </div>
                     <div class="mt-5 " @mouseover="onDrop = true" @mouseleave="onDrop = false" @keydown.enter="onDrop = !onDrop">
                         <div class="inline-flex items-center justify-between px-2 py-1 font-medium  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
-                            <span class="flex-shrink-0 text-gray-700 text-sm">{{label6}}</span>
+                            <span class="flex-shrink-0 tracking-widest text-gray-700 text-sm">{{label6}}</span>
                             <svg fill="currentColor" viewBox="0 0 20 20" class="flex-shrink-0 w-5 text-gray-700 h-5 absolute right-0 mr-8">
                                 <path :class="{ 'rotate-180': onDrop }" class="transition duration-300 ease-in-out origin-center transform" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                             </svg>
