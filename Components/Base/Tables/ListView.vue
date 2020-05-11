@@ -7,7 +7,7 @@
                     <template v-for="header in selectedColumns">
                         <th class="text-center" v-if="typeof headerStyle[header.key] !== 'undefined'" :style="headerStyle[header.key]">
                             <div v-if="header.key === 'index'" class="ml-2 flex justify-center items-center">
-                                <input v-if="!['stream','standard','subject','chapter','topic','live-lectures'].includes(location)" class="mr-2 leading-tight" type="checkbox" v-model="selectAll">
+                                <input v-if="!['stream','standard','subject','chapter','topic','batch_selected','batch_view','batch','live-lectures','scratch_card'].includes(location)" class="mr-2 leading-tight" type="checkbox" v-model="selectAll">
 <!--                                <input v-if="!['stream','standard'].includes(location)" class="mr-2 leading-tight" type="checkbox" v-model="selectAll">-->
 
                                 <span v-else class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Sr. No</span>
