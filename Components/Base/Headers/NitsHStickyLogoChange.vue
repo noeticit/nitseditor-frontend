@@ -4,7 +4,7 @@
        <nav class="sticky top-0 bg-white flex w-screen h-32 ">
         <div class="flex justify-between">
           <div class="float-left ml-20 mt-6 ">
-            <img src="/nits-assets/images/logo.png" alt="logo" class="h-20">
+            <img src="/nits-assets/images/nits-editor-logo.png" alt="logo" class="h-20">
           </div>
 
           <div class=" flex items-center ml-4" >
@@ -12,11 +12,11 @@
 <!--                <div class="inline-block pl-4 mx-5 " >-->
                     <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-gray-700">
                         <li class="hover:text-teal-400"  @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1">
-                           <a class="text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 mx-4 lg:py-10 px-2"  href="">
+                           <a class="text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 mx-4 lg:py-12 px-2"  href="">
                           {{label1}}
  <!--                        HOME-->
                            </a>
-                          <ul v-show="isVisibleHeader1" class="dropdown-menu absolute mt-2 w-56 text-gray-600 bg-white border-t-2 border-teal-400" >
+                          <ul v-show="isVisibleHeader1" class="dropdown-menu absolute w-56 text-gray-600 bg-white border-t-2 border-teal-400" >
                           <li class=" hover:text-teal-500"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1">
                              <a class="rounded-t  hover:bg-gray-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
                              <span class="block" >HOME-CORPORATE</span>
@@ -43,10 +43,10 @@
                         </li>
 <!--                </div>-->
                 <li class="inline-block pl-2 ">
-                    <a class=" text-gray-700 hover:text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 mx-4 lg:py-10 px-2"  @mouseover="isVisibleHeader2 = true" @mouseleave="isVisibleHeader2 = false" @keydown.enter="isVisibleHeader2 = !isVisibleHeader2" href="">
-                        {{label2}}
-<!--                        FEATURE-->
-                            <ul  class="dropdown-menu absolute mt-12 w-40 text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader2">
+                    <a class=" text-gray-700 hover:text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 mx-4 lg:py-12 px-2"  @mouseover="isVisibleHeader2 = true" @mouseleave="isVisibleHeader2 = false" @keydown.enter="isVisibleHeader2 = !isVisibleHeader2" href="">
+                      {{label2}}
+<!--                   FEATURE-->
+                       <ul class="dropdown-menu absolute mt-12 w-40 mr-2 text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader2">
                                 <li class="text-teal-500 hover:text-teal-500"  @mouseover="isVisible2 = true" @mouseleave="isVisible2 = false" @keydown.enter="isVisible2 = !isVisible2" >
                                   <a class="rounded-t  hover:bg-gray-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
                                     <span class="flex " >SLIDERS</span>
@@ -72,27 +72,27 @@
                     </a>
                 </li>
                 <li class="inline-block pl-2 ">
-                    <a class=" text-gray-700 hover:text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 mx-4 lg:py-10 px-2" href="">{{label3}}
+                    <a class=" text-gray-700 hover:text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 mx-4 lg:py-12 px-2" href="">{{label3}}
 <!--                        PAGES-->
                     </a>
                 </li>
                 <li class="inline-block pl-2 ">
-                    <a class=" text-gray-700 hover:text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 mx-4 lg:py-10 px-2" href="">{{label4}}
+                    <a class=" text-gray-700 hover:text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 mx-4 lg:py-12 px-2" href="">{{label4}}
 <!--                        PORTFOLIO-->
                     </a>
                 </li>
                 <li class="inline-block ">
-                    <a class=" text-gray-700 hover:text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 mx-4 lg:py-10 px-2" href="">{{label5}}
+                    <a class=" text-gray-700 hover:text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 mx-4 lg:py-12 px-2" href="">{{label5}}
 <!--                        BLOG-->
                     </a>
                 </li>
                 <li class="inline-block ">
-                    <a class=" text-gray-700 hover:text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 mx-4 lg:py-10 px-2" href="">{{label6}}
+                    <a class=" text-gray-700 hover:text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 mx-4 lg:py-12 px-2" href="">{{label6}}
 <!--                        SHOP-->
                     </a>
                 </li>
                 <li class="inline-block ">
-                    <a class=" text-gray-700 hover:text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 mx-4 lg:py-10 px-2" href="">{{label7}}
+                    <a class=" text-gray-700 hover:text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 mx-4 lg:py-12 px-2" href="">{{label7}}
 <!--                        SHORTCODES-->
                     </a>
                 </li>
