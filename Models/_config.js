@@ -3,8 +3,6 @@ import VueSession from './_session.js';
 
 const session = new VueSession(process.env.MIX_STORAGE_PERSIST, process.env.MIX_INACTIVITY_SESSION);
 
-const tokenData = session.get('auth_user');
-
 export const getHeader = function () {
     const tokenData = session.get('auth_user')
     const headers = {
@@ -22,5 +20,7 @@ export const clientSecret = process.env.MIX_CLIENT_SECRET;
 export const appUrl = process.env.MIX_APP_URL;
 
 export const appResource = 'check';
+
+const tokenData = session.get('auth_user');
 
 export const accessToken = tokenData ? decrypt(tokenData.access_token) : null;
