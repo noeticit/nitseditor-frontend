@@ -144,12 +144,13 @@
                 </div>
 
                 <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
-                    <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-gray-700 text-sm">
+                        <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-gray-700 text-sm">
                         <li class="hover:text-teal-400"  @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
                                 {{label1}}
                             </a>
-                            <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader1">
+                            <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader1">
                                 <li class=" hover:text-teal-400"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
                                     <spam class="flex " >HOME-Coperate, Portfolio, blog</spam>
                                     <span>
@@ -174,13 +175,15 @@
                                     </span>
                                 </a></li>
                             </ul>
+                            </transition>
                         </li>
 
                         <li class="text-teal-400 hover:text-teal-400"   @mouseover="isVisibleHeader2 = true" @mouseleave="isVisibleHeader2 = false" @keydown.enter="isVisibleHeader2 = !isVisibleHeader2">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0  mx-4 lg:h-25 lg:py-10 px-2">
                                 {{label2}}
                             </a>
-                            <ul  class="dropdown-menu absolute text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader2">
+                            <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader2">
                                 <li class=" hover:text-teal-400"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
                                     <spam class="flex " >HOME-Coperate, Portfolio, blog</spam>
                                     <span>
@@ -198,6 +201,7 @@
                                     </span>
                                 </a></li>
                             </ul>
+                            </transition>
                         </li>
                         <li class="hover:text-teal-400">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
@@ -226,7 +230,7 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="hover:text-teal-400 border-l-4 lg:border-l-2 lg:w-24 flex flex-row">
+                        <div class="hover:text-teal-400 border-l-4 lg:border-l-2 lg:w-24 flex flex-row">
                         <div class="block mt-4 lg:inline-block lg:mt-0 ml-5 lg:h-25 lg:py-10 ">
                             <svg class="w-4 h-4 cursor-pointer" version="1.1" id="Magnifying_glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                  y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -258,11 +262,87 @@
             <!--            </div>-->
         </div>
 
-        <div class=" w-full h-11/12 ">
-            <a class="" >
-                <img class=" h-auto" src="/nits-assets/images/demo.jpg">
-            </a>
-        </div>
+<!--        <div class=" w-full h-11/12 ">-->
+<!--            <a class="" >-->
+<!--                <img class=" h-auto" src="/nits-assets/images/demo.jpg">-->
+<!--            </a>-->
+<!--        </div>-->
+
+        <section class="px-4 py-4 sm:pt-56">
+            <div class="container mx-auto">
+                <div class="py-6 sm:py-8 sm:flex flex-wrap justify-between">
+                    <div class="w-full sm:w-1/2">
+                        <h3 class="text-xl lg:text-2xl font-regular text-blue-900">
+                            We’re your local
+                        </h3>
+                        <h1 class="text-2xl sm:text-xl lg:text-5xl font-semibold text-blue-900">
+                            website design agency. Innovation starts with us.
+                        </h1>
+                        <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4 mb-10">
+                            We craft unique and meaningful, experiences that will sublime your
+                            business. We are specialized team of programmers and web developers
+                            in PHP Laravel. We are reliable
+                        </p>
+                        <div class="flex items-center">
+                            <a href="" class="px-4 py-3 bg-blue-900 text-white rounded-lg mr-2 text-sm lg:text-lg">More about us</a>
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-1/2">
+                        <div class="w-full mt-20 sm:mt-0">
+                            <img src="/nits-assets/images/hero.svg" alt="Website Design Agency" class="w-full h-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div>
+                <div class="container mx-auto">
+                    <div class="sm:flex flex-wrap justify-center items-center text-center">
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">
+                            <img src="/nits-assets/images/website-design.svg" alt="Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Website Design
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Encompassing today’s website design technology to integrated and build solutions relevant to your business.
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">
+                            <img src="/nits-assets/images/business-branding.svg" alt="Branding for Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Branding
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Share relevant, engaging, and inspirational brand messages to create a connection with your audience.
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">
+                            <img src="/nits-assets/images/website-marketing.svg" alt="Marketing for Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Marketing
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Let us help you level up your search engine game, explore our solutions for digital marketing for your business.
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">
+                            <img src="/nits-assets/images/ecommerce-solutions.svg" alt="eCommerce for Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Ecommerce Solution
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Ready to enhance your e-commerce solutions for brick-mortar stores, small-mid size business, large corporation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
     </div>
 </template>
 

@@ -1,13 +1,33 @@
 <template>
     <div class="">
-        <div class="bg-white shadow-lg fixed w-full">
-            <nav class=" sm:container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full">
+        <div class="bg-white shadow-lg fixed w-full" >
+
+            <nav class=" sm:container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full " v-if="search">
+                <div class=" flex items-center flex-shrink-0 md:px-6  md:py-10  w-11/12 h-18 lg:text-4xl text-gray-600">
+
+                    <input class="w-11/12" type="text" id="search" name="serch" placeholder=" TYPE & HIT ENTER">
+                </div>
+                <div class="hover:text-teal-400 lg:w-24 flex flex-row">
+                    <div class=" block mt-4 lg:inline-block lg:mt-0 ml-4 mr-4 lg:h-25 lg:py-10 ">
+                        <svg class="w-8 h-20" version="1.1" id="Cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                        <path fill="#606060" d="M14.348,14.849c-0.469,0.469-1.229,0.469-1.697,0L10,11.819l-2.651,3.029c-0.469,0.469-1.229,0.469-1.697,0
+                            c-0.469-0.469-0.469-1.229,0-1.697l2.758-3.15L5.651,6.849c-0.469-0.469-0.469-1.228,0-1.697s1.228-0.469,1.697,0L10,8.183
+                            l2.651-3.031c0.469-0.469,1.228-0.469,1.697,0s0.469,1.229,0,1.697l-2.758,3.152l2.758,3.15
+                            C14.817,13.62,14.817,14.38,14.348,14.849z"/>
+                        </svg>
+                    </div>
+                </div>
+            </nav>
+
+
+            <nav class=" sm:container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full" >
 
                 <div class="block lg:hidden py-5 flex" >
                     <div class="flex items-center sm:px-3 sm:py-2" >
                         <button @click="responsive_tab =! responsive_tab">
-                        <svg class="w-8 h-8" version="1.1" id="Menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                             viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                            <svg class="w-8 h-8" version="1.1" id="Menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                             <path fill="#606060" d="M16.4,9H3.6C3.048,9,3,9.447,3,10c0,0.553,0.048,1,0.6,1h12.8c0.552,0,0.6-0.447,0.6-1S16.952,9,16.4,9z
                                  M16.4,13H3.6C3.048,13,3,13.447,3,14c0,0.553,0.048,1,0.6,1h12.8c0.552,0,0.6-0.447,0.6-1S16.952,13,16.4,13z M3.6,7h12.8
                                 C16.952,7,17,6.553,17,6s-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6S3.048,7,3.6,7z"/>
@@ -24,7 +44,7 @@
                 <div class="block lg:hidden py-5 flex" >
                     <div class=" flex flex-row">
                         <div class="block mt-4 lg:inline-block lg:mt-0 sm:ml-5 mr-2 lg:h-25 lg:py-10 ">
-<!--                            <a href="">-->
+                            <!--                            <a href="">-->
                             <svg class="w-4 h-4 cursor-pointer" version="1.1" id="Magnifying_glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                  y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                 <path fill="#606060" d="M17.545,15.467l-3.779-3.779c0.57-0.935,0.898-2.035,0.898-3.21c0-3.417-2.961-6.377-6.378-6.377
@@ -33,7 +53,7 @@
                                     c0-2.366,1.917-4.283,4.282-4.283c2.366,0,4.474,2.107,4.474,4.474c0,2.365-1.918,4.283-4.283,4.283
                                     C6.111,12.76,4.004,10.652,4.004,8.287z"/>
                             </svg>
-<!--                            </a>-->
+                            <!--                            </a>-->
                         </div>
                         <div class=" block mt-4 lg:inline-block lg:mt-0 sm:ml-4 sm:mr-4 lg:h-25 lg:py-10 ">
                             <svg class="w-4 h-4 cursor-pointer" version="1.1" id="Shopping_cart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -53,8 +73,8 @@
                             <div class="w-11/12 pb-4 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 hover:text-teal-500 text-gray-800 text-sm font-medium">
                                 {{label1}}
                             </div>
-                                <div class="pb-4 border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                    <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            <div class="pb-4 border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
+                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                      y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                     <path fill="#606060" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
                                     c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
@@ -150,24 +170,25 @@
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
                                 {{label1}}
                             </a>
-                            <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader1">
+                            <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader1">
                                 <li class=" hover:text-teal-400"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
                                     <spam class="flex " >HOME-Coperate, Portfolio, blog</spam>
                                     <span>
 <!--                                        <svg class="h-3  w-3 mt-1 items-end" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"-->
-<!--                                             y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
-<!--                                            <path fill="#606060" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908-->
-<!--                                            c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>-->
-<!--                                        </svg>-->
+                                        <!--                                             y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
+                                        <!--                                            <path fill="#606060" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908-->
+                                        <!--                                            c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>-->
+                                        <!--                                        </svg>-->
                                     </span>
                                 </a></li>
-<!--                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white " v-show="isVisible1">-->
-<!--                                    <li class="hover:text-teal-400"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">-->
-<!--                                        <spam class="flex  ">HOME-Coperate</spam>-->
-<!--                                        <span>-->
-<!--                                    </span>-->
-<!--                                    </a></li>-->
-<!--                                </ul>-->
+                                <!--                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white " v-show="isVisible1">-->
+                                <!--                                    <li class="hover:text-teal-400"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">-->
+                                <!--                                        <spam class="flex  ">HOME-Coperate</spam>-->
+                                <!--                                        <span>-->
+                                <!--                                    </span>-->
+                                <!--                                    </a></li>-->
+                                <!--                                </ul>-->
                                 <li class=""  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
                                     <spam class="flex  hover:text-teal-400" >HOME-Coperate, Portfolio, blog</spam>
                                     <span>
@@ -175,13 +196,15 @@
                                     </span>
                                 </a></li>
                             </ul>
+                            </transition>
                         </li>
 
                         <li class="text-teal-400 hover:text-teal-400"   @mouseover="isVisibleHeader2 = true" @mouseleave="isVisibleHeader2 = false" @keydown.enter="isVisibleHeader2 = !isVisibleHeader2">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0  mx-4 lg:h-25 lg:py-10 px-2">
                                 {{label2}}
                             </a>
-                            <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader2">
+                            <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader2">
                                 <li class=" hover:text-teal-400"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
                                     <spam class="flex " >HOME-Coperate, Portfolio, blog</spam>
                                     <span>
@@ -199,6 +222,7 @@
                                     </span>
                                 </a></li>
                             </ul>
+                            </transition>
                         </li>
                         <li class="hover:text-teal-400">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
@@ -222,13 +246,13 @@
                         </li>
                         <li class="hover:text-teal-400">
                             <a href="" class="border-l-4 lg:border-l-0  block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-    <!--                            lg:border-b-4-->
+                                <!--                            lg:border-b-4-->
                                 {{label7}}
                             </a>
                         </li>
                     </ul>
                     <div class="hover:text-teal-400 border-l-4 lg:border-l-2 lg:w-24 flex flex-row">
-                        <div class="block mt-4 lg:inline-block lg:mt-0 ml-5 lg:h-25 lg:py-10 ">
+                        <div class="block mt-4 lg:inline-block lg:mt-0 ml-5 lg:h-25 lg:py-10 " @click="search =! search" >
                             <svg class="w-4 h-4 cursor-pointer" version="1.1" id="Magnifying_glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                  y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                 <path fill="#606060" d="M17.545,15.467l-3.779-3.779c0.57-0.935,0.898-2.035,0.898-3.21c0-3.417-2.961-6.377-6.378-6.377
@@ -251,18 +275,88 @@
 
                 </div>
             </nav>
-<!--            <div>-->
-<!--                <ul class="w-40 h-64">-->
-<!--                    <li></li>-->
-<!--                </ul>-->
 
-<!--            </div>-->
+
+
         </div>
-        <div class=" w-full h-11/12 ">
-            <a class="" >
-                <img class=" h-auto" src="/nits-assets/images/demo.jpg">
-            </a>
-        </div>
+<!--        <div class=" w-full h-11/12 ">-->
+<!--            <a class="" >-->
+<!--                <img class=" h-auto" src="/nits-assets/images/demo.jpg">-->
+<!--            </a>-->
+<!--        </div>-->
+        <section class="px-4 py-4 sm:pt-56">
+            <div class="container mx-auto">
+                <div class="py-6 sm:py-8 sm:flex flex-wrap justify-between">
+                    <div class="w-full sm:w-1/2">
+                        <h3 class="text-xl lg:text-2xl font-regular text-blue-900">
+                            We’re your local
+                        </h3>
+                        <h1 class="text-2xl sm:text-xl lg:text-5xl font-semibold text-blue-900">
+                            website design agency. Innovation starts with us.
+                        </h1>
+                        <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4 mb-10">
+                            We craft unique and meaningful, experiences that will sublime your
+                            business. We are specialized team of programmers and web developers
+                            in PHP Laravel. We are reliable
+                        </p>
+                        <div class="flex items-center">
+                            <a href="" class="px-4 py-3 bg-blue-900 text-white rounded-lg mr-2 text-sm lg:text-lg">More about us</a>
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-1/2">
+                        <div class="w-full mt-20 sm:mt-0">
+                            <img src="/nits-assets/images/hero.svg" alt="Website Design Agency" class="w-full h-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div>
+                <div class="container mx-auto">
+                    <div class="sm:flex flex-wrap justify-center items-center text-center">
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">
+                            <img src="/nits-assets/images/website-design.svg" alt="Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Website Design
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Encompassing today’s website design technology to integrated and build solutions relevant to your business.
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">
+                            <img src="/nits-assets/images/business-branding.svg" alt="Branding for Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Branding
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Share relevant, engaging, and inspirational brand messages to create a connection with your audience.
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">
+                            <img src="/nits-assets/images/website-marketing.svg" alt="Marketing for Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Marketing
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Let us help you level up your search engine game, explore our solutions for digital marketing for your business.
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">
+                            <img src="/nits-assets/images/ecommerce-solutions.svg" alt="eCommerce for Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Ecommerce Solution
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Ready to enhance your e-commerce solutions for brick-mortar stores, small-mid size business, large corporation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </template>
 
@@ -306,6 +400,7 @@
                 isVisibleHeader2: false,
                 isVisibleResponsiveHeader1: false,
                 isVisibleResponsiveSubHeader1: false,
+                search :false,
 
             }
         }

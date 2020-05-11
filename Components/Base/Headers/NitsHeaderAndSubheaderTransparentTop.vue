@@ -195,17 +195,17 @@
                     <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-white text-sm">
                         <li class="hover:text-gray-400" >
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                HOME
+                                {{label1}}
                             </a>
                         </li>
                         <li class=" hover:text-gray-400">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0  mx-4 lg:h-25 lg:py-10 px-2">
-                                FEATURES
+                                {{label2}}
                             </a>
                         </li>
                         <li class="hover:text-gray-400"  @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                PROPERTIES
+                                {{label3}}
                             </a>
                             <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader1">
                                 <li class=" hover:text-teal-400"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
@@ -235,23 +235,23 @@
                         </li>
                         <li class="hover:text-gray-400">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                BUILDERS
+                                {{label4}}
                             </a>
                         </li>
                         <li class="hover:text-gray-400">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                SERVICES
+                                {{label5}}
                             </a>
                         </li>
                         <li class="hover:text-gray-400">
                             <a href="" class="border-l-4 lg:border-l-0  block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                LISTING
+                                {{label6}}
                             </a>
                         </li>
                         <li class="hover:text-gray-400">
                             <a href="" class="border-l-4 lg:border-l-0  block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
                                 <!--                            lg:border-b-4-->
-                                CONTACT
+                                {{label7}}
                             </a>
                         </li>
                     </ul>
