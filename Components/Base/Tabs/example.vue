@@ -20,8 +20,7 @@
                   </svg>
                </span>
                 </button>
-                <ul class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out
-              origin-top-left min-w-32 ">
+                <ul class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32 ">
                     <li class="px-3 py-1 hover:bg-gray-100">Javascript</li>
                     <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
                         <button class="w-full text-left flex items-center outline-none focus:outline-none">
