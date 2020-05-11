@@ -1,15 +1,17 @@
 import {decrypt} from './_encrypt.js';
-import VueSession from './_session';
+import VueSession from './_session.js';
 
 const session = new VueSession(process.env.MIX_STORAGE_PERSIST, process.env.MIX_INACTIVITY_SESSION);
 
 const tokenData = session.get('auth_user');
 
 export const getHeader = function () {
+    const tokenData = session.get('auth_user')
     const headers = {
         'Accept': 'application/json',
         'Authorization': tokenData ? 'Bearer ' + decrypt(tokenData.access_token) : null
     };
+    // console.log(headers);
     return headers;
 };
 
