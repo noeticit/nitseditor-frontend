@@ -11,6 +11,7 @@ import {router} from "./routes";
 import authentication from "ProjectModels/_auth";
 import api from './Models/_api';
 import session from './Models/_session';
+import ability from './Models/_ability';
 import VueMeta from 'vue-meta';
 
 window.Vue = require('vue');
@@ -31,6 +32,8 @@ Vue.prototype.$auth = auth;
 
 const apis = new api();
 Vue.prototype.$api = apis;
+
+Vue.prototype.$ability = new ability();
 /**
  * Middleware to check authentication
  */
