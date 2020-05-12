@@ -30,7 +30,7 @@ export default class auth {
             axios.post('/oauth/token', postData).then(response => {
                 if (response.status === 200) {
                     authUser.access_token = encrypt(response.data.access_token);
-                    authUser.refesh_token = encrypt(response.data.refresh_token);
+                    authUser.refresh_token = encrypt(response.data.refresh_token);
                     session.set('auth_user', authUser);
                     // window.localStorage.setItem('authUser', JSON.stringify(authUser));
 
