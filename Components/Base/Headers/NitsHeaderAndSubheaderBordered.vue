@@ -23,7 +23,17 @@
                 </div>
                 <div class="block lg:hidden py-5 flex" >
                     <div class=" flex flex-row">
-                        <div class="block mt-4 lg:inline-block lg:mt-0 sm:ml-5 mr-2 lg:h-25 lg:py-10 ">
+                        <div class="block mt-2 lg:inline-block lg:mt-0 sm:ml-5 mr-2 lg:h-25 lg:py-10 ">
+                            <svg class="w-4 h-4 cursor-pointer" version="1.1" id="User" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                            <path fill="#606060" d="M7.725,2.146c-1.016,0.756-1.289,1.953-1.239,2.59C6.55,5.515,6.708,6.529,6.708,6.529
+                                s-0.313,0.17-0.313,0.854C6.504,9.1,7.078,8.359,7.196,9.112c0.284,1.814,0.933,1.491,0.933,2.481c0,1.649-0.68,2.42-2.803,3.334
+                                C3.196,15.845,1,17,1,19v1h18v-1c0-2-2.197-3.155-4.328-4.072c-2.123-0.914-2.801-1.684-2.801-3.334c0-0.99,0.647-0.667,0.932-2.481
+                                c0.119-0.753,0.692-0.012,0.803-1.729c0-0.684-0.314-0.854-0.314-0.854s0.158-1.014,0.221-1.793c0.065-0.817-0.398-2.561-2.3-3.096
+                                c-0.333-0.34-0.558-0.881,0.466-1.424C9.439,0.112,8.918,1.284,7.725,2.146z"/>
+                        </svg>
+                        </div>
+                        <div class="block mt-2 lg:inline-block lg:mt-0 sm:ml-5 mr-2 lg:h-25 lg:py-10 " @click="search = ! search">
                             <!--                            <a href="">-->
                             <svg class="w-4 h-4 cursor-pointer" version="1.1" id="Magnifying_glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                  y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -35,7 +45,7 @@
                             </svg>
                             <!--                            </a>-->
                         </div>
-                        <div class=" block mt-4 lg:inline-block lg:mt-0 sm:ml-4 sm:mr-4 lg:h-25 lg:py-10 ">
+                        <div class=" block mt-2 lg:inline-block lg:mt-0 sm:ml-4 sm:mr-4 lg:h-25 lg:py-10 ">
                             <svg class="w-4 h-4 cursor-pointer" version="1.1" id="Shopping_cart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                  y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                 <path fill="#606060" d="M13,17c0,1.104,0.894,2,2,2c1.104,0,2-0.896,2-2c0-1.106-0.896-2-2-2C13.894,15,13,15.894,13,17z M3,17
@@ -226,7 +236,7 @@
                 </ul>
                 <div class="hover:text-teal-400  lg:border-l-2 lg:w-20 flex flex-row">
                     <div class="border-l-4 lg:border-l-0  block mt-4 lg:inline-block lg:mt-0 mx-6 lg:h-25 lg:py-10 px-2">
-                        <svg class="w-5 h-5 ml-" version="1.1" id="User" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        <svg class="w-5 h-5 cursor-pointer" version="1.1" id="User" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                              viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                             <path fill="#606060" d="M7.725,2.146c-1.016,0.756-1.289,1.953-1.239,2.59C6.55,5.515,6.708,6.529,6.708,6.529
                                 s-0.313,0.17-0.313,0.854C6.504,9.1,7.078,8.359,7.196,9.112c0.284,1.814,0.933,1.491,0.933,2.481c0,1.649-0.68,2.42-2.803,3.334
@@ -238,7 +248,7 @@
                 </div>
                 <div class="hover:text-teal-400  lg:border-l-2 lg:w-20 flex flex-row">
                     <div class="border-l-4 lg:border-l-0  block mt-4 lg:inline-block lg:mt-0 mx-6 lg:h-25 lg:py-10 px-2">
-                        <svg class="w-5 h-5" version="1.1" id="Shopping_cart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                        <svg class="w-5 h-5 cursor-pointer" version="1.1" id="Shopping_cart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                              y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                             <path fill="#606060" d="M13,17c0,1.104,0.894,2,2,2c1.104,0,2-0.896,2-2c0-1.106-0.896-2-2-2C13.894,15,13,15.894,13,17z M3,17
                                 c0,1.104,0.895,2,2,2c1.103,0,2-0.896,2-2c0-1.106-0.897-2-2-2C3.895,15,3,15.894,3,17z M6.547,12.172L17.615,9.01
@@ -248,8 +258,8 @@
                     </div>
                 </div>
                 <div class="hover:text-teal-400 lg:border-l-2 lg:w-20 flex flex-row">
-                    <div class="border-l-4 lg:border-l-0  block mt-4 lg:inline-block lg:mt-0 mx-6 lg:h-25 lg:py-10 px-2">
-                        <svg class="w-5 h-5" version="1.1" id="Magnifying_glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                    <div class="border-l-4 lg:border-l-0  block mt-4 lg:inline-block lg:mt-0 mx-6 lg:h-25 lg:py-10 px-2" @click="search = ! search">
+                        <svg class="w-5 h-5 cursor-pointer" version="1.1" id="Magnifying_glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                              y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                             <path fill="#606060" d="M17.545,15.467l-3.779-3.779c0.57-0.935,0.898-2.035,0.898-3.21c0-3.417-2.961-6.377-6.378-6.377
                                 C4.869,2.1,2.1,4.87,2.1,8.287c0,3.416,2.961,6.377,6.377,6.377c1.137,0,2.2-0.309,3.115-0.844l3.799,3.801
@@ -261,9 +271,94 @@
                 </div>
 
             </div>
-
             </nav>
+            <div class="absolute  top-0 w-full " v-if="search">
+                <div class="flex bg-white h-18">
+                    <input class="w-full h-20 ml-2  lg:text-4xl text-gray-600 mt-4 py-1 px-10 bg-white  rounded placeholder-teal-600 text-sm focus:outline-none antialiased tracking-wide font-medium text-teal-600 leading-norma" type="text" placeholder="TYPE & HIT ENTER">
+
+                    <svg @click="search = ! search" class="w-8 h-20 mt-4" version="1.1" id="Cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                        <path fill="#606060" d="M14.348,14.849c-0.469,0.469-1.229,0.469-1.697,0L10,11.819l-2.651,3.029c-0.469,0.469-1.229,0.469-1.697,0
+                            c-0.469-0.469-0.469-1.229,0-1.697l2.758-3.15L5.651,6.849c-0.469-0.469-0.469-1.228,0-1.697s1.228-0.469,1.697,0L10,8.183
+                            l2.651-3.031c0.469-0.469,1.228-0.469,1.697,0s0.469,1.229,0,1.697l-2.758,3.152l2.758,3.15
+                            C14.817,13.62,14.817,14.38,14.348,14.849z"/>
+                    </svg>
+                </div>
+            </div>
     </div>
+        <section class="px-4 py-4 sm:pt-56">
+            <div class="container mx-auto">
+                <div class="py-6 sm:py-8 sm:flex flex-wrap justify-between">
+                    <div class="w-full sm:w-1/2">
+                        <h3 class="text-xl lg:text-2xl font-regular text-blue-900">
+                            We’re your local
+                        </h3>
+                        <h1 class="text-2xl sm:text-xl lg:text-5xl font-semibold text-blue-900">
+                            website design company. Innovation starts with us.
+                        </h1>
+                        <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4 mb-10">
+                            We craft unique and meaningful, experiences that will sublime your
+                            business. We are specialized team of programmers and web developers
+                            in PHP Laravel. We are reliable
+                        </p>
+                        <div class="flex items-center">
+                            <a href="" class="px-4 py-3 bg-blue-900 text-white rounded-lg mr-2 text-sm lg:text-lg">More about us</a>
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-1/2">
+                        <div class="w-full mt-20 sm:mt-0">
+                            <img src="/nits-assets/images/hero.svg" alt="Website Design Agency" class="w-full h-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section>
+            <div>
+                <div class="container mx-auto">
+                    <div class="sm:flex flex-wrap justify-center items-center text-center">
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">
+                            <img src="/nits-assets/images/website-design.svg" alt="Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Website Design
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Encompassing today’s website design technology to integrated and build solutions relevant to your business.
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">
+                            <img src="/nits-assets/images/business-branding.svg" alt="Branding for Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Branding
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Share relevant, engaging, and inspirational brand messages to create a connection with your audience.
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">
+                            <img src="/nits-assets/images/website-marketing.svg" alt="Marketing for Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Marketing
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Let us help you level up your search engine game, explore our solutions for digital marketing for your business.
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">
+                            <img src="/nits-assets/images/ecommerce-solutions.svg" alt="eCommerce for Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Ecommerce Solution
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Ready to enhance your e-commerce solutions for brick-mortar stores, small-mid size business, large corporation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 </template>
 
@@ -307,7 +402,7 @@
                 isVisibleHeader2: false,
                 isVisibleResponsiveHeader1: false,
                 isVisibleResponsiveSubHeader1: false,
-
+                search :false,
             }
         }
     }
