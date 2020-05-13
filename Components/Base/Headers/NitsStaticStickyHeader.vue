@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <nav class="sticky top-0 px-8 mx-auto border-b w-screen ">
+        <nav class="sticky top-0 bg-white px-8 mx-auto border-b w-screen ">
             <div class="flex justify-between h-32 ">
                 <div class="float-left border-r pr-3 ">
                     <img class="h-16 w-56 mt-8 mr-5" src="/nits-assets/images/nits-editor-logo.png">
@@ -8,12 +8,12 @@
 
                 <div class=" ml-56 font-semibold">
                     <div class="float-right ml-12">
-                        <div class="inline-block  text-gray-800 p-1  mx-2">
-                          <a class="text-lg hover:text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0  lg:py-12 px-2" @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false"  @keydown.enter="isVisibleHeader1 = !isVisibleHeader1" href="#">
+                        <div class="inline-block  text-gray-800 p-1 mx-2">
+                          <a class="text-lg hover:text-teal-600 font-semibold mt-4 lg:inline-block lg:mt-0 lg:py-12 px-2" @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false"  @keydown.enter="isVisibleHeader1 = !isVisibleHeader1" href="#">
                                 {{label1}}
 <!--                                HOME-->
                               <ul v-show="isVisibleHeader1" class=" absolute top-0 mt-32 mr-6 w-56 text-gray-600 bg-white border-t-2 border-teal-400" >
-                                  <li class=""  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1">
+                                  <li class=""  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = ! isVisible1">
                                       <a class="rounded-t  hover:bg-gray-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
                                             <span class="block text-base" >HOME-CORPORATE</span>
                                             <span class="mr-auto">
@@ -23,7 +23,7 @@
                                             </span>
                                         </a>
                                     </li>
-                               <li class=""  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1">
+                               <li class=""  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = ! isVisible1">
                                    <a class="rounded-t  hover:bg-gray-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
                                        <span class="flex text-base hover:text-teal-500" >HOME-PORFOLIO</span>
                                        <span class="mr-auto">
@@ -110,9 +110,9 @@
         </nav>
 
         <div class="absolute flex top-0 w-full " v-if="box">
-            <input class="w-full h-20 ml-2 border border-gray-500 mt-4 py-1 px-10 bg-gray-100 rounded placeholder-teal-600 text-sm focus:outline-none antialiased tracking-wide font-medium text-teal-600 leading-norma" type="text" placeholder="Search">
+            <input class="w-full h-32 ml-2 border border-gray-300 py-1 px-10 bg-white rounded placeholder-gray-700 text-xl focus:outline-none antialiased tracking-wide font-medium text-gray-700 leading-normal" type="text" placeholder="TYPE HERE..">
 
-            <svg @click="box = ! box" class="h-5 w-5 mt-12 ml-4 text-black hover:text-red-700" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <svg @click="box = ! box" class="h-5 w-5 mt-12 ml-4 text-black " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2.939 12.789L10 11.729l-3.061 3.06-1.729-1.728L8.271 10l-3.06-3.061L6.94 5.21 10 8.271l3.059-3.061 1.729 1.729L11.729 10l3.06 3.061-1.728 1.728z"/>
             </svg>
         </div>
