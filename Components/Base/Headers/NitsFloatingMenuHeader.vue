@@ -11,7 +11,7 @@
                         <img class="h-16 w-56 mt-8 mr-12 ml-2" src="/nits-assets/images/nits-editor-logo.png">
                     </div>
 
-                    <div class="block lg:flex lg:items-center lg:w-auto hidden ml-64 mt-1 font-semibold">
+                    <div class="block lg:flex lg:items-center lg:w-auto hidden ml-40 mt-1 font-semibold">
                         <div class="">
                             <div class="inline-block  text-gray-800 p-2  mx-4">
                                 <a class="text-lg hover:text-teal-500" href="#">{{label1}}</a>

@@ -5,6 +5,12 @@
             <span class="toggler round"></span>
         </label>
     </div>
+<!--            <div class="flex justify-center items-center">-->
+<!--                <div class="relative rounded-full w-12 h-6 transition duration-200 ease-linear">-->
+<!--                    <label for="toggle" class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer"></label>-->
+<!--                    <input type="checkbox" id="toggle" name="toggle" class="appearance-none w-full h-full active:outline-none focus:outline-none" :checked="(mode === 'dark') ? 'checked' : false" @change="$emit('toggle')"/>-->
+<!--                </div>-->
+<!--            </div>-->
 </template>
 
 <script>
@@ -19,8 +25,8 @@
     .toggle{
         position: relative;
         display: inline-block;
-        width: 60px;
-        height: 34px;
+        width: 50px;
+        height: 20px;
         /*background: #FF0000;*/
     }
     .toggle input{
@@ -42,10 +48,10 @@
     .toggler:before{
         position: absolute;
         content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
+        height: 20px;
+        width: 20px;
+        left: 2px;
+        bottom: 0px;
         background: #FFF;
         -webkit-transition: 0.4s;
         transition: 0.4s;

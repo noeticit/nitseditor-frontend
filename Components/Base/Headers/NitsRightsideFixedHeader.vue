@@ -2,7 +2,7 @@
     <div class="relative">
         <div class="w-full ">
             <div class="w-1/5 z-40">
-             <nav class="fixed right-0 px-10 mt-10 mx-auto">
+             <nav class="fixed right-0 px-10 mt-10 mx-auto mr-6">
             <div class=" flex flex-col ">
                 <div class="float-left  h-18 ">
                     <img class="h-16 w-56 pr-5 mt-6" src="/nits-assets/images/nits-editor-logo.png">
@@ -10,74 +10,178 @@
 
                 <div class="flex flex-col  mt-8 font-semibold">
                     <div class="flex flex-col ">
-                        <div class="inline-block mt-3 text-gray-800 p-1 ">
-                            <a class="text-lg " href="#">
+
+                        <div class="inline-block mt-3  p-1" @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false"  @keydown.enter="isVisible1 = !isVisible1">
+                            <a class="text-lg text-gray-800 hover:text-teal-500 " href="#">
                                 <div class="flex " >
                                     {{label1}}
                                     <svg class="absolute right-0 w-5 h-5  ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
+                                    <path :class="{ 'rotate-90': isVisible1 }" class="transition duration-300 ease-in-out origin-center transform" fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>
+                                <transition class="w-48" enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                    <div v-show="isVisible1" class="absolute pt-2 w-full">
+                                        <div class="relative py-1 bg-white border border-gray-200 rounded-md shadow-xl">
+                                            <div class="absolute top-0 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-white border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
+                                            <div class="relative">
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">HOME-CORPORATE</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">HOME-PORTFOLIO</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">HOME-BLOG</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">HOME-SHOP</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </transition>
                             </a>
                         </div>
 
-                        <div class="inline-block p-1 mt-3">
-                            <a class="text-lg text-gray-800" href="#">
+                        <div class="inline-block p-1 mt-3" @mouseover="isVisible2 = true" @mouseleave="isVisible2 = false"  @keydown.enter="isVisible2 = !isVisible2">
+                            <a class="text-lg text-teal-500" href="#">
                                 <div class="flex " >
                                     {{label2}}
                                     <svg class="absolute right-0 w-5 h-5 ml-24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
+                                    <path :class="{ 'rotate-90': isVisible2 }" class="transition duration-300 ease-in-out origin-center transform" fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>
+                                <transition class="w-48" enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                    <div v-show="isVisible2" class="absolute pt-2 w-full">
+                                        <div class="relative py-1 bg-white border border-gray-200 rounded-md shadow-xl">
+                                            <div class="absolute top-0 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-white border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
+                                            <div class="relative">
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">SLIDERS</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">WIDGETS</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">HEADERS</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">FORMS</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </transition>
+
                             </a>
                         </div>
-                        <div class="inline-block mt-3 p-1 ">
-                            <a class="text-lg text-gray-800" href="#">
+                        <div class="inline-block mt-3 p-1 " @mouseover="isVisible3 = true" @mouseleave="isVisible3 = false"  @keydown.enter="isVisible3 = !isVisible3">
+                            <a class="text-lg text-gray-800 hover:text-teal-500" href="#">
                                 <div class="flex " >
                                     {{label3}}
                                     <svg class="absolute right-0 w-5 h-5 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
+                                    <path :class="{ 'rotate-90': isVisible3 }" class="transition duration-300 ease-in-out origin-center transform" fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>
+                                <transition class="w-48" enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-100" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                    <div v-show="isVisible3" class="absolute pt-2 w-full">
+                                        <div class="relative py-1 bg-white border border-gray-200 rounded-md shadow-xl">
+                                            <div class="absolute top-0 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-white border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
+                                            <div class="relative">
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">INTRODUCTION</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">UTILITY</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">LAYOUT GRID</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </transition>
+
                             </a>
                         </div>
-                        <div class="inline-block p-1 mt-3">
-                            <a class="text-lg text-gray-800" href="#">
+                        <div class="inline-block p-1 mt-3" @mouseover="isVisible4 = true" @mouseleave="isVisible4 = false"  @keydown.enter="isVisible4 = !isVisible4">
+                            <a class="text-lg text-gray-800 hover:text-teal-500" href="#">
                                 <div class="flex " >
                                     {{label4}}
                                     <svg class="absolute right-0 w-5 h-5 mt-1  ml-24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
+                                    <path :class="{ 'rotate-90': isVisible4 }" class="transition duration-300 ease-in-out origin-center transform" fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>
+                                <transition class="w-48" enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                    <div v-show="isVisible4" class="absolute pt-2 w-full">
+                                        <div class="relative py-1 bg-white border border-gray-200 rounded-md shadow-xl">
+                                            <div class="absolute top-0 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-white border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
+                                            <div class="relative">
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">GRID</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">LOADING STYLE</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">MASONRY</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">LAYOUTS</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </transition>
+
                             </a>
                         </div>
-                        <div class="inline-block mt-3 p-1">
-                            <a class="text-lg text-gray-800" href="#">
+                        <div class="inline-block mt-3 p-1" @mouseover="isVisible5 = true" @mouseleave="isVisible5 = false"  @keydown.enter="isVisible5 = !isVisible5">
+                            <a class="text-lg text-gray-800 hover:text-teal-500" href="#">
                                 <div class="flex " >
-                                    {{label5}}<svg class="absolute right-0 w-5 h-5 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
+                                    {{label5}}
+                                    <svg class="absolute right-0 w-5 h-5 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path :class="{ 'rotate-90': isVisible5 }" class="transition duration-300 ease-in-out origin-center transform" fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>
+                                <transition class="w-48" enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                    <div v-show="isVisible5" class="absolute pt-2 w-full">
+                                        <div class="relative py-1 bg-white border border-gray-200 rounded-md shadow-xl">
+                                            <div class="absolute top-0 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-white border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
+                                            <div class="relative">
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">DEFAULT</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">TIMELINE</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">GRID</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">SMALL THUMBS</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </transition>
+
                             </a>
                         </div>
-                        <div class="inline-block mt-3 p-1">
-                            <a class="text-lg text-gray-800" href="#">
+                        <div class="inline-block mt-3 p-1" @mouseover="isVisible6 = true" @mouseleave="isVisible6 = false"  @keydown.enter="isVisible6 = !isVisible6">
+                            <a class="text-lg text-gray-800 hover:text-teal-500" href="#">
                                 <div class="flex " >
                                     {{label6}}
                                     <svg class="absolute right-0 w-5 h-5 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
+                                    <path :class="{ 'rotate-90': isVisible6 }" class="transition duration-300 ease-in-out origin-center transform" fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>
+                                <transition class="w-48" enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                    <div v-show="isVisible6" class="absolute pt-2 w-full">
+                                        <div class="relative py-1 bg-white border border-gray-200 rounded-md shadow-xl">
+                                            <div class="absolute top-0 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-white border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
+                                            <div class="relative">
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">4 COLUMNS</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">3 COLUMNS</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">2 COLUMNS</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">CART</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">CHECKOUT</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </transition>
                             </a>
                         </div>
-                        <div class="inline-block mt-3 p-1">
-                            <a class="text-lg text-gray-800" href="#">
+                        <div class="inline-block mt-3 p-1" @mouseover="isVisible7 = true" @mouseleave="isVisible7 = false"  @keydown.enter="isVisible7 = !isVisible7">
+                            <a class="text-lg text-gray-800 hover:text-teal-500" href="#">
                                 <div class="flex " >
                                     {{label7}}
-                                    <svg class="absolute right-0 w-5 h-5  ml-16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
+                                    <svg class="absolute right-0 w-5 h-5 hover:text-teal-500 ml-16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path :class="{ 'rotate-90': isVisible7 }" class="transition duration-300 ease-in-out origin-center transform" fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>
+                                <transition class="w-48" enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                    <div v-show="isVisible7" class="absolute pt-2 w-full">
+                                        <div class="relative py-1 bg-white border border-gray-200 rounded-md shadow-xl">
+                                            <div class="absolute top-0 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-white border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
+                                            <div class="relative">
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">ANIMATION</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">BUTTONS</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">CAROUSEL</a>
+                                                <a href="#" class="block w-full px-4 py-2 text-sm text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">CHARTS</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </transition>
                             </a>
                         </div>
                     </div>
@@ -187,6 +291,19 @@
                 required: true
             }
         },
+        data(){
+            return{
+                isVisible1: false,
+                isVisible2: false,
+                isVisible3: false,
+                isVisible4: false,
+                isVisible5: false,
+                isVisible6: false,
+                isVisible7: false,
+
+            }
+        }
+
 
     }
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div class="relative">
-        <img src="/nits-assets/images/school_image.jpg" alt="education image">
+        <img src="/nits-assets/images/blog-4.jpg" alt="education image">
 
         <nav class="absolute top-0 py-6 px-8 mx-auto bg-black w-screen opacity-75 ">
             <div class="flex justify-between">
