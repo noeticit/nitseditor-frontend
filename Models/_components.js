@@ -45,7 +45,6 @@ Vue.component('BaseHorizontalButton', () => import('NitsComponents/Base/GroupBut
 Vue.component('BaseIconButton', () => import('NitsComponents/Base/GroupButton/BaseIconButton.vue'));
 Vue.component('BaseIconForButton', () => import('NitsComponents/Base/GroupButton/BaseIconForButton.vue'));
 Vue.component('BaseVerticalButton', () => import('NitsComponents/Base/GroupButton/BaseVerticalButton.vue'));
-Vue.component('HeaderFixedScroll', () => import('NitsComponents/Base/Headers/HeaderFixedScroll.vue'));
 Vue.component('NitsFloatingMenuHeader', () => import('NitsComponents/Base/Headers/NitsFloatingMenuHeader.vue'));
 Vue.component('NitsFramedLayoutHeader', () => import('NitsComponents/Base/Headers/NitsFramedLayoutHeader.vue'));
 Vue.component('NitsHAlternateLogo', () => import('NitsComponents/Base/Headers/NitsHAlternateLogo.vue'));

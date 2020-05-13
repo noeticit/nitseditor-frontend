@@ -124,10 +124,6 @@
 <!--                        </svg>-->
 <!--                </div>-->
 <!--            </div>-->
-
-
-
-
 <!--        <div v-if="search"  class="">-->
 <!--            <input type="text" class="w-full h-10 ml-4 border border-teal-400 mt-4 py-1 px-2 bg-white rounded placeholder-teal-500 text-sm focus:outline-none antialiased tracking-wide text-gray-400 leading-normal" placeholder="Search (By Code)">-->
 
