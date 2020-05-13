@@ -51,7 +51,7 @@
                 </div>
             </div>
 
-            <div v-if="Open" class="block flex flex-col h-screen w-1/4 bg-gray-900">
+            <div v-if="Open" class="block flex flex-col  w-1/4 bg-gray-900">
                 <div class="flex-col ">
                     <div class="mt-16 ml-4 text-white">
                         <h4 class=" text-center text-lg mr-12 font-semibold"> ABOUT NITSEDITOR</h4>
@@ -170,23 +170,23 @@
             <!--                <div class="h-screen w-screen bg-gray-200"></div>-->
 
         </div>
-        <div class="w-full flex mt-10">
-            <div class="w-2/5">
-                <div class="ml-12 ">
-                    <h3 class="text-4xl font-semibold text-blue-900 py-4">
-                        Understand your users
-                    </h3>
-                    <p class="text-xl text-gray-700 py-4">
-                        UXOps is a card sorting tool that makes <br>
-                        it easy to research how your users relate to,<br>
-                        organize and think about your content.
-                    </p>
-                </div>
-            </div>
-            <div class="w-2/5 ml-12">
-                <img class="" src="/project-assets/images/clip-programming-15.png">
-            </div>
-        </div>
+<!--        <div class="w-full flex mt-10">-->
+<!--            <div class="w-2/5">-->
+<!--                <div class="ml-12 ">-->
+<!--                    <h3 class="text-4xl font-semibold text-blue-900 py-4">-->
+<!--                        Understand your users-->
+<!--                    </h3>-->
+<!--                    <p class="text-xl text-gray-700 py-4">-->
+<!--                        UXOps is a card sorting tool that makes <br>-->
+<!--                        it easy to research how your users relate to,<br>-->
+<!--                        organize and think about your content.-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="w-2/5 ml-12">-->
+<!--                <img class="" src="/project-assets/images/clip-programming-15.png">-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 
 </template>
