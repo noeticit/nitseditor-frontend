@@ -2,8 +2,8 @@
     <div class="" >
         <div class="bg-white shadow-lg sm:fixed w-full">
             <div class="vue-portal-target " v-if="tab">
-            <div class="bg-white w-screen fixed h-screen overflow-x-scroll pin-y  z-50 opacity-100">
-                <div  class=" h-20 flex items-right px-4 pin-t pin-r fixed ml-11/12 -mb-20 cursor-pointer" >
+            <div class="bg-white w-screen fixed h-screen overflow-x-scroll pin-y  z-50 opacity-100 ">
+                <div  class=" h-20 flex items-right ml-11/12 cursor-pointer" >
                     <svg @click="tab = ! tab" class="w-8 h-20 cursor-pointer" version="1.1" id="Cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                         <path fill="#606060" d="M14.348,14.849c-0.469,0.469-1.229,0.469-1.697,0L10,11.819l-2.651,3.029c-0.469,0.469-1.229,0.469-1.697,0
@@ -12,7 +12,7 @@
                             C14.817,13.62,14.817,14.38,14.348,14.849z"/>
                     </svg>
                 </div>
-                <div class="flex flex-col items-center justify-center w-full min-h-full pb-16 pt-24 relative z-50">
+                <div class="flex flex-col items-center justify-center w-full min-h-full pb-16 relative z-50">
                     <a class="hover:text-teal-400 text-gray-700 font-semibold mx-2 mb-4 no-underline text-2xl cursor-pointer uppercase ">{{label1}}</a>
                     <a class="hover:text-teal-400 text-teal-400 font-semibold mx-2 mb-4 no-underline text-2xl cursor-pointer uppercase ">{{label2}}</a>
                     <a class="hover:text-teal-400 text-gray-700 font-semibold mx-2 mb-4 no-underline text-2xl cursor-pointer uppercase ">{{label3}}</a>
@@ -199,7 +199,7 @@
             <div class="flex bg-white h-18">
                     <input class="w-full h-20 ml-2  lg:text-4xl text-gray-600 mt-4 py-1 px-10 bg-white  rounded placeholder-teal-600 text-sm focus:outline-none antialiased tracking-wide font-medium text-teal-600 leading-norma" type="text" placeholder="TYPE & HIT ENTER">
 
-                    <svg @click="search = ! search" class="w-8 h-20 mt-4" version="1.1" id="Cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <svg @click="search = ! search" class="w-8 h-20 mt-4 mr-4" version="1.1" id="Cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                         <path fill="#606060" d="M14.348,14.849c-0.469,0.469-1.229,0.469-1.697,0L10,11.819l-2.651,3.029c-0.469,0.469-1.229,0.469-1.697,0
                             c-0.469-0.469-0.469-1.229,0-1.697l2.758-3.15L5.651,6.849c-0.469-0.469-0.469-1.228,0-1.697s1.228-0.469,1.697,0L10,8.183
@@ -209,7 +209,6 @@
                 </div>
             </div>
         </div>
-
         <section class="px-4 py-4 sm:pt-56">
             <div class="container mx-auto">
                 <div class="py-6 sm:py-8 sm:flex flex-wrap justify-between">

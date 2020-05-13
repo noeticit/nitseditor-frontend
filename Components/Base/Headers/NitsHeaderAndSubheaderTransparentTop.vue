@@ -2,8 +2,8 @@
     <div class="relative">
         <div class=" absolute top-0  w-full">
             <nav class=" container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-10 w-full">
-                <div class=" flex items-center flex-shrink-0 mt-2">
-                    <div class="text-white ml-8 ">All Cities</div>
+                <div class=" flex items-center flex-shrink-0 mt-2 cursor-pointer">
+                    <div class="text-white ml-8  ">All Cities</div>
                     <div class="">
                         <svg class="h-4 w-4 ml-1" version="1.1" id="Chevron_down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                              y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -14,9 +14,9 @@
                     </div>
                 </div>
                 <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
-                    <div class="lg:flex-grow font-small  flex flex-col lg:flex-row pb-4 lg:pb-0 text-white text-sm">
+                    <div class="lg:flex-grow font-small  flex flex-col lg:flex-row pb-4 lg:pb-0 text-white text-sm cursor-pointer">
                         <div class=" flex items-center flex-shrink-0 mr-4 mt-3">
-                            <div class="">
+                            <div class="cursor-pointer">
                                 <svg class="h-4 w-4" version="1.1" id="Phone" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                     <path fill="#FFFFFF" d="M11.229,11.229c-1.583,1.582-3.417,3.096-4.142,2.371c-1.037-1.037-1.677-1.941-3.965-0.102
@@ -26,8 +26,8 @@
                             </div>
                             <div class="text-white ml-1">+1800-123-7890</div>
                         </div>
-                        <div class=" flex items-center flex-shrink-0 mt-3">
-                            <div class="">
+                        <div class=" flex items-center flex-shrink-0 mt-3 cursor-pointer" >
+                            <div class="cursor-pointer">
                                 <svg class="h-4 w-4 ml-4" version="1.1" id="Download" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                     <path fill="#FFFFFF" d="M15,7h-3V1H8v6H5l5,5L15,7z M19.338,13.532c-0.21-0.224-1.611-1.723-2.011-2.114
@@ -39,12 +39,12 @@
                             </div>
                             <div class="text-white ml-1">Download App</div>
                         </div>
-                        <div class="ml-4 ">
+                        <div class="ml-4 cursor-pointer">
                             <div  class="border block lg:inline-block lg:mt-12 mx-4 lg:h-25 lg:py-1 px-2 rounded-full hover:bg-white hover:text-black">
                                 Sell/Rent Your Property
                             </div>
                         </div>
-                        <div class="hover:text-gray-400 mt-3">
+                        <div class="hover:text-gray-400 mt-3 cursor-pointer">
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-2 lg:h-25 lg:py-10 px-2">
                                 Login/Register
                             </a>
@@ -73,7 +73,7 @@
                 </div>
                 <div class=" flex items-center flex-shrink-0 px-6  py-5">
                     <a class="">
-                        <img class="w-48 h-auto" src="/nits-assets/images/logo.png">
+                        <img class="w-48 h-auto" src="/nits-assets/images/nits-editor-logo.png">
                     </a>
                     <!--                <a class="w-20 h-18" src="/nits-assets/images/logo.png"></a>-->
                 </div>
@@ -207,8 +207,8 @@
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
                                 {{label3}}
                             </a>
-                            <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader1">
-                                <li class=" hover:text-teal-400"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
+                            <ul  class="dropdown-menu absolute  text-white bg-blue-700 border-t-2 " v-show="isVisibleHeader1">
+                                <li class=" hover:text-orange-400"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  py-4 px-4 block whitespace-no-wrap flex " href="#">
                                     <spam class="flex " >HOME-Coperate, Portfolio, blog</spam>
                                     <span>
 <!--                                        <svg class="h-3  w-3 mt-1 items-end" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"-->
@@ -262,11 +262,85 @@
             </nav>
         </div>
 
-        <div class=" w-full h-11/12 ">
-            <a class="">
-                <img class=" h-auto" src="/nits-assets/images/demo.jpg">
-            </a>
-        </div>
+        <section class="px-4 py-4 sm:pt-56 bg-yellow-600">
+            <div class="container mx-auto">
+                <div class="py-6 sm:py-8 sm:flex flex-wrap justify-between">
+                    <div class="w-full sm:w-1/2">
+                        <h3 class="text-xl lg:text-2xl font-regular text-white">
+                            We’re your local
+                        </h3>
+                        <h1 class="text-2xl sm:text-xl lg:text-5xl font-semibold text-white">
+                            website design company. Innovation starts with us.
+                        </h1>
+                        <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4 mb-10 text-white">
+                            We craft unique and meaningful, experiences that will sublime your
+                            business. We are specialized team of programmers and web developers
+                            in PHP Laravel. We are reliable
+                        </p>
+                        <div class="flex items-center">
+                            <a href="" class="px-4 py-3 bg-blue-900 text-white rounded-lg mr-2 text-sm lg:text-lg">More about us</a>
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-1/2">
+                        <div class="w-full mt-20 sm:mt-0">
+                            <img src="/nits-assets/images/hero.svg" alt="Website Design Agency" class="w-full h-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div>
+                <div class="container mx-auto">
+                    <div class="sm:flex flex-wrap justify-center items-center text-center">
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">
+                            <img src="/nits-assets/images/website-design.svg" alt="Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Website Design
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Encompassing today’s website design technology to integrated and build solutions relevant to your business.
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">
+                            <img src="/nits-assets/images/business-branding.svg" alt="Branding for Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Branding
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Share relevant, engaging, and inspirational brand messages to create a connection with your audience.
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">
+                            <img src="/nits-assets/images/website-marketing.svg" alt="Marketing for Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Marketing
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Let us help you level up your search engine game, explore our solutions for digital marketing for your business.
+                            </p>
+                        </div>
+                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">
+                            <img src="/nits-assets/images/ecommerce-solutions.svg" alt="eCommerce for Website Design Agency" class="block mx-auto">
+                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
+                                Ecommerce Solution
+                            </h3>
+                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
+                                Ready to enhance your e-commerce solutions for brick-mortar stores, small-mid size business, large corporation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!--        <div class=" w-full h-11/12 ">-->
+<!--            <a class="">-->
+<!--                <img class=" h-auto" src="/nits-assets/images/demo.jpg">-->
+<!--            </a>-->
+<!--        </div>-->
     </div>
 </template>
 
