@@ -1,7 +1,7 @@
 <template>
     <div class="flex">
         <div class="relative">
-            <img class=" h-auto w-screen" src="/nits-assets/images/school_image.jpg">
+            <img class=" h-auto w-screen" src="/Assets/images/school_image.jpg">
             <div @click="box4 = true " :class="box4 ? 'hidden' : 'block'" class=" bg-white cursor-pointer  rounded mr-6 mt-5 absolute right-0 top-0">
                 <svg class=" h-8 w-8 px-1 py-1" version="1.1" id="Menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                      viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">

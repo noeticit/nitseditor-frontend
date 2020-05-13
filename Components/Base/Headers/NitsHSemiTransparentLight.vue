@@ -2,33 +2,65 @@
     <div class="relative">
         <img src="/nits-assets/images/school_image.jpg" alt="education image">
 
-        <nav class="absolute top-0 py-6 px-8 mx-auto bg-white w-screen opacity-50 ">
+        <nav class="fixed top-0 py-6 px-8 mx-auto bg-white w-screen opacity-50 ">
             <div class="flex justify-between">
                 <div class="float-left text-white ml-24">
                     <img class="h-12 w-48 pr-5" src="/nits-assets/images/nits-editor-logo.png">
                 </div>
                 <div class="mr-24 text-lg font-semibold">
                     <div class="float-right">
-                        <div class="inline-block cursor-default text-black p-1  mx-3">
-                            <a class="text-sm text-black " href="#">{{label1}}</a>
+                        <div class="inline-block cursor-pointer text-black p-1 mx-3" @mouseover="isVisible = true" @mouseleave="isVisible = false" @keydown.enter="isVisible = !isVisible">
+                            <div class="inline-flex items-center justify-between px-2 py-1 font-medium  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
+                                <span class="flex-shrink-0 tracking-widest cursor-defaul text-sm">{{label1}}</span>
+                            </div>
+                            <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                <div v-show="isVisible" class="absolute pt-2">
+                                    <div class="relative py-1 bg-white border border-gray-200 rounded-md shadow-xl">
+                                        <div class="absolute top-0 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-white border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
+                                        <div class="relative">
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </transition>
+                        </div>
+                        <div class="mr-6 p-1 inline-block" @mouseover="Visible = true" @mouseleave="Visible = false" @keydown.enter="Visible = !Visible">
+                            <div class="inline-flex items-center justify-between px-2 py-1 font-medium  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
+                                <span class="flex-shrink-0 tracking-widest text-black text-sm">{{label2}}</span>
+                            </div>
+                            <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+                                <div v-show="Visible" class="absolute pt-2">
+                                    <div class="relative py-1 bg-white border border-gray-200 rounded-md shadow-xl">
+                                        <div class="absolute top-0 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-white border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
+                                        <div class="relative">
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                            <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </transition>
                         </div>
                         <div class="inline-block cursor-pointer text-black p-1 mx-3">
-                            <a class="text-sm" href="#">{{label2}}</a>
+                            <a class="flex-shrink-0 tracking-widest text-black text-sm" href="#">{{label3}}</a>
                         </div>
                         <div class="inline-block cursor-pointer text-black p-1 mx-3">
-                            <a class="text-sm" href="#">{{label3}}</a>
-                        </div>
-                        <div class="inline-block cursor-pointer text-black p-1 mx-3">
-                            <a class="text-sm" href="#">{{label4}}</a>
+                            <a class="flex-shrink-0 tracking-widest text-black text-sm" href="#">{{label4}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-1 text-black mx-3">
-                            <a class="text-sm" href="#">{{label5}}</a>
+                            <a class="flex-shrink-0 tracking-widest text-black text-sm" href="#">{{label5}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-2 text-black mx-3">
-                            <a class="text-sm" href="#">{{label6}}</a>
+                            <a class="flex-shrink-0 tracking-widest text-black text-sm" href="#">{{label6}}</a>
                         </div>
                         <div class="inline-block cursor-pointer p-2 text-black mx-3">
-                            <a class="text-sm" href="#">{{label7}}</a>
+                            <a class="flex-shrink-0 tracking-widest text-black text-sm" href="#">{{label7}}</a>
                         </div>
                         <div class="inline-block cursor-pointer pt-2 text-black mx-3">
                             <svg @click="box = ! box" class="w-5 h-5 cursor-pointer text-black" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -90,7 +122,9 @@
         },
         data(){
             return{
-                box:false
+                box:false,
+                isVisible: false,
+                Visible: false,
             }
         }
     }
