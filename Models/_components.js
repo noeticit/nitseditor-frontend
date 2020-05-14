@@ -26,6 +26,7 @@ Vue.component('BaseSecondaryButton', () => import('NitsComponents/Base/Buttons/B
 Vue.component('BaseSolidButton', () => import('NitsComponents/Base/Buttons/BaseSolidButton.vue'));
 Vue.component('NitsButton', () => import('NitsComponents/Base/Buttons/NitsButton.vue'));
 Vue.component('NitsToggleButton', () => import('NitsComponents/Base/Buttons/NitsToggleButton.vue'));
+Vue.component('NitsFooterLayout2', () => import('NitsComponents/Base/Footers/NitsFooterLayout2.vue'));
 Vue.component('NitsFooterLayout4', () => import('NitsComponents/Base/Footers/NitsFooterLayout4.vue'));
 Vue.component('NitsStickyFooter', () => import('NitsComponents/Base/Footers/NitsStickyFooter.vue'));
 Vue.component('NitsCkeditor', () => import('NitsComponents/Base/Forms/NitsCkeditor.vue'));
