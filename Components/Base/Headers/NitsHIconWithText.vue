@@ -47,7 +47,6 @@
                                     </div>
                                 </div>
                             </transition>
-
                         </div>
                         <div class="inline-block hover:text-teal-500 cursor-pointer text-gray-700 px-2 mx-3">
                             <svg class="h-6 w-6 mb-1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">

@@ -7,6 +7,7 @@ Vue.component('EmailAd', () => import('NitsComponents/App/EmailAd.vue'));
 Vue.component('MenuBuilder', () => import('NitsComponents/App/MenuBuilder.vue'));
 Vue.component('SearchFilters', () => import('NitsComponents/App/SearchFilters.vue'));
 Vue.component('SiteInfoWidget', () => import('NitsComponents/App/SiteInfoWidget.vue'));
+Vue.component('NitsAboutUs', () => import('NitsComponents/Base/About/NitsAboutUs.vue'));
 Vue.component('BaseBannerAlert', () => import('NitsComponents/Base/Alerts/BaseBannerAlert.vue'));
 Vue.component('BaseLeftAccentBorderAlert', () => import('NitsComponents/Base/Alerts/BaseLeftAccentBorderAlert.vue'));
 Vue.component('BaseModernBadgeAlert', () => import('NitsComponents/Base/Alerts/BaseModernBadgeAlert.vue'));
