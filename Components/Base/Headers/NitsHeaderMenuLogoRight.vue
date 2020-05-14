@@ -5,14 +5,14 @@
             <div class="flex justify-between">
 
                 <div class="flex " >
-                    <div class="float-right py-8 ml-2">
+                    <div class="float-right py-2 ml-2">
                         <div class="inline-block pl-4 mx-3 ">
                             <a class=" text-red-800 text-sm font-semibold" href="">{{label1}}
 <!--                                HOME-->
                             </a>
                         </div>
-                        <div class="inline-block pl-2 mx-3 ">
-                            <a class=" text-gray-800 text-sm hover:text-red-800 font-semibold" @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1" href="">
+                        <div class="inline-block pl-1 mx-3 ">
+                            <a class=" text-gray-900 text-sm hover:text-red-800 font-semibold lg:inline-block lg:py-6 px-2" @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1" href="">
                               <div class="flex"  >
 <!--                               MODELS-->
                                   {{label2}}
@@ -50,25 +50,25 @@
                             </a>
                         </div>
                         <div class="inline-block pl-2 mx-3 ">
-                            <a class=" text-gray-800 hover:text-red-800 text-sm font-semibold" href="">{{label3}}</a>
+                            <a class=" text-gray-900 hover:text-red-800 text-sm font-semibold" href="">{{label3}}</a>
                         </div>
                         <div class="inline-block pl-2 mx-3 ">
-                            <a class=" text-gray-800 hover:text-red-800 text-sm font-semibold" href="">{{label4}}</a>
+                            <a class=" text-gray-900 hover:text-red-800 text-sm font-semibold" href="">{{label4}}</a>
                         </div>
-                        <div class="inline-block mx-3 ">
-                            <a class=" text-gray-800 hover:text-red-800 text-sm font-semibold" href="">{{label5}}</a>
+                        <div class="inline-block pl-2 mx-3 ">
+                            <a class=" text-gray-900 hover:text-red-800 text-sm font-semibold" href="">{{label5}}</a>
                         </div>
-                        <div class="inline-block mx-3 ">
-                            <a class=" text-gray-800 hover:text-red-800 text-sm font-semibold" href="">{{label6}}</a>
+                        <div class="inline-block pl-2 mx-3 ">
+                            <a class=" text-gray-900 hover:text-red-800 text-sm font-semibold" href="">{{label6}}</a>
                         </div>
-                        <div class="inline-block mx-3 ">
-                            <a class=" text-gray-800 hover:text-red-800 text-sm font-semibold" href="">{{label7}}</a>
+                        <div class="inline-block pl-2 mx-3 ">
+                            <a class=" text-gray-900 hover:text-red-800 text-sm font-semibold" href="">{{label7}}</a>
                         </div>
-                        <div class="inline-block mx-3 ">
-                            <a class=" text-gray-800 hover:text-red-800 text-sm font-semibold" href="">{{label8}}</a>
+                        <div class="inline-block pl-2 mx-3 ">
+                            <a class=" text-gray-900 hover:text-red-800 text-sm font-semibold" href="">{{label8}}</a>
                         </div>
-                        <div class="inline-block mx-3  ">
-                            <a class=" text-gray-800 hover:text-red-800 text-sm font-semibold" href="">{{label9}}</a>
+                        <div class="inline-block pl-2 mx-3 ">
+                            <a class=" text-gray-900 hover:text-red-800 text-sm font-semibold" href="">{{label9}}</a>
                         </div>
 
                     </div>

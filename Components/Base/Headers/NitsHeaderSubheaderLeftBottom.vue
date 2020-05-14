@@ -225,6 +225,7 @@
             </div>
 
         </nav>
+
         <div class="absolute bottom-0 px-56 mb-16 ml-64 ">
             <h3 class=" font-black text-5xl text-white ">{{heading}}</h3>
         </div>
