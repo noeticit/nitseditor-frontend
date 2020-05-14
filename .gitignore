@@ -1,3 +1,4 @@
 /node_modules
 /.idea
 /routes.js
+/Models/_components.js

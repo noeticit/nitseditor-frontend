@@ -117,22 +117,25 @@
             </svg>
         </div>
 
-        <div class=" flex h-32 w-screen bg-gray-200">
+        <div class=" flex h-32 w-screen mx-auto justify-between bg-gray-200">
             <div class="float-left mt-10 ml-56 ">
                 <h1 class="text-3xl ">FOOTER - LAYOUT 2</h1>
             </div>
-            <div class=" float-right ml-64 ">
-                <ul class="flex px-40 ml-64 mt-10">
-                    <li class=" p-2">
-                        <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Home /</a>
-                    </li>
-                    <li class=" p-2">
-                        <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Templetes /</a>
-                    </li>
-                    <li class=" p-2">
-                        <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Footer 4</a>
-                    </li>
-                </ul>
+<!--            <div class=" float-right ml-64 ">-->
+<!--                <ul class="flex px-40 ml-64 mt-10">-->
+<!--                    <li class=" p-2">-->
+<!--                        <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Home /</a>-->
+<!--                    </li>-->
+<!--                    <li class=" p-2">-->
+<!--                        <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Templetes /</a>-->
+<!--                    </li>-->
+<!--                    <li class=" p-2">-->
+<!--                        <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Footer 4</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+            <div class="w-full h-full block lg:flex lg:w-auto hidden mr-40">
+                <base-bread-crumb-one name="" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
             </div>
         </div>
 
@@ -186,7 +189,7 @@
                 <div class="flex flex-col">
                     <img class="h-16 w-56 mt-20 mr-5" src="/nits-assets/images/nits-editor-logo.png">
 
-                    <p class=" ml-5 mt-6 text-gray-300 text-sm">
+                    <p class=" ml-5 mt-6 text-gray-400 text-sm">
                         We believe in Simple, Creative & Flexible Design <br>Standards with a Retina & Responsive Approach.<br>
                         Browse the amazing Features this template offers.
                     </p>
@@ -210,12 +213,12 @@
                 </div>
                 <div class="flex flex-col ml-12 mt-24 ">
                     <h4 class="text-gray-200 text-lg">CLIENT TESTIMONIALS</h4>
-                    <p class="text-gray-200 mt-12 ">
-                        <i>"Similique fugit repellendus exceptiture <br>perferendis provident quia eaque.
+                    <p class="text-gray-500 mt-10 ">
+                        <i class="text-gray-400 text-sm">"Similique fugit repellendus exceptiture <br>perferendis provident quia eaque.
                             Repellendus, <br>vero numquam?"</i><br>
 
                         <span class="mt-4">-STEVE JOBS</span><br>
-                        <span class="text-sm ml-2">Apple Inc.</span>
+                        <span class="text-sm ml-2 text-gray-400">Apple Inc.</span>
                     </p>
                     <div class="flex mt-16 ">
                         <div class="flex -ml-4">
@@ -318,8 +321,8 @@
                         </div>
                         <input type="email" class="bg-gray-700 px-16 text-gray-300 text-left rounded-r" placeholder="Enter your Email">
                     </div>
-                    <textarea class=" bg-gray-700 mt-3 px-24 py-8 text-gray-300 rounded" placeholder="Message"></textarea>
-                    <button class="bg-red-600 text-white mt-3 py-2 mr-56 rounded">Send Email</button>
+                    <textarea class="  bg-gray-700 mt-3 px-4 py-8 -mr-6 text-left text-gray-300 rounded" placeholder="Message"></textarea>
+                    <button class="bg-red-600 text-white mt-3 py-2 px-3 mr-56 rounded">Send Email</button>
 
 
                 </div>
@@ -367,6 +370,7 @@
                 isVisibleHeader1: false,
                 isVisibleHeader2: false,
                 search: false,
+                breadcrumbs: ['Home', 'Templates', 'Footer 4'],
 
             }
         },
