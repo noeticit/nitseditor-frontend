@@ -11,7 +11,7 @@
                 <div class="flex flex-col  mt-8 font-semibold">
                     <div class="flex flex-col ">
                         <div class="inline-block mt-3 text-gray-800 p-1 ">
-                            <a class="text-lg " href="#">
+                            <a class="text-lg hover:text-teal-500" href="#">
                                 <div class="flex " >
                                     {{label1}}
                                     <svg class="absolute right-0 w-5 h-5 mt-1 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -21,7 +21,7 @@
                             </a>
                         </div>
                         <div class="inline-block p-1 mt-3">
-                            <a class="text-lg text-gray-800" href="#">
+                            <a class="text-lg text-teal-500" href="#">
                                 <div class="flex " >
                                     {{label2}}
                                     <svg class="absolute right-0 w-5 h-5 mt-1 ml-24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -31,7 +31,7 @@
                             </a>
                         </div>
                         <div class="inline-block mt-3 p-1 ">
-                            <a class="text-lg text-gray-800" href="#">
+                            <a class="text-lg text-gray-800 hover:text-teal-500" href="#">
                                 <div class="flex " >
                                     {{label3}}
                                     <svg class="absolute right-0 w-5 h-5 mt-1 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -41,7 +41,7 @@
                             </a>
                                 </div>
                         <div class="inline-block p-1 mt-3">
-                            <a class="text-lg text-gray-800" href="#">
+                            <a class="text-lg text-gray-800 hover:text-teal-500" href="#">
                                 <div class="flex " >
                                     {{label4}}
                                     <svg class="absolute right-0 w-5 h-5 mt-1 ml-24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -51,7 +51,7 @@
                             </a>
                         </div>
                         <div class="inline-block mt-3 p-1">
-                            <a class="text-lg text-gray-800" href="#">
+                            <a class="text-lg text-gray-800 hover:text-teal-500" href="#">
                                 <div class="flex " >
                                     {{label5}}
                                     <svg class="absolute right-0 w-5 h-5 mt-1 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -61,7 +61,7 @@
                             </a>
                         </div>
                         <div class="inline-block mt-3 p-1">
-                            <a class="text-lg text-gray-800" href="#">
+                            <a class="text-lg text-gray-800 hover:text-teal-500" href="#">
                                 <div class="flex " >
                                     {{label6}}
                                     <svg class="absolute right-0 w-5 h-5 mt-1 ml-32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -71,9 +71,10 @@
                             </a>
                         </div>
                         <div class="inline-block mt-3 p-1">
-                            <a class="text-lg text-gray-800" href="#">
+                            <a class="text-lg text-gray-800 hover:text-teal-500" href="#">
                                 <div class="flex " >
-                                    {{label7}}<svg class="absolute right-0 w-5 h-5 mt-1 ml-16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    {{label7}}
+                                    <svg class="absolute right-0 w-5 h-5 mt-1 ml-16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M11 10L7.86 6.58a.7.7 0 010-.98c.27-.27.7-.27.97 0l3.83 3.91a.7.7 0 010 .98l-3.83 3.9a.68.68 0 01-.97 0 .7.7 0 010-.97L11 10z"/>
                                 </svg>
                                 </div>

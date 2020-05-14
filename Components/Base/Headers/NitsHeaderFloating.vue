@@ -1,7 +1,7 @@
 <template>
     <div class="relative">
-        <div class=" w-screen h-11/12">
-            <img class=" h-auto" src="/project-assets/images/HiRes1-150x150.jpg.jpg">
+        <div class=" w-auto h-11/12">
+            <img class=" h-auto" src="/nits-assets/images/demo.jpg">
         </div>
         <div class="bg-white shadow-lg absolute top-0 lg:w-4/5 lg:ml-40 lg:mt-10 sm:w-full md:w-full ">
             <nav class=" md:container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full">
@@ -227,7 +227,7 @@
                         </li>
                     </ul>
                     <div class="hover:text-teal-400 lg:w-24 flex flex-row">
-                        <div class="block mt-4 lg:inline-block lg:mt-0 ml-5 lg:h-25 lg:py-10 ">
+                        <div class="block mt-4 lg:inline-block lg:mt-0 ml-5 lg:h-25 lg:py-10 " @click="search = ! search">
                             <svg class="w-4 h-4" version="1.1" id="Magnifying_glass" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                  y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                 <path fill="#000000" d="M17.545,15.467l-3.779-3.779c0.57-0.935,0.898-2.035,0.898-3.21c0-3.417-2.961-6.377-6.378-6.377
@@ -254,11 +254,21 @@
 
             </nav>
         </div>
-<!--        <div class=" w-full h-11/12 ">-->
-<!--            <a class="">-->
-<!--                <img class=" h-auto" src="/nits-assets/images/demo.jpg">-->
-<!--            </a>-->
-<!--        </div>-->
+
+        <div class="absolute w-4/5 top-0 h-18 lg:ml-40 lg:mt-10 w-4/5" v-if="search">
+            <div class="flex bg-white ">
+                <input class="w-full h-20 ml-2  lg:text-4xl text-gray-600 mt-4 py-1 px-10 bg-white  rounded placeholder-teal-600 text-sm focus:outline-none antialiased tracking-wide font-medium text-teal-600 leading-norma" type="text" placeholder="TYPE & HIT ENTER">
+
+                <svg @click="search = ! search" class="w-8 h-20 mt-4 mr-4" version="1.1" id="Cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                        <path fill="#606060" d="M14.348,14.849c-0.469,0.469-1.229,0.469-1.697,0L10,11.819l-2.651,3.029c-0.469,0.469-1.229,0.469-1.697,0
+                            c-0.469-0.469-0.469-1.229,0-1.697l2.758-3.15L5.651,6.849c-0.469-0.469-0.469-1.228,0-1.697s1.228-0.469,1.697,0L10,8.183
+                            l2.651-3.031c0.469-0.469,1.228-0.469,1.697,0s0.469,1.229,0,1.697l-2.758,3.152l2.758,3.15
+                            C14.817,13.62,14.817,14.38,14.348,14.849z"/>
+                    </svg>
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -302,6 +312,7 @@
                 isVisibleHeader2: false,
                 isVisibleResponsiveHeader1: false,
                 isVisibleResponsiveSubHeader1: false,
+                search :false,
             }
         }
     }
