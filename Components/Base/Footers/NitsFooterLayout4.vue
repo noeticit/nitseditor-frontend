@@ -1,5 +1,5 @@
 <template>
-     <div class="w-screen">
+     <div class="">
             <nav class="sticky top-0 bg-white px-8 mx-auto border-b ">
                 <div class="flex justify-between h-24 ">
                     <div class="float-left border-r pr-3 ">
@@ -182,8 +182,10 @@
 
        <!--footer-->
          <div class="h-auto w-screen bg-gray-900 mt-20">
-             <div class="flex ml-56  mt-20">
-                 <img class="h-16 w-56 mt-20 mr-5" src="/nits-assets/images/nits-editor-logo.png">
+             <div class="flex ml-56 border-b pb-10 border-gray-600 ">
+                 <div class="w-auto">
+                 <img class="h-12 w-48 mt-24 mr-5" src="/nits-assets/images/nits-editor-logo.png">
+                 </div>
                  <div class="border-l mt-24 ">
                      <p class=" ml-5 text-gray-300 text-base">
                      We believe in Simple, Creative & Flexible Design Standards with a Retina & <br>Responsive Approach.
@@ -193,7 +195,7 @@
                  <span class="text-gray-300 text-lg mt-24 ml-16">INSTAGRAM PHOTOS</span>
              </div>
 
-             <div class="flex border-t text-left ml-64 mt-10 ">
+             <div class="flex  text-left ml-64 mt-4 ">
                  <div class="mt-12">
                <span class="text-2xl ml-1 text-green-300 font-semibold">15,065,425</span>
                <h5 class="mt-2 text-base text-gray-300">TOTAL DOWNLOADS</h5>
@@ -222,9 +224,9 @@
                  </div>
 
              </div>
-             <div class="flex bg-gray-800 h-32 w-screen mt-16 ">
+             <div class="flex bg-gray-800 h-32 w-screen mt-24 ">
                  <div class="flex float-left ml-56 ">
-                     <ul class="flex  mt-10">
+                     <ul class="flex mt-10">
                          <li class=" p-2">
                              <a class="text-gray-100 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Home /</a>
                          </li>
