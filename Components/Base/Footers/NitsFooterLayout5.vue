@@ -39,13 +39,13 @@
 
 
             <section >
-                <div class="bg-gray-700">
+                <div class="bg-gray-900">
                     <div class="container mx-auto flex pt-20 pb-20">
                         <div class="w-full">
-                            <div class="flex border-b pb-10 border-gray-600">
+                            <div class="flex border-b pb-10 border-gray-700">
                                 <div class="w-2/4">
                                     <a class=" h-auto " href="">
-                                        <img class=" pr-2 border-r  border-gray-600" src="/nits-assets/images/nits-editor-logo.png">
+                                        <img class=" pr-2 border-r  border-gray-700" src="/nits-assets/images/nits-editor-logo.png">
                                     </a>
                                 </div>
                                 <div class="ml-4 text-gray-300 " >We believe in Simple, Creative & Flexible Design Standards with a Retina & Responsive Approach. Browse the amazing Features this template offers.</div>
@@ -260,31 +260,48 @@
                                     <p class="uppercase text-gray-300 mt-2">CLIENTS</p>
                                 </div>
                             </div>
-                            <p class="ml-16 text-gray-300 mt-4 mb-6">Subscribe to Our Newsletter to get Important News, Amazing Offers & Inside Scoops:</p>
-                            <div class="flex">
-                                <div class="w-10 h-10 bg-gray-900 ml-16 rounded-l-lg">
-<!--                                    <svg class="w-6 h-6" version="1.1" id="Direction" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
-<!--                                         viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
-<!--                                        <path fill="#FFFFFF" d="M18.06,1.941c-0.586-0.586-1.144-0.033-3.041,0.879C9.944,5.259,1.1,10.216,1.1,10.216L8.699,11.3-->
-<!--                                            l1.085,7.599c0,0,4.958-8.843,7.396-13.916C18.092,3.085,18.645,2.527,18.06,1.941z M16.236,3.896l-5.519,10.247l-0.561-4.655-->
-<!--                                            L16.236,3.896z"/>-->
-<!--                                    </svg>-->
+                            <p class="ml-16 text-gray-300 mt-4 mb-10">Subscribe to Our Newsletter to get Important News, Amazing Offers & Inside Scoops:</p>
+                            <div class="flex bg-gray-800 h-10 w-64 mt-4 ml-16 rounded">
+                                <div class="w-10 h-10 px-2 mt-3 ml-2 mr-2">
+                                    <svg class="w-4 h-4 text-gray-300" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M18.64 2.63L.98 8.86c-.28.1-.34.34 0 .48l3.79 1.52 2.25.9L18 3.69c.15-.1.32.1.22.21l-7.88 8.51-.45.51.6.32 4.98 2.68c.3.16.67.03.75-.33l2.91-12.53c.08-.34-.15-.55-.49-.43zM7 17.16c0 .25.14.32.33.14l2.85-2.56L7 13.1v4.06z"/>
+                                    </svg>
                                 </div>
-                                <div>
-                                    <input class="shadow appearance-none border w-64 h-10 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Enter Your Email">
-                                </div>
+
+                                    <input type="email" class="bg-gray-700 px-16 text-gray-300 text-left w-64 " placeholder="Enter your Email">
+
                                 <div class="w-24 h-10 rounded-r-lg">
                                     <div class="bg-green-500 text-white pt-2 pb-2 pr-2 pl-2 w-full h-full rounded-r-lg">
                                         Subscriber
                                     </div>
                                 </div>
                             </div>
+                            <div class="flex ml-16 mt-16">
+                                <div class="flex">
+                                    <div class="inline-block  cursor-pointer text-white bg-blue-700 rounded-md">
+                                        <svg class="h-6 w-6 mx-2 mt-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Bold" enable-background="new 0 0 24 24" height="512px" viewBox="0 0 24 24" width="512px"><g><path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g> </svg>
+                                    </div>
+                                    <div class="text-gray-300 ml-2 text-sm"><P>Like us<br> on Facebook</P></div>
+                                </div>
+                                <div class="flex ml-10" >
+                                    <div class="inline-block cursor-pointer text-white bg-orange-500 rounded-md">
+                                        <svg class="h-6 w-6 mx-2 mt-3" version="1.1" fill="currentColor" id="RSS" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                             viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                                            <path fill-rule="evenodd" d="M2.4,2.4v2.367c7.086,0,12.83,5.746,12.83,12.832h2.369C17.599,9.205,10.794,2.4,2.4,2.4z M2.4,7.137v2.369
+                                                c4.469,0,8.093,3.623,8.093,8.094h2.368C12.861,11.822,8.177,7.137,2.4,7.137z M4.669,13.059c-1.254,0-2.27,1.018-2.27,2.271
+                                                s1.016,2.27,2.27,2.27s2.269-1.016,2.269-2.27S5.923,13.059,4.669,13.059z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="text-gray-300 ml-2 text-sm"><P>Subscribe to<br> RSS Feeds</P></div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="bg-black">
-                    <div class=" sm:container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full border-b bg-gray-800" >
-                        <div class="  items-center flex-shrink-0 md:px-6  md:py-5 text-xl lg:text-4xl font-regular text-gray-700 ml-32">
+                <div class="bg-gray-800">
+                    <div class=" sm:container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full border-b " >
+                        <div class="  items-center flex-shrink-0 md:px-6  md:py-4 text-xl lg:text-4xl font-regular text-gray-700 ml-32">
                             <div class=" flex items-center flex-shrink-0  md:py-5 text-sm lg:text-sm font-regular text-gray-300 ">
                                 <base-bread-crumb-one name="" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
                             </div>

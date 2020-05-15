@@ -161,39 +161,39 @@
         </div>
 
         <!-- logo footer-->
-<!--        <section>-->
+        <section>
             <div class=" bg-gray-900 ">
                 <div class="container flex mx-auto mt-20">
-                    <div class="flex flex-col">
+                    <div class="flex flex-col ml-8">
                         <img class="h-16 w-56 mt-20 mr-5" src="/nits-assets/images/nits-editor-logo.png">
 
-                        <div class=" ml-5 mt-6 text-gray-400 text-sm">
+                        <div class=" mt-6 text-gray-400 text-sm">
                             We believe in Simple, Creative & Flexible Design <br>Standards with a Retina & Responsive Approach.<br>
                             Browse the amazing Features this template offers.
                         </div>
-                        <div class="flex flex-col ml-5 mt-6 text-gray-300">
+                        <div class="flex flex-col mt-6 text-gray-300">
                           <strong>Office:</strong>
                            Nasscom Warehouse,<br>
                             MBP, Ghansoli Navi Mumbai
                         </div>
-                        <span class="flex ml-5 mt-4 text-gray-300">
+                        <span class="flex  mt-4 text-gray-300">
                            <strong>Phone : </strong>
                             (91) 9890908900
                         </span>
-                        <span class="flex ml-5 text-gray-300">
+                        <span class="flex  text-gray-300">
                            <strong>Fax : </strong>
                             (91) 921-21-2100
                         </span>
-                        <span class="flex ml-5 text-gray-300">
+                        <span class="flex  text-gray-300">
                            <strong>Email : </strong>
                              info@noeticit.com
                         </span>
                     </div>
-                    <div class="flex flex-col ml-12 mt-24 ">
+                    <div class="flex flex-col ml-24 mt-24 ">
                         <h4 class="text-gray-200 text-lg">CLIENT TESTIMONIALS</h4>
-                        <p class="text-gray-500 mt-10 ">
-                            <i class="text-gray-400 text-sm">"Similique fugit repellendus exceptiture <br>perferendis provident quia eaque.
-                                Repellendus, <br>vero numquam?"</i><br>
+                        <p class="text-gray-500 pb-4 mt-10 ">
+                            <i class="text-gray-400 text-sm">"Similique fugit repellendus exceptiture perferendis <br>provident quia eaque.
+                                Repellendus, vero numquam?"</i><br>
 
                             <span class="mt-4">-STEVE JOBS</span><br>
                             <span class="text-sm ml-2 text-gray-400">Apple Inc.</span>
@@ -307,8 +307,8 @@
                 </div>
             </div>
     <!--           bottom footer-->
-             <div class="flex bg-gray-800 h-32 w-screen mt-16 ">
-                <div class="float-left text-gray-400 text-sm mt-12 ml-56">Copyrights © 2014 All Rights Reserved by NoeticIt Services.</div>
+             <div class="flex bg-gray-800 h-32 w-auto mt-0 ">
+                <div class="float-left text-gray-400 text-sm mt-12 ml-48">Copyrights © 2014 All Rights Reserved by NoeticIt Services.</div>
                 <div class="flex float-right ml-56 ">
                     <ul class="flex ml-48 mt-10">
                         <li class=" p-2">
@@ -334,7 +334,7 @@
 
             </div>
 
-<!--        </section>-->
+        </section>
 
     </div>
 
