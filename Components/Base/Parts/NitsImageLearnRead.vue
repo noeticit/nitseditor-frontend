@@ -13,7 +13,8 @@
         </div>
         <div class="flex absolute bottom-0 justify-cente p-0 pl-24" >
             <div class="flex mt-48">
-            <!--            1 image -->
+
+
                 <div class="flex w-1/3">
                     <div class="relative ">
                         <img class="h-64 " src="/nits-assets/images/teal-image.png" alt="school">
