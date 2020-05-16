@@ -1,6 +1,6 @@
 <template>
-    <div class="h-auto px-16 grid grid-cols-4 py-5 bg-pink-600 gap-4">
-        <div class="bg-transparent  mt-5 pb-6 justify-center">
+    <div class="h-auto px-16 grid grid-cols-4 py-5 bg-pink-600  gap-4">
+        <div class="bg-transparent  mt-5 pb-6  justify-center">
             <div class="flex justify-between text-center items-center px-8 py-5">
                 <div class="mb-16">
                     <svg class="h-12 mb-8 w-12 text-yellow-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
