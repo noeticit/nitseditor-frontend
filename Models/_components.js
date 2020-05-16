@@ -28,6 +28,7 @@ Vue.component('BaseSolidButton', () => import('NitsComponents/Base/Buttons/BaseS
 Vue.component('NitsButton', () => import('NitsComponents/Base/Buttons/NitsButton.vue'));
 Vue.component('NitsToggleButton', () => import('NitsComponents/Base/Buttons/NitsToggleButton.vue'));
 Vue.component('AssignmentConfidence', () => import('NitsComponents/Base/Footers/AssignmentConfidence.vue'));
+Vue.component('CourseSelection', () => import('NitsComponents/Base/Footers/CourseSelection.vue'));
 Vue.component('LiveStreaming', () => import('NitsComponents/Base/Footers/LiveStreaming.vue'));
 Vue.component('NitsFooterLayout1', () => import('NitsComponents/Base/Footers/NitsFooterLayout1.vue'));
 Vue.component('NitsFooterLayout2', () => import('NitsComponents/Base/Footers/NitsFooterLayout2.vue'));

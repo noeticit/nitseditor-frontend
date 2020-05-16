@@ -143,7 +143,7 @@
                 </p>
             </div>
 
-            <div class="flex ml-8 ">
+            <div class="flex ml-8 mb-20">
                 <div class="text-left mt-10 mr-10 w-full h-auto text-base">
                     <p class=" ">
                         Provide, Aga Khan, interconnectivity governance fairness replicable, new approaches visionary implementation. End hunger evolution,
@@ -163,43 +163,43 @@
         <!-- logo footer-->
         <section>
             <div class=" bg-gray-900 ">
-                <div class="container flex mx-auto mt-20">
+                <div class="container flex mx-auto pt-20 pb-20">
                     <div class="flex flex-col ml-8">
-                        <img class="h-16 w-56 mt-20 mr-5" src="/nits-assets/images/nits-editor-logo.png">
+                        <img class="h-16 w-56 -mt-2 mr-5" src="/nits-assets/images/nits-editor-logo.png">
 
-                        <div class=" mt-6 text-gray-400 text-sm">
+                        <div class=" mt-5 text-gray-500 text-sm">
                             We believe in Simple, Creative & Flexible Design <br>Standards with a Retina & Responsive Approach.<br>
                             Browse the amazing Features this template offers.
                         </div>
-                        <div class="flex flex-col mt-6 text-gray-300">
+                        <div class="flex flex-col mt-6 text-gray-400">
                           <strong>Office:</strong>
                            Nasscom Warehouse,<br>
                             MBP, Ghansoli Navi Mumbai
                         </div>
-                        <span class="flex  mt-4 text-gray-300">
+                        <span class="flex  mt-6 text-gray-400">
                            <strong>Phone : </strong>
                             (91) 9890908900
                         </span>
-                        <span class="flex  text-gray-300">
+                        <span class="flex  text-gray-400">
                            <strong>Fax : </strong>
                             (91) 921-21-2100
                         </span>
-                        <span class="flex  text-gray-300">
+                        <span class="flex  text-gray-400">
                            <strong>Email : </strong>
                              info@noeticit.com
                         </span>
                     </div>
-                    <div class="flex flex-col ml-24 mt-24 ">
-                        <h4 class="text-gray-200 text-lg">CLIENT TESTIMONIALS</h4>
-                        <p class="text-gray-500 pb-4 mt-10 ">
-                            <i class="text-gray-400 text-sm">"Similique fugit repellendus exceptiture perferendis <br>provident quia eaque.
-                                Repellendus, vero numquam?"</i><br>
+                    <div class="flex flex-col ml-24 w-1/4">
+                        <h4 class="text-gray-200 mt-4 text-lg">CLIENT TESTIMONIALS</h4>
+                        <div class="text-gray-500 pb-0 mt-8 ">
+                            <p class="text-gray-500 italic text-sm">"Similique fugit repellendus exceptiture perferendis provident quia eaque.
+                                Repellendus, vero numquam?"</p><br>
 
-                            <span class="mt-4">-STEVE JOBS</span><br>
-                            <span class="text-sm ml-2 text-gray-400">Apple Inc.</span>
-                        </p>
+                            <div class="-mt-2 text-gray-400">-STEVE JOBS</div><br>
+                            <div class="text-sm ml-2 -mt-4 text-gray-500">Apple Inc.</div>
+                        </div>
                         <div class="flex mt-16 ">
-                            <div class="flex -ml-4">
+                            <div class="flex ">
                                 <div class="inline-block px-1">
                                     <a class="" href="#">
                                         <div class="flex font-thin cursor-pointer text-center h-8 w-8 pt-1 pl-1 hover:bg-blue-800 rounded-full border border-gray-500 hover:text-white text-gray-100" >
@@ -280,10 +280,10 @@
                         </div>
 
                     </div>
-                    <div class="flex flex-col ml-24">
-                        <span class="text-gray-300 text-lg mt-24 ">SEND MESSAGE</span>
+                    <div class="flex flex-col ml-20">
+                        <span class="text-gray-300 text-lg mt-4">SEND MESSAGE</span>
 
-                        <div class="flex bg-gray-800 h-10 w-64 mt-5 rounded">
+                        <div class="flex bg-gray-800 h-10 w-64 mt-8 rounded">
                             <div class="w-10 h-10 px-2 mt-3 ml-2 mr-2">
                                 <svg class="w-4 h-4 text-gray-300" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 12 16" fill="currentColor">
                                     <path fill-rule="evenodd" d="M12 14a1 1 0 01-1 1H1a1 1 0 01-1-1v-1c0-2.63 4-4 4-4s.23-.4 0-1c-.84-.62-.94-1.59-1-4 .17-2.41 1.87-3 3-3s2.83.59 3 3c-.06 2.41-.16 3.38-1 4-.23.59 0 1 0 1s4 1.37 4 4v1z"/>

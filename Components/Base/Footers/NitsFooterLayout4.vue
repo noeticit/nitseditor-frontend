@@ -117,85 +117,67 @@
                 </svg>
             </div>
 
-            <div class=" flex h-32 w-screen bg-gray-200">
-             <div class="float-left mt-10 ml-56 ">
-                 <h1 class="text-3xl ">FOOTER - LAYOUT 4</h1>
-             </div>
-             <div class=" float-right ml-64 ">
-                 <ul class="flex px-40 ml-64 mt-10">
-                     <li class=" p-2">
-                         <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Home /</a>
-                     </li>
-                     <li class=" p-2">
-                         <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Templetes /</a>
-                     </li>
-                     <li class=" p-2">
-                         <a class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Footer 4</a>
-                     </li>
-                 </ul>
-             </div>
-          </div>
+            <div class=" flex h-32 w-screen mx-auto justify-between bg-gray-200">
+              <div class="float-left mt-10 ml-40 ">
+                 <h1 class="text-3xl mr-2">FOOTER - LAYOUT 4</h1>
+              </div>
+                <div class="w-full h-full block lg:flex lg:w-auto hidden mr-48">
+                    <base-bread-crumb-one name="" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
+                </div>
+            </div>
 
-            <div class="mt-16 ml-56">
-            <p class="text-left">
-                Foster best practices effectiveness inspire breakthroughs solve immunize turmoil.
-                Policy dialogue peaceful The Elders rural global support.<br>
-                Process inclusive innovate readiness, public sector complexity. Lifting people up
-                cornerstone partner, technology working families civic <br>
-                engagement activist recognize potential global network.
-                Countries tackling solution respond change-makers tackle. <br>
-                Assistance, giving; fight against malnutrition experience in the field lasting
-                change scalable. Empowerment long-term, fairness policy <br>
-                community progress social responsibility; Cesar Chavez recognition.
-                Expanding community ownership visionary indicator pursue these <br>
-                aspirations accessibility. Achieve; worldwide, life-saving initiative
-                facilitate. New approaches,John Lennon humanitarian relief fundraise <br>
-                vaccine Jane Jacobs community health workers Oxfam. Our ambitions
-                informal economies.
-            </p>
-         </div>
-         <div class="ml-56 border-l-4 h-20 mt-16 w-full border-gray-400">
-             <p class="text-left px-10 py-4">
-                 Human rights healthcare immunize; advancement grantees. Medical supplies;
-                 meaningful, truth technology catalytic effect. Promising<br>
-                  development capacity building international enable poverty.
-             </p>
-         </div>
-
-         <div class="flex mt-8 ml-56 text-base ">
-           <p class="text-left ">
-               Provide, Aga Khan, interconnectivity governance fairness replicable,<br>
-               new approaches visionary implementation. End hunger evolution,<br>
-               future promising development youth.Public sector, small-scale<br> farmers;harness facilitate gender.
-               Contribution dedicated  <br>global change movements, prosperity accelerate progress citizens<br> of change.
-               Elevate; accelerate reduce child mortality; billionaire <br>philanthropy fluctuation,
-               plumpy'nut care opportunity catalyze.
-           </p>
-           <p class="text-left ml-8">
-                 Frontline harness criteria governance freedom contribution. <br>
-                 Campaign Angelina Jolie natural resources, Rockefeller peaceful<br> philanthropy human potential.
-                 Justice; outcomes reduce carbon<br> emissions nonviolent resistance human being.>Solve innovate aid <br>communities;
-                 benefit truth rural development UNICEF meaningful <br>work.Generosity Action Against Hunger relief;
-                 many voices impact <br>crisis situation poverty pride.Vaccine carbon.
-             </p>
+         <div>
+             <div class="pt-20">
+                 <div class="container mx-auto">
+                     <div class="w-full h-auto mb-10">
+                         Foster best practices effectiveness inspire breakthroughs solve immunize turmoil. Policy dialogue peaceful The Elders rural global support.
+                         Process inclusive innovate readiness, public sector complexity. Lifting people up cornerstone partner,
+                         technology working families civic engagement activist recognize potential global network. Countries tackling solution respond change-makers tackle.
+                         Assistance, giving; fight against malnutrition experience in the field lasting change scalable. Empowerment long-term, fairness policy community progress social responsibility; Cesar Chavez recognition.
+                         Expanding community ownership visionary indicator pursue these aspirations accessibility. Achieve; worldwide, life-saving initiative facilitate. New approaches, John Lennon humanitarian relief fundraise vaccine Jane Jacobs community health workers Oxfam. Our ambitions informal economies.
+                     </div>
+                     <div class="w-full h-auto mb-10 border-l-4">
+                         <div class="ml-4">
+                             Human rights healthcare immunize; advancement grantees. Medical supplies; meaningful,
+                             truth technology catalytic effect. Promising development capacity building international enable poverty.
+                         </div>
+                     </div>
+                     <div class="flex ">
+                         <div class="w-full h-auto mb-20 mr-10">
+                             <p>
+                                 Provide, Aga Khan, interconnectivity governance fairness replicable, new approaches visionary implementation.
+                                 End hunger evolution, future promising development youth. Public sector, small-scale farmers; harness facilitate gender. Contribution dedicated global change movements, prosperity accelerate progress citizens of change. Elevate; accelerate reduce child mortality; billionaire philanthropy fluctuation, plumpy'nut care opportunity catalyze. Partner deep.
+                             </p>
+                         </div>
+                         <div class="w-full h-auto mb-20">
+                             <p>
+                                 Frontline harness criteria governance freedom contribution. Campaign Angelina Jolie natural resources,
+                                 Rockefeller peaceful philanthropy human potential. Justice; outcomes reduce carbon emissions nonviolent resistance human being. Solve innovate aid communities; benefit truth rural development UNICEF meaningful work. Generosity Action Against Hunger relief; many voices impact crisis situation poverty pride. Vaccine carbon.
+                             </p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
          </div>
 
        <!--footer-->
-         <div class="h-auto w-screen bg-gray-900 mt-20">
-             <div class="flex ml-56 border-b pb-10 border-gray-600 ">
-                 <div class="w-auto">
-                 <img class="h-12 w-48 mt-24 mr-5" src="/nits-assets/images/nits-editor-logo.png">
-                 </div>
-                 <div class="border-l mt-24 ">
-                     <p class=" ml-5 text-gray-300 text-base">
-                     We believe in Simple, Creative & Flexible Design Standards with a Retina & <br>Responsive Approach.
-                     Browse the amazing Features this template offers.
-                     </p>
-                 </div>
-                 <span class="text-gray-300 text-lg mt-24 ml-16">INSTAGRAM PHOTOS</span>
+         <div class="bg-gray-900 ">
+             <div class="container mx-auto flex">
+
+                 <div class="flex  border-b pb-10 border-gray-700">
+                         <div class="">
+                            <img class=" h-12 w-48 mt-24 mr-64 pr-4 border-r border-gray-700" src="/nits-assets/images/nits-editor-logo.png">
+                         </div>
+                         <div class="mr-64 text-gray-300 mt-24" >
+                             We believe in Simple, Creative & Flexible Design Standards with a Retina &
+                             Responsive Approach. Browse the amazing Features this template offers.</div>
+                     </div>
+
+                 <div class="text-gray-300 text-lg mt-24 mr-24">INSTAGRAM PHOTOS</div>
+
              </div>
 
-             <div class="flex  text-left ml-64 mt-4 ">
+             <div class="flex  text-left ml-40 mt-4 ">
                  <div class="mt-12">
                <span class="text-2xl ml-1 text-green-300 font-semibold">15,065,425</span>
                <h5 class="mt-2 text-base text-gray-300">TOTAL DOWNLOADS</h5>
@@ -206,7 +188,7 @@
                  </div>
 
                  <div class="ml-8">
-                   <h5 class="ml-8 text-base text-gray-300 mt-8">
+                   <h5 class="ml-8 text-base text-gray-400 mt-8">
                        <strong class="text-gray-300">Subscribe</strong>
                        to Our Newsletter to get Important News,<br>
                        Amazing Offers & Inside Scoops:
@@ -343,6 +325,8 @@
                 isVisibleHeader1: false,
                 isVisibleHeader2: false,
                 search: false,
+                breadcrumbs: ['Home', 'Templates', 'Footer 4'],
+
 
             }
         },
