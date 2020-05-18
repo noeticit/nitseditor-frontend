@@ -14,25 +14,25 @@
         </div>
         <div class="flex py-16 px-16 mx-8 ">
             <div class="mx-3 rounded">
-                <img src="/nits-assets/images/learning1.jpg">
+                <img class="rounded-lg"  src="/project-assets/images/learning1.jpg">
                 <div class="text-center text-white mt-8">
                     <h2 class="text-sm font-mono">RADIOBUTTON</h2>
                 </div>
             </div>
             <div class="mx-3">
-                <img src="/nits-assets/images/learning2.jpg">
+                <img class="rounded-lg"  src="/project-assets/images/learning2.jpg">
                 <div class="text-center text-white mt-8">
                     <h2 class="text-sm font-mono">MATCH</h2>
                 </div>
             </div>
             <div class= "mx-3">
-                <img src="/nits-assets/images/learning3.jpg">
+                <img class="rounded-lg"  src="/project-assets/images/learning3.jpg">
                 <div class="text-center text-white mt-8">
                     <h2 class="text-sm font-mono">MULTI SELECT</h2>
                 </div>
             </div>
             <div class="mx-3">
-                <img src="/nits-assets/images/learning4.jpg">
+                <img class="rounded-lg" src="/project-assets/images/learning4.jpg">
                 <div class="text-center text-white mt-8">
                     <h2 class="text-sm font-mono">FILL THE GAP</h2>
                 </div>
@@ -42,7 +42,7 @@
         <div class="flex px-24 ml-10 mt-12">
             <div class="flex px-6">
                 <div class="h-12 w-12">
-                    <img src="nits-assets/images/check.png">
+                    <img src="project-assets/images/check.png">
                 </div>
                 <div class="text-white text-xl px-5">
                     Create categories with Question Bank
@@ -50,7 +50,7 @@
             </div>
             <div class="flex px-6">
                 <div class="h-12 w-12">
-                    <img src="nits-assets/images/check.png">
+                    <img src="project-assets/images/check.png">
                 </div>
                 <div class="text-white text-xl px-5">
                     Automatically randomize questions
@@ -59,7 +59,7 @@
             </div>
             <div class="flex px-6">
                 <div class="h-12 w-12">
-                    <img src="nits-assets/images/check.png">
+                    <img src="project-assets/images/check.png">
                 </div>
                 <div class="text-white text-xl px-5">
                     Set up automated quiz results
@@ -70,7 +70,7 @@
         <div class="flex px-24 ml-10 pb-16 mt-12">
             <div class="flex px-6">
                 <div class="h-12 w-12">
-                    <img src="nits-assets/images/check.png">
+                    <img src="project-assets/images/check.png">
                 </div>
                 <div class="text-white text-xl px-5">
                     Allow students to retake quizzes
@@ -78,7 +78,7 @@
             </div>
             <div class="flex px-6 ml-8">
                 <div class="h-12 w-12">
-                    <img src="nits-assets/images/check.png">
+                    <img src="project-assets/images/check.png">
                 </div>
                 <div class="text-white text-xl px-5">
                     Attach media files of different types
@@ -86,7 +86,7 @@
             </div>
             <div class="flex px-4">
                 <div class="h-12 w-12">
-                    <img src="nits-assets/images/check.png">
+                    <img src="project-assets/images/check.png">
                 </div>
                 <div class="text-white text-xl px-6">
                     Set timers for taking quizzes
@@ -104,8 +104,6 @@
 </script>
 
 <style scoped>
-    img{
-        border-radius: 10px;
-    }
+
 
 </style>

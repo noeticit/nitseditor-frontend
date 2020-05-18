@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div class="flex w-full">
+      <div class="flex w-full h-full">
           <div class="w-2/5 mt-20 ml-24">
              <img class=" h-2/4" src="/project-assets/images/undraw_collaborators_prrw.png" alt="assignment">
           </div>

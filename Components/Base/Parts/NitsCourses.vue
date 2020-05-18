@@ -1,7 +1,7 @@
 <template>
     <div class="flex bg-gray-800 h-full py-32 px-16">
         <div class="w-full h-full">
-            <img src="/nits-assets/images/course1.png">
+            <img src="/project-assets/images/course1.png">
         </div>
         <div class="flex-col px-24 mt-10 w-full">
             <div class="px-3 text-left text-white text-5xl font-bold antialiased leading-snug tracking-normal font-sans">

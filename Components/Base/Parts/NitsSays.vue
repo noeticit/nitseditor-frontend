@@ -20,7 +20,7 @@
                 <div class="ml-10 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-gray-200 border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
                 <div class="flex mt-3">
                     <div class="h-12 w-12 rounded-full overflow-hidden border-2 border-white ml-5">
-                        <img class="w-full h-full object-cover" src="/nits-assets/images/ronaldo.jpg">
+                        <img class="w-full h-full object-cover" src="/project-assets/images/ronaldo.jpg">
                     </div>
                     <div class="flex-col ml-3">
                         <div class="text-blue-800 font-bold ">Brenen</div>
@@ -37,7 +37,7 @@
                 <div class="ml-10 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-gray-200 border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
                 <div class="flex mt-3">
                     <div class="h-12 w-12 rounded-full overflow-hidden border-2 border-white ml-5">
-                        <img class="w-full h-full object-cover" src="/nits-assets/images/ronaldo.jpg">
+                        <img class="w-full h-full object-cover" src="/project-assets/images/ronaldo.jpg">
                     </div>
                     <div class="flex-col ml-3">
                         <div class="text-blue-800 font-bold ">Brenen</div>
@@ -54,7 +54,7 @@
                 <div class="ml-10 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-gray-200 border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
                 <div class="flex mt-3">
                     <div class="h-12 w-12 rounded-full overflow-hidden border-2 border-white ml-5">
-                        <img class="w-full h-full object-cover" src="/nits-assets/images/ronaldo.jpg">
+                        <img class="w-full h-full object-cover" src="/project-assets/images/ronaldo.jpg">
                     </div>
                     <div class="flex-col ml-3">
                         <div class="text-blue-800 font-bold ">Brenen</div>
