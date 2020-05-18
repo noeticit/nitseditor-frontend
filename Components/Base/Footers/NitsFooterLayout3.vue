@@ -15,22 +15,29 @@
             <div class="pt-20">
                 <div class="container mx-auto">
                     <div class="w-full h-auto mb-10">
-                        Foster best practices effectiveness inspire breakthroughs solve immunize turmoil. Policy dialogue peaceful The Elders rural global support. Process inclusive innovate readiness, public sector complexity. Lifting people up cornerstone partner, technology working families civic engagement activist recognize potential global network. Countries tackling solution respond change-makers tackle. Assistance, giving; fight against malnutrition experience in the field lasting change scalable. Empowerment long-term, fairness policy community progress social responsibility; Cesar Chavez recognition. Expanding community ownership visionary indicator pursue these aspirations accessibility. Achieve; worldwide, life-saving initiative facilitate. New approaches, John Lennon humanitarian relief fundraise vaccine Jane Jacobs community health workers Oxfam. Our ambitions informal economies.
+                        Foster best practices effectiveness inspire breakthroughs solve immunize turmoil. Policy dialogue peaceful The Elders rural global support.
+                        Process inclusive innovate readiness, public sector complexity. Lifting people up cornerstone partner,
+                        technology working families civic engagement activist recognize potential global network. Countries tackling solution respond change-makers tackle.
+                        Assistance, giving; fight against malnutrition experience in the field lasting change scalable. Empowerment long-term, fairness policy community progress social responsibility; Cesar Chavez recognition.
+                        Expanding community ownership visionary indicator pursue these aspirations accessibility. Achieve; worldwide, life-saving initiative facilitate. New approaches, John Lennon humanitarian relief fundraise vaccine Jane Jacobs community health workers Oxfam. Our ambitions informal economies.
                     </div>
                     <div class="w-full h-auto mb-10 border-l-4">
                         <div class="ml-4">
-                            Human rights healthcare immunize; advancement grantees. Medical supplies; meaningful, truth technology catalytic effect. Promising development capacity building international enable poverty.
+                            Human rights healthcare immunize; advancement grantees. Medical supplies; meaningful,
+                            truth technology catalytic effect. Promising development capacity building international enable poverty.
                         </div>
                     </div>
                     <div class="flex ">
                         <div class="w-full h-auto mb-20 mr-10">
                             <p>
-                                Provide, Aga Khan, interconnectivity governance fairness replicable, new approaches visionary implementation. End hunger evolution, future promising development youth. Public sector, small-scale farmers; harness facilitate gender. Contribution dedicated global change movements, prosperity accelerate progress citizens of change. Elevate; accelerate reduce child mortality; billionaire philanthropy fluctuation, plumpy'nut care opportunity catalyze. Partner deep.
+                                Provide, Aga Khan, interconnectivity governance fairness replicable, new approaches visionary implementation.
+                                End hunger evolution, future promising development youth. Public sector, small-scale farmers; harness facilitate gender. Contribution dedicated global change movements, prosperity accelerate progress citizens of change. Elevate; accelerate reduce child mortality; billionaire philanthropy fluctuation, plumpy'nut care opportunity catalyze. Partner deep.
                             </p>
                         </div>
                         <div class="w-full h-auto mb-20">
                             <p>
-                                Frontline harness criteria governance freedom contribution. Campaign Angelina Jolie natural resources, Rockefeller peaceful philanthropy human potential. Justice; outcomes reduce carbon emissions nonviolent resistance human being. Solve innovate aid communities; benefit truth rural development UNICEF meaningful work. Generosity Action Against Hunger relief; many voices impact crisis situation poverty pride. Vaccine carbon.
+                                Frontline harness criteria governance freedom contribution. Campaign Angelina Jolie natural resources,
+                                Rockefeller peaceful philanthropy human potential. Justice; outcomes reduce carbon emissions nonviolent resistance human being. Solve innovate aid communities; benefit truth rural development UNICEF meaningful work. Generosity Action Against Hunger relief; many voices impact crisis situation poverty pride. Vaccine carbon.
                             </p>
                         </div>
                     </div>
@@ -40,11 +47,11 @@
 
 
         <!-- logo footer-->
-        <div class="h-auto w-screen bg-gray-900 mt-20">
-          <div class="flex ml-56  mt-20">
-            <div class="flex flex-col">
+        <div class="h-auto w-auto bg-gray-900 ">
+          <div class="flex ml-32  ">
+            <div class="flex flex-col w-2/5 mt-2">
                 <div class="">
-                    <img class="h-16 w-56 mt-20 mr-5" src="/nits-assets/images/nits-editor-logo.png">
+                    <img class="h-16 w-56 mt-16 ml-2" src="/nits-assets/images/nits-editor-logo.png">
 
                     <div class=" ml-5 mt-6 text-gray-400 text-sm">
                         We believe in Simple, Creative & Flexible Design Standards with a Retina & <br>Responsive Approach.
@@ -154,44 +161,44 @@
                 </div>
             </div>
 
-             <div class="flex flex-col ml-12 mt-24 ">
-                    <h4 class="text-gray-200 text-lg">RECENT POSTS</h4>
-                    <div class="flex text-gray-500 mt-10 ">
+             <div class="flex flex-col w-1/5 ml-3 mt-20 ">
+                    <h4 class="text-gray-200 text-lg mt-3">RECENT POSTS</h4>
+                    <div class="flex text-gray-500 mt-8 pb-5 border-b border-gray-700">
                         <div class="rounded-full">
                           <img src="/project-assets/images/footer1.jpg" class="rounded-full">
                         </div>
                         <div class="flex flex-col ml-5">
-                        <a class="text-gray-400 ">Lorem ipsum dolor sit amet, consectetur</a>
-                        <i class="text-xs ml-2 mt-2 text-gray-500">10th July 2014</i>
+                        <p class="text-gray-400 ">Lorem ipsum dolor sit amet, consectetur</p>
+                        <p class="text-xs italic ml-2 mt-2 text-gray-500">10th July 2014</p>
                         </div>
 
                     </div>
-                    <div class="flex text-gray-500 mt-10 ">
+                    <div class="flex border-b border-gray-700 text-gray-500 mt-6 pb-5">
                         <div class="rounded-full">
                           <img src="/project-assets/images/footer2.jpg" class="rounded-full">
                         </div>
                         <div class="flex flex-col ml-5">
-                        <a class="text-gray-400 ">Elit Assumenda vel amet dolorum quasi</a>
-                        <i class="text-xs ml-2 mt-2 text-gray-500">10th July 2014</i>
+                            <p class="text-gray-400 ">Elit Assumenda vel amet dolorum quasi</p>
+                            <p class="text-xs italic ml-2 mt-2 text-gray-500">10th July 2014</p>
                         </div>
 
                     </div>
-                    <div class="flex text-gray-500 mt-10 ">
+                    <div class="flex text-gray-500 mt-6 ">
                         <div class="rounded-full">
                           <img src="/project-assets/images/footer3.jpg" class="rounded-full">
                         </div>
                         <div class="flex flex-col ml-5">
-                        <a class="text-gray-400 ">Debitis nihil placeat, illum est nisi</a>
-                        <i class="text-xs ml-2 mt-2 text-gray-500">10th July 2014</i>
+                        <p class="text-gray-400 ">Debitis nihil placeat, illum est nisi</p>
+                        <p class="text-xs italic ml-2 mt-2 text-gray-500">10th July 2014</p>
                         </div>
 
                     </div>
 
                 </div>
-             <div class="flex flex-col ml-12">
-                    <span class="text-gray-300 text-lg mt-24 ">SEND MESSAGE</span>
+             <div class="flex flex-col ml-20 mt-20">
+                    <span class="text-gray-300 text-lg mt-3 ">SEND MESSAGE</span>
 
-                    <div class="flex bg-gray-800 h-10 w-64 mt-5 rounded">
+                    <div class="flex bg-gray-800 h-10 w-64 mt-8 rounded">
                         <div class="w-10 h-10 px-2 mt-3 ml-2 mr-2">
                             <svg class="w-4 h-4 text-gray-300" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 12 16" fill="currentColor">
                                 <path fill-rule="evenodd" d="M12 14a1 1 0 01-1 1H1a1 1 0 01-1-1v-1c0-2.63 4-4 4-4s.23-.4 0-1c-.84-.62-.94-1.59-1-4 .17-2.41 1.87-3 3-3s2.83.59 3 3c-.06 2.41-.16 3.38-1 4-.23.59 0 1 0 1s4 1.37 4 4v1z"/>
@@ -215,10 +222,10 @@
             </div>
 
             <!--           bottom footer-->
-            <div class="flex bg-gray-800 h-32 w-screen mt-16 ">
-                <div class="float-left text-gray-400 text-sm mt-12 ml-56">Copyrights © 2014 All Rights Reserved by NoeticIt Services.</div>
-                <div class="flex float-right ml-56 ">
-                    <ul class="flex ml-48 mt-10">
+            <div class=" bg-gray-800 justify-center h-32 w-full mt-16 ">
+
+                <div class="mt-12  ">
+                    <ul class="flex justify-center text-center pt-6">
                         <li class=" p-2">
                             <a class="text-gray-400 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Home /</a>
                         </li>
@@ -238,6 +245,9 @@
                             <a class="text-gray-100 tracking-widest antialiased text-xs hover:text-teal-500 font-medium" href="#">Contact</a>
                         </li>
                     </ul>
+                </div>
+                <div class="text-center text-gray-400 text-sm mt-2">
+                    Copyrights © 2019 All Rights Reserved by Noetic It Services.
                 </div>
 
             </div>
