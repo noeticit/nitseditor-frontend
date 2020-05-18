@@ -41,7 +41,7 @@
                         base64: reader.result
                     };
                     console.log(docs);
-                    this.$emit('input', docs)
+                    this.$emit('file', docs)
                 };
             }
         },
