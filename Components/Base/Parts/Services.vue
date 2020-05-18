@@ -16,7 +16,7 @@
             <div class=" w-full mt-5 flex flex-row mb-8 ">
                 <div class=" w-1/5 ml-24 hover shadow-md pb-10">
                     <div>
-                        <img class=" w-full" src="/nits-assets/images/c1.jpg" alt="">
+                        <img class=" w-full" src="/project-assets/images/c1.jpg" alt="">
                     </div>
                     <p class="text-center text-blue-900 font-bold text-xl mt-4">David Cameron</p>
                     <p class="text-center text-gray-600  text-md ">Sr. web designer</p>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="w-1/5 ml-8 hover shadow-md">
                     <div>
-                        <img class=" w-full" src="/nits-assets/images/c1.jpg" alt="">
+                        <img class=" w-full" src="/project-assets/images/c1.jpg" alt="">
                     </div>
                     <p class="text-center text-blue-900 font-bold text-xl mt-4">David Cameron</p>
                     <p class="text-center text-gray-600  text-md ">Sr. web designer</p>
@@ -102,7 +102,7 @@
                 </div>
                 <div class=" w-1/5 ml-8 hover shadow-md">
                     <div>
-                        <img class=" w-full" src="/nits-assets/images/c1.jpg" alt="">
+                        <img class=" w-full" src="/project-assets/images/c1.jpg" alt="">
                     </div>
                     <p class="text-center text-blue-900 font-bold text-xl mt-4">David Cameron</p>
                     <p class="text-center text-gray-600  text-md ">Sr. web designer</p>
@@ -145,7 +145,7 @@
                 </div>
                 <div class="w-1/5 ml-8 hover shadow-md">
                     <div>
-                        <img class=" w-full" src="/nits-assets/images/c1.jpg" alt="">
+                        <img class=" w-full" src="/project-assets/images/c1.jpg" alt="">
                     </div>
                     <p class="text-center text-blue-900 font-bold text-xl mt-4">David Cameron</p>
                     <p class="text-center text-gray-600  text-md ">Sr. web designer</p>

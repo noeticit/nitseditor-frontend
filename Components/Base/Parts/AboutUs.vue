@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="relative ">
-        <img  src="/nits-assets/images/banner.jpg" alt="" class=" w-full">
+        <img  src="/project-assets/images/banner.jpg" alt="" class=" w-full">
         <div class="w-full h-64 absolute top-0 mt-20 ">
             <h2 class="uppercase content-center text-center  text-white font-bold text-4xl mt-2 ">
             About Us
@@ -20,7 +20,7 @@
             </div>
 
             <div class="flex justify-center h-25 md:w-5/12 mr-10">
-                <img class="w-full md:w-5/7 py-8 px-8 bg-contain " src="/nits-assets/images/usernames.svg">
+                <img class="w-full md:w-5/7 py-8 px-8 bg-contain " src="/project-assets/images/usernames.svg">
             </div>
         </div>
         <div class="container  mx-auto flex flex-wrap flex-col items-center md:flex-row mt-8">
