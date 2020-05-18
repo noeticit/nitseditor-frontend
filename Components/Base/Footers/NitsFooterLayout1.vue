@@ -42,7 +42,7 @@
                 <div class="bg-gray-900">
                     <div class="container mx-auto flex pt-20 pb-20">
                         <div class="flex flex-col w-64">
-                            <img class="h-16 w-56  mr-5" src="/nits-assets/images/nits-editor-logo.png">
+                            <img class="h-16 w-56  mr-5" :src="logo">
 
                             <p class=" ml-5 mt-6 text-gray-400 text-sm">
                                 We believe in Simple, Creative & Flexible Design
@@ -256,6 +256,12 @@
 <script>
     export default {
         name: "NitsFooterLayout1",
+        props:{
+            logo: {
+                type: String,
+                required: true
+            },
+        },
         data() {
             return {
                 breadcrumbs: ['Home', 'Templates', 'Footer 1'],
