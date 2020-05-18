@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <div class="bg-white shadow-lg sm:fixed w-full">
+        <div class="bg-white shadow-lg fixed top-0 w-full">
             <nav class=" sm:container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full">
 
                 <div class="block lg:hidden py-5 flex" >
@@ -275,79 +275,79 @@
 <!--            </a>-->
 <!--        </div>-->
 
-        <section class="px-4 py-4 sm:pt-56">
-            <div class="container mx-auto">
-                <div class="py-6 sm:py-8 sm:flex flex-wrap justify-between">
-                    <div class="w-full sm:w-1/2">
-                        <h3 class="text-xl lg:text-2xl font-regular text-blue-900">
-                            We’re your local
-                        </h3>
-                        <h1 class="text-2xl sm:text-xl lg:text-5xl font-semibold text-blue-900">
-                            website design company. Innovation starts with us.
-                        </h1>
-                        <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4 mb-10">
-                            We craft unique and meaningful, experiences that will sublime your
-                            business. We are specialized team of programmers and web developers
-                            in PHP Laravel. We are reliable
-                        </p>
-                        <div class="flex items-center">
-                            <a href="" class="px-4 py-3 bg-blue-900 text-white rounded-lg mr-2 text-sm lg:text-lg">More about us</a>
-                        </div>
-                    </div>
-                    <div class="w-full sm:w-1/2">
-                        <div class="w-full mt-20 sm:mt-0">
-                            <img src="/nits-assets/images/hero.svg" alt="Website Design Agency" class="w-full h-full">
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!--        <section class="px-4 py-4 sm:pt-56">-->
+<!--            <div class="container mx-auto">-->
+<!--                <div class="py-6 sm:py-8 sm:flex flex-wrap justify-between">-->
+<!--                    <div class="w-full sm:w-1/2">-->
+<!--                        <h3 class="text-xl lg:text-2xl font-regular text-blue-900">-->
+<!--                            We’re your local-->
+<!--                        </h3>-->
+<!--                        <h1 class="text-2xl sm:text-xl lg:text-5xl font-semibold text-blue-900">-->
+<!--                            website design company. Innovation starts with us.-->
+<!--                        </h1>-->
+<!--                        <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4 mb-10">-->
+<!--                            We craft unique and meaningful, experiences that will sublime your-->
+<!--                            business. We are specialized team of programmers and web developers-->
+<!--                            in PHP Laravel. We are reliable-->
+<!--                        </p>-->
+<!--                        <div class="flex items-center">-->
+<!--                            <a href="" class="px-4 py-3 bg-blue-900 text-white rounded-lg mr-2 text-sm lg:text-lg">More about us</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="w-full sm:w-1/2">-->
+<!--                        <div class="w-full mt-20 sm:mt-0">-->
+<!--                            <img src="/nits-assets/images/hero.svg" alt="Website Design Agency" class="w-full h-full">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
-        </section>
+<!--        </section>-->
 
-        <section>
-            <div>
-                <div class="container mx-auto">
-                    <div class="sm:flex flex-wrap justify-center items-center text-center">
-                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">
-                            <img src="/nits-assets/images/website-design.svg" alt="Website Design Agency" class="block mx-auto">
-                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
-                                Website Design
-                            </h3>
-                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
-                                Encompassing today’s website design technology to integrated and build solutions relevant to your business.
-                            </p>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">
-                            <img src="/nits-assets/images/business-branding.svg" alt="Branding for Website Design Agency" class="block mx-auto">
-                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
-                                Branding
-                            </h3>
-                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
-                                Share relevant, engaging, and inspirational brand messages to create a connection with your audience.
-                            </p>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">
-                            <img src="/nits-assets/images/website-marketing.svg" alt="Marketing for Website Design Agency" class="block mx-auto">
-                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
-                                Marketing
-                            </h3>
-                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
-                                Let us help you level up your search engine game, explore our solutions for digital marketing for your business.
-                            </p>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">
-                            <img src="/nits-assets/images/ecommerce-solutions.svg" alt="eCommerce for Website Design Agency" class="block mx-auto">
-                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
-                                Ecommerce Solution
-                            </h3>
-                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
-                                Ready to enhance your e-commerce solutions for brick-mortar stores, small-mid size business, large corporation.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!--        <section>-->
+<!--            <div>-->
+<!--                <div class="container mx-auto">-->
+<!--                    <div class="sm:flex flex-wrap justify-center items-center text-center">-->
+<!--                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">-->
+<!--                            <img src="/nits-assets/images/website-design.svg" alt="Website Design Agency" class="block mx-auto">-->
+<!--                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">-->
+<!--                                Website Design-->
+<!--                            </h3>-->
+<!--                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">-->
+<!--                                Encompassing today’s website design technology to integrated and build solutions relevant to your business.-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">-->
+<!--                            <img src="/nits-assets/images/business-branding.svg" alt="Branding for Website Design Agency" class="block mx-auto">-->
+<!--                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">-->
+<!--                                Branding-->
+<!--                            </h3>-->
+<!--                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">-->
+<!--                                Share relevant, engaging, and inspirational brand messages to create a connection with your audience.-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">-->
+<!--                            <img src="/nits-assets/images/website-marketing.svg" alt="Marketing for Website Design Agency" class="block mx-auto">-->
+<!--                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">-->
+<!--                                Marketing-->
+<!--                            </h3>-->
+<!--                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">-->
+<!--                                Let us help you level up your search engine game, explore our solutions for digital marketing for your business.-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">-->
+<!--                            <img src="/nits-assets/images/ecommerce-solutions.svg" alt="eCommerce for Website Design Agency" class="block mx-auto">-->
+<!--                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">-->
+<!--                                Ecommerce Solution-->
+<!--                            </h3>-->
+<!--                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">-->
+<!--                                Ready to enhance your e-commerce solutions for brick-mortar stores, small-mid size business, large corporation.-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
 
 
     </div>
