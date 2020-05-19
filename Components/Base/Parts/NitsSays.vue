@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col">
         <div class="text-center font-medium tracking-wider text-4xl font-sons text-blue-800 mt-12">
-            WHAT OUR STUDENTS SAY
+            {{heading}}
         </div>
         <div class="text-gray-400 text-xl tracking-wider font-sons text-center mt-3">
             See our features courses or see all courses to see all.
@@ -69,7 +69,12 @@
 
 <script>
     export default {
-        name: "NitsSays"
+        name: "NitsSays",
+        props:{
+            heading:{
+                type: String
+            }
+        }
     }
 </script>
 
