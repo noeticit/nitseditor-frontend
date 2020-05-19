@@ -13,9 +13,7 @@
             <div class="w-2/4 mt-12 mr-24">
                 <img class=" h-2/3" src="/project-assets/images/undraw_content_creator_xeju.png" alt="course selection">
             </div>
-
         </div>
-
     </div>
 </template>
 
