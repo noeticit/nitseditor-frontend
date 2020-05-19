@@ -4,10 +4,10 @@
             <div class="w-full h-40">
 <!--                <h1 class=" content-center text-center mt-16  font-bold text-4xl text-yellow-500 ">OUR BEST SERVICE FOR YOU</h1>-->
 <!--                <p class=" content-center text-center mt-4  font-semibold text-lg text-gray-500 pb-8 border-b border-yellow-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
-                <p class=" content-center text-center  text-blue-900 font-bold text-4xl">
+                <p class=" content-center text-center font-sans text-gray-700 font-bold text-4xl">
                     Our Expert Trainers
                 </p>
-                <h2 class=" content-center text-center mt-2 text-gray-500 font-semibold text-lg ">
+                <h2 class=" content-center text-center mt-2 text-lg leading-normal text-gray-700 text-lg font-sans antialiased font-medium">
                     Replenish man have thing gathering lights yielding shall you
                 </h2>
             </div>

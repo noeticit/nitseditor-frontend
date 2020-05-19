@@ -161,23 +161,29 @@
          </div>
 
        <!--footer-->
-         <div class="bg-gray-900 ">
-             <div class="container mx-auto flex">
-
-                 <div class="flex  border-b pb-10 border-gray-700">
-                         <div class="">
-                            <img class=" h-12 w-48 mt-24 mr-64 pr-4 border-r border-gray-700" src="/nits-assets/images/nits-editor-logo.png">
-                         </div>
-                         <div class="mr-64 text-gray-300 mt-24" >
-                             We believe in Simple, Creative & Flexible Design Standards with a Retina &
-                             Responsive Approach. Browse the amazing Features this template offers.</div>
-                     </div>
-
-                 <div class="text-gray-300 text-lg mt-24 mr-24">INSTAGRAM PHOTOS</div>
-
+         <div class="h-auto w-auto bg-gray-900 mt-20">
+             <div class="flex ml-32 border-b pb-10 border-gray-600 ">
+                 <div class="w-2/4">
+                   <img class="h-12 w-48 mt-24 mr-5" src="/nits-assets/images/nits-editor-logo.png">
+                 </div>
+                 <div class="border-l mt-24 ">
+                     <p class=" ml-5 text-gray-500 ">
+                     We believe in Simple, Creative & Flexible Design Standards with a Retina & <br>Responsive Approach.
+                     Browse the amazing Features this template offers.
+                     </p>
+                 </div>
+<!--                 <div class="flex border-b pb-10 border-gray-700">-->
+<!--                     <div class="w-2/4">-->
+<!--                         <a class=" h-auto " href="">-->
+<!--                             <img class=" pr-2 border-r border-gray-700" src="/nits-assets/images/nits-editor-logo.png">-->
+<!--                         </a>-->
+<!--                     </div>-->
+<!--                     <div class="ml-4 text-gray-300 " >We believe in Simple, Creative & Flexible Design Standards with a Retina & Responsive Approach. Browse the amazing Features this template offers.</div>-->
+<!--                 </div>-->
+                 <div class="text-gray-300 text-lg mt-24 ml-16">INSTAGRAM PHOTOS</div>
              </div>
 
-             <div class="flex  text-left ml-40 mt-4 ">
+             <div class="flex  text-left ml-64 mt-4 ">
                  <div class="mt-12">
                <span class="text-2xl ml-1 text-green-300 font-semibold">15,065,425</span>
                <h5 class="mt-2 text-base text-gray-300">TOTAL DOWNLOADS</h5>
@@ -313,8 +319,7 @@
              </div>
 
          </div>
-
-        </div>
+     </div>
 </template>
 
 <script>
