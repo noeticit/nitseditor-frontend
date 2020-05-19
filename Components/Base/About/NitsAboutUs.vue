@@ -8,9 +8,12 @@
         </div>
         <div class="px-24 py-2 mb-5">
             <nits-grid-col-three
-                    heading1="WHY CHOOSE US."
-                    heading2="OUR MISSION."
-                    heading3="WHAT WE DO."
+                    heading1="WHY CHOOSE "
+                    subheading1="US."
+                    heading2="OUR"
+                    subheading2="MISSION."
+                    heading3="WHAT WE "
+                    subheading3="DO."
             ></nits-grid-col-three>
         </div>
         <div>
