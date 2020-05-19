@@ -2,7 +2,7 @@
     <div class="sm:flex justify-center items-center">
         <div class="sm:w-1/2 m-4 p-2 items-center">
             <div class="text-center leading-tight text-gray-700 text-2xl font-sans antialiased tracking-tight font-semibold">FILTER THE COURSES</div>
-            <div class="mt-2 text-left leading-tight text-gray-600 text-sm font-sans antialiased tracking-wide font-light">Look through courses and browse them by category. With one click mark the desired category on the sidebar and apply filtering without reloading the page and interfering its display.
+            <div class="mt-2 text-left leading-tight text-gray-600 text-sm font-sans antialiased tracking-wide font-normal">Look through courses and browse them by category. With one click mark the desired category on the sidebar and apply filtering without reloading the page and interfering its display.
                 Enable course filtering by price, category, subcategory, status, levels, and ratings.</div>
             <div class="mt-3 flex justify-between items-center">
                 <div class="m-3 p-2 mt-10 w-1/2 h">

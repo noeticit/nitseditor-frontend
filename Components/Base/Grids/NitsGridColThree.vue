@@ -1,5 +1,5 @@
 <template>
-    <div class="h-auto grid grid-cols-3  gap-4">
+    <div class="h-auto grid grid-cols-3 gap-4">
         <div class="bg-white rounded-lg shadow-lg mt-5  justify-center">
             <div class="flex justify-between border-solid border-b-2 border-teal-500 p-2 text-center items-center">
                 <div class="text-left text-gray-800 ml-2 text-xl antialiased leading-snug tracking-normal font-sans">
