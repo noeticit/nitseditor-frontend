@@ -1,9 +1,9 @@
 <template>
-    <div class="h-auto grid grid-cols-3  gap-4">
+    <div class="h-auto grid grid-cols-3 gap-4">
         <div class="bg-white rounded-lg shadow-lg mt-5  justify-center">
             <div class="flex justify-between border-solid border-b-2 border-teal-500 p-2 text-center items-center">
-                <div class="text-left text-gray-800 ml-2 text-xl antialiased leading-snug tracking-normal font-sans">
-                    {{heading1}}
+                <div class="text-left font-semibold text-gray-700 ml-2 text-xl antialiased leading-snug tracking-normal font-sans">
+                    {{heading1}} <span class="text-teal-500">{{subheading1}}</span>
                 </div>
                 <div class="relative">
 <!--                    <slot name="toolbox"></slot>-->
@@ -17,8 +17,8 @@
 
         <div class="bg-white rounded-lg shadow-lg mt-5  justify-center">
             <div class="flex justify-between border-solid border-b-2 border-teal-500 p-2 text-center items-center">
-                <div class="text-left text-gray-800 ml-2 text-xl antialiased leading-snug tracking-normal font-sans">
-                    {{heading2}}
+                <div class="text-left font-semibold text-gray-700 ml-2 text-xl antialiased leading-snug tracking-normal font-sans">
+                    {{heading2}} <span class="text-teal-500">{{subheading2}}</span>
                 </div>
                 <div class="relative">
                     <slot name="toolbox"></slot>
@@ -31,8 +31,8 @@
         <div class="bg-white rounded-lg shadow-lg mt-5  justify-center">
             <div class="flex justify-between border-solid border-teal-500 border-b-2 p-2 text-center items-center">
 
-                <div class="text-left text-gray-800 ml-2 text-xl antialiased leading-snug tracking-normal font-sans">
-                    {{heading3}}
+                <div class="text-left font-semibold text-gray-700 ml-2 text-xl antialiased leading-snug tracking-normal font-sans">
+                    {{heading3}} <span class="text-teal-500">{{subheading3}}</span>
                 </div>
 
                 <div class="relative">
@@ -68,9 +68,27 @@
 
 
             },
+            subheading1:{
+                type: String,
+                required: true
+
+
+            },
+            subheading2:{
+                type: String,
+                required: true
+
+
+            },
+            subheading3:{
+                type: String,
+                required: true
+
+
+            },
             height: {
                 type: Number,
-            }
+            },
         }
     }
 </script>

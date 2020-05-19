@@ -4,10 +4,10 @@
             <div class="w-full h-40">
 <!--                <h1 class=" content-center text-center mt-16  font-bold text-4xl text-yellow-500 ">OUR BEST SERVICE FOR YOU</h1>-->
 <!--                <p class=" content-center text-center mt-4  font-semibold text-lg text-gray-500 pb-8 border-b border-yellow-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
-                <p class=" content-center text-center font-sans text-gray-700 font-bold text-4xl">
+                <p class=" content-center text-center leading-tight text-gray-700 text-2xl font-sans antialiased tracking-tight font-semibold uppercase">
                     Our Expert Trainers
                 </p>
-                <h2 class=" content-center text-center mt-2 text-lg leading-normal text-gray-700 text-lg font-sans antialiased font-medium">
+                <h2 class=" content-center text-center mt-2 text-left leading-tight text-gray-600 text-sm font-sans antialiased tracking-wide font-medium">
                     Replenish man have thing gathering lights yielding shall you
                 </h2>
             </div>
@@ -18,9 +18,9 @@
                     <div>
                         <img class=" w-full" src="/project-assets/images/c1.jpg" alt="">
                     </div>
-                    <p class="text-center text-blue-900 font-bold text-xl mt-4">David Cameron</p>
-                    <p class="text-center text-gray-600  text-md ">Sr. web designer</p>
-                    <p class="text-gray-600 text-center mt-4 ml-6 mr-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <p class="text-center text-blue-900 font-semibold font-sans text-xl mt-4">David Cameron</p>
+                    <p class="text-center leading-tight text-gray-600 text-sm font-sans antialiased tracking-wide font-semibold">Sr. web designer</p>
+                    <p class="text-gray-600 text-center mt-4 ml-6 mr-6 font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
                     <div class="flex flex-row">
                         <svg class="w-6 h-6 mt-8 ml-16" version="1.1" id="Facebook_w_x2F__circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -61,9 +61,9 @@
                     <div>
                         <img class=" w-full" src="/project-assets/images/c1.jpg" alt="">
                     </div>
-                    <p class="text-center text-blue-900 font-bold text-xl mt-4">David Cameron</p>
-                    <p class="text-center text-gray-600  text-md ">Sr. web designer</p>
-                    <p class="text-gray-600 text-center mt-4 ml-6 mr-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <p class="text-center text-blue-900 font-semibold font-sans text-xl mt-4">David Cameron</p>
+                    <p class="text-center leading-tight text-gray-600 text-sm font-sans antialiased tracking-wide font-semibold">Sr. web designer</p>
+                    <p class="text-gray-600 text-center mt-4 ml-6 mr-6 font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
                     <div class="flex flex-row">
                         <svg class="w-6 h-6 mt-8 ml-16" version="1.1" id="Facebook_w_x2F__circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -104,9 +104,9 @@
                     <div>
                         <img class=" w-full" src="/project-assets/images/c1.jpg" alt="">
                     </div>
-                    <p class="text-center text-blue-900 font-bold text-xl mt-4">David Cameron</p>
-                    <p class="text-center text-gray-600  text-md ">Sr. web designer</p>
-                    <p class="text-gray-600 text-center mt-4 ml-6 mr-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <p class="text-center text-blue-900 font-semibold font-sans text-xl mt-4">David Cameron</p>
+                    <p class="text-center leading-tight text-gray-600 text-sm font-sans antialiased tracking-wide font-semibold">Sr. web designer</p>
+                    <p class="text-gray-600 text-center mt-4 ml-6 mr-6 font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
                     <div class="flex flex-row">
                         <svg class="w-6 h-6 mt-8 ml-16" version="1.1" id="Facebook_w_x2F__circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -147,9 +147,9 @@
                     <div>
                         <img class=" w-full" src="/project-assets/images/c1.jpg" alt="">
                     </div>
-                    <p class="text-center text-blue-900 font-bold text-xl mt-4">David Cameron</p>
-                    <p class="text-center text-gray-600  text-md ">Sr. web designer</p>
-                    <p class="text-gray-600 text-center mt-4 ml-6 mr-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <p class="text-center text-blue-900 font-semibold font-sans text-xl mt-4">David Cameron</p>
+                    <p class="text-center leading-tight text-gray-600 text-sm font-sans antialiased tracking-wide font-semibold">Sr. web designer</p>
+                    <p class="text-gray-600 text-center mt-4 ml-6 mr-6 font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
                     <div class="flex flex-row">
                         <svg class="w-6 h-6 mt-8 ml-16" version="1.1" id="Facebook_w_x2F__circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
