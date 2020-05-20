@@ -1,6 +1,6 @@
 <template>
     <div class="relative">
-        <img class="h-screen w-screen" src="/nits-assets/images/Desktop-Dark.jpg" >
+        <img class="h-screen w-screen" src="/project-assets/images/Desktop-Dark.jpg" >
         <nav class="absolute top-0 bg-transparent w-screen">
             <div class="flex justify-between">
                 <div class="float-left text-white">
