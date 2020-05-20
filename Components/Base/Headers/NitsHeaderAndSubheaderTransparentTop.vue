@@ -103,83 +103,11 @@
                 </div>
                 <div class="block lg:hidden w-full h-full block lg:flex lg:items-center lg:w-auto"  v-if="responsive_tab">
                     <ul class="lg:flex-grow uppercase  flex flex-col lg:flex-row pb-4 lg:pb-0 ">
-                        <li class="flex flex-row ">
+                        <li class="flex flex-row "  v-for="item in menu">
                             <div class="w-11/12 pb-4 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                HOME
+                                {{item}}
                             </div>
                             <div class="pb-4 border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                FEATURES
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                PAGES
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                PORTFOLIO
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                BLOG
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                SHOP
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                SHOTCODES
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                      y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                     <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
@@ -193,67 +121,42 @@
 
                 <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
                     <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-white text-sm">
-                        <li class="hover:text-gray-400" >
+                        <li class="hover:text-gray-400"  v-for="item in menu" >
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                {{label1}}
+                                {{item}}
                             </a>
                         </li>
-                        <li class=" hover:text-gray-400">
-                            <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0  mx-4 lg:h-25 lg:py-10 px-2">
-                                {{label2}}
-                            </a>
-                        </li>
-                        <li class="hover:text-gray-400"  @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1">
-                            <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                {{label3}}
-                            </a>
-                            <ul  class="dropdown-menu absolute  text-white bg-blue-700 border-t-2 " v-show="isVisibleHeader1">
-                                <li class=" hover:text-orange-400"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  py-4 px-4 block whitespace-no-wrap flex " href="#">
-                                    <spam class="flex " >HOME-Coperate, Portfolio, blog</spam>
-                                    <span>
-<!--                                        <svg class="h-3  w-3 mt-1 items-end" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"-->
-                                        <!--                                             y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
-                                        <!--                                            <path fill="#606060" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908-->
-                                        <!--                                            c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>-->
-                                        <!--                                        </svg>-->
-                                    </span>
-                                </a></li>
-                                <!--                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white " v-show="isVisible1">-->
-                                <!--                                    <li class="hover:text-teal-400"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">-->
-                                <!--                                        <spam class="flex  ">HOME-Coperate</spam>-->
-                                <!--                                        <span>-->
-                                <!--                                    </span>-->
-                                <!--                                    </a></li>-->
-                                <!--                                </ul>-->
-                                <li class=""  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
-                                    <spam class="flex  hover:text-teal-400" >HOME-Coperate, Portfolio, blog</spam>
-                                    <span>
 
-                                    </span>
-                                </a></li>
-                            </ul>
-                        </li>
-                        <li class="hover:text-gray-400">
-                            <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                {{label4}}
-                            </a>
-                        </li>
-                        <li class="hover:text-gray-400">
-                            <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                {{label5}}
-                            </a>
-                        </li>
-                        <li class="hover:text-gray-400">
-                            <a href="" class="border-l-4 lg:border-l-0  block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                {{label6}}
-                            </a>
-                        </li>
-                        <li class="hover:text-gray-400">
-                            <a href="" class="border-l-4 lg:border-l-0  block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                <!--                            lg:border-b-4-->
-                                {{label7}}
-                            </a>
-                        </li>
+<!--                        <li class="hover:text-gray-400"  @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1">-->
+<!--                            <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">-->
+<!--                                {{label3}}-->
+<!--                            </a>-->
+<!--                            <ul  class="dropdown-menu absolute  text-white bg-blue-700 border-t-2 " v-show="isVisibleHeader1">-->
+<!--                                <li class=" hover:text-orange-400"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  py-4 px-4 block whitespace-no-wrap flex " href="#">-->
+<!--                                    <spam class="flex " >HOME-Coperate, Portfolio, blog</spam>-->
+<!--                                    <span>-->
+<!--&lt;!&ndash;                                        <svg class="h-3  w-3 mt-1 items-end" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                                             y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                                            <path fill="#606060" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                                            c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                                        </svg>&ndash;&gt;-->
+<!--                                    </span>-->
+<!--                                </a></li>-->
+<!--                                &lt;!&ndash;                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white " v-show="isVisible1">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                    <li class="hover:text-teal-400"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                        <spam class="flex  ">HOME-Coperate</spam>&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                        <span>&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                    </span>&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                    </a></li>&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                </ul>&ndash;&gt;-->
+<!--                                <li class=""  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">-->
+<!--                                    <spam class="flex  hover:text-teal-400" >HOME-Coperate, Portfolio, blog</spam>-->
+<!--                                    <span>-->
+
+<!--                                    </span>-->
+<!--                                </a></li>-->
+<!--                            </ul>-->
+<!--                        </li>-->
                     </ul>
                 </div>
 
@@ -261,80 +164,6 @@
 
             </nav>
         </div>
-
-        <section class="px-4 py-4 sm:pt-56 bg-yellow-600">
-            <div class="container mx-auto">
-                <div class="py-6 sm:py-8 sm:flex flex-wrap justify-between">
-                    <div class="w-full sm:w-1/2">
-                        <h3 class="text-xl lg:text-2xl font-regular text-white">
-                            We’re your local
-                        </h3>
-                        <h1 class="text-2xl sm:text-xl lg:text-5xl font-semibold text-white">
-                            website design company. Innovation starts with us.
-                        </h1>
-                        <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4 mb-10 text-white">
-                            We craft unique and meaningful, experiences that will sublime your
-                            business. We are specialized team of programmers and web developers
-                            in PHP Laravel. We are reliable
-                        </p>
-                        <div class="flex items-center">
-                            <a href="" class="px-4 py-3 bg-blue-900 text-white rounded-lg mr-2 text-sm lg:text-lg">More about us</a>
-                        </div>
-                    </div>
-                    <div class="w-full sm:w-1/2">
-                        <div class="w-full mt-20 sm:mt-0">
-                            <img src="/nits-assets/images/hero.svg" alt="Website Design Agency" class="w-full h-full">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <div>
-                <div class="container mx-auto">
-                    <div class="sm:flex flex-wrap justify-center items-center text-center">
-                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">
-                            <img src="/nits-assets/images/website-design.svg" alt="Website Design Agency" class="block mx-auto">
-                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
-                                Website Design
-                            </h3>
-                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
-                                Encompassing today’s website design technology to integrated and build solutions relevant to your business.
-                            </p>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">
-                            <img src="/nits-assets/images/business-branding.svg" alt="Branding for Website Design Agency" class="block mx-auto">
-                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
-                                Branding
-                            </h3>
-                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
-                                Share relevant, engaging, and inspirational brand messages to create a connection with your audience.
-                            </p>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">
-                            <img src="/nits-assets/images/website-marketing.svg" alt="Marketing for Website Design Agency" class="block mx-auto">
-                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
-                                Marketing
-                            </h3>
-                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
-                                Let us help you level up your search engine game, explore our solutions for digital marketing for your business.
-                            </p>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">
-                            <img src="/nits-assets/images/ecommerce-solutions.svg" alt="eCommerce for Website Design Agency" class="block mx-auto">
-                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
-                                Ecommerce Solution
-                            </h3>
-                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
-                                Ready to enhance your e-commerce solutions for brick-mortar stores, small-mid size business, large corporation.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
 <!--        <div class=" w-full h-11/12 ">-->
 <!--            <a class="">-->
@@ -348,34 +177,7 @@
     export default {
         name: "NitsHeaderAndSubheaderTransparentTop",
         props: {
-            label1: {
-                type: String,
-                required: true
-            },
-            label2: {
-                type: String,
-                required: true
-            },
-            label3: {
-                type: String,
-                required: true
-            },
-            label4: {
-                type: String,
-                required: true
-            },
-            label5: {
-                type: String,
-                required: true
-            },
-            label6: {
-                type: String,
-                required: true
-            },
-            label7: {
-                type: String,
-                required: true
-            },
+            menu: Array
         },
         data(){
             return{
