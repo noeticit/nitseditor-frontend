@@ -30,7 +30,7 @@
                         </div>
 
                         <div class="inline-block hover:bg-pink-600 rounded hover:text-white rounded cursor-pointer text-gray-500">
-                            <svg class="h-4 w-4 my-3 mx-3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="h-4 w-4 my-3 mx-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M9.565 7.421C8.207 5.007 6.754 3.038 6.648 2.893A7.876 7.876 0 002.311 8.38c.206.004 3.482.043 7.254-.959zm.978 2.64a11 11 0 01.309-.094 26.219 26.219 0 00-.637-1.336C6.169 9.843 2.287 9.755 2.15 9.751c-.003.084-.007.166-.007.25 0 2.019.763 3.861 2.016 5.252l-.005-.006s2.15-3.814 6.389-5.186zm-5.372 6.133v-.004c-.058-.045-.12-.086-.178-.135.106.085.178.139.178.139zM8.118 2.372a.546.546 0 01-.015.004c.006-.002.014-.002.014-.002l.001-.002zm7.071 1.732A7.83 7.83 0 0010 2.143c-.639 0-1.258.078-1.852.221.12.16 1.595 2.119 2.938 4.584 2.962-1.109 4.081-2.812 4.103-2.844zM10 19.2a9.2 9.2 0 01-9.199-9.199A9.199 9.199 0 0110 .8a9.2 9.2 0 019.2 9.201A9.2 9.2 0 0110 19.2zm1.336-7.914c-4.611 1.607-6.134 4.838-6.165 4.904a7.818 7.818 0 004.828 1.666 7.83 7.83 0 003.067-.621c-.116-.689-.573-3.096-1.679-5.967a1.464 1.464 0 01-.051.018zm.354-3.166c.184.373.358.754.523 1.139.059.135.114.272.17.406 2.713-.342 5.385.238 5.473.256a7.84 7.84 0 00-1.787-4.912c-.018.023-1.279 1.843-4.379 3.111zm1.171 2.785c1.031 2.836 1.449 5.142 1.529 5.611a7.858 7.858 0 003.367-5.27c-.156-.05-2.356-.747-4.896-.341z"/>
                             </svg>
                         </div>
@@ -43,58 +43,8 @@
                 <div class="w-50% ml-56 mr-64">
                     <div class="ml-64 ">
                         <ul class="hidden md:flex overflow-x-hidden sticky top-0 uppercase mr-10 font-semibold">
-                            <li class="mr-6 p-1 border-b-2 border-orange-500 inline-block" @mouseover="isVisible = true" @mouseleave="isVisible = false" @keydown.enter="isVisible = !isVisible">
-                                <div class="inline-flex items-center justify-between px-2 py-1 font-medium  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
-                                    <span class="text-white hover:text-blue-300">{{label1}}</span>
-                                </div>
-                                <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
-                                    <div v-show="isVisible" class="absolute pt-2">
-                                        <div class="relative py-1 bg-white border border-gray-200 rounded-md shadow-xl">
-                                            <div class="absolute top-0 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-white border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
-                                            <div class="relative">
-                                                <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
-                                                <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
-                                                <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
-                                                <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
-                                                <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </transition>
-                            </li>
-                            <li class="mr-6 p-1 " @mouseover="Visible = true" @mouseleave="Visible = false" @keydown.enter="Visible = !Visible">
-                                <div class="inline-flex items-center justify-between px-2 py-1 font-medium  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
-                                    <span class="text-white hover:text-blue-300">{{label2}}</span>
-                                </div>
-                                <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
-                                    <div v-show="Visible" class="absolute pt-2">
-                                        <div class="relative py-1 bg-white border border-gray-200 rounded-md shadow-xl">
-                                            <div class="absolute top-0 w-4 h-4 origin-center transform rotate-45 translate-x-5 -translate-y-2 bg-white border-t border-l border-gray-200 rounded-sm pointer-events-none"></div>
-                                            <div class="relative">
-                                                <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
-                                                <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
-                                                <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
-                                                <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
-                                                <a href="#" class="block w-full px-4 py-2 font-medium text-gray-700 whitespace-no-wrap hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:text-gray-900 focus:shadow-outline transition duration-300 ease-in-out">Noetic IT Service</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </transition>
-                            </li>
-                            <li class="mr-6 p-1">
-                                <a class="text-white hover:text-blue-300" href="#">{{label3}}</a>
-                            </li>
-                            <li class="mr-6 p-1">
-                                <a class="text-white hover:text-blue-300" href="#">{{label4}}</a>
-                            </li>
-                            <li class="mr-6 p-1">
-                                <a class="text-white hover:text-blue-300" href="#">{{label5}}</a>
-                            </li>
-                            <li class="mr-6 p-1">
-                                <a class="text-white hover:text-blue-300" href="#">{{label6}}</a>
-                            </li>
-                            <li class="mr-6 p-1">
-                                <a class="text-white hover:text-blue-300" href="#">{{label7}}</a>
+                            <li v-for="item in menu" class="mr-6 p-2">
+                                <a class="text-white hover:text-blue-300" href="#">{{item}}</a>
                             </li>
                             <li class="mr-6 p-1">
                                 <svg class="w-5 h-5  cursor-pointer text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -121,34 +71,7 @@
     export default {
         name: "NitsHCentered",
         props:{
-            label1:{
-                type: String,
-                required: true
-            },
-            label2:{
-                type: String,
-                required: true
-            },
-            label3:{
-                type: String,
-                required: true
-            },
-            label4:{
-                type: String,
-                required: true
-            },
-            label5:{
-                type: String,
-                required: true
-            },
-            label6:{
-                type: String,
-                required: true
-            },
-            label7:{
-                type: String,
-                required: true
-            },
+            menu : Array,
             button_name:{
                 type: String,
                 required: true
