@@ -5,7 +5,6 @@
                 <div class="float-left border-r text-black">
                     <img class="h-12 w-48 pr-5" src="/nits-assets/images/nits-editor-logo.png">
                 </div>
-
                 <div class=" text-lg ml-64 font-semibold">
                     <div class="float-right ml-32">
                         <div v-for="item in menu" class="inline-block cursor-default text-white p-1  mx-3">
@@ -30,10 +29,6 @@
     export default {
         name: "NitsHDark",
         props: {
-            name: {
-                type: String,
-                required: true
-            },
             menu: Array
         },
         data(){
