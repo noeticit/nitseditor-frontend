@@ -1,7 +1,7 @@
 <template>
-    <section class="py-8 h-2/4">
+    <section class="py-8 h-2/4 mt-5">
         <div class="container mx-auto flex flex-wrap flex-col items-center md:flex-row h-2/4">
-            <div class="w-full h-40">
+            <div class="w-full h-32">
 <!--                <h1 class=" content-center text-center mt-16  font-bold text-4xl text-yellow-500 ">OUR BEST SERVICE FOR YOU</h1>-->
 <!--                <p class=" content-center text-center mt-4  font-semibold text-lg text-gray-500 pb-8 border-b border-yellow-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
                 <p class=" content-center text-center leading-tight text-gray-700 text-2xl font-sans antialiased tracking-tight font-semibold uppercase">
@@ -13,14 +13,14 @@
             </div>
 
 
-            <div class=" w-full mt-5 flex flex-row mb-8 ">
+            <div class=" w-full  flex flex-row mb-8 ">
                 <div class=" w-1/5 ml-24 hover shadow-md pb-10">
                     <div>
                         <img class=" w-full" src="/project-assets/images/c1.jpg" alt="">
                     </div>
                     <p class="text-center text-blue-900 font-semibold font-sans text-xl mt-4">David Cameron</p>
                     <p class="text-center leading-tight text-gray-600 text-sm font-sans antialiased tracking-wide font-semibold">Sr. web designer</p>
-                    <p class="text-gray-600 text-center mt-4 ml-6 mr-6 font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <p class="text-gray-600 text-left mt-4 ml-6 mr-6 font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
                     <div class="flex flex-row">
                         <svg class="w-6 h-6 mt-8 ml-16" version="1.1" id="Facebook_w_x2F__circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -63,7 +63,7 @@
                     </div>
                     <p class="text-center text-blue-900 font-semibold font-sans text-xl mt-4">David Cameron</p>
                     <p class="text-center leading-tight text-gray-600 text-sm font-sans antialiased tracking-wide font-semibold">Sr. web designer</p>
-                    <p class="text-gray-600 text-center mt-4 ml-6 mr-6 font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <p class="text-gray-600 text-left mt-4 ml-6 mr-6 font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
                     <div class="flex flex-row">
                         <svg class="w-6 h-6 mt-8 ml-16" version="1.1" id="Facebook_w_x2F__circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -106,7 +106,7 @@
                     </div>
                     <p class="text-center text-blue-900 font-semibold font-sans text-xl mt-4">David Cameron</p>
                     <p class="text-center leading-tight text-gray-600 text-sm font-sans antialiased tracking-wide font-semibold">Sr. web designer</p>
-                    <p class="text-gray-600 text-center mt-4 ml-6 mr-6 font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <p class="text-gray-600 text-left mt-4 ml-6 mr-6 font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
                     <div class="flex flex-row">
                         <svg class="w-6 h-6 mt-8 ml-16" version="1.1" id="Facebook_w_x2F__circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -149,7 +149,7 @@
                     </div>
                     <p class="text-center text-blue-900 font-semibold font-sans text-xl mt-4">David Cameron</p>
                     <p class="text-center leading-tight text-gray-600 text-sm font-sans antialiased tracking-wide font-semibold">Sr. web designer</p>
-                    <p class="text-gray-600 text-center mt-4 ml-6 mr-6 font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <p class="text-gray-600 text-left mt-4 ml-6 mr-6 font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
                     <div class="flex flex-row">
                         <svg class="w-6 h-6 mt-8 ml-16" version="1.1" id="Facebook_w_x2F__circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
