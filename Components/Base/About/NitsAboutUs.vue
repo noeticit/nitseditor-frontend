@@ -1,18 +1,18 @@
 <template>
     <div class="hero">
-        <div class="relative ">
-            <img class="w-screen" src="/nits-assets/images/banner-bg.png">
+        <div class="relative">
+            <img class="w-screen" src="/project-assets/images/banner-bg.png" style="background: url('/Assets/images/add_user.png')">
             <div class="absolute top-0 mt-48 ml-64 pl-64 text-5xl font-bold text-white font-serif">
                 <div class="ml-32 pl-3 "><span class="text-black mr-3 text-purple-600">About</span> Us</div>
             </div>
         </div>
         <div class="px-24 py-2 mb-5">
             <nits-grid-col-three
-                    heading1="WHY CHOOSE "
+                    heading1="WHY CHOOSE"
                     subheading1="US."
                     heading2="OUR"
                     subheading2="MISSION."
-                    heading3="WHAT WE "
+                    heading3="WHAT WE"
                     subheading3="DO."
             ></nits-grid-col-three>
         </div>
@@ -23,8 +23,8 @@
             <div class="w-1/2 ">
                 <img src="/project-assets/images/nitish.jpg">
             </div>
-            <div class="flex mt-5 ">
-                <div class="w-1/2 px-12 mt-8 ">
+            <div class="flex mt-5">
+                <div class="w-1/2 px-12 mt-8">
                     <div class="text-teal-500 italic py-4 text-left leading-tight text-lg font-sans antialiased tracking-wide font-medium">CEO & Co-Founder</div>
                     <div class="text-left leading-tight mb-5 text-gray-700 text-2xl font-sans antialiased tracking-tight font-semibold">Nitish Kumar</div>
                     <div class="mt-6 text-left pr-12 leading-snug text-gray-600 text-sm font-serif antialiased tracking-wide font-normal">
@@ -35,7 +35,7 @@
                         Advancement, promising development John Lennon, our ambitions involvement underprivileged billionaire philanthropy save the world transform.
                         Carbon rights maintain healthcare emergent, implementation inspire social change solve clean water livelihoods.
                     </div>
-                    <div class="flex mt-8 px-5 ">
+                    <div class="flex mt-8 px-5">
                         <div class="inline-block hover:bg-blue-800 bg-gray-200  rounded-full cursor-pointer hover:text-white text-blue-800 ">
                             <svg class="h-4 w-4 my-3 mx-3 " xmlns="http://www.w3.org/2000/svg" fill="currentColor"  viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M17 1H3c-1.1 0-2 .9-2 2v14c0 1.101.9 2 2 2h7v-7H8V9.525h2v-2.05c0-2.164 1.212-3.684 3.766-3.684l1.803.002v2.605h-1.197c-.994 0-1.372.746-1.372 1.438v1.69h2.568L15 12h-2v7h4c1.1 0 2-.899 2-2V3c0-1.1-.9-2-2-2z"/>
@@ -109,7 +109,7 @@
                 </div>
 
             </div>
-            <div class="w-1/2 ">
+            <div class="w-1/2">
                 <img class="" src="/project-assets/images/abz.jpg">
             </div>
         </div>
