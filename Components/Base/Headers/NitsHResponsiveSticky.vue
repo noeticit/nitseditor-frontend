@@ -2,16 +2,15 @@
     <div class="">
         <div class="bg-white shadow-lg fixed w-full " >
             <nav class=" sm:container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full" >
-
-                <div class="block lg:hidden py-5 flex" >
-                    <div class="flex items-center sm:px-3 sm:py-2" >
+                <div class="block lg:hidden py-5 flex">
+                    <div class="flex items-center sm:px-3 sm:py-2">
                         <button @click="responsive_tab =! responsive_tab">
                             <svg class="w-8 h-8" version="1.1" id="Menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                            <path fill="#606060" d="M16.4,9H3.6C3.048,9,3,9.447,3,10c0,0.553,0.048,1,0.6,1h12.8c0.552,0,0.6-0.447,0.6-1S16.952,9,16.4,9z
+                                <path fill="#606060" d="M16.4,9H3.6C3.048,9,3,9.447,3,10c0,0.553,0.048,1,0.6,1h12.8c0.552,0,0.6-0.447,0.6-1S16.952,9,16.4,9z
                                  M16.4,13H3.6C3.048,13,3,13.447,3,14c0,0.553,0.048,1,0.6,1h12.8c0.552,0,0.6-0.447,0.6-1S16.952,13,16.4,13z M3.6,7h12.8
                                 C16.952,7,17,6.553,17,6s-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6S3.048,7,3.6,7z"/>
-                        </svg>
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -61,7 +60,7 @@
                                 </svg>
                             </div>
                         </li>
-                        <li class="flex flex-row ml-4 cursor-pointer" v-show="isVisibleResponsiveHeader1" >
+                        <li class="flex flex-row ml-4 cursor-pointer" v-show="isVisibleResponsiveHeader1">
                             <div class="w-11/12 pb-4 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-600 text-sm ">
                                 home
                             </div>

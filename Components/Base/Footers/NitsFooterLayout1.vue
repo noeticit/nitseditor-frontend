@@ -201,7 +201,7 @@
                     </div>
                 </div>
                 <div class="bg-gray-800">
-                    <div class=" sm:container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full border-b " >
+                    <div class=" sm:container mx-auto flex items-center justify-between flex-wrap px-4 lg:px-0 h-18 w-full border-b">
                         <div class="  items-center flex-shrink-0 md:px-6  md:py-4 text-xl lg:text-4xl font-regular text-gray-700 ml-32">
                             <div class=" flex items-center flex-shrink-0  md:py-5 text-sm lg:text-sm font-regular text-gray-300 ">
                                 <base-bread-crumb-one name="" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
