@@ -2,67 +2,18 @@
     <div class="flex">
         <div v-if="box4" class="block flex">
             <div  class="flex-col h-full w-64 bg-white ">
-                <div class="mt-16 ml-8">
-                    <img class="h-12 w-48 pr-4" src="/nits-assets/images/logo.png">
-                </div>
+<!--                <div class="mt-16 ml-8">-->
+<!--                    <img class="h-12 w-48 pr-4" src="/nits-assets/images/logo.png">-->
+<!--                </div>-->
                 <div class="mt-10 px-8 font-bold">
-                    <div class="flex pb-3 relative">
-                        <div class="mt-4 tracking-widest text-xs text-gray-700 uppercase">{{label1}}</div>
+                    <div class="flex pb-3 relative"  v-for="item in menu">
+                        <div class="mt-4 tracking-widest text-xs text-gray-700 uppercase" >{{item}}</div>
                         <div class="inline-block hover:text-blue-800  cursor-pointer text-blue-700 ">
                             <svg class="absolute right-0 h-5 w-5  my-4  " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
                             </svg>
                         </div>
                     </div>
-                    <div class="flex relative pb-3">
-                        <div class="mt-4 text-xs tracking-widest text-teal-500 uppercase">{{label2}}</div>
-                        <div class="inline-block hover:text-blue-800  cursor-pointer text-blue-700 ">
-                            <svg class="h-5 w-5 absolute right-0 my-4  " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="flex relative pb-3">
-                        <div class="mt-4 text-xs tracking-widest text-gray-800 uppercase">{{label3}}</div>
-                        <div class="inline-block hover:text-blue-800 text-left cursor-pointer text-blue-700 ">
-                            <svg class="h-5 w-5 absolute right-0 my-4  " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="flex relative pb-3">
-                        <div class="mt-4 text-xs tracking-widest text-gray-800 uppercase">{{label4}}</div>
-                        <div class="inline-block hover:text-blue-800  cursor-pointer text-blue-700 ">
-                            <svg class="h-5 w-5 absolute right-0 my-4 " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="flex relative pb-3">
-                        <div class="mt-4 text-xs tracking-widest text-gray-800 uppercase">{{label5}}</div>
-                        <div class="inline-block hover:text-blue-800  cursor-pointer text-blue-700 ">
-                            <svg class="h-5 w-5 absolute right-0 my-4  " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="flex relative pb-3">
-                        <div class="mt-4 text-xs tracking-widest text-gray-800 uppercase">{{label6}}</div>
-                        <div class="inline-block hover:text-blue-800  cursor-pointer text-blue-700 ">
-                            <svg class="h-5 w-5 absolute right-0 my-4  " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="flex relative pb-3">
-                        <div class=" mt-4 text-xs tracking-widest text-gray-800 uppercase">{{label7}}</div>
-                        <div class="inline-block hover:text-blue-800  cursor-pointer text-blue-700 ">
-                            <svg class="h-5 w-5 absolute right-0 my-4  " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M11 10L7.859 6.58a.695.695 0 010-.978.68.68 0 01.969 0l3.83 3.908a.697.697 0 010 .979l-3.83 3.908a.68.68 0 01-.969 0 .695.695 0 010-.978L11 10z"/>
-                            </svg>
-                        </div>
-                    </div>
-
                 </div>
                 <div class="flex mt-8 px-5 py-5">
                     <div class="inline-block hover:bg-blue-800  rounded cursor-pointer hover:text-white text-gray-700 ">
@@ -121,34 +72,7 @@
     export default {
         name: "NitsHeaderLeftsidePushContent",
         props: {
-            label1: {
-                type: String,
-                required: true
-            },
-            label2: {
-                type: String,
-                required: true
-            },
-            label3: {
-                type: String,
-                required: true
-            },
-            label4: {
-                type: String,
-                required: true
-            },
-            label5: {
-                type: String,
-                required: true
-            },
-            label6: {
-                type: String,
-                required: true
-            },
-            label7: {
-                type: String,
-                required: true
-            },
+            menu: Array
         },
         data(){
             return{

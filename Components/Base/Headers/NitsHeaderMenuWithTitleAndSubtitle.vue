@@ -119,83 +119,11 @@
                 </div>
                 <div class="block lg:hidden w-full h-full block lg:flex lg:items-center lg:w-auto"  v-if="responsive_tab">
                     <ul class="lg:flex-grow uppercase  flex flex-col lg:flex-row pb-4 lg:pb-0 ">
-                        <li class="flex flex-row ">
+                        <li class="flex flex-row "  v-for="item in menu">
                             <div class="w-11/12 pb-4 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                HOME
+                                {{item}}
                             </div>
                             <div class="pb-4 border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                FEATURES
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                PAGES
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                PORTFOLIO
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                BLOG
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                SHOP
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                SHOTCODES
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                      y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                     <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
@@ -209,46 +137,10 @@
 
                 <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
                     <ul class="lg:flex-grow font-medium flex flex-col lg:flex-row pb-4 lg:pb-0  text-sm">
-                        <li class="hover:bg-teal-500 hover:text-white border-r lg:border-r uppercase">
+                        <li class="hover:bg-teal-500 hover:text-white border-r lg:border-r uppercase"  v-for="item in menu">
                             <a href="" class=" block mt-4 lg:inline-block lg:mt-0 mx-2 lg:h-25 lg:py-10 px-2 hover:text-white">
-                                <div class="ml-2 text-gray-700">{{label1}}</div>
-                                <span class="text-gray-500 m-2">{{sublabel1}}</span>
-                            </a>
-                        </li>
-                        <li class="bg-teal-500 uppercase ">
-                            <a href="" class="  block mt-4 lg:inline-block lg:mt-0  mx-2 lg:h-25 lg:py-10 px-2">
-                                <div class="ml-2 text-white">{{label2}}</div>
-                                <span class="text-white m-2">{{sublabel2}}</span>
-                            </a>
-                        </li>
-                        <li  class="hover:bg-teal-500 hover:text-white uppercase">
-                            <a href="" class=" block mt-4 lg:inline-block lg:mt-0 mx-2 lg:h-25 lg:py-10 px-2">
-                                <div class="ml-2 text-gray-700">{{label3}}</div>
-                                <span class="text-gray-500 m-2">{{sublabel3}}</span>
-                            </a>
-                        </li>
-                        <li  class="hover:bg-teal-500 hover:text-white uppercase">
-                            <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-2 lg:h-25 lg:py-10 px-2">
-                                <div class="ml-2 text-gray-700">{{label4}}</div>
-                                <span class="text-gray-500 m-2">{{sublabel4}}</span>
-                            </a>
-                        </li>
-                        <li class="hover:bg-teal-500 hover:text-white uppercase">
-                            <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-2 lg:h-25 lg:py-10 px-2">
-                                <div class="ml-2 text-gray-700">{{label5}}</div>
-                                <span class="text-gray-500 m-2">{{sublabel5}}</span>
-                            </a>
-                        </li>
-                        <li class="hover:bg-teal-500 hover:text-white uppercase">
-                            <a href="" class="border-l-4 lg:border-l-0  block mt-4 lg:inline-block lg:mt-0 mx-2 lg:h-25 lg:py-10 px-2">
-                                <div class="ml-2 text-gray-700">{{label6}}</div>
-                                <span class="text-gray-500 m-2">{{sublabel6}}</span>
-                            </a>
-                        </li>
-                        <li class="hover:bg-teal-500 hover:text-white uppercase">
-                            <a href="" class="border-l-4 lg:border-l-0  block mt-4 lg:inline-block lg:mt-0 mx-2 lg:h-25 lg:py-10 px-2">
-                                <div class="ml-2 text-gray-700">{{label7}}</div>
-                                <span class="text-gray-500 m-2">{{sublabel7}}</span>
+                                <div class="ml-2 text-gray-700">{{item}}</div>
+                                <span class="text-gray-500 m-2"  v-for="item in submenu">{{item}}</span>
                             </a>
                         </li>
                     </ul>
@@ -292,62 +184,8 @@
     export default {
         name: "NitsHeaderMenuWithTitleAndSubtitle",
         props: {
-            label1: {
-                type: String,
-                required: true
-            },
-            label2: {
-                type: String,
-                required: true
-            },
-            label3: {
-                type: String,
-                required: true
-            },
-            label4: {
-                type: String,
-                required: true
-            },
-            label5: {
-                type: String,
-                required: true
-            },
-            label6: {
-                type: String,
-                required: true
-            },
-            label7: {
-                type: String,
-                required: true
-            },
-            sublabel1: {
-                type: String,
-                required: true
-            },
-            sublabel2: {
-                type: String,
-                required: true
-            },
-            sublabel3: {
-                type: String,
-                required: true
-            },
-            sublabel4: {
-                type: String,
-                required: true
-            },
-            sublabel5: {
-                type: String,
-                required: true
-            },
-            sublabel6: {
-                type: String,
-                required: true
-            },
-            sublabel7: {
-                type: String,
-                required: true
-            },
+            menu: Array,
+            submenu: Array
         },
         data(){
             return{

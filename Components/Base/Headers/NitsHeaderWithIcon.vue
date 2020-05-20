@@ -47,83 +47,11 @@
                 </div>
                 <div class="block lg:hidden w-full h-full block lg:flex lg:items-center lg:w-auto"  v-if="responsive_tab">
                     <ul class="lg:flex-grow uppercase  flex flex-col lg:flex-row pb-4 lg:pb-0 ">
-                        <li class="flex flex-row ">
+                        <li class="flex flex-row "  v-for="item in menu">
                             <div class="w-11/12 pb-4 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                HOME
+                                {{item}}
                             </div>
                             <div class="pb-4 border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                FEATURES
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                PAGES
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                PORTFOLIO
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                BLOG
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                SHOP
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
-                                <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                    <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
-                                    c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="flex flex-row ">
-                            <div class="pb-4 w-11/12 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 text-gray-700 text-sm font-medium">
-                                SHOTCODES
-                            </div>
-                            <div class="pb-4  border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                      y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                                     <path fill="#000000" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908
@@ -137,7 +65,7 @@
 
                 <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
                     <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-gray-700 text-sm">
-                        <li class=" mt-2">
+                        <li class=" mt-2"  v-for="item in menu">
                             <a href="" >
                                 <div class="border block lg:inline-block  rounded-full p-4 m-1 bg-white hover:bg-teal-500 text-gray-700" @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1">
                                     <svg class="w-6 h-6 " version="1.1" fill="currentColor" id="Home" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -149,104 +77,104 @@
                                 </div>
                                 <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
                                 <div class="ml-4" v-show="isVisibleHeader1">
-                                    INTRO
+                                    {{item}}
                                 </div>
                                 </transition>
                             </a>
                         </li>
-                        <li class="  mt-2">
-                            <a href="" >
-                                <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500 text-gray-700"  @mouseover="isVisibleHeader2 = true" @mouseleave="isVisibleHeader2 = false" @keydown.enter="isVisibleHeader2 = !isVisibleHeader2">
-                                    <svg class="w-6 h-6" version="1.1" fill="currentColor" id="Star" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                         viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                        <path fill-rule="evenodd" d="M10,1.3l2.388,6.722H18.8l-5.232,3.948l1.871,6.928L10,14.744l-5.438,4.154l1.87-6.928L1.199,8.022h6.412
-                                            L10,1.3z"/>
-                                    </svg>
-                                </div>
-                                <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
-                                <div class="ml-4" v-show="isVisibleHeader2">
-                                    SKILLS
-                                </div>
-                                </transition>
-                            </a>
-                        </li>
-                        <li class="mt-2">
-                            <a href="" >
-                                <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500 text-gray-700" @mouseover="isVisibleHeader3 = true" @mouseleave="isVisibleHeader3 = false" @keydown.enter="isVisibleHeader3 = !isVisibleHeader3">
-                                    <svg class="w-6 h-6" version="1.1" fill="currentColor" id="User" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                         viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                        <path fill-rule="evenodd" d="M7.725,2.146c-1.016,0.756-1.289,1.953-1.239,2.59C6.55,5.515,6.708,6.529,6.708,6.529
-                                            s-0.313,0.17-0.313,0.854C6.504,9.1,7.078,8.359,7.196,9.112c0.284,1.814,0.933,1.491,0.933,2.481c0,1.649-0.68,2.42-2.803,3.334
-                                            C3.196,15.845,1,17,1,19v1h18v-1c0-2-2.197-3.155-4.328-4.072c-2.123-0.914-2.801-1.684-2.801-3.334c0-0.99,0.647-0.667,0.932-2.481
-                                            c0.119-0.753,0.692-0.012,0.803-1.729c0-0.684-0.314-0.854-0.314-0.854s0.158-1.014,0.221-1.793c0.065-0.817-0.398-2.561-2.3-3.096
-                                            c-0.333-0.34-0.558-0.881,0.466-1.424C9.439,0.112,8.918,1.284,7.725,2.146z"/>
-                                    </svg>
-                                </div>
-                                <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
-                                <div class="ml-4" v-show="isVisibleHeader3">
-                                    ABOUT
-                                </div>
-                                </transition>
-                            </a>
-                        </li>
-                        <li class="mt-2">
-                            <a href="" >
-                                <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500 text-gray-700"  @mouseover="isVisibleHeader4 = true" @mouseleave="isVisibleHeader4 = false" @keydown.enter="isVisibleHeader4 = !isVisibleHeader4">
-                                    <svg class="w-6 h-6" version="1.1"  fill="currentColor" id="Sweden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                         viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                        <g>
-                                            <path fill-rule="evenodd" d="M18,4H9v5h10V5C19,4.447,18.553,4,18,4z M1,15c0,0.553,0.248,1,0.8,1H7v-5H1V15z M9,16h9
-                                                c0.553,0,1-0.447,1-1v-4H9V16z M1,5v4h6V4H1.8C1.248,4,1,4.447,1,5z"/>
-                                        </g>
-                                </svg>
+<!--                        <li class="  mt-2">-->
+<!--                            <a href="" >-->
+<!--                                <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500 text-gray-700"  @mouseover="isVisibleHeader2 = true" @mouseleave="isVisibleHeader2 = false" @keydown.enter="isVisibleHeader2 = !isVisibleHeader2">-->
+<!--                                    <svg class="w-6 h-6" version="1.1" fill="currentColor" id="Star" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                                         viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
+<!--                                        <path fill-rule="evenodd" d="M10,1.3l2.388,6.722H18.8l-5.232,3.948l1.871,6.928L10,14.744l-5.438,4.154l1.87-6.928L1.199,8.022h6.412-->
+<!--                                            L10,1.3z"/>-->
+<!--                                    </svg>-->
+<!--                                </div>-->
+<!--                                <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">-->
+<!--                                <div class="ml-4" v-show="isVisibleHeader2">-->
+<!--                                    SKILLS-->
+<!--                                </div>-->
+<!--                                </transition>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li class="mt-2">-->
+<!--                            <a href="" >-->
+<!--                                <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500 text-gray-700" @mouseover="isVisibleHeader3 = true" @mouseleave="isVisibleHeader3 = false" @keydown.enter="isVisibleHeader3 = !isVisibleHeader3">-->
+<!--                                    <svg class="w-6 h-6" version="1.1" fill="currentColor" id="User" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                                         viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
+<!--                                        <path fill-rule="evenodd" d="M7.725,2.146c-1.016,0.756-1.289,1.953-1.239,2.59C6.55,5.515,6.708,6.529,6.708,6.529-->
+<!--                                            s-0.313,0.17-0.313,0.854C6.504,9.1,7.078,8.359,7.196,9.112c0.284,1.814,0.933,1.491,0.933,2.481c0,1.649-0.68,2.42-2.803,3.334-->
+<!--                                            C3.196,15.845,1,17,1,19v1h18v-1c0-2-2.197-3.155-4.328-4.072c-2.123-0.914-2.801-1.684-2.801-3.334c0-0.99,0.647-0.667,0.932-2.481-->
+<!--                                            c0.119-0.753,0.692-0.012,0.803-1.729c0-0.684-0.314-0.854-0.314-0.854s0.158-1.014,0.221-1.793c0.065-0.817-0.398-2.561-2.3-3.096-->
+<!--                                            c-0.333-0.34-0.558-0.881,0.466-1.424C9.439,0.112,8.918,1.284,7.725,2.146z"/>-->
+<!--                                    </svg>-->
+<!--                                </div>-->
+<!--                                <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">-->
+<!--                                <div class="ml-4" v-show="isVisibleHeader3">-->
+<!--                                    ABOUT-->
+<!--                                </div>-->
+<!--                                </transition>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li class="mt-2">-->
+<!--                            <a href="" >-->
+<!--                                <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500 text-gray-700"  @mouseover="isVisibleHeader4 = true" @mouseleave="isVisibleHeader4 = false" @keydown.enter="isVisibleHeader4 = !isVisibleHeader4">-->
+<!--                                    <svg class="w-6 h-6" version="1.1"  fill="currentColor" id="Sweden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                                         viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
+<!--                                        <g>-->
+<!--                                            <path fill-rule="evenodd" d="M18,4H9v5h10V5C19,4.447,18.553,4,18,4z M1,15c0,0.553,0.248,1,0.8,1H7v-5H1V15z M9,16h9-->
+<!--                                                c0.553,0,1-0.447,1-1v-4H9V16z M1,5v4h6V4H1.8C1.248,4,1,4.447,1,5z"/>-->
+<!--                                        </g>-->
+<!--                                </svg>-->
 
-                                </div>
-                                <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
-                                <div class="ml-4" v-show="isVisibleHeader4">
-                                    BLOGS
-                                </div>
-                                </transition>
-                            </a>
-                        </li>
-                        <li class="mt-2">
-                            <a href="" >
-                                <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500 text-gray-700"  @mouseover="isVisibleHeader5 = true" @mouseleave="isVisibleHeader5 = false" @keydown.enter="isVisibleHeader5 = !isVisibleHeader5">
-                                    <svg class="w-6 h-6" version="1.1" fill="currentColor" id="Pencil" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                         viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                        <path fill-rule="evenodd" d="M14.69,2.661c-1.894-1.379-3.242-1.349-3.754-1.266c-0.144,0.023-0.265,0.106-0.35,0.223l-4.62,6.374
-                                            l-2.263,3.123c-0.277,0.382-0.437,0.836-0.462,1.307l-0.296,5.624c-0.021,0.405,0.382,0.698,0.76,0.553l5.256-2.01
-                                            c0.443-0.17,0.828-0.465,1.106-0.849l1.844-2.545l5.036-6.949c0.089-0.123,0.125-0.273,0.1-0.423
-                                            C16.963,5.297,16.56,4.021,14.69,2.661z M8.977,15.465l-2.043,0.789c-0.08,0.031-0.169,0.006-0.221-0.062
-                                            c-0.263-0.335-0.576-0.667-1.075-1.03c-0.499-0.362-0.911-0.558-1.31-0.706c-0.08-0.03-0.131-0.106-0.126-0.192l0.122-2.186
-                                            l0.549-0.755c0,0,1.229-0.169,2.833,0.998c1.602,1.166,1.821,2.388,1.821,2.388L8.977,15.465z"/>
-                                    </svg>
-                                </div>
-                                <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
-                                <div class="ml-3" v-show="isVisibleHeader5">
-                                    ARTICLES
-                                </div>
-                                </transition>
-                            </a>
-                        </li>
-                        <li class="mt-2">
-                            <a href="" >
-                                <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500 text-gray-700" @mouseover="isVisibleHeader6 = true" @mouseleave="isVisibleHeader6 = false" @keydown.enter="isVisibleHeader6 = !isVisibleHeader6">
-                                    <svg class="w-6 h-6" version="1.1" fill="currentColor"  id="Mail" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                         viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-                                        <path fill-rule="evenodd" d="M1.574,5.286c0.488,0.262,7.248,3.894,7.5,4.029C9.326,9.45,9.652,9.514,9.98,9.514
-                                            c0.328,0,0.654-0.064,0.906-0.199s7.012-3.767,7.5-4.029C18.875,5.023,19.337,4,18.44,4H1.521C0.624,4,1.086,5.023,1.574,5.286z
-                                             M18.613,7.489c-0.555,0.289-7.387,3.849-7.727,4.027s-0.578,0.199-0.906,0.199s-0.566-0.021-0.906-0.199S1.941,7.777,1.386,7.488
-                                            C0.996,7.284,1,7.523,1,7.707S1,15,1,15c0,0.42,0.566,1,1,1h16c0.434,0,1-0.58,1-1c0,0,0-7.108,0-7.292S19.004,7.285,18.613,7.489z"
-                                        />
-                                    </svg>
-                                </div>
-                                <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
-                                <div class="ml-4"  v-show="isVisibleHeader6">
-                                    CONTACT
-                                </div>
-                                </transition>
-                            </a>
-                        </li>
+<!--                                </div>-->
+<!--                                <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">-->
+<!--                                <div class="ml-4" v-show="isVisibleHeader4">-->
+<!--                                    BLOGS-->
+<!--                                </div>-->
+<!--                                </transition>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li class="mt-2">-->
+<!--                            <a href="" >-->
+<!--                                <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500 text-gray-700"  @mouseover="isVisibleHeader5 = true" @mouseleave="isVisibleHeader5 = false" @keydown.enter="isVisibleHeader5 = !isVisibleHeader5">-->
+<!--                                    <svg class="w-6 h-6" version="1.1" fill="currentColor" id="Pencil" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                                         viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
+<!--                                        <path fill-rule="evenodd" d="M14.69,2.661c-1.894-1.379-3.242-1.349-3.754-1.266c-0.144,0.023-0.265,0.106-0.35,0.223l-4.62,6.374-->
+<!--                                            l-2.263,3.123c-0.277,0.382-0.437,0.836-0.462,1.307l-0.296,5.624c-0.021,0.405,0.382,0.698,0.76,0.553l5.256-2.01-->
+<!--                                            c0.443-0.17,0.828-0.465,1.106-0.849l1.844-2.545l5.036-6.949c0.089-0.123,0.125-0.273,0.1-0.423-->
+<!--                                            C16.963,5.297,16.56,4.021,14.69,2.661z M8.977,15.465l-2.043,0.789c-0.08,0.031-0.169,0.006-0.221-0.062-->
+<!--                                            c-0.263-0.335-0.576-0.667-1.075-1.03c-0.499-0.362-0.911-0.558-1.31-0.706c-0.08-0.03-0.131-0.106-0.126-0.192l0.122-2.186-->
+<!--                                            l0.549-0.755c0,0,1.229-0.169,2.833,0.998c1.602,1.166,1.821,2.388,1.821,2.388L8.977,15.465z"/>-->
+<!--                                    </svg>-->
+<!--                                </div>-->
+<!--                                <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">-->
+<!--                                <div class="ml-3" v-show="isVisibleHeader5">-->
+<!--                                    ARTICLES-->
+<!--                                </div>-->
+<!--                                </transition>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li class="mt-2">-->
+<!--                            <a href="" >-->
+<!--                                <div class="border block lg:inline-block  rounded-full p-4 m-1 ml-2 bg-white hover:bg-teal-500 text-gray-700" @mouseover="isVisibleHeader6 = true" @mouseleave="isVisibleHeader6 = false" @keydown.enter="isVisibleHeader6 = !isVisibleHeader6">-->
+<!--                                    <svg class="w-6 h-6" version="1.1" fill="currentColor"  id="Mail" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+<!--                                         viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
+<!--                                        <path fill-rule="evenodd" d="M1.574,5.286c0.488,0.262,7.248,3.894,7.5,4.029C9.326,9.45,9.652,9.514,9.98,9.514-->
+<!--                                            c0.328,0,0.654-0.064,0.906-0.199s7.012-3.767,7.5-4.029C18.875,5.023,19.337,4,18.44,4H1.521C0.624,4,1.086,5.023,1.574,5.286z-->
+<!--                                             M18.613,7.489c-0.555,0.289-7.387,3.849-7.727,4.027s-0.578,0.199-0.906,0.199s-0.566-0.021-0.906-0.199S1.941,7.777,1.386,7.488-->
+<!--                                            C0.996,7.284,1,7.523,1,7.707S1,15,1,15c0,0.42,0.566,1,1,1h16c0.434,0,1-0.58,1-1c0,0,0-7.108,0-7.292S19.004,7.285,18.613,7.489z"-->
+<!--                                        />-->
+<!--                                    </svg>-->
+<!--                                </div>-->
+<!--                                <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">-->
+<!--                                <div class="ml-4"  v-show="isVisibleHeader6">-->
+<!--                                    CONTACT-->
+<!--                                </div>-->
+<!--                                </transition>-->
+<!--                            </a>-->
+<!--                        </li>-->
                     </ul>
                 </div>
 
@@ -254,85 +182,15 @@
 
             </nav>
         </div>
-        <section class="px-4 py-4 sm:pt-56">
-            <div class="container mx-auto">
-                <div class="py-6 sm:py-8 sm:flex flex-wrap justify-between">
-                    <div class="w-full sm:w-1/2">
-                        <h3 class="text-xl lg:text-2xl font-regular text-blue-900">
-                            We’re your local
-                        </h3>
-                        <h1 class="text-2xl sm:text-xl lg:text-5xl font-semibold text-blue-900">
-                            website design company. Innovation starts with us.
-                        </h1>
-                        <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4 mb-10">
-                            We craft unique and meaningful, experiences that will sublime your
-                            business. We are specialized team of programmers and web developers
-                            in PHP Laravel. We are reliable
-                        </p>
-                        <div class="flex items-center">
-                            <a href="" class="px-4 py-3 bg-blue-900 text-white rounded-lg mr-2 text-sm lg:text-lg">More about us</a>
-                        </div>
-                    </div>
-                    <div class="w-full sm:w-1/2">
-                        <div class="w-full mt-20 sm:mt-0">
-                            <img src="/nits-assets/images/hero.svg" alt="Website Design Agency" class="w-full h-full">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <div>
-                <div class="container mx-auto">
-                    <div class="sm:flex flex-wrap justify-center items-center text-center">
-                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">
-                            <img src="/nits-assets/images/website-design.svg" alt="Website Design Agency" class="block mx-auto">
-                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
-                                Website Design
-                            </h3>
-                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
-                                Encompassing today’s website design technology to integrated and build solutions relevant to your business.
-                            </p>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">
-                            <img src="/nits-assets/images/business-branding.svg" alt="Branding for Website Design Agency" class="block mx-auto">
-                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
-                                Branding
-                            </h3>
-                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
-                                Share relevant, engaging, and inspirational brand messages to create a connection with your audience.
-                            </p>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4">
-                            <img src="/nits-assets/images/website-marketing.svg" alt="Marketing for Website Design Agency" class="block mx-auto">
-                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
-                                Marketing
-                            </h3>
-                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
-                                Let us help you level up your search engine game, explore our solutions for digital marketing for your business.
-                            </p>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 sm:mt-16 md:mt-32 lg:mt-64">
-                            <img src="/nits-assets/images/ecommerce-solutions.svg" alt="eCommerce for Website Design Agency" class="block mx-auto">
-                            <h3 class="text-2xl sm:text-xl lg:text-4xl text-blue-900 py-4">
-                                Ecommerce Solution
-                            </h3>
-                            <p class="text-lg sm:text-sm lg:text-xl text-gray-700 py-4">
-                                Ready to enhance your e-commerce solutions for brick-mortar stores, small-mid size business, large corporation.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 </template>
 
 <script>
     export default {
         name: "NitsHeaderWithIcon",
+        props: {
+            menu: Array
+        },
         data(){
             return{
                 responsive_tab :false,
