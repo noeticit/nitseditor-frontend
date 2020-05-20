@@ -8,8 +8,8 @@
                     </svg>
                 </div>
                 <div class="flex-col">
-                    <h3 class="text-left text-xl ml-5 text-white tracking-normal font-mono leading-snug antialiased mt-5 font-bold">POWERFUL LMS ON VUE.JS</h3>
-                    <p class="text-left text-white text-base ml-2 antialiased leading-snug tracking-normal  mt-2 p-3   antialiased mb-2">
+                    <h3 class="text-left ml-5 text-white tracking-normal antialiased mt-5 leading-tight text-xl font-sans antialiased font-semibold">POWERFUL LMS ON VUE.JS</h3>
+                    <p class="mt-3 text-left leading-snug text-white text-sm font-serif ml-2  p-4 antialiased tracking-wide font-normal">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis,
                     </p>
                 </div>
@@ -23,8 +23,8 @@
                     </svg>
                 </div>
                 <div class="flex-col">
-                    <h3 class="text-left text-xl font-mono ml-5 text-white tracking-normal leading-snug antialiased mt-5 font-bold">PEFFORTLESSLY MANAGE COURSES</h3>
-                    <p class="text-left text-white text-base ml-2 antialiased leading-snug tracking-normal  mt-2 p-3   antialiased mb-2">
+                    <h3 class="text-left ml-5 text-white tracking-normal antialiased mt-5 leading-tight text-xl font-sans antialiased font-semibold">PEFFORTLESSLY MANAGE COURSES</h3>
+                    <p class="mt-3 text-left leading-snug text-white text-sm font-serif ml-2  p-4 antialiased tracking-wide font-normal">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis,
                     </p>
                 </div>
@@ -39,8 +39,8 @@
                     </svg>
                 </div>
                 <div class="flex-col">
-                    <h3 class="text-left text-xl ml-5 text-white font-mono tracking-normal leading-snug antialiased mt-5 font-bold">EASILY SELL COURSES ONLINE</h3>
-                    <p class="text-left text-white text-base ml-2 antialiased leading-snug tracking-normal  mt-2 p-3   antialiased mb-2">
+                    <h3 class="text-left ml-5 text-white tracking-normal antialiased mt-5 leading-tight text-xl font-sans antialiased font-semibold">EASILY SELL COURSES ONLINE</h3>
+                    <p class="mt-3 text-left leading-snug text-white text-sm font-serif ml-2  p-4 antialiased tracking-wide font-normal">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis,
                     </p>
                 </div>
@@ -54,8 +54,8 @@
                     </svg>
                 </div>
                 <div class="flex-col">
-                    <h3 class="text-left text-xl ml-5 text-white font-mono tracking-normal leading-snug antialiased mt-5 font-bold">24/7 SUPPORT WITH LIVE CHAT</h3>
-                    <p class="text-left text-white text-base ml-2 antialiased leading-snug tracking-normal  mt-2 p-3   antialiased mb-2">
+                    <h3 class="text-left ml-5 text-white tracking-normal antialiased mt-5 leading-tight text-xl font-sans antialiased font-semibold">24/7 SUPPORT WITH LIVE CHAT</h3>
+                    <p class="mt-3 text-left leading-snug text-white text-sm font-serif ml-2  p-4 antialiased tracking-wide font-normal">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis,
                     </p>
                 </div>
