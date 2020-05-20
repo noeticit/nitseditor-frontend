@@ -20,8 +20,8 @@
             <nits-grid-col-four></nits-grid-col-four>
         </div>
         <div class="flex">
-            <div class="w-1/2 ">
-                <img src="/project-assets/images/nitish.jpg">
+            <div class="w-1/2">
+                <img :src="image">
             </div>
             <div class="flex mt-5">
                 <div class="w-1/2 px-12 mt-8">
@@ -110,7 +110,7 @@
 
             </div>
             <div class="w-1/2">
-                <img class="" src="/project-assets/images/abz.jpg">
+                <img class="" :src="image2">
             </div>
         </div>
         <nits-says
@@ -121,10 +121,17 @@
 </template>
 
 <script>
-    import NitsGridColThree from "../Grids/NitsGridColThree";
     export default {
         name: "NitsAboutUs",
-        components: {NitsGridColThree}
+
+        props:{
+            image:{
+                type:String
+            },
+            image2:{
+                type:String
+            }
+        }
     }
 </script>
 
