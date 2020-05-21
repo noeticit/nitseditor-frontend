@@ -5,7 +5,7 @@
             <div class="flex justify-between">
                 <div class="float-left text-white">
                     <div class="flex  px-5 py-5">
-                        <div class="inline-block hover:bg-blue-800  rounded cursor-pointer hover:text-white text-gray-500 ">
+                        <div class="inline-block hover:bg-blue-800  rounded cursor-pointer hover:text-white text-gray-500">
                             <svg class="h-4 w-4 my-3 mx-3 " xmlns="http://www.w3.org/2000/svg" fill="currentColor"  viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M17 1H3c-1.1 0-2 .9-2 2v14c0 1.101.9 2 2 2h7v-7H8V9.525h2v-2.05c0-2.164 1.212-3.684 3.766-3.684l1.803.002v2.605h-1.197c-.994 0-1.372.746-1.372 1.438v1.69h2.568L15 12h-2v7h4c1.1 0 2-.899 2-2V3c0-1.1-.9-2-2-2z"/>
                             </svg>

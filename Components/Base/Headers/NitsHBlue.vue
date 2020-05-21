@@ -3,9 +3,7 @@
         <div class="flex-shrink-0 ml-10 cursor-pointer">
             <img class="h-16 w-56 pr-5" :src="logo">
         </div>
-        <nits-menus
-                :menu="menu">
-        </nits-menus>
+        <nits-menus :menus="menus"></nits-menus>
         <base-solid-button class="mr-10" Solid="login" url="/login"></base-solid-button>
     </div>
 </template>
@@ -14,11 +12,14 @@
     export default {
         name: "NitsHBlue",
         props: {
-            menu: Array,
+            menus: Array,
             logo: {
                 type: String,
                 required: true
             },
+            url:{
+                type: String,
+            }
 
         },
         data(){
