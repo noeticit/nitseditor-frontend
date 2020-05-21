@@ -108,10 +108,15 @@
             heading:{
                 type: String,
                 required: true
+            },
+            menus: {
+                type: Array,
             }
 
         },
-
+        created() {
+            console.log(this.menus)
+        }
     }
 </script>
 
