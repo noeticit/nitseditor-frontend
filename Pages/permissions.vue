@@ -33,7 +33,7 @@
                     </tr>
                     <tr v-for="(item,index) in pages">
                         <td class="h-8 text-center border-b border-gray-200 text-sm text-teal-700 antialiased leading-tight tracking-normal  font-sans font-normal">{{item.page_name}}</td>
-                        <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.god"></td>
+                        <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox"  @click="dataSelection(item, $event)" v-model="item.god"></td>
                         <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.super_admin"></td>
                         <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.admin"></td>
                         <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.institute"></td>
@@ -72,13 +72,42 @@
                 selectedFields: {},
                 loading: true,
                 page: '',
-                search:''
+                search:'',
             }
         },
         components: {
             'DashboardLayoutOne': () => import('./../Layouts/Dashboard/LayoutOne')
         },
         methods:{
+            dataSelection(item, event) {
+                if (event.target.checked) {
+                    item = {
+                        page_id : item.id,
+                        role_id: 1
+                    }
+                    this.table_ids.push(item);
+                    console.log( this.table_ids)
+
+                    const postData = {
+
+                    }
+                    this.$api.post('/nits-system-api/page-permissions-create', postData).then(response => {
+                        if (response.status === 200)
+                        {
+
+                        }
+                    })
+
+
+                }
+                else{
+                    var index = _.findIndex(this.table_ids, (q) => {
+                        return q === item
+                    })
+                    this.table_ids.splice(index,  1);
+                    console.log( this.table_ids)
+                }
+            },
             removeElement(){
 
             },
@@ -114,13 +143,6 @@
 
                     this.roles = response.data.roles
                     this.roles.splice(0, 0, {name: 'Page Name', id: ''});
-
-
-                    // this.selectedColumns = response.data.roles.map(a => ({
-                    //     title: a.name,
-                    //     key: a.name,
-                    //     id: a.id
-                    // }))
 
                     this.loading = false
                 }
