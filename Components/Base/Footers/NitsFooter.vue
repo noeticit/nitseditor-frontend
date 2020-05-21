@@ -3,38 +3,36 @@
         <div class=" bg-gray-800 ">
             <div class="container flex mx-auto pt-20 pb-20">
                 <div class="flex flex-col ml-8">
-                    <img class="h-16 w-56 -mt-2 mr-5" :src="logo">
+                    <img class="h-16 w-48 -mt-2 mr-5" :src="logo">
 
                     <div class=" mt-3 text-left leading-snug text-gray-500 text-sm font-serif antialiased tracking-wide font-normal">
-                        We believe in Simple, Creative & Flexible Design <br>Standards with a Retina & Responsive Approach.<br>
-                        Browse the amazing Features this template offers.
+                        Confidence Educare is a team of experienced <br> and dedicated teachers imparting knowledge <br> in the field of commerce from Standard XI to post <br> graduation in the state of Maharashtra, India.
+<!--                        We believe in Simple, Creative & Flexible Design <br>Standards with a Retina & Responsive Approach.<br>-->
+<!--                        Browse the amazing Features this template offers.-->
                     </div>
                     <div class="flex flex-col mt-8 antialiased font-medium text-sm leading-5 text-gray-500 mr-2">
                         <span class="text-sm font-bold text-gray-100">Office :</span>
-                        Nasscom Warehouse,<br>
-                        MBP, Ghansoli Navi Mumbai
+                        8, Balkrishna Niwas, 1st Floor, <br> L.N. Road, Matunga (East),<br> Mumbai 400 019
                     </div>
                     <span class="flex mt-8 antialiased font-medium text-sm leading-5 text-gray-500 mr-2">
                            <span class="text-sm font-bold text-gray-100">Phone : &nbsp; </span>
-                            (91) 9890908900
-                        </span>
+                            022 24173149
+                    </span>
                     <span class="flex antialiased font-medium text-sm leading-5 text-gray-500 mr-2 ">
-                           <span class="text-sm font-bold text-gray-100">Fax : &nbsp;</span>
-                            (91) 921-21-2100
+                           <span class="text-sm font-bold text-gray-100">Mobile : &nbsp;</span>
+                            (91) 9833810510
                         </span>
                     <span class="flex antialiased font-medium text-sm leading-5 text-gray-500 mr-2 text-gray-400">
                            <span class="text-sm font-bold text-gray-100">Email : &nbsp;</span>
-                             info@noeticit.com
+                             	info@confidenceeducare.com
                         </span>
                 </div>
                 <div class="flex flex-col ml-24 w-1/4">
-                    <h4 class="text-left leading-tight text-gray-100 text-sm font-sans antialiased tracking-widest font-medium">CLIENT TESTIMONIALS</h4>
-                    <div class="text-gray-500 pb-0 mt-12 ">
-                        <p class="text-gray-500 italic text-sm">"Similique fugit repellendus exceptiture perferendis provident quia eaque.
-                            Repellendus, vero numquam?"</p><br>
-
-                        <div class="-mt-2 font-semibold text-gray-400">~STEVE JOBS</div><br>
-                        <div class="text-sm ml-2 -mt-4 text-gray-500">Apple Inc.</div>
+                    <h4 class="text-left leading-tight text-gray-100 text-sm font-sans antialiased tracking-widest font-medium">TESTIMONIALS</h4>
+                    <div class="text-gray-500 pb-0 mt-8">
+                        <p class="text-gray-500 italic text-sm">"I had a great experience with CTS. It acknowledged us about the board pattern right from the question paper to the correction. It gave a lot of practice. As it is said practice makes man perfect, it helped a lot."</p><br>
+                        <div class="-mt-2 font-semibold text-gray-400">~ Tanvi Doshi</div><br>
+<!--                        <div class="text-sm ml-2 -mt-4 text-gray-500">Student.</div>-->
                     </div>
                     <div class="flex mt-16">
                         <div class="flex ">
@@ -75,43 +73,43 @@
                                 </a>
                             </div>
 
-                            <div class="inline-block px-1">
-                                <a class="" href="#">
-                                    <div class="flex font-thin hover:bg-black hover:border-black cursor-pointer h-8 w-8 pt-1 px-1 rounded-full border-2 border-gray-500  hover:text-white text-gray-200" >
-                                        <svg class="w-4 h-4 ml-1 mr-1 mt-1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M8 0a8 8 0 00-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 014 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8.01 8.01 0 0016 8a8 8 0 00-8-8z"/>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </div>
+<!--                            <div class="inline-block px-1">-->
+<!--                                <a class="" href="#">-->
+<!--                                    <div class="flex font-thin hover:bg-black hover:border-black cursor-pointer h-8 w-8 pt-1 px-1 rounded-full border-2 border-gray-500  hover:text-white text-gray-200" >-->
+<!--                                        <svg class="w-4 h-4 ml-1 mr-1 mt-1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16" fill="currentColor">-->
+<!--                                            <path fill-rule="evenodd" d="M8 0a8 8 0 00-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 014 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8.01 8.01 0 0016 8a8 8 0 00-8-8z"/>-->
+<!--                                        </svg>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
 
-                            <div class="inline-block px-1">
-                                <a class="" href="#">
-                                    <div class="flex font-thin hover:bg-blue-400 hover:border-blue-400 cursor-pointer h-8 w-8 pt-1 px-1 rounded-full border-2 border-gray-500  hover:text-white text-gray-200" >
-                                        <svg class="w-4 h-4  ml-1 mr-1 mt-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 .4a9.6 9.6 0 100 19.2A9.6 9.6 0 0010 .4zm4.4 7.75c-.5 2.92-3.35 5.39-4.2 5.95-.85.56-1.63-.23-1.92-.82C7.96 12.59 7 8.9 6.74 8.6c-.26-.3-1.02.3-1.02.3l-.37-.49S6.9 6.53 8.08 6.29c1.24-.25 1.24 1.95 1.54 3.18.3 1.18.49 1.86.74 1.86.26 0 .74-.66 1.27-1.67.53-1.02-.02-1.91-1.06-1.27.41-2.54 4.34-3.16 3.83-.24z"/>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="inline-block px-1">
-                                <a class="" href="#">
-                                    <div class="flex font-thin hover:bg-purple-700 hover:border-purple-700 cursor-pointer h-8 w-8 pt-1 px-1 rounded-full border-2 border-gray-500  hover:text-white text-gray-200" >
-                                        <svg class="w-4 h-4  ml-1 mr-1 mt-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M13.5 24s-.83-.15-1.5-.15c-.62 0-1.53.15-1.53.15l.19-10.2C9.24 11.37 5.09 3.91 2.49 0c1.3.3 1.85.28 3.17 0l.02.03c1.65 2.93 4.17 7 6.31 10.54C14.1 7.1 17.42 1.67 18.32 0c1.02.27 2.05.26 3.19 0-1.2 1.62-5.57 9.17-8.2 13.8L13.5 24z"/>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="inline-block px-1">
-                                <a class="" href="#">
-                                    <div class="flex font-thin hover:bg-blue-600 hover:border-blue-600 cursor-pointer h-8 w-8 mt-0 px-1 rounded-full border-2 border-gray-500  hover:text-white text-gray-200" >
-                                        <svg class="w-4 h-4  ml-1 mr-1 mt-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M1 6h4v13H1V6zm2-5C1.8 1 1 2 1 3.1 1 4.1 1.8 5 3 5c1.3 0 2-.9 2-2s-.8-2-2-2zm11.6 5.2c-2.1 0-3.3 1.2-3.8 2h-.1l-.2-1.7H6.9c0 1.1.1 2.4.1 3.9V19h4v-7.1c0-.4 0-.7.1-1 .3-.7.8-1.6 1.9-1.6 1.4 0 2 1.2 2 2.8V19h4v-7.4c0-3.7-1.9-5.4-4.4-5.4z"/>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </div>
+<!--                            <div class="inline-block px-1">-->
+<!--                                <a class="" href="#">-->
+<!--                                    <div class="flex font-thin hover:bg-blue-400 hover:border-blue-400 cursor-pointer h-8 w-8 pt-1 px-1 rounded-full border-2 border-gray-500  hover:text-white text-gray-200" >-->
+<!--                                        <svg class="w-4 h-4  ml-1 mr-1 mt-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">-->
+<!--                                            <path fill-rule="evenodd" d="M10 .4a9.6 9.6 0 100 19.2A9.6 9.6 0 0010 .4zm4.4 7.75c-.5 2.92-3.35 5.39-4.2 5.95-.85.56-1.63-.23-1.92-.82C7.96 12.59 7 8.9 6.74 8.6c-.26-.3-1.02.3-1.02.3l-.37-.49S6.9 6.53 8.08 6.29c1.24-.25 1.24 1.95 1.54 3.18.3 1.18.49 1.86.74 1.86.26 0 .74-.66 1.27-1.67.53-1.02-.02-1.91-1.06-1.27.41-2.54 4.34-3.16 3.83-.24z"/>-->
+<!--                                        </svg>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div class="inline-block px-1">-->
+<!--                                <a class="" href="#">-->
+<!--                                    <div class="flex font-thin hover:bg-purple-700 hover:border-purple-700 cursor-pointer h-8 w-8 pt-1 px-1 rounded-full border-2 border-gray-500  hover:text-white text-gray-200" >-->
+<!--                                        <svg class="w-4 h-4  ml-1 mr-1 mt-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor">-->
+<!--                                            <path fill-rule="evenodd" d="M13.5 24s-.83-.15-1.5-.15c-.62 0-1.53.15-1.53.15l.19-10.2C9.24 11.37 5.09 3.91 2.49 0c1.3.3 1.85.28 3.17 0l.02.03c1.65 2.93 4.17 7 6.31 10.54C14.1 7.1 17.42 1.67 18.32 0c1.02.27 2.05.26 3.19 0-1.2 1.62-5.57 9.17-8.2 13.8L13.5 24z"/>-->
+<!--                                        </svg>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div class="inline-block px-1">-->
+<!--                                <a class="" href="#">-->
+<!--                                    <div class="flex font-thin hover:bg-blue-600 hover:border-blue-600 cursor-pointer h-8 w-8 mt-0 px-1 rounded-full border-2 border-gray-500  hover:text-white text-gray-200" >-->
+<!--                                        <svg class="w-4 h-4  ml-1 mr-1 mt-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">-->
+<!--                                            <path fill-rule="evenodd" d="M1 6h4v13H1V6zm2-5C1.8 1 1 2 1 3.1 1 4.1 1.8 5 3 5c1.3 0 2-.9 2-2s-.8-2-2-2zm11.6 5.2c-2.1 0-3.3 1.2-3.8 2h-.1l-.2-1.7H6.9c0 1.1.1 2.4.1 3.9V19h4v-7.1c0-.4 0-.7.1-1 .3-.7.8-1.6 1.9-1.6 1.4 0 2 1.2 2 2.8V19h4v-7.4c0-3.7-1.9-5.4-4.4-5.4z"/>-->
+<!--                                        </svg>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -144,7 +142,8 @@
             <div class="float-left font-serif text-gray-600 text-sm mt-12 ml-48 pt-2 font-medium">&copy;2020 Noetic IT Services Pvt. Ltd.</div>
             <div class="flex float-right ml-56 ">
                 <div class=" flex items-center flex-shrink-0  md:py-4 text-sm lg:text-sm font-regular text-gray-600 ">
-                    <base-bread-crumb-one name="" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
+                    <p><router-link to="/termsandconditions"><a href="#">Terms and Conditions</a></router-link> | <router-link to="/privacypolicy"><a href="#">Privacy Policy</a></router-link> | <router-link to="/refundpolicy"><a href="#">Refund & Cancellation Policy</a></router-link></p>
+<!--                    <base-bread-crumb-one name="" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>-->
                 </div>
             </div>
         </div>
