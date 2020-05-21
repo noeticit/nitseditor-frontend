@@ -142,7 +142,8 @@
             <div class="float-left font-serif text-gray-600 text-sm mt-12 ml-48 pt-2 font-medium">&copy;2020 Noetic IT Services Pvt. Ltd.</div>
             <div class="flex float-right ml-56 ">
                 <div class=" flex items-center flex-shrink-0  md:py-4 text-sm lg:text-sm font-regular text-gray-600 ">
-                    <base-bread-crumb-one name="" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
+                    <p><router-link to="/termsandconditions"><a href="#">Terms and Conditions</a></router-link> | <router-link to="/privacypolicy"><a href="#">Privacy Policy</a></router-link> | <router-link to="/refundpolicy"><a href="#">Refund & Cancellation Policy</a></router-link></p>
+<!--                    <base-bread-crumb-one name="" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>-->
                 </div>
             </div>
         </div>
