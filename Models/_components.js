@@ -93,6 +93,7 @@ Vue.component('NitsLeftsideFixedHeader', () => import('NitsComponents/Base/Heade
 Vue.component('NitsMenuCenteredLogo', () => import('NitsComponents/Base/Headers/NitsMenuCenteredLogo.vue'));
 Vue.component('NitsRightsideFixedHeader', () => import('NitsComponents/Base/Headers/NitsRightsideFixedHeader.vue'));
 Vue.component('NitsMenus', () => import('NitsComponents/Base/Menus/NitsMenus.vue'));
+Vue.component('NitsSideMenus', () => import('NitsComponents/Base/Menus/NitsSideMenus.vue'));
 Vue.component('BaseModalOne', () => import('NitsComponents/Base/Modals/BaseModalOne.vue'));
 Vue.component('BaseBasicPagination', () => import('NitsComponents/Base/Pagination/BaseBasicPagination.vue'));
 Vue.component('BaseBgColorPagination', () => import('NitsComponents/Base/Pagination/BaseBgColorPagination.vue'));

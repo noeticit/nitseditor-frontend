@@ -96,7 +96,7 @@
                })
            }
 
-            this.$api.post('/nits-system-api/permissions',routes).then(response => {
+            this.$api.post('/nits-system-api/page-permissions',routes).then(response => {
                 if(response.status === 200)
                 {
                     this.pages = response.data.data.map(a => ({
