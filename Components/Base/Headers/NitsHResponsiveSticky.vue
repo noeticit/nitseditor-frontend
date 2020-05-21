@@ -20,7 +20,7 @@
                     </a>
                     <!--                <a class="w-20 h-18" src="/nits-assets/images/logo.png"></a>-->
                 </div>
-                <div class="block lg:hidden py-5 flex" >
+                <div class="block lg:hidden py-5 flex">
                     <div class=" flex flex-row">
                         <div class="block mt-4 lg:inline-block lg:mt-0 sm:ml-5 mr-2 lg:h-25 lg:py-10 " @click="search = ! search">
                             <!--       <a href="">-->
