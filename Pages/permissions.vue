@@ -25,6 +25,11 @@
 <!--                </list-view>-->
                 <table class="min-w-full">
                     <tr class="bg-teal-500 h-12">
+                        <th>
+                            <div class="flex justify-center  items-center">
+                                <span class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">Page name</span>
+                            </div>
+                        </th>
                         <th v-for="(item,index) in roles">
                             <div class="flex justify-center  items-center">
                                 <span class="text-white text-center text-base antialiased leading-snug tracking-normal font-sans font-semibold">{{item.name}}</span>
@@ -32,15 +37,10 @@
                         </th>
                     </tr>
                     <tr v-for="(item,index) in pages">
-                        <td class="h-8 text-center border-b border-gray-200 text-sm text-teal-700 antialiased leading-tight tracking-normal  font-sans font-normal">{{item.page_name}}</td>
-                        <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.god"></td>
-                        <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.super_admin"></td>
-                        <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.admin"></td>
-                        <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.institute"></td>
-                        <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.student"></td>
-                        <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.professor"></td>
-                        <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.shop_owner"></td>
-                        <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" v-model="item.marketing_person"></td>
+                        <td class="h-8 text-center border-b border-gray-200 text-sm text-teal-700 antialiased leading-tight tracking-normal  font-sans font-normal">{{item.name}}</td>
+                        <template v-for="header in roles">
+                            <td class="h-8 text-center border-b border-gray-200 antialiased leading-tight tracking-normal  font-sans font-normal"><input type="checkbox" :checked="item[header.id]"  @click="dataSelection(item.id, $event, header.id)"></td>
+                        </template>
                     </tr>
                 </table>
             </div>
@@ -72,13 +72,46 @@
                 selectedFields: {},
                 loading: true,
                 page: '',
-                search:''
+                search:'',
+                role_id:'',
             }
         },
         components: {
             'DashboardLayoutOne': () => import('./../Layouts/Dashboard/LayoutOne')
         },
         methods:{
+            dataSelection(page_id, event, role_id) {
+                if (event.target.checked) {
+                    let role = {}
+                    role = [{
+                        id: role_id,
+                        checked: event.target.checked
+                    }]
+                    const postData = {
+                        roles: role
+                    }
+                    this.$api.update('/nits-system-api/page/'+page_id, postData).then(response => {
+                        if (response.status === 200)
+                        {
+                        }
+                    })
+                }
+                else{
+                    let role = {}
+                    role = [{
+                        id: role_id,
+                        checked: event.target.checked
+                    }]
+                    const postData = {
+                        roles: role
+                    }
+                    this.$api.update('/nits-system-api/page/'+page_id, postData).then(response => {
+                        if (response.status === 200)
+                        {
+                        }
+                    })
+                }
+            },
             removeElement(){
 
             },
@@ -96,31 +129,25 @@
                })
            }
 
-            this.$api.post('/nits-system-api/permissions',routes).then(response => {
+            this.$api.post('/nits-system-api/page-permissions',routes).then(response => {
                 if(response.status === 200)
                 {
-                    this.pages = response.data.data.map(a => ({
-                        id: a.id,
-                        page_name: a.name,
-                        god: false,
-                        super_admin: false,
-                        admin: false,
-                        institute: false,
-                        student: false,
-                        professor: false,
-                        shop_owner: false,
-                        marketing_person: false,
-                    }))
+                    this.pages = response.data.data;
+                    // this.pages = response.data.data.map(a => ({
+                    //     id: a.id,
+                    //     page_name: a.name,
+                    //     god: a.God,
+                    //     super_admin: false,
+                    //     admin: false,
+                    //     institute: false,
+                    //     student: false,
+                    //     professor: false,
+                    //     shop_owner: false,
+                    //     marketing_person: false,
+                    // }))
 
                     this.roles = response.data.roles
-                    this.roles.splice(0, 0, {name: 'Page Name', id: ''});
-
-
-                    // this.selectedColumns = response.data.roles.map(a => ({
-                    //     title: a.name,
-                    //     key: a.name,
-                    //     id: a.id
-                    // }))
+                    // this.roles.unshift({name: 'Page Name', id: ''});
 
                     this.loading = false
                 }
