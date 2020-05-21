@@ -66,39 +66,42 @@
 
                 <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
                     <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-gray-700 text-sm">
-                        <li class="hover:text-teal-400"  v-for="item in menu" >
-<!--                            @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1"-->
-                            <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                {{item}}
-                            </a>
-                            <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
-                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader1">
-                                <li class=" hover:text-teal-400"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
-                                    <spam class="flex " >HOME-Coperate, Portfolio, blog</spam>
-                                    <span>
-<!--                          <svg class="h-3  w-3 mt-1 items-end" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"-->
-                                        <!--                                             y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
-                                        <!--                                            <path fill="#606060" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908-->
-                                        <!--                                            c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>-->
-                                        <!--                                        </svg>-->
-                                    </span>
-                                </a></li>
-                                <!--                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white " v-show="isVisible1">-->
-                                <!--                                    <li class="hover:text-teal-400"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">-->
-                                <!--                                        <spam class="flex  ">HOME-Coperate</spam>-->
-                                <!--                                        <span>-->
-                                <!--                                    </span>-->
-                                <!--                                    </a></li>-->
-                                <!--                                </ul>-->
-                                <li class=""  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
-                                    <spam class="flex  hover:text-teal-400" >HOME-Coperate, Portfolio, blog</spam>
-                                    <span>
+                        <nits-menus
+                                :menu="menu">
+                        </nits-menus>
+<!--                        <li class="hover:text-teal-400"  v-for="item in menu" >-->
+<!--&lt;!&ndash;                            @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1"&ndash;&gt;-->
+<!--                            <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">-->
+<!--                                {{item}}-->
+<!--                            </a>-->
+<!--                            <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">-->
+<!--                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader1">-->
+<!--                                <li class=" hover:text-teal-400"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">-->
+<!--                                    <spam class="flex " >HOME-Coperate, Portfolio, blog</spam>-->
+<!--                                    <span>-->
+<!--&lt;!&ndash;                          <svg class="h-3  w-3 mt-1 items-end" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                                             y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                                            <path fill="#606060" d="M13.25,10L6.109,2.58c-0.268-0.27-0.268-0.707,0-0.979c0.268-0.27,0.701-0.27,0.969,0l7.83,7.908&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                                            c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>&ndash;&gt;-->
+<!--                                        &lt;!&ndash;                                        </svg>&ndash;&gt;-->
+<!--                                    </span>-->
+<!--                                </a></li>-->
+<!--                                &lt;!&ndash;                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white " v-show="isVisible1">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                    <li class="hover:text-teal-400"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                        <spam class="flex  ">HOME-Coperate</spam>&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                        <span>&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                    </span>&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                    </a></li>&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                </ul>&ndash;&gt;-->
+<!--                                <li class=""  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">-->
+<!--                                    <spam class="flex  hover:text-teal-400" >HOME-Coperate, Portfolio, blog</spam>-->
+<!--                                    <span>-->
 
-                                    </span>
-                                </a></li>
-                            </ul>
-                            </transition>
-                        </li>
+<!--                                    </span>-->
+<!--                                </a></li>-->
+<!--                            </ul>-->
+<!--                            </transition>-->
+<!--                        </li>-->
                     </ul>
                     <div class="hover:text-teal-400 border-l-4 lg:border-l-2 lg:w-24 flex flex-row">
                         <div class="block mt-4 lg:inline-block lg:mt-0 ml-5 lg:h-25 lg:py-10 " @click="search = ! search">
@@ -139,11 +142,7 @@
             </div>
 
         </div>
-<!--        <div class=" w-full h-11/12 ">-->
-<!--            <a class="" >-->
-<!--                <img class=" h-auto" src="/nits-assets/images/demo.jpg">-->
-<!--            </a>-->
-<!--        </div>-->
+
     </div>
 </template>
 
@@ -151,7 +150,12 @@
     export default {
         name: "NitsHResponsiveSticky",
         props: {
-            menu: Array
+            menu: Array,
+            logo: {
+                type: String,
+                required: true
+            },
+
         },
         data(){
             return{
