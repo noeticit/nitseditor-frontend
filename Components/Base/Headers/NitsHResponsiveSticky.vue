@@ -67,7 +67,7 @@
                 <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
                     <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-gray-700 text-sm">
                         <nits-menus
-                                :menu="menu">
+                                :menus="menus">
                         </nits-menus>
 <!--                        <li class="hover:text-teal-400"  v-for="item in menu" >-->
 <!--&lt;!&ndash;                            @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1"&ndash;&gt;-->
@@ -150,7 +150,7 @@
     export default {
         name: "NitsHResponsiveSticky",
         props: {
-            menu: Array,
+            menus: Array,
             logo: {
                 type: String,
                 required: true
