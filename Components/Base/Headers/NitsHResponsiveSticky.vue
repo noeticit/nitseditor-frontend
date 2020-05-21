@@ -48,9 +48,9 @@
                 </div>
                 <div class="block lg:hidden w-full h-full block lg:flex lg:items-center lg:w-auto"  v-if="responsive_tab">
                     <ul class="lg:flex-grow uppercase  flex flex-col lg:flex-row pb-4 lg:pb-0 ">
-                        <li class="flex flex-row cursor-pointer"  v-for="item in menu" @mouseover="isVisibleResponsiveHeader1 = true" @mouseleave="isVisibleResponsiveHeader1 = false" @keydown.enter="isVisibleResponsiveHeader1 = !isVisibleResponsiveHeader1">
+                        <li class="flex flex-row cursor-pointer"  v-for="item in menus" @mouseover="isVisibleResponsiveHeader1 = true" @mouseleave="isVisibleResponsiveHeader1 = false" @keydown.enter="isVisibleResponsiveHeader1 = !isVisibleResponsiveHeader1">
                             <div class="w-11/12 pb-4 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 hover:text-teal-500 text-gray-800 text-sm font-medium">
-                                {{item}}
+                                {{item.name}}
                             </div>
                             <div class="pb-4 border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
