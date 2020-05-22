@@ -1,7 +1,7 @@
 export default class ability {
 
     constructor() {
-        this.PERMISSIONS = nitseditor.page_with_role;
+        this.PERMISSIONS = JSON.parse(nitseditor).page_with_role;
     }
 
     check(role, page) {

@@ -107,6 +107,7 @@ mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/i
                 NitsAdminPages: path.resolve(__dirname, 'Pages'),
                 NitsComponents: path.resolve(__dirname, './Components'),
                 Plugins: path.resolve('./plugins'),
+                NitsStore: path.resolve(__dirname, './Store')
             }
         },
         plugins: [
