@@ -7,7 +7,7 @@
                     <div class="mt-16 ml-8">
                         <img class="h-12 w-48 pr-4" src="/nits-assets/images/logo.png">
                     </div>
-                    <nits-side-menus :menu="menu"></nits-side-menus>
+                    <nits-side-menus :menus="menus"></nits-side-menus>
                     <div class="flex mt-8 px-5 py-5">
                         <div class="inline-block hover:bg-blue-800  rounded cursor-pointer hover:text-white text-gray-700 ">
                             <svg class="h-4 w-4 my-3 mx-3 " xmlns="http://www.w3.org/2000/svg" fill="currentColor"  viewBox="0 0 20 20">
@@ -59,7 +59,7 @@
     export default {
         name: "NitsHRightSideOnclick",
         props:{
-            menu : Array
+            menus : Array
 
         },
 

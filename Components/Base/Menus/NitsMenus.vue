@@ -1,5 +1,5 @@
 <template>
-    <div class="hidden md:flex overflow-x-hidden mr-10 font-semibold">
+    <div class="float-right hidden md:flex overflow-x-hidden mr-10 font-semibold">
         <div v-for="item in menus" class="mr-6 p-1">
             <router-link class="text-gray-700 text-sm tracking-widest hover:text-blue-500 uppercase" :to="item.link">
                 {{item.name}}

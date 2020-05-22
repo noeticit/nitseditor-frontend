@@ -1,8 +1,11 @@
 <template>
-    <div class=" text-lg ml-56 font-semibold">
-        <div class="float-right ml-32">
-            <div v-for="item in menu" class="inline-block cursor-default text-white p-2  mx-3">
-                <a class="text-sm uppercase tracking-wider" href="#">{{item}}</a>
+    <div class=" text-lg  font-semibold">
+        <div class="float-right">
+            <div v-for="item in menus" class="inline-block cursor-default text-white p-2  mx-3">
+<!--                <a class="text-sm uppercase tracking-wider" href="#">{{item.name}}</a>-->
+                <router-link class="text-sm uppercase tracking-wider" :to="item.link">
+                    {{item.name}}
+                </router-link>
             </div>
         </div>
     </div>
@@ -12,7 +15,7 @@
     export default {
         name: "NitsLightMenus",
         props:{
-            menu: Array
+            menus: Array
         },
     }
 </script>

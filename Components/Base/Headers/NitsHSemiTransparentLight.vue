@@ -9,7 +9,7 @@
                 </div>
                 <div class="mr-24 text-lg font-semibold">
                     <div class="float-right">
-                        <div v-for="item in menu" class="inline-block cursor-pointer p-2 text-black mx-3">
+                        <div v-for="item in menus" class="inline-block cursor-pointer p-2 text-black mx-3">
                             <a class="flex-shrink-0 tracking-widest text-black text-sm uppercase" href="#">{{item}}</a>
                         </div>
                         <div class="inline-block cursor-pointer pt-2 text-black mx-3">
@@ -36,7 +36,7 @@
     export default {
         name: "NitsHSemiTransparentLight",
         props:{
-            menu : Array,
+            menus : Array,
             center_header:{
                 type: String,
                 required: true

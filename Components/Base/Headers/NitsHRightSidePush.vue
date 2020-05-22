@@ -22,7 +22,7 @@
                     <img class="h-12 w-48 pr-4" src="/nits-assets/images/logo.png">
                 </div>
                 <nits-side-menus
-                :menu="menu"
+                :menus="menus"
                 ></nits-side-menus>
                 <div class="flex mt-8 px-5 py-5">
                     <div class="inline-block hover:bg-blue-800  rounded cursor-pointer hover:text-white text-gray-700 ">
@@ -65,7 +65,7 @@
     export default {
         name: "NitsHeaderLeftSidePushContent",
         props: {
-            menu : Array
+            menus : Array
         },
         data(){
             return{

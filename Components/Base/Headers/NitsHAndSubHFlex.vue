@@ -58,7 +58,7 @@
                 <img class="h-12 w-48 " src="/nits-assets/images/logo.png">
             </div>
             <div class="hidden md:flex overflow-x-hidden pr-10 mr-32 font-semibold">
-                <nits-menus :menu="menu"></nits-menus>
+                <nits-menus :menus="menus"></nits-menus>
             </div>
         </div>
 
@@ -122,7 +122,7 @@
     export default {
         name: "NitsHAndSubHFlex",
         props: {
-            menu:Array,
+            menus:Array,
             select1:{
                 type: String,
             },

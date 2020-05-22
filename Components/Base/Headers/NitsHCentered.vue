@@ -43,7 +43,7 @@
                 <div class="w-50% ml-56 mr-64">
                     <div class="ml-64 ">
                         <ul class="hidden md:flex overflow-x-hidden sticky top-0 uppercase mr-10 font-semibold">
-                            <li v-for="item in menu" class="mr-6 p-2">
+                            <li v-for="item in menus" class="mr-6 p-2">
                                 <a class="text-white hover:text-blue-300" href="#">{{item}}</a>
                             </li>
                             <li class="mr-6 p-1">
@@ -71,7 +71,7 @@
     export default {
         name: "NitsHCentered",
         props:{
-            menu : Array,
+            menus : Array,
             button_name:{
                 type: String,
                 required: true
