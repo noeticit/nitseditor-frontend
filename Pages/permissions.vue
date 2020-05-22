@@ -81,36 +81,15 @@
         },
         methods:{
             dataSelection(page_id, event, role_id) {
-                if (event.target.checked) {
-                    let role = {}
-                    role = [{
-                        id: role_id,
-                        checked: event.target.checked
-                    }]
-                    const postData = {
-                        roles: role
+                let postData = {
+                    role_id: role_id,
+                    checked: event.target.checked
+                };
+                this.$api.update('/nits-system-api/page/'+page_id, postData).then(response => {
+                    if (response.status === 200)
+                    {
                     }
-                    this.$api.update('/nits-system-api/page/'+page_id, postData).then(response => {
-                        if (response.status === 200)
-                        {
-                        }
-                    })
-                }
-                else{
-                    let role = {}
-                    role = [{
-                        id: role_id,
-                        checked: event.target.checked
-                    }]
-                    const postData = {
-                        roles: role
-                    }
-                    this.$api.update('/nits-system-api/page/'+page_id, postData).then(response => {
-                        if (response.status === 200)
-                        {
-                        }
-                    })
-                }
+                })
             },
             removeElement(){
 
@@ -127,28 +106,13 @@
                        path: d.path
                    }
                })
-           }
+           };
 
             this.$api.post('/nits-system-api/page-permissions',routes).then(response => {
                 if(response.status === 200)
                 {
                     this.pages = response.data.data;
-                    // this.pages = response.data.data.map(a => ({
-                    //     id: a.id,
-                    //     page_name: a.name,
-                    //     god: a.God,
-                    //     super_admin: false,
-                    //     admin: false,
-                    //     institute: false,
-                    //     student: false,
-                    //     professor: false,
-                    //     shop_owner: false,
-                    //     marketing_person: false,
-                    // }))
-
-                    this.roles = response.data.roles
-                    // this.roles.unshift({name: 'Page Name', id: ''});
-
+                    this.roles = response.data.roles;
                     this.loading = false
                 }
             })
