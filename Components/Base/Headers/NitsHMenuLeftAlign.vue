@@ -9,11 +9,7 @@
             </div>
             <div class="ml-16 pl-5">
                 <ul class="hidden md:flex overflow-x-hidden uppercase">
-                    <li v-for="item in menu" class="mr-8 p-1 inline-block" @mouseover="isVisible = true" @mouseleave="isVisible = false" @keydown.enter="isVisible = !isVisible">
-                        <div class="inline-flex items-center justify-between px-2 py-1 font-medium  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
-                            <span class="text-gray-700 tracking-widest antialiased text-xs hover:text-teal-500 font-medium">{{item}}</span>
-                        </div>
-                    </li>
+                    <nits-menus :menus="menus"></nits-menus>
                     <li @click="box = ! box" class="mr-8 p-1">
                         <svg class="w-4 h-4 mt-1 cursor-pointer text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M17.545 15.467l-3.779-3.779a6.15 6.15 0 00.898-3.21c0-3.417-2.961-6.377-6.378-6.377A6.185 6.185 0 002.1 8.287c0 3.416 2.961 6.377 6.377 6.377a6.15 6.15 0 003.115-.844l3.799 3.801a.953.953 0 001.346 0l.943-.943c.371-.371.236-.84-.135-1.211zM4.004 8.287a4.282 4.282 0 014.282-4.283c2.366 0 4.474 2.107 4.474 4.474a4.284 4.284 0 01-4.283 4.283c-2.366-.001-4.473-2.109-4.473-4.474z"/>

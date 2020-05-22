@@ -57,11 +57,9 @@
             <div class="flex-shrink-0 ml-16 pl-32 cursor-pointer">
                 <img class="h-12 w-48 " src="/nits-assets/images/logo.png">
             </div>
-            <ul class="hidden md:flex overflow-x-hidden pr-10 mr-32 font-semibold">
-                <li v-for="item in menu" class="mr-6 p-1">
-                    <a class="text-gray-700 hover:text-blue-300 uppercase" href="#">{{item}}</a>
-                </li>
-            </ul>
+            <div class="hidden md:flex overflow-x-hidden pr-10 mr-32 font-semibold">
+                <nits-menus :menus="menus"></nits-menus>
+            </div>
         </div>
 
         <div class="flex justify-between bg-gray-100  w-full">
@@ -124,7 +122,7 @@
     export default {
         name: "NitsHAndSubHFlex",
         props: {
-            menu:Array,
+            menus:Array,
             select1:{
                 type: String,
             },

@@ -113,13 +113,9 @@
 
         <div class="sticky top-0 mx-auto bg-transparent w-screen">
             <div class="flex justify-between">
-                <div class="flex text-lg ml-64 font-semibold">
-                    <div class="float-right flex py-3 ml-32">
-                        <div v-for="item in menu" class="inline-block cursor-pointer uppercase text-gray-700 p-2 px-2 mx-3">
-                            <a class="text-sm" href="#">{{item}}</a>
-                        </div>
-                    </div>
-                    <div class="inline-block cursor-pointer mt-6 text-gray-700">
+                <div class="flex text-lg ml-64 pl-48 h-24 font-semibold">
+                    <nits-menus class="mt-8" :menus="menus"></nits-menus>
+                    <div class="inline-block cursor-pointer mt-10 text-gray-700">
                         <svg @click="box = ! box" class="w-5 h-5 cursor-pointer text-gray-700 mx-8" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M17.545 15.467l-3.779-3.779a6.15 6.15 0 00.898-3.21c0-3.417-2.961-6.377-6.378-6.377A6.185 6.185 0 002.1 8.287c0 3.416 2.961 6.377 6.377 6.377a6.15 6.15 0 003.115-.844l3.799 3.801a.953.953 0 001.346 0l.943-.943c.371-.371.236-.84-.135-1.211zM4.004 8.287a4.282 4.282 0 014.282-4.283c2.366 0 4.474 2.107 4.474 4.474a4.284 4.284 0 01-4.283 4.283c-2.366-.001-4.473-2.109-4.473-4.474z"/>
                         </svg>
@@ -175,7 +171,7 @@
                 type: String,
                 required: true
             },
-            menu: Array
+            menus: Array
         },
         data(){
             return{
