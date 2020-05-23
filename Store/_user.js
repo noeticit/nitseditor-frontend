@@ -29,6 +29,7 @@ const mutations = {
 
 const actions = {
     storeUserData({commit}, userData) {
+        //API c
         const user = {
             name: data.name ? decrypt(data.name) : '',
             email: data.email ? decrypt(data.email) : '',

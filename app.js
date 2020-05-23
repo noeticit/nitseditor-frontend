@@ -40,6 +40,7 @@ Vue.prototype.$ability = new ability();
  */
 
 router.beforeEach((to, from, next) => {
+
     if(to.meta.requiresAuth && auth.isLoggedIn())
         next();
     if(!to.meta.requiresAuth && auth.isLoggedIn())
@@ -69,5 +70,19 @@ const app = new Vue({
     el: '#app',
     router: router,
     store: store,
-    template:'<router-view></router-view>'
+    template:'<router-view></router-view>',
+    watch: {
+        '$route' (to, from) {
+            // react to route changes...
+            // console.log(to);
+            const pages = this.$session.get('permissible_pages');
+            console.log(pages);
+            let index = _.findIndex(pages, (a) => {
+                return a.name === to.name;
+            })
+            console.log(index);
+
+            //Now we will redirect to permissible page or to you are not allowed page
+        }
+    }
 });
