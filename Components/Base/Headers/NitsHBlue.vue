@@ -1,6 +1,6 @@
 <template>
     <div class="flex fixed top-0 w-full justify-between items-center shadow-lg py-4 bg-white">
-        <div class="flex-shrink-0 ml-10 cursor-pointer">
+        <div class="flex-shrink-0 ml-10 cursor-pointer ">
             <a href="/"> <img class="h-16 w-56 pr-5" :src="logo"></a>
         </div>
         <nits-menus :menus="menus"></nits-menus>
@@ -17,9 +17,9 @@
                 type: String,
                 required: true
             },
-            url:{
-                type: String,
-            }
+            // url:{
+            //     type: String,
+            // }
 
         },
         data(){
