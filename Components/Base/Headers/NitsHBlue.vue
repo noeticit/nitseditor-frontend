@@ -4,7 +4,7 @@
             <a href="/"> <img class="h-16 w-56 pr-5" :src="logo"></a>
         </div>
         <nits-menus :menus="menus"></nits-menus>
-        <base-solid-button class="mr-10" Solid="login" url="/login"></base-solid-button>
+        <base-solid-button class="mr-10" Solid="login" :url="url"></base-solid-button>
     </div>
 </template>
 
@@ -17,9 +17,9 @@
                 type: String,
                 required: true
             },
-            // url:{
-            //     type: String,
-            // }
+            url:{
+                type: String,
+            }
 
         },
         data(){

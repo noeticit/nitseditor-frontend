@@ -2,85 +2,9 @@
  <dashboard-layout-one active="settings">
 
   <base-bread-crumb-one name="Settings" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
-  <div class=" w-full h-auto bg-white mt-4">
-   <!--            <div class="flex">-->
-   <!--                <ul class=" flex ml-4 border-b hover:lg-border-300 mt-4">-->
-   <!--                    <li class="mr-1 px-5 cursor-pointer" @click="changeTab('general')">-->
-   <!--                        <a class="flex bg-white border-b hover:border-teal-600 inline-block py-2 px-4 text-teal-600 hover:text-blue-darker active" data-toggle="tab" role="tab">-->
-   <!--                            <svg class="inline-block w-4 h-4 mt-1 mr-1" version="1.1" id="Cog" xmlns="http://www.w3.org/2000/svg" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
-   <!--                                 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
-   <!--                                    <path fill-rule="evenodd" d="M16.783,10c0-1.049,0.646-1.875,1.617-2.443c-0.176-0.584-0.407-1.145-0.692-1.672-->
-   <!--	                                c-1.089,0.285-1.97-0.141-2.711-0.883c-0.741-0.74-0.968-1.621-0.683-2.711c-0.527-0.285-1.088-0.518-1.672-0.691-->
-   <!--	                                C12.074,2.57,11.047,3.215,10,3.215c-1.048,0-2.074-0.645-2.643-1.615C6.772,1.773,6.213,2.006,5.686,2.291-->
-   <!--	                                c0.285,1.09,0.059,1.971-0.684,2.711C4.262,5.744,3.381,6.17,2.291,5.885C2.006,6.412,1.774,6.973,1.6,7.557-->
-   <!--	                                C2.57,8.125,3.215,8.951,3.215,10c0,1.047-0.645,2.074-1.615,2.643c0.175,0.584,0.406,1.144,0.691,1.672-->
-   <!--	                                c1.09-0.285,1.971-0.059,2.711,0.682c0.741,0.742,0.969,1.623,0.684,2.711c0.527,0.285,1.087,0.518,1.672,0.693-->
-   <!--	                                c0.568-0.973,1.595-1.617,2.643-1.617c1.047,0,2.074,0.645,2.643,1.617c0.584-0.176,1.144-0.408,1.672-0.693-->
-   <!--	                                c-0.285-1.088-0.059-1.969,0.683-2.711c0.741-0.74,1.622-1.166,2.711-0.883c0.285-0.527,0.517-1.086,0.692-1.672-->
-   <!--	                                C17.429,11.873,16.783,11.047,16.783,10z M10,13.652c-2.018,0-3.653-1.635-3.653-3.652c0-2.018,1.636-3.654,3.653-3.654-->
-   <!--	                                c2.018,0,3.652,1.637,3.652,3.654C13.652,12.018,12.018,13.652,10,13.652z"/>-->
-   <!--                            </svg>-->
-   <!--                            <span class="text-lg antialiased text-teal-600">General</span>-->
-   <!--                        </a>-->
-   <!--                    </li>-->
-   <!--                    <li class="px-5 mr-1 cursor-pointer" @click="changeTab('contact')">-->
-   <!--                        <a class="bg-white border-b hover:border-teal-600 inline-block text-teal-600 py-2 px-4 hover:text-blue-darker" data-toggle="tab"  role="tab">-->
-   <!--                            <svg class="inline-block w-4 h-4  mr-1"  version="1.1" id="Phone" xmlns="http://www.w3.org/2000/svg" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
-   <!--                                 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
-   <!--                                <path fill-rule="evenodd" d="M11.229,11.229c-1.583,1.582-3.417,3.096-4.142,2.371c-1.037-1.037-1.677-1.941-3.965-0.102-->
-   <!--                                    c-2.287,1.838-0.53,3.064,0.475,4.068c1.16,1.16,5.484,0.062,9.758-4.211c4.273-4.274,5.368-8.598,4.207-9.758-->
-   <!--                                    c-1.005-1.006-2.225-2.762-4.063-0.475c-1.839,2.287-0.936,2.927,0.103,3.965C14.324,7.812,12.811,9.646,11.229,11.229z"/>-->
-   <!--                                </svg>-->
-   <!--                            <span  class="text-lg antialiased text-teal-600">Contact</span>-->
-   <!--                        </a>-->
-   <!--                    </li>-->
-   <!--                    <li class="px-5 mr-1 cursor-pointer"  @click="changeTab('domain')">-->
-   <!--                        <a  class="bg-white inline-block border-b hover:border-teal-600 py-2 px-4 text-teal-600 hover:text-blue-darker"  data-toggle="tab"  role="tab">-->
-   <!--                            <svg  class="inline-block w-4 h-4  mr-1" version="1.1" id="RSS" xmlns="http://www.w3.org/2000/svg"  fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
-   <!--                                 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
-   <!--                                <path fill-rule="evenodd" d="M2.4,2.4v2.367c7.086,0,12.83,5.746,12.83,12.832h2.369C17.599,9.205,10.794,2.4,2.4,2.4z M2.4,7.137v2.369-->
-   <!--                                    c4.469,0,8.093,3.623,8.093,8.094h2.368C12.861,11.822,8.177,7.137,2.4,7.137z M4.669,13.059c-1.254,0-2.27,1.018-2.27,2.271-->
-   <!--                                    s1.016,2.27,2.27,2.27s2.269-1.016,2.269-2.27S5.923,13.059,4.669,13.059z"/>-->
-   <!--                                </svg>-->
+  <div class=" w-full overflow-y-auto h-screen bg-white mt-4">
+   <div class="mb-32">
 
-   <!--                            <span class="text-lg antialiased text-teal-600">Domain</span>-->
-   <!--                        </a>-->
-   <!--                    </li>-->
-   <!--                    <li class=" px-5 mr-1 cursor-pointer"  @click="changeTab('social')">-->
-   <!--                        <a  class="bg-white inline-block border-b hover:border-teal-600 py-2 px-4 text-teal-600 hover:text-blue-darker"  data-toggle="tab"  role="tab">-->
-   <!--                            <svg class="inline-block w-4 h-6 mr-1" version="1.1" id="User" xmlns="http://www.w3.org/2000/svg" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
-   <!--                                 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
-   <!--                                <path fill-rule="evenodd" d="M7.725,2.146c-1.016,0.756-1.289,1.953-1.239,2.59C6.55,5.515,6.708,6.529,6.708,6.529-->
-   <!--                                    s-0.313,0.17-0.313,0.854C6.504,9.1,7.078,8.359,7.196,9.112c0.284,1.814,0.933,1.491,0.933,2.481c0,1.649-0.68,2.42-2.803,3.334-->
-   <!--                                    C3.196,15.845,1,17,1,19v1h18v-1c0-2-2.197-3.155-4.328-4.072c-2.123-0.914-2.801-1.684-2.801-3.334c0-0.99,0.647-0.667,0.932-2.481-->
-   <!--                                    c0.119-0.753,0.692-0.012,0.803-1.729c0-0.684-0.314-0.854-0.314-0.854s0.158-1.014,0.221-1.793c0.065-0.817-0.398-2.561-2.3-3.096-->
-   <!--                                    c-0.333-0.34-0.558-0.881,0.466-1.424C9.439,0.112,8.918,1.284,7.725,2.146z"/>-->
-   <!--                                </svg>-->
-   <!--                            <span class="text-lg antialiased text-teal-600">Social</span>-->
-   <!--                        </a>-->
-   <!--                    </li>-->
-   <!--                    <li class="mr-1 px-5 cursor-pointer"  @click="changeTab('regional')">-->
-   <!--                        <a  class="bg-white inline-block border-b hover:border-teal-600 py-2 px-4 text-teal-600 hover:text-blue-darker"   data-toggle="tab"  role="tab">-->
-   <!--                            <svg  class="inline-block w-4 h-5 mr-1"  version="1.1" id="Globe" xmlns="http://www.w3.org/2000/svg" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
-   <!--                                  viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">-->
-   <!--                                <path fill-rule="evenodd" d="M10,0.4c-5.295,0-9.601,4.307-9.601,9.6S4.705,19.6,10,19.6c5.293,0,9.6-4.307,9.6-9.6S15.293,0.4,10,0.4z-->
-   <!--                                     M18.188,10c0,1.873-0.636,3.6-1.696,4.98c-0.3-0.234-0.619-0.867-0.319-1.523c0.303-0.66,0.382-2.188,0.312-2.783-->
-   <!--                                    c-0.066-0.594-0.375-2.025-1.214-2.039c-0.838-0.012-1.413-0.289-1.911-1.283c-1.033-2.068,1.939-2.465,0.906-3.609-->
-   <!--                                    c-0.289-0.322-1.783,1.322-2.002-0.869C12.25,2.717,12.399,2.482,12.6,2.238C15.844,3.328,18.188,6.395,18.188,10z M8.875,1.893-->
-   <!--                                    C8.679,2.275,8.162,2.43,7.848,2.717C7.164,3.336,6.87,3.25,6.502,3.844C6.131,4.438,4.935,5.293,4.935,5.723-->
-   <!--                                    s0.604,0.936,0.906,0.838c0.302-0.1,1.099-0.094,1.567,0.07c0.469,0.166,3.914,0.332,2.816,3.244-->
-   <!--                                    c-0.348,0.926-1.873,0.77-2.279,2.303c-0.061,0.225-0.272,1.186-0.285,1.5c-0.025,0.486,0.344,2.318-0.125,2.318-->
-   <!--                                    c-0.471,0-1.738-1.639-1.738-1.936s-0.328-1.338-0.328-2.23c0-0.891-1.518-0.877-1.518-2.062c0-1.068,0.823-1.6,0.638-2.113-->
-   <!--                                    c-0.181-0.51-1.627-0.527-2.23-0.59C3.412,4.334,5.889,2.307,8.875,1.893z M7.424,17.77c0.492-0.26,0.542-0.596,0.988-0.613-->
-   <!--                                    c0.51-0.023,0.925-0.199,1.5-0.326c0.51-0.111,1.423-0.629,2.226-0.695c0.678-0.055,2.015,0.035,2.375,0.689-->
-   <!--                                    c-1.295,0.861-2.848,1.363-4.514,1.363C9.1,18.188,8.234,18.039,7.424,17.77z"/>-->
-   <!--                                </svg>-->
-
-   <!--                            <span class="text-lg antialiased text-teal-600">Regional</span>-->
-   <!--                        </a>-->
-   <!--                    </li>-->
-   <!--                </ul>-->
-   <!--            </div>-->
    <div class="flex p-4 ">
     <ul class="list-reset flex border-b">
      <li class="-mb-px px-2  cursor-pointer"  @click="changeTab('general')">
@@ -733,9 +657,10 @@
      </div>
     </div>
    </div>
-
+   </div>
   </div>
  </dashboard-layout-one>
+
 </template>
 
 <script>

@@ -55,7 +55,7 @@
 
         <div class="flex justify-between items-center py-8 ">
             <div class="flex-shrink-0 ml-16 pl-32 cursor-pointer">
-                <img class="h-12 w-48 " src="/nits-assets/images/logo.png">
+                <img class="h-12 w-48 " :src="logo">
             </div>
             <div class="hidden md:flex overflow-x-hidden pr-10 mr-32 font-semibold">
                 <nits-menus :menus="menus"></nits-menus>
@@ -123,6 +123,10 @@
         name: "NitsHAndSubHFlex",
         props: {
             menus:Array,
+            logo: {
+                type: String,
+                required: true
+            },
             select1:{
                 type: String,
             },

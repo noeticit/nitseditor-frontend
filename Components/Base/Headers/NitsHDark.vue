@@ -3,7 +3,7 @@
         <nav class="relative py-4 px-8 mx-auto bg-black w-screen mt-5">
             <div class="flex justify-between">
                 <div class="float-left border-r text-black">
-                    <img class="h-12 w-48 pr-5" src="/nits-assets/images/nits-editor-logo.png">
+                    <img class="h-12 w-48 pr-5" :src="logo">
                 </div>
                 <nits-light-menus :menus="menus"></nits-light-menus>
                 <div class="border-l">
@@ -23,7 +23,11 @@
     export default {
         name: "NitsHDark",
         props: {
-            menu: Array
+            menu: Array,
+            logo: {
+                type: String,
+                required: true
+            },
         },
         data(){
             return{

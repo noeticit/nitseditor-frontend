@@ -58,7 +58,7 @@
         </div>
         <div class="absolute top-0 mt-64 ml-64 px-32">
             <div>
-                <img class="mb-16 h-16 w-64 ml-64 text-center font-black text-5xl text-white" src="/nits-assets/images/nits-editor-logo.png">
+                <img class="mb-16 h-16 w-64 ml-64 text-center font-black text-5xl text-white" :src="logo">
             </div>
         </div>
         <button class="absolute mt-5 right-0 bg-orange-500 focus:outline-none focus:bg-orange-600 top-0 text-white text-sm hover:bg-orange-600 rounded h-16 w-64 mr-3">
@@ -72,6 +72,10 @@
         name: "NitsHCentered",
         props:{
             menus : Array,
+            logo: {
+                type: String,
+                required: true
+            },
             button_name:{
                 type: String,
                 required: true

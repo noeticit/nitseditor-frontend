@@ -5,7 +5,7 @@
         </div>
         <div class="flex fixed top-0 justify-between items-center py-4 bg-transparent">
             <div class="flex-shrink-0 ml-8 cursor-pointer">
-                <img class="h-12 w-48" src="/nits-assets/images/nits-editor-logo.png">
+                <img class="h-12 w-48" :src="logo">
             </div>
             <div class="ml-16 pl-5">
                 <ul class="hidden md:flex overflow-x-hidden uppercase">
@@ -37,6 +37,10 @@
         name: "NitsHMenuLeftAlign",
         props:{
             menu : Array,
+            logo: {
+                type: String,
+                required: true
+            },
 
 
         },

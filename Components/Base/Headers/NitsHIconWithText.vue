@@ -2,7 +2,7 @@
     <nav class="relative py-4 px-8 mx-auto bg-transparent w-screen mt-5">
         <div class="flex justify-between">
             <div class="float-left border-r text-black">
-                <img class="h-12 w-48 pr-5" src="/nits-assets/images/nits-editor-logo.png">
+                <img class="h-12 w-48 pr-5" :src="logo">
             </div>
             <nits-bold-menus :menus="menus"></nits-bold-menus>
             <div class="border-l">
@@ -22,6 +22,10 @@
         name: "NitsHIconWithText",
         props:{
             menus : Array,
+            logo: {
+                type: String,
+                required: true
+            },
         },
 
         data(){

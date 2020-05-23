@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full w-full flex-col justify-between bg-gray-200">
+    <div class="fixed h-full w-full flex-col justify-between bg-gray-200">
         <div class="flex h-full">
             <div v-if="menuIsOpen" class="px-1">
                 <img class="h-16" src="/nits-assets/images/logo.png" alt="NitsEditor Logo">
@@ -23,12 +23,24 @@
                 </div>
             </div>
             <div class="w-full bg-gray-200">
-                <base-top-bar v-on:toggle-menu="menuIsOpen = !menuIsOpen"></base-top-bar>
+                <top-bar v-on:toggle-menu="menuIsOpen = !menuIsOpen"></top-bar>
                 <main>
                     <div class="h-screen max-w-7xl mx-auto ">
                         <slot></slot>
                     </div>
                 </main>
+            </div>
+        </div>
+        <div class=" w-11/12 ml-48 fixed rounded pl-1 bottom-0 ">
+            <div class="h-10 bg-gray-200  rounded justify-between item-center align-center">
+                <div class="flex">
+                    <div class="text-sm font-serif text-gray-600 mt-3 pl-40 ml-64">
+                        <a class="hover:text-blue-600 pl-24 ml-64" href="#">©2020 Noetic IT Services Pvt. Ltd.</a>
+                        <a class="text-sm font-serif text-gray-600 mt-3 ml-10" href="#">About Us</a>
+                        <a class="text-sm font-serif text-gray-600 mt-3 ml-10" href="#">Disclaimer</a>
+                        <a class="text-sm font-serif text-gray-600 mt-3 ml-10" href="#">Support</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

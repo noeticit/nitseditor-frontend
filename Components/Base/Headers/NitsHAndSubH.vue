@@ -69,7 +69,7 @@
         <div class="relative py-6 px-10 mx-auto bg-gray-100 w-screen">
             <div class="flex justify-between">
                 <div class="float-left ml-32 text-black">
-                    <img class="h-12 w-48 pr-5" src="/nits-assets/images/nits-editor-logo.png">
+                    <img class="h-12 w-48 pr-5" :src="logo">
                 </div>
                 <div class=" text-lg ml-24 font-semibold">
                     <div class="flex float-right ml-24">
@@ -171,7 +171,11 @@
                 type: String,
                 required: true
             },
-            menus: Array
+            menus: Array,
+            logo: {
+                type: String,
+                required: true
+            },
         },
         data(){
             return{

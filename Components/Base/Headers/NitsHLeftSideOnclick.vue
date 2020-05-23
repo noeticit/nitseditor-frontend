@@ -11,7 +11,7 @@
         <div v-if="Open" class="flex">
         <div  class="flex-col h-screen w-64 bg-white absolute left-0 top-0">
             <div class="mt-16 ml-8">
-                <img class="h-12 w-48 pr-4" src="/nits-assets/images/logo.png">
+                <img class="h-12 w-48 pr-4" :src="logo">
             </div>
             <nits-side-menus :menus="menus"></nits-side-menus>
             <div class="flex mt-8 px-5 py-5">
@@ -60,7 +60,11 @@
     export default {
         name: "NitsHLeftSideOnclick",
         props:{
-            menu : Array
+            menu : Array,
+            logo: {
+                type: String,
+                required: true
+            },
 
         },
         data(){
