@@ -21,8 +21,8 @@ window.axios.interceptors.response.use(
     (error) => {
         // Un-authorised
         if (error.response.status === 401) {
-            window.localStorage.removeItem('authUser');
-            window.location = "/login";
+            // window.localStorage.removeItem('authUser');
+            // window.location = "/login";
         }
         return Promise.reject(error)
     }

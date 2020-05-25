@@ -1,6 +1,6 @@
 import {encrypt} from "./_encrypt";
 import {getHeader} from "./_config";
-// import store from "./../Store/_store";
+import store from "./../Store/_store";
 import VueSession from './_session';
 
 let session = new VueSession(process.env.MIX_STORAGE_PERSIST, process.env.MIX_INACTIVITY_SESSION);
@@ -27,35 +27,24 @@ export default class auth {
                 client_secret: process.env.MIX_CLIENT_SECRET,
                 scope: ''
             };
-            axios.post('/oauth/token', postData).then(response => {
+            axios.post('/nits-system-api/login', postData).then(response => {
                 if (response.status === 200) {
                     authUser.access_token = encrypt(response.data.access_token);
                     authUser.refresh_token = encrypt(response.data.refresh_token);
+                    authUser.user_id = response.data.user_id;
+                    authUser.first_name = encrypt(response.data.first_name);
+                    authUser.last_name = encrypt(response.data.last_name);
+                    authUser.email = encrypt(response.data.email);
+                    authUser.role = encrypt(response.data.role);
+                    authUser.role_id = response.data.role_id;
                     session.set('auth_user', authUser);
-                    // window.localStorage.setItem('authUser', JSON.stringify(authUser));
+                    session.set('permissible_pages', response.data.permissible_pages);
 
-                    axios.get('/nits-system-api/user', {headers: getHeader()}).then(res => {
-                        if(res.status === 200)
-                        {
-                            authUser.first_name = encrypt(res.data.first_name)
-                            authUser.last_name = res.data.last_name ? encrypt(res.data.last_name) : null;
-                            authUser.email = encrypt(res.data.email)
-                            authUser.role_id = res.data.role_id
-                            authUser.email_verified_at = res.data.email_verified_at ? encrypt(res.data.email_verified_at) : null;
+                    store.dispatch('storeUserData', response.data);
 
-                            console.log(res.data.role.pages)
-                            // window.localStorage.setItem('permissions')
-                            //Storing into local storage.
-                            session.set('auth_user', authUser);
-                            // window.localStorage.setItem('authUser', JSON.stringify(authUser));
-                            //Storing to state.
-                            // store.commit("STORE_USER_DATA", authUser);
-
-                            return resolve(res);
-                        }
-                    }).catch((err) => {
-                        return reject(err);
-                    })
+                    resolve({
+                        redirect: '/dashboard'
+                    });
                 }
             }).catch((error) => {
                 return reject(error);
