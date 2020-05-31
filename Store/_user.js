@@ -40,6 +40,21 @@ const actions = {
             refresh_token: userData.refresh_token ? encrypt(userData.refresh_token) : '',
         };
         commit('STORE_USER_DATA', user);
+    },
+
+    removeUserData({commit}) {
+        //API c
+        const user = {
+            user_id: '',
+            first_name: '',
+            last_name:  '',
+            email: '',
+            role: '',
+            role_id: '',
+            access_token: '',
+            refresh_token: '',
+        };
+        commit('STORE_USER_DATA', user);
     }
 };
 

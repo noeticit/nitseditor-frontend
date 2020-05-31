@@ -1,4 +1,3 @@
-import {decrypt} from './_encrypt.js';
 import VueSession from './_session.js';
 import store from './../Store/_store';
 
@@ -6,13 +5,10 @@ const session = new VueSession(process.env.MIX_STORAGE_PERSIST, process.env.MIX_
 
 export const getHeader = function () {
     // const tokenData = session.get('auth_user')
-    console.log(store.getters.user_access_token);
-    const headers = {
+    return {
         'Accept': 'application/json',
         'Authorization': 'Bearer ' + store.getters.user_access_token
     };
-    console.log(headers);
-    return headers;
 };
 
 export const clientId = process.env.MIX_CLIENT_ID;
