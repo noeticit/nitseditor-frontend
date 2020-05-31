@@ -10,7 +10,6 @@ const state =  {
     access_token: '',
     refresh_token: '',
     user_id: '',
-
 };
 
 const mutations = {
@@ -55,7 +54,7 @@ const actions = {
             refresh_token: '',
         };
         commit('STORE_USER_DATA', user);
-    }
+    },
 };
 
 const getters = {
@@ -93,7 +92,7 @@ const getters = {
 
     user_refresh_token(state) {
         return decrypt(state.refresh_token);
-    }
+    },
 };
 
 

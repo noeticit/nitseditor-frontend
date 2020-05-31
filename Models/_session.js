@@ -1,4 +1,5 @@
 import {eventBus} from './_events.js';
+import store from './../Store/_store';
 
 export default class session {
 
@@ -34,7 +35,7 @@ export default class session {
     setAll(all) {
         //Store session...
         var timelife = new Date().getTime() + this.INACTIVITY_SESSION * 60 * 1000;
-        if(Object.keys(all).length > 0) all['timelife'] = timelife
+        if(Object.keys(all).length > 0) all['timelife'] = timelife;
         window[this.STORAGE].setItem(this.key,JSON.stringify(all));
     }
 
@@ -91,6 +92,8 @@ export default class session {
     remove(key){
         var all = this.getAll();
         delete all[key];
+
+        store.dispatch('removeUserData');
 
         this.setAll(all);
     }
