@@ -10,6 +10,8 @@ const state =  {
     access_token: '',
     refresh_token: '',
     user_id: '',
+    // institute_id: '',
+    // student_id: ''
 };
 
 const mutations = {
@@ -23,6 +25,12 @@ const mutations = {
         state.access_token = data.access_token;
         state.refresh_token = data.refresh_token;
     },
+    // STORE_INSTITUTE_DATA(state, data) {
+    //     state.institute_id = data.institute_id;
+    // },
+    // STORE_STUDENT_DATA(state, data) {
+    //     state.student_id = data.student_id;
+    // },
 };
 
 const actions = {
@@ -40,7 +48,6 @@ const actions = {
         };
         commit('STORE_USER_DATA', user);
     },
-
     removeUserData({commit}) {
         //API c
         const user = {
@@ -55,6 +62,18 @@ const actions = {
         };
         commit('STORE_USER_DATA', user);
     },
+    // storeInstituteData({commit}, instituteData) {
+    //     const user = {
+    //         institute_id: instituteData.id ? instituteData.id : '',
+    //     };
+    //     commit('STORE_INSTITUTE_DATA', user);
+    // },
+    // storeStudentData({commit}, studentData) {
+    //     const user = {
+    //         student_id: studentData.id ? studentData.id : '',
+    //     };
+    //     commit('STORE_STUDENT_DATA', user);
+    // },
 };
 
 const getters = {
@@ -93,6 +112,14 @@ const getters = {
     user_refresh_token(state) {
         return decrypt(state.refresh_token);
     },
+
+    // institute_id(state) {
+    //     return state.institute_id;
+    // },
+    //
+    // student_id(state) {
+    //     return state.student_id;
+    // },
 };
 
 
