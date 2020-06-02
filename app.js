@@ -42,19 +42,21 @@ Vue.prototype.$ability = able;
 
 router.beforeEach((to, from, next) => {
 
-    if(store.getters.user_last_url_visited && (from.name === 'login' || from.name === 'nits-admin-login')) {
-        if(able.checkPageAccess(to))
-            next({name: store.getters.user_last_url_visited});
-        else
-            next({path: '/nits-admin/not-subscribed'});
-    }
-    else {
-        store.dispatch('storeLastUrlVisited', to.name);
+    // console.log(store.getters.user_last_url_visited)
+
+    // if(store.getters.user_last_url_visited && (from.name === 'login' || from.name === 'nits-admin-login')) {
+    //     if(able.checkPageAccess(to))
+    //         next({name: store.getters.user_last_url_visited});
+    //     else
+    //         next({path: '/nits-admin/not-subscribed'});
+    // }
+    // else {
+    //     store.dispatch('storeLastUrlVisited', to.name);
         if(able.checkPageAccess(to))
             next();
         else
             next({path: '/nits-admin/not-subscribed'});
-    }
+    // }
 });
 
 /**
