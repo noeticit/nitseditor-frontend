@@ -8,8 +8,9 @@ export default class ability {
         if (page.name === 'page-not-found' || page.name === 'nits-admin-not-subscribed')
             return true;
 
+        console.log(store.getters.user_role);
         //check whether admin pages are their
-        if(page.name.startsWith('nits-admin-') && (store.getters.user_role === 'God' || store.getters.user_role === 'Super Admin')) {
+        if(page.name.startsWith('nits-admin-') && (store.getters.user_role === 'God' || store.getters.user_role === 'Super admin')) {
             return true;
         }
 
