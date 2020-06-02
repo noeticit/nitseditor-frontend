@@ -10,7 +10,7 @@
                 </div>
                 <div class="mt-10 justify-center">
                     <router-link to="/dashboard">
-                        <button class="block uppercase mx-auto shadow bg-indigo-800 hover:bg-indigo-700 focus:outline-none font-semibold text-white text-xs py-3 px-10 rounded focus:outline-none">Go</button>
+                        <button class="block uppercase mx-auto shadow bg-indigo-800 hover:bg-indigo-700 focus:outline-none font-semibold text-white text-xs py-3 px-10 rounded focus:outline-none">Go Back</button>
                     </router-link>
                 </div>
             </div>
