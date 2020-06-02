@@ -18,6 +18,7 @@ export default class ability {
 
         let p = _.findIndex(guest_permissions, function(o) { return o.name === page.name; });
 
+
         if(p > -1) {
             return true;
         }
