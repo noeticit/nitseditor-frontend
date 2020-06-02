@@ -34,19 +34,34 @@ Vue.prototype.$auth = auth;
 const apis = new api();
 Vue.prototype.$api = apis;
 
-Vue.prototype.$ability = new ability();
+const able = new ability();
+Vue.prototype.$ability = able;
 /**
  * Middleware to check authentication
  */
 
 router.beforeEach((to, from, next) => {
 
-    if(to.meta.requiresAuth && auth.isLoggedIn())
-        next();
-    if(!to.meta.requiresAuth && auth.isLoggedIn())
-        next();
-    if(to.meta.requiresAuth && !auth.isLoggedIn())
-        next ({path: '/'});
+    if(store.getters.user_last_url_visited && (from.name === 'login' || from.name === 'nits-admin-login')) {
+        if(able.checkPageAccess(to))
+            next({name: store.getters.user_last_url_visited});
+        else
+            next({path: '/nits-admin/not-subscribed'});
+    }
+    else {
+        store.dispatch('storeLastUrlVisited', to.name);
+        if(able.checkPageAccess(to))
+            next();
+        else
+            next({path: '/nits-admin/not-subscribed'});
+    }
+
+    // if(to.meta.requiresAuth && auth.isLoggedIn())
+    //     next();
+    // if(!to.meta.requiresAuth && auth.isLoggedIn())
+    //     next();
+    // if(to.meta.requiresAuth && !auth.isLoggedIn())
+    //     next ({path: '/'});
         // var pathname=(window.location.pathname)  //      /admin/plugins/Biltrax/project-search
 
         // console.log(window.location.pathname)
@@ -56,8 +71,8 @@ router.beforeEach((to, from, next) => {
         //     sessions.set('last_url', path);   // plugins/Biltrax/project-search
         // }
 
-    if(!to.meta.requiresAuth && !auth.isLoggedIn())
-        next()
+    // if(!to.meta.requiresAuth && !auth.isLoggedIn())
+    //     next()
 });
 
 /**
@@ -73,16 +88,7 @@ const app = new Vue({
     template:'<router-view></router-view>',
     watch: {
         '$route' (to, from) {
-            // react to route changes...
-            // console.log(to);
-            const pages = this.$session.get('permissible_pages');
-            console.log(pages);
-            let index = _.findIndex(pages, (a) => {
-                return a.name === to.name;
-            })
-            console.log(index);
-
-            //Now we will redirect to permissible page or to you are not allowed page
+            console.log();
         }
     }
 });

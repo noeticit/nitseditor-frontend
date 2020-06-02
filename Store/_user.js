@@ -10,6 +10,7 @@ const state =  {
     access_token: '',
     refresh_token: '',
     user_id: '',
+    last_url_visited: ''
     // institute_id: '',
     // student_id: ''
 };
@@ -25,6 +26,12 @@ const mutations = {
         state.access_token = data.access_token;
         state.refresh_token = data.refresh_token;
     },
+    STORE_PERMISSIONS(state, data) {
+        state.permissible_pages = data;
+    },
+    STORE_LAST_URL_VISITED(state, data) {
+        state.last_url_visited = data;
+    }
     // STORE_INSTITUTE_DATA(state, data) {
     //     state.institute_id = data.institute_id;
     // },
@@ -45,6 +52,7 @@ const actions = {
             role_id: userData.role_id ? userData.role_id : '',
             access_token: userData.access_token ? encrypt(userData.access_token) : '',
             refresh_token: userData.refresh_token ? encrypt(userData.refresh_token) : '',
+            permissible_pages: userData.permissible_pages
         };
         commit('STORE_USER_DATA', user);
     },
@@ -62,6 +70,12 @@ const actions = {
         };
         commit('STORE_USER_DATA', user);
     },
+    storePermissions({commit}, data) {
+        commit('STORE_PERMISSIONS', data);
+    },
+    storeLastUrlVisited({commit}, data) {
+        commit("STORE_LAST_URL_VISITED", data);
+    }
     // storeInstituteData({commit}, instituteData) {
     //     const user = {
     //         institute_id: instituteData.id ? instituteData.id : '',
@@ -113,6 +127,13 @@ const getters = {
         return decrypt(state.refresh_token);
     },
 
+    user_permissions(state) {
+        return state.permissible_pages;
+    },
+
+    user_last_url_visited(state) {
+        return state.last_url_visited;
+    }
     // institute_id(state) {
     //     return state.institute_id;
     // },
