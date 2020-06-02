@@ -6,7 +6,7 @@
         <div class="flex">
             <div class="w-4/12">
                 <div class="mt-56 font-semibold text-2xl text-center text-gray-600">
-                    You have not Subscribed to this page <br> please contact to Admin
+                    You have not Subscribed to this page <br> <span class="text-red-700">Please contact to Admin</span>
                 </div>
                 <div class="mt-10 justify-center">
                     <router-link to="/dashboard">

@@ -1,18 +1,33 @@
 <template>
-    <div class="h-screen w-screen flex-col justify-between bg-gray-100">
-        <div class="pl-3 pt-3">
-            <img class="h-16" src="/nits-assets/images/logo.png" alt="NitsEditor Logo">
+    <div class="relative h-screen w-screen flex-col justify-between bg-white">
+        <div class="pl-3 pt-3 absolute">
+            <img class="h-16 " src="/nits-assets/images/logo.png" alt="NitsEditor Logo">
         </div>
-        <div class="p-2">
-            <img class="h-auto text-center object-fill object-center p-1" src="/nits-assets/images/page-not-found.png" alt="Page not found">
+        <div class="flex">
+            <div class="w-4/12">
+                <div class="mt-64 font-semibold text-2xl text-center text-gray-600">
+                    Site Can't Be reached <br><span class="text-red-700">Please contact to Admin</span>
+                </div>
+                <div class="mt-10 justify-center">
+                    <router-link to="/dashboard">
+                        <button class="block uppercase mx-auto shadow bg-indigo-800 hover:bg-indigo-700 focus:outline-none font-semibold text-white text-xs py-3 px-10 rounded focus:outline-none">Go</button>
+                    </router-link>
+                </div>
+            </div>
+            <div class=" w-8/12">
+                <img class="h-auto text-center object-fill object-center" src="/nits-assets/images/page-not-found.png" alt="Not subscribed">
+            </div>
         </div>
-        <div class="bg-gray-100 fixed bottom-0 w-full">
-            <div class="flex items-center justify-between px-2 py-2">
-                <p class="text-center text-gray-500 text-xs font-semibold">&copy;2020 Noetic IT Services Pvt. Ltd.</p>
-                <div>
-                    <a href="#" class="text-center text-gray-500 text-xs font-semibold">About Us</a>
-                    <a href="#" class="text-center text-gray-500 text-xs font-semibold">Disclaimer</a>
-                    <a href="#" class="text-center text-gray-500 text-xs font-semibold">Support</a>
+
+        <div class=" w-screen fixed rounded pl-1 bottom-0">
+            <div class="h-10 bg-gray-200  rounded justify-between item-center align-center">
+                <div class="flex">
+                    <div class="text-sm font-serif text-gray-600 mt-3 pl-64 ml-64">
+                        <a class="hover:text-blue-600 pl-40 ml-64" href="#">©2020 Noetic IT Services Pvt. Ltd.</a>
+                        <a class="text-sm font-serif text-gray-600 mt-3 ml-10" href="#">About Us</a>
+                        <a class="text-sm font-serif text-gray-600 mt-3 ml-10" href="#">Disclaimer</a>
+                        <a class="text-sm font-serif text-gray-600 mt-3 ml-10" href="#">Support</a>
+                    </div>
                 </div>
             </div>
         </div>
