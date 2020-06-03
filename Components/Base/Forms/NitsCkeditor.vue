@@ -1,5 +1,5 @@
 <template>
-    <ckeditor :editor="editor" :value="value" :config="editorConfig" @input="emitEvent()"></ckeditor>
+    <ckeditor ref="editor" :editor="editor" :value="value" :config="editorConfig" @input="emitEvent"></ckeditor>
 </template>
 
 <script>
@@ -114,13 +114,8 @@
             }
         },
         methods: {
-            emitEvent(data, event, editor) {
-                console.log(this.editor)
-                console.log( 'Editor data input.', { data, event, editor } );
-                // console.log(data);
-                // console.log(event);
-                // console.log(editor);
-                this.$emit('input', this.value)
+            emitEvent(editor) {
+                this.$emit('input', editor)
             }
         },
     }
