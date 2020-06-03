@@ -13,8 +13,9 @@
         <div :class="'mt-2 p-3 font-sans text-gray-700 antialiased mb-2'+height">
             <slot></slot>
         </div>
-        <div class="mb-1 border-b-2"></div>
-        <div class="ml-5 py-5"><base-button></base-button></div>
+        <div v-if="$slots.footer && !!$slots.footer[0].text" class="mb-1 border-b-2"></div>
+        <slot name="footer"></slot>
+<!--        <div class="ml-5 py-5"><base-button></base-button></div>-->
     </div>
 </template>
 
@@ -37,7 +38,5 @@
 </script>
 
 <style scoped>
-    /*.height {*/
-    /*    min-height: 100px;*/
-    /*}*/
+
 </style>
