@@ -1,35 +1,19 @@
 <template>
     <div class="h-auto grid grid-cols-3 gap-4 px-10">
         <div class="bg-white rounded-lg justify-center">
-            <div class="flex justify-between border-solid p-2 text-center items-center">
-                <div class="text-left font-semibold text-gray-700 ml-2 text-xl antialiased leading-snug tracking-normal font-sans">
-                    {{heading1}} <span class="text-teal-500">{{subheading1}}</span>
-                </div>
-            </div>
             <div class="relative">
-                <slot name="toolbox"></slot>
+                <slot name="box1"></slot>
             </div>
         </div>
 
         <div class="bg-white rounded-lg  justify-center">
-            <div class="flex justify-between border-solid  p-2 text-center items-center">
-                <div class="text-left font-semibold text-gray-700 ml-2 text-xl antialiased leading-snug tracking-normal font-sans">
-                    {{heading2}} <span class="text-teal-500">{{subheading2}}</span>
-                </div>
-            </div>
             <div class="relative">
-                <slot name="toolbox1"></slot>
+                <slot name="box2"></slot>
             </div>
         </div>
-        <div class="bg-white rounded-lg  justify-center">
-            <div class="flex justify-between border-solid  p-2 text-center items-center">
-
-                <div class="text-left font-semibold text-gray-700 ml-2 text-xl antialiased leading-snug tracking-normal font-sans">
-                    {{heading3}} <span class="text-teal-500">{{subheading3}}</span>
-                </div>
-            </div>
+        <div class="bg-white rounded-lg justify-center">
             <div class="relative">
-                <slot name="toolbox2"></slot>
+                <slot name="box3"></slot>
             </div>
         </div>
     </div>
