@@ -13,12 +13,12 @@
                        v-model="search"
                        ref="input_select"
                 >
-                <span v-if="checkValue" v-for="item in value" class="multi-select-input-tag z-10" style="display: inline-flex;line-height: 1;align-items: center;font-size: .875rem; background-color: #bcdefa; color: #1c3d5a;border-radius: .25rem;user-select: none; padding: .25rem; margin-right: .5rem;   margin-bottom: .25rem;">
+                <span v-if="checkValue" v-for="item in selectedElements" class="multi-select-input-tag z-10" style="display: inline-flex;line-height: 1;align-items: center;font-size: .875rem; background-color: #bcdefa; color: #1c3d5a;border-radius: .25rem;user-select: none; padding: .25rem; margin-right: .5rem;   margin-bottom: .25rem;">
                     <span>{{ item[optionLabel] }}</span>
                     <button type="button" class="multi-select-input-remove" style="color: #2779bd;font-size: 1.125rem;line-height: 1;" @click.prevent="removeElement(item)">&times;</button>
                 </span>
                 <span v-else class="multi-select-input-tag z-10" style="display: inline-flex;line-height: 1;align-items: center;font-size: .875rem; background-color: #bcdefa; color: #1c3d5a;border-radius: .25rem;user-select: none; padding: .25rem; margin-right: .5rem;   margin-bottom: .25rem;">
-                    <span @click.prevent="removeElement(value)">{{ item[optionLabel] }}</span>
+                    <span @click.prevent="removeElement(selectedElements)">{{ item[optionLabel] }}</span>
 <!--                    <button type="button" class="multi-select-input-remove" @click.prevent="removeElement(value)">&times;</button>-->
                 </span>
             </div>
@@ -27,7 +27,7 @@
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
                 </svg>
             </div>
-            <button v-if="dropdown" @click.prevent="dropdown = false" class="fixed top-0 left-0 bottom-0 right-0 h-full w-full"></button>
+<!--            <button v-if="dropdown" @click.prevent="dropdown = false" class="fixed top-0 left-0 bottom-0 right-0 h-full w-full"></button>-->
             <div v-if="dropdown" ref="dropdown" class="absolute right-0 mt-2 py-2 w-full bg-white rounded-lg shadow-xl overflow-y-auto h-screen">
                 <ul>
                     <li v-if="computedOptions.length" v-for="item in computedOptions"
@@ -51,38 +51,53 @@
             return {
                 search: '',
                 dropdown: false,
+                optionsData: [],
+                selectedElements: []
             }
+        },
+        created(){
+            this.selectedElements = this.value;
+            if(this.api_url) {
+                this.fetchOptions();
+            }
+            else
+                this.optionsData = this.options
         },
         methods: {
             selectElement(item) {
                 if(this.multiple) {
-                    let index = _.findIndex(this.value, (o) => {
+                    let index = _.findIndex(this.selectedElements, (o) => {
                         return o[this.trackBy] === item[this.trackBy];
                     });
-                    if(index > -1) this.value.splice(index, 1);
-                    else this.value.push(item);
+                    if(index > -1) this.selectedElements.splice(index, 1);
+                    else this.selectedElements.push(item);
                 }
-                else this.value = item;
+                else this.selectedElements = item;
 
-                this.$emit('input', this.value)
+                this.$emit('input', this.selectedElements)
             },
             selected(item) {
-                let index = _.findIndex(this.value, (o) => {
+                let index = _.findIndex(this.selectedElements, (o) => {
                     return o[this.trackBy] === item[this.trackBy];
                 });
                 return index <= -1;
             },
+            fetchOptions() {
+                this.$api.post(this.api_url, this.query).then(response => {
+                    if(response.status === 200) this.optionsData = response.data.options;
+                })
+            },
             removeElement(item) {
                 console.log("Event fired");
                 if(this.multiple) {
-                    let index = _.findIndex(this.value, (o) => {
+                    let index = _.findIndex(this.selectedElements, (o) => {
                         return o[this.trackBy] === item[this.trackBy];
                     });
-                    this.value.splice(index, 1);
+                    this.selectedElements.splice(index, 1);
                 }
-                else this.value = [];
+                else this.selectedElements = [];
 
-                this.$emit('input', this.value)
+                this.$emit('input', this.selectedElements)
             },
         },
         name: "NitsInputMultiSelect",
@@ -117,16 +132,14 @@
                 type: Boolean,
                 default: false
             },
-            value: ''
+            value: '',
+            api_url: {
+                type: String
+            },
+            query: {
+                type: Object
+            }
         },
-        // created() {
-            // const button = this.$refs.input_select;
-            // const tooltip =this.$refs.dropdown;
-            //
-            // createPopper(button, tooltip, {
-            //     placement: 'right',
-            // });
-        // },
         computed: {
             errorDisplay() {
                 if(this.error.length)
@@ -137,11 +150,17 @@
             computedOptions() {
                 const searchTerm = this.search.toLowerCase();
                 if(this.searchable && searchTerm) this.$emit('searchQuery', this.search);
-                if(this.options.length) return this.options.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
+                if(this.optionsData.length) return this.optionsData.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
                 else return [];
             },
             checkValue() {
-                return _.isArray(this.value);
+                return _.isArray(this.selectedElements);
+            }
+        },
+        watch: {
+            query:{
+                handler: 'fetchOptions',
+                deep: true
             }
         }
     }

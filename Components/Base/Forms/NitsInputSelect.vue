@@ -66,6 +66,7 @@
                 this.$emit('input', this.$refs.select.value)
             },
             fetchOptions() {
+                console.log('Check');
                 this.$api.post(this.api_url, this.query).then(response => {
                     if(response.status === 200) this.optionsData = response.data.options;
                 })

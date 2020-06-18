@@ -70,6 +70,9 @@
                 });
 
             }
+        },
+        created() {
+            console.log(this.forms)
         }
     }
 </script>
