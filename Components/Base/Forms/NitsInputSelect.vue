@@ -66,7 +66,7 @@
                 this.$emit('input', this.$refs.select.value)
             },
             fetchOptions() {
-                console.log('Check');
+                console.log(this.query);
                 this.$api.post(this.api_url, this.query).then(response => {
                     if(response.status === 200) this.optionsData = response.data.options;
                 })
@@ -79,8 +79,14 @@
                 else
                     return '';
             },
+            queries() {
+                if(this.query.length) return this.query;
+            }
         },
         watch: {
+            // query(oldValue, newValue) {
+            //
+            // }
             query:{
                 handler: 'fetchOptions',
                 deep: true
