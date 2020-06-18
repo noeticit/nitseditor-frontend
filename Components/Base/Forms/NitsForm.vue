@@ -4,9 +4,12 @@
             <component v-for="(element, key, form_index) in forms" :key="key" :is="element.type" v-bind="element.attrs" v-model="element.value" :error="errors[key]" @input="listensToEvent(key)"></component>
         </nits-grid>
         <div class="flex m-4 w-full">
-            <div class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700">
-                <span class="text-center text-base antialiased tracking-tight font-sans text-white cursor-pointer" @click.prevent="submit">Submit</span>
-            </div>
+<!--            <div class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700">-->
+<!--                <span class="text-center text-base antialiased tracking-tight font-sans text-white cursor-pointer" @click.prevent="submit">Submit</span>-->
+<!--            </div>-->
+            <button v-bind:class="{ 'spinner': loading }" class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700" @click.prevent="submit">
+                <span class="text-center text-base antialiased tracking-tight font-sans text-white cursor-pointer" >Submit</span>
+            </button>
             <router-link :to="back_url" class="inline-flex mt-10 ml-2 items-center rounded-lg py-2 px-6 border border-gray-400">
                 <span class="text-center text-base antialiased tracking-tight font-sans text-gray-600">Cancel</span>
             </router-link>
@@ -34,6 +37,7 @@
         },
         methods: {
             submit() {
+                this.loading = true
                 const postData = {};
                 Object.keys(this.forms).forEach((key) => {
                     postData[key] = this.forms[key].value
