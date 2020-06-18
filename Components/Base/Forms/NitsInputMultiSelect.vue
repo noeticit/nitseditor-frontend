@@ -155,10 +155,13 @@
             },
             checkValue() {
                 return _.isArray(this.selectedElements);
+            },
+            queries() {
+                return this.query;
             }
         },
         watch: {
-            query:{
+            queries: {
                 handler: 'fetchOptions',
                 deep: true
             }

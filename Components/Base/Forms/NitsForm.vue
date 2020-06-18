@@ -1,7 +1,7 @@
 <template>
     <div>
         <nits-grid v-bind="grid">
-            <component v-for="(element, key, form_index) in forms" :key="key" :is="element.type" v-bind="element.attrs" v-model="element.value" :error="errors[key]" @input="listensToEvent(key)"></component>
+            <component v-for="(element, key) in forms" :key="key" :is="element.type" v-bind="element.attrs" v-model="element.value" :error="errors[key]" @input="listensToEvent(key)"></component>
         </nits-grid>
         <div class="flex m-4 w-full">
             <div class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700">
@@ -64,7 +64,7 @@
                     if(typeof this.forms[key].listensTo !== 'undefined' && this.forms[key].listensTo.length && this.forms[key].listensTo.includes(field)) {
                         this.forms[key].attrs.query[field] = this.forms[field].value;
                         // console.log(this.forms[key].listensTo)
-                        // console.log('Coming from '+ field+' for field '+key);
+                        console.log('Coming from '+ field+' for field '+key);
                         console.log(this.forms)
                     }
                 });
@@ -72,7 +72,7 @@
             }
         },
         created() {
-            console.log(this.forms)
+
         }
     }
 </script>
