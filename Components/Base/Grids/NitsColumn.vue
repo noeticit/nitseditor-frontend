@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: "nitsColumn",
+        name: "NitsColumn",
         props:{
             span:{
                 type: String,

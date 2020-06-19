@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: "nitsGrid",
+        name: "NitsGrid",
         props: {
             rows: {
                 type: String
