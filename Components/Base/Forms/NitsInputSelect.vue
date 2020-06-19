@@ -51,7 +51,8 @@
             },
             query: {
                 type: Object
-            }
+            },
+            test: ''
         },
         created() {
             if(this.api_url) {
@@ -66,7 +67,6 @@
                 this.$emit('input', this.$refs.select.value)
             },
             fetchOptions() {
-                console.log(this.query);
                 this.$api.post(this.api_url, this.query).then(response => {
                     if(response.status === 200) this.optionsData = response.data.options;
                 })
@@ -84,13 +84,10 @@
             }
         },
         watch: {
-            // query(oldValue, newValue) {
-            //
-            // }
-            query:{
+            query: {
                 handler: 'fetchOptions',
                 deep: true
-            }
+            },
         }
     }
 </script>

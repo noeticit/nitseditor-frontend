@@ -66,17 +66,19 @@
             listensToEvent(field) {
                 Object.keys(this.forms).forEach((key) => {
                     if(typeof this.forms[key].listensTo !== 'undefined' && this.forms[key].listensTo.length && this.forms[key].listensTo.includes(field)) {
-                        this.forms[key].attrs.query[field] = this.forms[field].value;
-                        // console.log(this.forms[key].listensTo)
-                        console.log('Coming from '+ field+' for field '+key);
-                        console.log(this.forms)
+                        this.forms[key].attrs.query = { [field]: this.forms[field].value };
                     }
                 });
 
             }
         },
-        created() {
-
+        watch: {
+            $props: {
+                handler() {
+                    console.log("From form object")
+                },
+                deep: true
+            }
         }
     }
 </script>
