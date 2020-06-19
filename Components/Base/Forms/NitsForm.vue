@@ -4,9 +4,6 @@
             <component v-for="(element, key) in forms" :key="key" :is="element.type" v-bind="element.attrs" v-model="element.value" :error="errors[key]" @input="listensToEvent(key)"></component>
         </nits-grid>
         <div class="flex m-4 w-full">
-<!--            <div class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700">-->
-<!--                <span class="text-center text-base antialiased tracking-tight font-sans text-white cursor-pointer" @click.prevent="submit">Submit</span>-->
-<!--            </div>-->
             <button v-bind:class="{ 'spinner': loading }" class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700" @click.prevent="submit">
                 <span class="text-center text-base antialiased tracking-tight font-sans text-white cursor-pointer" >Submit</span>
             </button>
