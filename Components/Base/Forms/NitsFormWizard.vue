@@ -1,17 +1,19 @@
 <template>
    <div>
        <div>
-           <ul class="list-reset flex border-b">
-               <li class="-mb-px px-2 w-48  cursor-pointer" v-for="(item, key, index) in contents"  @click="activeTab = key">
-                   <svg class="ml-12 h-10 w-10 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+           <ul class="list-reset pb-5 mt-5 w-full flex border-b">
+               <li class="-mb-px hover:text-blue-700 px-2 w-48 cursor-pointer text-center" v-for="(item, key, index) in contents"  @click="activeTab = key">
+                   <svg class="ml-16 focus:text-blue-500 h-10 w-10 mb-3 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                        <path fill-rule="evenodd" :d="item.icon"/>
                    </svg>
-                   <span >{{key}}</span>
+                   <span class="text-sm focus:text-blue-500 hover:text-blue-500 font-semibold subpixel-antialiased capitalize text-gray-600">{{key}}</span>
                </li>
            </ul>
+<!--           <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center"></div>-->
+
            <div class="p-4" v-for="(item, key, index) in contents" v-show="key === activeTab">
-               <div class="justify-between p-4 mt-8 text-center items-center">
-                   <div class="text-left ml-16 pl-8 text-xl antialiased leading-snug tracking-normal font-sans text-teal-700">{{item.title}}</div>
+               <div class="justify-between p-4 mt-3 text-center items-center">
+                   <div class=" ml-16 pl-8 text-left text-lg focus:text-blue-500 font-semibold subpixel-antialiased capitalize text-gray-600 leading-snug tracking-normal">{{item.title}}</div>
                </div>
                <nits-grid class="ml-16 pl-12" v-bind="grid">
                    <component v-for="(element, element_key, form_index) in item.forms" :key="element_key" :is="element.type" v-bind="element.attrs" v-model="element.value" :error="errors[element_key]" @input="listensToEvent(key, element_key)"></component>
