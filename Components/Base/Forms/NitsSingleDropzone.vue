@@ -22,20 +22,26 @@
     import 'vue2-dropzone/dist/vue2Dropzone.min.css'
 
     export default {
-        name: "NitsDropzone",
+        name: "NitsSingleDropzone",
         components: {
             vueDropzone: vue2Dropzone
         },
         props: {
-            uploadApi: String,
             label: String,
-            directory: String,
-            options: Object,
             value: '',
         },
         data(){
             return{
-
+                options: {
+                    url: "/nits-system-api/upload-files",
+                    maxFilesize: 2, // MB
+                    maxFiles: 1,
+                    // chunking: true,
+                    // chunkSize: 500, // Bytes
+                    thumbnailWidth: 150, // px
+                    thumbnailHeight: 150,
+                    addRemoveLinks: true
+                },
             }
         },
         methods:{
@@ -52,20 +58,5 @@
 </script>
 
 <style scoped>
-    /*.dropzone-custom-content {*/
-    /*    position: relative;*/
-    /*    top: 50%;*/
-    /*    left: 50%;*/
-    /*    transform: translate(-50%, -50%);*/
-    /*    text-align: center;*/
-    /*}*/
 
-    /*.dropzone-custom-title {*/
-    /*    margin-top: 0;*/
-    /*    color: #00b782;*/
-    /*}*/
-
-    /*.subtitle {*/
-    /*    color: #314b5f;*/
-    /*}*/
 </style>
