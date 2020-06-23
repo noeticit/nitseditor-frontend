@@ -6,6 +6,8 @@
                 id="dropzone"
                 :options="options"
                 :useCustomSlot=true
+                :value="value"
+                @vdropzone-complete="afterComplete"
         >
             <div class="dropzone-custom-content">
                 <h3 class="dropzone-custom-title">Drag and drop to upload content!</h3>
@@ -26,8 +28,8 @@
         },
         props: {
             uploadApi: String,
-            hint: String,
             label: String,
+            directory: String,
             options: Object,
             value: '',
         },
@@ -36,24 +38,34 @@
 
             }
         },
+        methods:{
+            removeAllFiles() {
+                this.$refs.myVueDropzone.removeAllFiles();
+            },
+            afterComplete(file) {
+                const info = JSON.parse(file.xhr.response)
+                if(typeof info.link !== 'undefined')
+                    this.$emit('input', info.link)
+            }
+        },
     }
 </script>
 
 <style scoped>
-    .dropzone-custom-content {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
+    /*.dropzone-custom-content {*/
+    /*    position: relative;*/
+    /*    top: 50%;*/
+    /*    left: 50%;*/
+    /*    transform: translate(-50%, -50%);*/
+    /*    text-align: center;*/
+    /*}*/
 
-    .dropzone-custom-title {
-        margin-top: 0;
-        color: #00b782;
-    }
+    /*.dropzone-custom-title {*/
+    /*    margin-top: 0;*/
+    /*    color: #00b782;*/
+    /*}*/
 
-    .subtitle {
-        color: #314b5f;
-    }
+    /*.subtitle {*/
+    /*    color: #314b5f;*/
+    /*}*/
 </style>
