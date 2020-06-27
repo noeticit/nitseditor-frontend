@@ -2,6 +2,7 @@
     <dashboard-layout-one active="menus">
         <base-bread-crumb-one name="Menus" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
         <div class="overflow-y-auto h-screen">
+            <button v-if="isOpen " @click="isOpen= false" class="cursor-default focus:outline-none absolute right-0 left-0 bottom-0 top-0 h-full w-full"></button>
             <div class="mt-4 flex justify-center mb-32">
                 <div class="m-2 rounded-lg shadow-lg bg-white w-1/4">
                     <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center">
@@ -135,18 +136,102 @@
                 <div class="m-2 rounded-lg shadow-lg bg-white w-3/4">
                     <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center">
                         <div class="text-left ml-2 text-xl antialiased leading-snug tracking-normal font-sans">Menu Structure</div>
-                        <div class="relative ml-64 ">
-                            <div class="ml-64">
-                                <svg class="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
-                                <select class="border bg-gray-200 border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-                                    <option >Select Menu</option>
-                                    <option>Account</option>
-                                    <option>Home Menu</option>
-                                    <option>Information</option>
-                                </select>
-                            </div>
+
+                            <div class="relative ml-32 mt-1 w-1/2 h-10 focus:outline-none">
+                                <div class="border rounded px-2 pt-1">
+                                    <ejs-multiselect :dataSource="Multiselect" :fields="MultiselectData" placeholder=" Select A list" popupWidth="250px" popupHeight="200px"></ejs-multiselect>
+                                </div>
+<!--                                <span class="inline-block w-64 focus:outline-none rounded-md shadow-sm cursor-pointer">-->
+<!--                                    <button @click="isOpen = ! isOpen" type="button" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label" class="cursor-pointer relative w-full rounded-md border border-gray-300 bg-white pl-3 pr-10 py-2 text-left focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition ease-in-out duration-150 sm:text-sm sm:leading-5">-->
+<!--                                        <span class="block truncate">-->
+<!--                                              Select Menu :-->
+<!--                                        </span>-->
+<!--                                        <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">-->
+<!--                                            <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="none" stroke="currentColor">-->
+<!--                                                <path d="M7 7l3-3 3 3m0 6l-3 3-3-3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>-->
+<!--                                            </svg>-->
+<!--                                        </span>-->
+<!--                                    </button>-->
+<!--                                </span>-->
+<!--                            <div class="w-64 absolute " v-if="isOpen">-->
+<!--                                <div class="w-full mt-2 focus:outline-none rounded-t cursor-pointer bg-white shadow-lg">-->
+<!--                                    <ul tabindex="-1" role="listbox" aria-labelledby="listbox-label" class="max-h-56 py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5">-->
+<!--                                        <li role="option" class="text-gray-900 cursor-pointer select-none relative py-2 pl-3 pr-9">-->
+<!--                                            <input type="search" name="search" id="search" placeholder="Search Menu" class="appearance-none bg-white w-full outline-none focus:outline-none active:outline-none"/>-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                                <div @click="isOpen = false" class="w-full focus:outline-none cursor-pointer bg-white shadow-lg hover:bg-blue-600 hover:text-white">-->
+<!--                                    <ul tabindex="-1" role="listbox" aria-labelledby="listbox-label" class="max-h-56 py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5">-->
+<!--                                        <li role="option" class="hover:text-white text-gray-900 cursor-pointer select-none relative py-2 pl-3 pr-9">-->
+<!--                                            <div class="flex items-center space-x-3">-->
+<!--                                                <img src="/project-assets/images/mumbai.jpg" alt="" class="flex-shrink-0 h-6 w-6 rounded-full" />-->
+<!--                                                <span class=" ml-4 font-normal block truncate">-->
+<!--                                                    Home Menu-->
+<!--                                                </span>-->
+<!--                                            </div>-->
+<!--                                            <span class="absolute text-white inset-y-0 right-0 flex items-center pr-4">-->
+<!--                                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">-->
+<!--                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>-->
+<!--                                                </svg>-->
+<!--                                            </span>-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                                <div @click="isOpen = false" class=" w-full bg-white shadow-lg cursor-pointer hover:bg-blue-600 hover:text-white">-->
+<!--                                    <ul tabindex="-1" role="listbox" aria-labelledby="listbox-label" class="max-h-56  py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5">-->
+<!--                                        <li role="option" class="hover:text-white text-gray-900 cursor-pointer select-none relative py-2 pl-3 pr-9">-->
+<!--                                            <div class="flex items-center space-x-3">-->
+<!--                                                <img src="/project-assets/images/nightmumbai.jpg" alt="" class="flex-shrink-0 h-6 w-6 rounded-full" />-->
+<!--                                                <span class="ml-4 font-normal block truncate">-->
+<!--                                                        Admin Menu-->
+<!--                                                </span>-->
+<!--                                            </div>-->
+<!--                                            <span class="absolute inset-y-0 right-0 flex items-center pr-4">-->
+<!--                                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">-->
+<!--                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>-->
+<!--                                                </svg>-->
+<!--                                            </span>-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                                <div @click="isOpen = false" class=" w-full bg-white shadow-lg cursor-pointer hover:bg-blue-600 hover:text-white">-->
+<!--                                    <ul tabindex="-1" role="listbox" aria-labelledby="listbox-label" class="max-h-56 py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5">-->
+<!--                                        <li role="option" class="text-gray-900 hover:text-white cursor-pointer select-none relative py-2 pl-3 pr-9">-->
+<!--                                            <div class="flex items-center space-x-3">-->
+<!--                                                <img src="/project-assets/images/themumbai.jpg" alt="" class="flex-shrink-0 h-6 w-6 rounded-full" />-->
+<!--                                                <span class="ml-4 font-normal block truncate">-->
+<!--                                                    Super Admin Menu-->
+<!--                                                </span>-->
+<!--                                            </div>-->
+<!--                                            <span class="absolute inset-y-0 right-0 flex items-center pr-4">-->
+<!--                                                <svg class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">-->
+<!--                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>-->
+<!--                                                </svg>-->
+<!--                                            </span>-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                                <div @click="isOpen = false" class="w-full bg-white shadow-lg cursor-pointer hover:bg-blue-600 hover:text-white">-->
+<!--                                    <ul tabindex="-1" role="listbox" aria-labelledby="listbox-label" class="max-h-56 rounded-b py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5">-->
+<!--                                        <li role="option" class="text-gray-900 hover:text-white cursor-pointer select-none relative py-2 pl-3 pr-9">-->
+<!--                                            <div class="flex items-center space-x-3">-->
+<!--                                                <img src="/project-assets/images/newmumbai.jpg" alt="" class="flex-shrink-0 h-6 w-6 rounded-full" />-->
+<!--                                                <span class="ml-4 font-normal block truncate">-->
+<!--                                                    Subscriber Menu-->
+<!--                                                </span>-->
+<!--                                            </div>-->
+<!--                                            <span class="absolute text-white inset-y-0 right-0 flex items-center pr-4">-->
+<!--                                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">-->
+<!--                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>-->
+<!--                                                </svg>-->
+<!--                                            </span>-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                            </div>-->
                         </div>
-                        <div class="inline-flex items-center rounded-full py-2 px-4 bg-teal-400">
+                        <div class="inline-flex ml-5 items-center mr-5 rounded-full py-2 px-4 bg-teal-400">
                             <span class="text-center text-sm antialiased tracking-tight font-light font-sans text-white">Save Menu</span>
                         </div>
                     </div>
@@ -170,12 +255,35 @@
 </template>
 
 <script>
+    import {MultiSelectPlugin} from '@syncfusion/ej2-vue-dropdowns';
+    Vue.use(MultiSelectPlugin);
     export default {
         name: "menus",
         data() {
             return {
                 breadcrumbs: ['Menus', 'Second Link', 'Third Link', 'Fourth Link'],
                 accordions: {},
+                Multiselect:[
+                    {
+                        Id : 1,
+                        name : 'Admin',
+                    },
+                    {
+                        Id : 2,
+                        name : 'User',
+                    },
+                    {
+                        Id : 3,
+                        name : 'Super',
+                    },
+                    {
+                        Id : 4,
+                        name : 'Subscriber',
+                    }
+                ],
+                MultiselectData:
+                    { value: 'Id', text:'name'},
+                isOpen : false,
                 menus: [
                     {
                         id: 1,
@@ -219,6 +327,8 @@
 </style>
 
 <style lang="scss">
+    @import url(https://cdn.syncfusion.com/ej2/material.css);
+
     .moving-card {
         @apply opacity-50 bg-gray-100 border border-blue-500;
     }

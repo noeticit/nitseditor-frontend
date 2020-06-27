@@ -11,7 +11,7 @@
                             <span class="bg-white hover:border-b hover:border-teal-500 inline-block py-2 px-5 text-teal-500 font-semibold">{{key}}</span>
                         </div>
                         <div>
-                            <svg class="ml-8 pr-2 mt-6 focus:text-blue-500 h-8 w-8 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <svg v-if="next(key)" class="ml-8 pr-2 mt-6 focus:text-blue-500 h-8 w-8 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M9.163 4.516c.418.408 4.502 4.695 4.502 4.695a1.095 1.095 0 010 1.576s-4.084 4.289-4.502 4.695c-.418.408-1.17.436-1.615 0-.446-.434-.481-1.041 0-1.574L11.295 10 7.548 6.092c-.481-.533-.446-1.141 0-1.576.445-.436 1.197-.409 1.615 0z"/>
                             </svg>
                         </div>
