@@ -6,6 +6,8 @@
                 id="dropzone"
                 :options="options"
                 :useCustomSlot=true
+                :value="value"
+                @vdropzone-complete="afterComplete"
         >
             <div class="dropzone-custom-content">
                 <h3 class="dropzone-custom-title">Drag and drop to upload content!</h3>
@@ -20,40 +22,41 @@
     import 'vue2-dropzone/dist/vue2Dropzone.min.css'
 
     export default {
-        name: "NitsDropzone",
+        name: "NitsSingleDropzone",
         components: {
             vueDropzone: vue2Dropzone
         },
         props: {
-            uploadApi: String,
-            hint: String,
             label: String,
-            options: Object,
             value: '',
         },
         data(){
             return{
-
+                options: {
+                    url: "/nits-system-api/upload-files",
+                    maxFilesize: 2, // MB
+                    maxFiles: 1,
+                    // chunking: true,
+                    // chunkSize: 500, // Bytes
+                    thumbnailWidth: 150, // px
+                    thumbnailHeight: 150,
+                    addRemoveLinks: true
+                },
+            }
+        },
+        methods:{
+            removeAllFiles() {
+                this.$refs.myVueDropzone.removeAllFiles();
+            },
+            afterComplete(file) {
+                const info = JSON.parse(file.xhr.response)
+                if(typeof info.link !== 'undefined')
+                    this.$emit('input', info.link)
             }
         },
     }
 </script>
 
 <style scoped>
-    .dropzone-custom-content {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
 
-    .dropzone-custom-title {
-        margin-top: 0;
-        color: #00b782;
-    }
-
-    .subtitle {
-        color: #314b5f;
-    }
 </style>
