@@ -2,8 +2,8 @@
     <dashboard-layout-one active="user-add">
         <base-bread-crumb-one name="Add Page" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
         <div class="m-2 overflow-y-auto h-screen w-full">
-            <div class="bg-white mb-32 mt-5 ml-8 mr-4 min-h-full justify-center">
-                <div class="relative px-10 bg-gray-200 mt-10 overflow-y-auto mb-32 h-screen mb-10 ">
+            <div class="bg-white mb-32 mt-5 mr-4 min-h-full justify-center">
+                <div class="relative px-5 bg-gray-200 mt-10 overflow-y-auto mb-32 h-screen mb-10 ">
                     <div class="">
                         <div class="w-full text-left pb-5 antialiased tracking-tigh font-sans">
                             <input class="w-full focus:outline-none border border-gray-700 h-8 px-8 rounded" placeholder="Add Title" type="text" >
