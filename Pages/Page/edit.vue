@@ -138,10 +138,56 @@
                         </h5>
                     </div>
                 </div>
+                <nits-grid cols="3" gap="2">
+                    <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
+                        <div class="h-10 w-10 mt-3 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
+                            <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-col">
+                            <h5 class="text-blue-500 font-bold">Row</h5>
+                            <p class="text-xs text-gray-600 mt-1">Place content elements inside the row</p>
+                        </div>
+                    </div>
+                    <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
+                        <div class="h-10 w-10 mt-3 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
+                            <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-col">
+                            <h5 class="text-blue-500 font-bold">Row</h5>
+                            <p class="text-xs text-gray-600 mt-1">Place content elements inside the row</p>
+                        </div>
+                    </div>
+                    <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
+                        <div class="h-10 w-10 mt-3 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
+                            <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-col">
+                            <h5 class="text-blue-500 font-bold">Row</h5>
+                            <p class="text-xs text-gray-600 mt-1">Place content elements inside the row</p>
+                        </div>
+                    </div>
+                    <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
+                        <div class="h-10 w-10 mt-3 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
+                            <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-col">
+                            <h5 class="text-blue-500 font-bold">Row</h5>
+                            <p class="text-xs text-gray-600 mt-1">Place content elements inside the row</p>
+                        </div>
+                    </div>
+                </nits-grid>
+
                 <div>
                     <button @click="closeModal" class=" bg-transparent border border-gray-500 mt-3 text-gray-600  font-semibold py-1 px-4 rounded">Close</button>
                 </div>
-
             </vue-tailwind-modal>
 
             <vue-tailwind-modal :showing="modalRowShow" class="shadow-lg">
