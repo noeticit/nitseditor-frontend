@@ -139,13 +139,24 @@
                     </div>
                 </div>
                 <nits-grid cols="3" gap="2">
-                    <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
+                    <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500" @click="showModalRow = true">
                         <div class="h-10 w-10 mt-3 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
                             <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
                             </svg>
                         </div>
-                        <div class="flex-col">
+                        <div class="flex-col cursor-pointer" >
+                            <h5 class="text-blue-500 font-bold">Row</h5>
+                            <p class="text-xs text-gray-600 mt-1">Place content elements inside the row</p>
+                        </div>
+                    </div>
+                    <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500" @click="showModalRow = true">
+                        <div class="h-10 w-10 mt-3 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
+                            <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-col cursor-pointer">
                             <h5 class="text-blue-500 font-bold">Row</h5>
                             <p class="text-xs text-gray-600 mt-1">Place content elements inside the row</p>
                         </div>
@@ -156,18 +167,7 @@
                                 <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
                             </svg>
                         </div>
-                        <div class="flex-col">
-                            <h5 class="text-blue-500 font-bold">Row</h5>
-                            <p class="text-xs text-gray-600 mt-1">Place content elements inside the row</p>
-                        </div>
-                    </div>
-                    <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
-                        <div class="h-10 w-10 mt-3 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
-                            <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
-                            </svg>
-                        </div>
-                        <div class="flex-col">
+                        <div class="flex-col cursor-pointer" >
                             <h5 class="text-blue-500 font-bold">Row</h5>
                             <p class="text-xs text-gray-600 mt-1">Place content elements inside the row</p>
                         </div>
@@ -203,6 +203,68 @@
                 </div>
 
             </vue-tailwind-modal>
+
+
+<!--ROW MODEL-->
+                <div class="absolute fixed inset-0 m-auto text-center w-1/2 h-64 rounded-md shadow-lg bg-white " v-if="showModalRow">
+                    <div class="flex bg-blue-600 p-4">
+                        <h2 class="text-white text-xl leading-normal font-normal font-sans">Button Settings</h2>
+                        <button @click="showModalRow = false" class="absolute top-0 right-0 text-xl text-white my-4 mx-4">X</button>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap">
+                            <div class="w-full">
+                                <ul class="flex mb-0 list-none flex-wrap flex-row bg-blue-600 pt-2">
+                                    <li class=" flex text-center cursor-pointer">
+                                        <a class="text-base  px-5 py-3 rounded-t-lg w-24 ml-2 leading-normal font-normal font-sans" v-on:click="toggleTabs(1)" v-bind:class="{'text-white bg-blue-600': openTab !== 1, 'text-gray-600 bg-white': openTab === 1}">
+                                            General
+                                        </a>
+                                    </li>
+                                    <li class="flex text-center cursor-pointer">
+                                        <a class="text-base  px-5 py-3 rounded-t-lg w-40 ml-2 leading-normal font-normal font-sans" v-on:click="toggleTabs(2)" v-bind:class="{'text-white bg-blue-600': openTab !== 2, 'text-gray-600 bg-white': openTab === 2}">
+                                            Design Options
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+                                    <div class="px-4 py-5 flex-auto">
+                                        <div class="tab-content tab-space">
+                                            <div v-bind:class="{'hidden': openTab !== 1, 'block': openTab === 1}">
+                                                DEMO1 <br /> text-base  px-5 py-3 rounded-t-lg w-40 ml-2 leading-normal font-normal font-sans
+                                                text-base  px-5 py-3 rounded-t-lg w-40 ml-2 leading-normal font-normal font-sans
+                                            </div>
+                                            <div v-bind:class="{'hidden': openTab !== 2, 'block': openTab === 2}">
+                                                <p>
+                                                    DEMO2 <br />text-base  px-5 py-3 rounded-t-lg w-40 ml-2 leading-normal
+                                                    font-normal font-sans text-base  px-5 py-3 rounded-t-lg w-40 ml-2
+                                                    leading-normal font-normal font-sans
+                                                    <br />
+                                                    <br />
+                                                    text-base  px-5 py-3 rounded-t-lg w-40 ml-2 leading-normal
+                                                    font-normal font-sans
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-end p-6 border-t border-solid border-gray-300 bg-gray-300 rounded-b">
+                                        <button @click="showModalRow = false" class="text-white bg-gray-500 bg-transparent border border-solid border-gray-500 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" v-on:click="toggleModal()">
+                                            Close
+                                        </button>
+                                        <button class="text-white bg-blue-600 bg-transparent border border-solid border-blue-600 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" >
+                                            Save Changes
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--                <button @click="showModalRowRow = false" class="border-none text-white bg-teal-400 text-2xl p-4 rounded-md cursor-pointer">Hide Modal</button>-->
+
+                </div>
+<!--ROW MODEL END-->
     </div>
     </dashboard-layout-one>
 </template>
@@ -218,7 +280,9 @@
                 modalRowShow: false,
                 isOpen: true,
                 isRowOpen: true,
-                addRow:[]
+                addRow:[],
+                showModalRow: false,
+                openTab: 1
 
             }
         },
@@ -246,6 +310,9 @@
             },
             rowSettingClose(){
                 this.modalRowShow = false
+            },
+            toggleTabs: function(tabNumber){
+                this.openTab = tabNumber
             }
         },
     }
