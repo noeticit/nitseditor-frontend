@@ -83,8 +83,8 @@
                                 <label class="block leading-4">
                                     <input class="mr-2 leading-tight" type="checkbox">
                                     <span class="text-xs antialiased leading-tight tracking-wide font-sans">
-                                    Geo Search
-                                </span>
+                                        Geo Search
+                                    </span>
                                 </label>
                                 <div class="items-center text-center p-2">
                                     <div class="inline-flex items-center rounded-full py-2 px-4 bg-teal-400">
