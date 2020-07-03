@@ -65,7 +65,7 @@
 
                                 <!--<no data content start>-->
 
-                                <div v-if="noData = true" class="px-16 py-12">
+                                <div v-if="noData" class="px-16 py-12">
                                     <div class="flex-col">
                                         <div class="ml-64 pl-56">
                                             <svg class="h-12 w-12 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -90,7 +90,7 @@
 
                                 <!--<added row start>-->
 
-                                <div v-if="addedRow" class="w-full bg-white">
+                                <div v-if="addedRow" class="w-full bg-white" style="min-height: 500px">
                                     <div class="relative flex flex-row m-4 p-4">
                                         <div class="bg-gray-200 border border-white h-10 w-9  hover:text-gray-400 text-gray-600">
                                             <svg class="h-5 w-5 my-2 mx-3 pt-1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 317.215 317.215">
@@ -124,10 +124,17 @@
                                         <div  class="text-gray-600 hover:text-gray-400 inline-block bg-gray-200 font-bold">
                                             <svg class="h-4 w-4 my-2 mx-3 font-bold" fill="currentColor" viewBox="0 0 512.001 512.001" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M512.001 84.853L427.148 0 256.001 171.147 84.853 0 0 84.853 171.148 256 0 427.148l84.853 84.853 171.148-171.147 171.147 171.147 84.853-84.853L340.853 256z"/></svg>
                                         </div>
-                                        <div class="border border-gray-400">
-                                            <div  class="h-10 w-9 text-gray-600 hover:text-gray-400 inline-block bg-gray-200 font-bold">
+                                        <div :class="inlineBlock ? 'border border-gray-400' : 'border bg-white'">
+                                            <div v-if="inlineBlock" @click="isOpen2 = ! isOpen2"  class="h-10 w-9 text-gray-600 hover:text-gray-400 inline-block bg-gray-200 font-bold">
                                                 <svg class="h-6 w-6 my-2 mx-3 font-bold" fill="currentColor"  viewBox="0 0 448 448" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M408 184H272a8 8 0 01-8-8V40c0-22.09-17.91-40-40-40s-40 17.91-40 40v136a8 8 0 01-8 8H40c-22.09 0-40 17.91-40 40s17.91 40 40 40h136a8 8 0 018 8v136c0 22.09 17.91 40 40 40s40-17.91 40-40V272a8 8 0 018-8h136c22.09 0 40-17.91 40-40s-17.91-40-40-40zm0 0"/></svg>
                                             </div>
+
+                                            <div v-for="(element, index) in elements">
+                                                <a href="#" v-model="element.type" class="flex justify-start hover:bg-gray-400 inline-block max-w-xs w-48 m-4 px-4 py-2 bg-gray-300 focus:outline-none focus:shadow-outline  text-sm tracking-wider">
+                                                    Text on the Button
+                                                </a>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -155,7 +162,7 @@
                 </div>
                 <div class="overflow-y-auto scroll_bar" style="height: 450px;">
                     <nits-grid class="px-5 py-5" cols="5" gap="2">
-                        <div @click="addedRow = true" class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500" >
+                        <div @click.prevent="showModal('row')" class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500" >
                             <div class="h-10 w-10 mt-3 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
                                 <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
@@ -166,7 +173,7 @@
                                 <p class="text-xs text-gray-600 mt-1">Place content elements inside the row</p>
                             </div>
                         </div>
-                        <div @click.prevent="showModal" class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
+                        <div @click.prevent="showModal('checkbox')" class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
                             <div class="h-10 w-10 mt-3 mr-3 inline-block cursor-pointer bg-white font-bold text-blue-600 rounded-lg">
                                 <!--                            <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">-->
                                 <!--                                <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>-->
@@ -292,7 +299,7 @@
                                 <p class="text-xs text-gray-600 mt-1">Place content elements inside the row</p>
                             </div>
                         </div>
-                        <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
+                        <div @click.prevent="showModal('button')"  class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
                             <div class="h-10 w-10 mt-3 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
                                 <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 1.6a8.4 8.4 0 100 16.8 8.4 8.4 0 000-16.8zm5 9.4h-4v4H9v-4H5V9h4V5h2v4h4v2z"/>
@@ -573,6 +580,7 @@
 
         </div>
         <!--<general Tab's popup end>-->
+
         <vue-tailwind-modal :showing="Add" class="shadow-lg">
             <div class="">
                 <div class="flex bg-blue-600 p-4">
@@ -628,6 +636,7 @@
                 </div>
             </div>
         </vue-tailwind-modal>
+
     </dashboard-layout-one>
 </template>
 
@@ -637,6 +646,7 @@
         // components: {VueTailwindModal},
         data(){
             return{
+                errors: {},
                 breadcrumbs: ['Users', 'Add'],
                 modalShow: false,
                 Add: false,
@@ -647,15 +657,32 @@
                 isRowOpen: true,
                 addRow:[],
                 showModalRow: false,
-                openTab: 1
-
+                inlineBlock: true,
+                noData: true,
+                openTab: 1,
+                elements: [],
             }
         },
+        // props: {
+        //     forms: Object,
+        //     api_url: String,
+        //     redirect: String,
+        //     back_url: String,
+        //     grid: Object
+        // },
         components: {
             'DashboardLayoutOne': () => import('./../../Layouts/Dashboard/LayoutOne'),
             'VueTailwindModal': () => import('vue-tailwind-modal'),
         },
         methods:{
+            listensToEvent(field) {
+                Object.keys(this.forms).forEach((key) => {
+                    if(typeof this.forms[key].listensTo !== 'undefined' && this.forms[key].listensTo.length && this.forms[key].listensTo.includes(field)) {
+                        this.forms[key].attrs.query = { [field]: this.forms[field].value };
+                    }
+                });
+
+            },
             addRowField() {
                 this.addRow.push({});
             },
@@ -664,10 +691,24 @@
                     this.$delete(this.addRow, arrayIndex)
                 }
             },
-            showModal(){
-                this.Add = true
-                this.isOpen2= false
-                this.noData= false
+            showModal(type){
+                if(type === 'row')
+                {
+
+                    this.addedRow = true
+                    this.isOpen2 = false
+                    this.noData = false
+                }
+
+                else {
+
+                    this.elements.push({type: ''});
+
+                    this.inlineBlock = false
+                    this.addedRow = true
+                    this.isOpen2 = false
+                    this.noData = false
+                }
             },
             closeModal() {
                 this.modalShow = false
