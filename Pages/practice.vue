@@ -65,7 +65,7 @@
 
                                 <!--<no data content start>-->
 
-                                <div class="px-16 py-12">
+                                <div v-if="noData = true" class="px-16 py-12">
                                     <div class="flex-col">
                                         <div class="ml-64 pl-56">
                                             <svg class="h-12 w-12 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -667,6 +667,7 @@
             showModal(){
                 this.Add = true
                 this.isOpen2= false
+                this.noData= false
             },
             closeModal() {
                 this.modalShow = false
