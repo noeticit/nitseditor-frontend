@@ -77,7 +77,7 @@
                                         </div>
                                         <div class="flex mt-10 ml-64">
                                             <button @click="isOpen2 = ! isOpen2" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-6 py-3 font-semibold tracking-normal text-white mr-5">Add Elements</button>
-                                            <button class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-6 py-3 font-semibold tracking-normal text-white mr-5">Add Template</button>
+                                            <button class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-6 py-3 font-semibold tracking-normal text-white mr-5">Configure Template</button>
                                             <button class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-6 py-3 font-semibold tracking-normal text-white mr-5">Add Text Box</button>
                                         </div>
                                         <div class="italic mb-10 text-xs mt-10 antialiased text-center tracking-normal text-gray-500 px-64">
@@ -212,13 +212,24 @@
         <!--<add element pop-up start>-->
         <div v-if="isOpen2" class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
             <div class="border border-teal-500 shadow-lg modal-container bg-white w-full mx-20 rounded shadow-lg z-50 overflow-y-auto">
-                <div class="flex  justify-between border-solid border-b-2 p-2 text-center items-center">
+                <div class="flex relative justify-between border-solid border-b-2 p-2 text-center items-center">
                     <div class="text-left font-medium ml-6 text-sm antialiased leading-snug text-gray-700 tracking-normal font-sans">Add Elements</div>
-                    <div>
-                        <div @click="isOpen2 = false" class="text-gray-600 inline-block bg-white hover:bg-red-600 hover:text-white rounded shadow-md no-underline mr-3 focus:outline-none active:shadow-none font-bold">
+
+                    <div class="flex py-1">
+                        <div class="w-2/3 h-6 pl-3 mt-1 pr-2 bg-white border rounded-full flex justify-between items-center">
+                            <input type="search" name="search" id="search" placeholder="Search Elements"
+                                   class="appearance-none text-xs w-full outline-none focus:outline-none active:outline-none"/>
+                            <button type="submit" class="ml-1 outline-none focus:outline-none active:outline-none">
+                                <svg class="h-4 w-4 my-2 mx-2 text-gray-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M17.545 15.467l-3.779-3.779a6.15 6.15 0 00.898-3.21c0-3.417-2.961-6.377-6.378-6.377A6.185 6.185 0 002.1 8.287c0 3.416 2.961 6.377 6.377 6.377a6.15 6.15 0 003.115-.844l3.799 3.801a.953.953 0 001.346 0l.943-.943c.371-.371.236-.84-.135-1.211zM4.004 8.287a4.282 4.282 0 014.282-4.283c2.366 0 4.474 2.107 4.474 4.474a4.284 4.284 0 01-4.283 4.283c-2.366-.001-4.473-2.109-4.473-4.474z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div @click="isOpen2 = false" class="text-gray-600 ml-16 inline-block bg-white hover:bg-red-600 hover:text-white rounded shadow-md no-underline mr-3 focus:outline-none active:shadow-none font-bold">
                             <svg class="h-4 w-4 my-2 mx-2 font-bold" fill="currentColor" viewBox="0 0 512.001 512.001" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M512.001 84.853L427.148 0 256.001 171.147 84.853 0 0 84.853 171.148 256 0 427.148l84.853 84.853 171.148-171.147 171.147 171.147 84.853-84.853L340.853 256z"/></svg>
                         </div>
                     </div>
+
                 </div>
                 <div class="overflow-y-auto scroll_bar" style="height: 450px;">
                     <nits-grid class="px-5 py-5" cols="5" gap="2">
@@ -791,12 +802,6 @@
 
 <style scoped>
 
-    .hover-trigger .hover-target {
-        display: none;
-    }
 
-    .hover-trigger:hover .hover-target {
-        display: block;
-    }
 
 </style>
