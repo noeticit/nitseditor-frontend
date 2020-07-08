@@ -67,7 +67,7 @@
 
                                 <div v-if="noData" class="px-16 py-12">
                                     <div class="flex-col">
-                                        <div class="ml-64 pl-56">
+                                        <div class="ml-64 pl-64">
                                             <svg class="h-12 w-12 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M19.025 3.587c-4.356 2.556-4.044 7.806-7.096 10.175-2.297 1.783-5.538.88-7.412.113 0 0-1.27 1.603-2.181 3.74-.305.717-1.644-.073-1.409-.68C3.905 9.25 14.037 5.416 14.037 5.416s-7.149-.303-11.927 5.94c-.128-1.426-.34-5.284 3.36-7.65 5.016-3.211 14.572-.715 13.555-.119z"/>
                                             </svg>
@@ -75,10 +75,10 @@
                                         <div class="text-xl mt-10 antialiased font-normal text-center tracking-wider text-gray-500 px-64">
                                             YOU HAVE BLANK PAGE START ADDING CONTENT OR TEMPLATES
                                         </div>
-                                        <div class="flex mt-10 ml-64">
-                                            <button @click="isOpen2 = ! isOpen2" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-6 py-3 font-semibold tracking-normal text-white mr-5">Add Elements</button>
+                                        <div class="flex mt-10 ml-64 pl-32">
+                                            <button @click="isOpen2 = ! isOpen2" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-10 py-3 font-semibold tracking-normal text-white mr-5">Add Elements</button>
                                             <button class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-6 py-3 font-semibold tracking-normal text-white mr-5">Configure Template</button>
-                                            <button class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-6 py-3 font-semibold tracking-normal text-white mr-5">Add Text Box</button>
+
                                         </div>
                                         <div class="italic mb-10 text-xs mt-10 antialiased text-center tracking-normal text-gray-500 px-64">
                                             Don't know where to start? <a href="#" class="text-gray-600 hover:text-blue-500">Visit our knowledge base.</a>
@@ -91,9 +91,9 @@
                                 <!--<added row start>-->
 
 
-<!--                                <div v-if="addedRow" class="w-full pb-10 bg-white">-->
+<!--                            <div v-if="addedRow" class="w-full pb-10 bg-white">-->
 
-                                <row-element></row-element>
+                                <row-element v-if="addedRow"></row-element>
 
                                 <!--<added row end>-->
 
@@ -102,7 +102,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!--<add element pop-up start>-->
@@ -168,14 +167,14 @@
                             <!--&lt;!&ndash;                            </svg>&ndash;&gt;-->
                             <!--                            -->
                             <!--                        </div>-->
-                            <img class="h-10 w-10 mt-3 mr-3 rounded-lg" src="/project-assets/images/ckeditor.png" alt="NitsEditor Logo">
+                            <img class="h-10 w-10 mt-3 mr-3 rounded-lg" src="/project-assets/images/ckeditor.png" >
                             <div class="flex-col cursor-pointer" >
                                 <h5 class="text-blue-500 font-bold">CK Editor</h5>
                                 <p class="text-xs text-gray-600 mt-1">Place content elements inside the CK Editor</p>
                             </div>
                         </div>
                         <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
-                            <img class="h-10 w-10 mt-3 mr-3" src="/project-assets/images/date1.jpg" alt="NitsEditor Logo">
+                            <img class="h-10 w-10 mt-3 mr-3" src="/project-assets/images/date1.jpg" >
 
                             <div class="flex-col">
                                 <h5 class="text-blue-500 font-bold">Date Picker</h5>
@@ -194,7 +193,7 @@
                             </div>
                         </div>
                         <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500" @click="showModalRow = true">
-                            <img class="h-10 w-10 mt-3 mr-3" src="/project-assets/images/form.jpg" alt="NitsEditor Logo">
+                            <img class="h-10 w-10 mt-3 mr-3" src="/project-assets/images/form.jpg" >
                             <div class="flex-col cursor-pointer">
                                 <h5 class="text-blue-500 font-bold">Form</h5>
                                 <p class="text-xs text-gray-600 mt-1">Place content elements inside the row</p>
@@ -223,7 +222,7 @@
                             </div>
                         </div>
                         <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
-                            <img class="h-10 w-10 mt-3 mr-3" src="/project-assets/images/select1.png" alt="NitsEditor Logo">
+                            <img class="h-10 w-10 mt-3 mr-3" src="/project-assets/images/select1.png">
 
                             <div class="flex-col">
                                 <h5 class="text-blue-500 font-bold">Single Select</h5>
@@ -347,7 +346,7 @@
                             </div>
                         </div>
                         <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
-                            <img class="h-10 w-10 mt-3 mr-3" src="/project-assets/images/timeline-512.png" alt="NitsEditor Logo">
+                            <img class="h-10 w-10 mt-3 mr-3" src="/project-assets/images/timeline-512.png">
                             <div class="flex-col">
                                 <h5 class="text-blue-500 font-bold">Bread Crumb</h5>
                                 <p class="text-xs text-gray-600 mt-1">Place content elements inside the row</p>

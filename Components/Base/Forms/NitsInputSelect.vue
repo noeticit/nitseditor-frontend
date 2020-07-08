@@ -1,6 +1,6 @@
 <template>
     <div class="flex-col justify-start w-full">
-        <label class="mt-2 block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-select">
+        <label class="mt-2 ml-2 block uppercase tracking-wide text-left text-gray-700 text-sm font-bold mb-2" for="grid-select">
             {{label}}
         </label>
         <div class="relative">
