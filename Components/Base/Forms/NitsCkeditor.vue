@@ -31,7 +31,7 @@
     import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
     import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
     import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
-    import MathType from '@wiris/mathtype-ckeditor5/src/plugin';
+    // import MathType from '@wiris/mathtype-ckeditor5/src/plugin';
 
     export default {
         name: "NitsCkeditor",
