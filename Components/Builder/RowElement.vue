@@ -1,6 +1,5 @@
 <template>
     <div class="w-full pb-10 bg-white" style="min-height: 500px">
-
         <div class="relative flex flex-row m-4 p-4">
             <div class="bg-gray-300 mr-1 rounded-t h-10 w-12 hover:text-gray-400 text-gray-600">
                 <svg class="h-5 w-5 my-2 mx-3 pt-1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 317.215 317.215">
@@ -65,10 +64,10 @@
 
                     <!--                                                <svg class="h-5 w-5 my-2 mx-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.873 477.873"><path fill-rule="evenodd" d="M392.533 238.937c-9.426 0-17.067 7.641-17.067 17.067V426.67c0 9.426-7.641 17.067-17.067 17.067H51.2c-9.426 0-17.067-7.641-17.067-17.067V85.337c0-9.426 7.641-17.067 17.067-17.067H256c9.426 0 17.067-7.641 17.067-17.067S265.426 34.137 256 34.137H51.2C22.923 34.137 0 57.06 0 85.337V426.67c0 28.277 22.923 51.2 51.2 51.2h307.2c28.277 0 51.2-22.923 51.2-51.2V256.003c0-9.425-7.641-17.066-17.067-17.066z"/><path d="M458.742 19.142A65.328 65.328 0 00412.536.004a64.85 64.85 0 00-46.199 19.149L141.534 243.937a17.254 17.254 0 00-4.113 6.673l-34.133 102.4c-2.979 8.943 1.856 18.607 10.799 21.585 1.735.578 3.552.873 5.38.875a17.336 17.336 0 005.393-.87l102.4-34.133c2.515-.84 4.8-2.254 6.673-4.13l224.802-224.802c25.515-25.512 25.518-66.878.007-92.393z"/></svg>-->
                 </div>
-                <div class="bg-gray-300 mr-1 rounded-t h-10 w-12 hover:text-gray-400 text-gray-600">
+                <div @click="cloneRow()" class="bg-gray-300 mr-1 rounded-t h-10 w-12 hover:text-gray-400 text-gray-600">
                     <svg class="h-5 w-5 my-3 mx-4 font-bold" fill="currentColor"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 24h-12A2.503 2.503 0 016 21.5v-15C6 5.121 7.122 4 8.5 4h12C21.878 4 23 5.121 23 6.5v15c0 1.379-1.122 2.5-2.5 2.5zM8.5 5C7.673 5 7 5.673 7 6.5v15c0 .827.673 1.5 1.5 1.5h12c.827 0 1.5-.673 1.5-1.5v-15c0-.827-.673-1.5-1.5-1.5z"/><path d="M4.5 21h-1A2.503 2.503 0 011 18.5v-16C1 1.121 2.122 0 3.5 0h12C16.878 0 18 1.121 18 2.5a.5.5 0 01-1 0c0-.827-.673-1.5-1.5-1.5h-12C2.673 1 2 1.673 2 2.5v16c0 .827.673 1.5 1.5 1.5h1a.5.5 0 010 1zM18.5 17h-8a.5.5 0 010-1h8a.5.5 0 010 1zM18.5 21h-8a.5.5 0 010-1h8a.5.5 0 010 1z"/><path d="M18.5 13h-8a.5.5 0 010-1h8a.5.5 0 010 1zM18.5 9h-8a.5.5 0 010-1h8a.5.5 0 010 1z"/></svg>
                 </div>
-                <div @click="addedRow = false" class="bg-gray-300 rounded-t h-10 w-12 hover:text-gray-400 text-gray-600">
+                <div @click="delRow()" class="bg-gray-300 rounded-t h-10 w-12 hover:text-gray-400 text-gray-600">
                     <svg class="h-5 w-4 my-3 mx-4 font-bold" fill="currentColor" viewBox="0 0 512.001 512.001" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M512.001 84.853L427.148 0 256.001 171.147 84.853 0 0 84.853 171.148 256 0 427.148l84.853 84.853 171.148-171.147 171.147 171.147 84.853-84.853L340.853 256z"/></svg>
                 </div>
             </div>
@@ -124,13 +123,30 @@
             row_index: Number
         },
         methods:{
-            AddRow(){
-                this.Duplicate.push({row:''});
+            delRow(){
+                eventBus.$emit('remove-row',this.row_index );
+            },
+            cloneRow(){
+                eventBus.$emit('clone-row',this.row_index );
             },
             addColumn(type, index) {
+                let col
+                switch(type) {
+                    case '1': col = 1;
+                        break;
+                    case '1/2 1/2': col = 2;
+                        break;
+                    case '1/4 1/4 1/4 1/4': col = 4;
+                        break;
+                    default: col = 1;
+                        break;
+                }
                 const column_element = {
                     component: 'column',
-                    attrs: {},
+                    attrs: {
+                        gap:4,
+                        cols:col
+                    },
                     child_components: [
 
                     ]

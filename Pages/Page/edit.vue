@@ -634,6 +634,14 @@
         },
         created() {
             this.listenToEvents();
+
+            eventBus.$on('remove-row', (index) => {
+                this.removeRow(index);
+            })
+            eventBus.$on('clone-row', () => {
+                this.clonedRow();
+            })
+
         },
         components: {
             RowElement,
@@ -648,6 +656,19 @@
                     }
                 });
 
+            },
+            removeRow: function (id) {
+                this.elements.splice(id, 1)
+            },
+            clonedRow() {
+                const row_element = {
+                    component: 'row',
+                    attrs: {},
+                    child_components: [
+
+                    ]
+                }
+                this.elements.push(row_element)
             },
             addRowField() {
                 const row_element = {
