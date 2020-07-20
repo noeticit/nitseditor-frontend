@@ -73,30 +73,70 @@
                 </div>
             </div>
         </div>
-        <div class="mb-10" v-for="(name,index) in Duplicate">
-            <div v-model="name.row">
-                <column-element ></column-element>
+        <column-element v-if="child_components.length" v-for="(column,index) in child_components" :key="index"  :attrs="column.attrs" :child_components="column.child_components"></column-element>
+        <div class="h-48 ml-8 mr-8 -mt-8 rounded-b px-5 bg-gray-200 border-black">
+            <div class="px-8 py-8">
+                <div class="flex-col">
+                    <div class="text-xl mt-10 antialiased font-normal text-center tracking-wider text-gray-500 px-64">
+                        YOU HAVE EMPTY ELEMENT ADD YOUR FIRST COLUMN
+                    </div>
+                    <div class="flex mt-10 ml-64 pl-32">
+                        <button @click.prevent="selectColumn = !selectColumn" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-10 py-3 font-semibold tracking-normal text-white mr-5">Add Column</button>
+                    </div>
+                </div>
             </div>
         </div>
+        <vue-tailwind-modal v-if="selectColumn" class="shadow-lg" :showing="selectColumn">
+            <div class="">
+                <div class="flex bg-blue-600 p-4">
+                    <h2 class="text-white text-xl leading-normal font-normal font-sans">Select your column grid</h2>
+                </div>
+                <div>
+                    <div class="flex flex-wrap">
+                        <div class="w-full">
+                            <button @click.prevent="addColumn('1', row_index)" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-10 py-3 font-semibold tracking-normal text-white mr-5">Add Column (1)</button>
+                            <button @click.prevent="addColumn('1/2 1/2', row_index)" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-10 py-3 font-semibold tracking-normal text-white mr-5">Add Column (1/2 1/2)</button>
+                            <button @click.prevent="addColumn('1/4 1/4 1/4 1/4', row_index)" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-10 py-3 font-semibold tracking-normal text-white mr-5">Add Column (1/4 1/4 1/4 1/4)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </vue-tailwind-modal>
     </div>
 </template>
 
 <script>
     import ColumnElement from "./ColumnElement";
+    import {eventBus} from 'NitsModels/_events';
     export default {
         name: "RowElement",
         components: {ColumnElement},
         data(){
             return{
+                selectColumn: false,
                 isVisible: false,
                 Duplicate:[{row:''}],
             }
+        },
+        props: {
+            attrs: Object,
+            child_components: Array,
+            row_index: Number
         },
         methods:{
             AddRow(){
                 this.Duplicate.push({row:''});
             },
+            addColumn(type, index) {
+                const column_element = {
+                    component: 'column',
+                    attrs: {},
+                    child_components: [
 
+                    ]
+                }
+                eventBus.$emit('add-columns', {column: column_element, index: index});
+            }
         }
     }
 </script>

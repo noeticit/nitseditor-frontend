@@ -16,7 +16,7 @@
                                 <div class="flex bg-blue-500 justify-between w-full">
                                     <div class=" text-lg font-bold">
                                         <div class="flex float-right">
-                                            <div @click="isOpen2 = ! isOpen2" class="inline-block cursor-pointer hover:bg-blue-600 font-bold text-white">
+                                            <div @click.prevent="addRowField" class="inline-block cursor-pointer hover:bg-blue-600 font-bold text-white">
                                                 <svg class="h-6 w-6 my-5 mx-5 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                                     <title id="simpleicons-github-icon">Add Element</title>
                                                     <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
@@ -64,8 +64,9 @@
                                 <!--<header svg end>-->
 
                                 <!--<no data content start>-->
+                                <row-element v-if="elements.length" v-for="(row, index) in elements" :key="index" :attrs="row.attrs" :child_components="row.child_components" :row_index="index"></row-element>
 
-                                <div v-if="noData" class="px-16 py-12">
+                                <div class="px-16 py-12">
                                     <div class="flex-col">
                                         <div class="ml-64 pl-64">
                                             <svg class="h-12 w-12 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -73,12 +74,11 @@
                                             </svg>
                                         </div>
                                         <div class="text-xl mt-10 antialiased font-normal text-center tracking-wider text-gray-500 px-64">
-                                            YOU HAVE BLANK PAGE START ADDING CONTENT OR TEMPLATES
+                                            YOU HAVE BLANK PAGE START ADDING ROW OR CONFIGURING TEMPLATES
                                         </div>
                                         <div class="flex mt-10 ml-64 pl-32">
-                                            <button @click="isOpen2 = ! isOpen2" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-10 py-3 font-semibold tracking-normal text-white mr-5">Add Elements</button>
+                                            <button @click.prevent="addRowField" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-10 py-3 font-semibold tracking-normal text-white mr-5">Add Row</button>
                                             <button class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-6 py-3 font-semibold tracking-normal text-white mr-5">Configure Template</button>
-
                                         </div>
                                         <div class="italic mb-10 text-xs mt-10 antialiased text-center tracking-normal text-gray-500 px-64">
                                             Don't know where to start? <a href="#" class="text-gray-600 hover:text-blue-500">Visit our knowledge base.</a>
@@ -92,8 +92,6 @@
 
 
 <!--                            <div v-if="addedRow" class="w-full pb-10 bg-white">-->
-
-                                <row-element v-if="addedRow"></row-element>
 
                                 <!--<added row end>-->
 
@@ -608,6 +606,8 @@
 
 <script>
     import RowElement from "../../Components/Builder/RowElement";
+    import {eventBus} from "NitsModels/_events";
+
     export default {
         name: "edit",
         // components: {VueTailwindModal},
@@ -629,15 +629,12 @@
                 noData: true,
                 openTab: 1,
                 elements: [],
+
             }
         },
-        // props: {
-        //     forms: Object,
-        //     api_url: String,
-        //     redirect: String,
-        //     back_url: String,
-        //     grid: Object
-        // },
+        created() {
+            this.listenToEvents();
+        },
         components: {
             RowElement,
             'DashboardLayoutOne': () => import('./../../Layouts/Dashboard/LayoutOne'),
@@ -653,7 +650,20 @@
 
             },
             addRowField() {
-                this.addRow.push({});
+                const row_element = {
+                    component: 'row',
+                    attrs: {},
+                    child_components: [
+
+                    ]
+                }
+                this.elements.push(row_element)
+            },
+            listenToEvents() {
+                eventBus.$on('add-columns', (data) => {
+                    if(typeof this.elements[data.index] !== 'undefined')
+                        this.elements[data.index].child_components.push(data.column)
+                });
             },
             delRowField(arrayIndex,todo) {
                 if(todo=="close"){
