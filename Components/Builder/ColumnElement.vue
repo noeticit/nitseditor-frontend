@@ -11,7 +11,7 @@
             </div>
 
             <div :class="'grid '+ (attrs.cols ? 'grid-cols-'+attrs.cols + ' ' : ' ')  + (attrs.gap ? 'gap-'+attrs.gap + ' ' : ' ')">
-                <div class="border bg-white">
+                <div v-for="(item,index) in count" class="border bg-white">
                     <builder-element></builder-element>
                 </div>
             </div>
@@ -31,6 +31,7 @@
         props: {
             attrs: Object,
             child_components: Array,
+            count: Array,
         },
         methods:{
             removeRow(){

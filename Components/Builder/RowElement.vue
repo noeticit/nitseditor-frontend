@@ -72,7 +72,9 @@
                 </div>
             </div>
         </div>
-        <column-element v-if="child_components.length" v-for="(column,index) in child_components" :key="index"  :attrs="column.attrs" :child_components="column.child_components"></column-element>
+        <div>
+            <column-element v-if="child_components.length" v-for="(column,index) in child_components" :key="index"  :attrs="column.attrs" :count="column.count" :child_components="column.child_components"></column-element>
+        </div>
         <div class="h-48 ml-8 mr-8 -mt-8 rounded-b px-5 bg-gray-200 border-black">
             <div class="px-8 py-8">
                 <div class="flex-col">
@@ -131,26 +133,42 @@
             },
             addColumn(type, index) {
                 let col
+                let column_element
                 switch(type) {
-                    case '1': col = 1;
+                    case '1':
+                         column_element = {
+                            component: 'column',
+                            count: [
+                                {}
+                            ],
+                            attrs:{gap:4, cols:1},
+                            child_components: []
+                        };
                         break;
-                    case '1/2 1/2': col = 2;
+                    case '1/2 1/2':
+                        column_element = {
+                            component: 'column',
+                            count: [
+                                {}, {}
+                            ],
+                            attrs:{gap:4, cols:2},
+                            child_components: []
+                        };
                         break;
-                    case '1/4 1/4 1/4 1/4': col = 4;
+                    case '1/4 1/4 1/4 1/4':
+                        column_element = {
+                            component: 'column',
+                            count: [
+                                {}, {},{},{}
+                            ],
+                            attrs:{gap:4, cols:4},
+                            child_components: []
+                        };
                         break;
                     default: col = 1;
                         break;
                 }
-                const column_element = {
-                    component: 'column',
-                    attrs: {
-                        gap:4,
-                        cols:col
-                    },
-                    child_components: [
 
-                    ]
-                }
                 eventBus.$emit('add-columns', {column: column_element, index: index});
             }
         }
