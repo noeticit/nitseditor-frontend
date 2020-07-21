@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="w-full pb-10 bg-white" style="min-height: 500px">
-            <div class="relative flex flex-row m-4 p-4">
+            <div class="relative flex flex-row mt-4 pt-4 pl-8 pr-8">
                 <div class="bg-gray-300 mr-1 rounded-t h-10 w-12 hover:text-gray-400 text-gray-600">
                     <svg class="h-5 w-5 my-2 mx-3 pt-1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 317.215 317.215">
                         <g fill-rule="evenodd">
@@ -57,7 +57,7 @@
                         <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
                     </svg>
                 </div>
-                <div class="flex absolute right-0 mr-4">
+                <div class="flex absolute right-0 mr-8">
                     <div class="bg-gray-300 mr-1 rounded-t h-10 w-12 hover:text-gray-400 text-gray-600">
                         <svg class="h-5 w-5 my-3 mx-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M17.561 2.439c-1.442-1.443-2.525-1.227-2.525-1.227L8.984 7.264 2.21 14.037 1.2 18.799l4.763-1.01 6.774-6.771 6.052-6.052c-.001 0 .216-1.083-1.228-2.527zM5.68 17.217l-1.624.35a3.71 3.71 0 00-.69-.932 3.742 3.742 0 00-.932-.691l.35-1.623.47-.469s.883.018 1.881 1.016c.997.996 1.016 1.881 1.016 1.881l-.471.468z"/>
@@ -76,13 +76,13 @@
             <div>
                 <column-element v-if="child_components.length" v-for="(column,index) in child_components" :key="index"  :attrs="column.attrs" :count="column.count" :child_components="column.child_components"></column-element>
             </div>
-            <div class="h-56 ml-8 mr-8 -mt-8 rounded-b px-5 bg-gray-200 border-black">
+            <div class="h-56 ml-8 mr-8 rounded-b px-5 bg-gray-200 border-black">
                 <div class="px-8 py-8">
                     <div class="flex-col">
                         <div class="text-xl mt-10 antialiased font-normal text-center tracking-wider text-gray-500 px-64">
                             YOU HAVE EMPTY ELEMENT ADD YOUR FIRST COLUMN
                         </div>
-                        <div class="flex mt-10 ml-64 pl-32">
+                        <div class="flex mt-10 ml-64 pl-40">
                             <button @click.prevent="selectColumn = !selectColumn" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-red-600 px-10 py-3 font-semibold tracking-normal text-white mr-5">Add Column</button>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
                 </div>
                 <div class=" scroll_bar">
                     <nits-grid class="px-5 py-5" cols="3" gap="2">
-                        <div  @click.prevent="addColumn('1', row_index)"  class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500" >
+                        <div  @click.prevent="addColumn('1', row_index)"  class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 cursor-pointer hover:border-blue-500" >
                             <div class="h-10 w-10 p mt-3 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
                                 <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
@@ -130,7 +130,7 @@
                             </div>
 
                         </div>
-                        <div @click.prevent="addColumn('1/2 1/2', row_index)" class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
+                        <div @click.prevent="addColumn('1/2 1/2', row_index)" class="flex cursor-pointer w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
                             <div class="h-10 w-10 p mt-3 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
                                 <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
@@ -145,7 +145,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div @click.prevent="addColumn('1/3 1/3 1/3', row_index)" class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
+                        <div @click.prevent="addColumn('1/3 1/3 1/3', row_index)" class="flex cursor-pointer w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
                             <div class="h-10 w-10 p mt-3 mr-2 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
                                 <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
@@ -161,7 +161,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div @click.prevent="addColumn('1/4 1/4 1/4 1/4', row_index)" class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
+                        <div @click.prevent="addColumn('1/4 1/4 1/4 1/4', row_index)" class="flex cursor-pointer w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
                             <div class="h-10 w-10 p mt-3 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
                                 <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
@@ -178,7 +178,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500">
+                        <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 cursor-pointer hover:border-blue-500">
                             <div class="h-10 w-10 p mt-3 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
                                 <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
@@ -196,7 +196,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500" @click="showModalRow = true">
+                        <div class="flex cursor-pointer w-full bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500" @click="showModalRow = true">
                             <div class="h-10 w-10 p mt-3 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
                                 <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>

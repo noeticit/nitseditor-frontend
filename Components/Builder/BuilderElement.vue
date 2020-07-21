@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div @mouseover="isVisible = true" @mouseleave="isVisible = false" @keydown.enter="isVisible = !isVisible" class="flex w-full m-2 p-2">
-            <div class="h-auto relative mt-3 text-left mr-3 inline-block text-sm cursor-default w-full font-normal text-gray-600 rounded-lg">
+        <div @mouseover="isVisible = true" @mouseleave="isVisible = false" @keydown.enter="isVisible = !isVisible" class="flex relative w-full m-2 p-2">
+            <div class="h-auto mt-3 text-left mr-3 inline-block text-sm cursor-default w-full font-normal text-gray-600 rounded-lg">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                 aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -9,8 +9,8 @@
 <!--                <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">-->
 <!--                    <path fill-rule="evenodd" d="M10 1.6a8.4 8.4 0 100 16.8 8.4 8.4 0 000-16.8zm5 9.4h-4v4H9v-4H5V9h4V5h2v4h4v2z"/>-->
 <!--                </svg>-->
-                <div v-show="isVisible" class="absolute mr-64 pr-40 right-0 top-0">
-                    <div class="relative bg-white rounded">
+                <div v-show="isVisible" class="absolute mr-2 right-0 object-cover top-0">
+                    <div class="bg-white rounded">
                         <div class="flex cursor-pointer">
                             <div class="flex cursor-move rounded-l bg-blue-500 p-2  text-white hover:bg-blue-600 text-normal">
                                     <svg class="h-4 w-4 " fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
