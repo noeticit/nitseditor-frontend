@@ -2,7 +2,7 @@
     <div>
         <div class="flex  w-full m-2 p-2">
             <div class="max-w-md my-auto top-0 bottom-0 right-0 left-0 mx-auto">
-                <div @click="isOpen = ! isOpen" class="h-10 w-12 text-white rounded hover:bg-gray-300 inline-block bg-gray-400 font-bold">
+                <div @click="isOpen = ! isOpen" v-if="hideButton = true" class="h-10 w-12 text-white rounded hover:bg-gray-300 inline-block bg-gray-400 font-bold">
                     <svg class="h-6 w-6 my-2 mx-3 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
                     </svg>
@@ -487,7 +487,7 @@
                 isOpen2: false,
                 isOpen: false,
                 addedRow: false,
-                hideButton: '',
+                hideButton: true,
             }
         },
         methods:{
