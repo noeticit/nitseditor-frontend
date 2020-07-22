@@ -76,7 +76,7 @@
                                         <div class="text-xl mt-10 antialiased font-normal text-center tracking-wider text-gray-500 px-64">
                                             YOU HAVE BLANK PAGE START ADDING ROW OR CONFIGURING TEMPLATES
                                         </div>
-                                        <div class="flex mt-10 ml-64 pl-32">
+                                        <div class="flex mt-10 ml-64 pl-24">
                                             <button @click.prevent="addRowField" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-10 py-3 font-semibold tracking-normal text-white mr-5">Add Row</button>
                                             <button class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-6 py-3 font-semibold tracking-normal text-white mr-5">Configure Template</button>
                                         </div>
