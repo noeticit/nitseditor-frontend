@@ -72,7 +72,7 @@
                                             <button @click.prevent="addRowField" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-10 py-3 font-semibold tracking-normal text-white mr-5">Add Row</button>
                                             <button class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-6 py-3 font-semibold tracking-normal text-white mr-5">Configure Template</button>
                                         </div>
-                                        <div class="italic mb-10 text-xs mt-10 antialiased text-center tracking-normal text-gray-500 px-64" v-if="elements.length">
+                                        <div class="italic mb-10 text-xs mt-10 antialiased text-center tracking-normal text-gray-500 px-64" v-if="!elements.length">
                                             Don't know where to start? <a href="#" class="text-gray-600 hover:text-blue-500">Visit our knowledge base.</a>
                                         </div>
                                     </div>

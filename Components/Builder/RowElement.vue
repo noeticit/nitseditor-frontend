@@ -74,12 +74,12 @@
                 </div>
             </div>
             <div>
-                <column-element v-if="child_components.length" v-for="(column,index) in child_components" :key="index"  :attrs="column.attrs" :count="column.count" :child_components="column.child_components"></column-element>
+                <column-element v-if="child_components.length" v-for="(column,index) in child_components" :key="index"  :attrs="column.attrs" :child_components="column.child_components"></column-element>
             </div>
             <div class="h-56 ml-8 mr-8 rounded-b px-5 bg-gray-200 border-black">
                 <div class="px-8 py-8">
                     <div class="flex-col">
-                        <div class="text-xl mt-10 antialiased font-normal text-center tracking-wider text-gray-500 px-64">
+                        <div class="text-xl mt-10 antialiased font-normal text-center tracking-wider text-gray-500 px-64" v-if="!child_components.length">
                             YOU HAVE EMPTY ELEMENT ADD YOUR FIRST COLUMN
                         </div>
                         <div class="flex mt-10 ml-64 pl-40">
@@ -89,22 +89,6 @@
                 </div>
             </div>
         </div>
-<!--        <vue-tailwind-modal  class="shadow-lg " :showing="selectColumn">-->
-<!--            <div class="">-->
-<!--                <div class="flex bg-blue-600 p-4">-->
-<!--                    <h2 class="text-white text-xl leading-normal font-normal font-sans">Select your column grid</h2>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <div class="flex flex-wrap">-->
-<!--                        <div class="w-full">-->
-<!--                            <button @click.prevent="addColumn('1', row_index)" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-10 py-3 font-semibold tracking-normal text-white mr-5">Add Column (1)</button>-->
-<!--                            <button @click.prevent="addColumn('1/2 1/2', row_index)" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-10 py-3 font-semibold tracking-normal text-white mr-5">Add Column (1/2 1/2)</button>-->
-<!--                            <button @click.prevent="addColumn('1/4 1/4 1/4 1/4', row_index)" class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-10 py-3 font-semibold tracking-normal text-white mr-5">Add Column (1/4 1/4 1/4 1/4)</button>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </vue-tailwind-modal>-->
 
         <div v-if="selectColumn" class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
             <div class="border border-teal-500 shadow-lg modal-container bg-white w-1/2 mx-32 rounded shadow-lg z-50 overflow-y-auto">
@@ -235,7 +219,6 @@
             return{
                 selectColumn: false,
                 isVisible: false,
-                Duplicate:[{row:''}],
             }
         },
         props: {
@@ -252,52 +235,30 @@
             },
             addColumn(type, index) {
                 this.selectColumn= false
-                let col
-                let column_element
+                let column_element = {
+                    component: 'column',
+                    child_components: []
+                };
                 switch(type) {
                     case '1':
-                         column_element = {
-                            component: 'column',
-                            count: [
-                                {}
-                            ],
-                            attrs:{gap:4, cols:1},
-                            child_components: []
-                        };
+                        column_element.attrs = {gap:4, cols:1}
+                        column_element.child_components = [{}];
                         break;
                     case '1/2 1/2':
-                        column_element = {
-                            component: 'column',
-                            count: [
-                                {}, {}
-                            ],
-                            attrs:{gap:4, cols:2},
-                            child_components: []
-                        };
+                        column_element.attrs = {gap:4, cols:2}
+                        column_element.child_components = [{}, {}];
                         break;
 
                     case '1/3 1/3 1/3':
-                        column_element = {
-                            component: 'column',
-                            count: [
-                                {}, {}, {}
-                            ],
-                            attrs:{gap:4, cols:3},
-                            child_components: []
-                        };
+                        column_element.attrs = {gap:4, cols:3}
+                        column_element.child_components = [{}, {}, {}];
                         break;
 
                     case '1/4 1/4 1/4 1/4':
-                        column_element = {
-                            component: 'column',
-                            count: [
-                                {}, {},{},{}
-                            ],
-                            attrs:{gap:4, cols:4},
-                            child_components: []
-                        };
+                        column_element.attrs = {gap:4, cols:4}
+                        column_element.child_components = [{}, {}, {}, {}];
                         break;
-                    default: col = 1;
+                    default: column_element.attrs = {gap:4, cols:1}; column_element.child_components = [{}];
                         break;
                 }
 
