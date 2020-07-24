@@ -233,32 +233,45 @@
             cloneRow(){
                 eventBus.$emit('clone-row',this.row_index );
             },
+            fillArray(value, times) {
+                var arr = [];
+                for (var i = 0; i < times; i++) {
+                    arr.push(value);
+                }
+                return arr;
+            },
             addColumn(type, index) {
                 this.selectColumn= false
                 let column_element = {
                     component: 'column',
                     child_components: []
                 };
+                let component = {
+                    component: null,
+                    attrs: {},
+                    child_components: [
+                    ]
+                }
                 switch(type) {
                     case '1':
                         column_element.attrs = {gap:4, cols:1}
-                        column_element.child_components = [{}];
+                        column_element.child_components = this.fillArray(component, 1)
                         break;
                     case '1/2 1/2':
                         column_element.attrs = {gap:4, cols:2}
-                        column_element.child_components = [{}, {}];
+                        column_element.child_components = this.fillArray(component, 2)
                         break;
 
                     case '1/3 1/3 1/3':
                         column_element.attrs = {gap:4, cols:3}
-                        column_element.child_components = [{}, {}, {}];
+                        column_element.child_components = this.fillArray(component, 3)
                         break;
 
                     case '1/4 1/4 1/4 1/4':
                         column_element.attrs = {gap:4, cols:4}
-                        column_element.child_components = [{}, {}, {}, {}];
+                        column_element.child_components = this.fillArray(component, 4)
                         break;
-                    default: column_element.attrs = {gap:4, cols:1}; column_element.child_components = [{}];
+                    default: column_element.attrs = {gap:4, cols:1}; column_element.child_components.push(component);
                         break;
                 }
 

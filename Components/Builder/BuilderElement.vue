@@ -148,6 +148,9 @@
                 ]
             }
         },
+        props: {
+            component: String
+        },
         methods:{
             showModal(item){
                 this.title= item.title
