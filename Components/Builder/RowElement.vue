@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div>
-                <column-element v-if="child_components.length" v-for="(column,index) in child_components" :key="index"  :attrs="column.attrs" :child_components="column.child_components"></column-element>
+                <column-element v-if="child_components.length" v-for="(column,index) in child_components" :key="index"  :attrs="column.attrs" :child_components="column.child_components" :row_index="row_index"></column-element>
             </div>
             <div class="h-56 ml-8 mr-8 rounded-b px-5 bg-gray-200 border-black">
                 <div class="px-8 py-8">

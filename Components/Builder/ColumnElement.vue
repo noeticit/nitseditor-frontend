@@ -12,7 +12,7 @@
                 </svg>
             </div>
             <div :class="'grid '+ (attrs.cols ? 'grid-cols-'+attrs.cols + ' ' : ' ')  + (attrs.gap ? 'gap-'+attrs.gap + ' ' : ' ')">
-                <builder-element v-for="(item,index) in child_components" :key="index" class="border bg-white" :component="item"></builder-element>
+                <builder-element v-for="(item,index) in child_components" :key="index" :column_index="index" class="border bg-white" :component="item.component" :row_index="row_index"></builder-element>
             </div>
         </div>
     </div>
@@ -28,6 +28,7 @@
         props: {
             attrs: Object,
             child_components: Array,
+            row_index: Number
         },
         methods:{
             removeRow(){

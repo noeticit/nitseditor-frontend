@@ -118,6 +118,7 @@
             },
             listenToEvents() {
                 eventBus.$on('add-columns', (data) => {
+                    console.log(data)
                     if(typeof this.elements[data.index] !== 'undefined')
                         this.elements[data.index].child_components.push(data.column)
                 });
@@ -125,10 +126,15 @@
                 eventBus.$on('remove-row', (index) => {
                     this.elements.splice(index, 1)
                 })
+
                 eventBus.$on('clone-row', (index) => {
                     let element = this.elements[index];
                     this.elements.splice(index, 0, element)
                 })
+
+                eventBus.$on('add-component', (data) => {
+                    this.elements[data.row_index].child_components[data.column_index].child_components.push(data.component)
+                });
             },
         },
     }

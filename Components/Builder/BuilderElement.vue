@@ -9,11 +9,11 @@
                 </div>
             </div>
             <div v-if="addedRow" @mouseover="isVisible = true" @mouseleave="isVisible = false" @keydown.enter="isVisible = !isVisible"  class="flex relative w-full mr-4 bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500" >
-                <div class="h-10 w-10 mt-1 mb-2 mr-3 inline-block cursor-pointer bg-blue-600 font-bold text-white rounded-lg">
+                <div class="h-10 w-10 mt-1 mb-2 mr-3 cursor-pointer  font-bold text-white rounded-lg">
 <!--                    <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">-->
 <!--                        <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>-->
 <!--                    </svg>-->
-                    <img class="h-10 w-10 mt-3 mr-3" :src="icon">
+                    <img class="h-10 w-10 mr-3" :src="icon">
                 </div>
                 <div class="flex-col text-left">
                     <h5 class="text-blue-500 font-bold">{{title}}</h5>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="overflow-y-auto scroll_bar" style="height: 500px;">
                     <nits-grid class="px-5 py-5" cols="5" gap="2">
-                        <div v-for="(ele,index) in components" @click.prevent="showModal(ele)" class="flex w-full bg-gray-200 p-2 cursor-pointer border border-gray-200 hover:border-1 hover:border-blue-500">
+                        <div v-for="(ele,index) in components" @click.prevent="showModal(ele,index)" class="flex w-full bg-gray-200 p-2 cursor-pointer border border-gray-200 hover:border-1 hover:border-blue-500">
                             <img class="h-10 w-10 mt-3 mr-3" :src="ele.icon">
 
                             <div class="flex-col text-left">
@@ -106,6 +106,8 @@
 </template>
 
 <script>
+    import {eventBus} from 'NitsModels/_events';
+
     export default {
         name: "BuilderElement",
         data(){
@@ -120,42 +122,60 @@
                 desc:'',
                 icon:'',
                 components:[
-                    {id: 1, title:'Row', icon:'/project-assets/images/row.png', desc:'Place content elements inside the row'},
-                    {id: 2, title:'Check Box', icon:'/project-assets/images/checkbox.png', desc:'Place content elements inside the Checkbox'},
-                    {id: 3, title:'CK Editor', icon:'/project-assets/images/ckeditor.png', desc:'Place content elements inside the CK editor'},
-                    {id: 4, title:'Date Picker', icon:'/project-assets/images/date1.jpg', desc:'Place content elements inside the row'},
-                    {id: 5, title:'Input File', icon:'/project-assets/images/inputfile.png', desc:'Place content elements inside the row'},
-                    {id: 6, title:'Form', icon:'/project-assets/images/form.jpg', desc:'Place content elements inside the row'},
-                    {id: 7, title:'Input Date', icon:'/project-assets/images/inputdate.png', desc:'Place content elements inside the row'},
-                    {id: 8, title:'Multi Select', icon:'/project-assets/images/multiselect.png', desc:'Place content elements inside the row'},
-                    {id: 9, title:'Single Select', icon:'/project-assets/images/select1.png', desc:'Place content elements inside the row'},
-                    {id: 10, title:'Text', icon:'/project-assets/images/text.png', desc:'Place content elements inside the row'},
-                    {id: 11, title:'Multiple DropZone', icon:'/project-assets/images/multidropzone.png', desc:'Place content elements inside the row'},
-                    {id: 12, title:'Single DropZone', icon:'/project-assets/images/dropzone.png', desc:'Place content elements inside the row'},
-                    {id: 13, title:'Button', icon:'/project-assets/images/button.png', desc:'Place content elements inside the row'},
-                    {id: 14, title:'Group Button', icon:'/project-assets/images/groupbutton.png', desc:'Place content elements inside the row'},
-                    {id: 15, title:'Pagination', icon:'/project-assets/images/pagination.png', desc:'Place content elements inside the row'},
-                    {id: 16, title:'Table', icon:'/project-assets/images/table.png', desc:'Place content elements inside the row'},
-                    {id: 17, title:'Tabs', icon:'/project-assets/images/tabs.png', desc:'Place content elements inside the row'},
-                    {id: 18, title:'Alert', icon:'/project-assets/images/alert.png', desc:'Place content elements inside the row'},
-                    {id: 19, title:'Bread Crumb', icon:'/project-assets/images/timeline-512.png', desc:'Place content elements inside the row'},
-                    {id: 20, title:'Footer', icon:'/project-assets/images/footer.png', desc:'Place content elements inside the row'},
-                    {id: 21, title:'Menu', icon:'/project-assets/images/menu.png', desc:'Place content elements inside the row'},
-                    {id: 22, title:'Video Player', icon:'/project-assets/images/video.png', desc:'Place content elements inside the row'},
-                    {id: 23, title:'Progress Bar', icon:'/project-assets/images/progress.png', desc:'Place content elements inside the Progress Bar'},
-                    {id: 24, title:'Empty Space', icon:'/project-assets/images/emptyspace.png', desc:'Place content elements inside the Empty Space'},
-                    {id: 25, title:'Pie Chart', icon:'/project-assets/images/piechart.png', desc:'Place content elements inside the row'},
+                    {id: 1, title:'Row', icon:'/project-assets/images/row.png', desc:'Place content elements inside the row', component_name: 'row'},
+                    {id: 2, title:'Check Box', icon:'/project-assets/images/checkbox.png', desc:'Place content elements inside the Checkbox', component_name: 'checkbox'},
+                    {id: 3, title:'CK Editor', icon:'/project-assets/images/ckeditor.png', desc:'Place content elements inside the CK editor',  component_name: 'ck_editor'},
+                    {id: 4, title:'Date Picker', icon:'/project-assets/images/date1.jpg', desc:'Place content elements inside the row',  component_name: 'date_picker'},
+                    {id: 5, title:'Input File', icon:'/project-assets/images/inputfile.png', desc:'Place content elements inside the row',  component_name: 'input_file'},
+                    {id: 6, title:'Form', icon:'/project-assets/images/form.jpg', desc:'Place content elements inside the row',  component_name: 'form'},
+                    {id: 7, title:'Input Date', icon:'/project-assets/images/inputdate.png', desc:'Place content elements inside the row',  component_name: 'input_date'},
+                    {id: 8, title:'Multi Select', icon:'/project-assets/images/multiselect.png', desc:'Place content elements inside the row',  component_name: 'multi_select'},
+                    {id: 9, title:'Single Select', icon:'/project-assets/images/select1.png', desc:'Place content elements inside the row',  component_name: 'single_select'},
+                    {id: 10, title:'Text', icon:'/project-assets/images/text.png', desc:'Place content elements inside the row',  component_name: 'text'},
+                    {id: 11, title:'Multiple DropZone', icon:'/project-assets/images/multidropzone.png', desc:'Place content elements inside the row',  component_name: 'multiple_dropzone'},
+                    {id: 12, title:'Single DropZone', icon:'/project-assets/images/dropzone.png', desc:'Place content elements inside the row',  component_name: 'single_dropzone'},
+                    {id: 13, title:'Button', icon:'/project-assets/images/button.png', desc:'Place content elements inside the row',  component_name: 'button'},
+                    {id: 14, title:'Group Button', icon:'/project-assets/images/groupbutton.png', desc:'Place content elements inside the row',  component_name: 'group_button'},
+                    {id: 15, title:'Pagination', icon:'/project-assets/images/pagination.png', desc:'Place content elements inside the row',  component_name: 'pagination'},
+                    {id: 16, title:'Table', icon:'/project-assets/images/table.png', desc:'Place content elements inside the row',  component_name: 'table'},
+                    {id: 17, title:'Tabs', icon:'/project-assets/images/tabs.png', desc:'Place content elements inside the row',  component_name: 'tabs'},
+                    {id: 18, title:'Alert', icon:'/project-assets/images/alert.png', desc:'Place content elements inside the row',  component_name: 'alert'},
+                    {id: 19, title:'Bread Crumb', icon:'/project-assets/images/timeline-512.png', desc:'Place content elements inside the row',  component_name: 'bread_crumb'},
+                    {id: 20, title:'Footer', icon:'/project-assets/images/footer.png', desc:'Place content elements inside the row',  component_name: 'footer'},
+                    {id: 21, title:'Menu', icon:'/project-assets/images/menu.png', desc:'Place content elements inside the row',  component_name: 'menu'},
+                    {id: 22, title:'Video Player', icon:'/project-assets/images/video.png', desc:'Place content elements inside the row',  component_name: 'video_player'},
+                    {id: 23, title:'Progress Bar', icon:'/project-assets/images/progress.png', desc:'Place content elements inside the Progress Bar',  component_name: 'progress_bar'},
+                    {id: 24, title:'Empty Space', icon:'/project-assets/images/emptyspace.png', desc:'Place content elements inside the Empty Space',  component_name: 'empty_space'},
+                    {id: 25, title:'Pie Chart', icon:'/project-assets/images/piechart.png', desc:'Place content elements inside the row',  component_name: 'pie_chart'},
                 ]
             }
         },
         props: {
-            component: String
+            component: String,
+            row_index: Number,
+            column_index: Number,
+        },
+        created() {
+            console.log(this.component)
         },
         methods:{
-            showModal(item){
-                this.title= item.title
-                this.desc= item.desc
-                this.icon= item.icon
+            showModal(item,index){
+                // console.log(arr)
+
+                let component_element = {
+                    component: item.component_name,
+                    attrs: {},
+                    child_components: [
+                    ]
+                }
+
+                eventBus.$emit('add-component', {component: component_element, index: index, row_index: this.row_index, column_index: this.column_index});
+
+                let arr = _.filter(this.components, function(o) { return o.component_name === item.component_name });
+
+                this.title= arr[0].title
+                this.desc= arr[0].desc
+                this.icon= arr[0].icon
                 this.Add = true
                 this.addedRow = true
                 this.isOpen = false
