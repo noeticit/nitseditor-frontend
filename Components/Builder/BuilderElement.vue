@@ -9,15 +9,16 @@
                 </div>
             </div>
             <div v-if="addedRow" @mouseover="isVisible = true" @mouseleave="isVisible = false" @keydown.enter="isVisible = !isVisible"  class="flex relative w-full mr-4 bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500" >
-                <div class="h-10 w-10 mt-1 mb-2 mr-3 cursor-pointer  font-bold text-white rounded-lg">
-<!--                    <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">-->
-<!--                        <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>-->
-<!--                    </svg>-->
-                    <img class="h-10 w-10 mr-3" :src="icon">
+
+                <div v-if="typeof element.component !== 'undefined'" class="h-10 w-10 mt-1 mb-2 mr-3 cursor-pointer  font-bold text-white rounded-lg">
+                    <!--                    <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">-->
+                    <!--                        <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>-->
+                    <!--                    </svg>-->
+                    <img class="h-10 w-10 mr-3" :src="elementData.icon">
                 </div>
-                <div class="flex-col text-left">
-                    <h5 class="text-blue-500 font-bold">{{title}}</h5>
-                    <p class="text-xs text-gray-600 mt-1">{{desc}}</p>
+                <div v-if="typeof element.component !== 'undefined'" class="flex-col text-left">
+                    <h5 class="text-blue-500 font-bold">{{elementData.title}}</h5>
+                    <p class="text-xs text-gray-600 mt-1">{{elementData.desc}}</p>
                 </div>
                 <div v-show="isVisible" class="max-w-md absolute my-auto item-center top-0 bottom-0 right-0 left-0 mx-auto">
                     <div class="bg-transparent rounded">
@@ -87,7 +88,7 @@
                 </div>
                 <div class="overflow-y-auto scroll_bar" style="height: 500px;">
                     <nits-grid class="px-5 py-5" cols="5" gap="2">
-                        <div v-for="(ele,index) in components" @click.prevent="showModal(ele,index)" class="flex w-full bg-gray-200 p-2 cursor-pointer border border-gray-200 hover:border-1 hover:border-blue-500">
+                        <div v-for="(ele,index) in components" @click.prevent="addElement(ele,index)" class="flex w-full bg-gray-200 p-2 cursor-pointer border border-gray-200 hover:border-1 hover:border-blue-500">
                             <img class="h-10 w-10 mt-3 mr-3" :src="ele.icon">
 
                             <div class="flex-col text-left">
@@ -118,9 +119,9 @@
                 isOpen: false,
                 addedRow: false,
                 hideButton: true,
-                title:'',
-                desc:'',
-                icon:'',
+                // title:'',
+                // desc:'',
+                // icon:'',
                 components:[
                     {id: 1, title:'Row', icon:'/project-assets/images/row.png', desc:'Place content elements inside the row', component_name: 'row'},
                     {id: 2, title:'Check Box', icon:'/project-assets/images/checkbox.png', desc:'Place content elements inside the Checkbox', component_name: 'checkbox'},
@@ -151,17 +152,16 @@
             }
         },
         props: {
-            component: String,
+            element: Object,
             row_index: Number,
             column_index: Number,
+            element_index: Number,
         },
         created() {
-            console.log(this.component)
+            console.log(this.element)
         },
         methods:{
-            showModal(item,index){
-                // console.log(arr)
-
+            addElement(item){
                 let component_element = {
                     component: item.component_name,
                     attrs: {},
@@ -169,13 +169,8 @@
                     ]
                 }
 
-                eventBus.$emit('add-component', {component: component_element, index: index, row_index: this.row_index, column_index: this.column_index});
+                eventBus.$emit('add-component', {component: component_element, row_index: this.row_index, column_index: this.column_index, element_index: this.element_index});
 
-                let arr = _.filter(this.components, function(o) { return o.component_name === item.component_name });
-
-                this.title= arr[0].title
-                this.desc= arr[0].desc
-                this.icon= arr[0].icon
                 this.Add = true
                 this.addedRow = true
                 this.isOpen = false
@@ -186,6 +181,15 @@
             'VueTailwindModal': () => import('vue-tailwind-modal'),
             'InputField': () => import('./Elements/InputField')
         },
+        computed:{
+            elementData() {
+                let index = _.findIndex(this.components, (a) => { return this.element.component === a.component_name})
+                if(index > -1)
+                    return this.components[index];
+                else
+                    return {}
+            },
+        }
     }
 </script>
 

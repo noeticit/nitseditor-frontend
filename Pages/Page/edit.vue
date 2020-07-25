@@ -57,7 +57,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <row-element v-if="elements.length" v-for="(row, index) in elements" :key="index" :attrs="row.attrs" :child_components="row.child_components" :row_index="index"></row-element>
+                                <row-element v-if="elements.length" v-for="(row, index) in elements" :key="'row_index_'+index" :attrs="row.attrs" :child_components="row.child_components" :row_index="index"></row-element>
                                 <div class="px-16 py-12">
                                     <div class="flex-col">
                                         <div class="ml-64 pl-64" v-if="!elements.length">
@@ -118,7 +118,6 @@
             },
             listenToEvents() {
                 eventBus.$on('add-columns', (data) => {
-                    console.log(data)
                     if(typeof this.elements[data.index] !== 'undefined')
                         this.elements[data.index].child_components.push(data.column)
                 });
@@ -133,7 +132,7 @@
                 })
 
                 eventBus.$on('add-component', (data) => {
-                    this.elements[data.row_index].child_components[data.column_index].child_components.push(data.component)
+                    this.elements[data.row_index].child_components[data.column_index].child_components.splice(data.element_index, 1, data.component);
                 });
             },
         },

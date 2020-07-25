@@ -12,7 +12,14 @@
                 </svg>
             </div>
             <div :class="'grid '+ (attrs.cols ? 'grid-cols-'+attrs.cols + ' ' : ' ')  + (attrs.gap ? 'gap-'+attrs.gap + ' ' : ' ')">
-                <builder-element v-for="(item,index) in child_components" :key="index" :column_index="index" class="border bg-white" :component="item.component" :row_index="row_index"></builder-element>
+                <builder-element
+                        v-if="!loading"
+                        v-for="(item,index) in child_elements"
+                        :key="'element_index_'+index" :column_index="column_index"
+                        :element_index="index" class="border bg-white"
+                        :element="item" :row_index="row_index"
+                >
+                </builder-element>
             </div>
         </div>
     </div>
@@ -23,17 +30,47 @@
         name: "ColumnElement",
         data(){
             return{
+                child_elements: this.child_components,
+                loading: false,
+                components:[
+                    {id: 1, title:'Row', icon:'/project-assets/images/row.png', desc:'Place content elements inside the row', component_name: 'row'},
+                    {id: 2, title:'Check Box', icon:'/project-assets/images/checkbox.png', desc:'Place content elements inside the Checkbox', component_name: 'checkbox'},
+                    {id: 3, title:'CK Editor', icon:'/project-assets/images/ckeditor.png', desc:'Place content elements inside the CK editor',  component_name: 'ck_editor'},
+                    {id: 4, title:'Date Picker', icon:'/project-assets/images/date1.jpg', desc:'Place content elements inside the row',  component_name: 'date_picker'},
+                    {id: 5, title:'Input File', icon:'/project-assets/images/inputfile.png', desc:'Place content elements inside the row',  component_name: 'input_file'},
+                    {id: 6, title:'Form', icon:'/project-assets/images/form.jpg', desc:'Place content elements inside the row',  component_name: 'form'},
+                    {id: 7, title:'Input Date', icon:'/project-assets/images/inputdate.png', desc:'Place content elements inside the row',  component_name: 'input_date'},
+                    {id: 8, title:'Multi Select', icon:'/project-assets/images/multiselect.png', desc:'Place content elements inside the row',  component_name: 'multi_select'},
+                    {id: 9, title:'Single Select', icon:'/project-assets/images/select1.png', desc:'Place content elements inside the row',  component_name: 'single_select'},
+                    {id: 10, title:'Text', icon:'/project-assets/images/text.png', desc:'Place content elements inside the row',  component_name: 'text'},
+                    {id: 11, title:'Multiple DropZone', icon:'/project-assets/images/multidropzone.png', desc:'Place content elements inside the row',  component_name: 'multiple_dropzone'},
+                    {id: 12, title:'Single DropZone', icon:'/project-assets/images/dropzone.png', desc:'Place content elements inside the row',  component_name: 'single_dropzone'},
+                    {id: 13, title:'Button', icon:'/project-assets/images/button.png', desc:'Place content elements inside the row',  component_name: 'button'},
+                    {id: 14, title:'Group Button', icon:'/project-assets/images/groupbutton.png', desc:'Place content elements inside the row',  component_name: 'group_button'},
+                    {id: 15, title:'Pagination', icon:'/project-assets/images/pagination.png', desc:'Place content elements inside the row',  component_name: 'pagination'},
+                    {id: 16, title:'Table', icon:'/project-assets/images/table.png', desc:'Place content elements inside the row',  component_name: 'table'},
+                    {id: 17, title:'Tabs', icon:'/project-assets/images/tabs.png', desc:'Place content elements inside the row',  component_name: 'tabs'},
+                    {id: 18, title:'Alert', icon:'/project-assets/images/alert.png', desc:'Place content elements inside the row',  component_name: 'alert'},
+                    {id: 19, title:'Bread Crumb', icon:'/project-assets/images/timeline-512.png', desc:'Place content elements inside the row',  component_name: 'bread_crumb'},
+                    {id: 20, title:'Footer', icon:'/project-assets/images/footer.png', desc:'Place content elements inside the row',  component_name: 'footer'},
+                    {id: 21, title:'Menu', icon:'/project-assets/images/menu.png', desc:'Place content elements inside the row',  component_name: 'menu'},
+                    {id: 22, title:'Video Player', icon:'/project-assets/images/video.png', desc:'Place content elements inside the row',  component_name: 'video_player'},
+                    {id: 23, title:'Progress Bar', icon:'/project-assets/images/progress.png', desc:'Place content elements inside the Progress Bar',  component_name: 'progress_bar'},
+                    {id: 24, title:'Empty Space', icon:'/project-assets/images/emptyspace.png', desc:'Place content elements inside the Empty Space',  component_name: 'empty_space'},
+                    {id: 25, title:'Pie Chart', icon:'/project-assets/images/piechart.png', desc:'Place content elements inside the row',  component_name: 'pie_chart'},
+                ]
             }
         },
         props: {
             attrs: Object,
             child_components: Array,
-            row_index: Number
+            row_index: Number,
+            column_index: Number
         },
-        methods:{
-            removeRow(){
+        methods: {
+            removeRow() {
 
-            },
+            }
         }
 
     }
