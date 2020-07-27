@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div>
-                <column-element v-if="child_components.length" v-for="(column,index) in child_components" :key="'column_index_'+index"  :attrs="column.attrs" :child_components="column.child_components" :row_index="row_index" :column_index="index"></column-element>
+                <column-element v-if="child_components.length" v-for="(column,index) in child_components" :key="'column_index_'+index"  v-bind="column.attrs" :row_index="row_index" :column_index="index"></column-element>
             </div>
             <div class="h-56 ml-8 mr-8 rounded-b px-5 bg-gray-200 border-black">
                 <div class="px-8 py-8">
@@ -222,7 +222,6 @@
             }
         },
         props: {
-            attrs: Object,
             child_components: Array,
             row_index: Number
         },
@@ -244,39 +243,56 @@
                 this.selectColumn= false
                 let column_element = {
                     component: 'column',
-                    child_components: []
+                    attrs: {
+                        child_components: []
+                    }
                 };
                 let component = {
                     component: null,
-                    attrs: {},
-                    child_components: [
-                    ]
+                    attrs: {
+                        child_components: []
+                    }
                 }
                 switch(type) {
                     case '1':
-                        column_element.attrs = {gap:4, cols:1}
-                        column_element.child_components = this.fillArray(component, 1)
+                        column_element.attrs = {
+                            gap:4,
+                            cols:1,
+                            child_components: this.fillArray(component, 1)
+                        }
                         break;
                     case '1/2 1/2':
-                        column_element.attrs = {gap:4, cols:2}
-                        column_element.child_components = this.fillArray(component, 2)
+                        column_element.attrs = {
+                            gap:4,
+                            cols:2,
+                            child_components: this.fillArray(component, 2)
+                        }
                         break;
 
                     case '1/3 1/3 1/3':
-                        column_element.attrs = {gap:4, cols:3}
-                        column_element.child_components = this.fillArray(component, 3)
+                        column_element.attrs = {
+                            gap:4,
+                            cols:3,
+                            child_components: this.fillArray(component, 3)
+                        }
                         break;
 
                     case '1/4 1/4 1/4 1/4':
-                        column_element.attrs = {gap:4, cols:4}
-                        column_element.child_components = this.fillArray(component, 4)
+                        column_element.attrs = {
+                            gap:4,
+                            cols:4,
+                            child_components: this.fillArray(component, 4)
+                        }
                         break;
-                    default: column_element.attrs = {gap:4, cols:1}; column_element.child_components.push(component);
+                    default: column_element.attrs = {gap:4, cols:1, child_components: component};
                         break;
                 }
 
                 eventBus.$emit('add-columns', {column: column_element, index: index});
             }
+        },
+        computed: {
+
         }
     }
 </script>

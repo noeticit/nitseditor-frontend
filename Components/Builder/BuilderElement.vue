@@ -10,13 +10,13 @@
             </div>
             <div v-if="addedRow" @mouseover="isVisible = true" @mouseleave="isVisible = false" @keydown.enter="isVisible = !isVisible"  class="flex relative w-full mr-4 bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500" >
 
-                <div v-if="typeof element.component !== 'undefined'" class="h-10 w-10 mt-1 mb-2 mr-3 cursor-pointer  font-bold text-white rounded-lg">
+                <div class="h-10 w-10 mt-1 mb-2 mr-3 cursor-pointer  font-bold text-white rounded-lg">
                     <!--                    <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">-->
                     <!--                        <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>-->
                     <!--                    </svg>-->
                     <img class="h-10 w-10 mr-3" :src="elementData.icon">
                 </div>
-                <div v-if="typeof element.component !== 'undefined'" class="flex-col text-left">
+                <div class="flex-col text-left">
                     <h5 class="text-blue-500 font-bold">{{elementData.title}}</h5>
                     <p class="text-xs text-gray-600 mt-1">{{elementData.desc}}</p>
                 </div>
@@ -51,22 +51,7 @@
                 </div>
             </div>
         </div>
-
-        <div v-if="isOpen2" class="main-modal fixed w-full h-full inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
-            <div class="border border-teal-500 shadow-lg modal-container bg-white w-1/2 mx-20 rounded shadow-lg z-50">
-                <div class="" style="height: 400px;">
-                    <input-field label="Text Setting"></input-field>
-                </div>
-                <div class="flex items-center mt-5 justify-end p-6 border-t border-solid border-gray-300 bg-gray-300 rounded-b">
-                    <button @click="isOpen2 = ! isOpen2" class="text-white bg-gray-500 bg-transparent border border-solid border-gray-500 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
-                        Close
-                    </button>
-                    <button class="text-white bg-blue-600 bg-transparent border border-solid border-blue-600 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" >
-                        Save Changes
-                    </button>
-                </div>
-            </div>
-        </div>
+        <popup-options  v-if="isOpen2" :elementData="elementData"></popup-options>
         <div v-if="isOpen" class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
             <div class="border border-teal-500 shadow-lg modal-container bg-white w-full mx-20 rounded shadow-lg z-50 overflow-y-auto">
                 <div class="flex relative justify-between border-solid border-b-2 p-2 text-center items-center">
@@ -113,17 +98,102 @@
         name: "BuilderElement",
         data(){
             return{
+                openTab: 1,
                 Add: false,
                 isVisible: false,
                 isOpen2: false,
                 isOpen: false,
                 addedRow: false,
                 hideButton: true,
-                // title:'',
-                // desc:'',
-                // icon:'',
                 components:[
-                    {id: 1, title:'Row', icon:'/project-assets/images/row.png', desc:'Place content elements inside the row', component_name: 'row'},
+                    {
+                        id: 1,
+                        title:'Input Text',
+                        icon:'/project-assets/images/row.png',
+                        desc:'Input text box',
+                        component_name: 'input-text',
+                        options: {
+                            general: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "2",
+                                        gap: "6",
+                                        // rows: "1"
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Input Text',
+                                            placeholder: 'Enter Text',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label: 'CSS Animation',
+                                            placeholder: 'Select ',
+                                            options: [],
+                                            model: 'animation',
+                                            value: ''
+                                        },
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Element ID',
+                                            placeholder: 'Enter Element ID',
+                                            model: 'test_text',
+                                            value: ''
+                                        },
+                                    },
+                                ]
+                            },
+                            display: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Input Text',
+                                            placeholder: 'Enter Text',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label: 'CSS Animation',
+                                            placeholder: 'Select ',
+                                            options: [],
+                                            model: 'animation',
+                                            value: ''
+                                        },
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Element ID',
+                                            placeholder: 'Enter Element ID',
+                                            model: 'test_text',
+                                            value: ''
+                                        },
+                                    },
+                                ]
+                            }
+                        }
+                    },
                     {id: 2, title:'Check Box', icon:'/project-assets/images/checkbox.png', desc:'Place content elements inside the Checkbox', component_name: 'checkbox'},
                     {id: 3, title:'CK Editor', icon:'/project-assets/images/ckeditor.png', desc:'Place content elements inside the CK editor',  component_name: 'ck_editor'},
                     {id: 4, title:'Date Picker', icon:'/project-assets/images/date1.jpg', desc:'Place content elements inside the row',  component_name: 'date_picker'},
@@ -153,20 +223,26 @@
         },
         props: {
             element: Object,
+            child_components: Array,
+            component: String,
             row_index: Number,
             column_index: Number,
             element_index: Number,
         },
         created() {
-            console.log(this.element)
+            eventBus.$on('popup-close', () => {
+                this.isOpen2 = false
+            })
+            // console.log(this.element)
         },
         methods:{
             addElement(item){
                 let component_element = {
                     component: item.component_name,
-                    attrs: {},
-                    child_components: [
-                    ]
+                    attrs: {
+                        child_components: [
+                        ]
+                    },
                 }
 
                 eventBus.$emit('add-component', {component: component_element, row_index: this.row_index, column_index: this.column_index, element_index: this.element_index});
@@ -176,14 +252,18 @@
                 this.isOpen = false
                 this.hideButton = false
             },
+            toggleTabs: function(tabNumber){
+                this.openTab = tabNumber
+            }
         },
         components: {
             'VueTailwindModal': () => import('vue-tailwind-modal'),
-            'InputField': () => import('./Elements/InputField')
+            'InputField': () => import('./Elements/InputField'),
+            'PopupOptions': () => import('./PopupOptions'),
         },
         computed:{
             elementData() {
-                let index = _.findIndex(this.components, (a) => { return this.element.component === a.component_name})
+                let index = _.findIndex(this.components, (a) => { return this.component === a.component_name})
                 if(index > -1)
                     return this.components[index];
                 else

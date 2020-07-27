@@ -11,13 +11,17 @@
                     <path fill-rule="evenodd" d="M512.001 84.853L427.148 0 256.001 171.147 84.853 0 0 84.853 171.148 256 0 427.148l84.853 84.853 171.148-171.147 171.147 171.147 84.853-84.853L340.853 256z"/>
                 </svg>
             </div>
-            <div :class="'grid '+ (attrs.cols ? 'grid-cols-'+attrs.cols + ' ' : ' ')  + (attrs.gap ? 'gap-'+attrs.gap + ' ' : ' ')">
+            <div :class="'grid '+ (cols ? 'grid-cols-'+cols + ' ' : ' ')  + (gap ? 'gap-'+gap + ' ' : ' ')">
                 <builder-element
                         v-if="!loading"
-                        v-for="(item,index) in child_elements"
-                        :key="'element_index_'+index" :column_index="column_index"
-                        :element_index="index" class="border bg-white"
-                        :element="item" :row_index="row_index"
+                        v-for="(item,index) in child_components"
+                        :key="'element_index_'+index"
+                        v-bind="item.attrs"
+                        :component="item.component"
+                        :row_index="row_index"
+                        :column_index="column_index"
+                        :element_index="index"
+                        class="border bg-white"
                 >
                 </builder-element>
             </div>
@@ -30,7 +34,6 @@
         name: "ColumnElement",
         data(){
             return{
-                child_elements: this.child_components,
                 loading: false,
                 components:[
                     {id: 1, title:'Row', icon:'/project-assets/images/row.png', desc:'Place content elements inside the row', component_name: 'row'},
@@ -62,10 +65,11 @@
             }
         },
         props: {
-            attrs: Object,
-            child_components: Array,
+            cols: Number,
+            gap: Number,
             row_index: Number,
-            column_index: Number
+            column_index: Number,
+            child_components: Array
         },
         methods: {
             removeRow() {

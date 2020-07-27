@@ -14,6 +14,7 @@ import api from './Models/_api';
 import session from './Models/_session';
 import ability from './Models/_ability';
 import VueMeta from 'vue-meta';
+import vClickOutside from 'v-click-outside';
 
 window.Vue = require('vue');
 
@@ -23,6 +24,8 @@ Vue.use(VueMeta, {
     // optional pluginOptions
     refreshOnceOnNavigation: true
 });
+
+Vue.use(vClickOutside);
 
 const sessions = new session(process.env.MIX_STORAGE_PERSIST, process.env.MIX_INACTIVITY_SESSION);
 sessions.start();
