@@ -11,9 +11,6 @@
             <div v-if="addedRow" @mouseover="isVisible = true" @mouseleave="isVisible = false" @keydown.enter="isVisible = !isVisible"  class="flex relative w-full mr-4 bg-gray-200 p-2 border border-gray-200 hover:border-1 hover:border-blue-500" >
 
                 <div class="h-10 w-10 mt-1 mb-2 mr-3 cursor-pointer  font-bold text-white rounded-lg">
-                    <!--                    <svg class="h-6 w-6 m-2 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">-->
-                    <!--                        <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>-->
-                    <!--                    </svg>-->
                     <img class="h-10 w-10 mr-3" :src="elementData.icon">
                 </div>
                 <div class="flex-col text-left">
@@ -51,7 +48,7 @@
                 </div>
             </div>
         </div>
-        <popup-options  v-if="isOpen2" :elementData="elementData"></popup-options>
+        <popup-options  v-if="isOpen2" :elementData="elementData" tab_index="general"></popup-options>
         <div v-if="isOpen" class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
             <div class="border border-teal-500 shadow-lg modal-container bg-white w-full mx-20 rounded shadow-lg z-50 overflow-y-auto">
                 <div class="flex relative justify-between border-solid border-b-2 p-2 text-center items-center">
@@ -117,7 +114,7 @@
                                 component: 'nits-form-check',
                                 attrs: {
                                     grid: {
-                                        cols: "2",
+                                        cols: "1",
                                         gap: "6",
                                         // rows: "1"
                                     }
@@ -126,11 +123,71 @@
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
-                                            label:'Input Text',
+                                            label:'Label',
+                                            placeholder: 'Enter Label',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Placeholder',
+                                            placeholder: 'Enter Placeholder',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Hint',
+                                            placeholder: 'Enter Hint',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label:'Input Type',
+                                            placeholder: 'Select one',
+                                            options: [
+                                                {label: 'String', value: 'string'},
+                                                {label: 'Number', value: 'number'},
+                                            ],
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                ]
+                            },
+                            display: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Extra Class Name',
                                             placeholder: 'Enter Text',
                                             model: 'text',
                                             value: ''
                                         }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Element ID',
+                                            placeholder: 'Enter Element ID',
+                                            model: 'test_text',
+                                            value: ''
+                                        },
                                     },
                                     {
                                         component: 'nits-input-select',
@@ -142,12 +199,56 @@
                                             value: ''
                                         },
                                     },
+
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        id: 2,
+                        title:'Check Box',
+                        icon:'/project-assets/images/checkbox.png',
+                        desc:'Place content elements inside the Checkbox',
+                        component_name: 'checkbox',
+                        options: {
+                            general: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                        // rows: "1"
+                                    }
+                                },
+                                child_components: [
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
-                                            label:'Element ID',
-                                            placeholder: 'Enter Element ID',
-                                            model: 'test_text',
+                                            label:'Label',
+                                            placeholder: 'Enter Label',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Hint',
+                                            placeholder: 'Enter Hint',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label: 'Checked',
+                                            placeholder: 'Select one',
+                                            options: [
+                                                {label: 'True', value: 'true'},
+                                                {label: 'False', value: 'false'},
+                                            ],
+                                            model: 'animation',
                                             value: ''
                                         },
                                     },
@@ -165,11 +266,564 @@
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
-                                            label:'Input Text',
+                                            label:'Extra Class Name',
                                             placeholder: 'Enter Text',
                                             model: 'text',
                                             value: ''
                                         }
+                                    },
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        id: 3,
+                        title:'CK Editor',
+                        icon:'/project-assets/images/ckeditor.png',
+                        desc:'Place content elements inside the CK editor',
+                        component_name: 'ck_editor',
+                        options: {
+                            general: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                        // rows: "1"
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Label',
+                                            placeholder: 'Enter Label',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                ]
+                            },
+                            display: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Extra Class Name',
+                                            placeholder: 'Enter Text',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        id: 4,
+                        title:'Date Picker',
+                        icon:'/project-assets/images/date1.jpg',
+                        desc:'Place content elements inside the row',
+                        component_name: 'date_picker',
+                        options: {
+                            general: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                        // rows: "1"
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Label',
+                                            placeholder: 'Enter Label',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Placeholder',
+                                            placeholder: 'Enter Placeholder',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Hint',
+                                            placeholder: 'Enter Hint',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                ]
+                            },
+                            display: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Extra Class Name',
+                                            placeholder: 'Enter Text',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Element ID',
+                                            placeholder: 'Enter Element ID',
+                                            model: 'test_text',
+                                            value: ''
+                                        },
+                                    }
+
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        id: 5,
+                        title:'Input File',
+                        icon:'/project-assets/images/inputfile.png',
+                        desc:'Place content elements inside the row',
+                        component_name: 'input_file',
+                        options: {
+                            general: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                        // rows: "1"
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Label',
+                                            placeholder: 'Enter Label',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Placeholder',
+                                            placeholder: 'Enter Placeholder',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Hint',
+                                            placeholder: 'Enter Hint',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                ]
+                            },
+                            display: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Element ID',
+                                            placeholder: 'Enter Element ID',
+                                            model: 'test_text',
+                                            value: ''
+                                        },
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Extra Class Name',
+                                            placeholder: 'Enter Text',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {id: 6, title:'Form', icon:'/project-assets/images/form.jpg', desc:'Place content elements inside the row',  component_name: 'form'},
+                    {
+                        id: 7,
+                        title:'Input Date',
+                        icon:'/project-assets/images/inputdate.png',
+                        desc:'Place content elements inside the row',
+                        component_name: 'input_date',
+                        options: {
+                            general: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                        // rows: "1"
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Label',
+                                            placeholder: 'Enter Label',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Hint',
+                                            placeholder: 'Enter Hint',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                ]
+                            },
+                            display: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Extra Class Name',
+                                            placeholder: 'Enter Text',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Element ID',
+                                            placeholder: 'Enter Element ID',
+                                            model: 'test_text',
+                                            value: ''
+                                        },
+                                    }
+
+                                ]
+                            }
+                        }
+
+                    },
+                    {
+                        id: 8,
+                        title:'Multi Select',
+                        icon:'/project-assets/images/multiselect.png',
+                        desc:'Place content elements inside the row',
+                        component_name: 'multi_select',
+                        options: {
+                            general: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                        // rows: "1"
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Label',
+                                            placeholder: 'Enter Label',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Placeholder',
+                                            placeholder: 'Enter Placeholder',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Hint',
+                                            placeholder: 'Enter Hint',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'API Url',
+                                            placeholder: 'Enter url',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label:'Multiple Selection',
+                                            placeholder: 'Select one',
+                                            options: [
+                                                {label: 'Yes', value: 'yes'},
+                                                {label: 'No', value: 'no'},
+                                            ],
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                ]
+                            },
+                            display: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Extra Class Name',
+                                            placeholder: 'Enter Text',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Element ID',
+                                            placeholder: 'Enter Element ID',
+                                            model: 'test_text',
+                                            value: ''
+                                        },
+                                    },
+
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        id: 9,
+                        title:'Single Select',
+                        icon:'/project-assets/images/select1.png',
+                        desc:'Place content elements inside the row',
+                        component_name: 'single_select',
+                        options: {
+                            general: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                        // rows: "1"
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Label',
+                                            placeholder: 'Enter Label',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Placeholder',
+                                            placeholder: 'Enter Placeholder',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Hint',
+                                            placeholder: 'Enter Hint',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'API Url',
+                                            placeholder: 'Enter url',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                ]
+                            },
+                            display: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Extra Class Name',
+                                            placeholder: 'Enter Text',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Element ID',
+                                            placeholder: 'Enter Element ID',
+                                            model: 'test_text',
+                                            value: ''
+                                        },
+                                    },
+
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        id: 10,
+                        title:'Text',
+                        icon:'/project-assets/images/text.png',
+                        desc:'Place content elements inside the row',
+                        component_name: 'text',
+                        options: {
+                            general: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                        // rows: "1"
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Label',
+                                            placeholder: 'Enter Label',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Placeholder',
+                                            placeholder: 'Enter Placeholder',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Hint',
+                                            placeholder: 'Enter Hint',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label:'Input Type',
+                                            placeholder: 'Select one',
+                                            options: [
+                                                {label: 'String', value: 'string'},
+                                                {label: 'Number', value: 'number'},
+                                            ],
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                ]
+                            },
+                            display: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Extra Class Name',
+                                            placeholder: 'Enter Text',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Element ID',
+                                            placeholder: 'Enter Element ID',
+                                            model: 'test_text',
+                                            value: ''
+                                        },
                                     },
                                     {
                                         component: 'nits-input-select',
@@ -181,6 +835,81 @@
                                             value: ''
                                         },
                                     },
+
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        id: 11,
+                        title:'Multiple DropZone',
+                        icon:'/project-assets/images/multidropzone.png',
+                        desc:'Place content elements inside the row',
+                        component_name: 'multiple_dropzone',
+                        options: {
+                            general: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                        // rows: "1"
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Label',
+                                            placeholder: 'Enter Label',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Description',
+                                            placeholder: 'Enter text',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label:'Upload Limit',
+                                            placeholder: 'Select one',
+                                            options: [
+                                                {label: '1', value: '1'},
+                                                {label: '2', value: '2'},
+                                                {label: '3', value: '3'},
+                                                {label: '4', value: '4'},
+                                            ],
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                ]
+                            },
+                            display: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Extra Class Name',
+                                            placeholder: 'Enter Text',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
@@ -190,21 +919,100 @@
                                             value: ''
                                         },
                                     },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label: 'CSS Animation',
+                                            placeholder: 'Select ',
+                                            options: [],
+                                            model: 'animation',
+                                            value: ''
+                                        },
+                                    },
+
                                 ]
                             }
                         }
                     },
-                    {id: 2, title:'Check Box', icon:'/project-assets/images/checkbox.png', desc:'Place content elements inside the Checkbox', component_name: 'checkbox'},
-                    {id: 3, title:'CK Editor', icon:'/project-assets/images/ckeditor.png', desc:'Place content elements inside the CK editor',  component_name: 'ck_editor'},
-                    {id: 4, title:'Date Picker', icon:'/project-assets/images/date1.jpg', desc:'Place content elements inside the row',  component_name: 'date_picker'},
-                    {id: 5, title:'Input File', icon:'/project-assets/images/inputfile.png', desc:'Place content elements inside the row',  component_name: 'input_file'},
-                    {id: 6, title:'Form', icon:'/project-assets/images/form.jpg', desc:'Place content elements inside the row',  component_name: 'form'},
-                    {id: 7, title:'Input Date', icon:'/project-assets/images/inputdate.png', desc:'Place content elements inside the row',  component_name: 'input_date'},
-                    {id: 8, title:'Multi Select', icon:'/project-assets/images/multiselect.png', desc:'Place content elements inside the row',  component_name: 'multi_select'},
-                    {id: 9, title:'Single Select', icon:'/project-assets/images/select1.png', desc:'Place content elements inside the row',  component_name: 'single_select'},
-                    {id: 10, title:'Text', icon:'/project-assets/images/text.png', desc:'Place content elements inside the row',  component_name: 'text'},
-                    {id: 11, title:'Multiple DropZone', icon:'/project-assets/images/multidropzone.png', desc:'Place content elements inside the row',  component_name: 'multiple_dropzone'},
-                    {id: 12, title:'Single DropZone', icon:'/project-assets/images/dropzone.png', desc:'Place content elements inside the row',  component_name: 'single_dropzone'},
+                    {
+                        id: 12,
+                        title:'Single DropZone',
+                        icon:'/project-assets/images/dropzone.png',
+                        desc:'Place content elements inside the row',
+                        component_name: 'single_dropzone',
+                        options: {
+                            general: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                        // rows: "1"
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Label',
+                                            placeholder: 'Enter Label',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Description',
+                                            placeholder: 'Enter text',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                ]
+                            },
+                            display: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Extra Class Name',
+                                            placeholder: 'Enter Text',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Element ID',
+                                            placeholder: 'Enter Element ID',
+                                            model: 'test_text',
+                                            value: ''
+                                        },
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label: 'CSS Animation',
+                                            placeholder: 'Select ',
+                                            options: [],
+                                            model: 'animation',
+                                            value: ''
+                                        },
+                                    },
+
+                                ]
+                            }
+                        }
+                    },
                     {id: 13, title:'Button', icon:'/project-assets/images/button.png', desc:'Place content elements inside the row',  component_name: 'button'},
                     {id: 14, title:'Group Button', icon:'/project-assets/images/groupbutton.png', desc:'Place content elements inside the row',  component_name: 'group_button'},
                     {id: 15, title:'Pagination', icon:'/project-assets/images/pagination.png', desc:'Place content elements inside the row',  component_name: 'pagination'},

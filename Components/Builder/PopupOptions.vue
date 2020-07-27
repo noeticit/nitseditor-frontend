@@ -5,7 +5,7 @@
         <div class="border border-teal-500 shadow-lg modal-container bg-white w-1/2 mx-20 rounded shadow-lg z-50">
             <div style="height: 400px;"  v-click-outside="emitEvent">
                 <div class="flex bg-blue-600 p-4">
-                    <h2 class="text-white text-xl leading-normal font-normal font-sans">{{ titleFormat(elementData.title) }}</h2>
+                    <h2 class="text-white text-xl leading-normal font-normal font-sans">{{ titleFormat(elementData.title) + ' Settings' }}</h2>
                 </div>
                 <div class="flex flex-wrap">
                     <div class="w-full">
@@ -22,7 +22,6 @@
                         </ul>
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded overflow-y-auto" style="height: 300px">
                             <div v-for="(item, index, key) in elementData.options" v-bind:class="tab_index === index ? 'block' : 'hidden'" class=" px-4 py-5 flex-auto">
-                                <div>{{ index }}</div>
                                 <component :is="item.component" v-bind="item.attrs" :child_components="item.child_components"></component>
                             </div>
                         </div>
@@ -33,7 +32,7 @@
                 <button @click="emitEvent()" class="text-white bg-gray-500 bg-transparent border border-solid border-gray-500 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
                     Close
                 </button>
-                <button class="text-white bg-blue-600 bg-transparent border border-solid border-blue-600 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" >
+                <button @click="saveChanges()" class="text-white bg-blue-600 bg-transparent border border-solid border-blue-600 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" >
                     Save Changes
                 </button>
             </div>
@@ -46,13 +45,9 @@
 
     export default {
         name: "PopupOptions",
-        data() {
-            return {
-                tab_index: ''
-            }
-        },
         props: {
-            elementData: Object
+            elementData: Object,
+            tab_index: String
         },
         methods:{
             titleFormat(title) {
@@ -60,6 +55,14 @@
             },
             emitEvent() {
                 eventBus.$emit('popup-close')
+            },
+            saveChanges(){
+                console.log(this.elementData)
+                // const postData = {};
+                // Object.keys(this.forms).forEach((key) => {
+                //     postData[key] = this.forms[key].value
+                // });
+                // console.log(postData)
             }
         }
     }

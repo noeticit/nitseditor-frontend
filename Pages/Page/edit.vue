@@ -132,6 +132,15 @@
                     this.elements.splice(index, 0, element)
                 })
 
+                eventBus.$on('remove-row-column', (data) => {
+                    this.elements[data.row].attrs.child_components.splice(data.column,1)
+                })
+
+                eventBus.$on('clone-row-column', (data) => {
+                    let element =  this.elements[data.row].attrs.child_components[data.column];
+                    this.elements[data.row].attrs.child_components.splice(data.column, 0, element)
+                })
+
                 eventBus.$on('add-component', (data) => {
                     this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components.splice(data.element_index, 1, data.component);
                 });
