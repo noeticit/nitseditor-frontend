@@ -144,6 +144,10 @@
                 eventBus.$on('add-component', (data) => {
                     this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components.splice(data.element_index, 1, data.component);
                 });
+
+                eventBus.$on('add-attributes-to-element', (data) => {
+                    this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs[data.field] = data.value;
+                })
             },
         },
     }

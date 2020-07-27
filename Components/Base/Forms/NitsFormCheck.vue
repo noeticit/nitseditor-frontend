@@ -2,28 +2,21 @@
     <div>
         <nits-grid v-bind="grid">
             <component
-                    v-for="(element, key) in child_components"
+                    v-for="(element, index, key) in child_components"
                     :key="key"
                     :is="element.component"
                     v-bind="element.attrs"
-                    v-model="element.value"
+                    v-model="element.attrs.value"
                     :error="errors[key]"
-                    @input="listensToEvent(key)"
+                    @input="listensToEvent(element.attrs.model, index)"
             ></component>
         </nits-grid>
-        <div class="flex m-4 w-full">
-<!--            <button v-bind:class="{ 'spinner': loading }" class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700" @click.prevent="submit">-->
-<!--                <span class="text-center text-base antialiased tracking-tight font-sans text-white cursor-pointer" >Submit</span>-->
-<!--            </button>-->
-            <router-link v-if="back_url" :to="back_url" class="inline-flex mt-10 ml-2 items-center rounded-lg py-2 px-6 border border-gray-400">
-                <span class="text-center text-base antialiased tracking-tight font-sans text-gray-600">Cancel</span>
-            </router-link>
-        </div>
     </div>
 </template>
 
 <script>
     import Swal from 'sweetalert2';
+    import {eventBus} from "../../../Models/_events";
 
     export default {
         name: "NitsForm",
@@ -31,6 +24,7 @@
             return {
                 errors: {},
                 loading: false,
+                details: {}
             }
         },
         props: {
@@ -41,7 +35,10 @@
             grid: Object,
             child_components: Array,
             attrs: Object,
-            elementData: Object
+            elementData: Object,
+            row_index: Number,
+            column_index: Number,
+            element_index: Number,
         },
         methods: {
             submit() {
@@ -71,13 +68,15 @@
                     this.errors = error.response.data.errors
                 })
             },
-            listensToEvent(field) {
-                Object.keys(this.forms).forEach((key) => {
-                    if(typeof this.forms[key].listensTo !== 'undefined' && this.forms[key].listensTo.length && this.forms[key].listensTo.includes(field)) {
-                        this.forms[key].attrs.query = { [field]: this.forms[field].value };
-                    }
-                });
-
+            listensToEvent(field, index) {
+                this.details = {
+                    row_index: this.row_index,
+                    column_index: this.column_index,
+                    element_index: this.element_index,
+                    field: field,
+                    value: this.child_components[index].attrs.value
+                };
+                eventBus.$emit('individual-element-attributes', this.details)
             }
         },
         watch: {

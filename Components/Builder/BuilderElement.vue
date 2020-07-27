@@ -48,7 +48,14 @@
                 </div>
             </div>
         </div>
-        <popup-options  v-if="isOpen2" :elementData="elementData" tab_index="general"></popup-options>
+        <popup-options
+                v-if="isOpen2"
+                :elementData="elementData"
+                tab_index="general"
+                :row_index="row_index"
+                :column_index="column_index"
+                :element_index="element_index"
+        ></popup-options>
         <div v-if="isOpen" class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
             <div class="border border-teal-500 shadow-lg modal-container bg-white w-full mx-20 rounded shadow-lg z-50 overflow-y-auto">
                 <div class="flex relative justify-between border-solid border-b-2 p-2 text-center items-center">

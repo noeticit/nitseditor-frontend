@@ -22,7 +22,13 @@
                         </ul>
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded overflow-y-auto" style="height: 300px">
                             <div v-for="(item, index, key) in elementData.options" v-bind:class="tab_index === index ? 'block' : 'hidden'" class=" px-4 py-5 flex-auto">
-                                <component :is="item.component" v-bind="item.attrs" :child_components="item.child_components"></component>
+                                <component :is="item.component"
+                                           v-bind="item.attrs"
+                                           :child_components="item.child_components"
+                                           :row_index="row_index"
+                                           :column_index="column_index"
+                                           :element_index="element_index"
+                                ></component>
                             </div>
                         </div>
                     </div>
@@ -45,9 +51,22 @@
 
     export default {
         name: "PopupOptions",
+        data() {
+            return {
+                details: {}
+            }
+        },
         props: {
             elementData: Object,
-            tab_index: String
+            tab_index: String,
+            row_index: Number,
+            column_index: Number,
+            element_index: Number,
+        },
+        created() {
+            eventBus.$on('individual-element-attributes', (data) => {
+                this.details = data;
+            })
         },
         methods:{
             titleFormat(title) {
