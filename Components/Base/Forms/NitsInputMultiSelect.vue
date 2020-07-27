@@ -27,8 +27,8 @@
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
                 </svg>
             </div>
-<!--            <button v-if="dropdown" @click.prevent="dropdown = false" class="fixed top-0 left-0 bottom-0 right-0 h-full w-full"></button>-->
-            <div v-if="dropdown" ref="dropdown" class="absolute right-0 mt-2 py-2 w-full bg-white rounded-lg shadow-xl overflow-y-auto h-screen">
+            <button v-if="dropdown" @click.prevent="dropdown = false" class="fixed top-0 left-0 bottom-0 right-0 h-full w-full"></button>
+            <div v-if="dropdown" ref="dropdown" class="absolute right-0 mt-2 py-2 w-full bg-white rounded-lg shadow-xl overflow-y-auto h-48">
                 <ul>
                     <li v-if="computedOptions.length" v-for="item in computedOptions"
                         class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white z-10"
