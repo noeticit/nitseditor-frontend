@@ -5,9 +5,19 @@
             <div class="bg-white mb-48 mt-5 mr-4 min-h-full justify-center">
                 <div class="relative px-5 bg-gray-200 mt-10 mb-32 h-screen mb-10">
                     <div class="">
-                        <div class="w-full text-left pb-5 antialiased tracking-tigh font-sans">
-                            <input class="w-full focus:outline-none border border-gray-700 h-8 px-8 rounded" placeholder="Add Title" type="text" >
+                        <div class="grid grid-cols-5 gap-4 mb-8">
+                            <div class="col-span-4">
+                                <input class="w-full focus:outline-none border border-gray-700 h-8 px-8 rounded" placeholder="Add Title" type="text" >
+                            </div>
+                            <div class="col-span-1 ">
+                                <button class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-6 py-2 font-semibold tracking-normal text-white">Submit</button>
+                                <button class="text-sm focus:outline-none focus:bg-teal-400 hover:bg-teal-400 rounded bg-teal-400 px-6 py-2 font-semibold tracking-normal text-white">Cancel</button>
+                            </div>
+
                         </div>
+<!--                        <div class="w-full text-left pb-5 antialiased tracking-tigh font-sans">-->
+<!--                            <input class="w-full focus:outline-none border border-gray-700 h-8 px-8 rounded" placeholder="Add Title" type="text" >-->
+<!--                        </div>-->
                         <div class="flex-col w-full justify-center">
                             <div class="h-full bg-white text-center items-center">
                                 <div class="flex bg-blue-500 justify-between w-full">
@@ -50,7 +60,7 @@
                                             </svg>
                                         </div>
                                         <div class="hover:bg-blue-600 text-white">
-                                            <svg class="h-6 w-6  my-5 mx-5 " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                            <svg @click="isOpen2 = ! isOpen2" class="h-6 w-6  my-5 mx-5 " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                                 <title id="simpleicons-github-icon">Setting</title>
                                                 <path fill-rule="evenodd" d="M16.783 10c0-1.049.646-1.875 1.617-2.443a8.932 8.932 0 00-.692-1.672c-1.089.285-1.97-.141-2.711-.883-.741-.74-.968-1.621-.683-2.711a8.732 8.732 0 00-1.672-.691c-.568.97-1.595 1.615-2.642 1.615-1.048 0-2.074-.645-2.643-1.615a8.697 8.697 0 00-1.671.691c.285 1.09.059 1.971-.684 2.711-.74.742-1.621 1.168-2.711.883A8.797 8.797 0 001.6 7.557c.97.568 1.615 1.394 1.615 2.443 0 1.047-.645 2.074-1.615 2.643a8.89 8.89 0 00.691 1.672c1.09-.285 1.971-.059 2.711.682.741.742.969 1.623.684 2.711a8.841 8.841 0 001.672.693c.568-.973 1.595-1.617 2.643-1.617 1.047 0 2.074.645 2.643 1.617a8.963 8.963 0 001.672-.693c-.285-1.088-.059-1.969.683-2.711.741-.74 1.622-1.166 2.711-.883a8.811 8.811 0 00.692-1.672c-.973-.569-1.619-1.395-1.619-2.442zM10 13.652a3.652 3.652 0 110-7.306 3.653 3.653 0 010 7.306z"/>
                                             </svg>
@@ -77,6 +87,26 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div v-if="isOpen2" class="main-modal fixed w-full h-full inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
+                                    <div class="border border-teal-500 shadow-lg modal-container bg-white w-1/2 mx-20 rounded shadow-lg z-50">
+                                        <div class="flex bg-blue-600 p-4">
+                                            <h2 class="text-white text-xl leading-normal font-normal font-sans">Settings</h2>
+                                        </div>
+                                        <div class="mt-4" style="height: 400px;">
+                                            <nits-form class="px-6" :forms="forms" :grid="grid"></nits-form>
+                                        </div>
+                                        <div class="flex items-center mt-5 justify-end p-6 border-t border-solid border-gray-300 bg-gray-300 rounded-b">
+                                            <button @click="isOpen2 = ! isOpen2" class="text-white bg-gray-500 bg-transparent border border-solid border-gray-500 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
+                                                Close
+                                            </button>
+                                            <button class="text-white bg-blue-600 bg-transparent border border-solid border-blue-600 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" >
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -96,6 +126,45 @@
             return{
                 breadcrumbs: ['Page', 'Add'],
                 elements: [],
+                isOpen2: false,
+                grid: {
+                    cols: "1",
+                    gap: "6",
+                },
+                forms: {
+                    form_title: {
+                        type: 'nits-input-text',
+                        attrs: {
+                            label:'Form Title',
+                            placeholder: 'Enter title',
+                        },
+                        value: ''
+                    },
+                    api_url: {
+                        type: 'nits-input-text',
+                        attrs: {
+                            label:'API URL',
+                            placeholder: 'Enter url',
+                        },
+                        value: ''
+                    },
+                    back_url:{
+                        type: 'nits-input-text',
+                        attrs: {
+                            label:'BACK URL',
+                            placeholder: 'Enter url',
+                        },
+                        value: ''
+                    },
+                    redirect:{
+                        type: 'nits-input-text',
+                        attrs: {
+                            label:'REDIRECT',
+                            placeholder: 'Enter url',
+                        },
+                        value: ''
+                    }
+                },
             }
         },
         created() {

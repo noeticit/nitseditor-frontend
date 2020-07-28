@@ -1,5 +1,11 @@
 <template>
-    <ckeditor ref="editor" :editor="editor" :value="value" :config="editorConfig" @input="emitEvent"></ckeditor>
+    <div class="flex-col justify-start w-full">
+        <div class="mt-2 ml-2 block uppercase tracking-wide text-left text-gray-700 text-sm font-bold mb-2">{{ label }}</div>
+        <ckeditor ref="editor" :editor="editor" :value="value" :config="editorConfig" @input="emitEvent"></ckeditor>
+        <span v-if="hint" class="text-xs text-gray-400 font-medium">{{ hint }}</span>
+        <span v-if="errorDisplay" class="text-xs text-pink-600 font-medium">{{ errorDisplay }}</span>
+    </div>
+
 </template>
 
 <script>
@@ -39,7 +45,20 @@
             // Use the <ckeditor> component in this view.
             ckeditor: CKEditor.component
         },
-        props: ['value'],
+        props: {
+            label: String,
+            hint: {
+                type: String,
+                default: () => ''
+            },
+            error: {
+                type: Array,
+                default: () => []
+            },
+            placeholder: String,
+            value: '',
+        },
+
         data() {
             return {
                 editor: ClassicEditor,
@@ -118,5 +137,13 @@
                 this.$emit('input', editor)
             }
         },
+        computed: {
+            errorDisplay() {
+                if(this.error.length)
+                    return this.error.join(', ');
+                else
+                    return '';
+            }
+        }
     }
 </script>

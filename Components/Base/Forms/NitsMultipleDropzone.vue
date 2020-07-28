@@ -10,10 +10,12 @@
                 @vdropzone-complete="afterComplete"
         >
             <div class="dropzone-custom-content">
-                <h3 class="dropzone-custom-title">Drag and drop to upload content!</h3>
-                <div class="subtitle">...or click to select a file from your computer</div>
+                <h3 class="dropzone-custom-title">{{placeholder}}</h3>
+<!--                <div class="subtitle">...or click to select a file from your computer</div>-->
             </div>
         </vue-dropzone>
+        <span v-if="hint" class="text-xs text-gray-400 font-medium">{{ hint }}</span>
+        <span v-if="errorDisplay" class="text-xs text-pink-600 font-medium">{{ errorDisplay }}</span>
     </div>
 </template>
 
@@ -29,6 +31,15 @@
         props: {
             label: String,
             value: '',
+            error: {
+                type: Array,
+                default: () => []
+            },
+            hint: {
+                type: String,
+                default: () => ''
+            },
+            placeholder: String,
         },
         data(){
             return{
@@ -54,6 +65,14 @@
                     this.$emit('input', info.link)
             }
         },
+        computed: {
+            errorDisplay() {
+                if(this.error.length)
+                    return this.error.join(', ');
+                else
+                    return '';
+            }
+        }
     }
 </script>
 

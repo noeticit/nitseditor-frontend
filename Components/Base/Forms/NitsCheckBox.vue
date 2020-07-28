@@ -26,6 +26,7 @@
                 default: () => []
             },
             value: '',
+            placeholder: String,
         },
         methods: {
             emitEvent(event) {

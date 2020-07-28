@@ -248,6 +248,15 @@
                                         }
                                     },
                                     {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Placeholder',
+                                            placeholder: 'Enter Placeholder',
+                                            model: 'placeholder',
+                                            value: ''
+                                        }
+                                    },
+                                    {
                                         component: 'nits-input-select',
                                         attrs: {
                                             label: 'Checked',
@@ -306,10 +315,29 @@
                                         attrs: {
                                             label:'Label',
                                             placeholder: 'Enter Label',
-                                            model: 'text',
+                                            model: 'label',
                                             value: ''
                                         }
                                     },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Placeholder',
+                                            placeholder: 'Enter Placeholder',
+                                            model: 'placeholder',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Hint',
+                                            placeholder: 'Enter Hint',
+                                            model: 'hint',
+                                            value: ''
+                                        }
+                                    },
+
                                 ]
                             },
                             display: {
@@ -512,7 +540,16 @@
                                         attrs: {
                                             label:'Label',
                                             placeholder: 'Enter Label',
-                                            model: 'text',
+                                            model: 'label',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Placeholder',
+                                            placeholder: 'Enter Placeholder',
+                                            model: 'placeholder',
                                             value: ''
                                         }
                                     },
@@ -521,7 +558,7 @@
                                         attrs: {
                                             label:'Hint',
                                             placeholder: 'Enter Hint',
-                                            model: 'text',
+                                            model: 'hint',
                                             value: ''
                                         }
                                     },
@@ -600,15 +637,6 @@
                                         attrs: {
                                             label:'Hint',
                                             placeholder: 'Enter Hint',
-                                            model: 'text',
-                                            value: ''
-                                        }
-                                    },
-                                    {
-                                        component: 'nits-input-text',
-                                        attrs: {
-                                            label:'API Url',
-                                            placeholder: 'Enter url',
                                             model: 'text',
                                             value: ''
                                         }
@@ -700,15 +728,6 @@
                                         attrs: {
                                             label:'Hint',
                                             placeholder: 'Enter Hint',
-                                            model: 'text',
-                                            value: ''
-                                        }
-                                    },
-                                    {
-                                        component: 'nits-input-text',
-                                        attrs: {
-                                            label:'API Url',
-                                            placeholder: 'Enter url',
                                             model: 'text',
                                             value: ''
                                         }
@@ -870,16 +889,25 @@
                                         attrs: {
                                             label:'Label',
                                             placeholder: 'Enter Label',
-                                            model: 'text',
+                                            model: 'label',
                                             value: ''
                                         }
                                     },
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
-                                            label:'Description',
-                                            placeholder: 'Enter text',
-                                            model: 'text',
+                                            label:'Placeholder',
+                                            placeholder: 'Enter Placeholder',
+                                            model: 'placeholder',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Hint',
+                                            placeholder: 'Enter Hint',
+                                            model: 'hint',
                                             value: ''
                                         }
                                     },
@@ -964,16 +992,25 @@
                                         attrs: {
                                             label:'Label',
                                             placeholder: 'Enter Label',
-                                            model: 'text',
+                                            model: 'label',
                                             value: ''
                                         }
                                     },
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
-                                            label:'Description',
-                                            placeholder: 'Enter text',
-                                            model: 'text',
+                                            label:'Hint',
+                                            placeholder: 'Enter Hint',
+                                            model: 'hint',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Placeholder',
+                                            placeholder: 'Enter Placeholder',
+                                            model: 'placeholder',
                                             value: ''
                                         }
                                     },
