@@ -55,6 +55,8 @@
                 :row_index="row_index"
                 :column_index="column_index"
                 :element_index="element_index"
+                :element="element"
+                :component_name="elementData.component_name"
         ></popup-options>
         <div v-if="isOpen" class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
             <div class="border border-teal-500 shadow-lg modal-container bg-white w-full mx-20 rounded shadow-lg z-50 overflow-y-auto">
@@ -132,7 +134,7 @@
                                         attrs: {
                                             label:'Label',
                                             placeholder: 'Enter Label',
-                                            model: 'text',
+                                            model: 'label',
                                             value: ''
                                         }
                                     },
@@ -141,7 +143,7 @@
                                         attrs: {
                                             label:'Placeholder',
                                             placeholder: 'Enter Placeholder',
-                                            model: 'text',
+                                            model: 'placeholder',
                                             value: ''
                                         }
                                     },
@@ -150,7 +152,7 @@
                                         attrs: {
                                             label:'Hint',
                                             placeholder: 'Enter Hint',
-                                            model: 'text',
+                                            model: 'hint',
                                             value: ''
                                         }
                                     },
@@ -163,7 +165,7 @@
                                                 {label: 'String', value: 'string'},
                                                 {label: 'Number', value: 'number'},
                                             ],
-                                            model: 'text',
+                                            model: 'type',
                                             value: ''
                                         }
                                     },
@@ -183,7 +185,7 @@
                                         attrs: {
                                             label:'Extra Class Name',
                                             placeholder: 'Enter Text',
-                                            model: 'text',
+                                            model: 'class',
                                             value: ''
                                         }
                                     },
@@ -192,7 +194,7 @@
                                         attrs: {
                                             label:'Element ID',
                                             placeholder: 'Enter Element ID',
-                                            model: 'test_text',
+                                            model: 'id',
                                             value: ''
                                         },
                                     },
@@ -206,7 +208,6 @@
                                             value: ''
                                         },
                                     },
-
                                 ]
                             }
                         }
@@ -488,7 +489,7 @@
                             }
                         }
                     },
-                    {id: 6, title:'Form', icon:'/project-assets/images/form.jpg', desc:'Place content elements inside the row',  component_name: 'form'},
+                    // {id: 6, title:'Form', icon:'/project-assets/images/form.jpg', desc:'Place content elements inside the row',  component_name: 'form'},
                     {
                         id: 7,
                         title:'Input Date',
@@ -1020,19 +1021,19 @@
                             }
                         }
                     },
-                    {id: 13, title:'Button', icon:'/project-assets/images/button.png', desc:'Place content elements inside the row',  component_name: 'button'},
-                    {id: 14, title:'Group Button', icon:'/project-assets/images/groupbutton.png', desc:'Place content elements inside the row',  component_name: 'group_button'},
-                    {id: 15, title:'Pagination', icon:'/project-assets/images/pagination.png', desc:'Place content elements inside the row',  component_name: 'pagination'},
-                    {id: 16, title:'Table', icon:'/project-assets/images/table.png', desc:'Place content elements inside the row',  component_name: 'table'},
-                    {id: 17, title:'Tabs', icon:'/project-assets/images/tabs.png', desc:'Place content elements inside the row',  component_name: 'tabs'},
-                    {id: 18, title:'Alert', icon:'/project-assets/images/alert.png', desc:'Place content elements inside the row',  component_name: 'alert'},
-                    {id: 19, title:'Bread Crumb', icon:'/project-assets/images/timeline-512.png', desc:'Place content elements inside the row',  component_name: 'bread_crumb'},
-                    {id: 20, title:'Footer', icon:'/project-assets/images/footer.png', desc:'Place content elements inside the row',  component_name: 'footer'},
-                    {id: 21, title:'Menu', icon:'/project-assets/images/menu.png', desc:'Place content elements inside the row',  component_name: 'menu'},
-                    {id: 22, title:'Video Player', icon:'/project-assets/images/video.png', desc:'Place content elements inside the row',  component_name: 'video_player'},
-                    {id: 23, title:'Progress Bar', icon:'/project-assets/images/progress.png', desc:'Place content elements inside the Progress Bar',  component_name: 'progress_bar'},
-                    {id: 24, title:'Empty Space', icon:'/project-assets/images/emptyspace.png', desc:'Place content elements inside the Empty Space',  component_name: 'empty_space'},
-                    {id: 25, title:'Pie Chart', icon:'/project-assets/images/piechart.png', desc:'Place content elements inside the row',  component_name: 'pie_chart'},
+                    // {id: 13, title:'Button', icon:'/project-assets/images/button.png', desc:'Place content elements inside the row',  component_name: 'button'},
+                    // {id: 14, title:'Group Button', icon:'/project-assets/images/groupbutton.png', desc:'Place content elements inside the row',  component_name: 'group_button'},
+                    // {id: 15, title:'Pagination', icon:'/project-assets/images/pagination.png', desc:'Place content elements inside the row',  component_name: 'pagination'},
+                    // {id: 16, title:'Table', icon:'/project-assets/images/table.png', desc:'Place content elements inside the row',  component_name: 'table'},
+                    // {id: 17, title:'Tabs', icon:'/project-assets/images/tabs.png', desc:'Place content elements inside the row',  component_name: 'tabs'},
+                    // {id: 18, title:'Alert', icon:'/project-assets/images/alert.png', desc:'Place content elements inside the row',  component_name: 'alert'},
+                    // {id: 19, title:'Bread Crumb', icon:'/project-assets/images/timeline-512.png', desc:'Place content elements inside the row',  component_name: 'bread_crumb'},
+                    // {id: 20, title:'Footer', icon:'/project-assets/images/footer.png', desc:'Place content elements inside the row',  component_name: 'footer'},
+                    // {id: 21, title:'Menu', icon:'/project-assets/images/menu.png', desc:'Place content elements inside the row',  component_name: 'menu'},
+                    // {id: 22, title:'Video Player', icon:'/project-assets/images/video.png', desc:'Place content elements inside the row',  component_name: 'video_player'},
+                    // {id: 23, title:'Progress Bar', icon:'/project-assets/images/progress.png', desc:'Place content elements inside the Progress Bar',  component_name: 'progress_bar'},
+                    // {id: 24, title:'Empty Space', icon:'/project-assets/images/emptyspace.png', desc:'Place content elements inside the Empty Space',  component_name: 'empty_space'},
+                    // {id: 25, title:'Pie Chart', icon:'/project-assets/images/piechart.png', desc:'Place content elements inside the row',  component_name: 'pie_chart'},
                 ]
             }
         },
@@ -1043,12 +1044,12 @@
             row_index: Number,
             column_index: Number,
             element_index: Number,
+            attrs: Object
         },
         created() {
             eventBus.$on('popup-close', () => {
                 this.isOpen2 = false
             })
-            // console.log(this.element)
         },
         methods:{
             addElement(item){

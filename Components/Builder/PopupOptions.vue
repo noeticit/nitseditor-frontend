@@ -28,6 +28,8 @@
                                            :row_index="row_index"
                                            :column_index="column_index"
                                            :element_index="element_index"
+                                           :element="element"
+                                           :component_name="component_name"
                                 ></component>
                             </div>
                         </div>
@@ -37,9 +39,6 @@
             <div class="flex items-center mt-5 justify-end p-6 border-t border-solid border-gray-300 bg-gray-300 rounded-b">
                 <button @click="emitEvent()" class="text-white bg-gray-500 bg-transparent border border-solid border-gray-500 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
                     Close
-                </button>
-                <button @click="saveChanges()" class="text-white bg-blue-600 bg-transparent border border-solid border-blue-600 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" >
-                    Save Changes
                 </button>
             </div>
         </div>
@@ -62,11 +61,11 @@
             row_index: Number,
             column_index: Number,
             element_index: Number,
+            component_name: String,
+            element: Object
         },
         created() {
-            eventBus.$on('individual-element-attributes', (data) => {
-                this.details = data;
-            })
+
         },
         methods:{
             titleFormat(title) {
@@ -74,14 +73,6 @@
             },
             emitEvent() {
                 eventBus.$emit('popup-close')
-            },
-            saveChanges(){
-                console.log(this.elementData)
-                // const postData = {};
-                // Object.keys(this.forms).forEach((key) => {
-                //     postData[key] = this.forms[key].value
-                // });
-                // console.log(postData)
             }
         }
     }

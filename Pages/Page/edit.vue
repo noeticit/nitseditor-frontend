@@ -145,8 +145,10 @@
                     this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components.splice(data.element_index, 1, data.component);
                 });
 
-                eventBus.$on('add-attributes-to-element', (data) => {
-                    this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs[data.field] = data.value;
+                eventBus.$on('individual-element-attributes', (data) => {
+                    let attributes = this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs;
+                    attributes[data.field] = data.value
+                    this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs = attributes;
                 })
             },
         },

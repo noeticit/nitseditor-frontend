@@ -15,10 +15,12 @@
                         v-for="(item,index) in child_components"
                         :key="'element_index_'+index"
                         v-bind="item.attrs"
+                        :attrs="item.attrs"
                         :component="item.component"
                         :row_index="row_index"
                         :column_index="column_index"
                         :element_index="index"
+                        :element="item"
                         class="border bg-white"
                 >
                 </builder-element>
