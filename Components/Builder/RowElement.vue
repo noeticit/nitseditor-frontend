@@ -9,11 +9,38 @@
                         </g>
                     </svg>
                 </div>
-                <div class="h-10 w-12 text-gray-600 rounded-t hover:text-gray-400 inline-block bg-gray-300 font-bold">
+                <div @click="isOpen2 = ! isOpen2" class="h-10 w-12 text-gray-600 rounded-t hover:text-gray-400 inline-block bg-gray-300 font-bold">
                     <svg class="h-6 w-6 my-2 mx-3 font-bold" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd"  d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
                     </svg>
                 </div>
+
+                <div v-if="isOpen2" class="main-modal fixed w-full h-full inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
+                    <div class="border border-teal-500 shadow-lg modal-container bg-white w-1/2 mx-20 rounded shadow-lg z-50">
+                        <div class="flex bg-blue-600 p-4">
+                            <h2 class="text-white text-xl leading-normal font-normal font-sans">Form Settings</h2>
+                        </div>
+                        <div class="mt-4" style="height: 400px;">
+                            <div v-for="(item, index, key) in dataSet.options" class=" px-4 py-5 flex-auto">
+                                <component
+                                        :is="item.component"
+                                        v-bind="item.attrs"
+                                        :child_components="item.child_components"
+                                        :row_index="row_index"
+                                ></component>
+                            </div>
+                        </div>
+                        <div class="flex items-center mt-5 justify-end p-6 border-t border-solid border-gray-300 bg-gray-300 rounded-b">
+                            <button @click="isOpen2 = ! isOpen2" class="text-white bg-gray-500 bg-transparent border border-solid border-gray-500 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
+                                Close
+                            </button>
+                            <button @click.prevent="addFormTitle()" class="text-white bg-blue-600 bg-transparent border border-solid border-blue-600 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" >
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="flex absolute right-0 mr-8">
                     <div class="bg-gray-300 mr-1 rounded-t h-10 w-12 hover:text-gray-400 text-gray-600">
                         <svg class="h-5 w-5 my-3 mx-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -174,6 +201,49 @@
             return{
                 selectColumn: false,
                 isVisible: false,
+                isOpen2: false,
+                dataSet: {
+                    id: 1,
+                    options: {
+                        general: {
+                            component: 'nits-form-check',
+                            attrs: {
+                                grid: {
+                                    cols: "1",
+                                    gap: "6",
+                                }
+                            },
+                            child_components: [
+                                {
+                                    component: 'nits-input-text',
+                                    attrs: {
+                                        label:'Form Title',
+                                        placeholder: 'Enter title',
+                                        model: 'text',
+                                        value: ''
+                                    }
+                                },
+                                {
+                                    component: 'nits-input-text',
+                                    attrs: {
+                                        label:'Form SubTitle',
+                                        placeholder: 'Enter subtitle',
+                                        model: 'text',
+                                        value: ''
+                                    }
+                                },
+                                {
+                                    component: 'nits-single-dropzone',
+                                    attrs: {
+                                        label:'Upload image',
+                                        model: '',
+                                        value: ''
+                                    }
+                                },
+                            ]
+                        },
+                    }
+                },
             }
         },
         props: {
@@ -193,6 +263,21 @@
                     arr.push(value);
                 }
                 return arr;
+            },
+            addFormTitle() {
+
+                // const row_element = {
+                //     component: 'row',
+                //     title:'',
+                //     sub_title:'',
+                //     icon:'',
+                //     attrs: {
+                //         child_components: [
+                //
+                //         ]
+                //     }
+                // }
+                // eventBus.$emit('add-row-title', {row_element: row_element , row_index: this.row_index});
             },
             addColumn(type, index) {
                 this.selectColumn= false

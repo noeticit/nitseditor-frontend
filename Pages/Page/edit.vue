@@ -178,6 +178,9 @@
             addRowField() {
                 const row_element = {
                     component: 'row',
+                    title:'',
+                    sub_title:'',
+                    icon:'',
                     attrs: {
                         child_components: [
 
