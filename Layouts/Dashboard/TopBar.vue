@@ -8,7 +8,7 @@
                             <svg class="h-6 w-6" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M14 9H9l-1 1 1 1h5l1-1-1-1zm2 5H9l-1 1 1 1h7l1-1-1-1zM9 6h7l1-1-1-1H9L8 5l1 1zM5 9H4l-1 1 1 1h1l1-1-1-1zm0 5H4l-1 1 1 1h1l1-1-1-1zM5 4H4L3 5l1 1h1l1-1-1-1z"/></svg>
                         </button>
                     </div>
-                    <menu-two></menu-two>
+<!--                    <menu-two></menu-two>-->
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
@@ -55,7 +55,7 @@
             }
         },
         components: {
-            'MenuTwo': () => import('./MenuTwo')
+            'MenuTwo': () => import('./../../Components/Menus/MenuTwo')
         }
     }
 </script>

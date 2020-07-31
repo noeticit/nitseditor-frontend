@@ -1,16 +1,16 @@
 <template>
-    <dashboard-layout-one active="user-add">
-        <base-bread-crumb-one name="Add Page" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
+    <dashboard-layout-one active="form">
+        <base-bread-crumb-one name="Add Form" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
         <div class="m-2 overflow-y-auto h-screen w-full">
             <div class="bg-white mb-48 mt-5 mr-4 min-h-full justify-center">
                 <div class="relative px-5 bg-gray-200 mt-10 mb-32 h-screen mb-10">
                     <div class="">
                         <div class="grid grid-cols-5 gap-4 mb-8">
                             <div class="col-span-4">
-                                <input class="w-full focus:outline-none border border-gray-700 h-8 px-8 rounded" placeholder="Add Title" type="text" >
+                                <input class="w-full focus:outline-none border border-gray-700 h-8 px-8 rounded" v-model="form_title" placeholder="Add Title" type="text" >
                             </div>
                             <div class="col-span-1 ">
-                                <button class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-6 py-2 font-semibold tracking-normal text-white">Submit</button>
+                                <button class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-6 py-2 font-semibold tracking-normal text-white" @click.prevent="submit">Submit</button>
                                 <button class="text-sm focus:outline-none focus:bg-teal-400 hover:bg-teal-400 rounded bg-teal-400 px-6 py-2 font-semibold tracking-normal text-white">Cancel</button>
                             </div>
 
@@ -94,14 +94,14 @@
                                             <h2 class="text-white text-xl leading-normal font-normal font-sans">Settings</h2>
                                         </div>
                                         <div class="mt-4" style="height: 400px;">
-                                            <nits-form class="px-6" :forms="forms" :grid="grid"></nits-form>
+                                            <div class="grid grid-cols-2 gap-4 p-2 m-2">
+                                                <component v-for="(item, index) in form" :key="index" :is="item.component" v-bind="item.attrs" v-model="item.attrs.value"></component>
+                                            </div>
+<!--                                            <nits-form class="px-6" :forms="forms" :grid="grid"></nits-form>-->
                                         </div>
                                         <div class="flex items-center mt-5 justify-end p-6 border-t border-solid border-gray-300 bg-gray-300 rounded-b">
                                             <button @click="isOpen2 = ! isOpen2" class="text-white bg-gray-500 bg-transparent border border-solid border-gray-500 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
                                                 Close
-                                            </button>
-                                            <button class="text-white bg-blue-600 bg-transparent border border-solid border-blue-600 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" >
-                                                Save
                                             </button>
                                         </div>
                                     </div>
@@ -119,52 +119,56 @@
 <script>
     import RowElement from "../../Components/Builder/RowElement";
     import {eventBus} from "NitsModels/_events";
+    import Swal from 'sweetalert2';
 
     export default {
         name: "edit",
         data(){
             return{
-                breadcrumbs: ['Page', 'Add'],
+                breadcrumbs: ['Form', 'Add'],
                 elements: [],
                 isOpen2: false,
                 grid: {
                     cols: "1",
                     gap: "6",
                 },
-                forms: {
-                    form_title: {
-                        type: 'nits-input-text',
-                        attrs: {
-                            label:'Form Title',
-                            placeholder: 'Enter title',
-                        },
-                        value: ''
+                form: [
+                    {
+                        component:"nits-input-text",
+                        attrs:{
+                            child_components: [],
+                            label: "API URL",
+                            placeholder: "Enter api url",
+                            type: "text",
+                            model: "form_api_url",
+                            value: ''
+                        }
                     },
-                    api_url: {
-                        type: 'nits-input-text',
-                        attrs: {
-                            label:'API URL',
-                            placeholder: 'Enter url',
-                        },
-                        value: ''
+                    {
+                        component:"nits-input-text",
+                        attrs:{
+                            child_components: [],
+                            label: "Redirect URL",
+                            placeholder: "Enter redirect url",
+                            type: "text",
+                            model: "form_redirect_url",
+                            value: ''
+                        }
                     },
-                    back_url:{
-                        type: 'nits-input-text',
-                        attrs: {
-                            label:'BACK URL',
-                            placeholder: 'Enter url',
-                        },
-                        value: ''
+                    {
+                        component:"nits-input-text",
+                        attrs:{
+                            child_components: [],
+                            label: "Back URL",
+                            placeholder: "Enter back url",
+                            type: "text",
+                            model: "form_cancel_or_back_url",
+                            value: ''
+                        }
                     },
-                    redirect:{
-                        type: 'nits-input-text',
-                        attrs: {
-                            label:'REDIRECT',
-                            placeholder: 'Enter url',
-                        },
-                        value: ''
-                    }
-                },
+                ],
+                form_title: '',
+                form_template_id: ''
             }
         },
         created() {
@@ -223,6 +227,36 @@
                     this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs = attributes;
                 })
             },
+            submit() {
+                const post_data = {}
+                _.forEach(this.form, (a) => {
+                    console.log(a);
+                    post_data[a.attrs.model] = a.attrs.value
+                })
+                post_data['form_title'] = this.form_title;
+                post_data['form_template_id'] = this.form_template_id;
+                post_data['form_data'] = JSON.stringify(this.elements);
+
+                this.$api.post('/nits-system-api/form', post_data).then(response => {
+                    if(response.status === 200) {
+                        Swal.fire(
+                            'Created!',
+                            'Your data has been created.',
+                            'success'
+                        ).then(() => {
+                            this.$router.push('/nits-admin/form')
+                        })
+                    }
+                })
+                    .catch((error) => {
+                        Swal.fire({
+                            title: "Oops!",
+                            text: error.response.data.message,
+                            type: "error",
+                        })
+                        this.error = error.response.data.errors;
+                    })
+            }
         },
     }
 </script>

@@ -60,7 +60,10 @@
             return {
                 menuIsOpen: true
             }
-        }
+        },
+        components: {
+            'TopBar': () => import('./TopBar')
+        },
     }
 </script>
 

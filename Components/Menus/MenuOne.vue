@@ -31,6 +31,13 @@
                 </svg>
                 <div :class="activeClass('plugins') || hoverClass('plugins') ?  'active-menu-text' : 'not-active-menu-text'">Plugins</div>
             </router-link>
+            <router-link to="/nits-admin/form" class="px-4 mb-1 flex justify-start items-center curser-pointer" @mouseover="hover = 'form'" @mouseleave="hover = ''">
+                <div v-if="activeClass('form') || hoverClass('form')" class="py-1 h-4 -m-1 mr-1 border-l-2 border-teal-600"></div>
+                <svg :class="activeClass('form') || hoverClass('form') ?  'ml-2 h-4 w-4 text-teal-500' : 'ml-2 h-4 w-4 text-gray-700'" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6 7l1-5H3L1 7c0 1 1 2 3 2l2-2zm4 2l3-2-1-5H8L7 7l3 2zm5 1v4H5v-4a4 4 0 01-2 0v7l1 1h12l1-1v-7h-1-1zm4-3l-2-5h-4l1 5 2 2c2 0 3-1 3-2z"/>
+                </svg>
+                <div :class="activeClass('form') || hoverClass('form') ?  'active-menu-text' : 'not-active-menu-text'">Forms</div>
+            </router-link>
             <div class="px-2 mb-1 mt-4 text-sm text-gray-700 antialiased leading-relaxed tracking-normal uppercase font-semibold">Configure</div>
             <router-link to="/nits-admin/menus" class="px-4 mb-1 flex justify-start items-center curser-pointer" @mouseover="hover = 'menus'" @mouseleave="hover = ''">
                 <div v-if="activeClass('menus') || hoverClass('menus')" class="py-1 h-4 -m-1 mr-1 border-l-2 border-teal-600"></div>
