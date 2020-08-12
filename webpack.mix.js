@@ -55,7 +55,7 @@ Mix.listen('configReady', webpackConfig => {
 
 
 mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/images')
-    .sass('node_modules/nitseditor-frontend/Assets/sass/app.scss', 'public/nits-assets/css')
+    .sass('./resources/sass/app.scss', 'public/nits-assets/css')
     .options({
         processCssUrls: false,
         postCss: [ require('autoprefixer'), tailwindcss('./tailwind.config.js') ],
