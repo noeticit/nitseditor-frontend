@@ -25,8 +25,13 @@ NitsRoutePlugin.prototype.apply = function (compiler) {
 
     filecontents = filecontents + `\n\t{\n\t\tname: \'page-not-found\',\n\t\tpath: \'*\',\n\t\tcomponent: Vue.component(\'page-not-found\', () => import(\'NitsAdminPages/page-not-found.vue\')),\n\t},`;
 
-    filecontents = filecontents + '\n    ],\n    base: \'/\',\n' +
-        '});';
+    filecontents = filecontents + '\n' +
+        '    ],\n' +
+        '    base: \'/\',\n' +
+        '\tscrollBehavior (to, from, savedPosition) {\n' +
+        '\t\treturn { x: 0, y: 0 }\n' +
+        '\t}\n' +
+        '});'
 
     fs.writeFileSync(path.resolve(__dirname, './../routes.js'), filecontents);
 };
