@@ -65,7 +65,7 @@
             element: Object
         },
         created() {
-
+            console.log(this.elementData)
         },
         methods:{
             titleFormat(title) {

@@ -266,6 +266,7 @@
                     {
                         this.editDetails = response.data.data
                         this.form_title = this.editDetails.form_title
+                        this.elements = JSON.parse(this.editDetails.form_data)
                     }
                 })
             },

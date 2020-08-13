@@ -18,7 +18,7 @@
     import {eventBus} from "../../../Models/_events";
 
     export default {
-        name: "NitsForm",
+        name: "NitsFormCheck",
         data() {
             return {
                 errors: {},

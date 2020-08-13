@@ -117,7 +117,7 @@
                         title:'Input Text',
                         icon:'/project-assets/images/row.png',
                         desc:'Input text box',
-                        component_name: 'input-text',
+                        component_name: 'nits-input-text',
                         options: {
                             general: {
                                 component: 'nits-form-check',
