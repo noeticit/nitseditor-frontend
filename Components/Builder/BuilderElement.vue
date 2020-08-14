@@ -217,7 +217,7 @@
                         title:'Check Box',
                         icon:'/project-assets/images/checkbox.png',
                         desc:'Place content elements inside the Checkbox',
-                        component_name: 'checkbox',
+                        component_name: 'nits-check-box',
                         options: {
                             general: {
                                 component: 'nits-form-check',
@@ -367,7 +367,7 @@
                         title:'Date Picker',
                         icon:'/project-assets/images/date1.jpg',
                         desc:'Place content elements inside the row',
-                        component_name: 'date_picker',
+                        component_name: 'nits-date-picker',
                         options: {
                             general: {
                                 component: 'nits-form-check',
@@ -523,7 +523,7 @@
                         title:'Input Date',
                         icon:'/project-assets/images/inputdate.png',
                         desc:'Place content elements inside the row',
-                        component_name: 'input_date',
+                        component_name: 'nits-input-date',
                         options: {
                             general: {
                                 component: 'nits-form-check',
@@ -602,7 +602,7 @@
                         title:'Multi Select',
                         icon:'/project-assets/images/multiselect.png',
                         desc:'Place content elements inside the row',
-                        component_name: 'multi_select',
+                        component_name: 'nits-input-multi-select',
                         options: {
                             general: {
                                 component: 'nits-form-check',
@@ -693,7 +693,7 @@
                         title:'Single Select',
                         icon:'/project-assets/images/select1.png',
                         desc:'Place content elements inside the row',
-                        component_name: 'single_select',
+                        component_name: 'nits-input-select',
                         options: {
                             general: {
                                 component: 'nits-form-check',
@@ -975,7 +975,7 @@
                         title:'Single DropZone',
                         icon:'/project-assets/images/dropzone.png',
                         desc:'Place content elements inside the row',
-                        component_name: 'single_dropzone',
+                        component_name: 'nits-single-dropzone',
                         options: {
                             general: {
                                 component: 'nits-form-check',

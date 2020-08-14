@@ -1,7 +1,7 @@
 <template>
     <div>
         <nits-grid v-bind="grid">
-            <component v-for="(element, key) in forms" :key="key" :is="element.type" v-bind="element.attrs" v-model="element.value" :error="errors[key]" @input="listensToEvent(key)"></component>
+            <component v-for="(element, key) in forms" :key="element.attrs.child_components[0].attrs.label" :is="element.attrs.child_components[0].component" v-bind="element.attrs.child_components[0].component.attrs" v-model="element.value" :error="errors[element.attrs.child_components[0].attrs.label]" @input="listensToEvent(element.attrs.child_components[0].attrs.label)"></component>
         </nits-grid>
         <div class="flex m-4 w-full">
 <!--            <button v-bind:class="{ 'spinner': loading }" class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700" @click.prevent="submit">-->
