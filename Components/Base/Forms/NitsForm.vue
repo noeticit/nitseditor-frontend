@@ -43,12 +43,11 @@
         },
         methods: {
             submit() {
-                console.log(Object.keys(this.form_data))
                 this.loading = true
                 const postData = {};
 
                 Object.keys(this.form_data).forEach((key) => {
-                    postData[key] = this.form_data[key].value
+                    postData[key] = this.form_data[key]
                 });
 
                 this.$api.post(this.api_url, postData).then(response => {
