@@ -26,6 +26,7 @@
   },
   "homepage": "https://nitseditor.com",
   "dependencies": {
+    "@aws-amplify/ui-vue": "^0.2.13",
     "@ckeditor/ckeditor5-adapter-ckfinder": "^19.0.1",
     "@ckeditor/ckeditor5-alignment": "^19.0.1",
     "@ckeditor/ckeditor5-autoformat": "^19.0.1",
@@ -53,6 +54,8 @@
     "@popperjs/core": "^2.4.4",
     "@syncfusion/ej2-vue-dropdowns": "^18.2.48",
     "@wiris/mathtype-ckeditor5": "^7.22.0",
+    "aws-amplify": "^3.0.23",
+    "aws-amplify-vue": "^2.1.2",
     "axios": "^0.19",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "browser-sync": "^2.26.12",
