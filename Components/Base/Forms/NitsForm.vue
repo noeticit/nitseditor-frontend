@@ -1,12 +1,12 @@
 <template>
     <div>
-        <nits-grid v-bind="grid">
-            <component v-for="(element, key) in forms" :key="element.attrs.child_components[0].attrs.label" :is="element.attrs.child_components[0].component" v-bind="element.attrs.child_components[0].component.attrs" v-model="element.value" :error="errors[element.attrs.child_components[0].attrs.label]" @input="listensToEvent(element.attrs.child_components[0].attrs.label)"></component>
-        </nits-grid>
+        <div v-for="(item, index) in forms">
+            <component :is="item.component" :key="index" v-bind="item.attrs"></component>
+        </div>
         <div class="flex m-4 w-full">
-<!--            <button v-bind:class="{ 'spinner': loading }" class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700" @click.prevent="submit">-->
-<!--                <span class="text-center text-base antialiased tracking-tight font-sans text-white cursor-pointer" >Submit</span>-->
-<!--            </button>-->
+            <button v-bind:class="{ 'spinner': loading }" class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700" @click.prevent="submit">
+                <span class="text-center text-base antialiased tracking-tight font-sans text-white cursor-pointer" >Submit</span>
+            </button>
             <router-link :to="back_url" class="inline-flex mt-10 ml-2 items-center rounded-lg py-2 px-6 border border-gray-400">
                 <span class="text-center text-base antialiased tracking-tight font-sans text-gray-600">Cancel</span>
             </router-link>
@@ -16,6 +16,7 @@
 
 <script>
     import Swal from 'sweetalert2';
+    import {eventBus} from "../../../Models/_events";
 
     export default {
         name: "NitsForm",
@@ -23,22 +24,33 @@
             return {
                 errors: {},
                 loading: false,
+                form_data: {}
             }
         },
         props: {
-            forms: Object,
+            forms: Array,
             api_url: String,
             redirect: String,
             back_url: String,
             grid: Object
         },
+        created() {
+            eventBus.$on('nits-form-input', (data) => {
+                //We need to validate whether it is undefined or not....
+                this.form_data[data.field] = data.value
+                console.log(data)
+            })
+        },
         methods: {
             submit() {
+                console.log(Object.keys(this.form_data))
                 this.loading = true
                 const postData = {};
-                Object.keys(this.forms).forEach((key) => {
-                    postData[key] = this.forms[key].value
+
+                Object.keys(this.form_data).forEach((key) => {
+                    postData[key] = this.form_data[key].value
                 });
+
                 this.$api.post(this.api_url, postData).then(response => {
                     if (response.status === 200) {
                         Swal.fire(
@@ -59,14 +71,6 @@
                     this.loading = false
                     this.errors = error.response.data.errors
                 })
-            },
-            listensToEvent(field) {
-                Object.keys(this.forms).forEach((key) => {
-                    if(typeof this.forms[key].listensTo !== 'undefined' && this.forms[key].listensTo.length && this.forms[key].listensTo.includes(field)) {
-                        this.forms[key].attrs.query = { [field]: this.forms[field].value };
-                    }
-                });
-
             }
         },
         watch: {

@@ -1,6 +1,6 @@
 <template>
-    <div :class="this.span ? 'col-span-'+this.span : ' ' + this.start ? 'col-start-'+this.start : '' + this.end ? 'col-end-'+ this.end : ''">
-        <slot></slot>
+    <div :class="'grid '+ (this.cols ? 'grid-cols-'+this.cols + ' ' : ' ') +  (this.gap ? 'gap-' + this.gap + ' ' : ' ')">
+        <components  v-for="(element, index) in child_components" :key="index" :is="element.component" v-bind="element.attrs"></components>
     </div>
 </template>
 
@@ -16,7 +16,10 @@
             },
             end:{
                 type: String,
-            }
+            },
+            cols: Number,
+            gap: Number,
+            child_components: Array
         }
     }
 </script>

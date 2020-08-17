@@ -13,6 +13,8 @@
 </template>
 
 <script>
+    import {eventBus} from "../../../Models/_events";
+
     export default {
         name: "NitsCheckBox",
         props: {
@@ -27,10 +29,15 @@
             },
             value: '',
             placeholder: String,
+            model: String,
         },
         methods: {
             emitEvent(event) {
-                console.log(event);
+                const data = {
+                    field: this.model,
+                    value: event.target.checked
+                }
+                eventBus.$emit('nits-form-input', data)
                 this.$emit('input', event.target.checked)
             }
         },

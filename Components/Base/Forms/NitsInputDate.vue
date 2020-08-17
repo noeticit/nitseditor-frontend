@@ -99,6 +99,7 @@
             },
             placeholder: String,
             value: String,
+            model: String,
         },
         data() {
             return {

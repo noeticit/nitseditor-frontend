@@ -15,6 +15,8 @@
 </template>
 
 <script>
+    import {eventBus} from "../../../Models/_events";
+
     export default {
         name: "NitsInputFile",
         props: {
@@ -29,6 +31,7 @@
             },
             placeholder: String,
             value: Object,
+            model: String,
         },
         methods: {
             emitEvent(event) {
@@ -41,7 +44,12 @@
                         lastModifiedDate: event.target.files[0].lastModifiedDate,
                         base64: reader.result
                     };
-                    console.log(docs);
+                    // console.log(docs);
+                    const data = {
+                        field: this.model,
+                        value: docs
+                    }
+                    eventBus.$emit('nits-form-input', data)
                     this.$emit('input', docs)
                 };
             }

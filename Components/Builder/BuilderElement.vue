@@ -132,6 +132,15 @@
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
+                                            label:'Field Name',
+                                            placeholder: 'Enter field name',
+                                            model: 'model',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
                                             label:'Label',
                                             placeholder: 'Enter Label',
                                             model: 'label',
@@ -232,9 +241,18 @@
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
+                                            label:'Field Name',
+                                            placeholder: 'Enter field name',
+                                            model: 'model',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
                                             label:'Label',
                                             placeholder: 'Enter Label',
-                                            model: 'text',
+                                            model: 'label',
                                             value: ''
                                         }
                                     },
@@ -243,7 +261,7 @@
                                         attrs: {
                                             label:'Hint',
                                             placeholder: 'Enter Hint',
-                                            model: 'text',
+                                            model: 'hint',
                                             value: ''
                                         }
                                     },
@@ -310,6 +328,15 @@
                                     }
                                 },
                                 child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Field Name',
+                                            placeholder: 'Enter field name',
+                                            model: 'model',
+                                            value: ''
+                                        }
+                                    },
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
@@ -382,9 +409,18 @@
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
+                                            label:'Field Name',
+                                            placeholder: 'Enter field name',
+                                            model: 'model',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
                                             label:'Label',
                                             placeholder: 'Enter Label',
-                                            model: 'text',
+                                            model: 'label',
                                             value: ''
                                         }
                                     },
@@ -393,7 +429,7 @@
                                         attrs: {
                                             label:'Placeholder',
                                             placeholder: 'Enter Placeholder',
-                                            model: 'text',
+                                            model: 'placeholder',
                                             value: ''
                                         }
                                     },
@@ -402,7 +438,7 @@
                                         attrs: {
                                             label:'Hint',
                                             placeholder: 'Enter Hint',
-                                            model: 'text',
+                                            model: 'hint',
                                             value: ''
                                         }
                                     },
@@ -460,9 +496,18 @@
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
+                                            label:'Field Name',
+                                            placeholder: 'Enter field name',
+                                            model: 'model',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
                                             label:'Label',
                                             placeholder: 'Enter Label',
-                                            model: 'text',
+                                            model: 'label',
                                             value: ''
                                         }
                                     },
@@ -471,7 +516,7 @@
                                         attrs: {
                                             label:'Placeholder',
                                             placeholder: 'Enter Placeholder',
-                                            model: 'text',
+                                            model: 'placeholder',
                                             value: ''
                                         }
                                     },
@@ -480,7 +525,7 @@
                                         attrs: {
                                             label:'Hint',
                                             placeholder: 'Enter Hint',
-                                            model: 'text',
+                                            model: 'hint',
                                             value: ''
                                         }
                                     },
@@ -535,6 +580,15 @@
                                     }
                                 },
                                 child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Field Name',
+                                            placeholder: 'Enter field name',
+                                            model: 'model',
+                                            value: ''
+                                        }
+                                    },
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
@@ -617,9 +671,29 @@
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
+                                            label:'Field Name',
+                                            placeholder: 'Enter field name',
+                                            model: 'model',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'API URL',
+                                            placeholder: 'Enter api',
+                                            model: 'api_url',
+                                            value: '',
+                                            api_url:'',
+                                            option:[]
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
                                             label:'Label',
                                             placeholder: 'Enter Label',
-                                            model: 'text',
+                                            model: 'label',
                                             value: ''
                                         }
                                     },
@@ -628,7 +702,7 @@
                                         attrs: {
                                             label:'Placeholder',
                                             placeholder: 'Enter Placeholder',
-                                            model: 'text',
+                                            model: 'placeholder',
                                             value: ''
                                         }
                                     },
@@ -637,7 +711,7 @@
                                         attrs: {
                                             label:'Hint',
                                             placeholder: 'Enter Hint',
-                                            model: 'text',
+                                            model: 'hint',
                                             value: ''
                                         }
                                     },
@@ -650,7 +724,7 @@
                                                 {label: 'Yes', value: 'yes'},
                                                 {label: 'No', value: 'no'},
                                             ],
-                                            model: 'text',
+                                            model: 'field_name',
                                             value: ''
                                         }
                                     },
@@ -708,9 +782,29 @@
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
+                                            label:'Field Name',
+                                            placeholder: 'Enter field name',
+                                            model: 'model',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'API URL',
+                                            placeholder: 'Enter api',
+                                            model: 'api_url',
+                                            value: '',
+                                            api_url:'',
+                                            options: [],
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
                                             label:'Label',
                                             placeholder: 'Enter Label',
-                                            model: 'text',
+                                            model: 'label',
                                             value: ''
                                         }
                                     },
@@ -719,7 +813,7 @@
                                         attrs: {
                                             label:'Placeholder',
                                             placeholder: 'Enter Placeholder',
-                                            model: 'text',
+                                            model: 'placeholder',
                                             value: ''
                                         }
                                     },
@@ -728,7 +822,7 @@
                                         attrs: {
                                             label:'Hint',
                                             placeholder: 'Enter Hint',
-                                            model: 'text',
+                                            model: 'hint',
                                             value: ''
                                         }
                                     },
@@ -786,9 +880,18 @@
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
+                                            label:'Field Name',
+                                            placeholder: 'Enter field name',
+                                            model: 'model',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
                                             label:'Label',
                                             placeholder: 'Enter Label',
-                                            model: 'text',
+                                            model: 'label',
                                             value: ''
                                         }
                                     },
@@ -797,7 +900,7 @@
                                         attrs: {
                                             label:'Placeholder',
                                             placeholder: 'Enter Placeholder',
-                                            model: 'text',
+                                            model: 'placeholder',
                                             value: ''
                                         }
                                     },
@@ -806,7 +909,7 @@
                                         attrs: {
                                             label:'Hint',
                                             placeholder: 'Enter Hint',
-                                            model: 'text',
+                                            model: 'hint',
                                             value: ''
                                         }
                                     },
@@ -884,6 +987,15 @@
                                     }
                                 },
                                 child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Field Name',
+                                            placeholder: 'Enter field name',
+                                            model: 'model',
+                                            value: ''
+                                        }
+                                    },
                                     {
                                         component: 'nits-input-text',
                                         attrs: {
@@ -987,6 +1099,15 @@
                                     }
                                 },
                                 child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Field Name',
+                                            placeholder: 'Enter field name',
+                                            model: 'model',
+                                            value: ''
+                                        }
+                                    },
                                     {
                                         component: 'nits-input-text',
                                         attrs: {

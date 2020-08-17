@@ -1,6 +1,6 @@
 <template>
-    <div :class="this.span ? 'row-span-'+this.span : ' ' + this.start ? 'row-start-'+this.start : ' ' + this.end ? 'row-end-'+this.end : ' '">
-        <slot></slot>
+    <div class="grid-row">
+        <component v-for="(element, index) in child_components" :key="index" :is="element.component" v-bind="element.attrs"></component>
     </div>
 </template>
 
@@ -8,15 +8,8 @@
     export default {
         name: "nitsRow",
         props:{
-            span:{
-                type: String,
-            },
-            start:{
-                type: String,
-            },
-            end:{
-                type: String,
-            }
+            child_components: Array,
+            attrs: Object
         }
     }
 </script>

@@ -13,6 +13,8 @@
 </template>
 
 <script>
+    import {eventBus} from "../../../Models/_events";
+
     export default {
         name: "NitsInputText",
         props: {
@@ -29,11 +31,17 @@
                 type: String,
                 default: 'text'
             },
+            model: String,
             placeholder: String,
             value: '',
         },
         methods: {
             emitEvent() {
+                const data = {
+                    field: this.model,
+                    value: this.$refs.input.value
+                }
+                eventBus.$emit('nits-form-input', data)
                 this.$emit('input', this.$refs.input.value)
             }
         },

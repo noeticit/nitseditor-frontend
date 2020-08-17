@@ -282,7 +282,7 @@
             addColumn(type, index) {
                 this.selectColumn= false
                 let column_element = {
-                    component: 'column',
+                    component: 'nits-column',
                     attrs: {
                         child_components: []
                     }

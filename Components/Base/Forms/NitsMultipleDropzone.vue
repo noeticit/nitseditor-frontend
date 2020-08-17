@@ -22,6 +22,7 @@
 <script>
     import vue2Dropzone from 'vue2-dropzone'
     import 'vue2-dropzone/dist/vue2Dropzone.min.css'
+    import {eventBus} from "../../../Models/_events";
 
     export default {
         name: "NitsMultipleDropzone",
@@ -40,6 +41,7 @@
                 default: () => ''
             },
             placeholder: String,
+            model: String,
         },
         data(){
             return{
@@ -62,7 +64,16 @@
             afterComplete(file) {
                 const info = JSON.parse(file.xhr.response)
                 if(typeof info.link !== 'undefined')
+                {
+                    const data = {
+                        field: this.model,
+                        value: info.link
+                    }
+                    eventBus.$emit('nits-form-input', data)
+
                     this.$emit('input', info.link)
+                }
+
             }
         },
         computed: {

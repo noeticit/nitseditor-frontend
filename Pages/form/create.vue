@@ -181,7 +181,7 @@
         methods:{
             addRowField() {
                 const row_element = {
-                    component: 'row',
+                    component: 'nits-row',
                     title:'',
                     sub_title:'',
                     icon:'',

@@ -1,8 +1,7 @@
 <template>
     <div class="flex-col justify-start w-full">
-        <label class="mt-2 block uppercase tracking-wide text-gray-700 text-xs font-bold -ml-2 mb-2" for="grid-select">
-            {{label}}
-        </label>
+        <div class="mt-2 ml-2 block uppercase tracking-wide text-left text-gray-700 text-sm font-bold mb-2">{{ label }}</div>
+
         <div class="relative">
             <div
                     class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-4 -ml-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 flex flex-wrap"
@@ -104,6 +103,7 @@
         props: {
             label: String,
             placeholder: String,
+            model: String,
             hint: {
                 type: String,
                 default: () => ''
