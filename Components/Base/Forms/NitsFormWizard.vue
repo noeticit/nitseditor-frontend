@@ -1,7 +1,7 @@
 <template>
    <div>
        <div>
-           <ul class="list-reset pb-5 mt-5 w-full flex">
+           <ul class="list-reset pb-5 mt-5 w-full flex border-b">
                <li class="-mb-px hover:text-blue-700 px-2 w-48 cursor-pointer text-center" v-for="(item, key, index) in forms"  @click="activeTab = key">
                    <svg class="ml-16 focus:text-blue-500 h-10 w-10 mb-3 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                        <path fill-rule="evenodd" :d="item.icon"/>
@@ -9,20 +9,15 @@
                    <span class="text-sm focus:text-blue-500 hover:text-blue-500 font-semibold subpixel-antialiased capitalize text-gray-600">{{item.title}}</span>
                </li>
            </ul>
-           <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center"></div>
+<!--           <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center"></div>-->
 
            <div class="p-4" v-for="(item, key, index) in forms" v-show="key === activeTab">
                <div class="justify-between p-4 mt-3 text-center items-center">
                    <div class="pl-8 text-left text-lg focus:text-blue-500 font-semibold subpixel-antialiased capitalize text-gray-600 leading-snug tracking-normal">{{item.title}}</div>
                </div>
-               <div>
+               <div class="ml-10 mr-10">
                    <component :is="item.component" :key="index" v-bind="item.attrs"></component>
                </div>
-
-<!--               <div>-->
-<!--                   <component v-for="(element, element_key, form_index) in item.forms" :key="element_key" :is="element.type" v-bind="element.attrs" v-model="element.value" :error="errors[element_key]" @input="listensToEvent(key, element_key)"></component>-->
-<!--               </div>-->
-
                <div class="flex mt-10">
                    <button v-if="previous(key)" class="border border-teal-500 text-teal-500 block rounded-sm font-bold py-3 ml-16 px-5 mr-2 flex items-center hover:bg-teal-500 hover:text-white"  @click="previousTab(key)">
                        <svg class="h-5 w-5 mr-2 fill-current" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve">
@@ -39,12 +34,10 @@
                                 c-9.763,9.763-9.763,25.592,0,35.355l72.822,72.822H-24c-13.808,0-25,11.193-25,25S-37.808,422-24,422z"/>
                        </svg>
                    </button>
-<!--                   <button v-bind:class="{ 'spinner': loading }" v-else class="items-center rounded p-2 bg-blue-500 w-40 ml-12" @click="submit()">-->
-<!--                       <span class="text-center mr-2 text-sm antialiased tracking-wide leading-snug font-semibold font-sans text-white" >SUBMIT</span>-->
-<!--                   </button>-->
-                   <button v-bind:class="{ 'spinner': loading }" v-else class="bg-blue-600 w-32 text-white font-bold py-3 px-6 ml-12 border-b-4 hover:border-b-2 hover:border-t-2 border-blue-700 hover:border-blue-600 rounded" @click="submit()">
-                       Submit
+                   <button v-bind:class="{ 'spinner': loading }" v-else class="items-center rounded p-2 bg-blue-500 w-40 ml-12" @click="submit()">
+                       <span class="text-center mr-2 text-sm antialiased tracking-wide leading-snug font-semibold font-sans text-white" >SUBMIT</span>
                    </button>
+
                </div>
            </div>
        </div>
@@ -53,6 +46,7 @@
 
 <script>
     import Swal from 'sweetalert2';
+    import {eventBus} from "../../../Models/_events";
 
     export default {
         name: "NitsFormWizard",
@@ -60,7 +54,8 @@
             return {
                 errors: {},
                 loading: false,
-                activeTab: ''
+                activeTab: '',
+                form_data: {}
             }
         },
         props: {
@@ -72,23 +67,18 @@
         created() {
             if(this.active) this.activeTab = this.active;
             else this.activeTab = 0
+
+            eventBus.$on('nits-form-input', (data) => {
+                if(typeof data !== 'undefined' ||  data !== null )
+                    this.form_data[data.field] = data.value
+            })
         },
         methods:{
-            listensToEvent(tab, field) {
-                if(typeof this.forms[tab].forms !== 'undefined') {
-                    Object.keys(this.forms[tab].forms).forEach((key) => {
-                        if(typeof this.forms[tab].forms[key].listensTo !== 'undefined' && this.forms[tab].forms[key].listensTo.length && this.forms[tab].forms[key].listensTo.includes(field)) {
-                            this.forms[tab].forms[key].attrs.query[field] = this.forms[tab].forms[field].value;
-                            // console.log(this.forms[key].listensTo)
-                            // console.log('Coming from '+ field+' for field '+key);
-                            console.log(this.forms[tab].forms)
-                        }
-                    });
-                }
-            },
             next(key) {
                 var keys = Object.keys(this.forms);
+                console.log(keys)
                 var i = keys.indexOf(key);
+                console.log(key)
                 return i !== -1 && keys[i + 1] && this.forms[keys[i + 1]];
             },
             nextTab(key) {
@@ -108,21 +98,21 @@
             },
             submit() {
                 this.loading = true
-                const postData = {};
-                Object.keys(this.forms).forEach((key) => {
-                    Object.keys(this.forms[key].forms).forEach((form_key) => {
-                        postData[form_key] = this.forms[key].forms[form_key].value
-                    });
-                })
+                // const postData = {};
+                // Object.keys(this.forms).forEach((key) => {
+                //     Object.keys(this.forms[key].forms).forEach((form_key) => {
+                //         postData[form_key] = this.forms[key].forms[form_key].value
+                //     });
+                // })
 
-                this.$api.post(this.api_url, postData).then(response => {
+                this.$api.post(this.api_url, this.form_data).then(response => {
                     if (response.status === 200) {
                         Swal.fire(
                             'Created!',
                             'Your data has been created.',
                             'success'
                         ).then(() => {
-                            this.$router.push({name: this.redirect});
+                            this.$router.push({name: this.redirect_api});
                         })
 
                     }
@@ -135,6 +125,14 @@
                     this.loading = false
                     this.errors = error.response.data.errors
                 })
+            }
+        },
+        watch: {
+            $props: {
+                handler() {
+                    console.log("From form object")
+                },
+                deep: true
             }
         }
     }
