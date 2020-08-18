@@ -683,9 +683,12 @@
                                             label:'API URL',
                                             placeholder: 'Enter api',
                                             model: 'api_url',
-                                            value: '',
+                                            value: [],
                                             api_url:'',
-                                            option:[]
+                                            options:[],
+                                            multiple:true,
+                                            optionLabel:'name',
+                                            trackBy:'id'
                                         }
                                     },
                                     {

@@ -4,7 +4,7 @@
 
         <div class="relative">
             <div
-                    class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-4 -ml-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 flex flex-wrap"
+                    class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 flex flex-wrap"
                     :class="errorDisplay ? 'border-red-500 focus:bg-white focus:border-red-500': ''"
             >
                 <input class="flex w-full px-2 outline-none pt-1 pb-1 ml-2 mb-1 bg-gray-200 text-gray-700 z-10" :placeholder="placeholder"
@@ -43,7 +43,7 @@
 </template>
 
 <script>
-    import { createPopper } from '@popperjs/core';
+    import {eventBus} from "../../../Models/_events";
 
     export default {
         data() {
@@ -55,12 +55,12 @@
             }
         },
         created(){
-            this.selectedElements = this.value;
-            // if(this.api_url) {
-            //     this.fetchOptions();
-            // }
-            // else
-            //     this.optionsData = this.options
+            this.selectedElements = typeof this.value !== 'undefined' ? this.value : [];
+            if(this.api_url) {
+                this.fetchOptions();
+            }
+            else
+                this.optionsData = this.options
         },
         methods: {
             selectElement(item) {
@@ -73,6 +73,11 @@
                 }
                 else this.selectedElements = item;
 
+                const data = {
+                    field: this.model,
+                    value: this.selectedElements
+                }
+                eventBus.$emit('nits-form-input', data)
                 this.$emit('input', this.selectedElements)
             },
             selected(item) {
@@ -83,7 +88,7 @@
             },
             fetchOptions() {
                 this.$api.post(this.api_url, this.query).then(response => {
-                    if(response.status === 200) this.optionsData = response.data.options;
+                    if(response.status === 200) this.optionsData = response.data.data;
                 })
             },
             removeElement(item) {
@@ -132,7 +137,7 @@
                 type: Boolean,
                 default: false
             },
-            value: '',
+            value: Array,
             api_url: {
                 type: String
             },
@@ -150,7 +155,7 @@
             computedOptions() {
                 const searchTerm = this.search.toLowerCase();
                 if(this.searchable && searchTerm) this.$emit('searchQuery', this.search);
-                if(this.options.length) return this.options.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
+                if(this.optionsData.length) return this.optionsData.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
                 else return [];
             },
             checkValue() {

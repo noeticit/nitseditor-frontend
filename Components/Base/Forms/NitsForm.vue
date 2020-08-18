@@ -3,11 +3,14 @@
         <div v-for="(item, index) in forms">
             <component :is="item.component" :key="index" v-bind="item.attrs"></component>
         </div>
+
+<!--        <component :is="forms[0].component" v-bind="forms[0].attrs"></component>-->
+
         <div class="flex m-4 w-full">
             <button v-bind:class="{ 'spinner': loading }" class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700" @click.prevent="submit">
                 <span class="text-center text-base antialiased tracking-tight font-sans text-white cursor-pointer" >Submit</span>
             </button>
-            <router-link :to="back_url" class="inline-flex mt-10 ml-2 items-center rounded-lg py-2 px-6 border border-gray-400">
+            <router-link :to="back_api" class="inline-flex mt-10 ml-2 items-center rounded-lg py-2 px-6 border border-gray-400">
                 <span class="text-center text-base antialiased tracking-tight font-sans text-gray-600">Cancel</span>
             </router-link>
         </div>
@@ -30,34 +33,26 @@
         props: {
             forms: Array,
             api_url: String,
-            redirect: String,
-            back_url: String,
-            grid: Object
+            redirect_api: String,
+            back_api: String,
         },
         created() {
             eventBus.$on('nits-form-input', (data) => {
-                //We need to validate whether it is undefined or not....
-                this.form_data[data.field] = data.value
-                console.log(data)
+                if(typeof data !== 'undefined' ||  data !== null )
+                    this.form_data[data.field] = data.value
             })
         },
         methods: {
             submit() {
                 this.loading = true
-                const postData = {};
-
-                Object.keys(this.form_data).forEach((key) => {
-                    postData[key] = this.form_data[key]
-                });
-
-                this.$api.post(this.api_url, postData).then(response => {
+                this.$api.post(this.api_url, this.form_data).then(response => {
                     if (response.status === 200) {
                         Swal.fire(
                             'Created!',
                             'Your data has been created.',
                             'success'
                         ).then(() => {
-                            this.$router.push({name: this.redirect});
+                            this.$router.push({name: this.redirect_api});
                         })
 
                     }
