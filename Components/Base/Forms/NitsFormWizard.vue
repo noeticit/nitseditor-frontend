@@ -1,23 +1,28 @@
 <template>
    <div>
        <div>
-           <ul class="list-reset pb-5 mt-5 w-full flex border-b">
-               <li class="-mb-px hover:text-blue-700 px-2 w-48 cursor-pointer text-center" v-for="(item, key, index) in contents"  @click="activeTab = key">
+           <ul class="list-reset pb-5 mt-5 w-full flex">
+               <li class="-mb-px hover:text-blue-700 px-2 w-48 cursor-pointer text-center" v-for="(item, key, index) in forms"  @click="activeTab = key">
                    <svg class="ml-16 focus:text-blue-500 h-10 w-10 mb-3 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                        <path fill-rule="evenodd" :d="item.icon"/>
                    </svg>
-                   <span class="text-sm focus:text-blue-500 hover:text-blue-500 font-semibold subpixel-antialiased capitalize text-gray-600">{{key}}</span>
+                   <span class="text-sm focus:text-blue-500 hover:text-blue-500 font-semibold subpixel-antialiased capitalize text-gray-600">{{item.title}}</span>
                </li>
            </ul>
-<!--           <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center"></div>-->
+           <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center"></div>
 
-           <div class="p-4" v-for="(item, key, index) in contents" v-show="key === activeTab">
+           <div class="p-4" v-for="(item, key, index) in forms" v-show="key === activeTab">
                <div class="justify-between p-4 mt-3 text-center items-center">
-                   <div class=" ml-16 pl-8 text-left text-lg focus:text-blue-500 font-semibold subpixel-antialiased capitalize text-gray-600 leading-snug tracking-normal">{{item.title}}</div>
+                   <div class="pl-8 text-left text-lg focus:text-blue-500 font-semibold subpixel-antialiased capitalize text-gray-600 leading-snug tracking-normal">{{item.title}}</div>
                </div>
-               <nits-grid class="ml-16 pl-12" v-bind="grid">
-                   <component v-for="(element, element_key, form_index) in item.forms" :key="element_key" :is="element.type" v-bind="element.attrs" v-model="element.value" :error="errors[element_key]" @input="listensToEvent(key, element_key)"></component>
-               </nits-grid>
+               <div>
+                   <component :is="item.component" :key="index" v-bind="item.attrs"></component>
+               </div>
+
+<!--               <div>-->
+<!--                   <component v-for="(element, element_key, form_index) in item.forms" :key="element_key" :is="element.type" v-bind="element.attrs" v-model="element.value" :error="errors[element_key]" @input="listensToEvent(key, element_key)"></component>-->
+<!--               </div>-->
+
                <div class="flex mt-10">
                    <button v-if="previous(key)" class="border border-teal-500 text-teal-500 block rounded-sm font-bold py-3 ml-16 px-5 mr-2 flex items-center hover:bg-teal-500 hover:text-white"  @click="previousTab(key)">
                        <svg class="h-5 w-5 mr-2 fill-current" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve">
@@ -59,56 +64,54 @@
             }
         },
         props: {
-            contents: Object,
+            forms: Array,
             api_url: String,
-            redirect: String,
-            back_url: String,
-            grid: Object,
-            active: String
+            redirect_api: String,
+            back_api: String,
         },
         created() {
             if(this.active) this.activeTab = this.active;
-            else this.activeTab = Object.keys(this.contents)[0]
+            else this.activeTab = 0
         },
         methods:{
             listensToEvent(tab, field) {
-                if(typeof this.contents[tab].forms !== 'undefined') {
-                    Object.keys(this.contents[tab].forms).forEach((key) => {
-                        if(typeof this.contents[tab].forms[key].listensTo !== 'undefined' && this.contents[tab].forms[key].listensTo.length && this.contents[tab].forms[key].listensTo.includes(field)) {
-                            this.contents[tab].forms[key].attrs.query[field] = this.contents[tab].forms[field].value;
+                if(typeof this.forms[tab].forms !== 'undefined') {
+                    Object.keys(this.forms[tab].forms).forEach((key) => {
+                        if(typeof this.forms[tab].forms[key].listensTo !== 'undefined' && this.forms[tab].forms[key].listensTo.length && this.forms[tab].forms[key].listensTo.includes(field)) {
+                            this.forms[tab].forms[key].attrs.query[field] = this.forms[tab].forms[field].value;
                             // console.log(this.forms[key].listensTo)
                             // console.log('Coming from '+ field+' for field '+key);
-                            console.log(this.contents[tab].forms)
+                            console.log(this.forms[tab].forms)
                         }
                     });
                 }
             },
             next(key) {
-                var keys = Object.keys(this.contents);
+                var keys = Object.keys(this.forms);
                 var i = keys.indexOf(key);
-                return i !== -1 && keys[i + 1] && this.contents[keys[i + 1]];
+                return i !== -1 && keys[i + 1] && this.forms[keys[i + 1]];
             },
             nextTab(key) {
-                var keys = Object.keys(this.contents);
+                var keys = Object.keys(this.forms);
                 var i = keys.indexOf(key);
                 this.activeTab = keys[i+1];
             },
             previous(key) {
-                var keys = Object.keys(this.contents);
+                var keys = Object.keys(this.forms);
                 var i = keys.indexOf(key);
-                return i !== -1 && keys[i - 1] && this.contents[keys[i - 1]];
+                return i !== -1 && keys[i - 1] && this.forms[keys[i - 1]];
             },
             previousTab(key) {
-                var keys = Object.keys(this.contents);
+                var keys = Object.keys(this.forms);
                 var i = keys.indexOf(key);
                 this.activeTab = keys[i-1];
             },
             submit() {
                 this.loading = true
                 const postData = {};
-                Object.keys(this.contents).forEach((key) => {
-                    Object.keys(this.contents[key].forms).forEach((form_key) => {
-                        postData[form_key] = this.contents[key].forms[form_key].value
+                Object.keys(this.forms).forEach((key) => {
+                    Object.keys(this.forms[key].forms).forEach((form_key) => {
+                        postData[form_key] = this.forms[key].forms[form_key].value
                     });
                 })
 
