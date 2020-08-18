@@ -283,7 +283,7 @@
                                                 {label: 'True', value: 'true'},
                                                 {label: 'False', value: 'false'},
                                             ],
-                                            model: 'animation',
+                                            model: 'checked',
                                             value: ''
                                         },
                                     },
@@ -316,7 +316,7 @@
                         title:'CK Editor',
                         icon:'/project-assets/images/ckeditor.png',
                         desc:'Place content elements inside the CK editor',
-                        component_name: 'ck_editor',
+                        component_name: 'nits-ckeditor',
                         options: {
                             general: {
                                 component: 'nits-form-check',

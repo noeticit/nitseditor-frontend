@@ -2,7 +2,7 @@
     <div class="flex-col justify-start w-full">
         <div class="mt-2 ml-2 block uppercase tracking-wide text-left text-gray-700 text-sm font-bold mb-2">{{ label }}</div>
         <input
-            class="form-checkbox ml-2"
+            class="form-checkbox ml-4"
             :class="errorDisplay ? 'border-red-500 focus:bg-white focus:border-red-500': ''"
             type="checkbox"
             :checked="value" @input="emitEvent($event)" ref="checkbox"
