@@ -115,7 +115,7 @@
                     {
                         id: 1,
                         title:'Input Text',
-                        icon:'/project-assets/images/row.png',
+                        icon:'/nits-assets/images/row.png',
                         desc:'Input text box',
                         component_name: 'nits-input-text',
                         options: {
@@ -224,7 +224,7 @@
                     {
                         id: 2,
                         title:'Check Box',
-                        icon:'/project-assets/images/checkbox.png',
+                        icon:'/nits-assets/images/checkbox.png',
                         desc:'Place content elements inside the Checkbox',
                         component_name: 'nits-check-box',
                         options: {
@@ -314,7 +314,7 @@
                     {
                         id: 3,
                         title:'CK Editor',
-                        icon:'/project-assets/images/ckeditor.png',
+                        icon:'/nits-assets/images/ckeditor.png',
                         desc:'Place content elements inside the CK editor',
                         component_name: 'nits-ckeditor',
                         options: {
@@ -392,7 +392,7 @@
                     {
                         id: 4,
                         title:'Date Picker',
-                        icon:'/project-assets/images/date1.jpg',
+                        icon:'/nits-assets/images/date1.jpg',
                         desc:'Place content elements inside the row',
                         component_name: 'nits-date-picker',
                         options: {
@@ -479,7 +479,7 @@
                     {
                         id: 5,
                         title:'Input File',
-                        icon:'/project-assets/images/inputfile.png',
+                        icon:'/nits-assets/images/inputfile.png',
                         desc:'Place content elements inside the row',
                         component_name: 'input_file',
                         options: {
@@ -562,11 +562,11 @@
                             }
                         }
                     },
-                    // {id: 6, title:'Form', icon:'/project-assets/images/form.jpg', desc:'Place content elements inside the row',  component_name: 'form'},
+                    // {id: 6, title:'Form', icon:'/nits-assets/images/form.jpg', desc:'Place content elements inside the row',  component_name: 'form'},
                     {
                         id: 7,
                         title:'Input Date',
-                        icon:'/project-assets/images/inputdate.png',
+                        icon:'/nits-assets/images/inputdate.png',
                         desc:'Place content elements inside the row',
                         component_name: 'nits-input-date',
                         options: {
@@ -654,7 +654,7 @@
                     {
                         id: 8,
                         title:'Multi Select',
-                        icon:'/project-assets/images/multiselect.png',
+                        icon:'/nits-assets/images/multiselect.png',
                         desc:'Place content elements inside the row',
                         component_name: 'nits-input-multi-select',
                         options: {
@@ -778,7 +778,7 @@
                     {
                         id: 9,
                         title:'Single Select',
-                        icon:'/project-assets/images/select1.png',
+                        icon:'/nits-assets/images/select1.png',
                         desc:'Place content elements inside the row',
                         component_name: 'nits-input-select',
                         options: {
@@ -876,7 +876,7 @@
                     {
                         id: 10,
                         title:'Text',
-                        icon:'/project-assets/images/text.png',
+                        icon:'/nits-assets/images/text.png',
                         desc:'Place content elements inside the row',
                         component_name: 'text',
                         options: {
@@ -986,7 +986,7 @@
                     {
                         id: 11,
                         title:'Multiple DropZone',
-                        icon:'/project-assets/images/multidropzone.png',
+                        icon:'/nits-assets/images/multidropzone.png',
                         desc:'Place content elements inside the row',
                         component_name: 'multiple_dropzone',
                         options: {
@@ -1098,7 +1098,7 @@
                     {
                         id: 12,
                         title:'Single DropZone',
-                        icon:'/project-assets/images/dropzone.png',
+                        icon:'/nits-assets/images/dropzone.png',
                         desc:'Place content elements inside the row',
                         component_name: 'nits-single-dropzone',
                         options: {
@@ -1192,19 +1192,19 @@
                             }
                         }
                     },
-                    // {id: 13, title:'Button', icon:'/project-assets/images/button.png', desc:'Place content elements inside the row',  component_name: 'button'},
-                    // {id: 14, title:'Group Button', icon:'/project-assets/images/groupbutton.png', desc:'Place content elements inside the row',  component_name: 'group_button'},
-                    // {id: 15, title:'Pagination', icon:'/project-assets/images/pagination.png', desc:'Place content elements inside the row',  component_name: 'pagination'},
-                    // {id: 16, title:'Table', icon:'/project-assets/images/table.png', desc:'Place content elements inside the row',  component_name: 'table'},
-                    // {id: 17, title:'Tabs', icon:'/project-assets/images/tabs.png', desc:'Place content elements inside the row',  component_name: 'tabs'},
-                    // {id: 18, title:'Alert', icon:'/project-assets/images/alert.png', desc:'Place content elements inside the row',  component_name: 'alert'},
-                    // {id: 19, title:'Bread Crumb', icon:'/project-assets/images/timeline-512.png', desc:'Place content elements inside the row',  component_name: 'bread_crumb'},
-                    // {id: 20, title:'Footer', icon:'/project-assets/images/footer.png', desc:'Place content elements inside the row',  component_name: 'footer'},
-                    // {id: 21, title:'Menu', icon:'/project-assets/images/menu.png', desc:'Place content elements inside the row',  component_name: 'menu'},
-                    // {id: 22, title:'Video Player', icon:'/project-assets/images/video.png', desc:'Place content elements inside the row',  component_name: 'video_player'},
-                    // {id: 23, title:'Progress Bar', icon:'/project-assets/images/progress.png', desc:'Place content elements inside the Progress Bar',  component_name: 'progress_bar'},
-                    // {id: 24, title:'Empty Space', icon:'/project-assets/images/emptyspace.png', desc:'Place content elements inside the Empty Space',  component_name: 'empty_space'},
-                    // {id: 25, title:'Pie Chart', icon:'/project-assets/images/piechart.png', desc:'Place content elements inside the row',  component_name: 'pie_chart'},
+                    // {id: 13, title:'Button', icon:'/nits-assets/images/button.png', desc:'Place content elements inside the row',  component_name: 'button'},
+                    // {id: 14, title:'Group Button', icon:'/nits-assets/images/groupbutton.png', desc:'Place content elements inside the row',  component_name: 'group_button'},
+                    // {id: 15, title:'Pagination', icon:'/nits-assets/images/pagination.png', desc:'Place content elements inside the row',  component_name: 'pagination'},
+                    // {id: 16, title:'Table', icon:'/nits-assets/images/table.png', desc:'Place content elements inside the row',  component_name: 'table'},
+                    // {id: 17, title:'Tabs', icon:'/nits-assets/images/tabs.png', desc:'Place content elements inside the row',  component_name: 'tabs'},
+                    // {id: 18, title:'Alert', icon:'/nits-assets/images/alert.png', desc:'Place content elements inside the row',  component_name: 'alert'},
+                    // {id: 19, title:'Bread Crumb', icon:'/nits-assets/images/timeline-512.png', desc:'Place content elements inside the row',  component_name: 'bread_crumb'},
+                    // {id: 20, title:'Footer', icon:'/nits-assets/images/footer.png', desc:'Place content elements inside the row',  component_name: 'footer'},
+                    // {id: 21, title:'Menu', icon:'/nits-assets/images/menu.png', desc:'Place content elements inside the row',  component_name: 'menu'},
+                    // {id: 22, title:'Video Player', icon:'/nits-assets/images/video.png', desc:'Place content elements inside the row',  component_name: 'video_player'},
+                    // {id: 23, title:'Progress Bar', icon:'/nits-assets/images/progress.png', desc:'Place content elements inside the Progress Bar',  component_name: 'progress_bar'},
+                    // {id: 24, title:'Empty Space', icon:'/nits-assets/images/emptyspace.png', desc:'Place content elements inside the Empty Space',  component_name: 'empty_space'},
+                    // {id: 25, title:'Pie Chart', icon:'/nits-assets/images/piechart.png', desc:'Place content elements inside the row',  component_name: 'pie_chart'},
                 ]
             }
         },
