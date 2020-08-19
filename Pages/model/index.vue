@@ -3,12 +3,12 @@
         <base-bread-crumb-one name="Model" :breadcrumbs="breadcrumbs"></base-bread-crumb-one>
         <base-portlet-one title="Models">
             <div slot="toolbox">
-<!--                <router-link to="/nits-admin/model/create" class="inline-flex items-center rounded-full py-2 px-4 bg-teal-400">-->
-<!--                    <span class="text-center text-sm antialiased tracking-tight font-light font-sans text-white">Add new</span>-->
-<!--                </router-link>-->
-                <button @click="showModal" class="inline-flex items-center rounded-full shadow-lg py-2 px-4 bg-teal-500 focus:outline-none  hover:bg-blue-600">
+                <router-link to="/nits-admin/model/create" class="inline-flex items-center rounded-full py-2 px-4 bg-teal-400">
                     <span class="text-center text-sm antialiased tracking-tight font-light font-sans text-white">Add new</span>
-                </button>
+                </router-link>
+<!--                <button @click="showModal" class="inline-flex items-center rounded-full shadow-lg py-2 px-4 bg-teal-500 focus:outline-none  hover:bg-blue-600">-->
+<!--                    <span class="text-center text-sm antialiased tracking-tight font-light font-sans text-white">Add new</span>-->
+<!--                </button>-->
             </div>
             <div v-if="!loading">
                 <div class="p-4">
