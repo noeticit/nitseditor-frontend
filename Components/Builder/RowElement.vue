@@ -34,9 +34,6 @@
                             <button @click="isOpen2 = ! isOpen2" class="text-white bg-gray-500 bg-transparent border border-solid border-gray-500 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
                                 Close
                             </button>
-                            <button @click.prevent="addFormTitle()" class="text-white bg-blue-600 bg-transparent border border-solid border-blue-600 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" >
-                                Save
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -263,21 +260,6 @@
                     arr.push(value);
                 }
                 return arr;
-            },
-            addFormTitle() {
-
-                // const row_element = {
-                //     component: 'row',
-                //     title:'',
-                //     sub_title:'',
-                //     icon:'',
-                //     attrs: {
-                //         child_components: [
-                //
-                //         ]
-                //     }
-                // }
-                // eventBus.$emit('add-row-title', {row_element: row_element , row_index: this.row_index});
             },
             addColumn(type, index) {
                 this.selectColumn= false

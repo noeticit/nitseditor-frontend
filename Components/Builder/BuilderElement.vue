@@ -686,7 +686,6 @@
                                             value: [],
                                             api_url:'',
                                             options:[],
-                                            multiple:true,
                                             optionLabel:'name',
                                             trackBy:'id'
                                         }
@@ -727,7 +726,18 @@
                                                 {label: 'Yes', value: 'yes'},
                                                 {label: 'No', value: 'no'},
                                             ],
-                                            model: 'field_name',
+                                            model: 'multiple',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label:'Select Model',
+                                            placeholder: 'Select one',
+                                            options: [],
+                                            model: 'model_select',
+                                            api_url:'/nits-system-api/model',
                                             value: ''
                                         }
                                     },
