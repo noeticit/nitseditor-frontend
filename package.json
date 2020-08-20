@@ -1,6 +1,6 @@
 {
   "name": "nitseditor-frontend",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Front end scafolding for nitseditor",
   "main": "app.js",
   "scripts": {
@@ -75,7 +75,7 @@
     "sass": "^1.26.10",
     "sass-loader": "^8.0.2",
     "sweetalert2": "^9.17.1",
-    "tailwindcss": "^1.6.2",
+    "tailwindcss": "^1.7.0",
     "tailwindcss-plugins": "^0.3.0",
     "tailwindcss-spinner": "^1.2.0",
     "v-click-outside": "^3.0.1",
