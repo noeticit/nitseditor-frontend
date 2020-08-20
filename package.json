@@ -1,6 +1,6 @@
 {
   "name": "nitseditor-frontend",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Front end scafolding for nitseditor",
   "main": "app.js",
   "scripts": {
