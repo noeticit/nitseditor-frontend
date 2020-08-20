@@ -37,7 +37,6 @@
                    <button v-bind:class="{ 'spinner': loading }" v-else class="items-center rounded p-2 bg-blue-500 w-40 ml-12" @click="submit()">
                        <span class="text-center mr-2 text-sm antialiased tracking-wide leading-snug font-semibold font-sans text-white" >SUBMIT</span>
                    </button>
-
                </div>
            </div>
        </div>
@@ -79,7 +78,8 @@
                 console.log(keys)
                 var i = keys.indexOf(key);
                 console.log(key)
-                return i !== -1 && keys[i + 1] && this.forms[keys[i + 1]];
+                // return i !== -1 && keys[i + 1] && this.forms[keys[i + 1]];
+
             },
             nextTab(key) {
                 var keys = Object.keys(this.forms);
