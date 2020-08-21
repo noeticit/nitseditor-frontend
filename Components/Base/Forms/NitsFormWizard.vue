@@ -2,7 +2,7 @@
    <div>
        <div>
            <ul class="list-reset pb-5 mt-5 w-full flex border-b">
-               <li class="-mb-px hover:text-blue-700 px-2 w-48 cursor-pointer text-center" v-for="(item, key, index) in forms"  @click="activeTab = key">
+               <li class="-mb-px hover:text-blue-700 px-2 w-48 cursor-pointer text-center" v-for="(item, index) in forms"  @click="activeTab = index">
                    <svg class="ml-16 focus:text-blue-500 h-10 w-10 mb-3 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                        <path fill-rule="evenodd" :d="item.icon"/>
                    </svg>
@@ -11,21 +11,21 @@
            </ul>
 <!--           <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center"></div>-->
 
-           <div class="p-4" v-for="(item, key, index) in forms" v-show="key === activeTab">
+           <div class="p-4" v-for="(item, index) in forms" v-show="activeTab === index">
                <div class="justify-between p-4 mt-3 text-center items-center">
                    <div class="pl-8 text-left text-lg focus:text-blue-500 font-semibold subpixel-antialiased capitalize text-gray-600 leading-snug tracking-normal">{{item.title}}</div>
                </div>
                <div class="ml-10 mr-10">
-                   <component :is="item.component" :key="index" v-bind="item.attrs"></component>
+                   <component :is="item.component" v-bind="item.attrs"></component>
                </div>
                <div class="flex mt-10">
-                   <button v-if="previous(key)" class="border border-teal-500 text-teal-500 block rounded-sm font-bold py-3 ml-16 px-5 mr-2 flex items-center hover:bg-teal-500 hover:text-white"  @click="previousTab(key)">
+                   <button v-if="index !== 0" class="border border-teal-500 text-teal-500 block rounded-sm font-bold py-3 ml-16 px-5 mr-2 flex items-center hover:bg-teal-500 hover:text-white"  @click="activeTab = (index -1)">
                        <svg class="h-5 w-5 mr-2 fill-current" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve">
                            <path id="XMLID_10_" d="M438,372H36.355l72.822-72.822c9.763-9.763,9.763-25.592,0-35.355c-9.763-9.764-25.593-9.762-35.355,0 l-115.5,115.5C-46.366,384.01-49,390.369-49,397s2.634,12.989,7.322,17.678l115.5,115.5c9.763,9.762,25.593,9.763,35.355,0 c9.763-9.763,9.763-25.592,0-35.355L36.355,422H438c13.808,0,25-11.193,25-25S451.808,372,438,372z"></path>
                         </svg>
                        Previous
                    </button>
-                   <button v-if="next(key)" class="border border-teal-500 bg-teal-500 text-white block rounded-sm font-bold py-3 px-4 ml-64 flex items-center" @click="nextTab(key)">
+                   <button v-if="index !== (forms.length-1)" class="border border-teal-500 bg-teal-500 text-white block rounded-sm font-bold py-3 px-4 ml-64 flex items-center" @click="activeTab = (index+1)">
                        Next Step
                        <svg class="h-5 w-5 ml-2 fill-current" clasversion="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve">
@@ -73,38 +73,8 @@
             })
         },
         methods:{
-            next(key) {
-                var keys = Object.keys(this.forms);
-                console.log(keys)
-                var i = keys.indexOf(key);
-                console.log(key)
-                // return i !== -1 && keys[i + 1] && this.forms[keys[i + 1]];
-
-            },
-            nextTab(key) {
-                var keys = Object.keys(this.forms);
-                var i = keys.indexOf(key);
-                this.activeTab = keys[i+1];
-            },
-            previous(key) {
-                var keys = Object.keys(this.forms);
-                var i = keys.indexOf(key);
-                return i !== -1 && keys[i - 1] && this.forms[keys[i - 1]];
-            },
-            previousTab(key) {
-                var keys = Object.keys(this.forms);
-                var i = keys.indexOf(key);
-                this.activeTab = keys[i-1];
-            },
             submit() {
                 this.loading = true
-                // const postData = {};
-                // Object.keys(this.forms).forEach((key) => {
-                //     Object.keys(this.forms[key].forms).forEach((form_key) => {
-                //         postData[form_key] = this.forms[key].forms[form_key].value
-                //     });
-                // })
-
                 this.$api.post(this.api_url, this.form_data).then(response => {
                     if (response.status === 200) {
                         Swal.fire(
