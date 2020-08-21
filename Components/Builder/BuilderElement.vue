@@ -813,6 +813,17 @@
                                         }
                                     },
                                     {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label:'Select Model',
+                                            placeholder: 'Select one',
+                                            options: [],
+                                            model: 'model_select',
+                                            api_url:'/nits-system-api/model',
+                                            value: ''
+                                        }
+                                    },
+                                    {
                                         component: 'nits-input-text',
                                         attrs: {
                                             label:'Label',
