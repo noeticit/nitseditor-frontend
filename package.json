@@ -1,5 +1,5 @@
 {
-  "name": "nitseditor-frontend",
+  "name": "@noeticit/nitseditor-frontend",
   "version": "0.0.10",
   "description": "Front end scafolding for nitseditor",
   "main": "app.js",
@@ -22,7 +22,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/noeticit/nitseditor.git"
+    "url": "git+https://github.com/noeticit/nitseditor-frontend.git"
   },
   "homepage": "https://nitseditor.com",
   "dependencies": {
