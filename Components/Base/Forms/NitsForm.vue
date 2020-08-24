@@ -4,8 +4,6 @@
             <component :is="item.component" :key="index" v-bind="item.attrs"></component>
         </div>
 
-<!--        <component :is="forms[0].component" v-bind="forms[0].attrs"></component>-->
-
         <div class="flex m-4 w-full">
             <button v-bind:class="{ 'spinner': loading }" class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700" @click.prevent="submit">
                 <span class="text-center text-base antialiased tracking-tight font-sans text-white cursor-pointer" >Submit</span>

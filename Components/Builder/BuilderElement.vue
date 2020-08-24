@@ -313,10 +313,10 @@
                     },
                     {
                         id: 3,
-                        title:'CK Editor',
+                        title:'Editor',
                         icon:'/nits-assets/images/ckeditor.png',
-                        desc:'Place content elements inside the CK editor',
-                        component_name: 'nits-ckeditor',
+                        desc:'Place content elements inside the editor',
+                        component_name: 'nits-editor',
                         options: {
                             general: {
                                 component: 'nits-form-check',
