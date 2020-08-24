@@ -7,7 +7,7 @@
                     <div class="">
                         <div class="grid grid-cols-5 gap-4 mb-8">
                             <div class="col-span-4">
-                                <input class="w-full focus:outline-none border border-gray-700 h-8 px-8 rounded" v-model="form_title" placeholder="Add Title" type="text" >
+                                <input class="w-full focus:outline-none border border-gray-700 h-8 px-8 rounded" v-model="form_title" placeholder="Enter Title" type="text" >
                             </div>
                             <div class="col-span-1 ">
                                 <button class="text-sm focus:outline-none focus:bg-blue-600 hover:bg-blue-500 rounded bg-blue-600 px-6 py-2 font-semibold tracking-normal text-white" @click.prevent="submit">Submit</button>
@@ -97,7 +97,6 @@
                                             <div class="grid grid-cols-2 gap-4 p-2 m-2">
                                                 <component v-for="(item, index) in form" :key="index" :is="item.component" v-bind="item.attrs" v-model="item.attrs.value"></component>
                                             </div>
-<!--                                            <nits-form class="px-6" :forms="forms" :grid="grid"></nits-form>-->
                                         </div>
                                         <div class="flex items-center mt-5 justify-end p-6 border-t border-solid border-gray-300 bg-gray-300 rounded-b">
                                             <button @click="isOpen2 = ! isOpen2" class="text-white bg-gray-500 bg-transparent border border-solid border-gray-500 active:bg-gray-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
@@ -163,6 +162,17 @@
                             placeholder: "Enter back url",
                             type: "text",
                             model: "form_cancel_or_back_url",
+                            value: ''
+                        }
+                    },
+                    {
+                        component:"nits-input-text",
+                        attrs:{
+                            child_components: [],
+                            label: "Enter Model name",
+                            placeholder: "Enter name",
+                            type: "text",
+                            model: "form_model_name",
                             value: ''
                         }
                     },
