@@ -10,7 +10,6 @@ export default class auth {
     //Login
     login(user) {
         return new Promise((resolve, reject) => {
-
             const postData = {
                 grant_type: 'password',
                 username: user.email,
@@ -23,7 +22,40 @@ export default class auth {
             axios.post('/nits-system-api/login', postData).then(response => {
                 if (response.status === 200) {
                     store.dispatch('storeUserData', response.data);
-
+                    const authUser = {};
+                    if(response.data.role === 'Institute'){
+                        axios.get('/api/institute-profile',
+                            {
+                                headers: {
+                                    'Accept': 'application/json',
+                                    'Authorization': 'Bearer ' + response.data.access_token
+                                }
+                            }).then(response => {
+                            if(response.status === 200)
+                            {
+                                // store.dispatch('storeInstituteData', response.data.institute);
+                                authUser.institute_id = response.data.institute.id;
+                                session.set('auth_user', authUser);
+                            }
+                        });
+                    }
+                    //check student call 'student-profile"
+                    else if(response.data.role === 'Student'){
+                        axios.get('/api/student-profile',
+                            {
+                                headers: {
+                                    'Accept': 'application/json',
+                                    'Authorization': 'Bearer ' + response.data.access_token
+                                }
+                            }).then(response => {
+                            if(response.status === 200)
+                            {
+                                // store.dispatch('storeStudentData', response.data.student);
+                                authUser.student_id = response.data.student.id;
+                                session.set('auth_user', authUser);
+                            }
+                        });
+                    }
                     resolve({
                         redirect: '/dashboard'
                     });
