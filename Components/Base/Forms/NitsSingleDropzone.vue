@@ -57,6 +57,19 @@
                 },
             }
         },
+        mounted() {
+          if(this.value)
+          {
+              var file = { size: 123, name: "Icon", type: "image/png" };
+              var url = this.value;
+              this.$refs.myVueDropzone.manuallyAddFile(file, url);
+          }
+        },
+        created() {
+            console.log('value : ' + this.value)
+            if(this.value)
+                this.afterComplete(this.value);
+        },
         methods:{
             removeAllFiles() {
                 this.$refs.myVueDropzone.removeAllFiles();

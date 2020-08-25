@@ -5,8 +5,11 @@
         </div>
 
         <div class="flex m-4 w-full">
-            <button v-bind:class="{ 'spinner': loading }" class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700" @click.prevent="submit">
+            <button v-if="type === 'create'" v-bind:class="{ 'spinner': loading }" class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700" @click.prevent="submit">
                 <span class="text-center text-base antialiased tracking-tight font-sans text-white cursor-pointer" >Submit</span>
+            </button>
+            <button v-if="type === 'update'" v-bind:class="{ 'spinner': loading }" class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700" @click.prevent="update">
+                <span class="text-center text-base antialiased tracking-tight font-sans text-white cursor-pointer" >Update</span>
             </button>
             <router-link :to="back_api" class="inline-flex mt-10 ml-2 items-center rounded-lg py-2 px-6 border border-gray-400">
                 <span class="text-center text-base antialiased tracking-tight font-sans text-gray-600">Cancel</span>
@@ -33,6 +36,8 @@
             api_url: String,
             redirect_api: String,
             back_api: String,
+            type: String,
+            id: Number,
         },
         created() {
             eventBus.$on('nits-form-input', (data) => {
@@ -41,6 +46,28 @@
             })
         },
         methods: {
+            update() {
+                this.$api.update(this.api_url+'/'+this.id, this.form_data).then(response => {
+                    if (response.status === 200) {
+                        Swal.fire(
+                            'Updated!',
+                            'Your data has been Updated.',
+                            'success'
+                        ).then(() => {
+                            this.$router.push({name: this.redirect_api});
+                        })
+
+                    }
+                }).catch((error) => {
+                    Swal.fire({
+                        title: "Oops!",
+                        text: error.response.data.message,
+                        type: "error",
+                    })
+                    this.loading = false
+                    this.errors = error.response.data.errors
+                })
+            },
             submit() {
                 this.loading = true
                 this.$api.post(this.api_url, this.form_data).then(response => {
