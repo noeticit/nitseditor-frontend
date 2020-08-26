@@ -65,17 +65,12 @@
               this.$refs.myVueDropzone.manuallyAddFile(file, url);
           }
         },
-        created() {
-            console.log('value : ' + this.value)
-            if(this.value)
-                this.afterComplete(this.value);
-        },
         methods:{
             removeAllFiles() {
                 this.$refs.myVueDropzone.removeAllFiles();
             },
             afterComplete(file) {
-                const info = JSON.parse(file.xhr.response)
+                const info = typeof file.xhr !== 'undefined' && typeof file.xhr.response !== 'undefined' ? JSON.parse(file.xhr.response) : {};
                 if(typeof info.link !== 'undefined')
                 {
                     const data = {

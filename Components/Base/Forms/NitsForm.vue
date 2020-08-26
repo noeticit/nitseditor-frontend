@@ -44,19 +44,22 @@
                 if(typeof data !== 'undefined' ||  data !== null )
                     this.form_data[data.field] = data.value
             })
+
+            eventBus.$on('form-data', (data) => {
+                this.form_data = data
+            })
         },
         methods: {
             update() {
                 this.$api.update(this.api_url+'/'+this.id, this.form_data).then(response => {
-                    if (response.status === 200) {
+                    if (response.status === 202) {
                         Swal.fire(
                             'Updated!',
                             'Your data has been Updated.',
                             'success'
                         ).then(() => {
-                            this.$router.push({name: this.redirect_api});
+                            this.$router.push({path: this.redirect_api});
                         })
-
                     }
                 }).catch((error) => {
                     Swal.fire({
@@ -77,7 +80,7 @@
                             'Your data has been created.',
                             'success'
                         ).then(() => {
-                            this.$router.push({name: this.redirect_api});
+                            this.$router.push({path: this.redirect_api});
                         })
 
                     }
