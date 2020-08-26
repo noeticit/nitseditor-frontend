@@ -243,6 +243,7 @@
                     console.log(a);
                     post_data[a.attrs.model] = a.attrs.value
                 })
+                console.log(post_data)
                 post_data['form_title'] = this.form_title;
                 post_data['form_template_id'] = this.form_template_id;
                 post_data['form_data'] = JSON.stringify(this.elements);

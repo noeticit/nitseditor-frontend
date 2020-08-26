@@ -2,7 +2,7 @@
     <div class="relative">
         <div class="w-full ">
             <div class="w-1/5 z-40">
-             <nav class="fixed right-0 px-10 mt-10 mx-auto mr-6">
+              <nav class="fixed right-0 px-10 mt-10 mx-auto mr-6">
             <div class=" flex flex-col ">
                 <div class="float-left  h-18 ">
                     <img class="h-16 w-56 pr-5 mt-6" src="/nits-assets/images/nits-editor-logo.png">
@@ -242,14 +242,14 @@
                  </div>
 
         </nav>
-           <div class="absolute bottom-0 px-56  ml-64 mb-64 ">
-              <h3 class=" font-black text-5xl text-white -ml-32 mb-64">{{heading}}</h3>
-           </div>
-        </div>
+               <div class="absolute bottom-0 px-56  ml-64 mb-64 ">
+                  <h3 class=" font-black text-5xl text-white -ml-32 mb-64">{{heading}}</h3>
+               </div>
+            </div>
             <div class="h-full w-4/5">
                 <img src="/project-assets/images/HiRes1-150x150.jpg.jpg" class="" alt=" image">
             </div>
-    </div>
+        </div>
     </div>
 
 </template>
