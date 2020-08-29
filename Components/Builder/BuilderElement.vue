@@ -38,7 +38,7 @@
                                 </svg>
                             </div>
 
-                            <div class="flex bg-blue-500 p-2 text-white hover:bg-blue-600 rounded-r text-normal">
+                            <div @click.prevent="removeField()" class="flex bg-blue-500 p-2 text-white hover:bg-blue-600 rounded-r text-normal">
                                 <svg class="h-4 w-4 mx-1 font-bold" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M14.348 14.849a1.2 1.2 0 01-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 11-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 111.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 111.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 010 1.698z"/>
                                 </svg>
@@ -1216,6 +1216,102 @@
                     // {id: 23, title:'Progress Bar', icon:'/nits-assets/images/progress.png', desc:'Place content elements inside the Progress Bar',  component_name: 'progress_bar'},
                     // {id: 24, title:'Empty Space', icon:'/nits-assets/images/emptyspace.png', desc:'Place content elements inside the Empty Space',  component_name: 'empty_space'},
                     // {id: 25, title:'Pie Chart', icon:'/nits-assets/images/piechart.png', desc:'Place content elements inside the row',  component_name: 'pie_chart'},
+                    {
+                        id: 26,
+                        title:'Form Repeater',
+                        icon:'/nits-assets/images/row.png',
+                        desc:'Add multiple fields',
+                        component_name: 'nits-form-repeater',
+                        options: {
+                            general: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                        // rows: "1"
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Field Name',
+                                            placeholder: 'Enter field name',
+                                            model: 'model',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Label',
+                                            placeholder: 'Enter Label',
+                                            model: 'label',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Placeholder',
+                                            placeholder: 'Enter Placeholder',
+                                            model: 'placeholder',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Hint',
+                                            placeholder: 'Enter Hint',
+                                            model: 'hint',
+                                            value: ''
+                                        }
+                                    },
+                                ]
+                            },
+                            display: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Extra Class Name',
+                                            placeholder: 'Enter Text',
+                                            model: 'class',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Element ID',
+                                            placeholder: 'Enter Element ID',
+                                            model: 'id',
+                                            value: ''
+                                        },
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label: 'CSS Animation',
+                                            placeholder: 'Select ',
+                                            options: [],
+                                            model: 'animation',
+                                            value: ''
+                                        },
+                                    },
+                                ]
+                            }
+                        }
+                    },
                 ]
             }
         },
@@ -1234,6 +1330,15 @@
             })
         },
         methods:{
+            removeField(){
+                let data ={
+                    row: this.row_index,
+                    column: this.column_index,
+                    element: this.element_index
+                }
+                console.log(data)
+                eventBus.$emit('remove-row-element', data );
+            },
             addElement(item){
                 let component_element = {
                     component: item.component_name,

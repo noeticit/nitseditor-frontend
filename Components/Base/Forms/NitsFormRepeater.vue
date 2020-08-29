@@ -27,25 +27,41 @@
         name: "NitsFormRepeater",
         data() {
             return {
-                formData: ''
+                formData: '',
+                forms: {
+                    code: {
+                        type: 'nits-input-text',
+                        attrs: {
+                            label:'Text',
+                            placeholder: 'Enter text',
+                        },
+                        value: ''
+                    },
+                    discount:{
+                        type: 'nits-input-text',
+                        attrs: {
+                            label:'Text 2',
+                            placeholder: 'Enter text',
+                        },
+                        value: ''
+                    },
+                },
             }
         },
-        props: {
-            forms: {
-                type: Array
-            }
-        },
+        // props: {
+        //     forms: {
+        //         type: Array
+        //     }
+        // },
         methods: {
             deleteRow(index) {
                 this.forms.splice(index, 1)
             },
             addRow() {
                 const formData = this.forms[0];
-                console.log(formData)
                 Object.keys(formData).forEach((key) => {
                     formData[key].value = '';
                 })
-                console.log(formData);
                 this.forms.push(formData);
             },
             emitEvent() {
@@ -59,7 +75,6 @@
                     emittedData.push(objectValuePair);
                 })
 
-                // console.log(emittedData)
                 this.$emit('input', emittedData);
             }
         },

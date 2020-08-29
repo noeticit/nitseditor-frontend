@@ -219,6 +219,10 @@
                 })
 
                 eventBus.$on('remove-row-column', (data) => {
+                    this.elements[data.row].attrs.child_components[data.column].splice(data.element,1)
+                })
+
+                eventBus.$on('remove-row-element', (data) => {
                     this.elements[data.row].attrs.child_components.splice(data.column,1)
                 })
 
