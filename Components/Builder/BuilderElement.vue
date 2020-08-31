@@ -27,7 +27,7 @@
                                 <div class="ml-2 text-xs mx-2">Text Block </div>
                             </div>
                             <div class="flex bg-blue-500 p-2  text-white hover:bg-blue-600 text-normal">
-                                <svg @click="isOpen2 = ! isOpen2" class="h-4 w-4 mx-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <svg @click.prevent="openModal(elementData.title)" class="h-4 w-4 mx-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M14.69 2.661c-1.894-1.379-3.242-1.349-3.754-1.266a.538.538 0 00-.35.223l-4.62 6.374-2.263 3.123a2.447 2.447 0 00-.462 1.307l-.296 5.624a.56.56 0 00.76.553l5.256-2.01c.443-.17.828-.465 1.106-.849l1.844-2.545 5.036-6.949a.56.56 0 00.1-.423c-.084-.526-.487-1.802-2.357-3.162zM8.977 15.465l-2.043.789a.19.19 0 01-.221-.062 5.145 5.145 0 00-1.075-1.03 5.217 5.217 0 00-1.31-.706.192.192 0 01-.126-.192l.122-2.186.549-.755s1.229-.169 2.833.998c1.602 1.166 1.821 2.388 1.821 2.388l-.55.756z"/>
                                 </svg>
                             </div>
@@ -58,6 +58,16 @@
                 :element="element"
                 :component_name="elementData.component_name"
         ></popup-options>
+        <form-popup-options
+                v-if="isOpen3"
+                :elementData="elementData"
+                :row_index="row_index"
+                :column_index="column_index"
+                :element_index="element_index"
+                :element="element"
+                :component_name="elementData.component_name"
+        ></form-popup-options>
+
         <div v-if="isOpen" class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
             <div class="border border-teal-500 shadow-lg modal-container bg-white w-full mx-20 rounded shadow-lg z-50 overflow-y-auto">
                 <div class="flex relative justify-between border-solid border-b-2 p-2 text-center items-center">
@@ -108,6 +118,7 @@
                 Add: false,
                 isVisible: false,
                 isOpen2: false,
+                isOpen3: false,
                 isOpen: false,
                 addedRow: false,
                 hideButton: true,
@@ -1229,7 +1240,6 @@
                                     grid: {
                                         cols: "1",
                                         gap: "6",
-                                        // rows: "1"
                                     }
                                 },
                                 child_components: [
@@ -1266,6 +1276,19 @@
                                             label:'Hint',
                                             placeholder: 'Enter Hint',
                                             model: 'hint',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label:'Select Type',
+                                            placeholder: 'Select one',
+                                            options: [
+                                                {label: 'Input Field', value: 'nits-input-text'},
+                                                {label: 'Number', value: 'number'},
+                                            ],
+                                            model: 'type',
                                             value: ''
                                         }
                                     },
@@ -1322,14 +1345,24 @@
             row_index: Number,
             column_index: Number,
             element_index: Number,
+            old_column_index: Number,
+            old_element_index: Number,
             attrs: Object
         },
         created() {
             eventBus.$on('popup-close', () => {
                 this.isOpen2 = false
+                this.isOpen3 = false
             })
+
         },
         methods:{
+            openModal(title){
+                if (title === 'Form Repeater')
+                    this.isOpen3 = true
+                else
+                    this.isOpen2 = true
+            },
             removeField(){
                 let data ={
                     row: this.row_index,
@@ -1348,7 +1381,11 @@
                     },
                 }
 
-                eventBus.$emit('add-component', {component: component_element, row_index: this.row_index, column_index: this.column_index, element_index: this.element_index});
+                // if(this.old_element_index)
+                //     eventBus.$emit('form-repeater-add-component', {component: component_element, row_index: this.row_index, column_index: this.column_index, element_index: this.element_index , old_element_index : this.old_element_index, old_column_index: this.old_column_index});
+                // else
+                    eventBus.$emit('add-component', {component: component_element, row_index: this.row_index, column_index: this.column_index, element_index: this.element_index});
+
 
                 this.Add = true
                 this.addedRow = true
