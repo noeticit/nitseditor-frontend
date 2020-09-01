@@ -19,8 +19,8 @@
                         :component="item.component"
                         :row_index="row_index"
                         :column_index="column_index"
-                        :old_column_index="old_column_index"
-                        :old_element_index="element_index"
+                        :form_column_index="form_column_index"
+                        :form_element_index="form_element_index"
                         :element_index="index"
                         :element="item"
                         class="border bg-white"
@@ -46,8 +46,8 @@
             gap: Number,
             row_index: Number,
             column_index: Number,
-            element_index: Number,
-            old_column_index: Number,
+            form_element_index: Number,
+            form_column_index: Number,
             child_components: Array
         },
         methods: {

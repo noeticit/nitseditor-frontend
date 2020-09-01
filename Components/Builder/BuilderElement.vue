@@ -48,6 +48,18 @@
                 </div>
             </div>
         </div>
+        <form-popup-options
+                v-if="isOpen4"
+                :elementData="elementData"
+                tab_index="general"
+                :row_index="row_index"
+                :column_index="column_index"
+                :element_index="element_index"
+                :form_element_index="form_element_index"
+                :form_column_index="form_column_index"
+                :element="element"
+                :component_name="elementData.component_name"
+        ></form-popup-options>
         <popup-options
                 v-if="isOpen2"
                 :elementData="elementData"
@@ -58,7 +70,7 @@
                 :element="element"
                 :component_name="elementData.component_name"
         ></popup-options>
-        <form-popup-options
+        <form-popup-modal
                 v-if="isOpen3"
                 :elementData="elementData"
                 :row_index="row_index"
@@ -66,7 +78,7 @@
                 :element_index="element_index"
                 :element="element"
                 :component_name="elementData.component_name"
-        ></form-popup-options>
+        ></form-popup-modal>
 
         <div v-if="isOpen" class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
             <div class="border border-teal-500 shadow-lg modal-container bg-white w-full mx-20 rounded shadow-lg z-50 overflow-y-auto">
@@ -119,6 +131,7 @@
                 isVisible: false,
                 isOpen2: false,
                 isOpen3: false,
+                isOpen4: false,
                 isOpen: false,
                 addedRow: false,
                 hideButton: true,
@@ -1345,21 +1358,27 @@
             row_index: Number,
             column_index: Number,
             element_index: Number,
-            old_column_index: Number,
-            old_element_index: Number,
+            form_column_index: Number,
+            form_element_index: Number,
             attrs: Object
         },
         created() {
             eventBus.$on('popup-close', () => {
                 this.isOpen2 = false
+            })
+            eventBus.$on('form-repeater-close', () => {
                 this.isOpen3 = false
             })
-
+            eventBus.$on('form-popup-close', () => {
+                this.isOpen4 = false
+            })
         },
         methods:{
             openModal(title){
                 if (title === 'Form Repeater')
                     this.isOpen3 = true
+                else if(typeof this.form_element_index !== "undefined")
+                    this.isOpen4 = true
                 else
                     this.isOpen2 = true
             },
@@ -1369,7 +1388,6 @@
                     column: this.column_index,
                     element: this.element_index
                 }
-                console.log(data)
                 eventBus.$emit('remove-row-element', data );
             },
             addElement(item){
@@ -1381,11 +1399,10 @@
                     },
                 }
 
-                // if(this.old_element_index)
-                //     eventBus.$emit('form-repeater-add-component', {component: component_element, row_index: this.row_index, column_index: this.column_index, element_index: this.element_index , old_element_index : this.old_element_index, old_column_index: this.old_column_index});
-                // else
+                if(typeof this.form_element_index === 'undefined')
                     eventBus.$emit('add-component', {component: component_element, row_index: this.row_index, column_index: this.column_index, element_index: this.element_index});
-
+                else
+                    eventBus.$emit('form-repeater-add-component', {component: component_element, row_index: this.row_index, column_index: this.column_index, element_index: this.element_index , form_element_index : this.form_element_index, form_column_index: this.form_column_index});
 
                 this.Add = true
                 this.addedRow = true

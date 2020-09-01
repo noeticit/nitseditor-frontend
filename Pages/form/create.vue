@@ -234,17 +234,26 @@
                 })
 
                 eventBus.$on('add-component', (data) => {
+                    console.log('add comp')
                     this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components.splice(data.element_index, 1, data.component);
                 });
 
                 eventBus.$on('form-repeater-add-component', (data) => {
-                    this.elements[data.row_index].attrs.child_components[data.old_column_index].attrs.child_components[data.old_element_index].attrs.child_components[data.column_index].attrs.child_components.splice(data.element_index, 1, data.component);
+                    console.log('form rep')
+                    this.elements[data.row_index].attrs.child_components[data.form_column_index].attrs.child_components[data.form_element_index].attrs.child_components[data.column_index].attrs.child_components.splice(data.element_index, 1, data.component);
                 });
 
                 eventBus.$on('individual-element-attributes', (data) => {
                     let attributes = this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs;
                     attributes[data.field] = data.value
                     this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs = attributes;
+                })
+
+                eventBus.$on('form-repeater-individual-element-attributes', (data) => {
+                    console.log(data)
+                    let attributes = this.elements[data.row_index].attrs.child_components[data.form_column_index].attrs.child_components[data.form_element_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs;
+                    attributes[data.field] = data.value
+                    this.elements[data.row_index].attrs.child_components[data.form_column_index].attrs.child_components[data.form_element_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs = attributes;
                 })
 
                 eventBus.$on('form-repeater-add-column', (data) => {
