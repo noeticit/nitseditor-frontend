@@ -10,6 +10,7 @@
                         <th class="text-center" v-if="typeof headerStyle[header.key] !== 'undefined'" :style="headerStyle[header.key]">
 
                             <input class="mr-2 leading-tight" v-if="header.key === 'index'" type="checkbox" v-model="selectAll">
+                            <a v-if="header.key === 'index'">Sr No.</a>
 
                             <a v-if="header.key === 'edit' && ['crm'].includes(location)">Edit</a>
 

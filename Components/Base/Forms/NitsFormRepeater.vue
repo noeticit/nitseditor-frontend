@@ -3,7 +3,7 @@
 <!--        <component v-for="(element, index) in child_components" :key="index" :is="element.component" v-bind="element.attrs"></component>-->
 
         <div v-for="(form,index) in child_components" :key="index">
-            <nits-grid rows="2" cols="4" gap="4" flow="row">
+            <nits-grid rows="2" :cols="form.attrs.cols" :gap="form.attrs.gap" flow="row">
                 <component  :is="form.component" v-bind="form.attrs"></component>
                 <button v-if="form.attrs.child_components.length" @click.prevent="deleteRow(index)" class="">
                     <svg class="w-6 h-6 ml-6 mt-4" version="1.1" id="Squared_cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
