@@ -1,9 +1,11 @@
 <template>
     <div>
-        <div v-for="(form,index) in forms" :key="index">
+<!--        <component v-for="(element, index) in child_components" :key="index" :is="element.component" v-bind="element.attrs"></component>-->
+
+        <div v-for="(form,index) in child_components" :key="index">
             <nits-grid rows="2" cols="4" gap="4" flow="row">
-                <component v-for="(element, key, form_index) in form" :key="form_index" :is="element.type" v-bind="element.attrs" v-model="element.value"></component>
-                <button @click.prevent="deleteRow(index)" class="">
+                <component  :is="form.component" v-bind="form.attrs"></component>
+                <button v-if="form.attrs.child_components.length" @click.prevent="deleteRow(index)" class="">
                     <svg class="w-6 h-6 ml-6 mt-4" version="1.1" id="Squared_cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                          y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                         <path fill="#C0C0C0" d="M16,2H4C2.9,2,2,2.9,2,4v12c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V4C18,2.9,17.1,2,16,2z M13.061,14.789
@@ -48,21 +50,25 @@
                 },
             }
         },
-        // props: {
-        //     forms: {
-        //         type: Array
-        //     }
-        // },
+        props: {
+            child_components: Array
+        },
+        created() {
+            console.log(this.child_components)
+        },
         methods: {
             deleteRow(index) {
-                this.forms.splice(index, 1)
+                this.child_components[index].attrs.child_components.splice(index, 1)
             },
             addRow() {
-                const formData = this.forms[0];
-                Object.keys(formData).forEach((key) => {
-                    formData[key].value = '';
+                const formData = this.child_components[0].attrs.child_components;
+                console.log(formData)
+                formData.forEach((key) => {
+                    console.log(key)
+                    // formData[key].value = '';
+                    this.child_components[0].attrs.child_components.push(key);
                 })
-                this.forms.push(formData);
+                // this.child_components[0].attrs.child_components.push(formData);
             },
             emitEvent() {
                 const emittedData = [];
