@@ -57,12 +57,20 @@
                 },
             }
         },
+        mounted() {
+          if(this.value)
+          {
+              var file = { size: 123, name: "Icon", type: "image/png" };
+              var url = this.value;
+              this.$refs.myVueDropzone.manuallyAddFile(file, url);
+          }
+        },
         methods:{
             removeAllFiles() {
                 this.$refs.myVueDropzone.removeAllFiles();
             },
             afterComplete(file) {
-                const info = JSON.parse(file.xhr.response)
+                const info = typeof file.xhr !== 'undefined' && typeof file.xhr.response !== 'undefined' ? JSON.parse(file.xhr.response) : {};
                 if(typeof info.link !== 'undefined')
                 {
                     const data = {
