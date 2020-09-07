@@ -1,6 +1,6 @@
  <template>
      <div class="flex flex-col">
-         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8" v-if="!loading">
+         <div class="-my-2 sm:-mx-6 lg:-mx-8" v-if="!loading">
              <div class="text-gray-700 text-teal-600 my-2 ml-8 text-left text-md antialiased leading-none tracking-normal font-sans font-medium">Showing Results {{tableData.meta.from}} to {{tableData.meta.to}} of {{tableData.meta.total}}</div>
              <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                  <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
