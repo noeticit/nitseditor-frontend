@@ -15,9 +15,6 @@
                             </div>
 
                         </div>
-<!--                        <div class="w-full text-left pb-5 antialiased tracking-tigh font-sans">-->
-<!--                            <input class="w-full focus:outline-none border border-gray-700 h-8 px-8 rounded" placeholder="Add Title" type="text" >-->
-<!--                        </div>-->
                         <div class="flex-col w-full justify-center">
                             <div class="h-full bg-white text-center items-center">
                                 <div class="flex bg-blue-500 justify-between w-full">
@@ -209,6 +206,11 @@
                         this.elements[data.index].attrs.child_components.push(data.column)
                 });
 
+                eventBus.$on('form-repeater-add-columns', (data) => {
+                    if(typeof this.elements[data.element_index] !== 'undefined')
+                        this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs.child_components.push(data.column)
+                });
+
                 eventBus.$on('remove-row', (index) => {
                     this.elements.splice(index, 1)
                 })
@@ -219,6 +221,10 @@
                 })
 
                 eventBus.$on('remove-row-column', (data) => {
+                    this.elements[data.row].attrs.child_components[data.column].splice(data.element,1)
+                })
+
+                eventBus.$on('remove-row-element', (data) => {
                     this.elements[data.row].attrs.child_components.splice(data.column,1)
                 })
 
@@ -228,13 +234,30 @@
                 })
 
                 eventBus.$on('add-component', (data) => {
+                    console.log('add comp')
                     this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components.splice(data.element_index, 1, data.component);
+                });
+
+                eventBus.$on('form-repeater-add-component', (data) => {
+                    console.log('form rep')
+                    this.elements[data.row_index].attrs.child_components[data.form_column_index].attrs.child_components[data.form_element_index].attrs.child_components[data.column_index].attrs.child_components.splice(data.element_index, 1, data.component);
                 });
 
                 eventBus.$on('individual-element-attributes', (data) => {
                     let attributes = this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs;
                     attributes[data.field] = data.value
                     this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs = attributes;
+                })
+
+                eventBus.$on('form-repeater-individual-element-attributes', (data) => {
+                    console.log(data)
+                    let attributes = this.elements[data.row_index].attrs.child_components[data.form_column_index].attrs.child_components[data.form_element_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs;
+                    attributes[data.field] = data.value
+                    this.elements[data.row_index].attrs.child_components[data.form_column_index].attrs.child_components[data.form_element_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs = attributes;
+                })
+
+                eventBus.$on('form-repeater-add-column', (data) => {
+                   this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs.child_components.push(data.component);
                 })
             },
             submit() {

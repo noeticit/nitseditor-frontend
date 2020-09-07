@@ -27,7 +27,7 @@
                                 <div class="ml-2 text-xs mx-2">Text Block </div>
                             </div>
                             <div class="flex bg-blue-500 p-2  text-white hover:bg-blue-600 text-normal">
-                                <svg @click="isOpen2 = ! isOpen2" class="h-4 w-4 mx-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <svg @click.prevent="openModal(elementData.title)" class="h-4 w-4 mx-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M14.69 2.661c-1.894-1.379-3.242-1.349-3.754-1.266a.538.538 0 00-.35.223l-4.62 6.374-2.263 3.123a2.447 2.447 0 00-.462 1.307l-.296 5.624a.56.56 0 00.76.553l5.256-2.01c.443-.17.828-.465 1.106-.849l1.844-2.545 5.036-6.949a.56.56 0 00.1-.423c-.084-.526-.487-1.802-2.357-3.162zM8.977 15.465l-2.043.789a.19.19 0 01-.221-.062 5.145 5.145 0 00-1.075-1.03 5.217 5.217 0 00-1.31-.706.192.192 0 01-.126-.192l.122-2.186.549-.755s1.229-.169 2.833.998c1.602 1.166 1.821 2.388 1.821 2.388l-.55.756z"/>
                                 </svg>
                             </div>
@@ -38,7 +38,7 @@
                                 </svg>
                             </div>
 
-                            <div class="flex bg-blue-500 p-2 text-white hover:bg-blue-600 rounded-r text-normal">
+                            <div @click.prevent="removeField()" class="flex bg-blue-500 p-2 text-white hover:bg-blue-600 rounded-r text-normal">
                                 <svg class="h-4 w-4 mx-1 font-bold" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M14.348 14.849a1.2 1.2 0 01-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 11-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 111.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 111.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 010 1.698z"/>
                                 </svg>
@@ -48,6 +48,18 @@
                 </div>
             </div>
         </div>
+        <form-popup-options
+                v-if="isOpen4"
+                :elementData="elementData"
+                tab_index="general"
+                :row_index="row_index"
+                :column_index="column_index"
+                :element_index="element_index"
+                :form_element_index="form_element_index"
+                :form_column_index="form_column_index"
+                :element="element"
+                :component_name="elementData.component_name"
+        ></form-popup-options>
         <popup-options
                 v-if="isOpen2"
                 :elementData="elementData"
@@ -58,6 +70,16 @@
                 :element="element"
                 :component_name="elementData.component_name"
         ></popup-options>
+        <form-popup-modal
+                v-if="isOpen3"
+                :elementData="elementData"
+                :row_index="row_index"
+                :column_index="column_index"
+                :element_index="element_index"
+                :element="element"
+                :component_name="elementData.component_name"
+        ></form-popup-modal>
+
         <div v-if="isOpen" class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
             <div class="border border-teal-500 shadow-lg modal-container bg-white w-full mx-20 rounded shadow-lg z-50 overflow-y-auto">
                 <div class="flex relative justify-between border-solid border-b-2 p-2 text-center items-center">
@@ -108,6 +130,8 @@
                 Add: false,
                 isVisible: false,
                 isOpen2: false,
+                isOpen3: false,
+                isOpen4: false,
                 isOpen: false,
                 addedRow: false,
                 hideButton: true,
@@ -1216,6 +1240,114 @@
                     // {id: 23, title:'Progress Bar', icon:'/nits-assets/images/progress.png', desc:'Place content elements inside the Progress Bar',  component_name: 'progress_bar'},
                     // {id: 24, title:'Empty Space', icon:'/nits-assets/images/emptyspace.png', desc:'Place content elements inside the Empty Space',  component_name: 'empty_space'},
                     // {id: 25, title:'Pie Chart', icon:'/nits-assets/images/piechart.png', desc:'Place content elements inside the row',  component_name: 'pie_chart'},
+                    {
+                        id: 26,
+                        title:'Form Repeater',
+                        icon:'/nits-assets/images/row.png',
+                        desc:'Add multiple fields',
+                        component_name: 'nits-form-repeater',
+                        options: {
+                            general: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Field Name',
+                                            placeholder: 'Enter field name',
+                                            model: 'model',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Label',
+                                            placeholder: 'Enter Label',
+                                            model: 'label',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Placeholder',
+                                            placeholder: 'Enter Placeholder',
+                                            model: 'placeholder',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Hint',
+                                            placeholder: 'Enter Hint',
+                                            model: 'hint',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label:'Select Type',
+                                            placeholder: 'Select one',
+                                            options: [
+                                                {label: 'Input Field', value: 'nits-input-text'},
+                                                {label: 'Number', value: 'number'},
+                                            ],
+                                            model: 'type',
+                                            value: ''
+                                        }
+                                    },
+                                ]
+                            },
+                            display: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Extra Class Name',
+                                            placeholder: 'Enter Text',
+                                            model: 'class',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Element ID',
+                                            placeholder: 'Enter Element ID',
+                                            model: 'id',
+                                            value: ''
+                                        },
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label: 'CSS Animation',
+                                            placeholder: 'Select ',
+                                            options: [],
+                                            model: 'animation',
+                                            value: ''
+                                        },
+                                    },
+                                ]
+                            }
+                        }
+                    },
                 ]
             }
         },
@@ -1226,14 +1358,38 @@
             row_index: Number,
             column_index: Number,
             element_index: Number,
+            form_column_index: Number,
+            form_element_index: Number,
             attrs: Object
         },
         created() {
             eventBus.$on('popup-close', () => {
                 this.isOpen2 = false
             })
+            eventBus.$on('form-repeater-close', () => {
+                this.isOpen3 = false
+            })
+            eventBus.$on('form-popup-close', () => {
+                this.isOpen4 = false
+            })
         },
         methods:{
+            openModal(title){
+                if (title === 'Form Repeater')
+                    this.isOpen3 = true
+                else if(typeof this.form_element_index !== "undefined")
+                    this.isOpen4 = true
+                else
+                    this.isOpen2 = true
+            },
+            removeField(){
+                let data ={
+                    row: this.row_index,
+                    column: this.column_index,
+                    element: this.element_index
+                }
+                eventBus.$emit('remove-row-element', data );
+            },
             addElement(item){
                 let component_element = {
                     component: item.component_name,
@@ -1243,7 +1399,10 @@
                     },
                 }
 
-                eventBus.$emit('add-component', {component: component_element, row_index: this.row_index, column_index: this.column_index, element_index: this.element_index});
+                if(typeof this.form_element_index === 'undefined')
+                    eventBus.$emit('add-component', {component: component_element, row_index: this.row_index, column_index: this.column_index, element_index: this.element_index});
+                else
+                    eventBus.$emit('form-repeater-add-component', {component: component_element, row_index: this.row_index, column_index: this.column_index, element_index: this.element_index , form_element_index : this.form_element_index, form_column_index: this.form_column_index});
 
                 this.Add = true
                 this.addedRow = true

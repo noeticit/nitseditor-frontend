@@ -38,6 +38,8 @@
             row_index: Number,
             column_index: Number,
             element_index: Number,
+            form_element_index: Number,
+            form_column_index: Number,
             component_name: String,
             element: Object
         },
@@ -47,11 +49,17 @@
                     row_index: this.row_index,
                     column_index: this.column_index,
                     element_index: this.element_index,
+                    form_element_index: this.form_element_index,
+                    form_column_index: this.form_column_index,
                     field: field,
                     value: this.child_components[index].attrs.value,
                     component_name: this.component_name
                 };
-                eventBus.$emit('individual-element-attributes', this.details)
+
+                if(typeof this.form_element_index === 'undefined')
+                    eventBus.$emit('individual-element-attributes', this.details)
+                else
+                    eventBus.$emit('form-repeater-individual-element-attributes', this.details)
             }
         }
     }
