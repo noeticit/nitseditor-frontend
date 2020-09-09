@@ -2,34 +2,34 @@
      <div class="flex flex-col">
          <div class="-my-2 sm:-mx-6 lg:-mx-8" v-if="!loading">
              <div class="text-gray-700 text-teal-600 my-2 ml-8 text-left text-md antialiased leading-none tracking-normal font-sans font-medium">Showing Results {{tableData.meta.from}} to {{tableData.meta.to}} of {{tableData.meta.total}}</div>
-             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+             <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
                  <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                     <table class="min-w-full divide-y divide-gray-200" v-if="tableData && tableData.data.length">
-                         <thead :class="table_head_color">
+                     <table class="w-full divide-y divide-gray-200" v-if="tableData && tableData.data.length">
+                         <thead :style="table_head_color">
                          <tr>
                              <template v-for="header in selectedColumns">
-                                 <th v-if="typeof headerStyle[header.key] !== 'undefined'" :style="headerStyle[header.key]" class="px-6 py-3 bg-gray-50 text-center text-sm leading-4 font-medium text-white tracking-wider">
+                                 <th v-if="typeof headerStyle[header.key] !== 'undefined'" :style="headerStyle[header.key]" class="px-2 py-3 bg-gray-50 text-center text-sm leading-4 font-medium text-white tracking-wider">
                                     <div v-if="header.key === 'index'">
-                                        <div v-if="index_column" class="px-6 py-3 bg-gray-50 text-center text-sm leading-4 font-medium text-white tracking-wider">Sr No.</div>
+                                        <div v-if="index_column" class="px-1 py-3 text-center text-sm leading-4 font-medium text-white tracking-wider">Sr No.</div>
                                         <input v-else class="mr-2 leading-tight" type="checkbox" v-model="selectAll">
                                     </div>
                                      <div v-if="header.key !== 'index'">
-                                         <div class="px-6 py-3 bg-gray-50 text-center text-sm leading-4 font-medium text-white tracking-wider">{{header.title}}</div>
+                                         <div :class="'px-2 py-3 text-center text-sm leading-4 font-medium tracking-wider'+head_color">{{header.title}}</div>
                                      </div>
                                  </th>
                              </template>
-                             <th class="px-6 py-3 bg-gray-50"></th>
+                             <th class="px-2 py-3 bg-gray-50"></th>
                          </tr>
                          </thead>
                          <tbody class="bg-white divide-y divide-gray-200">
                             <tr v-for="(item,index) in tableData.data">
                                 <template v-for="header in selectedColumns">
-                                    <td v-if="typeof $scopedSlots[header.key] !== 'undefined'" class="px-6 py-4 whitespace-no-wrap">
+                                    <td v-if="typeof $scopedSlots[header.key] !== 'undefined'" class="px-2 py-4 whitespace-no-wrap">
                                         <div class="text-sm leading-5 text-gray-900">
                                             <slot :name="header.key" :field="header.key" :item="item" :index="index"></slot>
                                         </div>
                                     </td>
-                                    <td v-else class="px-6 py-4 whitespace-no-wrap">
+                                    <td v-else class="px-2 py-4 whitespace-no-wrap">
                                         <div class="text-sm leading-5 text-gray-900">
                                             <div v-html="item[header.key] ? item[header.key] : ' - '"></div>
                                         </div>
@@ -72,7 +72,8 @@
                 default: () => []
             },
             loading: Boolean,
-            table_head_color: String,
+            table_head_color: '',
+            head_color: String,
             location: String,
             index_column: Boolean,
         },
