@@ -190,6 +190,14 @@
                                         }
                                     },
                                     {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            hidden: true,
+                                            model: 'value',
+                                            value: ''
+                                        }
+                                    },
+                                    {
                                         component: 'nits-input-select',
                                         attrs: {
                                             label:'Input Type',
@@ -1265,46 +1273,6 @@
                                             value: ''
                                         }
                                     },
-                                    {
-                                        component: 'nits-input-text',
-                                        attrs: {
-                                            label:'Label',
-                                            placeholder: 'Enter Label',
-                                            model: 'label',
-                                            value: ''
-                                        }
-                                    },
-                                    {
-                                        component: 'nits-input-text',
-                                        attrs: {
-                                            label:'Placeholder',
-                                            placeholder: 'Enter Placeholder',
-                                            model: 'placeholder',
-                                            value: ''
-                                        }
-                                    },
-                                    {
-                                        component: 'nits-input-text',
-                                        attrs: {
-                                            label:'Hint',
-                                            placeholder: 'Enter Hint',
-                                            model: 'hint',
-                                            value: ''
-                                        }
-                                    },
-                                    {
-                                        component: 'nits-input-select',
-                                        attrs: {
-                                            label:'Select Type',
-                                            placeholder: 'Select one',
-                                            options: [
-                                                {label: 'Input Field', value: 'nits-input-text'},
-                                                {label: 'Number', value: 'number'},
-                                            ],
-                                            model: 'type',
-                                            value: ''
-                                        }
-                                    },
                                 ]
                             },
                             display: {
@@ -1316,34 +1284,6 @@
                                     }
                                 },
                                 child_components: [
-                                    {
-                                        component: 'nits-input-text',
-                                        attrs: {
-                                            label:'Extra Class Name',
-                                            placeholder: 'Enter Text',
-                                            model: 'class',
-                                            value: ''
-                                        }
-                                    },
-                                    {
-                                        component: 'nits-input-text',
-                                        attrs: {
-                                            label:'Element ID',
-                                            placeholder: 'Enter Element ID',
-                                            model: 'id',
-                                            value: ''
-                                        },
-                                    },
-                                    {
-                                        component: 'nits-input-select',
-                                        attrs: {
-                                            label: 'CSS Animation',
-                                            placeholder: 'Select ',
-                                            options: [],
-                                            model: 'animation',
-                                            value: ''
-                                        },
-                                    },
                                 ]
                             }
                         }

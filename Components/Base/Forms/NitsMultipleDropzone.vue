@@ -65,11 +65,11 @@
                 const info = JSON.parse(file.xhr.response)
                 if(typeof info.link !== 'undefined')
                 {
-                    const data = {
-                        field: this.model,
-                        value: info.link
-                    }
-                    eventBus.$emit('nits-form-input', data)
+                    // const data = {
+                    //     field: this.model,
+                    //     value: info.link
+                    // }
+                    // eventBus.$emit('nits-form-input', data)
 
                     this.$emit('input', info.link)
                 }

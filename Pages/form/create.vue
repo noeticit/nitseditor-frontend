@@ -221,7 +221,7 @@
                 })
 
                 eventBus.$on('remove-row-column', (data) => {
-                    this.elements[data.row].attrs.child_components[data.column].splice(data.element,1)
+                    this.elements[data.row].attrs.child_components.splice(data.column,1)
                 })
 
                 eventBus.$on('remove-row-element', (data) => {
@@ -257,6 +257,7 @@
                 })
 
                 eventBus.$on('form-repeater-add-column', (data) => {
+                    console.log(data)
                    this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs.child_components.push(data.component);
                 })
             },

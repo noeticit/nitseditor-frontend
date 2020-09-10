@@ -13,19 +13,19 @@
         name: "NitsGrid",
         props: {
             rows: {
-                type: String
+                type: Number
             },
             cols: {
-                type: String
+                type: Number
             },
             // col: {
             //     type: String
             // },
             gap: {
-                type: String
+                type: Number
             },
             flow:{
-                type: String,
+                type: Number,
             },
             dense:{
                 type: Boolean,
