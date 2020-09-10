@@ -72,6 +72,9 @@
             console.log(this.elementData)
         },
         methods:{
+            check(e) {
+                console.log(e);
+            },
             titleFormat(title) {
                 return _.startCase(_.toLower(title))
             },

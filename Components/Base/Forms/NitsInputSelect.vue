@@ -67,11 +67,11 @@
         },
         methods: {
             emitEvent() {
-                const data = {
-                    field: this.model,
-                    value: this.$refs.select.value
-                }
-                eventBus.$emit('nits-form-input', data)
+                // const data = {
+                //     field: this.model,
+                //     value: this.$refs.select.value
+                // }
+                // eventBus.$emit('nits-form-input', data)
                 this.$emit('input', this.$refs.select.value)
             },
             fetchOptions() {

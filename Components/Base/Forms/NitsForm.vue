@@ -11,7 +11,7 @@
             <button v-if="type === 'update'" v-bind:class="{ 'spinner': loading }" class="inline-flex mt-10 items-center rounded-lg py-2 px-6 bg-teal-700" @click.prevent="update">
                 <span class="text-center text-base antialiased tracking-tight font-sans text-white cursor-pointer" >Update</span>
             </button>
-            <router-link :to="back_api" class="inline-flex mt-10 ml-2 items-center rounded-lg py-2 px-6 border border-gray-400">
+            <router-link :to="back_api ? back_api : ''" class="inline-flex mt-10 ml-2 items-center rounded-lg py-2 px-6 border border-gray-400">
                 <span class="text-center text-base antialiased tracking-tight font-sans text-gray-600">Cancel</span>
             </router-link>
         </div>
@@ -43,6 +43,51 @@
             eventBus.$on('nits-form-input', (data) => {
                 if(typeof data !== 'undefined' ||  data !== null )
                     this.form_data[data.field] = data.value
+                console.log(this.form_data);
+            })
+
+            eventBus.$on('form-repeater-add', (data) => {
+                if(typeof data !== 'undefined' ||  data !== null ) {
+                    this.forms.forEach((row, rIndex) => {
+                        row.attrs.child_components.forEach((column, colIndex) => {
+                            column.attrs.child_components.forEach((repeater, repeaterIndex) => {
+                                if(repeater.attrs.model === data.field) {
+                                    const postData = {
+                                        rowIndex: rIndex,
+                                        columnIndex: colIndex,
+                                        repeaterIndex: repeaterIndex,
+                                        field: data.field,
+                                        value: data.value
+                                    }
+                                    eventBus.$emit('add-form-data', postData)
+                                }
+                            })
+
+                        })
+                    })
+                }
+            })
+
+            eventBus.$on('form-repeater-delete', (data) => {
+                if(typeof data !== 'undefined' ||  data !== null ) {
+                    this.forms.forEach((row, rIndex) => {
+                        row.attrs.child_components.forEach((column, colIndex) => {
+                            column.attrs.child_components.forEach((repeater, repeaterIndex) => {
+                                if(repeater.attrs.model === data.field) {
+                                    const postData = {
+                                        rowIndex: rIndex,
+                                        columnIndex: colIndex,
+                                        repeaterIndex: repeaterIndex,
+                                        field: data.field,
+                                        index: data.value
+                                    }
+                                    eventBus.$emit('delete-form-data', postData)
+                                }
+                            })
+
+                        })
+                    })
+                }
             })
 
             eventBus.$on('form-data', (data) => {
@@ -73,26 +118,27 @@
             },
             submit() {
                 this.loading = true
-                this.$api.post(this.api_url, this.form_data).then(response => {
-                    if (response.status === 200) {
-                        Swal.fire(
-                            'Created!',
-                            'Your data has been created.',
-                            'success'
-                        ).then(() => {
-                            this.$router.push({path: this.redirect_api});
-                        })
-
-                    }
-                }).catch((error) => {
-                    Swal.fire({
-                        title: "Oops!",
-                        text: error.response.data.message,
-                        type: "error",
-                    })
-                    this.loading = false
-                    this.errors = error.response.data.errors
-                })
+                console.log(this.form_data)
+                // this.$api.post(this.api_url, this.form_data).then(response => {
+                //     if (response.status === 200) {
+                //         Swal.fire(
+                //             'Created!',
+                //             'Your data has been created.',
+                //             'success'
+                //         ).then(() => {
+                //             this.$router.push({path: this.redirect_api});
+                //         })
+                //
+                //     }
+                // }).catch((error) => {
+                //     Swal.fire({
+                //         title: "Oops!",
+                //         text: error.response.data.message,
+                //         type: "error",
+                //     })
+                //     this.loading = false
+                //     this.errors = error.response.data.errors
+                // })
             }
         },
         watch: {

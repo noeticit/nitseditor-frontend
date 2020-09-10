@@ -9,6 +9,21 @@
                     </div>
                 </div>
             </div>
+
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded h-32">
+                <div v-for="(item, index, key) in elementData.options" class=" px-4 py-5 flex-auto block">
+                    <component :is="item.component"
+                               v-bind="item.attrs"
+                               :child_components="item.child_components"
+                               :row_index="row_index"
+                               :column_index="column_index"
+                               :element_index="element_index"
+                               :element="element"
+                               :component_name="component_name"
+                    ></component>
+                </div>
+            </div>
+
             <div class="overflow-y-auto scroll_bar" style="height: 500px;">
                 <div>
                     <column-element v-if="element.attrs.child_components.length" v-for="(column,index) in element.attrs.child_components" :key="'column_index_'+index"  v-bind="column.attrs" :row_index="row_index" :column_index="index" :form_element_index="element_index" :form_column_index="column_index"></column-element>
@@ -143,8 +158,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 

@@ -136,11 +136,6 @@
         },
         methods: {
             emitEvent(editor) {
-                const data = {
-                    field: this.model,
-                    value: editor
-                }
-                eventBus.$emit('nits-form-input', data)
                 this.$emit('input', editor)
             }
         },
