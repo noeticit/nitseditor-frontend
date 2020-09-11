@@ -116,9 +116,37 @@
                     this.errors = error.response.data.errors
                 })
             },
+            findModel(ele) {
+              const obj = {};
+              ele.forEach((row) => {
+                row.attrs.child_components.forEach((column) => {
+                  column.attrs.child_components.forEach((element) => {
+                    if(typeof element.attrs.model !== 'undefined') {
+                      if(element.component === 'nits-form-repeater') {
+                        obj[element.attrs.model] =element.attrs.child_components.map((a) => {
+                          let d = {};
+                          a.attrs.child_components.forEach((b) => {
+                            if(typeof b.attrs.model !== 'undefined') {
+                              d[b.attrs.model] = b.attrs.value;
+                            }
+                          })
+                          return d;
+                        })
+                      }
+                      else
+                        obj[element.attrs.model] = element.attrs.value;
+                    }
+                  })
+                })
+              })
+              return obj;
+            },
             submit() {
-                this.loading = true
-                console.log(this.form_data)
+                // this.loading = true
+                // console.log(this.forms)
+              this.form_data = this.findModel(this.forms);
+              console.log(this.form_data);
+
                 // this.$api.post(this.api_url, this.form_data).then(response => {
                 //     if (response.status === 200) {
                 //         Swal.fire(
