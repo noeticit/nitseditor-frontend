@@ -1,5 +1,5 @@
 <template>
-    <div :class="'h-auto grid '+ (this.cols ? 'md:grid-cols-'+this.cols + ' ' : ' ') + (this.rows ? 'grid-rows-'+this.rows + ' ' : ' ') + (this.gap ? 'gap-' + this.gap + ' ' : ' ') + (this.flow ? this.dense ? 'grid-flow-'+this.flow+'-dense' : 'grid-flow-'+this.flow : '')">
+    <div :class="'h-auto grid px-4 mt-4 '+ (this.cols ? 'md:grid-cols-'+this.cols + ' ' : ' ') + (this.rows ? 'grid-rows-'+this.rows + ' ' : ' ') + (this.gap ? 'gap-' + this.gap + ' ' : ' ') + (this.flow ? this.dense ? 'grid-flow-'+this.flow+'-dense' : 'grid-flow-'+this.flow : '')">
         <slot></slot>
     </div>
 
@@ -13,19 +13,19 @@
         name: "NitsGrid",
         props: {
             rows: {
-                type: String
+                type: Number
             },
             cols: {
-                type: String
+                type: Number
             },
             // col: {
             //     type: String
             // },
             gap: {
-                type: String
+                type: Number
             },
             flow:{
-                type: String,
+                type: Number,
             },
             dense:{
                 type: Boolean,

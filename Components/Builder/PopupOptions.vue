@@ -66,6 +66,11 @@
         },
         created() {
             console.log(this.elementData)
+
+            eventBus.$on('nits-form-input-check', (data) => {
+                console.log(data);
+                console.log('check from form input');
+            })
         },
         methods:{
             titleFormat(title) {
