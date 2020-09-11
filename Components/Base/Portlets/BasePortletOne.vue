@@ -1,8 +1,8 @@
 <template>
-    <div class="bg-white rounded-lg shadow-lg mt-5 m-2 justify-center">
+    <div class="bg-white rounded-lg shadow-lg mb-32 mt-5 m-2 justify-center">
         <div class="flex justify-between border-solid border-b-2 p-2 text-center items-center">
 
-            <div class="text-left text-gray-800 ml-2 text-xl antialiased leading-snug tracking-normal font-sans">
+            <div class="text-left ml-4 mt-2 mb-2 text-xl antialiased leading-snug text-gray-900 tracking-normal font-medium font-sans">
                 {{title}} {{subtitle}}
             </div>
 

@@ -41,9 +41,19 @@
         },
         created() {
             eventBus.$on('nits-form-input', (data) => {
-                if(typeof data !== 'undefined' ||  data !== null )
+                if(typeof data !== 'undefined' ||  data !== null ){
                     this.form_data[data.field] = data.value
-                console.log(this.form_data);
+                    this.forms.forEach((row) => {
+                        row.attrs.child_components.forEach((column) => {
+                            column.attrs.child_components.forEach((type) => {
+                                if(type.attrs.model === data.field) {
+                                    type.attrs.value = data.value
+                                }
+                            })
+                        })
+                    })
+                }
+
             })
 
             eventBus.$on('form-repeater-add', (data) => {
@@ -118,27 +128,27 @@
             },
             submit() {
                 this.loading = true
-                console.log(this.form_data)
-                // this.$api.post(this.api_url, this.form_data).then(response => {
-                //     if (response.status === 200) {
-                //         Swal.fire(
-                //             'Created!',
-                //             'Your data has been created.',
-                //             'success'
-                //         ).then(() => {
-                //             this.$router.push({path: this.redirect_api});
-                //         })
-                //
-                //     }
-                // }).catch((error) => {
-                //     Swal.fire({
-                //         title: "Oops!",
-                //         text: error.response.data.message,
-                //         type: "error",
-                //     })
-                //     this.loading = false
-                //     this.errors = error.response.data.errors
-                // })
+                // console.log(this.form_data)
+                this.$api.post(this.api_url, this.form_data).then(response => {
+                    if (response.status === 200) {
+                        Swal.fire(
+                            'Created!',
+                            'Your data has been created.',
+                            'success'
+                        ).then(() => {
+                            this.$router.push({path: this.redirect_api});
+                        })
+
+                    }
+                }).catch((error) => {
+                    Swal.fire({
+                        title: "Oops!",
+                        text: error.response.data.message,
+                        type: "error",
+                    })
+                    this.loading = false
+                    this.errors = error.response.data.errors
+                })
             }
         },
         watch: {

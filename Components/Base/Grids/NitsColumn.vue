@@ -40,6 +40,7 @@
                         field: element.attrs.model,
                         value: value
                     }
+                    console.log(data)
                     eventBus.$emit('nits-form-input', data)
                 }
             }
