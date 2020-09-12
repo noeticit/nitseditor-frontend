@@ -4,6 +4,7 @@
                      :key="index" :is="element.component" v-bind="element.attrs"
                      @input="check($event, element)"
         ></components>
+        <slot></slot>
     </div>
 </template>
 

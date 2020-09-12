@@ -43,7 +43,7 @@ export default {
     eventBus.$on('nits-form-input', (data) => {
       if(typeof data !== 'undefined' ||  data !== null ){
         this.form_data[data.field] = data.value
-        this.forms.forEach((row) => {
+          this.forms.forEach((row) => {
           row.attrs.child_components.forEach((column) => {
             column.attrs.child_components.forEach((type) => {
               if(type.attrs.model === data.field) {
@@ -52,6 +52,20 @@ export default {
             })
           })
         })
+          // this.forms.forEach((row) => {
+          //     row.attrs.child_components.forEach((column) => {
+          //         column.attrs.child_components.forEach((repeater) => {
+          //             repeater.attrs.child_components.forEach((col) => {
+          //                 col.attrs.child_components.forEach((type) => {
+          //                     if(type.attrs.model === data.field) {
+          //                         type.attrs.value = data.value
+          //                     }
+          //                 })
+          //             })
+          //         })
+          //
+          //     })
+          // })
       }
 
     })

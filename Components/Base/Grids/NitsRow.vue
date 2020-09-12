@@ -1,6 +1,7 @@
 <template>
-    <div class="grid-row">
+    <div :class="'grid-row ' + (this.margin ? 'mt-'+this.margin + ' ' : ' ')">
         <component v-for="(element, index) in child_components" :key="index" :is="element.component" v-bind="element.attrs"></component>
+        <slot></slot>
     </div>
 </template>
 
@@ -9,7 +10,8 @@
         name: "nitsRow",
         props:{
             child_components: Array,
-            attrs: Object
+            attrs: Object,
+            margin:Number
         }
     }
 </script>
