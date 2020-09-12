@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-16 bg-white justify-between flex">
-    <div class="pl-6 my-auto text-left text-lg text-gray-700 font-medium antialiased leading-snug tracking-normal font-sans">
+    <div class="pl-10 my-auto text-left text-xl text-gray-700 font-medium antialiased leading-snug tracking-normal font-sans">
       {{head}}
     </div>
     <div class="my-auto flex pr-6">
