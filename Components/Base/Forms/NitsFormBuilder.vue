@@ -1,6 +1,6 @@
 <template>
     <div class="flex w-full justify-center">
-        <div class="m-2 w-full  overflow-y-auto h-screen">
+        <div class="m-2 w-full overflow-y-auto h-screen">
 
             <base-portlet-one
                     :title="form_title"

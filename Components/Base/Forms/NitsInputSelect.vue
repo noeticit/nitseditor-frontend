@@ -1,11 +1,10 @@
 <template>
-    <div class="flex-col justify-start w-full">
+    <div :class="styling+' flex-col justify-start w-full'">
         <label class="mt-2 ml-2 block uppercase tracking-wide text-left text-gray-700 text-sm font-bold mb-2" for="grid-select">
             {{label}}
         </label>
         <div class="relative">
-            <select class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    :class="errorDisplay ? 'border-red-500 focus:bg-white focus:border-red-500': ''"
+            <select :class="customStyling"
                     :value="value"
                     @change="emitEvent()"
                     ref="select"
@@ -33,6 +32,7 @@
             }
         },
         props: {
+          styling: String,
             label: String,
             placeholder: String,
             model: String,
@@ -40,6 +40,7 @@
                 type: String,
                 default: () => ''
             },
+
             error: {
                 type: Array,
                 default: () => []
@@ -55,7 +56,21 @@
             query: {
                 type: Object
             },
-            test: ''
+            test: '',
+
+          // CSS attributes which will be extracted for mixin purpose
+          background: {
+              type: String,
+              default: 'white'
+          },
+          border: {
+              type: String,
+              default: 'gray-300'
+          },
+          options_background: {
+              type: String,
+              default: 'white'
+          }
         },
         created() {
             // if(this.api_url) {
@@ -94,7 +109,15 @@
             },
             queries() {
                 if(this.query.length) return this.query;
-            }
+            },
+            customStyling() {
+              let style = ' block appearance-none w-full border text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none';
+              style = this.errorDisplay ? style+' border-red-500 focus:border-red-500': style+'focus:border-gray-500 focus:bg-white';
+              style = style + ' bg-'+this.background;
+              style = style + ' border-'+this.border;
+              console.log(style);
+              return style;
+            },
         },
         watch: {
             query: {
