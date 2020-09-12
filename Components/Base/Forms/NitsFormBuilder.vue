@@ -45,7 +45,7 @@
                         back_api: response.data.data.form_cancel_or_back_url,
                         redirect_api: response.data.data.form_redirect_url
                     }
-                    // console.log(JSON.parse(response.data.data.form_data))
+                    console.log(JSON.parse(response.data.data.form_data))
                     this.form_title = response.data.data.form_title
                 }
             })

@@ -75,8 +75,22 @@
                     eventBus.$emit('individual-element-attributes', valueDetails)
                 }
 
-                else
+                else{
                     eventBus.$emit('form-repeater-individual-element-attributes', this.details)
+
+                    const valueDetails = {
+                        row_index: this.row_index,
+                        column_index: this.column_index,
+                        element_index: this.element_index,
+                        form_element_index: this.form_element_index,
+                        form_column_index: this.form_column_index,
+                        field: 'value',
+                        value: '',
+                        component_name: this.component_name
+                    };
+                    eventBus.$emit('form-repeater-individual-element-attributes', valueDetails)
+                }
+
             }
         }
     }
