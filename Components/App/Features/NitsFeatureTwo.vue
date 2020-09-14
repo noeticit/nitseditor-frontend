@@ -41,8 +41,8 @@
         },
         created() {
             this.timer = setInterval(() => {
-                if(this.active === 3)
-                    this.active = 1;
+                if(this.active === 2)
+                    this.active = 0;
                 else
                     this.active++;
             }, 3000);
