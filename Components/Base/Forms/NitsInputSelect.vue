@@ -112,10 +112,10 @@
             },
             customStyling() {
               let style = ' block appearance-none w-full border text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none';
-              style = this.errorDisplay ? style+' border-red-500 focus:border-red-500': style+'focus:border-gray-500 focus:bg-white';
+              style = this.errorDisplay ? style+' border-red-500 focus:border-red-500': style+' focus:border-gray-500 focus:bg-white';
               style = style + ' bg-'+this.background;
               style = style + ' border-'+this.border;
-              console.log(style);
+              // console.log(style);
               return style;
             },
         },
