@@ -1,5 +1,5 @@
 <template>
-    <div :class="'grid-row ' + (this.margin ? 'mt-'+this.margin + ' ' : ' ')">
+    <div :class="'grid-row ' + (this.margin ? 'mt-3 ' : ' ') + (this.margin ? 'md:mt-'+this.margin + ' ' : ' ')">
         <component v-for="(element, index) in child_components" :key="index" :is="element.component" v-bind="element.attrs"></component>
         <slot></slot>
     </div>
