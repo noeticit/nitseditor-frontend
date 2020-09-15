@@ -21,8 +21,8 @@
                         </div>
                         <!--                <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill" >-->
                     </div>
-                    <label :for="'carousel-'+item.id" class="prev control-1 w-10 h-10  -ml-4 lg:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-                    <label :for="'carousel-'+item.id" class="next control-1 w-10 h-10 -mr-4 lg:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+                    <label :for="'carousel-'+3" class="prev control-1 w-10 h-10  -ml-4 lg:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+                    <label :for="'carousel-'+2" class="next control-1 w-10 h-10 -mr-4 lg:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
 
 <!--                    &lt;!&ndash; Add additional indicators for each slide&ndash;&gt;-->
 <!--                    <ol class="carousel-indicators">-->
