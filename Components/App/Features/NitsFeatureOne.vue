@@ -1,11 +1,11 @@
 <template>
-    <nits-column :gap="4" :cols="2">
-        <div :class="'lg:mx-12 mx-6 ' + (this.margin ? 'mt-'+this.margin + ' ' : ' ')">
+    <nits-column :gap="4" :cols="1" class="md:grid-cols-2">
+        <div class="lg:mx-12 mx-6 lg:mt-24 md:mt-16 mt-24">
             <h2 class="text-blue-800 font-bold text-5xl font-ubuntu">{{title}}</h2>
             <div class="content-center text-left leading-tight text-blue-800 text-3xl mt-5 font-ubuntu antialiased tracking-normal font-semibold">{{subtitle}}</div>
             <div class="text-gray-800 px-1 mt-5 font-medium text-xl font-ubuntu">{{content}}</div>
         </div>
-        <div :class="'lg:mx-8 mx-4 ' + (this.image_margin ? '-mt-'+this.image_margin + ' ' : ' ')">
+        <div class="lg:mx-8 mx-4">
             <img class="" :src="src" :alt="alt"/>
         </div>
     </nits-column>
