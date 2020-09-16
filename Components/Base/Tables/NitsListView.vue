@@ -225,35 +225,6 @@
 
 <style scoped>
 
-
-.kt-badge--demo{
-    background: red;
-    color: white;
-}
-.kt-badge--demo2{
-    background: #0debaa;
-    color: white;
-}
-
-
-  li{
-      display:inline;
-      margin: 3px;
-      font-size: 14px;
-  }
-
-  ul{overflow:hidden}
-
-    th{
-        font-size: 1.2rem;
-        font-weight: 400;
-    }
-    td{
-        font-size : 1.1rem;
-        font-weight: 400;
-    }
-
-
 </style>
 
 
