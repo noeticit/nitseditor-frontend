@@ -1,6 +1,6 @@
 <template>
     <div class="w-full">
-        <div class="text-center text-4xl font-bold text-blue-800 md:px-32 md:py-16">
+        <div class="text-center md:text-4xl text-2xl font-bold text-blue-800 md:px-32 py-8 md:py-16">
             <div class="lg:px-48 tracking-wide font-ubuntu">{{title}}</div>
         </div>
         <nits-column :gap="4" :cols="1" class="md:grid-cols-2">

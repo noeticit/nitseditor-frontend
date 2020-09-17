@@ -1,7 +1,7 @@
 <template>
     <nits-column class="w-full" :gap="4" :col="1">
         <div class="lg:mt-16 mt-8">
-            <div class="text-blue-800 tracking-wide font-bold text-4xl text-center font-ubuntu">{{title}}</div>
+            <div class="text-blue-800 tracking-wide font-bold md:text-4xl text-2xl text-center font-ubuntu">{{title}}</div>
         </div>
         <div class="flex flex-wrap mt-8">
             <div v-for="item in content" class="flex w-1/2 md:w-1/3 lg:w-1/6 lg:m-5 p-2 md:p-5 stream-container">

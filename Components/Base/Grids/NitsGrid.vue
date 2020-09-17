@@ -1,5 +1,5 @@
 <template>
-    <div :class="'h-auto grid mt-4 '+ (this.padding ? 'px-'+this.padding + ' ' : ' px-4  ')+ (this.cols ? 'md:grid-cols-'+this.cols + ' ' : ' ') + (this.rows ? 'grid-rows-'+this.rows + ' ' : ' ') + (this.gap ? 'gap-' + this.gap + ' ' : ' ') + (this.flow ? this.dense ? 'grid-flow-'+this.flow+'-dense' : 'grid-flow-'+this.flow : '')">
+    <div :class="'h-auto grid mt-4 '+ (this.padding ? 'md:px-'+this.padding + ' ' : ' px-4  ')+ (this.cols ? 'md:grid-cols-'+this.cols + ' ' : ' ') + (this.rows ? 'grid-rows-'+this.rows + ' ' : ' ') + (this.gap ? 'gap-' + this.gap + ' ' : ' ') + (this.flow ? this.dense ? 'grid-flow-'+this.flow+'-dense' : 'grid-flow-'+this.flow : '')">
         <slot></slot>
     </div>
 </template>

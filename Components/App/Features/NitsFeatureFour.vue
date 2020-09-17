@@ -1,7 +1,7 @@
 <template>
     <nits-column :gap="4" :cols="1">
         <div class="w-full">
-            <div class="text-center text-4xl font-bold text-blue-800 lg:px-32">
+            <div class="text-center md:text-4xl text-2xl font-bold text-blue-800 lg:px-32">
                 <div class="lg:px-48 tracking-wide font-ubuntu">{{title}}</div>
             </div>
             <ul class="mx-10 flex justify-center flex-wrap">
