@@ -73,11 +73,11 @@
                 }
                 else this.selectedElements = item;
 
-                // const data = {
-                //     field: this.model,
-                //     value: this.selectedElements
-                // }
-                // eventBus.$emit('nits-form-input', data)
+                const data = {
+                    field: this.model,
+                    value: this.selectedElements
+                }
+                eventBus.$emit('nits-form-input', data)
                 this.$emit('input', this.selectedElements)
             },
             selected(item) {
