@@ -54,7 +54,7 @@ Mix.listen('configReady', webpackConfig => {
 });
 
 
-mix.copy('node_modules/nitseditor-frontend/Assets/images', 'public/nits-assets/images')
+mix.copy('node_modules/@noeticit/nitseditor-frontend/Assets/images', 'public/nits-assets/images')
     .sass('./resources/sass/app.scss', 'public/nits-assets/css')
     .options({
         processCssUrls: false,
