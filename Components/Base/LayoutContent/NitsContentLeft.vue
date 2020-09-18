@@ -26,13 +26,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--                    <div>-->
-                        <!--                        <button class="py-2 px-4 bg-transparent text-blue-800 font-semibold border border-blue-800 rounded hover:bg-blue-800 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">{{item.learn_more}}-->
-                        <!--                            &lt;!&ndash;                Learn About Digital Transformation&ndash;&gt;-->
-                        <!--                        </button>-->
-                        <!--                    </div>-->
-                        <!--                <div class="mt-12">-->
-                        <!--                </div>-->
                     </div>
                 </div>
             </div>
