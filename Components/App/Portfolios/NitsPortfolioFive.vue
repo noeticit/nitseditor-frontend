@@ -56,7 +56,7 @@
                 type: String,
                 required: true
             },
-            content: Object,
+            content: Array,
             per_row: Number,
             isVisible: false,
         },
