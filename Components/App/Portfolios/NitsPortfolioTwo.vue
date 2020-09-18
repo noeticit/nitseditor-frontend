@@ -1,5 +1,5 @@
 <template>
-    <nits-column class="w-full lg:px-10 px-4" :gap="4" :col="1">
+    <nits-column class="w-full" :gap="4" :col="1">
         <div class="lg:mt-16 mt-8">
             <div class="text-blue-800 tracking-wide font-bold md:text-4xl text-2xl text-center font-ubuntu">{{title}}</div>
         </div>
@@ -26,7 +26,7 @@
 
 <script>
     export default {
-        name: "NitsPortfolioOne",
+        name: "NitsPortfolioTwo",
         props: {
             title: {
                 type: String,

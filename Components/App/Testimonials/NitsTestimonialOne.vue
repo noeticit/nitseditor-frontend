@@ -2,7 +2,7 @@
     <nits-column :gap="4" :cols="1">
         <div class="carousel relative mt-10 bg-white mx-10">
             <div class="carousel-inner relative overflow-hidden w-full ">
-                <div class="text-4xl font-bold text-center text-blue-800 font-ubuntu antialiased tracking-normal">{{title}}</div>
+                <div class="md:text-4xl text-2xl font-bold text-center text-blue-800 font-ubuntu antialiased tracking-normal">{{title}}</div>
                 <div class="text-xl pt-5 font-bold text-center text-blue-800 font-ubuntu antialiased tracking-normal">{{subtitle}}</div>
 
                 <div v-for="(item,index) in content">

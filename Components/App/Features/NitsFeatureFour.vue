@@ -1,10 +1,10 @@
 <template>
     <nits-column :gap="4" :cols="1">
         <div class="w-full">
-            <div class="text-center text-4xl font-bold text-blue-800 lg:px-32">
+            <div class="text-center md:text-4xl text-2xl font-bold text-blue-800 lg:px-32">
                 <div class="lg:px-48 tracking-wide font-ubuntu">{{title}}</div>
             </div>
-            <ul class="mx-10 flex justify-center flex-wrap">
+            <ul class="mx-10 my-4 flex justify-center flex-wrap">
                 <nits-grid :cols="per_row" :gap="4">
                     <li class="mx-5" v-for="(item,index) in content">
                         <div class="h-20 w-20 text-blue-800 hover:text-blue-600 hover:bg-blue-200 border-4 border-blue-200 flex mx-auto rounded-full">
