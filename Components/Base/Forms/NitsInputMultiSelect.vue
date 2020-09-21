@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-col justify-start w-full">
+    <div class="flex-col justify-start w-full py-2">
         <div class="mt-2 ml-2 block uppercase tracking-wide text-left text-gray-700 text-sm font-bold mb-2">{{ label }}</div>
 
         <div class="relative">
