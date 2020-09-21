@@ -1,8 +1,14 @@
 <template>
     <nits-column :gap="4" :cols="1">
         <div class="w-full">
-            <nits-grid :cols="per_row" :gap="2">
-                <div v-for="(item,index) in content" class="m-2 mt-3 border rounded-lg shadow-lg items-center overflow-hidden">
+            <div class="text-center mb-5 text-4xl font-bold text-blue-800 md:px-24 md:py-8">
+                <div class="lg:px-32 py-8 tracking-wide font-ubuntu">
+                    {{title}}
+                </div>
+                <div class="text-center px-10 leading-snug text-gray-600 text-lg font-ubuntu antialiased tracking-wide font-normal">{{subtitle}}</div>
+            </div>
+            <nits-grid :cols="per_row" :gap="2" :padding="12">
+                <div v-for="(item,index) in tableData" class="m-2 mt-3 border rounded-lg shadow-lg items-center overflow-hidden">
                     <div class="text-center items-center">
                         <img class="inline-block hover:scale-110 transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0" :src="item.image" style="width: 600px;height: 270px">
                     </div>
@@ -44,18 +50,35 @@
     export default {
         name: "NitsFeatureEight",
         props: {
-            content: Array,
+            title:String,
+            subtitle:String,
             per_row: Number,
-            page: String
+            page_name: String,
+            api: String,
+        },
+        data(){
+            return{
+                tableData:[]
+            }
         },
         methods: {
             Open(id) {
-                if(this.page === 'knowledge_base')
+                if(this.page_name === 'knowledge_base')
                     this.$router.push({name: 'knowledge-base-edit', params: {edit: id}})
-                if(this.page === 'case_study')
+                if(this.page_name === 'case_study')
                    this.$router.push({name: 'case-study-edit', params: {edit: id}})
+                if(this.page_name === 'newsroom')
+                    this.$router.push({name: 'footer-menu-knowledge-base-view', params: {id: id}})
             },
         },
+        created(){
+            this.$api.get(this.api).then(response => {
+                if(response.status === 200)
+                {
+                    this.tableData= response.data.data
+                }
+            })
+        }
     }
 </script>
 

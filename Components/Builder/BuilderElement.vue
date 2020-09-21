@@ -1289,7 +1289,7 @@
                         }
                     },
                     {
-                        id: 11,
+                        id: 27,
                         title:'Divider',
                         icon:'/nits-assets/images/line.png',
                         desc:'Just a simple Division',
