@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    import {eventBus} from "../../../Models/_events";
+    // import {eventBus} from "../../../Models/_events";
 
     export default {
         name: "NitsInputText",
