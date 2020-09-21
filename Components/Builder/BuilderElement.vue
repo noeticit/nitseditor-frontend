@@ -1288,6 +1288,99 @@
                             }
                         }
                     },
+                    {
+                        id: 11,
+                        title:'Divider',
+                        icon:'/nits-assets/images/line.png',
+                        desc:'Just a simple Division',
+                        component_name: 'nits-division',
+                        options: {
+                            general: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                        // rows: "1"
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Margin',
+                                            placeholder: 'Enter Margin',
+                                            model: 'margin',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Heading',
+                                            placeholder: 'Enter heading',
+                                            model: 'heading',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label:'Underline',
+                                            placeholder: 'Select one',
+                                            options: [
+                                                {label: 'Yes', value: 'true'},
+                                                {label: 'No', value: 'false'},
+                                            ],
+                                            model: 'underline',
+                                            value: ''
+                                        }
+                                    },
+                                ]
+                            },
+                            display: {
+                                component: 'nits-form-check',
+                                attrs: {
+                                    grid: {
+                                        cols: "1",
+                                        gap: "6",
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Extra Class Name',
+                                            placeholder: 'Enter Text',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    },
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Element ID',
+                                            placeholder: 'Enter Element ID',
+                                            model: 'test_text',
+                                            value: ''
+                                        },
+                                    },
+                                    {
+                                        component: 'nits-input-select',
+                                        attrs: {
+                                            label: 'CSS Animation',
+                                            placeholder: 'Select ',
+                                            options: [],
+                                            model: 'animation',
+                                            value: ''
+                                        },
+                                    },
+
+                                ]
+                            }
+                        }
+                    },
+
                 ]
             }
         },
