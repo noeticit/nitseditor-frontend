@@ -6,9 +6,9 @@
         <div :class="'lg:mx-12 mx-6 mt-16 ' + (text_margin ? 'md:mt-'+text_margin : 'md:mt-16 ')">
             <h2 :class="'text-blue-800 font-bold md:mt-8 mt-4 md:text-4xl text-2xl font-ubuntu ' + (this.textalign ? this.textalign : 'text-left')">{{title}}</h2>
             <div :class="'content-center leading-tight text-blue-800 md:text-3xl text-1xl mt-5 font-ubuntu antialiased tracking-normal font-semibold '+ (this.textalign ? this.textalign : 'text-left')">{{subtitle}}</div>
-            <div class="text-gray-800 px-1 mt-5 font-medium md:text-xl text-lg font-ubuntu">{{content}}</div>
+            <div class="text-gray-800 px-1 mt-5 font-base md:text-xl text-lg font-ubuntu">{{content}}</div>
 
-            <div class="w-full mt-4" v-if="options.length">
+            <div class="w-full mt-4" v-if="options && options.length">
                 <div class="flex py-5" v-for="(item,index) in options">
                     <div class="py-1 text-red-700">
                         <svg class="h-4 w-4 " fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
