@@ -1,5 +1,5 @@
 <template>
-    <div :class="styling+' flex-col justify-start w-full'">
+    <div :class="styling+' flex-col justify-start w-full py-2'">
         <label class="mt-2 ml-2 block uppercase tracking-wide text-left text-gray-700 text-sm font-bold mb-2" for="grid-select">
             {{label}}
         </label>

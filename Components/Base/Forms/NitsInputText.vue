@@ -1,6 +1,6 @@
 <template>
     <div :class="stylish">
-        <div v-if="!hidden" class="flex-col justify-start w-full">
+        <div v-if="!hidden" class="flex-col justify-start py-2 w-full">
             <div class="mt-2 ml-2 block uppercase tracking-wide text-left text-gray-700 text-sm font-bold mb-2">{{ label }}</div>
             <input
                     :class="customStyling"
@@ -18,12 +18,12 @@
 </template>
 
 <script>
-    import {eventBus} from "../../../Models/_events";
+    // import {eventBus} from "../../../Models/_events";
 
     export default {
         name: "NitsInputText",
         props: {
-          stylish: String,
+            stylish: String,
             label: String,
             hint: {
                 type: String,
