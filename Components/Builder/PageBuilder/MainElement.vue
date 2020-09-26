@@ -141,6 +141,9 @@
                         this.elements[data.index].attrs.child_components.push(data.column)
                 });
 
+                eventBus.$on('page-add-component', (data) => {
+                    this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components.splice(data.element_index, 1, data.component);
+                });
             },
         },
         created(){
