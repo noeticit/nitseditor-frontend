@@ -87,7 +87,7 @@
     import draggable from 'vuedraggable';
 
     export default {
-        name: "BasicElements",
+        name: "FormElements",
         components: {
             draggable
         },

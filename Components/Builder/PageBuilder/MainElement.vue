@@ -15,7 +15,8 @@
                         <input type="search" class="bg-white px-3 text-xs py-2 w-full rounded border focus:outline-none focus:border-indigo-600" placeholder="Search elements...">
                     </div>
 
-                    <basic-elements></basic-elements>
+                    <form-elements v-if="showElements"></form-elements>
+<!--                    <element-settings v-else-if-="elementSettings"></element-settings>-->
 
                 </div>
             </div>
@@ -110,13 +111,17 @@
 
 <script>
     import {eventBus} from 'NitsModels/_events';
+    import ElementSettings from "./ElementSettings";
 
     export default {
         name: "Main",
+        components: {ElementSettings},
         data(){
             return{
                 selectColumn: false,
                 widget: true,
+                showElements: true,
+                elementSettings: false,
                 elements:[]
             }
         },
