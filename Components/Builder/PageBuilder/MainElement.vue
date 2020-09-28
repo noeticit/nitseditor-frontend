@@ -2,21 +2,35 @@
     <div class="w-full">
         <div class="flex">
             <div class="w-1/5 h-screen overflow-y-auto">
-                <div class="flex py-2 justify-between px-4 bg-indigo-600">
+                <div class="flex py-3 justify-between px-4 bg-indigo-600">
                     <svg class="h-6 w-6 my-auto text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.4 9H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1h12.8c.552 0 .6-.447.6-1s-.048-1-.6-1zm0 4H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1h12.8c.552 0 .6-.447.6-1s-.048-1-.6-1zM3.6 7h12.8c.552 0 .6-.447.6-1s-.048-1-.6-1H3.6c-.552 0-.6.447-.6 1s.048 1 .6 1z"/></svg>
-                    <div class="text-sm font-medium text-white leading-6 my-auto">NitsEditor</div>
+                    <div class="text-sm font-medium text-white leading-6 my-auto">{{heading}}</div>
                     <svg class="h-6 w-6 my-auto text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4H5a1 1 0 00-1 1v3a1 1 0 001 1h3a1 1 0 001-1V5a1 1 0 00-1-1zm7 0h-3a1 1 0 00-1 1v3a1 1 0 001 1h3a1 1 0 001-1V5a1 1 0 00-1-1zm-7 7H5a1 1 0 00-1 1v3a1 1 0 001 1h3a1 1 0 001-1v-3a1 1 0 00-1-1zm7 0h-3a1 1 0 00-1 1v3a1 1 0 001 1h3a1 1 0 001-1v-3a1 1 0 00-1-1z"/></svg>
                 </div>
-                <div class="bg-gray-200 pb-6">
-                    <div class="border-b-2 py-2 bg-gray-100 shadow flex border-indigo-600 justify-center text-gray-700 text-base font-medium ">
+                <div class="bg-gray-200">
+                    <div v-if="showElements" class="border-b-2 py-2 bg-gray-100 shadow flex border-indigo-600 justify-center text-gray-700 text-base font-medium ">
                         Our Elements
                     </div>
-                    <div class="relative px-2 my-3">
+                    <div v-if="showElements" class="relative px-2 my-3">
                         <input type="search" class="bg-white px-3 text-xs py-2 w-full rounded border focus:outline-none focus:border-indigo-600" placeholder="Search elements...">
                     </div>
 
-                    <form-elements v-if="showElements"></form-elements>
-<!--                    <element-settings v-else-if-="elementSettings"></element-settings>-->
+                    <form-elements
+                            v-if="showElements"
+                    ></form-elements>
+
+                    <row-settings
+                            v-if="rowSettings"
+                    ></row-settings>
+
+                    <column-settings
+                            v-if="columnSettings"
+                    ></column-settings>
+
+                    <element-settings
+                            v-if="editElement"
+                            :data="elementSettings"
+                    ></element-settings>
 
                 </div>
             </div>
@@ -94,12 +108,12 @@
                 <page-row-element v-if="elements.length" v-for="(row, index) in elements" :key="'row_index_'+index" v-bind="row.attrs" :row_index="index"></page-row-element>
 
 
-                <div class="w-full flex justify-center md:py-32 mt-2 md:mt-10 bg-gray-100">
-                    <div class="border w-1/2 flex flex-col border-dashed border-indigo-700 md:py-10">
+                <div class="w-full flex md:px-16 justify-center md:py-32 bg-gray-100">
+                    <div class="border w-full flex flex-col border-dashed border-indigo-700 md:py-10">
                         <button @click.prevent="addRowField" class="p-3 mx-auto bg-indigo-600 text-white rounded-full focus:outline-none hover:bg-indigo-400 focus:bg-indigo-700">
                             <svg  class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 448 448" xmlns="http://www.w3.org/2000/svg"><path d="M408 184H272a8 8 0 01-8-8V40c0-22.09-17.91-40-40-40s-40 17.91-40 40v136a8 8 0 01-8 8H40c-22.09 0-40 17.91-40 40s17.91 40 40 40h136a8 8 0 018 8v136c0 22.09 17.91 40 40 40s40-17.91 40-40V272a8 8 0 018-8h136c22.09 0 40-17.91 40-40s-17.91-40-40-40zm0 0"/></svg>
                         </button>
-                        <div class="text-sm mx-auto italic mt-5 font-medium text-indigo-700">Add Row</div>
+                        <div class="text-sm mx-auto italic mt-5 font-medium text-indigo-700">Add Widget Here</div>
                     </div>
                 </div>
 
@@ -112,17 +126,23 @@
 <script>
     import {eventBus} from 'NitsModels/_events';
     import ElementSettings from "./ElementSettings";
+    import RowSettings from "./RowSettings";
+    import ColumnSettings from "./ColumnSettings";
 
     export default {
         name: "Main",
-        components: {ElementSettings},
+        components: {ColumnSettings, RowSettings, ElementSettings},
         data(){
             return{
                 selectColumn: false,
                 widget: true,
                 showElements: true,
-                elementSettings: false,
-                elements:[]
+                editElement: false,
+                rowSettings: false,
+                columnSettings: false,
+                elements:[],
+                heading:'Nitseditor',
+                elementSettings:{}
             }
         },
         methods:{
@@ -149,6 +169,34 @@
                 eventBus.$on('page-add-component', (data) => {
                     this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components.splice(data.element_index, 1, data.component);
                 });
+
+                eventBus.$on('page-element-settings', (data) => {
+                    this.elementSettings = data
+                    console.log(data)
+                    this.editElement = true
+                    this.showElements = false
+                    this.rowSettings = false
+                    this.columnSettings = false
+                    this.heading = 'Edit '+ data.elementData.name
+                });
+
+                eventBus.$on('page-column-settings', (data) => {
+                    console.log(data)
+                    this.editElement = false
+                    this.showElements = false
+                    this.rowSettings = false
+                    this.columnSettings = true
+                    this.heading = 'Edit Column'
+                });
+
+                eventBus.$on('page-show-elements', (data) => {
+                    this.editElement = false
+                    this.showElements = true
+                    this.rowSettings = false
+                    this.columnSettings = false
+                    this.heading = 'Nitseditor'
+                });
+
             },
         },
         created(){
