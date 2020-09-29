@@ -170,6 +170,12 @@
                     this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components.splice(data.element_index, 1, data.component);
                 });
 
+                eventBus.$on('page-individual-element-attributes', (data) => {
+                    let attributes = this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs;
+                    attributes[data.field] = data.value
+                    this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs = attributes;
+                })
+
                 eventBus.$on('page-element-settings', (data) => {
                     this.elementSettings = data
                     console.log(data)
