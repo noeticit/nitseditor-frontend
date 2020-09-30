@@ -6,6 +6,7 @@
 
 require('./bootstrap');
 
+import Layout from './Components/Layout'
 import VueRouter from 'vue-router';
 import {router} from "./routes";
 import store from './Store/_store';
@@ -72,7 +73,7 @@ const app = new Vue({
     el: '#app',
     router: router,
     store: store,
-    template:'<router-view></router-view>',
+    template: Layout,
     watch: {
         '$route' (to, from) {
             console.log();
