@@ -130,7 +130,5 @@
 </script>
 
 <style scoped>
-  #check {
-    position: center;
-  }
+
 </style>
