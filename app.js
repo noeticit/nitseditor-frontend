@@ -56,15 +56,15 @@ router.beforeEach((to, from, next) => {
     // }
     // else {
     //     store.dispatch('storeLastUrlVisited', to.name);
-        if(able.checkPageAccess(to))
-            next();
-        else
-            next({path: '/nits-admin/not-subscribed'});
+    if(able.checkPageAccess(to))
+        next();
+    else
+        next({path: '/nits-admin/not-subscribed'});
     // }
 });
 
 //importing one component that uses <style> tag
-import Index from 'Pages/index';
+import Index from './Pages/index';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <page-column-element v-if="child_components.length" v-for="(column,index) in child_components" :key="'column_index_'+index"  v-bind="column.attrs" :row_index="row_index" :column_index="index"></page-column-element>
-        <div v-if="selectColumn" class="w-full flex md:px-16 justify-center md:py-32 bg-gray-100">
+        <div v-if="selectColumn" class="w-full flex md:px-16 md:mt-16 justify-center md:py-16 bg-gray-100">
             <div class="border w-full flex flex-col border-dashed border-indigo-700 md:py-4">
                 <div class="flex md:ml-56 md:px-64">
                     <div @click="selectColumn = false" class="text-gray-600 ml-16  hover:bg-white  mr-3 focus:outline-none active:shadow-none font-bold">
@@ -71,7 +71,7 @@
                 </nits-grid>
             </div>
         </div>
-        <div v-if="widget" class="w-full flex md:px-16 justify-center md:py-32 bg-gray-100">
+        <div v-if="widget" class="w-full flex md:px-16 justify-center md:mt-16 md:py-16 bg-gray-100">
             <div class="border w-full flex flex-col border-dashed border-indigo-700 md:py-10">
                 <button @click.prevent="selectColumn = !selectColumn"  class="p-3 mx-auto bg-indigo-600 text-white rounded-full focus:outline-none hover:bg-indigo-400 focus:bg-indigo-700">
                     <svg @click="widget = false"  class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 448 448" xmlns="http://www.w3.org/2000/svg"><path d="M408 184H272a8 8 0 01-8-8V40c0-22.09-17.91-40-40-40s-40 17.91-40 40v136a8 8 0 01-8 8H40c-22.09 0-40 17.91-40 40s17.91 40 40 40h136a8 8 0 018 8v136c0 22.09 17.91 40 40 40s40-17.91 40-40V272a8 8 0 018-8h136c22.09 0 40-17.91 40-40s-17.91-40-40-40zm0 0"/></svg>

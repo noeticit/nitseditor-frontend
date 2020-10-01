@@ -1,5 +1,5 @@
 <template>
-    <div class="h-screen flex-col bg-gray-100">
+    <div class=" nits-class-text h-screen flex-col bg-gray-100">
         <div class="pl-3 pt-3">
             <img class="h-16" src="/nits-assets/images/logo.png" alt="NitsEditor Logo">
         </div>
@@ -130,5 +130,7 @@
 </script>
 
 <style scoped>
-
+    .nits-class-check {
+        height: 100%;
+    }
 </style>

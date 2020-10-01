@@ -72,7 +72,7 @@
                     </div>
                     <div class="flex">
                         <button class="px-5 py-2 text-sm font-medium my-auto text-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-700 hover:text-indigo-500">
-                            Save
+                            Preview
                         </button>
                         <button class="px-5 py-2 text-sm font-medium my-auto text-white bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-700 hover:bg-indigo-500">
                             Publish
@@ -82,25 +82,8 @@
                     </div>
 
                 </div>
-                <div class="flex justify-between my-5 mx-8">
-                    <div class="flex my-auto">
-                        <div class="text-2xl hover:underline cursor-pointer font-bold text-gray-800 mr-6 leading-6">
-                            NitsEditor
-                        </div>
-                        <div class="text-lg font-medium text-gray-600 leading-6 ">
-                            Just another noetic site
-                        </div>
-                    </div>
-                    <div class="flex">
-                        <div class="text-lg my-auto font-medium text-indigo-600 hover:underline cursor-pointer leading-6 px-6">Page Demo</div>
-                        <div class="border-r-2 border-indigo-600"></div>
-                        <div class="flex-col cursor-pointer ml-6">
-                            <svg class="w-6 h-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M225.474 0C101.151 0 0 101.151 0 225.474c0 124.33 101.151 225.474 225.474 225.474 124.33 0 225.474-101.144 225.474-225.474C450.948 101.151 349.804 0 225.474 0zm0 409.323c-101.373 0-183.848-82.475-183.848-183.848S124.101 41.626 225.474 41.626s183.848 82.475 183.848 183.848-82.475 183.849-183.848 183.849z"/><path d="M505.902 476.472L386.574 357.144c-8.131-8.131-21.299-8.131-29.43 0-8.131 8.124-8.131 21.306 0 29.43l119.328 119.328A20.74 20.74 0 00491.187 512a20.754 20.754 0 0014.715-6.098c8.131-8.124 8.131-21.306 0-29.43z"/></svg>
-                            <div class="text-xs font-medium text-indigo-500">Search</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full md:mt-16 tracking-wide text-gray-800 mt-4 text-center text-base md:text-6xl font-bold ">
+
+                <div class="w-full md:mt-8 tracking-wide text-gray-800 mt-4 text-center text-base md:text-6xl font-bold ">
                     NitsEditor
                 </div>
 
@@ -108,7 +91,7 @@
                 <page-row-element v-if="elements.length" v-for="(row, index) in elements" :key="'row_index_'+index" v-bind="row.attrs" :row_index="index"></page-row-element>
 
 
-                <div class="w-full flex md:px-16 justify-center md:py-16 bg-gray-100">
+                <div class="w-full flex md:px-16 justify-center md:py-16 md:mt-16 bg-gray-100">
                     <div class="border w-full flex flex-col border-dashed border-indigo-700 md:py-10">
                         <button @click.prevent="addRowField" class="p-3 mx-auto bg-indigo-600 text-white rounded-full focus:outline-none hover:bg-indigo-400 focus:bg-indigo-700">
                             <svg  class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 448 448" xmlns="http://www.w3.org/2000/svg"><path d="M408 184H272a8 8 0 01-8-8V40c0-22.09-17.91-40-40-40s-40 17.91-40 40v136a8 8 0 01-8 8H40c-22.09 0-40 17.91-40 40s17.91 40 40 40h136a8 8 0 018 8v136c0 22.09 17.91 40 40 40s40-17.91 40-40V272a8 8 0 018-8h136c22.09 0 40-17.91 40-40s-17.91-40-40-40zm0 0"/></svg>
@@ -161,6 +144,10 @@
                 this.elements.push(row_element)
             },
             listenToEvents() {
+                eventBus.$on('page-remove-row', (index) => {
+                    this.elements.splice(index, 1)
+                })
+
                 eventBus.$on('page-add-columns', (data) => {
                     if(typeof this.elements[data.index] !== 'undefined')
                         this.elements[data.index].attrs.child_components.push(data.column)
@@ -187,13 +174,21 @@
                 });
 
                 eventBus.$on('page-column-settings', (data) => {
-                    console.log(data)
                     this.editElement = false
                     this.showElements = false
                     this.rowSettings = false
                     this.columnSettings = true
                     this.heading = 'Edit Column'
                 });
+
+                eventBus.$on('page-row-settings', (data) => {
+                    this.editElement = false
+                    this.showElements = false
+                    this.rowSettings = true
+                    this.columnSettings = false
+                    this.heading = 'Edit Row'
+                });
+
 
                 eventBus.$on('page-show-elements', (data) => {
                     this.editElement = false
