@@ -1,19 +1,19 @@
 <template>
     <div class="">
-        <div class="m-2">
+        <div class="md:py-4" v-for="(item, key, index) in components">
             <div @click="isOpen2 =! isOpen2" class="flex justify-between mx-3">
-                <div class="text-sm font-medium leading-6 text-gray-800">Form Elements</div>
+                <div class="text-sm font-medium leading-6 text-gray-800">{{key}}</div>
                 <svg :class="{'rotate-180': isOpen2, 'rotate-0': !isOpen2}" class="h-4 w-4 mr-1 transition-transform duration-200 transform inline" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.516 7.548c.436-.446 1.043-.481 1.576 0L10 11.295l3.908-3.747c.533-.481 1.141-.446 1.574 0 .436.445.408 1.197 0 1.615-.406.418-4.695 4.502-4.695 4.502a1.095 1.095 0 01-1.576 0S4.924 9.581 4.516 9.163c-.409-.418-.436-1.17 0-1.615z"/></svg>
             </div>
             <div v-if="isOpen2">
                 <draggable
-                        class="dragArea list-group grid md:grid-cols-2"
-                        :list="components"
+                        class="dragArea list-group grid md:grid-cols-2 md:px-2"
+                        :list="components[key]"
                         :group="{ name: 'sorting', pull: 'clone', put: false }"
                         @change="log"
                 >
 
-                <div v-for="element in components" :key="element.name" class="bg-white flex flex-col rounded-lg p-3 m-1 text-gray-700 hover:text-indigo-700">
+                <div v-for="element in components[key]" :key="element.name" class="bg-white flex flex-col rounded-lg p-3 m-1 text-gray-700 hover:text-indigo-700">
 
                     <svg v-if="element.name === 'Input Text'" class="h-8 w-8 mx-auto" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 74" ><path d="M50.86 72H23.531a2.307 2.307 0 01-1.138-4.315l6.879-3.9a4.236 4.236 0 002.145-3.68V14.858H13.852a1.61 1.61 0 00-1.466.962 1.092 1.092 0 01-.069.129l-3.886 6.126A3.377 3.377 0 012 20.63v-12A6.261 6.261 0 018.242 2.4H65.77A6.237 6.237 0 0172 8.628v12a3.378 3.378 0 01-6.432 1.444l-3.886-6.125a1.067 1.067 0 01-.069-.13 1.609 1.609 0 00-1.466-.961h-16.27v45.4a4.207 4.207 0 001.985 3.586l6.222 3.892A2.307 2.307 0 0150.86 72zM13.852 12.858h18.565a1 1 0 011 1v46.25a6.241 6.241 0 01-3.158 5.42l-6.879 3.9a.307.307 0 00.151.575H50.86a.282.282 0 00.3-.223.287.287 0 00-.133-.346L44.8 65.54a6.2 6.2 0 01-2.925-5.281v-46.4a1 1 0 011-1h17.272a3.61 3.61 0 013.261 2.077l3.887 6.127a1.094 1.094 0 01.071.134 1.367 1.367 0 001.254.814A1.381 1.381 0 0070 20.63v-12a4.235 4.235 0 00-4.23-4.23H8.242A4.256 4.256 0 004 8.632v12a1.377 1.377 0 002.635.564 1.112 1.112 0 01.07-.133l3.886-6.127a3.612 3.612 0 013.261-2.078z"/></svg>
                     <svg v-if="element.name === 'Check Box'" class="h-8 w-8 mx-auto" fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M452 512H60c-33.086 0-60-26.914-60-60V60C0 26.914 26.914 0 60 0h392c33.086 0 60 26.914 60 60v392c0 33.086-26.914 60-60 60zM60 40c-11.027 0-20 8.973-20 20v392c0 11.027 8.973 20 20 20h392c11.027 0 20-8.973 20-20V60c0-11.027-8.973-20-20-20zm370.898 111.344l-29.8-26.688-184.965 206.567L108.78 229.176l-27.558 28.988L218.44 388.61zm0 0"/></svg>
@@ -26,13 +26,14 @@
                     <svg v-if="element.name === 'DropZone'" class="h-8 w-8 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.25 17H4.75C3.785 17 3 16.215 3 15.25v-3.5c0-.965.785-1.75 1.75-1.75h14.5c.965 0 1.75.785 1.75 1.75v3.5c0 .965-.785 1.75-1.75 1.75zm-14.5-5.5a.25.25 0 00-.25.25v3.5c0 .138.112.25.25.25h14.5a.25.25 0 00.25-.25v-3.5a.25.25 0 00-.25-.25z"/><path d="M13.25 17a.75.75 0 01-.75-.75v-5.5a.75.75 0 011.5 0v5.5a.75.75 0 01-.75.75zM16.75 14.75a.744.744 0 01-.53-.22l-1-1a.75.75 0 111.061-1.061l.47.47.47-.47a.75.75 0 111.061 1.061l-1 1a.752.752 0 01-.532.22z"/><path d="M21.25 23H2.75A2.752 2.752 0 010 20.25V3.75A2.752 2.752 0 012.75 1h18.5A2.752 2.752 0 0124 3.75v16.5A2.752 2.752 0 0121.25 23zM2.75 2.5c-.689 0-1.25.561-1.25 1.25v16.5c0 .689.561 1.25 1.25 1.25h18.5c.689 0 1.25-.561 1.25-1.25V3.75c0-.689-.561-1.25-1.25-1.25z"/><path d="M23.25 6H.75a.75.75 0 010-1.5h22.5a.75.75 0 010 1.5z"/></svg>
                     <svg v-if="element.name === 'Input Date'" class="h-8 w-8 mx-auto" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M17 3h-1v2h-3V3H7v2H4V3H3c-1.101 0-2 .9-2 2v12c0 1.1.899 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V9h14v8zM6.5 1h-2v3.5h2V1zm9 0h-2v3.5h2V1z"/></svg>
                     <svg v-if="element.name === 'Form Repeater'" class="h-8 w-8 mx-auto" fill="currentColor" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M13.02 6a1 1 0 100-2 1 1 0 000 2zM9.02 6a1 1 0 100-2 1 1 0 000 2zM5.02 6a1 1 0 100-2 1 1 0 000 2z"/><path d="M55 0H5a5.006 5.006 0 00-5 5v50a5.006 5.006 0 005 5h50a5.006 5.006 0 005-5V5a5.006 5.006 0 00-5-5zM5 2h50a3 3 0 013 3v3H2V5a3 3 0 013-3zm50 56H5a3 3 0 01-3-3V10h56v45a3 3 0 01-3 3z"/><path d="M53 6a1 1 0 002 0 1 1 0 000-2 1 1 0 00-2 0 1 1 0 000 2zM47 6h2a1 1 0 000-2h-2a1 1 0 000 2zM7 21h28a2 2 0 002-2v-4a2 2 0 00-2-2H7a2 2 0 00-2 2v4a2 2 0 002 2zm0-6h28v4H7zM37 24a1 1 0 00-1-1H7a1 1 0 000 2h29a1 1 0 001-1zM34 28a1 1 0 00-1-1H7a1 1 0 000 2h26a1 1 0 001-1zM32 32a1 1 0 00-1-1H7a1 1 0 000 2h24a1 1 0 001-1zM7 35a1 1 0 000 2h22a1 1 0 000-2z"/><path d="M53 40h-9.155c14.94-28.222 9.139-17.262 10.69-20.192a4.005 4.005 0 00-1.664-5.408l-1.771-.935a4 4 0 00-5.4 1.664C29.829 45.112 33.192 38.75 32.53 40H7a2 2 0 00-2 2v12a2 2 0 002 2h46a2 2 0 002-2V42a2 2 0 00-2-2zm-9.279-16.865l1.768.936-9.395 17.747a9.314 9.314 0 00-2.016-.465zm1.872-3.535l5.3 2.807-.936 1.768-5.3-2.807zM33.426 43.272a7.58 7.58 0 012.655.711 7.561 7.561 0 012.078 1.794l-5.5 4.663zm5.954.888a9.329 9.329 0 00-1.519-1.406l9.4-17.747 1.768.935C47.7 28.435 40.7 41.666 39.38 44.16zm10.787-28.927l1.768.936a2 2 0 01.832 2.7l-.936 1.768-5.3-2.807.935-1.768a2 2 0 012.701-.829zM53 54H7V42h24.552l-.88 8.229a2 2 0 003.283 1.737c4.987-4.225 6.434-5.47 6.325-5.373.154-.137-.1.337 2.506-4.593H53z"/><path d="M11 50H9a1 1 0 000 2h2a1 1 0 000-2zM17 50h-2a1 1 0 000 2h2a1 1 0 000-2zM23 50h-2a1 1 0 000 2h2a1 1 0 000-2zM28 50h-1a1 1 0 000 2h1a1 1 0 000-2zM39 50h-1a1 1 0 000 2h1a1 1 0 000-2zM42 51a1 1 0 001 1h2a1 1 0 000-2h-2a1 1 0 00-1 1zM49 52h2a1 1 0 000-2h-2a1 1 0 000 2z"/></svg>
+                    <svg v-if="element.name === 'Row'" class="h-8 w-8 mx-auto" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.4 9H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1h12.8c.552 0 .6-.447.6-1s-.048-1-.6-1zm0 4H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1h12.8c.552 0 .6-.447.6-1s-.048-1-.6-1zM3.6 7h12.8c.552 0 .6-.447.6-1s-.048-1-.6-1H3.6c-.552 0-.6.447-.6 1s.048 1 .6 1z"/></svg>
+                    <svg v-if="element.name === 'Column'" class="h-8 w-8 mx-auto" fill="currentColor"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 4H9v5h10V5a1 1 0 00-1-1zM1 15c0 .553.248 1 .8 1H7v-5H1v4zm8 1h9a1 1 0 001-1v-4H9v5zM1 5v4h6V4H1.8c-.552 0-.8.447-.8 1z"/></svg>
 
                     <div class="text-sm  font-medium leading-6 text-center mt-3">{{element.name}}</div>
                 </div>
 
                 </draggable>
             </div>
-
         </div>
     </div>
 </template>
@@ -50,13 +51,16 @@
             return{
                 isOpen : true,
                 isOpen2 : true,
-                components: components_config
+                components: {}
             }
         },
         methods: {
             log: function(evt) {
                 window.console.log(evt);
             }
+        },
+        created() {
+             this.components = _.groupBy(components_config, 'accordion')
         }
     }
 </script>

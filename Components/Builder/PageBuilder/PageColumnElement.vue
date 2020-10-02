@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <div class="w-full flex md:px-16 md:mt-16 justify-center md:py-16 bg-gray-100">
+        <div class="w-full flex md:px-16 md:mt-32 justify-center md:py-16 bg-gray-100">
             <div @mouseover="isVisible = true" @mouseleave="isVisible = false" @keydown.enter="isVisible = !isVisible"  class="border relative w-full flex flex-col border border-4 border-white border-dashed hover:border-blue-500 md:py-12">
                 <div :class="'px-8 grid '+ (cols ? 'grid-cols-'+cols + ' ' : ' ')  + (gap ? 'gap-'+gap + ' ' : ' ')">
                     <page-builder-element
@@ -14,7 +14,6 @@
                             :column_index="column_index"
                             :element_index="index"
                             :element="item"
-                            @click.prevent="openSettings()"
                     >
                     </page-builder-element>
                 </div>

@@ -3,6 +3,7 @@ export const components_config = [
         id: 1,
         name:'Input Text',
         component_name: 'nits-input-text',
+        accordion: 'Form Elements',
         options: {
             general: {
                 component: 'nits-form-page-builder',
@@ -118,6 +119,7 @@ export const components_config = [
         id: 2,
         name:'Check Box',
         component_name: 'nits-checkbox',
+        accordion: 'Form Elements',
         options: {
             general: {
                 component: 'nits-form-page-builder',
@@ -206,6 +208,7 @@ export const components_config = [
         id: 3,
         name:'DropZone',
         component_name: 'nits-single-dropzone',
+        accordion: 'Form Elements',
         options: {
             general: {
                 component: 'nits-form-page-builder',
@@ -301,6 +304,7 @@ export const components_config = [
         id: 4,
         name:'Editor',
         component_name: 'nits-editor',
+        accordion: 'Form Elements',
         options: {
             general: {
                 component: 'nits-form-page-builder',
@@ -378,6 +382,7 @@ export const components_config = [
         id: 5,
         name:'Date Picker',
         component_name: 'nits-date-picker',
+        accordion: 'Form Elements',
         options: {
             general: {
                 component: 'nits-form-page-builder',
@@ -463,6 +468,7 @@ export const components_config = [
         id: 6,
         name:'Text',
         component_name: 'nits-input-text',
+        accordion: 'Form Elements',
         options: {
             general: {
                 component: 'nits-form-page-builder',
@@ -578,6 +584,7 @@ export const components_config = [
         id: 7,
         name:'Multi Select',
         component_name: 'nits-input-multi-select',
+        accordion: 'Form Elements',
         options: {
             general: {
                 component: 'nits-form-page-builder',
@@ -700,6 +707,7 @@ export const components_config = [
         id: 8,
         name:'Single Select',
         component_name: 'nits-single-select',
+        accordion: 'Form Elements',
         options: {
             general: {
                 component: 'nits-form-page-builder',
@@ -807,6 +815,7 @@ export const components_config = [
         id: 9,
         name:'Input Date',
         component_name: 'nits-input-date',
+        accordion: 'Form Elements',
         options: {
             general: {
                 component: 'nits-form-page-builder',
@@ -892,6 +901,7 @@ export const components_config = [
         id: 10,
         name:'Form Repeater',
         component_name: 'nits-form-repeater',
+        accordion: 'Form Elements',
         options: {
             general: {
                 component: 'nits-form-page-builder',
@@ -924,6 +934,66 @@ export const components_config = [
                 child_components: [
                 ]
             },
+            advanced: {}
+        }
+    },
+    {
+        id: 11,
+        name:'Row',
+        component_name: 'nits-row',
+        accordion: 'General Elements',
+        options: {
+            general: {
+                component: 'nits-form-page-builder',
+                attrs: {
+                    grid: {
+                        cols: 1,
+                        gap: 4,
+                    }
+                },
+                child_components: [
+                    {
+                        component: 'nits-input-text',
+                        attrs: {
+                            label:'Gap',
+                            placeholder: 'Enter Gap',
+                            model: 'gap',
+                            value: ''
+                        }
+                    }
+                ]
+            },
+            style: {},
+            advanced: {}
+        }
+    },
+    {
+        id: 12,
+        name:'Column',
+        component_name: 'nits-column',
+        accordion: 'General Elements',
+        options: {
+            general: {
+                component: 'nits-form-page-builder',
+                attrs: {
+                    grid: {
+                        cols: 1,
+                        gap: 4,
+                    }
+                },
+                child_components: [
+                    {
+                        component: 'nits-input-text',
+                        attrs: {
+                            label:'Gap',
+                            placeholder: 'Enter Gap',
+                            model: 'gap',
+                            value: ''
+                        }
+                    }
+                ]
+            },
+            style: {},
             advanced: {}
         }
     },
