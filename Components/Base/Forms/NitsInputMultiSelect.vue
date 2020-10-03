@@ -61,6 +61,7 @@
             }
             else
                 this.optionsData = this.options
+
         },
         methods: {
             selectElement(item) {
@@ -135,7 +136,7 @@
             },
             multiple: {
                 type: Boolean,
-                default: false
+                default: true
             },
             value: Array,
             api_url: {
@@ -155,7 +156,7 @@
             computedOptions() {
                 const searchTerm = this.search.toLowerCase();
                 if(this.searchable && searchTerm) this.$emit('searchQuery', this.search);
-                if(this.optionsData.length) return this.optionsData.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
+                if(this.options.length) return this.options.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
                 else return [];
             },
             checkValue() {
