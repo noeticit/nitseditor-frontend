@@ -10,7 +10,10 @@
     "watch-poll": "npm run watch -- --watch-poll",
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/@noeticit/nitseditor-frontend/webpack.config.js",
     "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/@noeticit/nitseditor-frontend/webpack.config.js"
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/@noeticit/nitseditor-frontend/webpack.config.js",
+    "icons": "vsvg -s assets/icons -t components/icons",
+    "prebuild": "npm run icons",
+    "build": "node build/build.js"
   },
   "keywords": [
     "nitseditor",
@@ -86,6 +89,7 @@
     "vue-route-generator": "^0.4.3",
     "vue-router": "^3.4.5",
     "vue-simple-spinner": "^1.2.10",
+    "vue-svgicon": "^4.0.1-alpha.0",
     "vue-tailwind-modal": "0.0.7",
     "vue-template-compiler": "^2.6.12",
     "vue2-dropzone": "^3.6.0",

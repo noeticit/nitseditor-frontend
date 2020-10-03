@@ -67,6 +67,15 @@
 
                 </div>
 
+<!--                <svgicon v-if="showMagicHat" name="right-arrow" height="3em"></svgicon>-->
+<!--                <button @click="showMagicHat = !showMagicHat">-->
+<!--                    Toggle Magic Hat Icon-->
+<!--                </button>-->
+
+
+<!--                <div class="h-32 w-32">-->
+<!--                    <i class="flaticon-left-arrow"></i>-->
+<!--                </div>-->
 
                 <page-row-element v-if="elements.length" v-for="(row, index) in elements" :key="'row_index_'+index" v-bind="row.attrs" :row_index="index"></page-row-element>
 
@@ -105,7 +114,8 @@
                 columnSettings: false,
                 elements:[],
                 heading:'Nitseditor',
-                elementSettings:{}
+                elementSettings:{},
+                showMagicHat: false
             }
         },
         methods:{
@@ -185,7 +195,12 @@
         },
         created(){
             this.listenToEvents();
-        }
+        },
+        // watch:{
+        //     showMagicHat(value) {
+        //         if (value) import(/* webpackChunkName: "svgicon-magic-hat" */ '../../../Assets/right-arrow.svg');
+        //     },
+        // }
     }
 </script>
 

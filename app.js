@@ -16,6 +16,8 @@ import session from './Models/_session';
 import ability from './Models/_ability';
 import VueMeta from 'vue-meta';
 import vClickOutside from 'v-click-outside';
+import * as svgicon from 'vue-svgicon';
+
 
 window.Vue = require('vue');
 
@@ -24,6 +26,10 @@ Vue.use(VueRouter);
 Vue.use(VueMeta, {
     // optional pluginOptions
     refreshOnceOnNavigation: true
+});
+
+Vue.use(svgicon, {
+    classPrefix: 'AppIcon-',
 });
 
 Vue.use(vClickOutside);
