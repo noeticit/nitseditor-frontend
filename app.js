@@ -6,6 +6,7 @@
 
 require('./bootstrap');
 
+// import Layout from './Components/Layout'
 import VueRouter from 'vue-router';
 import {router} from "./routes";
 import store from './Store/_store';
@@ -55,12 +56,15 @@ router.beforeEach((to, from, next) => {
     // }
     // else {
     //     store.dispatch('storeLastUrlVisited', to.name);
-        if(able.checkPageAccess(to))
-            next();
-        else
-            next({path: '/nits-admin/not-subscribed'});
+    if(able.checkPageAccess(to))
+        next();
+    else
+        next({path: '/nits-admin/not-subscribed'});
     // }
 });
+
+//importing one component that uses <style> tag
+import Index from './Pages/index';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -72,7 +76,7 @@ const app = new Vue({
     el: '#app',
     router: router,
     store: store,
-    template:'<router-view></router-view>',
+    template: '<router-view></router-view>',
     watch: {
         '$route' (to, from) {
             console.log();
