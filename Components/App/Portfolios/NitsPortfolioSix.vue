@@ -6,17 +6,13 @@
         <nits-column :gap="4" :cols="1">
             <div class="px-64">
                 <div class="relative w-full ">
-
-<!--                    <div style="width: 675px;height: 675px" class=" border border-dashed border-gray-600 rounded-full"></div>-->
                     <div class='circle-container relative'>
                        <div v-for="(item,index) in content">
-                           <div  @mouseover="active = index">
-                               <img :src="item.icon" :class="(active === index ? '-translate-y-3 shadow-lg scale-150 bg-white p-2 rounded-full' : '')">
+                           <div @mouseover="active = index">
+                               <img :src="item.icon"  :class="(active === index ? '-translate-y-3 shadow-lg scale-150 bg-white p-2 rounded-full' : '')">
                                <div :class="(active === index ? '-translate-y-3 scale-110' : '')" class="mx-auto text-center mt-2 text-blue-800 font-bold text-base antialiased tracking-wide font-ubuntu">{{item.name}}</div>
                            </div>
                        </div>
-
-
                     </div>
                     <div class="absolute top-0 w-full flex justify-center md:mt-12">
                         <transition  enter-active-class="transition duration-700 ease-out absolute top-0  transform flex justify-center" enter-class="-translate-x-4 scale-150 opacity-0" enter-to-class="translate-x-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-x-0 opacity-100" leave-to-class="-translate-x-3 opacity-0">
@@ -33,10 +29,6 @@
                             </div>
                         </transition>
                     </div>
-
-                    <!--                    <ul class='circle-container'>-->
-<!--                      <li v-for="(item, index) in content"><img :src='item.icon' alt="..." /></li>-->
-<!--                    </ul>-->
                 </div>
             </div>
         </nits-column>
@@ -73,7 +65,6 @@
         },
         computed: {
             logo() {
-                console.log(this.content[this.active].image)
                 return this.content[this.active].image;
             },
             name() {
