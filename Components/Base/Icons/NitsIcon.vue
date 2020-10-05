@@ -24,7 +24,7 @@
             // The `[request]` placeholder is replaced
             // by the filename of the file which is
             // loaded (e.g. `AppIcon-music.js`).
-            import(/* webpackChunkName: "AppIcon-[request]" */ `./../../Assets/${this.name}`);
+            import(/* webpackChunkName: "AppIcon-[request]" */ `./../../../Assets/${this.name}`);
         },
     };
 </script>

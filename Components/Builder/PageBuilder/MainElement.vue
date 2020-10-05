@@ -67,6 +67,7 @@
 
                 </div>
 
+<!--                <nits-icon  name="right-arrow"></nits-icon>-->
 <!--                <svgicon v-if="showMagicHat" name="right-arrow" height="3em"></svgicon>-->
 <!--                <button @click="showMagicHat = !showMagicHat">-->
 <!--                    Toggle Magic Hat Icon-->

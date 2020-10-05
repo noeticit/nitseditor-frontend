@@ -16,6 +16,7 @@ const tailwindcss = require('tailwindcss');
 const NitsRoutePlugins = require('./Webpack/NitsRoutePlugin');
 const NitsComponentsPlugin = require('./Webpack/NitsComponentsPlugin');
 const NitsLayoutsPlugin = require('./Webpack/NitsLayoutsPlugin');
+const NitsElementConfig = require('./Webpack/NitsElementConfig')
 
 /*
  |--------------------------------------------------------------------------
@@ -106,6 +107,7 @@ mix.copy('node_modules/@noeticit/nitseditor-frontend/Assets/images', 'public/nit
                 ProjectPages: path.resolve('./resources/pages'),
                 NitsAdminPages: path.resolve(__dirname, 'Pages'),
                 NitsComponents: path.resolve(__dirname, './Components'),
+                NitsElements: path.resolve(__dirname, './Components/Base/Forms'),
                 Plugins: path.resolve('./plugins'),
                 NitsStore: path.resolve(__dirname, './Store')
             }
@@ -114,6 +116,7 @@ mix.copy('node_modules/@noeticit/nitseditor-frontend/Assets/images', 'public/nit
             new NitsRoutePlugins(),
             new NitsComponentsPlugin(),
             new NitsLayoutsPlugin(),
+            new NitsElementConfig(),
             new CKEditorWebpackPlugin({language: 'en', additionalLanguages: 'all'})
         ]
     })
