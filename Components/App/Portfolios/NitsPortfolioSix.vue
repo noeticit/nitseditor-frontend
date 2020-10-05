@@ -4,32 +4,39 @@
             <div class="lg:px-48 tracking-wide font-ubuntu">{{title}}</div>
         </div>
         <nits-column :gap="4" :cols="1">
-            <div class="px-64 py-12 ">
-                <div class="relative py-10">
+            <div class="px-64">
+                <div class="relative w-full ">
 
 <!--                    <div style="width: 675px;height: 675px" class=" border border-dashed border-gray-600 rounded-full"></div>-->
-<!--                    <div  v-for="(item,index) in content">-->
-<!--                        <div @mouseover="active = index"  :class="item.style + ' ' + (active === index ? '-translate-y-3 shadow-lg scale-110' : '')">-->
-<!--                            <img :src="item.icon">-->
-<!--                            <div class="mx-auto text-center mt-2 text-blue-800 font-bold text-base antialiased tracking-wide font-ubuntu">{{item.name}}</div>-->
-<!--                        </div>-->
-<!--                        <transition enter-active-class="transition duration-700 ease-out transform" enter-class="-translate-x-4 scale-150 opacity-0" enter-to-class="translate-x-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-x-0 opacity-100" leave-to-class="-translate-x-3 opacity-0">-->
-<!--                            <div v-if="active === index" class="absolute top-0 ml-40 mt-16" style="width: 324px;height: 600px">-->
-<!--                                <div class="py-4 mt-16 text-center font-bold text-sm text-red-600 antialiased font-ubuntu">-->
-<!--                                    {{item.name}}-->
-<!--                                </div>-->
-<!--                                <div class="py-4 text-center text-xs text-blue-800 antialiased font-ubuntu">-->
-<!--                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.-->
-<!--                                </div>-->
-<!--                                <div>-->
-<!--                                    <img class="mx-auto" style="width:323px;height: 300px" :src="item.image">-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </transition>-->
-<!--                    </div>-->
-                    <ul class='circle-container'>
-                      <li v-for="(item, index) in content"><img :src='item.icon' alt="..." /></li>
-                    </ul>
+                    <div class='circle-container relative'>
+                       <div v-for="(item,index) in content">
+                           <div  @mouseover="active = index">
+                               <img :src="item.icon" :class="(active === index ? '-translate-y-3 shadow-lg scale-150 bg-white p-2 rounded-full' : '')">
+                               <div :class="(active === index ? '-translate-y-3 scale-110' : '')" class="mx-auto text-center mt-2 text-blue-800 font-bold text-base antialiased tracking-wide font-ubuntu">{{item.name}}</div>
+                           </div>
+                       </div>
+
+
+                    </div>
+                    <div class="absolute top-0 w-full flex justify-center md:mt-12">
+                        <transition  enter-active-class="transition duration-700 ease-out absolute top-0  transform flex justify-center" enter-class="-translate-x-4 scale-150 opacity-0" enter-to-class="translate-x-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-x-0 opacity-100" leave-to-class="-translate-x-3 opacity-0">
+                            <div class="mx-auto" style="width: 324px;height: 600px">
+                                <div class="py-4 mt-16 text-center font-bold text-sm text-red-600 antialiased font-ubuntu">
+                                    {{name}}
+                                </div>
+                                <div class="py-4 text-center text-xs text-blue-800 antialiased font-ubuntu">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                </div>
+                                <div>
+                                    <img class="mx-auto" style="width:250px; height: 250px" :src="logo">
+                                </div>
+                            </div>
+                        </transition>
+                    </div>
+
+                    <!--                    <ul class='circle-container'>-->
+<!--                      <li v-for="(item, index) in content"><img :src='item.icon' alt="..." /></li>-->
+<!--                    </ul>-->
                 </div>
             </div>
         </nits-column>
@@ -63,7 +70,16 @@
         },
         destroy() {
             clearInterval(this.timer);
-        }
+        },
+        computed: {
+            logo() {
+                console.log(this.content[this.active].image)
+                return this.content[this.active].image;
+            },
+            name() {
+                return this.content[this.active].name;
+            }
+        },
     }
 </script>
 
@@ -103,16 +119,16 @@
   }
 
   .circle-container {
-    @include on-circle($item-count: 8, $circle-size: 30em, $item-size: 6em);
+    @include on-circle($item-count: 12, $circle-size: 40em, $item-size: 5em);
     margin: 5em auto 0;
-    border: solid 5px tomato;
+    border: dashed 2px gray;
 
     img {
       display: block;
       max-width: 100%;
       border-radius: 50%;
-      filter: grayscale(100%);
-      border: solid 5px tomato;
+      /*filter: grayscale(100%);*/
+      /*border: solid 5px tomato;*/
       transition: .15s;
 
       &:hover,
