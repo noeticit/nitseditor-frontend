@@ -87,23 +87,60 @@
                     element: this.element,
                     component_name: this.elementData.component_name,
                 }
-                console.log(data)
                 eventBus.$emit('page-element-settings',data);
 
             },
             openColumnSettings(){
-                // const data = {
-                //     tab_index: "layout",
-                //     row_index: this.row_index,
-                //     column_index: this.column_index,
-                // }
-                // console.log(data)
-                // eventBus.$emit('page-column-settings',data);
+                const data = {
+                    tab_index: "general",
+                    row_index: this.row_index,
+                    column_index: this.column_index,
+                    element_index: this.element_index,
+                    component_name: 'nits-column',
+                    element:{
+                        attrs:{
+                            child_components:[]
+                        },
+                        component: 'nits-column'
+                    },
+                    elementData:{
+                        name:'Column',
+                        component_name: 'nits-column',
+                        accordion: 'General Elements',
+                        options: {
+                            general: {
+                                component: 'nits-form-page-builder',
+                                attrs: {
+                                    grid: {
+                                        cols: 1,
+                                        gap: 4,
+                                    }
+                                },
+                                child_components: [
+                                    {
+                                        component: 'nits-input-text',
+                                        attrs: {
+                                            label:'Gap',
+                                            placeholder: 'Enter Gap',
+                                            model: 'gap',
+                                            value: ''
+                                        }
+                                    }
+                                ]
+                            },
+                            style: {},
+                            advanced: {}
+                        }
+                    }
+                }
+                eventBus.$emit('page-element-settings',data);
             },
             showElements(){
                 eventBus.$emit('page-show-elements');
             },
             log: function(evt) {
+                console.log(evt)
+                console.log(this.list2)
                 let component_element = {
                     component: evt.added.element.component_name,
                     attrs: {

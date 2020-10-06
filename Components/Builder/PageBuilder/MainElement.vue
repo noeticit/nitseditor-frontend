@@ -27,6 +27,7 @@
                 </div>
             </div>
             <div class="w-4/5">
+
                 <div class="h-12 flex pl-3 justify-between bg-gray-100 w-full">
                     <div class="my-auto flex text-gray-700 ">
                         <svg class="h-5 w-5 my-auto mx-3 cursor-pointer hover:text-indigo-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M14.004 0H5.996A1.996 1.996 0 004 1.996v16.007C4 19.106 4.894 20 5.996 20h8.007A1.997 1.997 0 0016 18.004V1.996A1.996 1.996 0 0014.004 0zM10 19c-.69 0-1.25-.447-1.25-1s.56-1 1.25-1 1.25.447 1.25 1-.56 1-1.25 1zm4-3H6V2h8v14z"/></svg>
@@ -58,30 +59,40 @@
                         <button class="px-5 py-2 text-sm font-medium my-auto text-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-700 hover:text-indigo-500">
                             Preview
                         </button>
-                        <button class="px-5 py-2 text-sm font-medium my-auto text-white bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-700 hover:bg-indigo-500">
+                        <button  @click="isOpen2 = ! isOpen2" class="px-5 py-2 text-sm font-medium my-auto text-white bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-700 hover:bg-indigo-500">
                             Publish
                         </button>
-
-
                     </div>
-
                 </div>
 
-<!--                <nits-icon  name="right-arrow"></nits-icon>-->
-<!--                <svgicon v-if="showMagicHat" name="right-arrow" height="3em"></svgicon>-->
-<!--                <button @click="showMagicHat = !showMagicHat">-->
-<!--                    Toggle Magic Hat Icon-->
-<!--                </button>-->
+                <div v-if="isOpen2" class="main-modal fixed w-full h-full inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
+                    <div class="border border-teal-500 shadow-lg modal-container bg-white w-1/2 mx-20 rounded shadow-lg z-50">
+                        <div class="flex bg-blue-600 p-4">
+                            <h2 class="text-white text-xl leading-normal font-normal font-sans">Edit Row</h2>
+                        </div>
+                        <div class="mt-4 relative" style="height: 400px;">
+                            <img class="w-full" src="/nits-assets/images/page_shape.png" alt=""/>
+                            <div class="custom-shape-divider-top-1601986916">
+                                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                                    <path d="M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z" class="shape-fill"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex items-center mt-5 justify-end p-2 border-t border-solid border-gray-300 bg-gray-300 rounded-b">
+                            <button @click="isOpen2 = ! isOpen2" class="text-white bg-gray-500 bg-transparent border border-solid border-gray-500 active:bg-gray-500 font-bold uppercase mr-1 text-sm px-4 py-1 rounded outline-none focus:outline-none" type="button" style="transition: all .15s ease">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
 
-<!--                <div class="h-32 w-32">-->
-<!--                    <i class="flaticon-left-arrow"></i>-->
-<!--                </div>-->
+                <div class="md:mt-32"></div>
 
                 <page-row-element v-if="elements.length" v-for="(row, index) in elements" :key="'row_index_'+index" v-bind="row.attrs" :row_index="index"></page-row-element>
 
 
-                <div class="w-full flex md:px-16 justify-center md:py-16 md:mt-32 bg-gray-100">
+                <div class="w-full flex md:px-16 justify-center md:py-12">
                     <div class="border w-full flex flex-col border-dashed border-indigo-700 md:py-10">
                         <button @click.prevent="addRowField" class="p-3 mx-auto bg-indigo-600 text-white rounded-full focus:outline-none hover:bg-indigo-400 focus:bg-indigo-700">
                             <svg  class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 448 448" xmlns="http://www.w3.org/2000/svg"><path d="M408 184H272a8 8 0 01-8-8V40c0-22.09-17.91-40-40-40s-40 17.91-40 40v136a8 8 0 01-8 8H40c-22.09 0-40 17.91-40 40s17.91 40 40 40h136a8 8 0 018 8v136c0 22.09 17.91 40 40 40s40-17.91 40-40V272a8 8 0 018-8h136c22.09 0 40-17.91 40-40s-17.91-40-40-40zm0 0"/></svg>
@@ -107,12 +118,11 @@
         components: {ColumnSettings, RowSettings, ElementSettings},
         data(){
             return{
+                isOpen2: false,
                 selectColumn: false,
                 widget: true,
                 showElements: true,
                 editElement: false,
-                rowSettings: false,
-                columnSettings: false,
                 elements:[],
                 heading:'Nitseditor',
                 elementSettings:{},
@@ -152,59 +162,63 @@
                 });
 
                 eventBus.$on('page-individual-element-attributes', (data) => {
-                    let attributes = this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs;
-                    attributes[data.field] = data.value
-                    this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs = attributes;
+                    if(data.component_name === 'nits-row'){
+                        let attributes = this.elements[data.row_index].attrs;
+                        attributes[data.field] = data.value
+                        this.elements[data.row_index].attrs = attributes;
+                    }
+                    else if(data.component_name === 'nits-column'){
+                        let attributes = this.elements[data.row_index].attrs.child_components[data.column_index].attrs;
+                        attributes[data.field] = data.value
+                        this.elements[data.row_index].attrs.child_components[data.column_index].attrs = attributes;
+                    }
+                    else{
+                        let attributes = this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs;
+                        attributes[data.field] = data.value
+                        this.elements[data.row_index].attrs.child_components[data.column_index].attrs.child_components[data.element_index].attrs = attributes;
+                    }
                 })
+
 
                 eventBus.$on('page-element-settings', (data) => {
                     this.elementSettings = data
-                    console.log(data)
                     this.editElement = true
                     this.showElements = false
-                    this.rowSettings = false
-                    this.columnSettings = false
                     this.heading = 'Edit '+ data.elementData.name
                 });
-
-                eventBus.$on('page-column-settings', (data) => {
-                    this.editElement = false
-                    this.showElements = false
-                    this.rowSettings = false
-                    this.columnSettings = true
-                    this.heading = 'Edit Column'
-                });
-
-                eventBus.$on('page-row-settings', (data) => {
-                    this.editElement = false
-                    this.showElements = false
-                    this.rowSettings = true
-                    this.columnSettings = false
-                    this.heading = 'Edit Row'
-                });
-
 
                 eventBus.$on('page-show-elements', (data) => {
                     this.editElement = false
                     this.showElements = true
-                    this.rowSettings = false
-                    this.columnSettings = false
-                    this.heading = 'Nitseditor'
+                    this.heading = 'NitsEditor'
                 });
 
             },
         },
         created(){
             this.listenToEvents();
-        },
-        // watch:{
-        //     showMagicHat(value) {
-        //         if (value) import(/* webpackChunkName: "svgicon-magic-hat" */ '../../../Assets/right-arrow.svg');
-        //     },
-        // }
+        }
     }
 </script>
 
 <style scoped>
+    .custom-shape-divider-top-1601986916 {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        line-height: 0;
+    }
 
+    .custom-shape-divider-top-1601986916 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: auto;
+    }
+
+    .custom-shape-divider-top-1601986916 .shape-fill {
+        fill: white;
+    }
 </style>
