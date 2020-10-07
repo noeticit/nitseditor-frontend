@@ -1,7 +1,7 @@
 <template>
     <div class=" text-lg  font-bold">
         <div class=" p-1 px-2 mx-3">
-            <div v-for="(item,index) in menus" @mouseover="Visible = index" @mouseleave="Visible = false" @keydown.enter="Visible = !Visible"class="inline-block hover:text-teal-500 mt-3 cursor-pointer uppercase px-5 text-gray-700 " >
+            <div v-for="(item,index) in menus" @mouseover="Visible = index" @mouseleave="Visible = false" @keydown.enter="Visible = !Visible" class="inline-block hover:text-teal-500 mt-3 cursor-pointer uppercase px-5 text-gray-700 " >
                 <router-link class="text-sm uppercase tracking-wider" :to="item.link">
                     {{item.name}}
                 </router-link>
