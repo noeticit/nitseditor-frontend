@@ -99,7 +99,7 @@
                                     {
                                         component: 'nits-input-select',
                                         attrs: {
-                                            label:'Background',
+                                            label:'Select Your Background',
                                             placeholder: 'Select one',
                                             options: [
                                                 {label: 'Colour', value: 'color'},
@@ -110,6 +110,14 @@
                                             value: ''
                                         }
                                     },
+                                    {
+                                        component: 'nits-button',
+                                        attrs: {
+                                            text:'Edit',
+                                            model: 'text',
+                                            value: ''
+                                        }
+                                    }
                                 ]
                             },
                             advanced: {}

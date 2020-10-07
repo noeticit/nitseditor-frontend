@@ -90,6 +90,7 @@
     "vue-router": "^3.4.5",
     "vue-simple-spinner": "^1.2.10",
     "vue-svgicon": "^4.0.1-alpha.0",
+    "vue-swatches": "^2.1.0",
     "vue-tailwind-modal": "0.0.7",
     "vue-template-compiler": "^2.6.12",
     "vue2-dropzone": "^3.6.0",
