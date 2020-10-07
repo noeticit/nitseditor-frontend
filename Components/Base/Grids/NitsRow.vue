@@ -13,6 +13,10 @@
             attrs: Object,
             margin:Number,
             gap: Number,
+            background: {
+                type: String,
+                default: ''
+            },
         }
     }
 </script>

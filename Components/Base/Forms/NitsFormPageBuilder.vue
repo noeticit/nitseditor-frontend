@@ -54,7 +54,6 @@
                     value: this.child_components[index].attrs.value,
                     component_name: this.component_name
                 };
-
                 eventBus.$emit('page-individual-element-attributes', this.details)
 
                 const valueDetails = {
@@ -66,7 +65,6 @@
                     component_name: this.component_name
                 };
                 eventBus.$emit('page-individual-element-attributes', valueDetails)
-
             }
         }
     }
