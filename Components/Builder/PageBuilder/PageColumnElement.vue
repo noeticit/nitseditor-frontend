@@ -133,6 +133,11 @@
             emitEvent(){
                 eventBus.$emit('page-show-elements');
             }
+        },
+        created() {
+            eventBus.$on('page-individual-element-attributes', (data) => {
+                console.log(data);
+            })
         }
 
     }

@@ -58,7 +58,7 @@
             titleFormat(title) {
                 return _.startCase(_.toLower(title))
             }
-        }
+        },
     }
 </script>
 
