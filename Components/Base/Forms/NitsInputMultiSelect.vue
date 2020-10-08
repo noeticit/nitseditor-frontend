@@ -55,17 +55,18 @@
             }
         },
         created(){
-            this.selectedElements = typeof this.value !== 'undefined' ? this.value : [];
-            if(this.api_url) {
-                this.fetchOptions();
-            }
-            else
-                this.optionsData = this.options
+            // this.selectedElements = typeof this.value !== 'undefined' ? this.value : [];
+            // if(this.api_url) {
+            //     this.fetchOptions();
+            // }
+            // else
+            //     this.optionsData = this.options
 
         },
         methods: {
             selectElement(item) {
                 if(this.multiple) {
+                  console.log(item)
                     let index = _.findIndex(this.selectedElements, (o) => {
                         return o[this.trackBy] === item[this.trackBy];
                     });
