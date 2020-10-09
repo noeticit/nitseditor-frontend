@@ -54,9 +54,12 @@
                 selectedElements: []
             }
         },
-        created(){
-            // this.selectedElements = typeof this.value !== 'undefined' ? this.value : [];
-            // if(this.api_url) {
+      created(){
+        if(typeof this.value !== 'undefined' || this.value !== '')
+          this.selectedElements = this.value
+        else
+          this.selectedElements = []
+                // if(this.api_url) {
             //     this.fetchOptions();
             // }
             // else
@@ -66,12 +69,14 @@
         methods: {
             selectElement(item) {
                 if(this.multiple) {
-                  console.log(item)
                     let index = _.findIndex(this.selectedElements, (o) => {
                         return o[this.trackBy] === item[this.trackBy];
                     });
                     if(index > -1) this.selectedElements.splice(index, 1);
-                    else this.selectedElements.push(item);
+                    else
+                    {
+                      this.selectedElements.push(item);
+                    }
                 }
                 else this.selectedElements = item;
 
