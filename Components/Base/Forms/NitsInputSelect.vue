@@ -32,7 +32,7 @@
             }
         },
         props: {
-          styling: String,
+            styling: String,
             label: String,
             placeholder: String,
             model: String,
@@ -86,7 +86,7 @@
                 // eventBus.$emit('nits-form-input', data)
                 this.$emit('input', this.$refs.select.value)
 
-              this.$emit('change', this.$refs.select.value)
+                this.$emit('change', this.$refs.select.value)
             },
             fetchOptions() {
                 this.$api.post(this.api_url, this.query).then(response => {
