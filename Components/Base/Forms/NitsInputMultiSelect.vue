@@ -18,7 +18,7 @@
                 </span>
                 <span v-else class="multi-select-input-tag z-10" style="display: inline-flex;line-height: 1;align-items: center;font-size: .875rem; background-color: #bcdefa; color: #1c3d5a;border-radius: .25rem;user-select: none; padding: .25rem; margin-right: .5rem;   margin-bottom: .25rem;">
                     <span @click.prevent="removeElement(selectedElements)">{{ item[optionLabel] }}</span>
-                    <!--                    <button type="button" class="multi-select-input-remove" @click.prevent="removeElement(value)">&times;</button>-->
+<!--                    <button type="button" class="multi-select-input-remove" @click.prevent="removeElement(value)">&times;</button>-->
                 </span>
             </div>
             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-gray-700">
@@ -54,17 +54,16 @@
                 selectedElements: []
             }
         },
-        created(){
-            if(typeof this.value !== 'undefined' || this.value !== '')
-                this.selectedElements = this.value
-            else
-                this.selectedElements = []
-
-            // if(this.api_url) {
+      created(){
+        if(typeof this.value !== 'undefined' || this.value !== '')
+          this.selectedElements = this.value
+        else
+          this.selectedElements = []
+                // if(this.api_url) {
             //     this.fetchOptions();
             // }
             // else
-            //      this.optionsData = this.options
+            //     this.optionsData = this.options
 
         },
         methods: {
@@ -76,7 +75,7 @@
                     if(index > -1) this.selectedElements.splice(index, 1);
                     else
                     {
-                        this.selectedElements.push(item);
+                      this.selectedElements.push(item);
                     }
                 }
                 else this.selectedElements = item;
@@ -95,10 +94,7 @@
                 return index <= -1;
             },
             fetchOptions() {
-                const postData = {
-                    search: this.search
-                }
-                this.$api.post(this.api_url, postData).then(response => {
+                this.$api.post(this.api_url, this.query).then(response => {
                     if(response.status === 200) this.optionsData = response.data.data;
                 })
             },
@@ -164,15 +160,10 @@
                     return '';
             },
             computedOptions() {
-                // Set Options
-                // this.optionsData = this.options
-
-                return this.optionsData
-
-                // const searchTerm = this.search ? this.search.toLowerCase() : '';
-                // if(this.searchable && searchTerm) this.$emit('search-change', searchTerm);
-                // if(this.optionsData.length) return this.optionsData.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
-                // else return [];
+                const searchTerm = this.search.toLowerCase();
+                if(this.searchable && searchTerm) this.$emit('searchQuery', this.search);
+                if(this.options.length) return this.options.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
+                else return [];
             },
             checkValue() {
                 return _.isArray(this.selectedElements);
@@ -185,10 +176,6 @@
             queries: {
                 handler: 'fetchOptions',
                 deep: true
-            },
-            search: {
-                handler: 'fetchOptions',
-                immediate: true
             }
         }
     }
