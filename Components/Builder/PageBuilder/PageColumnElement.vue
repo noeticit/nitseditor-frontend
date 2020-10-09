@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="bg-white py-5 border-t border-gray-200 rounded-b-md flex mt-4">
-                    <button class="bg-indigo-500 rounded-full text-sm text-white font-medium mx-auto px-8 py-2">Apply</button>
+                    <button @click.prevent="emitSave" class="bg-indigo-500 rounded-full text-sm text-white font-medium mx-auto px-8 py-2">Apply</button>
                 </div>
             </div>
         </div>
@@ -247,6 +247,18 @@
             },
             emitEvent(){
                 eventBus.$emit('page-show-elements');
+            },
+            emitSave()
+            {
+                this.details = {
+                    row_index: this.row_index,
+                    column_index: this.column_index,
+                    element_index: '',
+                    field: 'background',
+                    value: this.color,
+                    component_name: 'nits-row'
+                };
+                eventBus.$emit('page-individual-element-attributes', this.details)
             }
         },
         created() {
