@@ -10,6 +10,7 @@
                         class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         :class="errorDisplay ? 'border-red-500 focus:bg-white focus:border-red-500': ''"
                         type="date"
+                        :format="format"
                         @focus="datepicker = true"
                         :placeholder="placeholder" v-model="date" ref="input_date"
                 >
@@ -96,6 +97,10 @@
             error: {
                 type: Array,
                 default: () => []
+            },
+            format: {
+                type: String,
+                default: 'DD-MM-YYYY'
             },
             placeholder: String,
             value: String,
@@ -193,6 +198,13 @@
                 else
                     return '';
             },
+            // computedDate() {
+            //     if(this.value) {
+            //         return this.value
+            //     }
+            //     else
+            //         return this.date
+            // }
         },
         watch: {
             month: {

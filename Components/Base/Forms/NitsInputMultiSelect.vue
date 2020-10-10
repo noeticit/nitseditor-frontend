@@ -54,13 +54,17 @@
                 selectedElements: []
             }
         },
-        created(){
-            this.selectedElements = typeof this.value !== 'undefined' ? this.value : [];
-            if(this.api_url) {
-                this.fetchOptions();
-            }
-            else
-                this.optionsData = this.options
+      created(){
+        if(typeof this.value !== 'undefined' || this.value !== '')
+          this.selectedElements = this.value
+        else
+          this.selectedElements = []
+                // if(this.api_url) {
+            //     this.fetchOptions();
+            // }
+            // else
+            //     this.optionsData = this.options
+
         },
         methods: {
             selectElement(item) {
@@ -69,7 +73,10 @@
                         return o[this.trackBy] === item[this.trackBy];
                     });
                     if(index > -1) this.selectedElements.splice(index, 1);
-                    else this.selectedElements.push(item);
+                    else
+                    {
+                      this.selectedElements.push(item);
+                    }
                 }
                 else this.selectedElements = item;
 
@@ -135,7 +142,7 @@
             },
             multiple: {
                 type: Boolean,
-                default: false
+                default: true
             },
             value: Array,
             api_url: {
@@ -155,7 +162,7 @@
             computedOptions() {
                 const searchTerm = this.search.toLowerCase();
                 if(this.searchable && searchTerm) this.$emit('searchQuery', this.search);
-                if(this.optionsData.length) return this.optionsData.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
+                if(this.options.length) return this.options.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
                 else return [];
             },
             checkValue() {

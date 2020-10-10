@@ -9,7 +9,7 @@
                             {{subtitle}}
                         </div>
                     </div>
-                    <div class="lg:mt-3 mt-64 lg:flex justify-between items-center">
+                    <div class="lg:mt-3 md:mt-64 lg:flex justify-between items-center">
                         <nits-grid :cols="2" :gap="4" :padding="12">
                             <div class="lg:m-3 lg:p-2 flex" v-for="(item,index) in content">
                                 <div class="inline-block mr-5 text-left">
@@ -36,7 +36,7 @@
                         </nits-grid>
                     </div>
                 </div>
-                <div class="absolute mt-56 top-0">
+                <div class="absolute hidden md:block md:mt-56 top-0">
                     <img :src="image" class="">
                 </div>
             </div>
