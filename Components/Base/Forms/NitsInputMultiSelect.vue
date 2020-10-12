@@ -165,9 +165,11 @@
                     return '';
             },
             computedOptions() {
+                this.optionsData = this.options
+
                 const searchTerm = this.search.toLowerCase();
                 if(this.searchable && searchTerm) this.$emit('searchQuery', this.search);
-                if(this.options.length) return this.options.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
+                if(this.optionsData.length) return this.optionsData.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
                 else return [];
             },
             checkValue() {
