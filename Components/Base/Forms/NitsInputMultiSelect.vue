@@ -68,6 +68,7 @@
         },
         methods: {
             selectElement(item) {
+              console.log(item)
                 if(this.multiple) {
                     let index = _.findIndex(this.selectedElements, (o) => {
                         return o[this.trackBy] === item[this.trackBy];
@@ -78,7 +79,11 @@
                       this.selectedElements.push(item);
                     }
                 }
-                else this.selectedElements = item;
+                else if(!this.multiple && this.selectedElements.length < 1){
+                  this.selectedElements.push(item);
+                }
+                else
+                  return this.selectedElements
 
                 const data = {
                     field: this.model,
@@ -142,7 +147,7 @@
             },
             multiple: {
                 type: Boolean,
-                default: true
+                default: false
             },
             value: Array,
             api_url: {
