@@ -19,7 +19,9 @@ export default {
     },
     methods:{
         check(path){
-          this.$router.push(path)
+          // this.$router.push(path)
+          window.open(path, '_blank');
+
         }
     }
 }
