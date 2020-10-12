@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full">
+    <div class="w-full hidden md:block">
         <div class="text-center md:text-4xl text-2xl font-bold text-blue-800 md:px-32 py-8 md:py-16">
             <div class="lg:px-48 tracking-wide font-ubuntu">{{title}}</div>
         </div>
