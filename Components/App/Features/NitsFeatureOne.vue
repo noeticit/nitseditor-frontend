@@ -17,10 +17,10 @@
                     </div>
                     <div class="flex-col">
                         <div class="text-lg font-ubuntu ml-3 text-blue-800 font-semibold tracking-wide antialiased">
-                            <span class="font-bold font-ubuntu">{{item.name}}</span>
+                            <span class="font-semibold font-ubuntu">{{item.name}}</span>
                         </div>
                         <div class="flex">
-                            <div  v-for="(ele,index) in item.services" :class="'text-sm font-ubuntu cursor-pointer hover:text-gray-700 font-semibold text-gray-600 text-left tracking-wide px-3 my-1 border-gray-500 ' + (index+1 < item.services.length ? 'border-r-2' : '')">
+                            <div  v-for="(ele,index) in item.services" :class="'text-xs md:text-sm font-ubuntu cursor-pointer hover:text-gray-700 font-medium text-gray-600 text-left tracking-wide px-3 my-1 border-gray-500 ' + (index+1 < item.services.length ? 'border-r-2' : '')">
                                 {{ele.title}}
                             </div>
                         </div>
