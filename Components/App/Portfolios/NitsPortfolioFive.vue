@@ -45,7 +45,6 @@
 
         </nits-column>
     </div>
-
 </template>
 
 <script>
