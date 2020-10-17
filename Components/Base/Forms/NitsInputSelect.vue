@@ -9,7 +9,7 @@
                     @change="emitEvent()"
                     ref="select"
                     id="grid-select">
-                <option value="" class="text-gray-500">{{placeholder}}</option>
+<!--                <option value="" class="text-gray-500">{{placeholder}}</option>-->
                 <option v-for="item in optionsAll" :value="item.value">{{item.label}}</option>
             </select>
             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -22,7 +22,6 @@
 </template>
 
 <script>
-    import {eventBus} from "../../../Models/_events";
 
     export default {
         name: "NitsInputSelect",
@@ -73,8 +72,9 @@
           }
         },
         created() {
-
-
+          if(this.api_url) {
+            this.fetchOptions()
+          }
             // this.optionsData.unshift({label: 'Select One', value: ''});
         },
         methods: {
@@ -101,8 +101,10 @@
         },
         computed: {
             optionsAll(){
-              if(this.api_url)
-                return this.fetchOptions();
+              if(this.api_url) {
+                this.optionsData.unshift({label: 'Select One', value: ''});
+                return this.optionsData;
+              }
               else
                 return this.options
             },
