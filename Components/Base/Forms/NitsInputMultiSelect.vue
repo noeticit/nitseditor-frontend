@@ -29,7 +29,7 @@
             <button v-if="dropdown" @click.prevent="dropdown = false" class="fixed top-0 left-0 bottom-0 right-0 h-full w-full"></button>
             <div v-if="dropdown" ref="dropdown" class="absolute z-40 right-0 mt-2 py-2 w-full bg-white rounded-lg shadow-xl overflow-y-auto h-48">
                 <ul>
-                    <li v-if="computedOptions.length" v-for="item in computedOptions"
+                    <li v-if="optionsData.length" v-for="item in optionsData"
                         class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white z-10"
                         :class="selected(item) ? '' : 'bg-gray-200'"
                         @click.prevent="selectElement(item)">{{ item[optionLabel] }}</li>
@@ -54,21 +54,17 @@
                 selectedElements: []
             }
         },
-      created(){
-        if(typeof this.value !== 'undefined' || this.value !== '')
-          this.selectedElements = this.value
-        else
-          this.selectedElements = []
-                // if(this.api_url) {
-            //     this.fetchOptions();
-            // }
-            // else
-            //     this.optionsData = this.options
+       created(){
+          if(typeof this.value !== 'undefined' || this.value !== '')
+            this.selectedElements = this.value
+          else
+            this.selectedElements = []
 
-        },
+          this.optionsData = this.options
+
+       },
         methods: {
             selectElement(item) {
-              console.log(item)
                 if(this.multiple) {
                     let index = _.findIndex(this.selectedElements, (o) => {
                         return o[this.trackBy] === item[this.trackBy];
@@ -99,9 +95,12 @@
                 return index <= -1;
             },
             fetchOptions() {
-                this.$api.post(this.api_url, this.query).then(response => {
-                    if(response.status === 200) this.optionsData = response.data.data;
-                })
+              const postData = {
+                search: this.search
+              }
+              this.$api.post(this.api_url, postData).then(response => {
+                if(response.status === 200) this.optionsData = response.data.data;
+              })
             },
             removeElement(item) {
                 console.log("Event fired");
@@ -165,24 +164,32 @@
                     return '';
             },
             computedOptions() {
-                this.optionsData = this.options
-
-                const searchTerm = this.search.toLowerCase();
-                if(this.searchable && searchTerm) this.$emit('searchQuery', this.search);
-                if(this.optionsData.length) return this.optionsData.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
-                else return [];
+                // this.optionsData = this.options
+                //
+                // const searchTerm = this.search.toLowerCase();
+                // if(this.searchable && searchTerm) this.$emit('searchQuery', this.search);
+                // if(this.optionsData.length) return this.optionsData.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
+                // else return [];
             },
             checkValue() {
                 return _.isArray(this.selectedElements);
             },
             queries() {
                 return this.query;
-            }
+            },
         },
         watch: {
+            query: {
+              handler: 'fetchOptions',
+              deep: true
+            },
             queries: {
                 handler: 'fetchOptions',
                 deep: true
+            },
+            search: {
+              handler: 'fetchOptions',
+              immediate: true
             }
         }
     }
