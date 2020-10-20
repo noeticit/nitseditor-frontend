@@ -25,12 +25,12 @@
                             <tr v-for="(item,index) in tableData.data">
                                 <template v-for="header in selectedColumns">
                                     <td v-if="typeof $scopedSlots[header.key] !== 'undefined'" class="px-2 py-4 whitespace-no-wrap">
-                                        <div class="text-sm leading-5 text-gray-900">
+                                        <div class="text-sm text-center leading-5 text-gray-900">
                                             <slot :name="header.key" :field="header.key" :item="item" :index="index"></slot>
                                         </div>
                                     </td>
                                     <td v-else class="px-2 py-4 whitespace-no-wrap">
-                                        <div class="text-sm leading-5 text-gray-900">
+                                        <div class="text-sm text-center leading-5 text-gray-900">
                                             <div v-html="item[header.key] ? item[header.key] : ' - '"></div>
                                         </div>
                                     </td>
