@@ -106,7 +106,11 @@
                 return this.optionsData;
               }
               else
+              {
+                this.options.unshift({label: 'Select One', value: ''});
                 return this.options
+              }
+
             },
             errorDisplay() {
                 if(this.error.length)
