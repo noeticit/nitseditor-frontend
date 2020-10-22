@@ -4,7 +4,7 @@
             <h1 class="leading-tight lg:my-2 my-1 lg:ml-48 ml-6 font-bold font-ubuntu text-white lg:text-5xl text-2xl " >
                 {{title}}
             </h1>
-            <button class="flex rounded md:mr-32 my-auto lg:px-10 px-2 lg:py-2 py-1 mr-8 focus:outline-none font-medium font-ubuntu lg:text-sm text-xs text-white bg-indigo-600 hover:bg-indigo-700 focus:bg-indigo-800" >
+            <button @click.prevent="goTo" class="flex rounded md:mr-32 my-auto lg:px-10 px-2 lg:py-2 py-1 mr-8 focus:outline-none font-medium font-ubuntu lg:text-sm text-xs text-white bg-indigo-600 hover:bg-indigo-700 focus:bg-indigo-800" >
                 {{btn}}
             </button>
         </div>
@@ -19,8 +19,14 @@
                 type: String,
                 required: true
             },
-            btn: String
+            btn: String,
+            url: String
         },
+      methods:{
+        goTo(){
+          this.$router.push({ name: this.url, params: { }})
+        },
+      }
     }
 </script>
 
