@@ -6,7 +6,6 @@
 
 require('./bootstrap');
 
-// import Layout from './Components/Layout'
 import VueRouter from 'vue-router';
 import {router} from "./routes";
 import store from './Store/_store';
@@ -17,6 +16,8 @@ import ability from './Models/_ability';
 import VueMeta from 'vue-meta';
 import vClickOutside from 'v-click-outside';
 import * as svgicon from 'vue-svgicon';
+import VueVirtualScroller from "vue-virtual-scroller";
+
 
 
 window.Vue = require('vue');
@@ -33,6 +34,8 @@ Vue.use(svgicon, {
 });
 
 Vue.use(vClickOutside);
+Vue.use(VueVirtualScroller)
+
 
 const sessions = new session(process.env.MIX_STORAGE_PERSIST, process.env.MIX_INACTIVITY_SESSION);
 sessions.start();
