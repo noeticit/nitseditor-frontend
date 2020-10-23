@@ -6,7 +6,6 @@
 
 require('./bootstrap');
 
-// import Layout from './Components/Layout'
 import VueRouter from 'vue-router';
 import {router} from "./routes";
 import store from './Store/_store';
@@ -36,7 +35,6 @@ Vue.use(svgicon, {
 
 Vue.use(vClickOutside);
 Vue.use(VueVirtualScroller);
-
 
 const sessions = new session(process.env.MIX_STORAGE_PERSIST, process.env.MIX_INACTIVITY_SESSION);
 sessions.start();

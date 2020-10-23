@@ -125,5 +125,12 @@ export const components_config = [
 		 accordion: 'Form Elements',
 		 options: {}
 	},
+	{
+		 id: '19',
+		 name: 'NitsVirtualList',
+		 component_name: 'nitsvirtuallist',
+		 accordion: 'Form Elements',
+		 options: {}
+	},
 
 ];
