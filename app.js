@@ -34,8 +34,7 @@ Vue.use(svgicon, {
 });
 
 Vue.use(vClickOutside);
-Vue.use(VueVirtualScroller)
-
+Vue.use(VueVirtualScroller);
 
 const sessions = new session(process.env.MIX_STORAGE_PERSIST, process.env.MIX_INACTIVITY_SESSION);
 sessions.start();
