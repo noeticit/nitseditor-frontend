@@ -33,7 +33,7 @@
             :items="computedOptions"
             :item-size="10"
             :key-field="trackBy"
-            :prerender="10"
+            :prerender="1"
             v-slot="{ item }"
         >
           <li class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white z-10"
@@ -170,7 +170,7 @@ export default {
     },
     computedOptions() {
       if(this.options.length) return this.options;
-      else if(this.options.length && this.api_url) return this.options;
+      else if(this.options.length && this.api_url) return this.optionsData;
       else if(this.options.length &&  !this.api_url) return this.options;
       else if(!this.options.length && this.api_url) return this.optionsData;
       else return [];
