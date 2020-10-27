@@ -181,7 +181,7 @@ export default {
     },
     computedOptions() {
       if(this.api_url) return this.optionsData;
-      else if(this.options.length) return this.options;
+       if(this.options.length) return this.options;
       else if(this.options.length &&  !this.api_url) return this.options;
       else if(!this.options.length && this.api_url) return this.optionsData;
       else return [];
@@ -213,7 +213,6 @@ export default {
       return this.query;
     },
   },
-
   watch: {
     query: {
       handler: 'fetchOptions',
@@ -223,7 +222,8 @@ export default {
       handler: 'fetchOptions',
       immediate: true
     }
-  }
+  },
+
 }
 </script>
 
