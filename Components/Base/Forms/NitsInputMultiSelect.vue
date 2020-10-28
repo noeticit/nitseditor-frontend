@@ -59,7 +59,8 @@ export default {
       dropdown: false,
       optionsData: [],
       selectedElements: [],
-      apiResponse:[]
+      apiResponse:[],
+      postData:{},
     }
   },
   created(){
@@ -100,10 +101,24 @@ export default {
       return index <= -1;
     },
     fetchOptions() {
-      const postData = {
-        search: this.search
+      if(typeof this.query !== '' || typeof this.query !== "undefined")
+      {
+        console.log('if cond')
+        let data = {
+          search: this.search
+        }
+        this.postData = Object.assign(this.query, data);
       }
-      this.$api.post(this.api_url, postData).then(response => {
+      else{
+        console.log('else part')
+        this.postData = {
+          search: this.search
+        }
+      }
+      // const postData = {
+      //   search: this.search
+      // }
+      this.$api.post(this.api_url, this.postData).then(response => {
         if(response.status === 200) this.optionsData =  response.data.data;
       })
     },
@@ -204,10 +219,6 @@ export default {
   },
 
   watch: {
-    query: {
-      handler: 'fetchOptions',
-      deep: true
-    },
     queries: {
       handler: 'fetchOptions',
       deep: true
