@@ -27,7 +27,7 @@
         </svg>
       </div>
       <button v-if="dropdown" @click.prevent="dropdown = false" class="fixed top-0 left-0 bottom-0 right-0 h-full w-full"></button>
-      <div v-if="dropdown" ref="dropdown" class="absolute z-40 right-0 mt-2 py-2 w-full bg-white rounded-lg shadow-xl overflow-y-auto h-48">
+      <div v-if="dropdown" ref="dropdown" class="absolute z-50 right-0 mt-2 py-2 w-full bg-white rounded-lg shadow-xl overflow-y-auto h-48">
         <RecycleScroller
             class="scroller"
             :items="computedOptions"
@@ -101,29 +101,25 @@ export default {
       return index <= -1;
     },
     fetchOptions() {
-      if(typeof this.query !== '' || typeof this.query !== "undefined")
+      if(typeof this.query === '' || typeof this.query === "undefined")
       {
-        console.log('if cond')
+        this.postData = {
+          search: this.search
+        }
+      }
+      else{
         let data = {
           search: this.search
         }
         this.postData = Object.assign(this.query, data);
       }
-      else{
-        console.log('else part')
-        this.postData = {
-          search: this.search
-        }
-      }
-      // const postData = {
-      //   search: this.search
-      // }
+
       this.$api.post(this.api_url, this.postData).then(response => {
         if(response.status === 200) this.optionsData =  response.data.data;
       })
     },
     removeElement(item) {
-      console.log("Event fired");
+
       if(this.multiple) {
         let index = _.findIndex(this.selectedElements, (o) => {
           return o[this.trackBy] === item[this.trackBy];
@@ -173,7 +169,8 @@ export default {
       type: String
     },
     query: {
-      type: Object
+      type: Object,
+      default: () => {}
     }
   },
   computed: {
@@ -184,8 +181,8 @@ export default {
         return '';
     },
     computedOptions() {
-      if(this.options.length) return this.options;
-      else if(this.options.length && this.api_url) return this.options;
+      if(this.api_url) return this.optionsData;
+       if(this.options.length) return this.options;
       else if(this.options.length &&  !this.api_url) return this.options;
       else if(!this.options.length && this.api_url) return this.optionsData;
       else return [];
@@ -217,9 +214,8 @@ export default {
       return this.query;
     },
   },
-
   watch: {
-    queries: {
+    query: {
       handler: 'fetchOptions',
       deep: true
     },
@@ -227,7 +223,8 @@ export default {
       handler: 'fetchOptions',
       immediate: true
     }
-  }
+  },
+
 }
 </script>
 
