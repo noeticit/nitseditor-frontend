@@ -27,7 +27,7 @@
         </svg>
       </div>
       <button v-if="dropdown" @click.prevent="dropdown = false" class="fixed top-0 left-0 bottom-0 right-0 h-full w-full"></button>
-      <div v-if="dropdown" ref="dropdown" class="absolute z-40 right-0 mt-2 py-2 w-full bg-white rounded-lg shadow-xl overflow-y-auto h-48">
+      <div v-if="dropdown" ref="dropdown" class="absolute z-50 right-0 mt-2 py-2 w-full bg-white rounded-lg shadow-xl overflow-y-auto h-48">
         <RecycleScroller
             class="scroller"
             :items="computedOptions"
@@ -59,14 +59,15 @@ export default {
       dropdown: false,
       optionsData: [],
       selectedElements: [],
-      apiResponse:[]
+      apiResponse:[],
+      postData:{},
     }
   },
-  created(){
-    if(typeof this.value !== 'undefined' || this.value !== '')
-      this.selectedElements = this.value
-    else
-      this.selectedElements = []
+  created() {
+    this.initState()
+  },
+  mounted(){
+    this.selectedElement()
   },
   methods: {
     selectElement(item) {
@@ -93,22 +94,44 @@ export default {
       eventBus.$emit('nits-form-input', data)
       this.$emit('input', this.selectedElements)
     },
+    selectedElement() {
+      if(typeof this.value !== 'undefined' || this.value !== '')
+        this.selectedElements = this.value
+      else
+        this.selectedElements = []
+    },
     selected(item) {
       let index = _.findIndex(this.selectedElements, (o) => {
         return o[this.trackBy] === item[this.trackBy];
       });
       return index <= -1;
     },
+    initState() {
+      if(this.api_init) this.fetchOptions();
+    },
+    optionPropsChanged() {
+      this.optionsData = this.options;
+    },
     fetchOptions() {
-      const postData = {
-        search: this.search
+      if(typeof this.query === '' || typeof this.query === "undefined")
+      {
+        this.postData = {
+          search: this.search
+        }
       }
-      this.$api.post(this.api_url, postData).then(response => {
+      else{
+        let data = {
+          search: this.search
+        }
+        this.postData = Object.assign(this.query, data);
+      }
+
+      this.$api.post(this.api_url, this.postData).then(response => {
         if(response.status === 200) this.optionsData =  response.data.data;
       })
     },
     removeElement(item) {
-      console.log("Event fired");
+
       if(this.multiple) {
         let index = _.findIndex(this.selectedElements, (o) => {
           return o[this.trackBy] === item[this.trackBy];
@@ -157,8 +180,12 @@ export default {
     api_url: {
       type: String
     },
+    api_init: {
+      type: Boolean
+    },
     query: {
-      type: Object
+      type: Object,
+      default: () => {}
     }
   },
   computed: {
@@ -169,31 +196,10 @@ export default {
         return '';
     },
     computedOptions() {
-      if(this.options.length) return this.options;
-      else if(this.options.length && this.api_url) return this.options;
-      else if(this.options.length &&  !this.api_url) return this.options;
-      else if(!this.options.length && this.api_url) return this.optionsData;
-      else return [];
-
-
-      //1. if options.length no api call on created
-      //2. if typed
-      //a. if api_url then, call api also filter from options
-      //b. if no api_url then filter from options
-
-      // let myobj = [];
-      //
-      // for (let index = 0; index < 100; index++) {
-      //   myobj.push({ label: 'hgfhjf', value: index})
-      // }
-      // return myobj;
-
-      // return this.optionsData = this.options
-      //
-      // const searchTerm = this.search.toLowerCase();
-      // if(this.searchable && searchTerm) this.$emit('searchQuery', this.search);
-      // if(this.optionsData.length) return this.optionsData.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
-      // else return [];
+      const searchTerm = this.search.toLowerCase();
+      if(this.searchable && searchTerm) this.$emit('searchQuery', this.search);
+      if(this.optionsData.length) return this.optionsData.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
+      else return this.options.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
     },
     checkValue() {
       return _.isArray(this.selectedElements);
@@ -202,21 +208,22 @@ export default {
       return this.query;
     },
   },
-
   watch: {
     query: {
       handler: 'fetchOptions',
       deep: true
     },
-    queries: {
-      handler: 'fetchOptions',
-      deep: true
-    },
     search: {
       handler: 'fetchOptions',
-      immediate: true
+    },
+    options: {
+      handler: 'optionPropsChanged'
+    },
+    value: {
+      handler: 'selectedElement'
     }
-  }
+  },
+
 }
 </script>
 

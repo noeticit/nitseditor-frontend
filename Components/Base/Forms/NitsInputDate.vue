@@ -7,7 +7,7 @@
                     :class="errorDisplay ? 'border-red-500 focus:bg-white focus:border-red-500': ''"
             >
                 <input
-                        class="block appearance-none z-50 w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        class="block appearance-none z-40 w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         :class="errorDisplay ? 'border-red-500 focus:bg-white focus:border-red-500': ''"
                         type="date"
                         :format="format"
@@ -16,7 +16,7 @@
                 >
             </div>
             <button v-if="datepicker" @click="datepicker = false" tabindex="-1" class="fixed inset-0 h-full w-full bg-black opacity-0 cursor-default"></button>
-            <div v-if="datepicker" ref="dropdown" class="absolute z-50 left-0 mt-2 py-2 max-w-md bg-white rounded-lg shadow-xl flex-col">
+            <div v-if="datepicker" ref="dropdown" class="absolute z-40 left-0 mt-2 py-2 max-w-md bg-white rounded-lg shadow-xl flex-col">
                 <div class="flex w-full justify-center">
                     <div class="block h-8 p-2 text-gray-800 z-10 flex items-center">
                         <div class="absolute left-0 flex items-center px-2 text-gray-700" @click="previousMonth()">
