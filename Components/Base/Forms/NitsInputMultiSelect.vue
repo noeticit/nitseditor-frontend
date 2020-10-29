@@ -63,11 +63,11 @@ export default {
       postData:{},
     }
   },
-  created(){
-    if(typeof this.value !== 'undefined' || this.value !== '')
-      this.selectedElements = this.value
-    else
-      this.selectedElements = []
+  created() {
+    this.initState()
+  },
+  mounted(){
+    this.selectedElement()
   },
   methods: {
     selectElement(item) {
@@ -94,11 +94,23 @@ export default {
       eventBus.$emit('nits-form-input', data)
       this.$emit('input', this.selectedElements)
     },
+    selectedElement() {
+      if(typeof this.value !== 'undefined' || this.value !== '')
+        this.selectedElements = this.value
+      else
+        this.selectedElements = []
+    },
     selected(item) {
       let index = _.findIndex(this.selectedElements, (o) => {
         return o[this.trackBy] === item[this.trackBy];
       });
       return index <= -1;
+    },
+    initState() {
+      if(this.api_init) this.fetchOptions();
+    },
+    optionPropsChanged() {
+      this.optionsData = this.options;
     },
     fetchOptions() {
       if(typeof this.query === '' || typeof this.query === "undefined")
@@ -167,6 +179,9 @@ export default {
     api_url: {
       type: String
     },
+    api_init: {
+      type: Boolean
+    },
     query: {
       type: Object,
       default: () => {}
@@ -180,31 +195,10 @@ export default {
         return '';
     },
     computedOptions() {
-      if(this.api_url) return this.optionsData;
-       if(this.options.length) return this.options;
-      else if(this.options.length &&  !this.api_url) return this.options;
-      else if(!this.options.length && this.api_url) return this.optionsData;
-      else return [];
-
-
-      //1. if options.length no api call on created
-      //2. if typed
-      //a. if api_url then, call api also filter from options
-      //b. if no api_url then filter from options
-
-      // let myobj = [];
-      //
-      // for (let index = 0; index < 100; index++) {
-      //   myobj.push({ label: 'hgfhjf', value: index})
-      // }
-      // return myobj;
-
-      // return this.optionsData = this.options
-      //
-      // const searchTerm = this.search.toLowerCase();
-      // if(this.searchable && searchTerm) this.$emit('searchQuery', this.search);
-      // if(this.optionsData.length) return this.optionsData.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
-      // else return [];
+      const searchTerm = this.search.toLowerCase();
+      if(this.searchable && searchTerm) this.$emit('searchQuery', this.search);
+      if(this.optionsData.length) return this.optionsData.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
+      else return this.options.filter((item) => item[this.optionLabel].toLowerCase().includes(searchTerm));
     },
     checkValue() {
       return _.isArray(this.selectedElements);
@@ -220,7 +214,12 @@ export default {
     },
     search: {
       handler: 'fetchOptions',
-      immediate: true
+    },
+    options: {
+      handler: 'optionPropsChanged'
+    },
+    value: {
+      handler: 'selectedElement'
     }
   },
 
