@@ -125,12 +125,13 @@ export default {
         }
         this.postData = Object.assign(this.query, data);
       }
+
       this.$api.post(this.api_url, this.postData).then(response => {
         if(response.status === 200) this.optionsData =  response.data.data;
       })
     },
     removeElement(item) {
-      console.log("Event fired");
+
       if(this.multiple) {
         let index = _.findIndex(this.selectedElements, (o) => {
           return o[this.trackBy] === item[this.trackBy];

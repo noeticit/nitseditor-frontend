@@ -107,7 +107,7 @@
               }
               else
               {
-                this.options.unshift({label: 'Select One', value: ''});
+                // this.options.unshift({label: 'Select One', value: ''});
                 return this.options
               }
 
