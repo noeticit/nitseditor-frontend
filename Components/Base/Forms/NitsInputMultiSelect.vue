@@ -13,13 +13,12 @@
                ref="input_select"
         >
         <span v-if="checkValue" v-for="item in selectedElements" class="multi-select-input-tag z-10" style="display: inline-flex;line-height: 1;align-items: center;font-size: .875rem; background-color: #bcdefa; color: #1c3d5a;border-radius: .25rem;user-select: none; padding: .25rem; margin-right: .5rem;   margin-bottom: .25rem;">
-                    <span>{{ item[optionLabel] }}</span>
-                    <button type="button" class="multi-select-input-remove" style="color: #2779bd;font-size: 1.125rem;line-height: 1;" @click.prevent="removeElement(item)">&times;</button>
-                </span>
+            <span>{{ item[optionLabel] }}</span>
+            <button  type="button" class="multi-select-input-remove" style="color: #2779bd;font-size: 1.125rem;line-height: 1;" @click.prevent="removeElement(item)">&times;</button>
+        </span>
         <span v-else class="multi-select-input-tag z-10" style="display: inline-flex;line-height: 1;align-items: center;font-size: .875rem; background-color: #bcdefa; color: #1c3d5a;border-radius: .25rem;user-select: none; padding: .25rem; margin-right: .5rem;   margin-bottom: .25rem;">
-                    <span @click.prevent="removeElement(selectedElements)">{{ item[optionLabel] }}</span>
-          <!--                    <button type="button" class="multi-select-input-remove" @click.prevent="removeElement(value)">&times;</button>-->
-                </span>
+          <span  @click.prevent="removeElement(selectedElements)">{{ item[optionLabel] }}</span>
+        </span>
       </div>
       <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-gray-700">
         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -83,6 +82,7 @@ export default {
       }
       else if(!this.multiple && this.selectedElements.length < 1){
         this.selectedElements.push(item);
+        this.dropdown = false
       }
       else
         return this.selectedElements
