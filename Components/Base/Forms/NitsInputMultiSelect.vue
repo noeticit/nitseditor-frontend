@@ -28,6 +28,7 @@
       <button v-if="dropdown" @click.prevent="dropdown = false" class="fixed top-0 left-0 bottom-0 right-0 h-full w-full"></button>
       <div v-if="dropdown" ref="dropdown" class="absolute z-50 right-0 mt-2 py-2 w-full bg-white rounded-lg shadow-xl overflow-y-auto h-48">
         <RecycleScroller
+            v-if="computedOptions.length && !loading"
             class="scroller"
             :items="computedOptions"
             :item-size="10"
@@ -60,6 +61,7 @@ export default {
       selectedElements: [],
       apiResponse:[],
       postData:{},
+      loading: false
     }
   },
   created() {
@@ -113,6 +115,7 @@ export default {
       this.optionsData = this.options;
     },
     fetchOptions() {
+      this.loading = true
       if(typeof this.query === '' || typeof this.query === "undefined")
       {
         this.postData = {
@@ -127,7 +130,10 @@ export default {
       }
 
       this.$api.post(this.api_url, this.postData).then(response => {
-        if(response.status === 200) this.optionsData =  response.data.data;
+        if(response.status === 200) {
+          this.optionsData =  response.data.data;
+          this.loading = false
+        }
       })
     },
     removeElement(item) {
