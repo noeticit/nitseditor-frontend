@@ -66,6 +66,9 @@ export default {
   },
   created() {
     this.initState()
+
+    this.debounceFunctionCalled = _.debounce(() => { this.fetchOptions(); }, 1000, { 'leading': false, 'trailing': true })
+
   },
   mounted(){
     this.selectedElement()
@@ -219,9 +222,12 @@ export default {
       handler: 'fetchOptions',
       deep: true
     },
-    search: {
-      handler: 'fetchOptions',
+    'search': function (newValue, oldValue) {
+      this.debounceFunctionCalled();
     },
+    // search: {
+    //   handler: 'fetchOptions',
+    // },
     options: {
       handler: 'optionPropsChanged'
     },
@@ -229,7 +235,6 @@ export default {
       handler: 'selectedElement'
     }
   },
-
 }
 </script>
 

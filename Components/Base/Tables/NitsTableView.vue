@@ -11,7 +11,7 @@
                                  <th v-if="typeof headerStyle[header.key] !== 'undefined'" :style="headerStyle[header.key]" class="px-2 py-3 bg-gray-50 text-center text-sm leading-4 font-medium text-white tracking-wider">
                                     <div v-if="header.key === 'index'">
                                         <div v-if="index_column" class="text-center text-sm leading-4 font-medium text-white tracking-wider">Sr No.</div>
-                                        <input v-else type="checkbox" v-model="selectAll">
+<!--                                        <input v-else type="checkbox" v-model="selectAll">-->
                                     </div>
                                      <div v-else-if="header.key === 'action'">
                                          <div class="hover:bg-white flex rounded p-2 text-white hover:text-gray-600">
