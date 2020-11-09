@@ -1,17 +1,17 @@
  <template>
      <div class="flex flex-col">
          <div v-if="!loading">
-             <div class="text-gray-700 my-2 md:px-6 text-left text-md antialiased leading-none tracking-normal font-sans font-medium">Showing Results {{tableData.meta.from}} to {{tableData.meta.to}} of {{tableData.meta.total}}</div>
-             <div class="py-2 align-middle inline-block w-full sm:px-6 md:px-6">
-                 <div class="shadow overflow-hidden border-b border-gray-200">
-                     <table class="w-full divide-y divide-gray-200" v-if="tableData && tableData.data.length">
+             <div class="text-gray-700 my-2 md:px-3 font-base text-left font-medium">Showing Results {{tableData.meta.from}} to {{tableData.meta.to}} of {{tableData.meta.total}}</div>
+             <div class="py-4 align-middle inline-block w-full md:px-3">
+                 <div class="overflow-hidden border-b border-gray-200">
+                     <table class="w-full divide-y divide-gray-200 table-auto" v-if="tableData && tableData.data.length">
                          <thead :style="table_head_color">
                          <tr>
                              <template v-for="header in selectedColumns">
-                                 <th v-if="typeof headerStyle[header.key] !== 'undefined'" :style="headerStyle[header.key]" class="px-2 py-3 bg-gray-50 text-center text-sm leading-4 font-medium text-white tracking-wider">
+                                 <th v-if="typeof headerStyle[header.key] !== 'undefined'" :style="headerStyle[header.key]" class="px-2 py-3 text-center text-sm leading-4 font-medium tracking-wider">
                                     <div v-if="header.key === 'index'">
-                                        <div v-if="index_column" class="text-center text-sm leading-4 font-medium text-white tracking-wider">Sr No.</div>
-<!--                                        <input v-else type="checkbox" v-model="selectAll">-->
+                                        <div v-if="index_column" class="text-center text-sm leading-4 font-medium tracking-wider">Sr No.</div>
+                                        <input v-else type="checkbox" v-model="selectAll">
                                     </div>
                                      <div v-else-if="header.key === 'action'">
                                          <div class="hover:bg-white flex rounded p-2 text-white hover:text-gray-600">
@@ -30,15 +30,15 @@
                          </tr>
                          </thead>
                          <tbody class="bg-white divide-y divide-gray-200">
-                            <tr v-for="(item,index) in tableData.data">
+                            <tr class="hover:bg-gray-100" v-for="(item,index) in tableData.data">
                                 <template v-for="header in selectedColumns">
-                                    <td v-if="typeof $scopedSlots[header.key] !== 'undefined'" class="px-2 py-4 whitespace-no-wrap">
-                                        <div class="text-sm leading-5 text-indigo-600">
+                                    <td v-if="typeof $scopedSlots[header.key] !== 'undefined'" class="px-2 py-3 whitespace-no-wrap">
+                                        <div class="text-sm font-medium text-center leading-5 text-indigo-600">
                                             <slot :name="header.key" :field="header.key" :item="item" :index="index"></slot>
                                         </div>
                                     </td>
-                                    <td v-else class="px-2 py-4 whitespace-no-wrap">
-                                        <div class="text-sm leading-5 text-gray-900">
+                                    <td v-else class="px-2 py-3 whitespace-no-wrap">
+                                        <div class="text-sm text-center font-medium leading-5 text-gray-800">
                                             <div v-html="item[header.key] ? item[header.key] : ' - '"></div>
                                         </div>
                                     </td>
@@ -46,7 +46,7 @@
                              </tr>
                          </tbody>
                      </table>
-                     <div v-else class="text-center mt-20 mb-20 text-lg font-medium">
+                     <div v-else class="text-center my-16 text-base font-medium">
                          No Data Found !!
                      </div>
                  </div>
