@@ -68,11 +68,11 @@ router.beforeEach((to, from, next) => {
         next();
     else
     {
-        if(store.getters.user_access_token)
+        // if(store.getters.user_access_token)
             next({path: '/nits-admin/not-subscribed'});
-        else{
-            next({path: '/'});
-        }
+        // else{
+        //     next({path: '/'});
+        // }
     }
 
 
