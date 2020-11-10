@@ -9,6 +9,7 @@ export default class ability {
             return true;
 
         console.log(store.getters.user_role);
+
         //check whether admin pages are their
         if(page.name.startsWith('nits-admin-') && (store.getters.user_role === 'God' || store.getters.user_role === 'Super admin')) {
             return true;
@@ -24,7 +25,6 @@ export default class ability {
         }
         else {
             const permissions = store.getters.user_permissions;
-
             let q = _.findIndex(permissions, function(o) { return o.name === page.name; });
 
             if(q > -1) {

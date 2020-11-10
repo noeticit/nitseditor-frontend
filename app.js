@@ -67,7 +67,15 @@ router.beforeEach((to, from, next) => {
     if(able.checkPageAccess(to))
         next();
     else
-        next({path: '/nits-admin/not-subscribed'});
+    {
+        if(store.getters.user_access_token)
+            next({path: '/nits-admin/not-subscribed'});
+        else{
+            next({path: '/'});
+        }
+    }
+
+
     // }
 });
 
