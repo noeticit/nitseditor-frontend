@@ -64,10 +64,13 @@ router.beforeEach((to, from, next) => {
     // }
     // else {
     //     store.dispatch('storeLastUrlVisited', to.name);
+    console.log(able.checkPageAccess(to))
     if(able.checkPageAccess(to))
+
         next();
     else
     {
+        // console.log(store.getters.user_access_token)
         // if(store.getters.user_access_token)
             next({path: '/nits-admin/not-subscribed'});
         // else{
