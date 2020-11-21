@@ -1,5 +1,5 @@
 <template>
-    <div   class="h-full w-full" :class="mode"@change="toggle">
+    <div   class="h-full w-full" :class="mode" @change="toggle">
         <nav class="app relative py-4 px-8 mx-auto bg-transparent w-screen mt-5">
             <div class="flex justify-between">
                 <div class="float-left border-r text-black">

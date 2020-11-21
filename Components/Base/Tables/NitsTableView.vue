@@ -33,12 +33,12 @@
                             <tr class="hover:bg-gray-100" v-for="(item,index) in tableData.data">
                                 <template v-for="header in selectedColumns">
                                     <td v-if="typeof $scopedSlots[header.key] !== 'undefined'" class="px-2 py-3 whitespace-no-wrap">
-                                        <div class="text-sm font-medium text-center leading-5 text-indigo-600">
+                                        <div class="text-sm break-all font-medium text-center leading-5 text-indigo-600">
                                             <slot :name="header.key" :field="header.key" :item="item" :index="index"></slot>
                                         </div>
                                     </td>
                                     <td v-else class="px-2 py-3 whitespace-no-wrap">
-                                        <div class="text-sm text-center font-medium leading-5 text-gray-800">
+                                        <div class="text-sm break-all text-center font-medium leading-5 text-gray-800">
                                             <div v-html="item[header.key] ? item[header.key] : ' - '"></div>
                                         </div>
                                     </td>
