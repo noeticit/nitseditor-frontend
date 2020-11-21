@@ -11,7 +11,7 @@
 
                 </div>
                 <div class="w-full md:w-3/5 py-6 text-center">
-                                    <img class="w-full z-50" src="../../../public/nits-assets/images/subscribe.jpg">
+                                    <img class="w-full z-50" src="/nits-assets/images/subscribe.jpg">
                 </div>
             </div>
         </div>
