@@ -13,13 +13,12 @@
                ref="input_select"
         >
         <span v-if="checkValue" v-for="item in selectedElements" class="multi-select-input-tag z-10" style="display: inline-flex;line-height: 1;align-items: center;font-size: .875rem; background-color: #bcdefa; color: #1c3d5a;border-radius: .25rem;user-select: none; padding: .25rem; margin-right: .5rem;   margin-bottom: .25rem;">
-                    <span>{{ item[optionLabel] }}</span>
-                    <button type="button" class="multi-select-input-remove" style="color: #2779bd;font-size: 1.125rem;line-height: 1;" @click.prevent="removeElement(item)">&times;</button>
-                </span>
+            <span>{{ item[optionLabel] }}</span>
+            <button  type="button" class="multi-select-input-remove" style="color: #2779bd;font-size: 1.125rem;line-height: 1;" @click.prevent="removeElement(item)">&times;</button>
+        </span>
         <span v-else class="multi-select-input-tag z-10" style="display: inline-flex;line-height: 1;align-items: center;font-size: .875rem; background-color: #bcdefa; color: #1c3d5a;border-radius: .25rem;user-select: none; padding: .25rem; margin-right: .5rem;   margin-bottom: .25rem;">
-                    <span @click.prevent="removeElement(selectedElements)">{{ item[optionLabel] }}</span>
-          <!--                    <button type="button" class="multi-select-input-remove" @click.prevent="removeElement(value)">&times;</button>-->
-                </span>
+          <span  @click.prevent="removeElement(selectedElements)">{{ item[optionLabel] }}</span>
+        </span>
       </div>
       <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-gray-700">
         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -29,6 +28,7 @@
       <button v-if="dropdown" @click.prevent="dropdown = false" class="fixed top-0 left-0 bottom-0 right-0 h-full w-full"></button>
       <div v-if="dropdown" ref="dropdown" class="absolute z-50 right-0 mt-2 py-2 w-full bg-white rounded-lg shadow-xl overflow-y-auto h-48">
         <RecycleScroller
+            v-if="computedOptions.length && !loading"
             class="scroller"
             :items="computedOptions"
             :item-size="10"
@@ -61,10 +61,14 @@ export default {
       selectedElements: [],
       apiResponse:[],
       postData:{},
+      loading: false
     }
   },
   created() {
     this.initState()
+
+    this.debounceFunctionCalled = _.debounce(() => { this.fetchOptions(); }, 1000, { 'leading': false, 'trailing': true })
+
   },
   mounted(){
     this.selectedElement()
@@ -83,6 +87,7 @@ export default {
       }
       else if(!this.multiple && this.selectedElements.length < 1){
         this.selectedElements.push(item);
+        this.dropdown = false
       }
       else
         return this.selectedElements
@@ -113,6 +118,7 @@ export default {
       this.optionsData = this.options;
     },
     fetchOptions() {
+      this.loading = true
       if(typeof this.query === '' || typeof this.query === "undefined")
       {
         this.postData = {
@@ -127,7 +133,10 @@ export default {
       }
 
       this.$api.post(this.api_url, this.postData).then(response => {
-        if(response.status === 200) this.optionsData =  response.data.data;
+        if(response.status === 200) {
+          this.optionsData =  response.data.data;
+          this.loading = false
+        }
       })
     },
     removeElement(item) {
@@ -213,9 +222,12 @@ export default {
       handler: 'fetchOptions',
       deep: true
     },
-    search: {
-      handler: 'fetchOptions',
+    'search': function (newValue, oldValue) {
+      this.debounceFunctionCalled();
     },
+    // search: {
+    //   handler: 'fetchOptions',
+    // },
     options: {
       handler: 'optionPropsChanged'
     },
@@ -223,7 +235,6 @@ export default {
       handler: 'selectedElement'
     }
   },
-
 }
 </script>
 

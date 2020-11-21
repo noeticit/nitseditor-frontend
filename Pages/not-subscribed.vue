@@ -1,43 +1,34 @@
 <template>
-    <div class="relative h-screen w-screen flex-col justify-between bg-white">
-        <div class="pl-3 pt-3 absolute">
-            <img class="h-16 " src="/nits-assets/images/logo.png" alt="NitsEditor Logo">
-        </div>
-        <div class="flex">
-            <div class="w-4/12">
-                <div class="mt-56 font-semibold text-2xl text-center text-gray-600">
-                    You have not Subscribed to this page <br> <span class="text-red-700">Please contact to Admin</span>
-                </div>
-                <div class="mt-10 justify-center">
-                    <router-link to="/dashboard">
-                        <button class="block uppercase mx-auto shadow bg-indigo-800 hover:bg-indigo-700 focus:outline-none font-semibold text-white text-xs py-3 px-10 rounded focus:outline-none">Go Back</button>
-                    </router-link>
-                </div>
-            </div>
-            <div class=" w-8/12">
-                <img class="h-auto text-center object-fill object-center" src="/nits-assets/images/page-not-found.png" alt="Not subscribed">
-            </div>
-        </div>
+    <div class="">
+        <div class="mt-20">
+            <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+                <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+                    <!--                <p class="uppercase tracking-loose w-full">What business are you?</p>-->
+                    <h1 class="my-4 text-4xl font-bold leading-tight ml-10 uppercase text-gray-700">You have not subscribe to this page</h1>
+                    <h2 class="mb-4 text-2xl font-bold leading-tight ml-10 text-red-700">Please Contact To Admin</h2>
+                    <!--                <p class="leading-normal text-2xl mb-8">Sub-hero message, not too long and not too short. Make it just right!</p>-->
+                    <div @click="home()" class="ml-10 hover:underline text-white bg-blue-600 font-bold cursor-pointer rounded-lg py-4 px-6 shadow-lg">Go Back</div>
 
-        <div class=" w-screen fixed rounded pl-1 bottom-0">
-            <div class="h-10 bg-gray-200  rounded justify-between item-center align-center">
-                <div class="flex">
-                    <div class="text-sm font-serif text-gray-600 mt-3 pl-64 ml-64">
-                        <a class="hover:text-blue-600 pl-40 ml-64" href="#">©2020 Noetic IT Services Pvt. Ltd.</a>
-                        <a class="text-sm font-serif text-gray-600 mt-3 ml-10" href="#">About Us</a>
-                        <a class="text-sm font-serif text-gray-600 mt-3 ml-10" href="#">Disclaimer</a>
-                        <a class="text-sm font-serif text-gray-600 mt-3 ml-10" href="#">Support</a>
-                    </div>
+                </div>
+                <div class="w-full md:w-3/5 py-6 text-center">
+                                    <img class="w-full z-50" src="/nits-assets/images/subscribe.jpg">
                 </div>
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
-    export default {
-        name: "PageNotFound"
+export default {
+name: "NotSubscribed",
+    methods:{
+        home() {
+            let route = this.$router.resolve({ name: 'login'})
+            window.open(route.href, '_blank');
+        },
     }
+}
 </script>
 
 <style scoped>

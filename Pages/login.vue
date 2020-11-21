@@ -93,7 +93,12 @@
             }
         },
         beforeCreate() {
-            this.$auth.logout();
+            // if(this.$auth.isLoggedIn){
+            //     console.log('check')
+            //     this.$router.push("/dashboard");
+            // }
+            // else
+                this.$auth.logout();
         },
         methods: {
             login() {

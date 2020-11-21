@@ -17,6 +17,7 @@ const state =  {
 
 const mutations = {
     STORE_USER_DATA(state, data) {
+        console.log(data)
         state.user_id = data.user_id;
         state.first_name = data.first_name;
         state.last_name = data.last_name;
@@ -25,6 +26,7 @@ const mutations = {
         state.role_id = data.role_id;
         state.access_token = data.access_token;
         state.refresh_token = data.refresh_token;
+        state.permissible_pages = data.permissible_pages
     },
     STORE_PERMISSIONS(state, data) {
         state.permissible_pages = data;
@@ -54,6 +56,7 @@ const actions = {
             refresh_token: userData.refresh_token ? encrypt(userData.refresh_token) : '',
             permissible_pages: userData.permissible_pages
         };
+        console.log(user)
         commit('STORE_USER_DATA', user);
     },
     removeUserData({commit}) {
