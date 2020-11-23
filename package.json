@@ -54,6 +54,8 @@
     "@ckeditor/ckeditor5-theme-lark": "^19.1.0",
     "@ckeditor/ckeditor5-typing": "^19.0.1",
     "@ckeditor/ckeditor5-vue": "^1.0.3",
+    "@inertiajs/inertia": "^0.6.3",
+    "@inertiajs/inertia-vue": "^0.4.2",
     "@popperjs/core": "^2.5.4",
     "@syncfusion/ej2-vue-dropdowns": "^18.3.48",
     "@wiris/mathtype-ckeditor5": "^7.24.1",

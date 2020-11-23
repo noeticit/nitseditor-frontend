@@ -1,8 +1,31 @@
-const mix = require('laravel-mix')
-const path = require('path')
+const mix = require('laravel-mix');
+let path = require('path');
+/*
+ |--------------------------------------------------------------------------
+ | Mix Asset Management
+ |--------------------------------------------------------------------------
+ |
+ | Mix provides a clean, fluent API for defining some Webpack build steps
+ | for your Laravel application. By default, we are compiling the Sass
+ | file for the application as well as bundling up all the JS files.
+ |
+ */
 
 const tailwindcss = require('tailwindcss');
 
+const NitsRoutePlugins = require('./Webpack/NitsRoutePlugin');
+const NitsComponentsPlugin = require('./Webpack/NitsComponentsPlugin');
+const NitsLayoutsPlugin = require('./Webpack/NitsLayoutsPlugin');
+const NitsElementConfig = require('./Webpack/NitsElementConfig')
+
+/*
+ |--------------------------------------------------------------------------
+ | CKEditor configuration
+ |--------------------------------------------------------------------------
+ |
+ | Neccessary Webpack config files.
+ |
+ */
 const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin');
 const CKEStyles = require('@ckeditor/ckeditor5-dev-utils').styles;
 const CKERegex = {
@@ -32,12 +55,13 @@ Mix.listen('configReady', webpackConfig => {
 });
 
 
-mix.sass('./resources/sass/app.scss', 'public/nits-assets/css')
+mix.copy('node_modules/@noeticit/nitseditor-frontend/Assets/images', 'public/nits-assets/images')
+    .sass('./resources/sass/app.scss', 'public/nits-assets/css')
     .options({
         processCssUrls: false,
         postCss: [ require('autoprefixer'), tailwindcss('./tailwind.config.js') ],
     })
-    .js('resources/js/app.js', 'public/nits-assets/js')
+    .js(path.resolve('./resources/js/app.js'), 'public/nits-assets/js')
     .webpackConfig({
         module: {
             rules: [
@@ -67,15 +91,39 @@ mix.sass('./resources/sass/app.scss', 'public/nits-assets/css')
                 }
             ]
         },
-        output: { chunkFilename: 'js/[name].[contenthash].js' },
+        node: {
+            fs: "empty"
+        },
+        output: {
+            publicPath: '/',
+            chunkFilename: 'nits-assets/chunks/[name].[chunkhash].js',
+        },
         resolve: {
+            symlinks: false,
+            extensions: ['.js', '.json', '.vue'],
             alias: {
                 'vue$': 'vue/dist/vue.runtime.js',
-                '@': path.resolve('./resources/pages'),
+                '@': path.resolve('resources/js'),
                 NitsModels: path.resolve(__dirname, 'Models'),
-            },
+                ProjectModels: path.resolve('./resources/models'),
+                ProjectPages: path.resolve('./resources/pages'),
+                NitsAdminPages: path.resolve(__dirname, 'Pages'),
+                NitsComponents: path.resolve(__dirname, './Components'),
+                NitsElements: path.resolve(__dirname, './Components/Base/Forms'),
+                Plugins: path.resolve('./plugins'),
+                NitsStore: path.resolve(__dirname, './Store')
+            }
         },
         plugins: [
+            new NitsRoutePlugins(),
+            new NitsComponentsPlugin(),
+            new NitsLayoutsPlugin(),
+            new NitsElementConfig(),
             new CKEditorWebpackPlugin({language: 'en', additionalLanguages: 'all'})
         ]
-    }).sourceMaps().version();
+    })
+    // .extract([
+    //     'vue', 'axios', 'lodash', 'vue-router', 'vue-template-compiler', 'vuex'
+    // ])
+    // .nitsEditor()
+    .sourceMaps().version();
