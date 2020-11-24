@@ -3,6 +3,7 @@ const path = require('path')
 
 const tailwindcss = require('tailwindcss');
 
+const NitsComponentsPlugin = require('./Webpack/NitsComponentsPlugin');
 const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin');
 const CKEStyles = require('@ckeditor/ckeditor5-dev-utils').styles;
 const CKERegex = {
@@ -67,15 +68,17 @@ mix.sass('./resources/sass/app.scss', 'public/nits-assets/css')
                 }
             ]
         },
-        output: { chunkFilename: 'js/[name].[contenthash].js' },
+        output: { chunkFilename: 'nits-assets/chunks/[name].[contenthash].js' },
         resolve: {
+            symlinks: false,
             alias: {
-                'vue$': 'vue/dist/vue.runtime.js',
-                '@': path.resolve('./resources/pages'),
                 NitsModels: path.resolve(__dirname, 'Models'),
+                NitsComponents: path.resolve(__dirname, './Components'),
+                NitsPages: path.resolve( './resources/pages'),
             },
         },
         plugins: [
-            new CKEditorWebpackPlugin({language: 'en', additionalLanguages: 'all'})
+            new CKEditorWebpackPlugin({language: 'en', additionalLanguages: 'all'}),
+            new NitsComponentsPlugin(),
         ]
-    }).sourceMaps().version();
+    }).babelConfig({ plugins: ['@babel/plugin-syntax-dynamic-import']}).sourceMaps().version();

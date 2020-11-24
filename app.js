@@ -1,24 +1,11 @@
-// import Inertia from '@inertiajs/inertia-vue'
-// import Vue from 'vue'
-//
-// let app = document.getElementById('app')
-//
-// new Vue({
-//     render: h => h(Inertia, {
-//         props: {
-//             component: app.dataset.page.component,
-//             props: JSON.parse(app.dataset.page).props,
-//             resolveComponent: (component) => {
-//                 return import(`@/${component}`).then(module => module.default)
-//             },
-//         },
-//     }),
-// }).$mount(app)
-
-
-
 import { App, plugin } from '@inertiajs/inertia-vue'
 import Vue from 'vue'
+import api from './Models/_api'
+
+const apis = new api();
+Vue.prototype.$api = apis;
+
+require('./Models/_components');
 
 Vue.use(plugin)
 
@@ -28,7 +15,7 @@ new Vue({
     render: h => h(App, {
         props: {
             initialPage: JSON.parse(el.dataset.page),
-            resolveComponent: name => require(`./${name}`).default,
+            resolveComponent: name => import(`NitsPages/${name}`).then(module => module.default),
         },
     }),
 }).$mount(el)
