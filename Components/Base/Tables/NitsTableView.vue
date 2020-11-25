@@ -7,7 +7,8 @@
                      <table class="w-full divide-y divide-gray-200 table-auto" v-if="tableData && tableData.data.length">
                          <thead :style="table_head_color">
                          <tr>
-                             <template v-for="header in selectedColumns">
+                             <template v-for="header in tableColumns" >
+<!--                             <template v-for="header in selectedColumns" >-->
                                  <th v-if="typeof headerStyle[header.key] !== 'undefined'" :style="headerStyle[header.key]" class="px-2 py-3 text-center text-sm leading-4 font-medium tracking-wider">
                                     <div v-if="header.key === 'index'">
                                         <div v-if="index_column" class="text-center text-sm leading-4 font-medium tracking-wider">Sr No.</div>
@@ -31,7 +32,7 @@
                          </thead>
                          <tbody class="bg-white divide-y divide-gray-200">
                             <tr class="hover:bg-gray-100" v-for="(item,index) in tableData.data">
-                                <template v-for="header in selectedColumns">
+                                <template v-for="header in tableColumns">
                                     <td v-if="typeof $scopedSlots[header.key] !== 'undefined'" class="px-2 py-3 whitespace-no-wrap">
                                         <div class="text-sm break-all font-medium text-center leading-5 text-indigo-600">
                                             <slot :name="header.key" :field="header.key" :item="item" :index="index"></slot>
@@ -39,7 +40,7 @@
                                     </td>
                                     <td v-else class="px-2 py-3 whitespace-no-wrap">
                                         <div class="text-sm break-all text-center font-medium leading-5 text-gray-800">
-                                            <div v-html="item[header.key] ? item[header.key] : ' - '"></div>
+                                            <div v-html="item[header.key] ? item[header.key] : ''"></div>
                                         </div>
                                     </td>
                                 </template>
