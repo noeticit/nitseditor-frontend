@@ -7,9 +7,19 @@
                     <h1 class="my-4 text-4xl font-bold leading-tight ml-10 uppercase text-gray-700">You have not subscribe to this page</h1>
                     <h2 class="mb-4 text-2xl font-bold leading-tight ml-10 text-red-700">Please Contact To Admin</h2>
                     <!--                <p class="leading-normal text-2xl mb-8">Sub-hero message, not too long and not too short. Make it just right!</p>-->
-                  <div class="flex flex-col">
-                    <div @click="login()" class="ml-10 hover:underline text-white bg-blue-600 font-bold cursor-pointer rounded-lg py-4 px-6 shadow-lg">Go Back</div>
-                    <div @click="home()" class="ml-10 hover:underline text-white bg-blue-600 font-bold cursor-pointer rounded-lg py-4 px-6 shadow-lg">Home</div>
+<!--                  <div class="flex flex-col">-->
+<!--                    <div @click="login()" class="ml-10 hover:underline text-white bg-blue-600 font-bold cursor-pointer rounded-lg py-4 px-6 shadow-lg">Go Back</div>-->
+<!--                    <div @click="home()" class="ml-10 hover:underline text-white bg-blue-600 font-bold cursor-pointer rounded-lg py-4 px-6 shadow-lg">Home</div>-->
+<!--                  </div>-->
+                  <div class="flex flex-wrap flex-col">
+                    <div class="flex flex-wrap">
+                      <button  @click="login()" class="ml-10 hover:underline text-white bg-blue-600 font-bold cursor-pointer rounded-lg py-4 px-4 shadow-lg">
+                        Go Back
+                      </button>
+                      <button @click="home()" class="ml-4 hover:underline text-white bg-blue-600 font-bold cursor-pointer rounded-lg py-4 px-4 shadow-lg">
+                        Home
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div class="w-full md:w-3/5 py-6 text-center">
