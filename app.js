@@ -1,6 +1,10 @@
 import { App, plugin } from '@inertiajs/inertia-vue'
 import Vue from 'vue'
 import api from './Models/_api'
+import authentication from "ProjectModels/_auth";
+
+const auth = new authentication();
+Vue.prototype.$auth = auth;
 
 const apis = new api();
 Vue.prototype.$api = apis;

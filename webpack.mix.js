@@ -75,6 +75,7 @@ mix.sass('./resources/sass/app.scss', 'public/nits-assets/css')
                 NitsModels: path.resolve(__dirname, 'Models'),
                 NitsComponents: path.resolve(__dirname, './Components'),
                 NitsPages: path.resolve( './resources/pages'),
+                ProjectModels: path.resolve('./resources/models'),
             },
         },
         plugins: [
