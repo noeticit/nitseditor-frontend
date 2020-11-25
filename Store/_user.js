@@ -10,7 +10,8 @@ const state =  {
     access_token: '',
     refresh_token: '',
     user_id: '',
-    last_url_visited: ''
+    last_url_visited: '',
+    permissions: ''
     // institute_id: '',
     // student_id: ''
 };
@@ -27,6 +28,7 @@ const mutations = {
         state.access_token = data.access_token;
         state.refresh_token = data.refresh_token;
         state.permissible_pages = data.permissible_pages
+        state.permissions = data.permissions
     },
     STORE_PERMISSIONS(state, data) {
         state.permissible_pages = data;
@@ -54,7 +56,8 @@ const actions = {
             role_id: userData.role_id ? userData.role_id : '',
             access_token: userData.access_token ? encrypt(userData.access_token) : '',
             refresh_token: userData.refresh_token ? encrypt(userData.refresh_token) : '',
-            permissible_pages: userData.permissible_pages
+            permissible_pages: userData.permissible_pages,
+            permissions: userData.permissions
         };
         console.log(user)
         commit('STORE_USER_DATA', user);
@@ -136,7 +139,10 @@ const getters = {
 
     user_last_url_visited(state) {
         return state.last_url_visited;
-    }
+    },
+    permissions(state) {
+        return state.permissions;
+    },
     // institute_id(state) {
     //     return state.institute_id;
     // },
