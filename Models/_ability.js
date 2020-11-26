@@ -15,7 +15,8 @@ export default class ability {
             return true;
         }
 
-        const guest_permissions = JSON.parse(nitseditor).guest_permissions;
+        // const guest_permissions = JSON.parse(nitseditor).guest_permissions;
+        const guest_permissions = ''
 
         let p = _.findIndex(guest_permissions, function(o) { return o.name === page.name; });
 
