@@ -28,6 +28,9 @@ const mutations = {
         state.refresh_token = data.refresh_token;
         state.permissible_pages = data.permissible_pages
     },
+    STORE_USER_TOKEN(state, data) {
+        state.access_token = data;
+    },
     STORE_PERMISSIONS(state, data) {
         state.permissible_pages = data;
     },
@@ -58,6 +61,9 @@ const actions = {
         };
         console.log(user)
         commit('STORE_USER_DATA', user);
+    },
+    storeAccessToken({commit}, data) {
+        commit("STORE_USER_TOKEN", data);
     },
     removeUserData({commit}) {
         //API c
@@ -123,7 +129,7 @@ const getters = {
     },
 
     user_access_token(state) {
-        return decrypt(state.access_token);
+        return state.access_token;
     },
 
     user_refresh_token(state) {
