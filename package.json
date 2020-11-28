@@ -80,7 +80,7 @@
     "sass": "^1.29.0",
     "sass-loader": "^8.0.2",
     "sweetalert2": "^9.17.2",
-    "tailwindcss": "^1.9.0",
+    "tailwindcss": "^2.0.1",
     "tailwindcss-plugins": "^0.3.0",
     "tailwindcss-spinner": "^1.2.0",
     "v-click-outside": "^3.1.2",
