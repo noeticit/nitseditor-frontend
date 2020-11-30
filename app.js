@@ -4,6 +4,7 @@ import api from './Models/_api'
 import authentication from "ProjectModels/_auth";
 import store from './Store/_store';
 
+
 const auth = new authentication();
 Vue.prototype.$auth = auth;
 

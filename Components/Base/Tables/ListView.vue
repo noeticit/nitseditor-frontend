@@ -3,7 +3,7 @@
         <div class="px-2" v-if="!loading">
             <div v-if="tableData && tableData.data.length && !['batch_selected','batch'].includes(location)" class="text-left antialiased font-medium text-gray-800 leading-snug tracking-normal mt-5 mb-5 text-sm font-sans">Showing Results {{tableData.meta.from}} to {{tableData.meta.to}} of {{tableData.meta.total}}</div>
             <table class="mt-4 w-full" v-if="tableData && tableData.data.length">
-                <tr class="bg-teal-500 h-8">
+                <tr class="bg-green-700 h-8">
                     <template v-for="header in selectedColumns">
                         <th class="text-center" v-if="typeof headerStyle[header.key] !== 'undefined'" :style="headerStyle[header.key]">
                             <div v-if="header.key === 'index'" class="ml-2 flex justify-center items-center">

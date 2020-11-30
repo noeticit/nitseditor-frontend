@@ -51,6 +51,7 @@
 
 <script>
 import {eventBus} from "../../../Models/_events";
+import { RecycleScroller } from 'vue-virtual-scroller'
 
 export default {
   data() {
@@ -63,6 +64,9 @@ export default {
       postData:{},
       loading: false
     }
+  },
+  components:{
+    RecycleScroller
   },
   created() {
     this.initState()

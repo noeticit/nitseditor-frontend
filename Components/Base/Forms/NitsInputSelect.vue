@@ -9,7 +9,7 @@
                     @change="emitEvent()"
                     ref="select"
                     id="grid-select">
-<!--                <option value="" class="text-gray-500">{{placeholder}}</option>-->
+                <option value="" class="text-gray-500">{{placeholder}}</option>
                 <option v-for="item in optionsAll" :value="item.value">{{item.label}}</option>
             </select>
             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
