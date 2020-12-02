@@ -68,7 +68,10 @@ mix.sass('./resources/sass/app.scss', 'public/nits-assets/css')
                 }
             ]
         },
-        output: { chunkFilename: 'nits-assets/chunks/[name].[contenthash].js' },
+        output: {
+            chunkFilename: 'nits-assets/chunks/[name].[contenthash].js',
+            // publicPath: 'https://edunits-serverless.s3.amazonaws.com/'
+        },
         resolve: {
             symlinks: false,
             alias: {
