@@ -34,11 +34,10 @@ Mix.listen('configReady', webpackConfig => {
 
 
 mix.sass('./resources/sass/app.scss', 'public/nits-assets/css')
-    .options({
-        processCssUrls: false,
-        postCss: [ require('autoprefixer'), tailwindcss('./tailwind.config.js') ],
-    })
     .js('resources/js/app.js', 'public/nits-assets/js')
+    .postCss("resources/css/app.css", "public/css", [
+        require("tailwindcss"),
+    ])
     .webpackConfig({
         module: {
             rules: [
