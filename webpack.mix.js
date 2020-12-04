@@ -33,9 +33,8 @@ const NitsComponentsPlugin = require('./Webpack/NitsComponentsPlugin');
 // });
 
 
-mix.sass('./resources/sass/app.scss', 'public/nits-assets/css')
-    .js('resources/js/app.js', 'public/nits-assets/js')
-    .postCss("resources/css/app.css", "public/css", [
+mix.js('resources/js/app.js', 'public/nits-assets/js')
+    .postCss("resources/sass/app.scss", "public/nits-assets/css", [
         require("tailwindcss"),
     ])
     .webpackConfig({
