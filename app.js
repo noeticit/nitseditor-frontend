@@ -15,6 +15,18 @@ require('./Models/_components');
 
 Vue.use(plugin)
 
+Vue.mixin({
+    methods: {
+        validationError(field) {
+            if (this.$page.errors.hasOwnProperty(field)) {
+                return this.$page.errors['field'][0];
+            }
+
+            return null;
+        }
+    }
+})
+
 const el = document.getElementById('app')
 
 new Vue({
