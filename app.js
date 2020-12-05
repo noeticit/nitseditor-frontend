@@ -18,12 +18,15 @@ Vue.use(plugin)
 Vue.mixin({
     methods: {
         validationError(field) {
-            if (this.$page.errors.hasOwnProperty(field)) {
-                return this.$page.errors['field'][0];
+            if (this.$page.props.errors.hasOwnProperty(field)) {
+                return this.$page.props.errors[field];
             }
 
             return null;
         }
+    },
+    created() {
+        this.$store.dispatch('storeAccessToken', this.$page.props.token)
     }
 })
 
