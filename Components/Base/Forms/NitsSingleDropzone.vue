@@ -46,7 +46,7 @@
             return{
                 options: {
                     url: "/nits-system-api/upload-files",
-                    maxFilesize: 4, // MB
+                    maxFilesize: 20, // MB
                     maxFiles: 1,
                     // chunking: true,
                     // chunkSize: 500, // Bytes
