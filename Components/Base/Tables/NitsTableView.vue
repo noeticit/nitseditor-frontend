@@ -45,6 +45,17 @@
           <div v-else class="text-center my-16 text-base font-medium">
             No Data Found !!
           </div>
+
+          <div class="row" v-if="!loading && tableData.data && tableData.data.length">
+            <div class="" >
+<!--              <pagination v-if="location!=='industrial_project' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>-->
+              <pagination v-if="location==='industrial_project' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='companies' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='professionals' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+<!--              <pagination v-if="location!=='participatedtender',keyassociatedprojects', 'companycontact', 'regional-volume' && tableData.meta" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>-->
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
