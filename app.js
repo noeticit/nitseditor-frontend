@@ -26,7 +26,7 @@ Vue.mixin({
         }
     },
     created() {
-        this.$store.dispatch('storeAccessToken', this.$page.props.token)
+        // this.$store.dispatch('storeAccessToken', this.$page.props.token)
     }
 })
 
