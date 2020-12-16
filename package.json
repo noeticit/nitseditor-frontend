@@ -1,6 +1,6 @@
 {
   "name": "@noeticit/nitseditor-frontend",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Front end scafolding for nitseditor",
   "main": "app.js",
   "scripts": {
