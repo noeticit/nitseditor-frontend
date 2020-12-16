@@ -1,7 +1,5 @@
 const mix = require('laravel-mix')
 
-const ASSET_URL = process.env.ASSET_URL + "/";
-
 mix.js('resources/js/app.js', 'public/nits-assets/js')
     .postCss('resources/sass/app.css', 'public/nits-assets/css', [
         require("tailwindcss"),
@@ -9,7 +7,6 @@ mix.js('resources/js/app.js', 'public/nits-assets/js')
     .webpackConfig({
         output: {
             chunkFilename: 'nits-assets/chunks/[name].[contenthash].js',
-            publicPath: ASSET_URL
         },
         resolve: {
             symlinks: false,
@@ -20,9 +17,4 @@ mix.js('resources/js/app.js', 'public/nits-assets/js')
                 ProjectModels: path.resolve('./resources/models'),
             },
         },
-        plugins: [
-            new webpack.DefinePlugin({
-                "process.env.ASSET_PATH": JSON.stringify(ASSET_URL)
-            })
-        ],
     }).sourceMaps().version();
