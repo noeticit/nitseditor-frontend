@@ -11,7 +11,7 @@ Vue.prototype.$auth = auth;
 const apis = new api();
 Vue.prototype.$api = apis;
 
-require('./Models/_components');
+require('NitsModels/_components');
 
 Vue.use(plugin)
 
@@ -26,7 +26,7 @@ Vue.mixin({
         }
     },
     created() {
-        this.$store.dispatch('storeAccessToken', this.$page.props.token)
+        // this.$store.dispatch('storeAccessToken', this.$page.props.token)
     }
 })
 

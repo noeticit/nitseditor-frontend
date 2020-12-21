@@ -1,4 +1,5 @@
 const mix = require('laravel-mix')
+const NitsComponentsPlugin = require('./Webpack/NitsComponentsPlugin');
 
 mix.js('resources/js/app.js', 'public/nits-assets/js')
     .postCss('resources/sass/app.css', 'public/nits-assets/css', [
@@ -6,7 +7,7 @@ mix.js('resources/js/app.js', 'public/nits-assets/js')
     ])
     .webpackConfig({
         output: {
-            chunkFilename: 'nits-assets/chunks/[name].[contenthash].js'
+            chunkFilename: 'nits-assets/chunks/[name].[contenthash].js',
         },
         resolve: {
             symlinks: false,
@@ -17,4 +18,7 @@ mix.js('resources/js/app.js', 'public/nits-assets/js')
                 ProjectModels: path.resolve('./resources/models'),
             },
         },
+        plugins:[
+            new NitsComponentsPlugin(),
+        ]
     }).sourceMaps().version();
