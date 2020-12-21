@@ -52,6 +52,10 @@
               <pagination v-if="location==='industrial_project' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
               <pagination v-if="location==='companies' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
               <pagination v-if="location==='professionals' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='industrial_tender' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='companycontact' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='projectcontact' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='associatecompany' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
 <!--              <pagination v-if="location!=='participatedtender',keyassociatedprojects', 'companycontact', 'regional-volume' && tableData.meta" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>-->
             </div>
           </div>
@@ -72,7 +76,7 @@ import {eventBus} from 'NitsModels/_events.js';
 import Spinner from 'vue-simple-spinner'
 export default {
   name: "NitsTableView",
-  components: {pagination, Spinner},
+  components: {pagination},
   props: {
     headerStyle: {
       type: Object,
