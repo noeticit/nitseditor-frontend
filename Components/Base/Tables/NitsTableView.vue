@@ -56,7 +56,7 @@
               <pagination v-if="location==='companycontact' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
               <pagination v-if="location==='projectcontact' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
               <pagination v-if="location==='associatecompany' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
-<!--              <pagination v-if="location!=='participatedtender',keyassociatedprojects', 'companycontact', 'regional-volume' && tableData.meta" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>-->
+              <pagination v-if="location==='tenderproject' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
             </div>
           </div>
 
