@@ -53,10 +53,14 @@
               <pagination v-if="location==='companies' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
               <pagination v-if="location==='professionals' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
               <pagination v-if="location==='industrial_tender' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
-              <pagination v-if="location==='companycontact' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
-              <pagination v-if="location==='projectcontact' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
-              <pagination v-if="location==='associatecompany' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
-              <pagination v-if="location==='tenderproject' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='industrial_award' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='company_contact' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='project_contact' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='associate_company' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='project_tender' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='awarded_project' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='awarded_company' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='awardee_company' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
             </div>
           </div>
 
