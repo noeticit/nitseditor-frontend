@@ -47,8 +47,10 @@
           </div>
 
           <div class="row" v-if="!loading && tableData.data && tableData.data.length">
+            {{tableData.meta}}
             <div class="" >
 <!--              <pagination v-if="location!=='industrial_project' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>-->
+              <pagination v-if="location==='user_activity' && tableData.meta && tableData.meta.total > 20" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
               <pagination v-if="location==='industrial_project' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
               <pagination v-if="location==='companies' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
               <pagination v-if="location==='professionals' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
@@ -61,6 +63,11 @@
               <pagination v-if="location==='awarded_project' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
               <pagination v-if="location==='awarded_company' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
               <pagination v-if="location==='awardee_company' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='associate_project' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='user_activity' && tableData.meta && tableData.meta.total > 50" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='segment_directory' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+              <pagination v-if="location==='subsegment_directory' && tableData.meta && tableData.meta.total > 15" :meta="tableData.meta" :links="tableData.links" :location="location"></pagination>
+
             </div>
           </div>
 
@@ -77,10 +84,10 @@
 <script>
 import pagination from "./Pagination";
 import {eventBus} from 'NitsModels/_events.js';
-import Spinner from 'vue-simple-spinner'
+import VueSimpleSpinner from 'vue-simple-spinner'
 export default {
   name: "NitsTableView",
-  components: {pagination},
+  components: {pagination,VueSimpleSpinner},
   props: {
     headerStyle: {
       type: Object,
